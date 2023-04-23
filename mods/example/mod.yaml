@@ -1,0 +1,78 @@
+Metadata:
+	Title: Example mod
+	Version: {DEV_VERSION}
+	WindowTitle: Example
+
+Packages:
+	^EngineDir
+	$example: example
+	^EngineDir|mods/common: common
+
+MapFolders:
+	example|maps: System
+
+Assemblies:
+	^BinDir|OpenRA.Mods.Common.dll
+	^BinDir|OpenRA.Mods.Example.dll
+
+AssetBrowser:
+	AudioExtensions: .wav
+	SpriteExtensions: .png
+	VideoExtensions:
+
+SupportsMapsFrom: Example
+
+LoadScreen: BlankLoadScreen
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+
+MapGrid:
+	TileSize: 32, 32
+	Type: Rectangular
+
+SpriteFormats: PngSheet
+
+SoundFormats: Wav
+
+TerrainFormat: DefaultTerrain
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+ModelSequenceFormat: PlaceholderModelSequence
+
+DefaultOrderGenerator: UnitOrderGenerator
+
+GameSpeeds:
+	DefaultSpeed: default
+	Speeds:
+		slowest:
+			Name: slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: fastest
+			Timestep: 20
+			OrderLatency: 6
+
+Include: mod.content.yaml
+Include: mod.chrome.yaml

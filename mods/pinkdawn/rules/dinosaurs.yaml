@@ -1,0 +1,113 @@
+^Dinosaur:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+    Inherits@5: ^GenericSpeedModifier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@selection: ^SelectableCombatUnit
+	Inherits@handicaps: ^PlayerHandicaps
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Health:
+		HP: 1000
+    Armor:
+        Type: Heavy
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Dinosaur
+	RevealsShroud:
+		Range: 6c0
+	Mobile:
+        TurnSpeed: 10
+		Locomotor: critter
+		Speed: 100
+		Voice: Move
+	Selectable:
+		Bounds: 1024, 1024
+	Targetable:
+		TargetTypes: Ground, Creep
+	HiddenUnderFog:
+	RenderSprites:
+		Palette: terrain
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	AutoTarget:
+		ScanRadius: 4
+	AttackMove:
+		Voice: Attack
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	DeathSounds:
+	Voiced:
+		VoiceSet: DinoVoice
+	HitShape:
+		Type: Circle
+			Radius: 128
+	MapEditorData:
+		Categories: Critter
+
+STEG:
+	Inherits: ^Dinosaur
+	Tooltip:
+		Name: Stegosaurus
+	Mobile:
+		Speed: 40
+	Health:
+		HP: 60000
+	Armament:
+		Weapon: DinoGore
+	WithDeathAnimation:
+		DeathSequencePalette: terrain
+		DeathPaletteIsPlayerPalette: false
+	Buildable:
+		Description: A large, heavily built, herbivorous quadruped
+
+TREX:
+	Inherits: ^Dinosaur
+	Tooltip:
+		Name: Tyrannosaurus rex
+	Mobile:
+		Speed: 90
+	Health:
+		HP: 75000
+	Armament:
+		Weapon: DinoChew
+	Selectable:
+		Bounds: 2048, 1536, 85, 42
+		DecorationBounds: 2218, 1621
+	Buildable:
+		Description: Bipedal carnivore with a massive skull
+
+TRIC:
+	Inherits: ^Dinosaur
+	Tooltip:
+		Name: Triceratops
+	Mobile:
+		Speed: 40
+	Health:
+		HP: 70000
+	Armament:
+		Weapon: DinoHorn
+	Buildable:
+		Description: Quadruped with large bony frill and three horns
+	Selectable:
+		DecorationBounds: 1450, 1024, 0, 85
+
+RAPT:
+	Inherits: ^Dinosaur
+	Tooltip:
+		Name: Velociraptor
+	Mobile:
+		Speed: 200
+	Health:
+		HP: 18000
+	Armament:
+		Weapon: DinoClaw
+	Buildable:
+		Description: Bipedal with enlarged sickle-shaped claw on each hindfoot

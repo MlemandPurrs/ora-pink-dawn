@@ -1,0 +1,261 @@
+FACT.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Construction Yard (Destroyed)
+	RenderSprites:
+		Image: fact.husk
+		FactionImages:
+			nod: nodfact.husk
+
+NUKE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Power Plant (Destroyed)
+	RenderSprites:
+		Image: nuke.husk
+		FactionImages:
+			nod: nodnuke.husk
+
+NUK2.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Power Plant (Destroyed)
+	RenderSprites:
+		Image: nuk2.husk
+		FactionImages:
+			nod: nodnuk2.husk
+
+PROC.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 3072, 3056
+	Building:
+		Footprint: _x_ xxx ++x ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Tiberium Refinery (Destroyed)
+	RenderSprites:
+		Image: proc.husk
+		FactionImages:
+			nod: nodproc.husk
+
+SILO.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 1024
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Tooltip:
+		Name: Tiberium Silo (Destroyed)
+	RenderSprites:
+		Image: silo.husk
+		FactionImages:
+			nod: nodsilo.husk
+
+PYLE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Barracks (Destroyed)
+	RenderSprites:
+		Image: pyle.husk
+
+HAND.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Hand of Nod (Destroyed)
+	RenderSprites:
+		Image: hand.husk
+
+WEAP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: War Factory (Destroyed)
+	RenderSprites:
+		Image: weap.husk
+
+AFLD.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 4096, 2048
+	Building:
+		Footprint: XXXX xxxx ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Airstrip (Destroyed)
+	RenderSprites:
+		Image: afld.husk
+
+FIX.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2730, 1450
+	Building:
+		Footprint: === xxx ===
+		Dimensions: 3,3
+	Tooltip:
+		Name: Service Depot (Destroyed)
+	RenderSprites:
+		Image: fix.husk
+
+HPAD.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Helipad (Destroyed)
+
+HQ.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 1706
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Center (Destroyed)
+	RenderSprites:
+		Image: hq.husk
+		FactionImages:
+			nod: nodhq.husk
+
+EYE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 1706
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Communications Center (Destroyed)
+	RenderSprites:
+		Image: eye.husk
+
+MISS.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-256,0
+	Tooltip:
+		Name: Technology Center (Destroyed)
+	RenderSprites:
+		Image: miss.husk
+
+TMPL.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Temple of Nod (Destroyed)
+	RenderSprites:
+		Image: tmpl.husk
+
+BIO.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Biological Laboratory (Destroyed)
+	RenderSprites:
+		Image: bio.husk
+
+GTWR.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Tooltip:
+		Name: Guard Tower (Destroyed)
+	RenderSprites:
+		Image: gtwr.husk
+
+GUN.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Tooltip:
+		Name: Gun Turret (Destroyed)
+
+ATWR.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 1024,1024
+	Tooltip:
+		Name: Advanced Guard Tower (Destroyed)
+	RenderSprites:
+		Image: atwr.husk
+
+OBLI.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Tooltip:
+		Name: Obelisk of Light (Destroyed)
+	RenderSprites:
+		Image: obli.husk
+
+SAM.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 1024
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Tooltip:
+		Name: SAM Site (Destroyed)

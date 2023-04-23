@@ -1,0 +1,75 @@
+LST:
+	Inherits: ^Ship
+	Inherits@TRANSPORT: ^Transport
+    Inherits@selection: ^SelectableSupportUnit
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Landing Craft
+	Buildable:
+        BuildDuration: 1400
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 0
+		Queue: Navy.GDI, Navy.Nod
+		Prerequisites: syrd
+		Description: Transports ground units across water.
+	Mobile:
+		Locomotor: hovercraft
+		InitialFacing: 0
+		TurnSpeed: 10
+		Speed: 110
+		PauseOnCondition: notmobile
+	Health:
+		HP: 40000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c0
+	Selectable:
+		Bounds: 2048, 2048
+	WithCargo:
+		DisplayTypes: Infantry, Vehicle
+		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PassengerFacing: 0
+		LoadingCondition: notmobile
+
+BOAT:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 600
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 1
+		Queue: Navy.GDI, Navy.Nod
+		Prerequisites: syrd
+		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
+	Tooltip:
+		Name: Patrol Boat
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 10
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 10
+		Offset: 586,0,80
+	Armament@PRIMARY:
+		Weapon: BoatMissile
+		LocalOffset: 85,-85,0, 85,85,0
+		LocalYaw: 64, -64
+	AttackTurreted:
+	WithSpriteTurret:
+	RenderRangeCircle:
+	Selectable:
+		Bounds: 1792, 1024
+		DecorationBounds: 1792, 1024
+

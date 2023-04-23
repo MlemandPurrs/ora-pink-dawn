@@ -1,0 +1,287 @@
+mcv:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: mcvicon
+
+nodmcv:
+	idle: mcv
+		Facings: 32
+		UseClassicFacings: True
+	icon: nodmcvicon
+
+harv:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	harvest:
+		Start: 32
+		Length: 4
+		Facings: 8
+		Tick: 60
+	dock: harvdump
+		Length: 7
+	dock-loop: harvdump
+		Start: 7
+	icon: harvicon
+
+nodharv:
+    Inherits: harv
+    Defaults: harv
+    icon: nodharvicon
+
+truk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: trukicon
+
+jeep:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: jeepicon
+
+bggy:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: bggyicon
+
+bike:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: bikeicon
+
+apc:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	close:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 32
+	icon: apcicon
+
+maag:
+    Inherits: emp-overlay
+	idle: apc
+		Facings: 32
+		UseClassicFacings: True
+	turret: apctur
+		Facings: 32
+	turret-air: apctur
+		Start: 32
+		Facings: 32
+	muzzle: minigun16
+		Length: 6
+		Facings: 16
+	muzzle-air: apcmuz
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: maagicon
+
+ltnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret: ltnk-tur
+        Start: 0
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: ltnkicon
+
+mtnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: mtnkicon
+
+ftnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle:
+		Combine:
+			flame-00:
+				Length: *
+			flame-02:
+				Length: *
+			flame-04:
+				Length: *
+			flame-06:
+				Length: *
+			flame-08:
+				Length: *
+			flame-10:
+				Length: *
+			flame-12:
+				Length: *
+			flame-14:
+				Length: *
+			flame-16:
+				Length: *
+			flame-18:
+				Length: *
+			flame-20:
+				Length: *
+			flame-22:
+				Length: *
+			flame-25:
+				Length: *
+			flame-27:
+				Length: *
+			flame-29:
+				Length: *
+			flame-31:
+				Length: *
+		Facings: 16
+		Length: 12
+	icon: ftnkicon
+
+htnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: htnkicon
+
+stnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	icon: stnkicon
+
+arty:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: gunfire2
+		Length: *
+	icon: artyicon
+
+msam:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+	empty-aim:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	aim:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	icon: msamicon
+
+mlrs:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret1:
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+	turret0:
+		Start: 96
+		Facings: 32
+		UseClassicFacings: True
+	icon: mlrsicon
+
+mhq:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	spinner:
+		Start: 32
+		Length: 32
+	turret: bggy
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: mhqicon
+
+lst:
+	idle: lstnew
+		UseClassicFacings: True
+		Facings: 32
+	roof: lstnew2
+		UseClassicFacings: True
+		Facings: 32
+	icon: lsticon
+
+boat:
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret: boattur
+		Facings: 32
+		UseClassicFacings: True
+	icon: boaticon

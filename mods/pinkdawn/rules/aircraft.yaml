@@ -1,0 +1,299 @@
+C17:
+	Inherits: ^Plane
+	Inherits@TRANSPORT: ^Transport
+	Interactable:
+	Tooltip:
+		Name: Cargo Plane
+	Valued:
+		Cost: 800
+	UpdatesPlayerStatistics:
+		AddToAssetsValue: false
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 400
+		Repulsable: False
+		MaximumPitch: 36
+	HiddenUnderFog:
+		AlwaysVisibleRelationships: None
+		Type: CenterPosition
+	ParaDrop:
+		DropRange: 4c0
+		ChuteSound: chute1.aud
+	Cargo:
+		Types: Infantry, Vehicle, Crate
+		MaxWeight: 10
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+	-MapEditorData:
+
+A10:
+	Inherits: ^Plane
+	-ActorLostNotification:
+	Interactable:
+	HitShape:
+	Health:
+		HP: 9000
+	Armor:
+		Type: Aluminium
+	Tooltip:
+		Name: A-10 Warthog
+	Valued:
+		Cost: 800
+	UpdatesPlayerStatistics:
+		AddToAssetsValue: false
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 400
+		Repulsable: False
+		AirborneCondition: airborne
+	AttackBomber:
+		Armaments: gun, bombs
+        FacingTolerance: 8
+	Armament@GUNS:
+		Name: gun
+		Weapon: Vulcan
+		LocalOffset: 1024,0,-85
+	WithMuzzleOverlay:
+	Armament@BOMBS:
+		Name: bombs
+		Weapon: Napalm
+		LocalOffset: 0,-256,-43, 0,256,-43
+	Contrail@1:
+		Offset: -640,171,0
+		TrailLength: 8
+		TrailWidth: 32
+        StartColorUsePlayerColor: false
+	Contrail@2:
+		Offset: -640,-171,0
+		TrailLength: 8
+		TrailWidth: 32
+        StartColorUsePlayerColor: false
+	Targetable@AIRBORNE:
+		TargetTypes: Airplane
+		RequiresCondition: airborne
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	-MapEditorData:
+
+TRAN:
+	Inherits: ^Helicopter
+	Inherits@TRANSPORT: ^Transport
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Transport Helicopter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1400
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: hpad
+		Queue: Aircraft.GDI, Aircraft.Nod
+		Description: Fast Infantry Transport Helicopter.\n\nUnarmed.
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 150
+        MoveIntoShroud: false
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 9000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 597,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 597,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -597,0,171
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -597,0,171
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		UnloadVoice: Unload
+		AfterUnloadDelay: 40
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Sellable:
+		RequiresCondition: unit.sellable && !airborne && !loaded
+	Selectable:
+		DecorationBounds: 1749, 1749
+
+ORCA:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+        Class: ORCA
+		DecorationBounds: 1030,1024
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Orca
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+		Prerequisites: hpad, anyhq
+		Queue: Aircraft.GDI
+		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 200
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: OrcaRocketsAG
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Weapon: OrcaRocketsAA
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+	WithMuzzleOverlay:
+	AutoTarget:
+		ScanRadius: 5
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+	AmmoPool@1:
+        Name: primary
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 100
+		ReloadCount: 2
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 5
+        AmmoPools: primary
+		RequiresSelection: true
+	WithMoveAnimation:
+		MoveSequence: move
+	Rearmable:
+		RearmActors: hpad
+
+HELI:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+        Class: HELI
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Apache
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: hpad, anyhq
+		Queue: Aircraft.Nod
+		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 200
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12500
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: HeliAGGun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammogun || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliAAGun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammogun || emp-crate-collected
+	AmmoPool:
+		Name: ammogun
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 40
+		AmmoCondition: ammogun
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		FullSequence: pip-yellow
+		RequiresSelection: true
+		AmmoPools: ammogun
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithMuzzleOverlay:
+	Rearmable:
+		RearmActors: hpad

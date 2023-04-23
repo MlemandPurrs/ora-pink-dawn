@@ -1,0 +1,148 @@
+Atomic:
+	ValidTargets: Ground, Water, Airplane, Helicopter, Tree
+	Report: nukemisl.aud
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 1c0
+		Range: 1c0, 2c512, 3c768
+        Damage: 10000
+		#   Falloff: 1000, 500, 250
+        Falloff: 900, 600, 300
+		ValidTargets: Ground, Airplane, Helicopter, Tree
+		AffectsParent: True
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Eff_impact: CreateEffect
+		Explosions: nuke_explosion
+		ImpactSounds: nukexplo.aud
+		ImpactActors: false
+	Warhead@4Res_areanuke: DestroyResource
+		Size: 3
+		Delay: 3
+	Warhead@5Smu_areanuke: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+		Size: 3
+		Delay: 3
+	Warhead@6Eff_areanuke: CreateEffect
+		ImpactSounds: xplobig4.aud
+		Delay: 3
+		ImpactActors: false
+	Warhead@13Shake: ShakeScreen
+		Duration: 20
+		Intensity: 5
+		Multiplier: 1,1
+	Warhead@14FlashEffect: FlashPaletteEffect
+		Duration: 20
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+IonCannon:
+	ValidTargets: Ground, Water, Airplane, Helicopter, Tree
+	Warhead@1Dam_impact: SpreadDamage
+		Range: 0, 1c1, 2c1, 2c512
+		Damage: 60000
+		Falloff: 250, 200, 125, 50
+        #   Falloff: 250, 250, 250, 250
+        #   Falloff: 350, 250, 225, 175
+		ValidTargets: Ground, Airplane, Helicopter, Tree
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 50
+            Heavy: 50
+            Concrete: 50
+            Wood: 100
+            Aluminium: 50
+            Steel: 50
+		AffectsParent: True
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Smu_area: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		Size: 1
+		Delay: 3
+	Warhead@4Res_area2: DestroyResource
+		Size: 2
+		Delay: 6
+	Warhead@5Smu_area2: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		Size: 2,1
+		Delay: 6
+
+#   for Crate version, with extra explosion attached and delays to compensate
+IonCannon.crate:
+    Inherits: IonCannon
+    Warhead@1Dam_impact: SpreadDamage
+        Delay: 7
+    Warhead@2Smu_impact: LeaveSmudge
+        Delay: 7
+    Warhead@3Smu_area: LeaveSmudge
+        Delay: 10
+    Warhead@4Res_area2: DestroyResource
+        Delay: 12
+    Warhead@5Smu_area2: LeaveSmudge
+        Delay: 12
+	Warhead@6: CreateEffect
+		Delay: 0
+		ImpactSounds: ion1.aud
+		ValidTargets: Ground, Air, Water
+        Explosions: idle
+        Image: ionsfx
+        ImpactActors: false
+
+#   used by the surprise Nuke crate
+MiniNuke:
+	ValidTargets: Ground, Water, Airplane, Helicopter, Tree
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 1c0
+		Range: 1c0, 2c512, 3c768
+		Damage: 10000
+		Falloff: 900, 600, 300
+        ValidTargets: Ground, Airplane, Helicopter, Tree
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		AffectsParent: true
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Res_impact: DestroyResource
+		Size: 1
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: nuke_explosion
+		ImpactSounds: kaboom1.aud
+		ImpactActors: false
+	Warhead@4Res_areanuke: DestroyResource
+		Size: 2
+		Delay: 5
+	Warhead@5Eff_areanuke: CreateEffect
+		ImpactSounds: kaboom22.aud
+		Delay: 5
+		ImpactActors: false
+	Warhead@6FlashEffect: FlashPaletteEffect
+		Duration: 10
+		FlashType: Nuke
+	Warhead@7Shake: ShakeScreen
+		Duration: 10
+		Intensity: 3
+		Multiplier: 1,1

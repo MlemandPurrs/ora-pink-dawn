@@ -1,0 +1,242 @@
+Player:
+	ModularBot@Aiplayer:
+		Name: AI Player
+		Type: normalai
+	GrantConditionOnBotOwner@aiplayer:
+		Condition: enable-ai-player
+		Bots: normalai
+	SupportPowerBotModule:
+		RequiresCondition: enable-ai-player
+		Decisions:
+			UseRadarScan:
+				OrderName: RadarScan
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			UseIonCannon:
+				OrderName: IonCannon
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			UseIonCannonfromCrate:
+				OrderName: CrateIon
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			UseNukeMissile:
+				OrderName: NukeMissile
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			UseNukeMissilefromCrate:
+				OrderName: CrateNuke
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			UseAirstrike:
+				OrderName: Airstrike
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 3
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -20
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+			UseAirstrikefromCrate:
+				OrderName: CrateAirstrike
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 3
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -20
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+			UseParatroopers:
+				OrderName: Paratroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+	HarvesterBotModule:
+		RequiresCondition: enable-ai-player
+		HarvesterTypes: harv
+		RefineryTypes: proc
+	BaseBuilderBotModule:
+		RequiresCondition: enable-ai-player
+		BuildingQueues: Building.Nod, Building.GDI
+		DefenseQueues: Defense.Nod, Defense.GDI
+		MinimumExcessPower: 30
+		MaximumExcessPower: 150
+		ExcessPowerIncrement: 30
+		ExcessPowerIncreaseThreshold: 5
+		ConstructionYardTypes: fact
+		RefineryTypes: proc
+		PowerTypes: nuke, nuk2
+		BarracksTypes: pyle, hand
+		VehiclesFactoryTypes: weap, afld
+		ProductionTypes: pyle, hand, weap, afld, hpad
+		SiloTypes: silo
+		BuildingLimits:
+			proc: 4
+			pyle: 3
+			hand: 3
+			hq: 1
+			weap: 2
+			afld: 2
+			hpad: 0
+			eye: 1
+            bio: 1
+			miss: 1
+            tmpl: 1
+			fix: 1
+			silo: 2
+		BuildingFractions:
+			proc: 20
+			pyle: 5
+			hand: 5
+			hq: 4
+			weap: 9
+			afld: 9
+			gtwr: 5
+			gun: 5
+			atwr: 9
+			obli: 7
+			sam: 7
+			eye: 1
+            bio: 1
+			tmpl: 1
+            miss: 1
+			fix: 1
+			hpad: 2
+	BuildingRepairBotModule:
+		RequiresCondition: enable-ai-player
+	SquadManagerBotModule:
+		RequiresCondition: enable-ai-player
+		SquadSize: 16
+		ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan
+		ConstructionYardTypes: fact
+		AirUnitsTypes: heli, orca
+		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
+	UnitBuilderBotModule:
+		RequiresCondition: enable-ai-player
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI
+		UnitsToBuild:
+			e1: 65
+			e2: 25
+			e3: 40
+			e4: 15
+			e5: 15
+			harv: 10
+			jeep: 5
+			bggy: 5
+			bike: 40
+            apc: 10
+            maag: 20
+			ltnk: 25
+			mtnk: 20
+			ftnk: 10
+			htnk: 50
+			stnk: 40
+			arty: 60
+			msam: 40
+			mlrs: 40
+			heli: 5
+			orca: 5
+		UnitLimits:
+			harv: 8
+	McvManagerBotModule:
+		RequiresCondition: enable-ai-player
+		McvTypes: mcv
+		ConstructionYardTypes: fact
+		McvFactoryTypes: weap,afld

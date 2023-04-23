@@ -1,0 +1,957 @@
+MCV:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Mobile Construction Vehicle
+	Buildable:
+        BuildDuration: 3900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 16
+        Prerequisites: anyhq, fix
+		Queue: Vehicle.GDI, Vehicle.Nod
+		Description: Deploys into another Construction Yard.\n\nUnarmed.
+	Selectable:
+		DecorationBounds: 1536, 1536
+	Mobile:
+        TurnSpeed: 10
+		Speed: 60
+		Locomotor: tracked-crusher
+	Health:
+		HP: 90000
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+	Transforms:
+		IntoActor: fact
+		Offset: -1,-1
+		Facing: 432
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
+		Voice: Unload
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	RenderSprites:
+		Image: mcv
+		FactionImages:
+			nod: nodmcv
+	ProductionCostMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+	ProductionTimeMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+
+HARV:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableEconomicUnit
+	Inherits@Crates: ^AcceptsAllCrates
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Harvester
+		GenericName: Harvester
+	Buildable:
+    	BuildDuration: 1650
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: proc
+		Queue: Vehicle.GDI, Vehicle.Nod
+		Description: Collects Tiberium for processing.\n\nUnarmed.
+	Selectable:
+		DecorationBounds: 1536, 1536
+	Harvester:
+		Resources: Tiberium, BlueTiberium, RedTiberium
+		Capacity: 20
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 6
+		SearchFromProcRadius: 15
+		SearchFromHarvesterRadius: 8
+		HarvestFacings: 8
+	Mobile:
+		Speed: 60
+		TurnSpeed: 10
+        Locomotor: wheeled-crusher
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 60000
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+	ActorLostNotification:
+		Notification: HarvesterLost
+		TextNotification: Harvester lost.
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	Explodes:
+		Weapon: UnitExplodeHarv
+		EmptyWeapon: UnitExplodeHarv
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Tiberium: pip-green
+			BlueTiberium: pip-blue
+            RedTiberium: pip-red
+	ProximityExternalCondition@DOCKED:
+		Condition: dockinprocess
+		Range: 1c0
+		ValidRelationships: Ally
+	ExternalCondition@DOCKED:
+		Condition: docked
+		SourceCap: 1
+		TotalCap: 1        
+	RejectsOrders:
+		RequiresCondition: docked
+	ChangesHealth:
+		Step: 100
+		Delay: 3
+		StartIfBelow: 51
+		DamageCooldown: 150
+	RenderSprites:
+		Image: harv
+		FactionImages:
+			nod: nodharv
+
+TRUK:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 17
+		Queue: Vehicle.GDI, Vehicle.Nod
+		Prerequisites: proc
+		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Supply Truck
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 10
+		Speed: 50
+		PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c0
+	DeliversCash:
+        Cursor: enter
+		Payload: 1000
+		Type: MoneyTransfer
+		PlayerExperience: 0
+	SpawnActorOnDeath:
+		Actor: moneycrate
+	Passenger:
+		CustomPipType: pip-blue
+
+JEEP:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Humvee
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+		Prerequisites: weap
+		Queue: Vehicle.GDI
+		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: wheeled-non-crusher
+		TurnSpeed: 20
+		Speed: 150
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 15000
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c512
+	Turreted:
+		TurnSpeed: 20
+		Offset: -85,0,128
+	Armament:
+		Weapon: MachineGunLight
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+
+BGGY:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Buggy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: afld
+		Queue: Vehicle.Nod
+		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+		TurnSpeed: 20
+		Speed: 150
+	Health:
+		HP: 12500
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c512
+	Turreted:
+		TurnSpeed: 20
+		Offset: -43,0,128
+	Armament:
+		Weapon: MachineGunLight
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+
+BIKE:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Recon Bike
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 750
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 11
+		Prerequisites: anyhq
+		Queue: Vehicle.Nod
+		Description: Fast scout vehicle with rockets.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+	Mobile:
+    	Locomotor: wheeled-non-crusher
+		TurnSpeed: 40
+		Speed: 175
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: BikeRockets
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected
+	RenderDetectionCircle:
+
+APC:
+	Inherits: ^TrackedVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@TRANSPORT: ^Transport
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Armored Personnel Carrier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: infantryproduction
+		Queue: Vehicle.GDI, Vehicle.Nod
+		Description: Armored infantry transport.\n\nStrong vs Infantry.\nWeak vs Infantry.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 10
+		Speed: 110
+		PauseOnCondition: notmobile || emp-crate-collected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 5c128
+	Armament:
+		Weapon: MachineGun
+		LocalOffset: 85,0,171
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		UnloadVoice: Unload
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Sellable:
+		RequiresCondition: unit.sellable && !loaded
+
+MAAG:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Mobile Anti-Air Gun
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: anyhq
+		Queue: Vehicle.GDI
+		Description: Mobile Anti-Air Gun\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 20
+		Speed: 110
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 6c128
+	Turreted:
+		TurnSpeed: 20
+	AutoTargetPriority@Air:
+		ValidTargets: Air
+		Priority: 2
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: APCGunAG
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 255,100,189, 255,-100,189
+		MuzzleSequence: muzzle
+		PauseOnCondition: reload-air || emp-crate-collected
+		ReloadingCondition: reload-ground
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: APCGunAA
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 175,100,299, 175,-100,299
+		MuzzleSequence: muzzle-air
+		PauseOnCondition: reload-ground || emp-crate-collected
+		ReloadingCondition: reload-air
+	GrantConditionOnAttack:
+		Condition: attack-air
+		ArmamentNames: secondary
+		RevokeDelay: 18
+		RevokeOnNewTarget: False
+		RevokeAll: True
+	AttackTurreted:
+        Armaments: primary, secondary
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		RequiresCondition: !attack-air
+	WithSpriteTurret@AIR:
+		Sequence: turret-air
+		RequiresCondition: attack-air
+	Sellable:
+		RequiresCondition: unit.sellable
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+    RenderSprites:
+        Image: maag
+	RenderRangeCircle:
+		RangeCircleType: aa
+
+LTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Light Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 5
+		Prerequisites: afld
+		Queue: Vehicle.Nod
+		Description: Fast, light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 10
+		Speed: 90
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 4c128
+	Turreted:
+		TurnSpeed: 10
+	Armament:
+		Weapon: LightGun
+		Recoil: 85
+		RecoilRecovery: 17
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+
+MTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Main Battle Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: fix
+		Queue: Vehicle.GDI
+		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        TurnSpeed: 10
+        Locomotor: tracked-crusher
+		Speed: 90
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Turreted:
+		TurnSpeed: 10
+	Armament:
+		Weapon: MediumGun
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		Sequence: turret
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1194, 1194
+
+FTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Flame Tank
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: fix
+		Queue: Vehicle.Nod
+		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 10
+		Speed: 90
+		PauseOnCondition: dont-move || emp-crate-collected
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: BigFlamer
+		LocalOffset: 512,128,42, 512,-128,42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: FlametankExplode
+		EmptyWeapon: FlametankExplode
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
+
+HTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mammoth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: miss
+		Queue: Vehicle.GDI
+		Description: Heavily armored GDI Tank.\n\nCan attack Aircraft.\nStrong vs Everything.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 10
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 87000
+	Repairable:
+		HpPerStep: 2198
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 10
+	Armament@PRIMARY:
+		Weapon: MammothGun
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothTusk
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100, 100
+		Recoil: 10
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	ChangesHealth:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 51
+		DamageCooldown: 150
+        RequiresCondition: !emp-crate-collected
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+
+STNK:
+	Inherits: ^Vehicle
+	Inherits@UpgradeCrates: ^AcceptsUpgradeCrates
+	Inherits@EMP: ^AcceptsEMPCrate
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	-MustBeDestroyed:
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Stealth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1500
+        BuildDurationModifier: 100        
+		BuildPaletteOrder: 13
+		Prerequisites: tmpl
+		Queue: Vehicle.Nod
+		Description: Medium-range missile tank, capable of cloak.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+	Mobile:
+		Locomotor: tracked-crusher
+		TurnSpeed: 20
+		Speed: 150
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c128
+	Cloak:
+		InitialDelay: 85
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Armament@PRIMARY:
+		Weapon: StnkRocketsAG
+		LocalOffset: 213,43,128, 213,-43,128
+		PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+		Weapon: StnkRocketsAA
+		LocalOffset: 213,43,128, 213,-43,128
+		PauseOnCondition: emp-crate-collected
+	Turreted:
+		TurnSpeed: 20
+	AttackTurreted:	
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithSpriteTurret:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: Defend
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+
+ARTY:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Artillery
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		Prerequisites: anyhq
+		Queue: Vehicle.Nod
+		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
+	Mobile:
+        Locomotor: tracked-non-crusher
+		TurnSpeed: 10
+		Speed: 70
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: ArtilleryShell
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		Voice: Attack
+		FacingTolerance: 0
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	AutoTarget:
+		InitialStanceAI: Defend
+	Explodes:
+		Weapon: ArtilleryShell
+		EmptyWeapon: UnitExplode
+		LoadedChance: 75
+	Passenger:
+		CustomPipType: pip-yellow
+	RenderRangeCircle:
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+
+MSAM:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Rocket Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: eye
+		Queue: Vehicle.GDI
+		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
+	Mobile:
+		Speed: 90
+		TurnSpeed: 10
+        PauseOnCondition: aiming || emp-crate-collected
+	Health:
+		HP: 12000
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 5c128
+	Turreted:
+		TurnSpeed: 10
+		Offset: -256,0,128
+	Armament@PRIMARY:
+		Weapon: MLRSMissiles
+		LocalOffset: 213,128,0, 213,-128,0
+		PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		Voice: Attack
+		FacingTolerance: 0
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithSpriteTurret:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	WithTurretAimAnimation:
+		Sequence: aim
+        RequiresCondition: aiming
+    GrantConditionOnAttack:
+		ArmamentNames: primary
+    	Condition: aiming
+		RevokeDelay: 32
+    	RevokeAll: false
+	ReloadArmamentsBar:
+        Armaments: primary
+        Color: FFFF00
+	RenderRangeCircle:
+
+MLRS:
+	Inherits: ^TrackedVehicle
+ 	Inherits@Crates: ^AcceptsAllCrates   
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: SSM Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 15
+		Prerequisites: bio
+		Queue: Vehicle.Nod
+		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
+	Mobile:
+		Speed: 90
+		TurnSpeed: 10
+        PauseOnCondition: aiming || emp-crate-collected
+	Health:
+		HP: 12000
+	Repairable:
+		HpPerStep: -1
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c256
+	Turreted:
+		TurnSpeed: 10
+		Offset: -128,0,128
+		RealignDelay: 0
+	Armament:
+		Weapon: HonestJohn
+        Recoil: 0
+		LocalOffset: 0,-171,0, 0,171,0
+        PauseOnCondition: !ammo || emp-crate-collected
+	AmmoPool:
+		Ammo: 2
+		AmmoCondition: ammo
+	AttackMove:
+		Voice: Attack
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		Voice: Attack
+		FacingTolerance: 0
+        PauseOnCondition: emp-crate-collected
+	GrantConditionOnAttack:
+		Condition: aiming
+		RevokeDelay: 51
+		RevokeAll: false
+	WithSpriteTurret:
+		RequiresCondition: ammo > 1
+	WithSpriteTurret@OneMissile:
+		RequiresCondition: ammo == 1
+		Sequence: turret1
+	WithSpriteTurret@NoMissiles:
+		RequiresCondition: !ammo
+		Sequence: turret0
+	AutoTarget:
+		InitialStanceAI: Defend
+	RenderRangeCircle:
+	ReloadAmmoPool:
+		Delay: 200
+		Count: 1
+        PauseOnCondition: emp-crate-collected
+    #   this remains inaccurate here
+	#   ReloadArmamentsBar:
+	#	Armaments: primary
+	#	Color: FFFF00
+
+MHQ:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Mobile Jammer
+	Health:
+		HP: 12000
+	Armor:
+		Type: Medium
+	Mobile:
+        Locomotor: tracked-non-crusher
+		Speed: 90
+		PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 5c128
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -256,0,256
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected
+	RenderDetectionCircle:
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		Prerequisites: eye
+		Queue: Vehicle.GDI
+		Description: Can detect cloaked units.\nJams enemy communications.\n\nStrong vs Infantry.
+	Turreted:
+		TurnSpeed: 10
+		Offset: 246,-60,112
+	Armament:
+		Weapon: M16
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+		PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+		FacingTolerance: 0
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+	ProximityExternalCondition@JAMMER:
+		Range: 15c256
+		ValidRelationships: Enemy, Neutral
+		Condition: jammed
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 15c256
+		Color: 0000FF80

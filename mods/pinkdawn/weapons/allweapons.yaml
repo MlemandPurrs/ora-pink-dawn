@@ -1,0 +1,1260 @@
+#   Index weaponry
+#   1. Sniper
+#   2. HeliAGGun/HeliAAGun
+#   3. TowerChaingun
+#   4. Pistol
+#   5. M16
+#   6. Bazooka
+#   7. BikeRockets
+#   8. InfantryFlamer
+#   9. TankFlamer
+#   10. ChemSpray
+#   11. Grenade
+#   12. LightGun
+#   13. MediumGun
+#   14. MammothGun
+#   15. TurretGun
+#   16. MammothTusk
+#   17. MLRSMissiles
+#   18. StnkRocketsAG/StnkRocketsAA
+#   19. ArtilleryShell
+#   20. Machinegun/MachinegunLight
+#   21. AGTMissile
+#   22. A-10 Napalm
+#   23. LASER
+#   24. SAMMissile
+#   25. HonestJohn
+#   26. APCGunAG/APCGunAA
+#   27. OrcaRocketsAG/OrcaRocketsAA
+#   28. A-10 Vulcan
+#   29. BoatMissile
+
+#   1. Commando's Sniper rifle
+Sniper:
+	ReloadDelay: 40
+	Range: 5c512
+	ValidTargets: Ground, Infantry
+	InvalidTargets: Vehicle, Water, Structure, Tree, Wall
+	Report: ramgun2.aud
+	Projectile: Bullet
+		Speed: 5c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 48
+		Damage: 10000
+		Versus:
+            None: 100
+            Light: 0
+            Medium: 0
+            Heavy: 0
+            Concrete: 0
+            Wood: 0
+            Aluminium: 0
+            Steel: 0
+		ValidTargets: Infantry
+        InvalidTargets: Tree, Wall
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+		ImpactActors: false
+		Inaccuracy: 171
+		ValidTargets: Ground
+
+#   2. Apache's Chaingun
+HeliAGGun:
+	ReloadDelay: 25
+	Burst: 2
+	BurstDelays: 0
+	Range: 4c768
+	MinRange: 0c768
+    InvalidTargets: Tree, Wall
+	Report: gun5.aud
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2500
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        InvalidTargets: Tree, Wall
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground, Air
+
+#   ditto, against Air
+HeliAAGun:
+	Inherits: HeliAGGun
+	ValidTargets: Helicopter
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Helicopter
+
+#   3. Guard Tower's elevated Chaingun
+TowerGun:
+	ReloadDelay: 50
+	Range: 4c512
+    InvalidTargets: Tree, Wall
+    Report: gun8.aud
+	Projectile: Bullet
+		Speed: 1c682
+        Blockable: false
+    Warhead@1Dam: SpreadDamage
+		Spread: 128
+        Damage: 4000
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        InvalidTargets: Tree, Wall
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground, Air
+
+#   4. Technician's Pistole
+Pistol:
+	ReloadDelay: 7
+	Range: 2c0
+    Report: gun18.aud
+    InvalidTargets: Tree, Wall
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 1000
+        InvalidTargets: Tree, Wall
+		Versus:
+            None: 100
+            Light: 50
+            Medium: 56
+            Heavy: 25
+            Concrete: 0
+            Wood: 50
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+        ImpactActors: false
+		Inaccuracy: 128
+        ValidTargets: Ground
+
+#   5. Soldier's Rifle
+M16:
+	ReloadDelay: 20
+	Range: 2c256
+    Report: mgun2.aud    
+    InvalidTargets: Tree, Wall
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 1500
+        Versus:
+            None: 100
+            Light: 50
+            Medium: 56
+            Heavy: 25
+            Concrete: 0
+            Wood: 50
+            Aluminium: 56
+            Steel: 25
+        InvalidTargets: Tree, Wall
+        DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+        ImpactActors: false
+		Inaccuracy: 171
+        ValidTargets: Ground
+	Warhead@2Eff2: CreateEffect
+		Delay: 2
+		Explosions: piff
+		Inaccuracy: 171
+        ValidTargets: Ground
+	Warhead@2Eff3: CreateEffect
+		Delay: 4
+		Explosions: piff
+		Inaccuracy: 171
+        ValidTargets: Ground
+
+#   6. Rocket Soldier's Bazooka
+Bazooka:
+	ReloadDelay: 60
+	Range: 3c512
+	MinRange: 0c512
+	Report: bazook1.aud
+    ValidTargets: Ground, Water, Tree, Wall, Vehicle, Helicopter
+	Projectile: Missile
+		Arm: 0
+		Blockable: true
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 60
+		TrailImage: smokey
+		Speed: 298
+        RangeLimit: 5c204
+	Warhead@1Dam: SpreadDamage
+		Spread: 320
+		Damage: 3000
+		ValidTargets: Ground, Tree, Wall, Vehicle, Helicopter
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   7. Recon Bike's Rockets
+BikeRockets:
+	ReloadDelay: 30
+    Range: 5c128
+	MinRange: 0c512
+	Burst: 2
+	BurstDelays: 10
+    Report: bazook1.aud
+    ValidTargets: Ground, Water, Tree, Helicopter
+	Projectile: Missile
+		Arm: 0
+		Blockable: true
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 40
+		TrailImage: smokey
+		Speed: 213
+		RangeLimit: 7c204
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 3000
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        ValidTargets: Ground, Tree, Helicopter
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   8. E4's weapon
+Flamer:
+	ReloadDelay: 50
+	Range: 2c256
+	Report: flamer2.aud
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, FireImmune
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 3500
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, FireImmune
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 1
+		Dimensions: 1,1
+		Footprint: x
+        InvalidTargets: Vehicle, Structure, Wall
+
+    #    Warhead@Incendiary: GrantExternalCondition
+    #    Condition: burning
+    #    Duration: 112
+    #    ValidTargets: Incendiary
+    #    ValidRelationships: Ally, Neutral, Enemy
+    #    Range: 1c128
+
+#   9. FTNK's weapon
+BigFlamer:
+	ReloadDelay: 50
+	Range: 1c768
+	Burst: 2
+	BurstDelays: 10
+	Report: flamer2.aud
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, FireImmune
+	Projectile: Bullet
+		Speed: 341
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 5000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, FireImmune
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+    #   Warhead@Incendiary: GrantExternalCondition
+    #   Condition: burning
+    #   Duration: 112
+    #   ValidTargets: Incendiary
+    #    ValidRelationships: Ally, Neutral, Enemy
+    #    Range: 1c128
+
+#   10. E5's weapon
+ChemSpray:
+	ReloadDelay: 70
+	Range: 2c256
+	Report: flamer2.aud
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, ChemImmune
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 7000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, ChemImmune
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+
+#   11. E2's Bomb
+Grenade:
+	ReloadDelay: 60
+	Range: 3c256
+    ValidTargets: Ground, Water, Tree
+	Report: toss1.aud
+	Projectile: Bullet
+		Speed: 140
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 554
+		Image: BOMB
+        Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 5000
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   12. Light Tank's cannon
+LightGun:
+	ReloadDelay: 40
+    Range: 5c768
+	Report: tnkfire3.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2500
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   13. Medium Tank's cannon
+MediumGun:
+	ReloadDelay: 60
+    Range: 5c256
+    Report: tnkfire4.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 3250
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   14. Mammoth Tank's cannnons
+MammothGun:
+	ReloadDelay: 80
+    Range: 5c256
+ 	Burst: 2
+	BurstDelays: 8
+    Report: tnkfire4.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4000
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   15. Gun Turret's weapon
+TurretGun:
+	ReloadDelay: 60
+	Range: 5c128
+    Report: tnkfire4.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4000
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   16. Mammoth Tank's rocket pods
+MammothTusk:
+	ReloadDelay: 65
+	Range: 4c768
+	MinRange: 0c512
+	Burst: 2
+	BurstDelays: 15
+	ValidTargets: Ground, Water, Helicopter
+	Report: rocket1.aud
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 341
+		RangeLimit: 6c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 298
+		Damage: 3750
+		ValidTargets: Ground, Helicopter
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_building
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   17. MLRS rockets
+MLRSMissiles:
+	ReloadDelay: 80
+	Range: 7c0
+	MinRange: 3c0
+	Burst: 4
+	BurstDelays: 4
+	Report: rocket1.aud
+	ValidTargets: Ground, Water
+	TargetActorCenter: true
+	Projectile: Bullet
+		Blockable: false
+		Image: DRAGON
+		Shadow: true
+		TrailImage: smokey
+		Inaccuracy: 853
+		LaunchAngle: 62
+		Speed: 341
+	Warhead@1Dam: SpreadDamage
+		Spread: 683
+		Damage: 3750
+		ValidTargets: Ground
+        Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: med_frag
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+        
+#   18. Stealth Tank rockets
+StnkRocketsAG:
+	ReloadDelay: 70
+	Range: 4c128
+	MinRange: 0c512
+	Burst: 2
+	BurstDelays: 10
+	Report: rocket1.aud
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Arm: 0
+		Blockable: true
+		Inaccuracy: 213
+        HorizontalRateOfTurn: 40
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 60
+		TrailImage: smokey
+		Speed: 213
+		RangeLimit: 5c409
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 6000
+		ValidTargets: Ground
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   ditto, against Air
+StnkRocketsAA:
+	Inherits: StnkRocketsAG
+	MinRange: 2c512
+	ValidTargets: Helicopter
+
+#   19. Artillery's gun
+ArtilleryShell:
+	ReloadDelay: 65
+	Range: 6c512
+	MinRange: 3c0
+	Report: tnkfire2.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 204
+        Blockable: false
+		LaunchAngle: 56
+		Inaccuracy: 1c256
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 15000
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+#   20. Machinegun for APC
+MachineGun:
+	ReloadDelay: 30
+	Range: 4c0
+	Burst: 5
+	Report: mgun11.aud
+	Projectile: Bullet
+		Speed: 1c682
+    Warhead@1Dam: SpreadDamage
+        Damage: 1500
+        Versus:
+            None: 100
+            Light: 50
+            Medium: 56
+            Heavy: 25
+            Concrete: 0
+            Wood: 50
+            Aluminium: 56
+            Steel: 25
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground
+
+#   Machinegun for Jeep and Buggy
+MachineGunLight:
+    Inherits: MachineGun
+    ReloadDelay: 25
+    Burst: 0
+
+#   21. AGTMissile
+TowerMissileAG:
+	ReloadDelay: 40
+	Burst: 2
+	BurstDelays: 8
+	Range: 7c0
+	MinRange: 0c512
+	Report: rocket2.aud
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: MISSILE
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 426
+		RangeLimit: 8c409
+	Warhead@1Dam: SpreadDamage
+		Spread: 483
+		Damage: 3000
+		ValidTargets: Ground
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: big_frag
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+TowerMissileAA:
+	ReloadDelay: 40
+	Burst: 2
+	BurstDelays: 8
+	Range: 7c0
+	MinRange: 0c512
+	Report: rocket2.aud
+	ValidTargets: Air, Helicopter
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 0
+		Image: MISSILE
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 426
+		RangeLimit: 9c614
+	Warhead@1Dam: SpreadDamage
+		Spread: 682
+		Damage: 3000
+		ValidTargets: Air, Helicopter
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_building
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+
+#   22. Napalm Bomb used by Airstrikes
+Napalm:
+	ValidTargets: Ground, Water, Tree
+	ReloadDelay: 4
+	Range: 2c0
+	Burst: 2
+	BurstDelays: 2
+	InvalidTargets: Wall, Flamer
+	Report: flamer2.aud
+	Projectile: GravityBomb
+		Image: BOMBLET
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 3000
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, Flamer
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: med_napalm
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+#   23. Obelisk Laser
+Laser:
+	ReloadDelay: 90
+	Range: 7c512
+	Report: obelray1.aud
+	Projectile: LaserZap
+		Width: 85
+		HitAnim: laserfire
+		ZOffset: 2047
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 20000
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100            
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath, ObeliskLaser
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+
+#   24. SAM Missile
+SAMMissile:
+	ReloadDelay: 50
+	Range: 7c512
+	MinRange: 0c512
+	Report: rocket2.aud
+	Burst: 2
+	BurstDelays: 5
+	ValidTargets: Air, Helicopter, Airplane
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 200
+		RangeLimit: 10c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 5000
+		ValidTargets: Air, Helicopter, Airplane
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter, Airplane
+
+#   25. SSM Launcher Missile
+HonestJohn:
+	ReloadDelay: 200
+	Burst: 2
+	BurstDelays: 50
+	Range: 10c256
+	MinRange: 3c0
+	Report: rocket1.aud
+	Projectile: Bullet
+		Blockable: false
+		Shadow: true
+		Inaccuracy: 0c511
+		Image: ssmmsl
+		TrailImage: smokey
+		TrailDelay: 3
+		Speed: 200
+		LaunchAngle: 37
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 10000
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+	Warhead@3Eff: CreateEffect
+		Explosions: big_napalm
+		ImpactSounds: firebl3.aud
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+#   26. Mobile Anti-Air Gun
+APCGunAG:
+	ReloadDelay: 30
+	Range: 5c0
+	Report: gun20.aud
+	Burst: 2
+    BurstDelays: 0
+    InvalidTargets: Wall, Tree
+	Projectile: Bullet
+		Speed: 900
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2250
+		InvalidTargets: Wall, Tree
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_frag
+        ImpactActors: false
+		ValidTargets: Ground, Water
+
+#   ditto, vs Air
+APCGunAA:
+	Inherits: APCGunAG
+	Range: 5c0
+	ValidTargets: Air, Helicopter
+	Projectile: Bullet
+		Speed: 2c0
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air, Helicopter
+	Warhead@2Eff: CreateEffect
+		Explosions: small_poof
+        ImpactActors: true
+		ValidTargets: Helicopter
+
+#   27. Orca Rockets
+OrcaRocketsAG:
+	ReloadDelay: 12
+	Range: 5c768
+	MinRange: 1c256
+	Report: bazook1.aud
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 298
+		RangeLimit: 7c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 3000
+		ValidTargets: Ground
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+
+OrcaRocketsAA:
+	Inherits: OrcaRocketsAG
+	ValidTargets: Helicopter
+	Projectile: Missile
+		Arm: 0
+		Speed: 298
+        RangeLimit: 7c512
+		CloseEnough: 0c600
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Helicopter
+	-Warhead@2Smu:
+
+#   28. A-10's nose gun
+Vulcan:
+	ReloadDelay: 125
+	Range: 8c0
+	Burst: 9
+	BurstDelays: 2
+	FirstBurstTargetOffset: -2984,0,0
+	FollowingBurstTargetOffset: 746,0,0
+    Report: gun5.aud
+    InvalidTargets: Wall, Tree
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 10000
+        InvalidTargets: Wall, Tree
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground
+
+#   29. Patrol boat Rockets
+BoatMissile:
+	ReloadDelay: 35
+	Range: 7c512
+	Burst: 2
+	BurstDelays: 10
+	MinRange: 0c512
+	Report: rocket2.aud
+	ValidTargets: Ground, Water, Helicopter
+	Projectile: Missile
+		Arm: 0
+		Blockable: true
+		Inaccuracy: 426
+		Image: DRAGON
+		Shadow: true
+		HorizontalRateOfTurn: 20
+		TrailImage: smokey
+		Speed: 170
+		RangeLimit: 9c614
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 6000
+		ValidTargets: Ground, Helicopter
+        Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@4EffAir: CreateEffect
+		Explosions: small_building
+		ImpactSounds: xplos.aud
+		ImpactActors: true
+		ValidTargets: Helicopter
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water
+		InvalidTargets: Ground

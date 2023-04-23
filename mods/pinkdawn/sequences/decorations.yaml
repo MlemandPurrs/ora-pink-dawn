@@ -1,0 +1,484 @@
+#   Tiberium Trees
+split2:
+	Defaults:
+		Offset: 11, -15
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	make:
+		Length: 30
+		Tick: 120
+	active:
+		Start: 30
+		Length: 24
+	idle:
+		Start: 54
+
+split3:
+	Defaults:
+		Offset: 7, -13
+		UseTilesetExtension: true
+	make:
+		Length: 30
+		Tick: 120
+	active:
+		Start: 30
+		Length: 24
+	idle:
+		Start: 54
+
+#   Trees
+t01:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t01.husk:
+	Defaults: t01
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t02:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t02.husk:
+	Defaults: t02
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t03:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t03.husk:
+	Defaults: t03
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t04:
+	Defaults:
+		AddExtension: false
+	idle: t04.des
+
+t04.husk:
+	Defaults: t04
+		AddExtension: false
+	idle: t04.des
+		Start: 1
+	dead: t04.des
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t05:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t05.husk:
+	Defaults: t05
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t06:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t06.husk:
+	Defaults: t06
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t07:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t07.husk:
+	Defaults: t07
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t08:
+	Defaults:
+		UseTilesetExtension: true
+	idle:
+
+t08.husk:
+	Defaults: t08
+		UseTilesetExtension: true
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t09:
+	Defaults:
+		AddExtension: false
+	idle: t09.des
+
+t09.husk:
+	Defaults: t09
+		AddExtension: false
+	idle: t09.des
+		Start: 1
+	dead: t09.des
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t10:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t10.husk:
+	Defaults: t10
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t11:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t11.husk:
+	Defaults: t11
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t12:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t12.husk:
+	Defaults: t12
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t13:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t13.husk:
+	Defaults: t13
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t14:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t14.husk:
+	Defaults: t14
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t15:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t15.husk:
+	Defaults: t15
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t16:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t16.husk:
+	Defaults: t16
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t17:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+t17.husk:
+	Defaults: t17
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t18:
+	Defaults:
+		AddExtension: false
+	idle: t18.des
+
+t18.husk:
+	Defaults: t18
+		AddExtension: false
+	idle: t18.des
+		Start: 1
+	dead: t18.des
+		Start: 2
+		Length: 8
+		Tick: 80
+
+#   Tree Clusters
+tc01:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+tc01.husk:
+	Defaults: tc01
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc02:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+tc02.husk:
+	Defaults: tc02
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc03:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+
+tc03.husk:
+	Defaults: tc03
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc04:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+tc04.husk:
+	Defaults: tc04
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 2
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc05:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+tc05.husk:
+	Defaults: tc05
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	idle:
+		Start: 2
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+#   Rocks
+rock1:
+	idle: rock1.des
+		AddExtension: false
+
+rock2:
+	idle: rock2.des
+		AddExtension: false
+
+rock3:
+	idle: rock3.des
+		AddExtension: false
+
+rock4:
+	idle: rock4.des
+		AddExtension: false
+
+rock5:
+	idle: rock5.des
+		AddExtension: false
+
+rock6:
+	idle: rock6.des
+		AddExtension: false
+
+rock7:
+	idle: rock7.des
+		AddExtension: false

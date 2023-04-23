@@ -1,0 +1,337 @@
+CRATE:
+	Inherits: ^Crate
+	Crate:
+		Duration: 6000
+	GiveCashCrateAction:
+		Amount: 1000
+		Sequence: dollar
+		SelectionShares: 20
+		UseCashTick: true
+	RevealMapCrateAction:
+		SelectionShares: 1
+		Sequence: reveal-map
+	ExplodeCrateAction@fire:
+		Weapon: CrateNapalm
+		SelectionShares: 5
+	GiveMcvCrateAction:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: mcv
+	ExplodeCrateAction@nuke:
+		Weapon: Atomic
+		SelectionShares: 1
+	HideMapCrateAction:
+		SelectionShares: 5
+		Sequence: hide-map
+	HealActorsCrateAction:
+		Sound: heal2.aud
+		SelectionShares: 2
+		Sequence: heal
+	GrantExternalConditionCrateAction@firepower:
+		SelectionShares: 5
+		Sequence: firepowerup
+		Sound: firepowerup.aud
+		Condition: firepower-crate-collected
+	GrantExternalConditionCrateAction@armorup:
+		SelectionShares: 5
+		Sequence: armorup
+		Sound: armorup.aud
+		Condition: armor-crate-collected
+	GrantExternalConditionCrateAction@speedup:
+		SelectionShares: 5
+		Sequence: speedup
+		Sound: speedup.aud
+		Condition: speed-crate-collected
+	GrantExternalConditionCrateAction@cloak:
+		SelectionShares: 5
+		Sequence: cloak
+		Condition: cloak-crate-collected
+	GrantExternalConditionCrateAction@invuln:
+		SelectionShares: 5
+		Sequence: invuln
+		Sound: ironcur9.aud
+		Condition: invulnerability-crate-collected
+		Duration: 400
+	GrantExternalConditionCrateAction@emp:
+		SelectionShares: 5
+		Sequence: emp
+		Sound: shktrop1.aud
+		Condition: emp-crate-collected
+		Duration: 300
+	GrantExternalConditionCrateAction@instadeath:
+		SelectionShares: 1
+		Sequence: redskull
+		Sound: madexplo.aud
+		Condition: death-crate-collected
+	GiveUnitCrateAction@creep:
+		Units: vice
+		Owner: Creeps
+		SelectionShares: 10
+	SupportPowerCrateAction@nuke:
+		Proxy: crate.nuke
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: nuke
+        Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@ion:
+		Proxy: crate.ion
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: gridmap
+        Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@airstrike:
+		Proxy: crate.airstrike
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: airstrike
+        Prerequisites: ~global-superweapons
+	GiveUnitCrateAction@harv:
+		Units: harv
+		SelectionShares: 3
+        Prerequisites: proc
+
+WCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Wooden Crate
+	RenderSprites:
+		Image: wcrate
+
+SCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Steel Crate
+
+MONEYCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Money Crate
+	GiveCashCrateAction:
+		Amount: 1000
+		Sequence: dollar
+		SelectionShares: 1
+		UseCashTick: true
+	RenderSprites:
+		Image: wcrate
+
+mpspawn:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (multiplayer player starting point)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+waypoint:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (waypoint for scripted behavior)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+
+fact.colorpicker:
+    AlwaysVisible:
+    WithSpriteBody:
+	RenderSprites:
+		Image: fact
+        Palette: colorpicker
+
+fact.colorpicker.nod:
+    AlwaysVisible:
+    WithSpriteBody:
+	RenderSprites:
+        Image: nodfact
+        Palette: colorpicker
+
+CAMERA:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.small:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals small area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.scan:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 5c512
+		Type: CenterPosition
+	DetectCloaked:
+		Range: 5c512
+	MapEditorData:
+		Categories: System
+    WithRangeCircle:
+        Range: 5c512
+        Visible: Always
+        UsePlayerColor: true
+
+FLARE:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: smokland
+		Palette: terrain
+	WithSpriteBody:
+		StartSequence: open
+	HiddenUnderFog:
+		Type: CenterPosition
+	Tooltip:
+		Name: Flare
+		ShowOwnerRow: false
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	Interactable:
+
+crate.nuke:
+	AlwaysVisible:
+	NukePower@NukeMissileOneShot:
+		OrderName: CrateNuke
+		Cursor: nuke
+		Icon: abomb
+		ChargeInterval: 0
+		Name: Nuclear Strike (Single Use)
+		Description: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+        EndChargeTextNotification: Nuclear weapon available.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+        InsufficientPowerTextNotification: Insufficient power.
+		LaunchSpeechNotification: NuclearWeaponLaunched
+        LaunchTextNotification: Nuclear weapon launched.
+		IncomingSpeechNotification: NuclearWarheadApproaching
+        IncomingTextNotification: Nuclear warhead approaching.
+		SkipAscent: True
+		MissileWeapon: atomic
+        MissileImage: atomic
+		MissileDelay: 11
+		SpawnOffset: 1c0,427,0
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		BeaconPoster: atomic
+		CameraRange: 10c0
+        CameraRemoveDelay: 50
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		SupportPowerPaletteOrder: 1
+		OneShot: true
+        AllowMultiple: true
+
+crate.ion:
+	AlwaysVisible:
+    #   make it SpawnActorPower based
+    #   summon a dummy that then explodes
+    #   with IonCannon.crate
+	IonCannonPower@IonCannonOneShot:
+		OrderName: CrateIon
+		Icon: ioncannon
+		Cursor: ioncannon
+		ChargeInterval: 10500
+		Name: Ion Cannon
+		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		BeginChargeSpeechNotification: IonCannonCharging
+        BeginChargeTextNotification: Ion cannon charging.
+		EndChargeSpeechNotification: IonCannonReady
+        EndChargeTextNotification: Ion cannon ready.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OnFireSound: ion1.aud
+		DisplayRadarPing: True
+		CameraActor: camera.small
+		SupportPowerPaletteOrder: 1
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+
+crate.airstrike:
+	AlwaysVisible:
+	AirstrikePower@AirstrikeOneShot:
+		OrderName: CrateAirstrike
+		Icon: airstrike
+		SquadSize: 3
+		QuantizedFacings: 8
+		Name: Air Strike (Single Use)
+		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+        EndChargeTextNotification: Airstrike ready.
+        LaunchSpeechNotification: AirstrikeInbound
+        LaunchTextNotification: Airstrike inbound.
+        SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+        IncomingSpeechNotification: EnemyPlanesApproaching
+        IncomingTextNotification: Enemy planes approaching.
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		DisplayRadarPing: True
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		Cursor: airstrike
+		SupportPowerPaletteOrder: 2
+		ChargeInterval: 0
+		OneShot: true
+        AllowMultiple: true

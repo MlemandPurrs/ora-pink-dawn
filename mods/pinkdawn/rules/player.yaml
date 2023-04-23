@@ -1,0 +1,116 @@
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Tiberium: 35
+			BlueTiberium: 60
+            RedTiberium: 85
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	PlaceBuilding:
+		NewOptionsNotification: NewOptions
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+		NewOptionsTextNotification: New construction options.
+		CannotPlaceTextNotification: Cannot deploy here.
+        ToggleVariantKey: ToggleVariant
+	TechTree:
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	ConquestVictoryConditions:
+	PowerManager:
+    	AdviceInterval: 60000
+		SpeechNotification: LowPower
+		TextNotification: Low power.
+	AllyRepair:
+    # ^ wtf disabling this causes structures become unrepairable at all
+	PlayerResources:
+        InsufficientFundsNotificationInterval: 60000
+        InsufficientFundsNotification: InsufficientFunds
+		CashTickUpNotification: CashTickUp
+		CashTickDownNotification: CashTickDown
+		SelectableCash: 2500, 5000, 7500, 10000, 15000, 20000
+		DefaultCash: 7500
+	DeveloperMode:
+		CheckboxDisplayOrder: 21
+	BaseAttackNotifier:
+		TextNotification: Base under attack.
+		AllyTextNotification: Our ally is under attack.
+	Shroud:
+		FogCheckboxDisplayOrder: 3
+	LobbyPrerequisiteCheckbox@GLOBALMULTIENGINEER:
+		ID: multiengineer
+		Label: Multi Engineer
+		Description: Multiple Engineers are required to capture a building
+		Enabled: True
+		DisplayOrder: 6
+		Prerequisites: global-multiengineer
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@FREEAIRCRAFT:
+		ID: freeaircraft
+		Label: Free Aircraft
+		Description: Helipads come with free Helicopter, price increased to 1500
+		Enabled: False
+		DisplayOrder: 8
+		Prerequisites: global-freeaircraft
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		ID: superweapons
+		Label: Super Weapons
+		Description: Enables Nuclear Strike and Ion Cannon
+		Enabled: True
+		DisplayOrder: 9
+		Prerequisites: global-superweapons
+	LobbyPrerequisiteCheckbox@PACIFYTIBERIUM:
+		ID: notiberiumdamage
+		Label: No Tiberium Damage
+		Description: Renders Tiberium harmless to cross for all Infantry
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: global-givehazmat
+    LobbyPrerequisiteCheckbox@EXPENSIVEMCV:
+		ID: expensivemcv
+		Label: Expensive MCV
+		Description: MCV valued twice as much, 5000 instead of 2500
+		Enabled: False
+		DisplayOrder: 11
+		Prerequisites: global-expensivemcv
+	LobbyPrerequisiteCheckbox@INFINITEINCOME:
+		ID: infiniteincome
+		Label: Infinite Income
+		Description: Tiberium Silos generate periodic income when powered
+		Enabled: False
+		DisplayOrder: 12
+		Prerequisites: global-infiniteincome
+	LobbyPrerequisiteCheckbox@PRODUCTIONBOOSTER:
+		ID: productionbooster
+		Label: Fast Production
+		Description: Everything gets built 50% faster
+		Enabled: False
+		DisplayOrder: 14
+		Prerequisites: global-boosteron
+
+	PlayerStatistics:
+	FrozenActorLayer:
+	PlaceBeacon:
+	GrantConditionOnPrerequisiteManager:
+	ResourceStorageWarning:
+		TextNotification: Silos needed.
+	PlayerExperience:
+	GameSaveViewportManager:
+	PlayerRadarTerrain:
+	HarvesterAttackNotifier:
+        NotifyInterval: 60000

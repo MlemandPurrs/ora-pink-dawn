@@ -1,0 +1,212 @@
+V19:
+	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 1024, 1024
+	RevealsShroud:
+		Range: 3c0
+	CashTrickler:
+        Interval: 100
+		Amount: 20
+		RequiresCondition: enabled
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	Tooltip:
+		Name: Oil Derrick
+	TooltipDescription@ally:
+		Description: Provides additional funds.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to receive additional funds.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: V19.Husk
+        OwnerType: InternalName
+	UpdatesDerrickCount:
+	GrantConditionOnCombatantOwner:
+		Condition: enabled
+
+V19.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	WithSpriteBody:
+	WithIdleOverlay:
+		StartSequence: fire-start
+		Sequence: fire-loop
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Oil Derrick (Destroyed)
+	TransformOnCapture:
+		IntoActor: v19
+
+HOSP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 40000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c0
+	Tooltip:
+		Name: Hospital
+	TooltipDescription@ally:
+		Description: Provides infantry with self-healing.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to enable self-healing for infantry.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: HOSP.Husk
+        OwnerType: InternalName
+	WithBuildingBib:
+		HasMinibib: true
+	ProvidesPrerequisite@buildingname:
+
+HOSP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Hospital (Destroyed)
+
+SYRD:
+	Inherits: ^BaseBuilding
+	-GivesBuildableArea:
+	-SpawnActorsOnSell:
+	-Sellable:
+	OwnerLostAction:
+		Action: ChangeOwner
+	Capturable:
+		Types: building-neutral
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+	MapEditorData:
+		Categories: Tech building
+	AppearsOnMapPreview:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Selectable:
+        Priority: 0
+		Bounds: 3072, 2048
+	HitShape:
+		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1152
+			BottomRight: 1536, 598
+	HitShape@BOTTOM:
+		TargetableOffsets: -768,0,0
+		Type: Rectangle
+			TopLeft: -512, 598
+			BottomRight: 512, 1110
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Shipyard
+		GenericStancePrefix: false
+		ShowOwnerRow: True
+	TooltipDescription@ally:
+		Description: Ships can be produced here.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to produce Ships.
+		ValidRelationships: Neutral, Enemy
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 3c0
+	Production:
+		Produces: Navy.GDI, Navy.Nod
+		PauseOnCondition: build-incomplete || being-demolished
+	ProductionQueue@GDINavy:
+		Type: Navy.GDI
+		DisplayOrder: 5
+		Group: Naval
+		Factions: gdi
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@NodNavy:
+		Type: Navy.Nod
+		DisplayOrder: 5
+		Group: Naval
+		Factions: nod
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@GDINavy:
+		ProductionType: Navy.GDI
+	ProductionBar@NodNavy:
+		ProductionType: Navy.Nod
+	RepairsUnits:
+		HpPerStep: 1000
+		Interval: 15
+		PlayerExperience: 0
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: Repairing.
+        FinishRepairingNotification: UnitRepaired
+        FinishRepairingTextNotification: Unit repaired.
+	RallyPoint:
+	Exit@1:
+		RequiresCondition: !being-captured
+		SpawnOffset: -1024,1024,0
+		Facing: 160
+		ExitCell: 0,2
+		ProductionTypes: Navy.GDI, Navy.Nod
+	Exit@2:
+		RequiresCondition: !being-captured
+		SpawnOffset: 1024,1024,0
+		Facing: 224
+		ExitCell: 2,2
+		ProductionTypes: Navy.GDI, Navy.Nod
+	Exit@3:
+		RequiresCondition: !being-captured
+		SpawnOffset: -1024,-1024,0
+		Facing: 96
+		ExitCell: 0,0
+		ProductionTypes: Navy.GDI, Navy.Nod
+	Exit@4:
+		RequiresCondition: !being-captured
+		SpawnOffset: 1024,-1024,0
+		Facing: 32
+		ExitCell: 2,0
+		ProductionTypes: Navy.GDI, Navy.Nod
+	Power:
+		Amount: -40
+		RequiresCondition: !build-incomplete && owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	ProvidesPrerequisite@buildingname:
