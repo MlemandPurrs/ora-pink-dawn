@@ -895,6 +895,7 @@ TowerMissileAA:
 		TrailImage: smokey
 		Speed: 426
 		RangeLimit: 9c614
+        Acceleration: 8
 	Warhead@1Dam: SpreadDamage
 		Spread: 682
 		Damage: 3000
@@ -1000,6 +1001,7 @@ SAMMissile:
 		TrailImage: smokey
 		Speed: 200
 		RangeLimit: 10c512
+        Acceleration: 8
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 5000
