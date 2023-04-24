@@ -175,6 +175,8 @@
 		Condition: emp-crate-collected
     Targetable@EMPulse:
         TargetTypes: EMPApplicable
+	RejectsOrders:
+		RequiresCondition: emp-crate-collected
 
 ^AcceptsDeathCrate:
 	ExternalCondition@InstaDeath:
