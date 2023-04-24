@@ -213,6 +213,7 @@ JEEP:
 
 BGGY:
 	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 300
