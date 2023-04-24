@@ -1166,7 +1166,7 @@ OrcaRocketsAA:
 	Warhead@3Eff: CreateEffect
         ImpactActors: true
         ValidTargets: Air, Helicopter
-    -Warhead@5EffWater: CreateEffect
+    -Warhead@5EffWater:
 
 #   28. A-10's nose gun
 Vulcan:
