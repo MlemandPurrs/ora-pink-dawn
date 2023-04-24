@@ -418,6 +418,7 @@ WOOD:
 
 HGAT:
 	Inherits: ^Gate
+    Inherits@productionboost: ^ProductionBoost
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -466,6 +467,7 @@ HGAT:
 
 VGAT:
 	Inherits: ^Gate
+    Inherits@productionboost: ^ProductionBoost
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
