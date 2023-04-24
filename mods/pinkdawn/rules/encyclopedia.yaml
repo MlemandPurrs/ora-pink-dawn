@@ -538,6 +538,8 @@ e6.nod.info:
 
 rmbo.info:
     Inherits: RMBO
+    Buildable:
+        Queue: Nothing
 	Encyclopedia:
         Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.
         Category: GDI Infantry
@@ -829,8 +831,6 @@ mhq.info:
 
 c17.info:
     Inherits: C17
-    Buildable:
-        Queue: Nothing
 	Encyclopedia:
         Description: This carrier ships purchased units to the Brotherhood of Nod via the Airfield. Any units ordered will be shipped in as soon as possible.
         Category: Nod Aircraft
@@ -841,8 +841,6 @@ c17.info:
 
 a10.info:
     Inherits: A10
-    Buildable:
-        Queue: Nothing
 	Encyclopedia:
         Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
         Category: GDI Aircraft
