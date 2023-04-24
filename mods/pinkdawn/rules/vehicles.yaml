@@ -952,7 +952,9 @@ MHQ:
 		Range: 15c256
 		ValidRelationships: Enemy, Neutral
 		Condition: jammed
+        RequiresCondition: !emp-crate-collected
 	WithRangeCircle@JAMMER:
 		Type: jammer
 		Range: 15c256
 		Color: 0000FF80
+        RequiresCondition: !emp-crate-collected
