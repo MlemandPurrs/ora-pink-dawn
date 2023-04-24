@@ -1208,7 +1208,7 @@
 	Health:
 		HP: 60000
 	Armor:
-		Type: Heavy
+		Type: Steel
 	SoundOnDamageTransition:
 		DamagedSounds: xplos.aud
 		DestroyedSounds: xplobig4.aud
