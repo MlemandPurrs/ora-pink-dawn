@@ -349,7 +349,7 @@ crate.airstrike:
 	AirstrikePower@AirstrikeOneShot:
 		OrderName: CrateAirstrike
 		Icon: airstrike
-		SquadSize: 3
+		SquadSize: 1
 		QuantizedFacings: 8
 		Name: Air Strike (Single Use)
 		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
