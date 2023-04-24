@@ -535,3 +535,8 @@ ionicon:
     idle: ionicnh.tem
 		AddExtension: False
     icon: blank1
+
+dummy:
+	idle: blank32
+		Facings: 32
+	icon: blankicon
