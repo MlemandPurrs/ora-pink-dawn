@@ -54,7 +54,7 @@ MCV:
 HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
-	Inherits@Crates: ^AcceptsAllCrates
+    Inherits@Crates: ^AcceptsAllCratesExceptFirepower
 	Valued:
 		Cost: 1200
 	Tooltip:

@@ -197,6 +197,14 @@
 	Inherits@crates4: ^AcceptsEMPCrate
 	Inherits@crates5: ^AcceptsDeathCrate
 
+^AcceptsAllCratesExceptFirepower:
+	Inherits@crates1: ^AcceptsArmorCrate
+	Inherits@crates2: ^AcceptsSpeedCrate
+	Inherits@crates3: ^AcceptsCloakCrate
+	Inherits@crates4: ^AcceptsInvulnerabilityCrate
+	Inherits@crates5: ^AcceptsEMPCrate
+	Inherits@crates6: ^AcceptsDeathCrate
+
 ^Transport:
 	Cargo:
 	WithCargoPipsDecoration:
