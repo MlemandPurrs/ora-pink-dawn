@@ -104,6 +104,8 @@ TRAN:
 		Queue: Aircraft.GDI, Aircraft.Nod
 		Description: Fast Infantry Transport Helicopter.\n\nUnarmed.
 	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
 		TurnSpeed: 10
 		Speed: 150
         MoveIntoShroud: false
