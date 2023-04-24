@@ -231,11 +231,22 @@ COMM:
 		HP: 40000
 	RevealsShroud:
 		Range: 12c0
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !lowpower
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+        RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	WithSpriteBody:
+		PauseOnCondition: lowpower
 	TooltipDescription@ally:
-		Description: Provides range of vision.
+		Description: Provides range of vision and detects stealth.
 		ValidRelationships: Ally
 	TooltipDescription@other:
-		Description: Capture to give visual range.
+		Description: Capture to gain visual range and detection.
 		ValidRelationships: Neutral, Enemy
 	WithBuildingBib:
 		#   HasMinibib: true

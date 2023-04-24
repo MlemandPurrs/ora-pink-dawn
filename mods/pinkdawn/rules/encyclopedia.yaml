@@ -989,6 +989,7 @@ comm.info:
     Inherits: COMM
 	Encyclopedia:
 		Description: This civilian array of long-range communications equipment can provide vision in a large radius when captured.
+        Description: This facility houses an array of long-range communications equipment that can provide vision in a large radius when captured. While the civilian array is internally powered, it can also activate it's sensors when supplied with extra power from your base to detect cloaked units within a medium-range.
         Category: Tech Buildings
 		Order: 2
 	RenderSprites:
