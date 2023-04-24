@@ -884,7 +884,7 @@ TowerMissileAA:
 	Range: 7c0
 	MinRange: 0c512
 	Report: rocket2.aud
-	ValidTargets: Air, Helicopter
+	ValidTargets: Air, Helicopter, Airplane
 	Projectile: Missile
 		Arm: 0
 		Blockable: false
@@ -898,7 +898,7 @@ TowerMissileAA:
 	Warhead@1Dam: SpreadDamage
 		Spread: 682
 		Damage: 3000
-		ValidTargets: Air, Helicopter
+		ValidTargets: Air, Helicopter, Airplane
 		Versus:
             None: 25
             Light: 75
@@ -913,7 +913,7 @@ TowerMissileAA:
 		Explosions: small_building
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Helicopter, Airplane
 
 #   22. Napalm Bomb used by Airstrikes
 Napalm:
