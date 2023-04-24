@@ -3,7 +3,7 @@ MCV:
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	TransferTimedExternalConditionOnTransform:
-		Condition: invulnerability
+		Condition: invulnerability-crate-collected
 	Valued:
 		Cost: 2500
 	Tooltip:
