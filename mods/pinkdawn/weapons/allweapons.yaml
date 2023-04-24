@@ -89,14 +89,14 @@ HeliAGGun:
 		Explosions: piffs
         ImpactActors: false
         Inaccuracy: 213
-        ValidTargets: Ground, Air
+        ValidTargets: Ground, Air, Helicopter
 
 #   ditto, against Air
 HeliAAGun:
 	Inherits: HeliAGGun
-	ValidTargets: Helicopter
+	ValidTargets: Air, Helicopter
 	Warhead@1Dam: SpreadDamage
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 
 #   3. Guard Tower's elevated Chaingun
 TowerGun:
@@ -236,7 +236,7 @@ Bazooka:
 		Explosions: small_poof
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
@@ -288,7 +288,7 @@ BikeRockets:
 		Explosions: small_poof
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -640,7 +640,7 @@ MammothTusk:
 		Explosions: small_building
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -687,11 +687,6 @@ MLRSMissiles:
 		ImpactSounds: xplobig4.aud
 		ImpactActors: false
 		ValidTargets: Ground, Water
-	Warhead@4EffAir: CreateEffect
-		Explosions: small_poof
-		ImpactSounds: xplos.aud
-		ImpactActors: true
-		ValidTargets: Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash1.aud
@@ -744,7 +739,7 @@ StnkRocketsAG:
 		Explosions: small_poof
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
@@ -755,7 +750,7 @@ StnkRocketsAG:
 StnkRocketsAA:
 	Inherits: StnkRocketsAG
 	MinRange: 2c512
-	ValidTargets: Helicopter
+	ValidTargets: Air, Helicopter
 
 #   19. Artillery's gun
 ArtilleryShell:
@@ -914,7 +909,7 @@ TowerMissileAA:
 		Explosions: small_building
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter, Airplane
+		ValidTargets: Air, Helicopter, Airplane
 
 #   22. Napalm Bomb used by Airstrikes
 Napalm:
@@ -1016,14 +1011,11 @@ SAMMissile:
             Aluminium: 75
             Steel: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter, Airplane
+		ValidTargets: Air, Helicopter, Airplane
 
 #   25. SSM Launcher Missile
 HonestJohn:
@@ -1113,7 +1105,7 @@ APCGunAA:
 	Warhead@2Eff: CreateEffect
 		Explosions: small_poof
         ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 
 #   27. Orca Rockets
 OrcaRocketsAG:
@@ -1154,11 +1146,6 @@ OrcaRocketsAG:
 		ImpactSounds: xplos.aud
 		ImpactActors: false
 		ValidTargets: Ground, Water
-	Warhead@4EffAir: CreateEffect
-		Explosions: small_poof
-		ImpactSounds: xplos.aud
-		ImpactActors: true
-		ValidTargets: Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -1176,6 +1163,10 @@ OrcaRocketsAA:
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Helicopter
 	-Warhead@2Smu:
+	Warhead@3Eff: CreateEffect
+        ImpactActors: true
+        ValidTargets: Air, Helicopter
+    -Warhead@5EffWater: CreateEffect
 
 #   28. A-10's nose gun
 Vulcan:
@@ -1217,7 +1208,7 @@ BoatMissile:
 	BurstDelays: 10
 	MinRange: 0c512
 	Report: rocket2.aud
-	ValidTargets: Ground, Water, Helicopter
+	ValidTargets: Ground, Water, Air, Helicopter
 	Projectile: Missile
 		Arm: 0
 		Blockable: true
@@ -1231,7 +1222,7 @@ BoatMissile:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Damage: 6000
-		ValidTargets: Ground, Helicopter
+		ValidTargets: Ground, Air, Helicopter
         Versus:
             None: 87
             Light: 75
@@ -1254,7 +1245,7 @@ BoatMissile:
 		Explosions: small_building
 		ImpactSounds: xplos.aud
 		ImpactActors: true
-		ValidTargets: Helicopter
+		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud

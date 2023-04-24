@@ -392,11 +392,8 @@
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
-	Explodes@AIR:
-		Weapon: UnitExplodeAir
-		RequiresCondition: airborne
+		Weapon: AirExplode
+		EmptyWeapon: AirExplode
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:

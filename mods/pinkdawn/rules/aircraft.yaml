@@ -82,6 +82,9 @@ A10:
 		RequiresCondition: enable-smoke
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Explodes:
+		Weapon: AirExplode
+		EmptyWeapon: AirExplode
 	-MapEditorData:
 
 TRAN:
