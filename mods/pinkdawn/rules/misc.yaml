@@ -196,6 +196,13 @@ CAMERA.small:
 	MapEditorData:
 		Categories: System
 
+CAMERA.small.timed:
+    Inherits: CAMERA.small
+	KillsSelf:
+		Delay: 25
+        RemoveInstead: true
+    -MapEditorData:
+
 CAMERA.scan:
 	Interactable:
 	EditorOnlyTooltip:
@@ -281,16 +288,15 @@ crate.nuke:
 
 crate.ion:
 	AlwaysVisible:
-    #   make it SpawnActorPower based
-    #   summon a dummy that then explodes
-    #   with IonCannon.crate
-	IonCannonPower@IonCannonOneShot:
+    SpawnActorPower@IonCannonOneShot:
 		OrderName: CrateIon
 		Icon: ioncannon
 		Cursor: ioncannon
-		ChargeInterval: 10500
-		Name: Ion Cannon
-		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		ChargeInterval: 0
+		Name: Ion Cannon (Single Use)  
+        Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+        LifeTime: 2
+        Actor: ioncannon.splode
 		BeginChargeSpeechNotification: IonCannonCharging
         BeginChargeTextNotification: Ion cannon charging.
 		EndChargeSpeechNotification: IonCannonReady
@@ -298,18 +304,52 @@ crate.ion:
 		SelectTargetSpeechNotification: SelectTarget
         SelectTargetTextNotification: Select target.
 		InsufficientPowerSpeechNotification: InsufficientPower
-		OnFireSound: ion1.aud
 		DisplayRadarPing: True
-		CameraActor: camera.small
 		SupportPowerPaletteOrder: 1
 		DisplayTimerRelationships: Ally, Neutral, Enemy
+        OneShot: true
+        AllowMultiple: true
+		EffectImage: dummy
+		EffectSequence: idle
+		EffectPalette: effect
+
+ioncannon.splode:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Mobile:
+		Locomotor: immobile
+		Speed: 0
+		TurnSpeed: 0
+	Health:
+		HP: 1
+	HiddenUnderFog:
+	Tooltip:
+		GenericName: You shouldnt be seeing this...
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	WithFacingSpriteBody:
+	HitShape:
+	Interactable:
+		Bounds: 1024, 1024
+	RejectsOrders:
+	Explodes:
+		Weapon: IonCannon.crate
+	KillsSelf:
+		Delay: 1
+    SpawnActorOnDeath:
+        Actor: camera.small.timed
+	RenderSprites:
+		Image: dummy
 
 crate.airstrike:
 	AlwaysVisible:
 	AirstrikePower@AirstrikeOneShot:
 		OrderName: CrateAirstrike
 		Icon: airstrike
-		SquadSize: 3
+		SquadSize: 1
 		QuantizedFacings: 8
 		Name: Air Strike (Single Use)
 		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.

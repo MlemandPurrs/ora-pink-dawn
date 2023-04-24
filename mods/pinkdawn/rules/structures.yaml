@@ -1,8 +1,18 @@
 FACT:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
+	WithColoredOverlay@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+        Color: 800000A3
+	DamageMultiplier@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+		Modifier: 0
+	TimedConditionBar@Invulnerability:
+		Condition: invulnerability-crate-collected
+	ExternalCondition@Invulnerability:
+		Condition: invulnerability-crate-collected
 	TransferTimedExternalConditionOnTransform:
-		Condition: invulnerability
+		Condition: invulnerability-crate-collected
 	Selectable:
 		Bounds: 3072, 2048
 	Valued:

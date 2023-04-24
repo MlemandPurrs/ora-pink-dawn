@@ -69,7 +69,7 @@ A10:
 		TrailWidth: 32
         StartColorUsePlayerColor: false
 	Targetable@AIRBORNE:
-		TargetTypes: Airplane
+		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
 	LeavesTrails:
 		Offsets: -853,0,171
@@ -82,6 +82,9 @@ A10:
 		RequiresCondition: enable-smoke
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Explodes:
+		Weapon: AirExplode
+		EmptyWeapon: AirExplode
 	-MapEditorData:
 
 TRAN:
@@ -104,6 +107,8 @@ TRAN:
 		Queue: Aircraft.GDI, Aircraft.Nod
 		Description: Fast Infantry Transport Helicopter.\n\nUnarmed.
 	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
 		TurnSpeed: 10
 		Speed: 150
         MoveIntoShroud: false

@@ -173,3 +173,9 @@ CrateNapalm:
 		RandomClusterCount: 3
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
+
+#   visual only
+AirExplode:
+	Warhead@1Eff: CreateEffect
+		Explosions: small_building
+		ImpactSounds: xplos.aud

@@ -3,7 +3,7 @@ MCV:
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	TransferTimedExternalConditionOnTransform:
-		Condition: invulnerability
+		Condition: invulnerability-crate-collected
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -54,7 +54,7 @@ MCV:
 HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
-	Inherits@Crates: ^AcceptsAllCrates
+    Inherits@Crates: ^AcceptsAllCratesExceptFirepower
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -213,6 +213,7 @@ JEEP:
 
 BGGY:
 	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 300
@@ -951,7 +952,9 @@ MHQ:
 		Range: 15c256
 		ValidRelationships: Enemy, Neutral
 		Condition: jammed
+        RequiresCondition: !emp-crate-collected
 	WithRangeCircle@JAMMER:
 		Type: jammer
 		Range: 15c256
 		Color: 0000FF80
+        RequiresCondition: !emp-crate-collected

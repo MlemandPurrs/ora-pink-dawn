@@ -175,6 +175,8 @@
 		Condition: emp-crate-collected
     Targetable@EMPulse:
         TargetTypes: EMPApplicable
+	RejectsOrders:
+		RequiresCondition: emp-crate-collected
 
 ^AcceptsDeathCrate:
 	ExternalCondition@InstaDeath:
@@ -194,6 +196,14 @@
 	Inherits@crates3: ^AcceptsInvulnerabilityCrate
 	Inherits@crates4: ^AcceptsEMPCrate
 	Inherits@crates5: ^AcceptsDeathCrate
+
+^AcceptsAllCratesExceptFirepower:
+	Inherits@crates1: ^AcceptsArmorCrate
+	Inherits@crates2: ^AcceptsSpeedCrate
+	Inherits@crates3: ^AcceptsCloakCrate
+	Inherits@crates4: ^AcceptsInvulnerabilityCrate
+	Inherits@crates5: ^AcceptsEMPCrate
+	Inherits@crates6: ^AcceptsDeathCrate
 
 ^Transport:
 	Cargo:
@@ -382,11 +392,8 @@
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
-	Explodes@AIR:
-		Weapon: UnitExplodeAir
-		RequiresCondition: airborne
+		Weapon: AirExplode
+		EmptyWeapon: AirExplode
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -1198,7 +1205,7 @@
 	Health:
 		HP: 60000
 	Armor:
-		Type: Heavy
+		Type: Steel
 	SoundOnDamageTransition:
 		DamagedSounds: xplos.aud
 		DestroyedSounds: xplobig4.aud

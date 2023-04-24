@@ -154,6 +154,7 @@ nodnuk2:
 		Tick: 1000
 	dead: nodnuk2
 		Start: 8
+        Tick: 800
 	make: nodnuk2make
 		Length: *
 		Tick: 80
@@ -642,6 +643,7 @@ miss:
 	dead: miss
 		Start: 2
 		Offset: 0,-1
+        Tick: 800
 	bib: mbMISS
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1111,3 +1113,31 @@ syrd:
 		Length: *
 		Tick: 80
 	icon: syrdicon
+
+comm:
+	idle:
+        Length: 12
+		Tick: 160
+	damaged-idle:
+		Start: 12
+        Length: 12
+		Tick: 160
+	dead:
+		Start: 24
+		Tick: 800
+	bib: mbMISS
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+
+comm.husk:
+	idle: comm
+		Start: 24
+	bib: mbMISS
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
