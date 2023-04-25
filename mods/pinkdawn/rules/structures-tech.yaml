@@ -239,6 +239,7 @@ COMM:
 	DetectCloaked:
 		Range: 6c0
 		RequiresCondition: !lowpower
+    RenderDetectionCircle:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
