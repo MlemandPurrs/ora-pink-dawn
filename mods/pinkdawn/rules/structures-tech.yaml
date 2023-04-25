@@ -238,7 +238,7 @@ COMM:
 		Range: 12c0
 	DetectCloaked:
 		Range: 6c0
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && owner.is.player
     RenderDetectionCircle:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
