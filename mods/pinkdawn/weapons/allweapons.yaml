@@ -1036,7 +1036,7 @@ HonestJohn:
 		LaunchAngle: 37
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
-		Damage: 10000
+		Damage: 15000
 		Versus:
             None: 87
             Light: 100
