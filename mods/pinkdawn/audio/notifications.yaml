@@ -1,4 +1,4 @@
-#   added: AirstrikeInbound, BridgeRepaired, BuildingSold, CivilianBuildingDestroyed, CivilianBuildingRestored, HarvesterAttack, InsufficientFunds, RadarScanReady, StartGame, GameLoaded, GameSaved, Training, UnitRepaired, UnitSold, all Timer announcements
+#   added: AirstrikeInbound, BridgeRepaired, BuildingSold, CivilianBuildingDestroyed, CivilianBuildingRestored, HarvesterAttack, InsufficientFunds, RadarScanReady, StartGame, GameLoaded, GameSaved, Training, UnitRepaired, UnitSold, all Timer announcements, ReinforceAvailable, ReinforceEnroute
 Speech:
 	Prefixes:
 		gdi: gdi
@@ -45,6 +45,8 @@ Speech:
 		PrimaryBuildingSelected: pribldg1
         RadarScanReady: rdrscnr1
 		Reinforce: reinfor1
+        ReinforceAvailable: reinfav1
+        ReinforceEnroute: reinfinc
 		Repairing: repair1
 		SelectTarget: select1
 		SilosNeeded: silos1
@@ -71,7 +73,7 @@ Speech:
 		OneHourRemaining: 1hourr
 		TwoHoursRemaining: 2hourr
 		ThreeHoursRemaining: 3hourr
-	DisablePrefixes: AirstrikeReady, AirstrikeInbound, BaseAttack, BridgeRepaired, Building, BuildingCannotPlaceAudio, BuildingInProgress, BuildingLost, BuildingSold, Cancelled, CivilianBuildingCaptured, CivilianBuildingDestroyed, CivilianBuildingRestored, CivilianKilled, ConstructionComplete, EnemyUnitsApproaching, EnemyStructureDestroyed, EnemyPlanesApproaching, HarvesterAttack, HarvesterLost, InsufficientPower, InsufficientFunds, RadarScanReady, IonCannonCharging, IonCannonReady, Leave, Lose, LowPower, MissionAccomplished, MissionFailed, NewOptions, NoBuild, NodStructureDestroyed, NotReady, NuclearWarheadApproaching, NuclearWeaponAvailable, NuclearWeaponLaunched, OnHold, PrimaryBuildingSelected, Reinforce, Repairing, SelectTarget, SilosNeeded, Training, UnitLost, UnitReady, UnitRepaired, UnitSold, Win, StartGame, GameLoaded, GameSaved, OneMinuteRemaining, TwoMinutesRemaining, ThreeMinutesRemaining, FourMinutesRemaining, FiveMinutesRemaining, TenMinutesRemaining, TwentyMinutesRemaining, ThirtyMinutesRemaining, FourtyMinutesRemaining, FiftyMinutesRemaining, OneHourRemaining, TwoHoursRemaining, ThreeHoursRemaining
+	DisablePrefixes: AirstrikeReady, AirstrikeInbound, BaseAttack, BridgeRepaired, Building, BuildingCannotPlaceAudio, BuildingInProgress, BuildingLost, BuildingSold, Cancelled, CivilianBuildingCaptured, CivilianBuildingDestroyed, CivilianBuildingRestored, CivilianKilled, ConstructionComplete, EnemyUnitsApproaching, EnemyStructureDestroyed, EnemyPlanesApproaching, HarvesterAttack, HarvesterLost, InsufficientPower, InsufficientFunds, RadarScanReady, IonCannonCharging, IonCannonReady, Leave, Lose, LowPower, MissionAccomplished, MissionFailed, NewOptions, NoBuild, NodStructureDestroyed, NotReady, NuclearWarheadApproaching, NuclearWeaponAvailable, NuclearWeaponLaunched, OnHold, PrimaryBuildingSelected, Reinforce, ReinforceAvailable, ReinforceEnroute, Repairing, SelectTarget, SilosNeeded, Training, UnitLost, UnitReady, UnitRepaired, UnitSold, Win, StartGame, GameLoaded, GameSaved, OneMinuteRemaining, TwoMinutesRemaining, ThreeMinutesRemaining, FourMinutesRemaining, FiveMinutesRemaining, TenMinutesRemaining, TwentyMinutesRemaining, ThirtyMinutesRemaining, FourtyMinutesRemaining, FiftyMinutesRemaining, OneHourRemaining, TwoHoursRemaining, ThreeHoursRemaining
 
 Sounds:
 	Notifications:

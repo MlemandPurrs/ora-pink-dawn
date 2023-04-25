@@ -168,7 +168,7 @@ beacon:
 		Offset: 0,-42
 	atomic: atombcon
 		Offset: 0,-42
-	paratrooper: pinfbcon
+	paratroopers: pinfbcon
 		Offset: 0,-42
 	clock: beaconclock
 		Length: *

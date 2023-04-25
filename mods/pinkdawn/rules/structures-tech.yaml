@@ -269,3 +269,78 @@ COMM.Husk:
         LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Array (Destroyed)
+
+APRT:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	AppearsOnMapPreview:
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2	
+	Tooltip:
+		Name: Airport
+	TooltipDescription@ally:
+		Description: Grants the usage of Paratroopers.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to obtain Paratroopers.
+		ValidRelationships: Neutral, Enemy
+	Selectable:
+		Bounds: 3072, 2048
+	Health:
+		HP: 60000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c0
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	ParatroopersPower@paratroopers:
+        PauseOnCondition: lowpower
+		OrderName: Paratroopers
+		Icon: paratroopers
+		ChargeInterval: 6750
+		UnitType: c17
+		Name: Paratroopers
+		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1,E3,E1,E3,E1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: paratroopers
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: ability
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+	SupportPowerChargeBar:
+    WithBuildingBib:
+    ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: APRT.Husk
+        OwnerType: InternalName
+
+APRT.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Airport (Destroyed)

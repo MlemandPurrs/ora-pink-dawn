@@ -17,7 +17,7 @@ C17:
 		AlwaysVisibleRelationships: None
 		Type: CenterPosition
 	ParaDrop:
-		DropRange: 4c0
+		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
 		Types: Infantry, Vehicle, Crate
@@ -25,6 +25,13 @@ C17:
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
 	-MapEditorData:
+
+C17.Crate:
+    Inherits: C17
+	ParaDrop:
+		DropRange: 1c0
+    RenderSprites:
+        Image: c17
 
 A10:
 	Inherits: ^Plane
