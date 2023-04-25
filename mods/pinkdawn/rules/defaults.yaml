@@ -882,50 +882,6 @@
 	-CommandBarBlacklist:
     -SpawnActorsOnSell:
 
-^Gate:
-	Inherits: ^Building
-	Inherits@handicaps: ^PlayerHandicaps
-	-WithSpriteBody:
-	Health:
-		HP: 25000
-	Armor:
-		Type: Concrete
-	LineBuildNode:
-		Types: concrete, gate
-	WithGateSpriteBody:
-		PauseOnCondition: lowpower
-        #   OpenSequence: open
-	Tooltip:
-		Name: Gate
-	Building:
-        RequiresBaseProvider: false
-		BuildSounds: place2.aud
-		TerrainTypes: Clear, Road
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 3
-	MapEditorData:
-		Categories: Wall
-	Gate:
-		PauseOnCondition: lowpower
-		OpeningSound: hydrod1.aud
-		ClosingSound: hvydoor1.aud
-		#   BlocksProjectilesHeight: 768
-        BlocksProjectilesHeight: 1
-	RepairableBuilding:
-		RepairPercent: 20
-		RepairStep: 400
-		PlayerExperience: 0
-		RepairingNotification: Repairing
-	RenderSprites:
-        PlayerPalette: playernavy
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
-
 ^CivBuilding:
 	Inherits: ^Building
 	Tooltip:
@@ -935,6 +891,8 @@
 	FrozenUnderFog:
 	MapEditorData:
 		Categories: Civilian building
+	RenderSprites:
+		Palette: terrain
 
 ^CivBuildingHusk:
 	Inherits@1: ^SpriteActor
@@ -952,45 +910,8 @@
 	ScriptTriggers:
 	MapEditorData:
 		Categories: Husk
-
-^TechBuilding:
-	Inherits: ^CivBuilding
-	OwnerLostAction:
-		Action: ChangeOwner
-	CaptureManager:
-	Capturable:
-		Types: building-neutral
-	CaptureNotification:
-		Notification: CivilianBuildingCaptured
-		TextNotification: Civilian building captured.
-	EngineerRepairable:
-	RevealsShroud:
-		Range: 3c0
-	Tooltip:
-		ShowOwnerRow: True
-	MapEditorData:
-		Categories: Tech building
-	AppearsOnMapPreview:
-
-^TechBuildingHusk:
-    Inherits: ^CivBuildingHusk
-	Inherits@shape: ^1x1Shape
-	Targetable:
-		RequiresForceFire: true
-		TargetTypes: NonSensical
-	CaptureManager:
-	CaptureNotification:
-		Notification: CivilianBuildingRestored
-	Capturable:
-		Types: building-neutral
-		ValidRelationships: Enemy, Neutral, Ally
-	Health:
-		HP: 20000
-	Building:
-		Dimensions: 1,1
-		Footprint: x
-	TransformOnCapture:
-		ForceHealthPercentage: 35
+	RenderSprites:
+		Palette: terrain
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -1060,6 +981,105 @@
 		RequiresCondition: !winter
 		GenericVisibility: None
 		ShowOwnerRow: false
+
+^TechBuilding:
+	Inherits: ^Building
+	Tooltip:
+		GenericName: Tech Building
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	OwnerLostAction:
+		Action: ChangeOwner
+	CaptureManager:
+	Capturable:
+		Types: building-neutral
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+		TextNotification: Civilian building captured.
+	EngineerRepairable:
+	RevealsShroud:
+		Range: 3c0
+	Tooltip:
+		ShowOwnerRow: True
+	MapEditorData:
+		Categories: Tech building
+	AppearsOnMapPreview:
+
+^TechBuildingHusk:
+	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+	AppearsOnRadar:
+	Interactable:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		GenericName: Tech Building (Destroyed)
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: NonSensical
+	Health:
+		HP: 20000
+	MapEditorData:
+		Categories: Husk
+	ScriptTriggers:
+
+^RestorableBuilding:
+	CaptureManager:
+	CaptureNotification:
+		Notification: CivilianBuildingRestored
+	Capturable:
+		Types: building-neutral
+		ValidRelationships: Enemy, Neutral, Ally
+
+^Gate:
+	Inherits: ^Building
+	Inherits@handicaps: ^PlayerHandicaps
+	-WithSpriteBody:
+	Health:
+		HP: 25000
+	Armor:
+		Type: Concrete
+	LineBuildNode:
+		Types: concrete, gate
+	WithGateSpriteBody:
+		PauseOnCondition: lowpower
+        #   OpenSequence: open
+	Tooltip:
+		Name: Gate
+	Building:
+        RequiresBaseProvider: false
+		BuildSounds: place2.aud
+		TerrainTypes: Clear, Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 3
+	MapEditorData:
+		Categories: Wall
+	Gate:
+		PauseOnCondition: lowpower
+		OpeningSound: hydrod1.aud
+		ClosingSound: hvydoor1.aud
+		#   BlocksProjectilesHeight: 768
+        BlocksProjectilesHeight: 1
+	RepairableBuilding:
+		RepairPercent: 20
+		RepairStep: 400
+		PlayerExperience: 0
+		RepairingNotification: Repairing
+	RenderSprites:
+        PlayerPalette: playernavy
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		Position: Center
+		Palette: player
+		IsPlayerPalette: True
 
 ^Wall:
 	Inherits@1: ^SpriteActor

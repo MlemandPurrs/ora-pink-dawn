@@ -32,6 +32,7 @@ V19:
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
+    Inherits@restorable: ^RestorableBuilding
 	Interactable:
 		Bounds: 1024, 1024
 	WithSpriteBody:
@@ -44,6 +45,7 @@ V19.Husk:
 	Tooltip:
 		Name: Oil Derrick (Destroyed)
 	TransformOnCapture:
+		ForceHealthPercentage: 35
 		IntoActor: v19
 
 HOSP:
@@ -76,7 +78,7 @@ HOSP:
 	ProvidesPrerequisite@buildingname:
 
 HOSP.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^TechBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -252,11 +254,13 @@ COMM:
 		Description: Capture to gain visual range and detection.
 		ValidRelationships: Neutral, Enemy
 	WithBuildingBib:
-		#   HasMinibib: true
 	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: COMM.Husk
+        OwnerType: InternalName
 
 COMM.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^TechBuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
