@@ -212,7 +212,13 @@
 		Margin: 4, 3
 		RequiresSelection: true
 		CustomPipSequences:
-			gray: pip-gray
+			pip-gray: pip-gray
+			pip-yellow: pip-yellow
+			pip-green: pip-green
+			pip-blue: pip-blue
+			pip-red: pip-red
+            pip-white: pip-white
+            gray: pip-gray
 			yellow: pip-yellow
 			green: pip-green
             red: pip-red
@@ -395,6 +401,56 @@
 		Weapon: AirExplode
 		EmptyWeapon: AirExplode
 
+^RepairsAircraftWithRepairBay:
+	ExternalCondition@AIRCRAFTREPAIR:
+		Condition: aircraft-repair
+	RepairsUnits:
+		ValuePercentage: 0
+		HpPerStep: 1000
+		Interval: 15
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: Repairing.
+        FinishRepairingNotification: UnitRepaired
+        FinishRepairingTextNotification: Unit repaired.
+		PlayerExperience: 0
+		RequiresCondition: aircraft-repair
+        RepairDamageTypes: Repair
+	WithDecoration@AIRCRAFTREPAIR:
+		Image: select
+		Palette: chrome
+		Sequence: repair-small
+		Position: Bottom
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: aircraft-repair && unit.docked
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral
+
+^Plane:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: true
+	HiddenUnderFog:
+		Type: GroundPosition
+		AlwaysVisibleRelationships: None
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	RejectsOrders:
+	Aircraft:
+		CruiseAltitude: 2560
+		IdleBehavior: LeaveMap
+	MapEditorData:
+		Categories: Aircraft
+
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
 		Terrain: Tiberium, BlueTiberium, RedTiberium
@@ -453,12 +509,20 @@
 		BlinkInterval: 32
 		BlinkPattern: On, Off
 
+^SlowdownWhenDamagedInfantry:
+	SpeedMultiplier@HEAVYDAMAGE:
+		Modifier: 90
+		RequiresCondition: heavily-damaged
+	GrantConditionOnDamageState@HEAVYDAMAGE:
+		Condition: heavily-damaged
+		ValidDamageStates: Heavy, Critical	
+
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
-	Inherits@slowdown: ^SlowdownWhenDamaged
+	Inherits@slowdown: ^SlowdownWhenDamagedInfantry
 	Inherits@hazmat: ^InfantryTiberiumDamage
 	Inherits@healing: ^InfantryHealing
 	Huntable:
@@ -466,7 +530,8 @@
 		Action: Kill
 		DeathTypes: DefaultDeath
 	Health:
-	Armor:
+		HP: 2500
+    Armor:
 		Type: None
 	RevealsShroud:
 		Range: 2c512
@@ -625,55 +690,19 @@
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
-^Plane:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^ClassicFacingSpriteActor
-	Inherits@handicaps: ^PlayerHandicaps
-	OwnerLostAction:
-		Action: Kill
-	AppearsOnRadar:
-		UseLocation: true
-	HiddenUnderFog:
-		Type: GroundPosition
-		AlwaysVisibleRelationships: None
-	ActorLostNotification:
-		TextNotification: Unit lost.
-	AttackMove:
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
-	WithFacingSpriteBody:
-	RejectsOrders:
-	Aircraft:
-		CruiseAltitude: 2560
-		IdleBehavior: LeaveMap
-	MapEditorData:
-		Categories: Aircraft
-
-^RepairsAircraftWithRepairBay:
-	ExternalCondition@AIRCRAFTREPAIR:
-		Condition: aircraft-repair
-	RepairsUnits:
-		ValuePercentage: 0
-		HpPerStep: 1000
-		Interval: 15
-		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: Repairing.
-        FinishRepairingNotification: UnitRepaired
-        FinishRepairingTextNotification: Unit repaired.
-		PlayerExperience: 0
-		RequiresCondition: aircraft-repair
-        RepairDamageTypes: Repair
-	WithDecoration@AIRCRAFTREPAIR:
-		Image: select
-		Palette: chrome
-		Sequence: repair-small
-		Position: Bottom
-		BlinkInterval: 15
-		BlinkPattern: on, off
-		RequiresCondition: aircraft-repair && unit.docked
-		RequiresSelection: False
-		ValidRelationships: Ally, Neutral
+^SlowdownWhenDamagedShip:
+	GrantConditionOnDamageState@HEAVY:
+		Condition: heavily-damaged
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical-damage
+		ValidDamageStates: Critical
+	SpeedMultiplier@HEAVYDAMAGE:
+		RequiresCondition: heavily-damaged
+		Modifier: 90
+	SpeedMultiplier@CRITICALDAMAGE:
+		RequiresCondition: critical-damage
+		Modifier: 85
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
@@ -681,7 +710,7 @@
     Inherits@5: ^GenericSpeedModifier
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
-	Inherits@slowdown: ^SlowdownWhenDamaged
+	Inherits@slowdown: ^SlowdownWhenDamagedShip
     Inherits@productionboost: ^ProductionBoost
 	Huntable:
 	OwnerLostAction:
@@ -714,6 +743,14 @@
 		Categories: Naval
 	RepairableNear:
 		RepairActors: syrd
+	Sellable:
+		RefundPercent: 50
+		SellSounds: cashturn.aud
+		Cursor: sell
+		ShowTicks: false
+		RequiresCondition: ship.sellable
+	ExternalCondition@Sellable:
+		Condition: ship.sellable
 	RenderSprites:
         PlayerPalette: playernavy
 
@@ -823,6 +860,65 @@
 		Types: building-player
 	WithMakeAnimation:
 		Condition: build-incomplete
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		Position: Center
+		Palette: player
+		IsPlayerPalette: True
+
+^Defense:
+	Inherits: ^BaseBuilding
+	Inherits@selection: ^SelectableCombatBuilding
+	RenderRangeCircle:
+	RenderDetectionCircle:
+	-GivesBuildableArea:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Targetable:
+		TargetTypes: Ground, C4, Structure, Defense
+	MapEditorData:
+		Categories: Defense
+	-CommandBarBlacklist:
+    -SpawnActorsOnSell:
+
+^Gate:
+	Inherits: ^Building
+	Inherits@handicaps: ^PlayerHandicaps
+	-WithSpriteBody:
+	Health:
+		HP: 25000
+	Armor:
+		Type: Concrete
+	LineBuildNode:
+		Types: concrete, gate
+	WithGateSpriteBody:
+		PauseOnCondition: lowpower
+        #   OpenSequence: open
+	Tooltip:
+		Name: Gate
+	Building:
+        RequiresBaseProvider: false
+		BuildSounds: place2.aud
+		TerrainTypes: Clear, Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 3
+	MapEditorData:
+		Categories: Wall
+	Gate:
+		PauseOnCondition: lowpower
+		OpeningSound: hydrod1.aud
+		ClosingSound: hvydoor1.aud
+		#   BlocksProjectilesHeight: 768
+        BlocksProjectilesHeight: 1
+	RepairableBuilding:
+		RepairPercent: 20
+		RepairStep: 400
+		PlayerExperience: 0
+		RepairingNotification: Repairing
+	RenderSprites:
+        PlayerPalette: playernavy
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
@@ -1255,21 +1351,6 @@
 		Categories: System
 	ScriptTriggers:
 
-^Defense:
-	Inherits: ^BaseBuilding
-	Inherits@selection: ^SelectableCombatBuilding
-	RenderRangeCircle:
-	RenderDetectionCircle:
-	-GivesBuildableArea:
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	Targetable:
-		TargetTypes: Ground, C4, Structure, Defense
-	MapEditorData:
-		Categories: Defense
-	-CommandBarBlacklist:
-    -SpawnActorsOnSell:
-
 ^DisabledOverlay:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1321,50 +1402,6 @@
 		Prerequisite: boostready
         RequiresPrerequisites: global-boosteron
         ResetOnOwnerChange: true
-
-^Gate:
-	Inherits: ^Building
-	Inherits@handicaps: ^PlayerHandicaps
-	-WithSpriteBody:
-	Health:
-		HP: 25000
-	Armor:
-		Type: Concrete
-	LineBuildNode:
-		Types: concrete, gate
-	WithGateSpriteBody:
-		PauseOnCondition: lowpower
-        #   OpenSequence: open
-	Tooltip:
-		Name: Gate
-	Building:
-        RequiresBaseProvider: false
-		BuildSounds: place2.aud
-		TerrainTypes: Clear, Road
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 3
-	MapEditorData:
-		Categories: Wall
-	Gate:
-		PauseOnCondition: lowpower
-		OpeningSound: hydrod1.aud
-		ClosingSound: hvydoor1.aud
-		#   BlocksProjectilesHeight: 768
-        BlocksProjectilesHeight: 1
-	RepairableBuilding:
-		RepairPercent: 20
-		RepairStep: 400
-		PlayerExperience: 0
-		RepairingNotification: Repairing
-	RenderSprites:
-        PlayerPalette: playernavy
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 
 ^FlammableStructure:
 	ChangesHealth@SmallBurn:
