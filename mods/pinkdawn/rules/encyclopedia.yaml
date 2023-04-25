@@ -971,7 +971,7 @@ v19.info:
 		Order: 0
 	RenderSprites:
 		Image: v19
-        Palette: gdi
+        Palette: civilian
     -MapEditorData:
 
 hosp.info:
@@ -982,7 +982,7 @@ hosp.info:
 		Order: 1
 	RenderSprites:
 		Image: hosp
-        Palette: gdi
+        Palette: civilian
     -MapEditorData:
 
 comm.info:
@@ -993,5 +993,38 @@ comm.info:
 		Order: 2
 	RenderSprites:
 		Image: comm
-        Palette: gdi
+        Palette: civilian
+    -MapEditorData:
+
+aprt.info:
+    Inherits: APRT
+	Encyclopedia:
+        Description: The civilian airport can allow the usage of Paratroopers when captured.
+        Category: Tech Buildings
+		Order: 3
+	RenderSprites:
+		Image: aprt
+        Palette: civilian
+    -MapEditorData:
+
+expb.info:
+    Inherits: EXPB
+	Encyclopedia:
+        Description: Construction outposts such as these can be used to expand your base. To do so, simply use an Engineer to capture the structure and you will able to build structures nearby it's location.
+        Category: Tech Buildings
+		Order: 4
+	RenderSprites:
+		Image: acom
+        Palette: civilian
+    -MapEditorData:
+
+syrd.info:
+    Inherits: SYRD
+	Encyclopedia:
+        Description: The shipyard is a production facility for naval units. This structure will allow you to build naval transports and ships when captured.
+        Category: Tech Buildings
+		Order: 5
+	RenderSprites:
+		Image: syrd
+        Palette: civilian
     -MapEditorData:

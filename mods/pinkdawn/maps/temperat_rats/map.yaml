@@ -1,0 +1,842 @@
+MapFormat: 12
+RequiresMod: cnc
+Title: temperat rats
+Author: hulk
+Tileset: TEMPERAT
+MapSize: 72,72
+Bounds: 1,1,70,70
+Visibility: Lobby
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor5: split2
+		Owner: Neutral
+		Location: 61,58
+	Actor7: v19
+		Owner: Neutral
+		Location: 10,6
+	Actor9: v19
+		Owner: Neutral
+		Location: 21,5
+	Actor10: v19
+		Owner: Neutral
+		Location: 50,66
+	Actor11: v19
+		Owner: Neutral
+		Location: 61,65
+	Actor12: v19
+		Owner: Neutral
+		Location: 49,29
+	Actor13: v19
+		Owner: Neutral
+		Location: 22,42
+	Actor14: split2
+		Owner: Neutral
+		Location: 10,13
+	Actor15: split3
+		Owner: Neutral
+		Location: 21,30
+	Actor16: split3
+		Owner: Neutral
+		Location: 50,41
+	Actor17: split3
+		Owner: Neutral
+		Location: 16,64
+	Actor18: split3
+		Owner: Neutral
+		Location: 55,7
+	Actor21: mpspawn
+		Owner: Neutral
+		Location: 22,20
+	Actor22: mpspawn
+		Owner: Neutral
+		Location: 49,51
+	Actor23: v03
+		Owner: Neutral
+		Location: 70,29
+	Actor24: v01
+		Owner: Neutral
+		Location: 64,29
+	Actor25: v04
+		Owner: Neutral
+		Location: 1,38
+	Actor26: v05
+		Owner: Neutral
+		Location: 6,39
+	Actor27: v11
+		Owner: Neutral
+		Location: 68,30
+	Actor28: v10
+		Owner: Neutral
+		Location: 5,41
+	Actor29: v07
+		Owner: Neutral
+		Location: 65,32
+	Actor30: v08
+		Owner: Neutral
+		Location: 3,39
+	Actor31: t03
+		Owner: Neutral
+		Location: 69,31
+	Actor32: t13
+		Owner: Neutral
+		Location: 64,32
+	Actor33: tc05
+		Owner: Neutral
+		Location: 68,26
+	Actor34: t16
+		Owner: Neutral
+		Location: 66,28
+	Actor35: t08
+		Owner: Neutral
+		Location: 65,28
+	Actor36: t08
+		Owner: Neutral
+		Location: 69,29
+	Actor37: t01
+		Owner: Neutral
+		Location: 68,32
+	Actor39: t08
+		Owner: Neutral
+		Location: 3,37
+	Actor40: t12
+		Owner: Neutral
+		Location: 6,41
+	Actor43: tc05
+		Owner: Neutral
+		Location: 1,41
+	Actor38: t02
+		Owner: Neutral
+		Location: 2,36
+	Actor42: t15
+		Owner: Neutral
+		Location: 6,37
+	Actor44: t03
+		Owner: Neutral
+		Location: 37,31
+	Actor45: t08
+		Owner: Neutral
+		Location: 38,32
+	Actor46: t12
+		Owner: Neutral
+		Location: 32,38
+	Actor47: t06
+		Owner: Neutral
+		Location: 31,39
+	Actor48: t10
+		Owner: Neutral
+		Location: 43,37
+	Actor49: t16
+		Owner: Neutral
+		Location: 36,42
+	Actor51: t07
+		Owner: Neutral
+		Location: 34,27
+	Actor52: t03
+		Owner: Neutral
+		Location: 54,27
+	Actor55: t07
+		Owner: Neutral
+		Location: 52,26
+	Actor56: t07
+		Owner: Neutral
+		Location: 48,32
+	Actor57: t08
+		Owner: Neutral
+		Location: 49,34
+	Actor59: t05
+		Owner: Neutral
+		Location: 23,37
+	Actor58: t14
+		Owner: Neutral
+		Location: 22,36
+	Actor65: t03
+		Owner: Neutral
+		Location: 23,56
+	Actor60: t06
+		Owner: Neutral
+		Location: 48,14
+	Actor61: tc05
+		Owner: Neutral
+		Location: 3,64
+	Actor63: tc05
+		Owner: Neutral
+		Location: 65,5
+	Actor66: t11
+		Owner: Neutral
+		Location: 7,67
+	Actor67: t13
+		Owner: Neutral
+		Location: 63,3
+	Actor68: t08
+		Owner: Neutral
+		Location: 64,5
+	Actor69: t02
+		Owner: Neutral
+		Location: 61,5
+	Actor70: t03
+		Owner: Neutral
+		Location: 68,6
+	Actor71: tc04
+		Owner: Neutral
+		Location: 52,0
+	Actor72: tc04
+		Owner: Neutral
+		Location: 17,69
+	Actor73: tc02
+		Owner: Neutral
+		Location: 15,70
+	Actor74: tc02
+		Owner: Neutral
+		Location: 55,0
+	Actor75: t12
+		Owner: Neutral
+		Location: 11,64
+	Actor76: t08
+		Owner: Neutral
+		Location: 13,68
+	Actor77: t05
+		Owner: Neutral
+		Location: 6,66
+	Actor78: t17
+		Owner: Neutral
+		Location: 2,63
+	Actor79: t08
+		Owner: Neutral
+		Location: 3,63
+	Actor80: tc05
+		Owner: Neutral
+		Location: 46,0
+	Actor81: tc05
+		Owner: Neutral
+		Location: 22,69
+	Actor82: tc02
+		Owner: Neutral
+		Location: 25,69
+	Actor83: tc02
+		Owner: Neutral
+		Location: 44,0
+	Actor84: tc01
+		Owner: Neutral
+		Location: 43,1
+	Actor85: tc01
+		Owner: Neutral
+		Location: 26,68
+	Actor86: tc02
+		Owner: Neutral
+		Location: 27,68
+	Actor87: tc02
+		Owner: Neutral
+		Location: 42,1
+	Actor89: tc05
+		Owner: Neutral
+		Location: 29,68
+	Actor90: tc05
+		Owner: Neutral
+		Location: 29,4
+	Actor91: tc05
+		Owner: Neutral
+		Location: 39,64
+	Actor92: t17
+		Owner: Neutral
+		Location: 32,5
+	Actor93: t02
+		Owner: Neutral
+		Location: 37,64
+	Actor94: t08
+		Owner: Neutral
+		Location: 38,65
+	Actor95: t01
+		Owner: Neutral
+		Location: 35,4
+	Actor96: t08
+		Owner: Neutral
+		Location: 36,5
+	Actor97: t12
+		Owner: Neutral
+		Location: 42,65
+	Actor99: t14
+		Owner: Neutral
+		Location: 33,1
+	Actor100: t12
+		Owner: Neutral
+		Location: 44,4
+	Actor101: t14
+		Owner: Neutral
+		Location: 27,65
+	Actor102: tc05
+		Owner: Neutral
+		Location: 12,0
+	Actor103: tc05
+		Owner: Neutral
+		Location: 57,69
+	Actor104: tc04
+		Owner: Neutral
+		Location: 15,0
+	Actor105: tc04
+		Owner: Neutral
+		Location: 55,69
+	Actor106: tc02
+		Owner: Neutral
+		Location: 53,69
+	Actor107: tc02
+		Owner: Neutral
+		Location: 17,1
+	Actor108: tc01
+		Owner: Neutral
+		Location: 18,0
+	Actor109: tc01
+		Owner: Neutral
+		Location: 52,70
+	Actor112: t17
+		Owner: Neutral
+		Location: 48,68
+	Actor113: t17
+		Owner: Neutral
+		Location: 12,4
+	Actor114: t11
+		Owner: Neutral
+		Location: 20,2
+	Actor116: t12
+		Owner: Neutral
+		Location: 39,20
+	Actor118: tc05
+		Owner: Neutral
+		Location: 68,35
+	Actor119: tc04
+		Owner: Neutral
+		Location: 0,32
+	Actor121: t07
+		Owner: Neutral
+		Location: 3,33
+	Actor123: t08
+		Owner: Neutral
+		Location: 63,33
+	Actor122: t03
+		Owner: Neutral
+		Location: 17,43
+	Actor124: t08
+		Owner: Neutral
+		Location: 16,43
+	Actor120: t08
+		Owner: Neutral
+		Location: 33,51
+	Actor117: t10
+		Owner: Neutral
+		Location: 31,49
+	Actor115: tc05
+		Owner: Neutral
+		Location: 27,69
+	Actor125: tc05
+		Owner: Neutral
+		Location: 39,1
+	Actor126: tc04
+		Owner: Neutral
+		Location: 38,-1
+	Actor127: tc02
+		Owner: Neutral
+		Location: 40,0
+	Actor128: tc01
+		Owner: Neutral
+		Location: 42,0
+	Actor129: t08
+		Owner: Neutral
+		Location: 29,2
+	Actor130: t08
+		Owner: Neutral
+		Location: 24,65
+	Actor131: t05
+		Owner: Neutral
+		Location: 22,67
+	Actor132: t01
+		Owner: Neutral
+		Location: 58,65
+	Actor134: t08
+		Owner: Neutral
+		Location: 59,66
+	Actor133: t07
+		Owner: Neutral
+		Location: 5,38
+	Actor136: t08
+		Owner: Neutral
+		Location: 47,69
+	Actor135: t08
+		Owner: Neutral
+		Location: 38,20
+	Actor137: t08
+		Owner: Neutral
+		Location: 49,15
+	Actor138: t07
+		Owner: Neutral
+		Location: 22,55
+	Actor139: t08
+		Owner: Neutral
+		Location: 22,57
+	Actor140: t03
+		Owner: Neutral
+		Location: 20,13
+	Actor141: t03
+		Owner: Neutral
+		Location: 51,58
+	Actor142: t08
+		Owner: Neutral
+		Location: 52,58
+	Actor143: t07
+		Owner: Neutral
+		Location: 21,12
+	Actor144: t12
+		Owner: Neutral
+		Location: 42,54
+	Actor145: t14
+		Owner: Neutral
+		Location: 28,18
+	Actor146: t08
+		Owner: Neutral
+		Location: 27,26
+	Actor147: t08
+		Owner: Neutral
+		Location: 44,45
+	Actor148: tc05
+		Owner: Neutral
+		Location: 0,0
+	Actor149: tc05
+		Owner: Neutral
+		Location: 69,69
+	Actor150: tc02
+		Owner: Neutral
+		Location: 68,70
+	Actor151: tc02
+		Owner: Neutral
+		Location: 3,0
+	Actor152: t07
+		Owner: Neutral
+		Location: 8,1
+	Actor153: t02
+		Owner: Neutral
+		Location: 63,69
+	Actor154: t03
+		Owner: Neutral
+		Location: 67,62
+	Actor155: t08
+		Owner: Neutral
+		Location: 68,62
+	Actor156: t01
+		Owner: Neutral
+		Location: 3,7
+	Actor157: t08
+		Owner: Neutral
+		Location: 3,9
+	Actor158: t08
+		Owner: Neutral
+		Location: 15,3
+	Actor159: t03
+		Owner: Neutral
+		Location: 56,68
+	Actor160: t07
+		Owner: Neutral
+		Location: 1,43
+	Actor161: t05
+		Owner: Neutral
+		Location: 2,27
+	Actor163: t02
+		Owner: Neutral
+		Location: 65,43
+	Actor164: t08
+		Owner: Neutral
+		Location: 67,41
+	Actor165: split3
+		Owner: Neutral
+		Location: 59,12
+	Actor166: split3
+		Owner: Neutral
+		Location: 12,59
+	Actor167: t12
+		Owner: Neutral
+		Location: 4,18
+	Actor169: t17
+		Owner: Neutral
+		Location: 69,52
+	Actor168: tc05
+		Owner: Neutral
+		Location: 69,19
+	Actor170: tc02
+		Owner: Neutral
+		Location: 0,51
+	Actor171: t08
+		Owner: Neutral
+		Location: 1,50
+	Actor172: t11
+		Owner: Neutral
+		Location: 0,54
+	Actor173: tc01
+		Owner: Neutral
+		Location: 70,17
+	Actor174: t15
+		Owner: Neutral
+		Location: 69,22
+	Actor175: t08
+		Owner: Neutral
+		Location: 70,16
+	Actor176: t07
+		Owner: Neutral
+		Location: 68,23
+	Actor177: t03
+		Owner: Neutral
+		Location: 2,46
+	Actor178: t07
+		Owner: Neutral
+		Location: 3,47
+	Actor179: t08
+		Owner: Neutral
+		Location: 35,59
+	Actor180: t08
+		Owner: Neutral
+		Location: 35,12
+	Actor181: t10
+		Owner: Neutral
+		Location: 59,35
+	Actor183: t07
+		Owner: Neutral
+		Location: 66,37
+	Actor182: t13
+		Owner: Neutral
+		Location: 12,34
+	Actor184: t17
+		Owner: Neutral
+		Location: 8,31
+	Actor185: t08
+		Owner: Neutral
+		Location: 4,33
+	Actor186: t03
+		Owner: Neutral
+		Location: 5,33
+	Actor187: t08
+		Owner: Neutral
+		Location: 7,26
+	Actor188: t11
+		Owner: Neutral
+		Location: 52,43
+	Actor189: t13
+		Owner: Neutral
+		Location: 18,26
+	Actor190: t08
+		Owner: Neutral
+		Location: 19,26
+	Actor191: t05
+		Owner: Neutral
+		Location: 51,44
+	Actor192: t07
+		Owner: Neutral
+		Location: 52,64
+	Actor193: t03
+		Owner: Neutral
+		Location: 19,5
+	Actor194: t10
+		Owner: Neutral
+		Location: 0,5
+	Actor195: t01
+		Owner: Neutral
+		Location: 2,11
+	Actor196: t06
+		Owner: Neutral
+		Location: 69,59
+	Actor197: t12
+		Owner: Neutral
+		Location: 70,67
+	Actor198: t03
+		Owner: Neutral
+		Location: 36,68
+	Actor199: t15
+		Owner: Neutral
+		Location: 37,69
+	Actor200: t06
+		Owner: Neutral
+		Location: 51,55
+	Actor201: t17
+		Owner: Neutral
+		Location: 27,15
+	Actor202: tc05
+		Owner: Neutral
+		Location: 40,23
+	Actor203: tc05
+		Owner: Neutral
+		Location: 28,46
+	Actor204: t08
+		Owner: Neutral
+		Location: 40,26
+	Actor205: t03
+		Owner: Neutral
+		Location: 31,45
+	Actor206: t02
+		Owner: Neutral
+		Location: 63,20
+	Actor208: t14
+		Owner: Neutral
+		Location: 8,49
+	Actor207: t14
+		Owner: Neutral
+		Location: 9,59
+	Actor209: t12
+		Owner: Neutral
+		Location: 62,11
+	Actor210: t08
+		Owner: Neutral
+		Location: 57,6
+	Actor211: t06
+		Owner: Neutral
+		Location: 14,65
+	Actor212: t05
+		Owner: Neutral
+		Location: 4,56
+	Actor213: t03
+		Owner: Neutral
+		Location: 66,14
+	Actor214: t08
+		Owner: Neutral
+		Location: 67,14
+	Actor215: t12
+		Owner: Neutral
+		Location: 54,1
+	Actor216: t01
+		Owner: Neutral
+		Location: 42,12
+	Actor217: t07
+		Owner: Neutral
+		Location: 28,58
+	Actor219: t07
+		Owner: Neutral
+		Location: 17,41
+	Actor218: t08
+		Owner: Neutral
+		Location: 16,39
+	Actor220: t02
+		Owner: Neutral
+		Location: 55,29
+
+Rules:
+	^Building:
+		GivesBounty:
+			Percentage: 5
+	^Infantry:
+		GivesBounty:
+			Percentage: 5
+	^Helicopter:
+		GivesBounty:
+			Percentage: 5
+	^Vehicle:
+		GivesBounty:
+			Percentage: 5
+	^TechBuildingHusk:
+		Inherits: ^CivBuildingHusk
+		Health:
+			HP: 1
+		DamageMultiplier:
+			Modifier: 0
+		Targetable:
+			RequiresForceFire: yes
+			TargetTypes: None
+		Capturable:
+			Type: husk
+			AllowAllies: yes
+			CaptureThreshold: 100
+		TransformOnCapture:
+			ForceHealthPercentage: 25
+	V19:
+		Inherits: ^TechBuilding
+		CashTrickler:
+			Amount: 20
+		Health:
+			HP: 550
+		Building:
+			Footprint: x
+			Dimensions: 1,1
+		Tooltip:
+			Name: Oil Derrick
+		SpawnActorOnDeath:
+			Actor: V19.Husk
+	V19.Husk:
+		Inherits: ^TechBuildingHusk
+		TransformOnCapture:
+			IntoActor: v19
+		Tooltip:
+			Name: Oil Derrick (Recapturable)
+	ARTY:
+		Mobile:
+			TurnSpeed: 4
+	FIX:
+		Health:
+			HP: 700
+	OBLI:
+		WithRangeCircle@ATTACK:
+			Type: attack
+			Color: FFFF0080
+			Range: 7c512
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 5c0
+	HQ:
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 5c0
+	EYE:
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 5c0
+	GUN:
+		WithRangeCircle@ATTACK:
+			Type: attack
+			Color: FFFF0080
+			Range: 6c0
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 3c0
+	SAM:
+		WithRangeCircle@ATTACK:
+			Type: attack
+			Color: FFFF0080
+			Range: 8c0
+	GTWR:
+		WithRangeCircle@ATTACK:
+			Type: attack
+			Color: FFFF0080
+			Range: 6c0
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 3c0
+	ATWR:
+		WithRangeCircle@ATTACK:
+			Type: attack
+			Color: FFFF0080
+			Range: 8c0
+		WithRangeCircle@DETECT:
+			Type: detect
+			Color: 32CD3280
+			Range: 5c0
+
+Weapons:
+	ArtilleryShell:
+		Warhead@3Eff: CreateEffect
+			Explosions: poof
+			ImpactSounds: xplosml2.aud
+	APCGun.AA:
+		ReloadDelay: 18
+		Range: 7c0
+		Report: gun20.aud
+		ValidTargets: Air
+		Projectile: Bullet
+			Speed: 2c0
+			Blockable: false
+		Warhead@1Dam: SpreadDamage
+			Spread: 128
+			Damage: 25
+			ValidTargets: Air
+			Versus:
+				Heavy: 50
+			DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		Warhead@2Eff: CreateEffect
+			Explosions: small_frag
+	HeliAGGun:
+		ReloadDelay: 20
+		Burst: 2
+		BurstDelay: 0
+		Range: 5c0
+		MinRange: 0c768
+		ValidTargets: Ground
+		Report: gun5.aud
+		Projectile: Bullet
+			Speed: 1c682
+			Blockable: false
+		Warhead@1Dam: SpreadDamage
+			Spread: 256
+			Damage: 20
+			ValidTargets: Ground
+			Versus:
+				None: 100
+				Wood: 50
+				Light: 75
+				Heavy: 25
+			DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+		Warhead@2Eff: CreateEffect
+			Explosions: piffs
+	HeliAAGun:
+		ReloadDelay: 20
+		Burst: 2
+		BurstDelay: 0
+		Range: 5c0
+		MinRange: 0c768
+		ValidTargets: Air
+		Report: gun5.aud
+		Projectile: Bullet
+			Speed: 1c682
+			Blockable: false
+		Warhead@1Dam: SpreadDamage
+			Spread: 128
+			Damage: 20
+			ValidTargets: Air
+			Versus:
+				None: 100
+				Wood: 50
+				Light: 50
+				Heavy: 25
+			DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+		Warhead@2Eff: CreateEffect
+			Explosions: piffs
+	BigFlamer:
+		ReloadDelay: 50
+		Range: 3c512
+		InvalidTargets: Wall
+		Report: flamer2.aud
+		Projectile: Bullet
+			Speed: 400
+		Burst: 2
+		BurstDelay: 25
+		Warhead@1Dam: SpreadDamage
+			Spread: 341
+			Damage: 75
+			InvalidTargets: Wall
+			Versus:
+				None: 100
+				Wood: 100
+				Light: 100
+				Heavy: 25
+			DamageTypes: Prone50Percent, TriggerProne, FireDeath
+		Warhead@2Smu: LeaveSmudge
+			SmudgeType: Scorch
+		Warhead@3Eff: CreateEffect
+			Explosions: med_napalm
+			ImpactSounds: flamer2.aud
+	FlametankExplode:
+		Warhead@1Dam: SpreadDamage
+			Spread: 1c0
+			Damage: 115
+			DamageTypes: Prone50Percent, TriggerProne, FireDeath
+		Warhead@2Eff: CreateEffect
+			Explosions: big_napalm
+			ImpactSounds: xplobig6.aud

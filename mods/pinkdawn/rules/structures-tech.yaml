@@ -233,7 +233,7 @@ COMM:
 	Valued:
 		Cost: 0
 	Health:
-		HP: 40000
+		HP: 50000
 	RevealsShroud:
 		Range: 12c0
 	DetectCloaked:
@@ -345,3 +345,48 @@ APRT.Husk:
 		Dimensions: 3,2
 	Tooltip:
 		Name: Airport (Destroyed)
+
+EXPB:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 45000
+	Tooltip:
+		Name: Expansion Post
+	RevealsShroud:
+		MinRange: 5c0
+	GivesBuildableArea:
+		AreaTypes: building
+	TooltipDescription@ally:
+		Description: Provides buildable area.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain buildable area.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: EXPB.Husk
+        OwnerType: InternalName
+	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		Image: acom
+
+EXPB.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Expansion Post (Destroyed)
+	RenderSprites:
+		Image: acom.husk
