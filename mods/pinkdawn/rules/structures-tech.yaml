@@ -210,6 +210,9 @@ SYRD:
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	ProvidesPrerequisite@buildingname:
+	ProximityExternalCondition@SELLSHIPS:
+		Condition: ship.sellable
+		Range: 3c768
 
 COMM:
 	Inherits: ^TechBuilding
