@@ -176,7 +176,7 @@ Player:
 			hq: 1
 			weap: 2
 			afld: 2
-			hpad: 2
+			hpad: 0
 			eye: 1
             bio: 1
 			miss: 1

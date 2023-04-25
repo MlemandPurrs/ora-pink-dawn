@@ -151,7 +151,7 @@ TRUK:
 	Mobile:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 10
-		Speed: 50
+		Speed: 60
 		PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 4c0

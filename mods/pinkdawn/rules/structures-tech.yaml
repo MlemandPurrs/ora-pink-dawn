@@ -151,7 +151,7 @@ SYRD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionQueue@NodNavy:
@@ -166,7 +166,7 @@ SYRD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar@GDINavy:

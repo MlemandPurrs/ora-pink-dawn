@@ -605,7 +605,7 @@ TurretGun:
 
 #   16. Mammoth Tank's rocket pods
 MammothTusk:
-	ReloadDelay: 65
+	ReloadDelay: 70
 	Range: 4c768
 	MinRange: 0c512
 	Burst: 2

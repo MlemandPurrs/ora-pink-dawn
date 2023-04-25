@@ -559,7 +559,7 @@ AFLD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar:
@@ -626,7 +626,7 @@ WEAP:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar:
@@ -754,7 +754,7 @@ HPAD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionQueue@Nod:
@@ -769,7 +769,7 @@ HPAD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar@GDI:
