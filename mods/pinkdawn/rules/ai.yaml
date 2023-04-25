@@ -167,6 +167,8 @@ Player:
 		VehiclesFactoryTypes: weap, afld
 		ProductionTypes: pyle, hand, weap, afld, hpad
 		SiloTypes: silo
+        MinimumDefenseRadius: 5
+        MaximumDefenseRadius: 20
 		BuildingLimits:
 			proc: 4
 			pyle: 3
@@ -174,7 +176,7 @@ Player:
 			hq: 1
 			weap: 2
 			afld: 2
-			hpad: 0
+			hpad: 2
 			eye: 1
             bio: 1
 			miss: 1
@@ -198,19 +200,22 @@ Player:
 			tmpl: 1
             miss: 1
 			fix: 1
-			hpad: 2
+			hpad: 1
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:
 		RequiresCondition: enable-ai-player
+		RushInterval: 400
 		SquadSize: 16
-		ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan
+        ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
+        NavalUnitsTypes: boat
+        NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy.Nod, Navy.GDI
 		UnitsToBuild:
 			e1: 65
 			e2: 25
@@ -233,8 +238,12 @@ Player:
 			mlrs: 40
 			heli: 5
 			orca: 5
+            boat: 3
 		UnitLimits:
 			harv: 8
+            boat: 5
+            orca: 2
+            heli: 2
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv

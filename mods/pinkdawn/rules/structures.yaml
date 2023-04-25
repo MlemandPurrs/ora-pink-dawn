@@ -718,7 +718,7 @@ HPAD:
 		BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq
+		Prerequisites: vehicleproduction
 		Queue: Building.GDI, Building.Nod
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
