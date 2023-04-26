@@ -1,11 +1,19 @@
-MapFormat: 11
+MapFormat: 12
+
 RequiresMod: pinkdawn
+
 Title: Treasure Island
+
 Author: sin, Insert Name
+
 Tileset: SNOW
+
 MapSize: 128,104
+
 Bounds: 8,8,112,88
+
 Visibility: Lobby
+
 Categories: Conquest
 
 Players:
@@ -414,9 +422,6 @@ Actors:
 	Actor130: t11
 		Location: 64,83
 		Owner: Neutral
-	Actor131: syrd
-		Owner: Neutral
-		Location: 101,43
 	Actor132: syrd
 		Owner: Neutral
 		Location: 22,53
@@ -426,3 +431,6 @@ Actors:
 	Actor134: syrd
 		Owner: Neutral
 		Location: 73,13
+	Actor135: syrd
+		Owner: Neutral
+		Location: 100,44
