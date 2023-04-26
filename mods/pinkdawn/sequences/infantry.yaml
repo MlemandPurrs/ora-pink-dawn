@@ -928,6 +928,7 @@ rmbo:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            SNOW: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4

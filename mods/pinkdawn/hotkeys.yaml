@@ -23,6 +23,11 @@ ProductionTypeAircraft: U
 	Types: Production
 	Contexts: Player
 
+ProductionTypeNavy: I
+	Description: Navy Tab
+	Types: Production
+	Contexts: Player
+
 ToggleVariant: V
 	Description: Rotate Building
 	Types: Production

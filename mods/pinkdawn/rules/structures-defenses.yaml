@@ -114,7 +114,7 @@ ATWR:
 		BuildPaletteOrder: 6
 		Prerequisites: miss
 		Queue: Defense.GDI
-		Description: All-purpose defensive structure.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
+		Description: All-purpose defensive structure.\nRequires power to operate.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
 	Selectable:
 		Bounds: 1024, 1024
 		DecorationBounds: 938, 2048, 0, -512
@@ -232,7 +232,7 @@ SAM:
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Nod
-		Description: Cloaked Anti-Aircraft base defense.\nTakes less damage when cloaked.\n\nCan attack only Aircraft.
+		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -271,7 +271,7 @@ SAM:
 		RequiresCondition: !ammo
 	AttackPopupTurreted:
         ClosedDamageMultiplier: 50
-		PauseOnCondition: lowpower && !build-incomplete
+		PauseOnCondition: lowpower && build-incomplete
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa

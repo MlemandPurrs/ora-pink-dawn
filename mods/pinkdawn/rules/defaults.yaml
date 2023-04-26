@@ -212,7 +212,13 @@
 		Margin: 4, 3
 		RequiresSelection: true
 		CustomPipSequences:
-			gray: pip-gray
+			pip-gray: pip-gray
+			pip-yellow: pip-yellow
+			pip-green: pip-green
+			pip-blue: pip-blue
+			pip-red: pip-red
+            pip-white: pip-white
+            gray: pip-gray
 			yellow: pip-yellow
 			green: pip-green
             red: pip-red
@@ -392,8 +398,61 @@
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: AirExplode
-		EmptyWeapon: AirExplode
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@AIR:
+		Weapon: HeliExplode
+		RequiresCondition: airborne
+
+^RepairsAircraftWithRepairBay:
+	ExternalCondition@AIRCRAFTREPAIR:
+		Condition: aircraft-repair
+	RepairsUnits:
+		ValuePercentage: 0
+		HpPerStep: 1000
+		Interval: 15
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: Repairing.
+        FinishRepairingNotification: UnitRepaired
+        FinishRepairingTextNotification: Unit repaired.
+		PlayerExperience: 0
+		RequiresCondition: aircraft-repair
+        RepairDamageTypes: Repair
+	WithDecoration@AIRCRAFTREPAIR:
+		Image: select
+		Palette: chrome
+		Sequence: repair-small
+		Position: Bottom
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: aircraft-repair && unit.docked
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral
+
+^Plane:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: true
+	HiddenUnderFog:
+		Type: GroundPosition
+		AlwaysVisibleRelationships: None
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	RejectsOrders:
+	Aircraft:
+		CruiseAltitude: 2560
+		IdleBehavior: LeaveMap
+	MapEditorData:
+		Categories: Aircraft
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -453,12 +512,20 @@
 		BlinkInterval: 32
 		BlinkPattern: On, Off
 
+^SlowdownWhenDamagedInfantry:
+	SpeedMultiplier@HEAVYDAMAGE:
+		Modifier: 90
+		RequiresCondition: heavily-damaged
+	GrantConditionOnDamageState@HEAVYDAMAGE:
+		Condition: heavily-damaged
+		ValidDamageStates: Heavy, Critical	
+
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
-	Inherits@slowdown: ^SlowdownWhenDamaged
+	Inherits@slowdown: ^SlowdownWhenDamagedInfantry
 	Inherits@hazmat: ^InfantryTiberiumDamage
 	Inherits@healing: ^InfantryHealing
 	Huntable:
@@ -466,7 +533,8 @@
 		Action: Kill
 		DeathTypes: DefaultDeath
 	Health:
-	Armor:
+		HP: 2500
+    Armor:
 		Type: None
 	RevealsShroud:
 		Range: 2c512
@@ -625,55 +693,19 @@
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
-^Plane:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^ClassicFacingSpriteActor
-	Inherits@handicaps: ^PlayerHandicaps
-	OwnerLostAction:
-		Action: Kill
-	AppearsOnRadar:
-		UseLocation: true
-	HiddenUnderFog:
-		Type: GroundPosition
-		AlwaysVisibleRelationships: None
-	ActorLostNotification:
-		TextNotification: Unit lost.
-	AttackMove:
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
-	WithFacingSpriteBody:
-	RejectsOrders:
-	Aircraft:
-		CruiseAltitude: 2560
-		IdleBehavior: LeaveMap
-	MapEditorData:
-		Categories: Aircraft
-
-^RepairsAircraftWithRepairBay:
-	ExternalCondition@AIRCRAFTREPAIR:
-		Condition: aircraft-repair
-	RepairsUnits:
-		ValuePercentage: 0
-		HpPerStep: 1000
-		Interval: 15
-		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: Repairing.
-        FinishRepairingNotification: UnitRepaired
-        FinishRepairingTextNotification: Unit repaired.
-		PlayerExperience: 0
-		RequiresCondition: aircraft-repair
-        RepairDamageTypes: Repair
-	WithDecoration@AIRCRAFTREPAIR:
-		Image: select
-		Palette: chrome
-		Sequence: repair-small
-		Position: Bottom
-		BlinkInterval: 15
-		BlinkPattern: on, off
-		RequiresCondition: aircraft-repair && unit.docked
-		RequiresSelection: False
-		ValidRelationships: Ally, Neutral
+^SlowdownWhenDamagedShip:
+	GrantConditionOnDamageState@HEAVY:
+		Condition: heavily-damaged
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical-damage
+		ValidDamageStates: Critical
+	SpeedMultiplier@HEAVYDAMAGE:
+		RequiresCondition: heavily-damaged
+		Modifier: 90
+	SpeedMultiplier@CRITICALDAMAGE:
+		RequiresCondition: critical-damage
+		Modifier: 85
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
@@ -681,7 +713,7 @@
     Inherits@5: ^GenericSpeedModifier
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
-	Inherits@slowdown: ^SlowdownWhenDamaged
+	Inherits@slowdown: ^SlowdownWhenDamagedShip
     Inherits@productionboost: ^ProductionBoost
 	Huntable:
 	OwnerLostAction:
@@ -714,6 +746,14 @@
 		Categories: Naval
 	RepairableNear:
 		RepairActors: syrd
+	Sellable:
+		RefundPercent: 50
+		SellSounds: cashturn.aud
+		Cursor: sell
+		ShowTicks: false
+		RequiresCondition: ship.sellable
+	ExternalCondition@Sellable:
+		Condition: ship.sellable
 	RenderSprites:
         PlayerPalette: playernavy
 
@@ -830,6 +870,21 @@
 		Palette: player
 		IsPlayerPalette: True
 
+^Defense:
+	Inherits: ^BaseBuilding
+	Inherits@selection: ^SelectableCombatBuilding
+	RenderRangeCircle:
+	RenderDetectionCircle:
+	-GivesBuildableArea:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Targetable:
+		TargetTypes: Ground, C4, Structure, Defense
+	MapEditorData:
+		Categories: Defense
+	-CommandBarBlacklist:
+    -SpawnActorsOnSell:
+
 ^CivBuilding:
 	Inherits: ^Building
 	Tooltip:
@@ -839,6 +894,8 @@
 	FrozenUnderFog:
 	MapEditorData:
 		Categories: Civilian building
+	RenderSprites:
+		Palette: terrain
 
 ^CivBuildingHusk:
 	Inherits@1: ^SpriteActor
@@ -856,45 +913,8 @@
 	ScriptTriggers:
 	MapEditorData:
 		Categories: Husk
-
-^TechBuilding:
-	Inherits: ^CivBuilding
-	OwnerLostAction:
-		Action: ChangeOwner
-	CaptureManager:
-	Capturable:
-		Types: building-neutral
-	CaptureNotification:
-		Notification: CivilianBuildingCaptured
-		TextNotification: Civilian building captured.
-	EngineerRepairable:
-	RevealsShroud:
-		Range: 3c0
-	Tooltip:
-		ShowOwnerRow: True
-	MapEditorData:
-		Categories: Tech building
-	AppearsOnMapPreview:
-
-^TechBuildingHusk:
-    Inherits: ^CivBuildingHusk
-	Inherits@shape: ^1x1Shape
-	Targetable:
-		RequiresForceFire: true
-		TargetTypes: NonSensical
-	CaptureManager:
-	CaptureNotification:
-		Notification: CivilianBuildingRestored
-	Capturable:
-		Types: building-neutral
-		ValidRelationships: Enemy, Neutral, Ally
-	Health:
-		HP: 20000
-	Building:
-		Dimensions: 1,1
-		Footprint: x
-	TransformOnCapture:
-		ForceHealthPercentage: 35
+	RenderSprites:
+		Palette: terrain
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -964,6 +984,105 @@
 		RequiresCondition: !winter
 		GenericVisibility: None
 		ShowOwnerRow: false
+
+^TechBuilding:
+	Inherits: ^Building
+	Tooltip:
+		GenericName: Tech Building
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	OwnerLostAction:
+		Action: ChangeOwner
+	CaptureManager:
+	Capturable:
+		Types: building-neutral
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+		TextNotification: Civilian building captured.
+	EngineerRepairable:
+	RevealsShroud:
+		Range: 3c0
+	Tooltip:
+		ShowOwnerRow: True
+	MapEditorData:
+		Categories: Tech building
+	AppearsOnMapPreview:
+
+^TechBuildingHusk:
+	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+	AppearsOnRadar:
+	Interactable:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		GenericName: Tech Building (Destroyed)
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: NonSensical
+	Health:
+		HP: 20000
+	MapEditorData:
+		Categories: Husk
+	ScriptTriggers:
+
+^RestorableBuilding:
+	CaptureManager:
+	CaptureNotification:
+		Notification: CivilianBuildingRestored
+	Capturable:
+		Types: building-neutral
+		ValidRelationships: Enemy, Neutral, Ally
+
+^Gate:
+	Inherits: ^Building
+	Inherits@handicaps: ^PlayerHandicaps
+	-WithSpriteBody:
+	Health:
+		HP: 25000
+	Armor:
+		Type: Concrete
+	LineBuildNode:
+		Types: concrete, gate
+	WithGateSpriteBody:
+		PauseOnCondition: lowpower
+        #   OpenSequence: open
+	Tooltip:
+		Name: Gate
+	Building:
+        RequiresBaseProvider: false
+		BuildSounds: place2.aud
+		TerrainTypes: Clear, Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 3
+	MapEditorData:
+		Categories: Wall
+	Gate:
+		PauseOnCondition: lowpower
+		OpeningSound: hydrod1.aud
+		ClosingSound: hvydoor1.aud
+		#   BlocksProjectilesHeight: 768
+        BlocksProjectilesHeight: 1
+	RepairableBuilding:
+		RepairPercent: 20
+		RepairStep: 400
+		PlayerExperience: 0
+		RepairingNotification: Repairing
+	RenderSprites:
+        PlayerPalette: playernavy
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		Position: Center
+		Palette: player
+		IsPlayerPalette: True
 
 ^Wall:
 	Inherits@1: ^SpriteActor
@@ -1255,21 +1374,6 @@
 		Categories: System
 	ScriptTriggers:
 
-^Defense:
-	Inherits: ^BaseBuilding
-	Inherits@selection: ^SelectableCombatBuilding
-	RenderRangeCircle:
-	RenderDetectionCircle:
-	-GivesBuildableArea:
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	Targetable:
-		TargetTypes: Ground, C4, Structure, Defense
-	MapEditorData:
-		Categories: Defense
-	-CommandBarBlacklist:
-    -SpawnActorsOnSell:
-
 ^DisabledOverlay:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1321,50 +1425,6 @@
 		Prerequisite: boostready
         RequiresPrerequisites: global-boosteron
         ResetOnOwnerChange: true
-
-^Gate:
-	Inherits: ^Building
-	Inherits@handicaps: ^PlayerHandicaps
-	-WithSpriteBody:
-	Health:
-		HP: 25000
-	Armor:
-		Type: Concrete
-	LineBuildNode:
-		Types: concrete, gate
-	WithGateSpriteBody:
-		PauseOnCondition: lowpower
-        #   OpenSequence: open
-	Tooltip:
-		Name: Gate
-	Building:
-        RequiresBaseProvider: false
-		BuildSounds: place2.aud
-		TerrainTypes: Clear, Road
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 3
-	MapEditorData:
-		Categories: Wall
-	Gate:
-		PauseOnCondition: lowpower
-		OpeningSound: hydrod1.aud
-		ClosingSound: hvydoor1.aud
-		#   BlocksProjectilesHeight: 768
-        BlocksProjectilesHeight: 1
-	RepairableBuilding:
-		RepairPercent: 20
-		RepairStep: 400
-		PlayerExperience: 0
-		RepairingNotification: Repairing
-	RenderSprites:
-        PlayerPalette: playernavy
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 
 ^FlammableStructure:
 	ChangesHealth@SmallBurn:

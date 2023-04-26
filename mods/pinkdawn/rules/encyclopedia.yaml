@@ -160,7 +160,7 @@ fix.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Service Depot repairs any damaged vehicle that you move onto it. All repairs get deducted from your credits. If you run out of credits while repairs are in progress, repairs will stop.\n\nRepairing a vehicle is much faster than building one, and costs a fraction of the original price. This is a worthy investment. Damage to the facility significantly slows down repair work.
+        Description: The Service Depot repairs any damaged vehicle that you move onto it. All repairs get deducted from your credits. If you run out of credits while repairs are in progress, repairs will stop.\n\nRepairing a vehicle is much faster than building one, and costs a fraction of the original price. This is a worthy investment.
         Category: GDI Buildings
 		Order: 9
 	RenderSprites:
@@ -971,7 +971,7 @@ v19.info:
 		Order: 0
 	RenderSprites:
 		Image: v19
-        Palette: gdi
+        Palette: civilian
     -MapEditorData:
 
 hosp.info:
@@ -982,7 +982,51 @@ hosp.info:
 		Order: 1
 	RenderSprites:
 		Image: hosp
-        Palette: gdi
+        Palette: civilian
+    -MapEditorData:
+
+comm.info:
+    Inherits: COMM
+	Encyclopedia:
+        Description: This facility houses an array of long-range communications equipment that can provide vision in a large radius when captured. While this facility is internally powered, it can also activate it's sensors when supplied with extra power from your base to detect cloaked units in a medium-range.
+        Category: Tech Buildings
+		Order: 2
+	RenderSprites:
+		Image: comm
+        Palette: civilian
+    -MapEditorData:
+
+aprt.info:
+    Inherits: APRT
+	Encyclopedia:
+        Description: The civilian airport can allow the usage of Paratroopers when captured.
+        Category: Tech Buildings
+		Order: 3
+	RenderSprites:
+		Image: aprt
+        Palette: civilian
+    -MapEditorData:
+
+expb.info:
+    Inherits: EXPB
+	Encyclopedia:
+        Description: Construction outposts such as these can be used to expand your base. To do so, simply use an Engineer to capture the structure and you will able to build structures nearby it's location.
+        Category: Tech Buildings
+		Order: 4
+	RenderSprites:
+		Image: acom
+        Palette: civilian
+    -MapEditorData:
+
+syrd.info:
+    Inherits: SYRD
+	Encyclopedia:
+        Description: The shipyard is a production facility for naval units. This structure will allow you to build naval transports and ships when captured.
+        Category: Tech Buildings
+		Order: 5
+	RenderSprites:
+		Image: syrd
+        Palette: civilian
     -MapEditorData:
 
 comm.info:

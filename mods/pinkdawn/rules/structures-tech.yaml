@@ -32,6 +32,7 @@ V19:
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
+    Inherits@restorable: ^RestorableBuilding
 	Interactable:
 		Bounds: 1024, 1024
 	WithSpriteBody:
@@ -44,6 +45,7 @@ V19.Husk:
 	Tooltip:
 		Name: Oil Derrick (Destroyed)
 	TransformOnCapture:
+		ForceHealthPercentage: 35
 		IntoActor: v19
 
 HOSP:
@@ -76,7 +78,7 @@ HOSP:
 	ProvidesPrerequisite@buildingname:
 
 HOSP.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^TechBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -140,7 +142,7 @@ SYRD:
 	ProductionQueue@GDINavy:
 		Type: Navy.GDI
 		DisplayOrder: 5
-		Group: Naval
+		Group: Navy
 		Factions: gdi
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -149,13 +151,13 @@ SYRD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionQueue@NodNavy:
 		Type: Navy.Nod
 		DisplayOrder: 5
-		Group: Naval
+		Group: Navy
 		Factions: nod
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -164,7 +166,7 @@ SYRD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar@GDINavy:
@@ -210,6 +212,9 @@ SYRD:
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	ProvidesPrerequisite@buildingname:
+	ProximityExternalCondition@SELLSHIPS:
+		Condition: ship.sellable
+		Range: 3c768
 
 COMM:
 	Inherits: ^TechBuilding
@@ -222,12 +227,42 @@ COMM:
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
-        LocalCenterOffset: 0,-512,0
+    LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Array
 	Valued:
 		Cost: 0
 	Health:
+		HP: 50000
+	RevealsShroud:
+		Range: 12c0
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !lowpower && owner.is.player
+    RenderDetectionCircle:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+        RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	WithSpriteBody:
+		PauseOnCondition: lowpower
+	TooltipDescription@ally:
+		Description: Provides range of vision and detects stealth.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain visual range and detection.
+		ValidRelationships: Neutral, Enemy
+	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: COMM.Husk
+        OwnerType: InternalName
+
+COMM.Husk:
+	Inherits: ^TechBuildingHusk
+  Health:
 		HP: 40000
 	RevealsShroud:
 		Range: 12c0
@@ -238,7 +273,6 @@ COMM:
 		Description: Capture to give visual range.
 		ValidRelationships: Neutral, Enemy
 	WithBuildingBib:
-		#   HasMinibib: true
 	ProvidesPrerequisite@buildingname:
 
 COMM.Husk:
@@ -248,6 +282,126 @@ COMM.Husk:
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
-        LocalCenterOffset: 0,-512,0
+    LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Array (Destroyed)
+
+APRT:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	AppearsOnMapPreview:
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2	
+	Tooltip:
+		Name: Airport
+	TooltipDescription@ally:
+		Description: Grants the usage of Paratroopers.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to obtain Paratroopers.
+		ValidRelationships: Neutral, Enemy
+	Selectable:
+		Bounds: 3072, 2048
+	Health:
+		HP: 60000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c0
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	ParatroopersPower@paratroopers:
+        PauseOnCondition: lowpower
+		OrderName: Paratroopers
+		Icon: paratroopers
+		ChargeInterval: 6750
+		UnitType: c17
+		Name: Paratroopers
+		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1,E3,E1,E3,E1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: paratroopers
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: ability
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+	SupportPowerChargeBar:
+    WithBuildingBib:
+    ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: APRT.Husk
+        OwnerType: InternalName
+
+APRT.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Airport (Destroyed)
+
+EXPB:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 45000
+	Tooltip:
+		Name: Expansion Post
+	RevealsShroud:
+		MinRange: 5c0
+	GivesBuildableArea:
+		AreaTypes: building
+	TooltipDescription@ally:
+		Description: Provides buildable area.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain buildable area.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: EXPB.Husk
+        OwnerType: InternalName
+	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		Image: acom
+
+EXPB.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Expansion Post (Destroyed)
+	RenderSprites:
+		Image: acom.husk

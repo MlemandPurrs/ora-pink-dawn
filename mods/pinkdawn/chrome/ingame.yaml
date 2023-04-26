@@ -1744,7 +1744,7 @@ Container@PLAYER_WIDGETS:
 					Children:
 						ProductionTypeButton@BUILDING:
 							Logic: AddFactionSuffixLogic
-							Width: 38
+							Width: 31
 							Height: 26
 							Background: chrome-button-background
 							TooltipText: Buildings
@@ -1754,41 +1754,41 @@ Container@PLAYER_WIDGETS:
 							Key: ProductionTypeBuilding
 							Children:
 								Image@ICON:
-									X: 11
+									X: 8
 									Y: 5
 									ImageCollection: production-icons
 								Image@SEPARATOR:
 									Logic: AddFactionSuffixLogic
-									X: 38
+									X: 31
 									Y: 2
 									ImageCollection: chrome-button
 									ImageName: separator
 						ProductionTypeButton@DEFENSE:
 							Logic: AddFactionSuffixLogic
-							X: 39
-							Width: 38
+							X: 32
+							Width: 32
 							Height: 26
 							Background: chrome-button-background
-							TooltipText: Defense
+							TooltipText: Support
 							TooltipContainer: TOOLTIP_CONTAINER
 							TooltipTemplate: BUTTON_TOOLTIP_FACTIONSUFFIX
 							ProductionGroup: Defense
 							Key: ProductionTypeDefense
 							Children:
 								Image@ICON:
-									X: 11
+									X: 8
 									Y: 5
 									ImageCollection: production-icons
 								Image@SEPARATOR:
 									Logic: AddFactionSuffixLogic
-									X: 38
+									X: 32
 									Y: 2
 									ImageCollection: chrome-button
 									ImageName: separator
 						ProductionTypeButton@INFANTRY:
 							Logic: AddFactionSuffixLogic
-							X: 78
-							Width: 38
+							X: 65
+							Width: 32
 							Height: 26
 							Background: chrome-button-background
 							TooltipText: Infantry
@@ -1798,19 +1798,19 @@ Container@PLAYER_WIDGETS:
 							Key: ProductionTypeInfantry
 							Children:
 								Image@ICON:
-									X: 11
+									X: 8
 									Y: 5
 									ImageCollection: production-icons
 								Image@SEPARATOR:
 									Logic: AddFactionSuffixLogic
-									X: 38
+									X: 32
 									Y: 2
 									ImageCollection: chrome-button
 									ImageName: separator
 						ProductionTypeButton@VEHICLE:
 							Logic: AddFactionSuffixLogic
-							X: 117
-							Width: 38
+							X: 98
+							Width: 32
 							Height: 26
 							Background: chrome-button-background
 							TooltipText: Vehicles
@@ -1820,19 +1820,19 @@ Container@PLAYER_WIDGETS:
 							Key: ProductionTypeVehicle
 							Children:
 								Image@ICON:
-									X: 11
+									X: 8
 									Y: 5
 									ImageCollection: production-icons
 								Image@SEPARATOR:
 									Logic: AddFactionSuffixLogic
-									X: 38
+									X: 32
 									Y: 2
 									ImageCollection: chrome-button
 									ImageName: separator
 						ProductionTypeButton@AIRCRAFT:
 							Logic: AddFactionSuffixLogic
-							X: 156
-							Width: 38
+							X: 131
+							Width: 31
 							Height: 26
 							Background: chrome-button-background
 							TooltipText: Aircraft
@@ -1842,7 +1842,29 @@ Container@PLAYER_WIDGETS:
 							Key: ProductionTypeAircraft
 							Children:
 								Image@ICON:
-									X: 11
+									X: 7
+									Y: 5
+									ImageCollection: production-icons
+								Image@SEPARATOR:
+									Logic: AddFactionSuffixLogic
+									X: 31
+									Y: 2
+									ImageCollection: chrome-button
+									ImageName: separator
+						ProductionTypeButton@NAVY:
+							Logic: AddFactionSuffixLogic
+							X: 163
+							Width: 31
+							Height: 26
+							Background: chrome-button-background
+							TooltipText: Navy
+							TooltipContainer: TOOLTIP_CONTAINER
+							TooltipTemplate: BUTTON_TOOLTIP_FACTIONSUFFIX
+							ProductionGroup: Navy
+							Key: ProductionTypeNavy
+							Children:
+								Image@ICON:
+									X: 7
 									Y: 5
 									ImageCollection: production-icons
 		Container@PRODUCTION_BACKGROUND:

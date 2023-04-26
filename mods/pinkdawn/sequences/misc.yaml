@@ -168,7 +168,7 @@ beacon:
 		Offset: 0,-42
 	atomic: atombcon
 		Offset: 0,-42
-	paratrooper: pinfbcon
+	paratroopers: pinfbcon
 		Offset: 0,-42
 	clock: beaconclock
 		Length: *
@@ -336,7 +336,8 @@ resources:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: DESERT
+			JUNGLE: TEMPERAT
+            SNOW: TEMPERAT
 		Length: *
 	ti1: rtib1
 	ti2: rtib2

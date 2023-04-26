@@ -458,6 +458,8 @@ LightGun:
 		Image: 120MM
 		Speed: 853
 		Shadow: true
+		Inaccuracy: 128
+		InaccuracyType: PerCellIncrement
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 2500
@@ -494,6 +496,8 @@ MediumGun:
 		Image: 120MM
 		Speed: 853
 		Shadow: true
+		Inaccuracy: 128
+		InaccuracyType: PerCellIncrement
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 3250
@@ -532,6 +536,8 @@ MammothGun:
 		Image: 120MM
 		Speed: 853
 		Shadow: true
+		Inaccuracy: 128
+		InaccuracyType: PerCellIncrement
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 4000
@@ -568,6 +574,8 @@ TurretGun:
 		Image: 120MM
 		Speed: 853
 		Shadow: true
+		Inaccuracy: 128
+		InaccuracyType: PerCellIncrement
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 4000
@@ -597,7 +605,7 @@ TurretGun:
 
 #   16. Mammoth Tank's rocket pods
 MammothTusk:
-	ReloadDelay: 65
+	ReloadDelay: 70
 	Range: 4c768
 	MinRange: 0c512
 	Burst: 2
@@ -980,7 +988,7 @@ Laser:
 #   24. SAM Missile
 SAMMissile:
 	ReloadDelay: 50
-	Range: 7c512
+	Range: 8c512
 	MinRange: 0c512
 	Report: rocket2.aud
 	Burst: 2
@@ -994,7 +1002,7 @@ SAMMissile:
 		Shadow: true
 		HorizontalRateOfTurn: 80
 		TrailImage: smokey
-		Speed: 200
+		Speed: 426
 		RangeLimit: 10c512
         Acceleration: 8
 	Warhead@1Dam: SpreadDamage
@@ -1036,7 +1044,7 @@ HonestJohn:
 		LaunchAngle: 37
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
-		Damage: 10000
+		Damage: 15000
 		Versus:
             None: 87
             Light: 100

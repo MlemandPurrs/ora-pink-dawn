@@ -511,7 +511,6 @@ fix.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
 		Offset: 0,-9
 
@@ -873,7 +872,6 @@ obli:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
 		Offset: -1,-3
 	icon: obliicon
@@ -888,7 +886,6 @@ obli.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
 		Offset: -1,-3
 
@@ -898,7 +895,7 @@ sam:
 	opening:
 		Start: 1
 		Length: 16
-		Tick: 30
+		Tick: 15
 	idle:
 		Start: 17
 		Facings: 32
@@ -906,7 +903,7 @@ sam:
 	closing:
 		Start: 50
 		Length: 14
-		Tick: 30
+		Tick: 15
 	damaged-closed-idle:
 		Start: 64
 	damaged-opening:
@@ -1141,3 +1138,54 @@ comm.husk:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
 		Length: *
+
+aprt:
+	idle: 
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle: 
+		Start: 8
+		Length: 1
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+    dead: aprt
+        Tick: 800
+        Start: 8
+        ZOffset: -1023
+        Offset: 0,-4
+
+aprt.husk:
+	idle: aprt
+		Start: 8
+		Length: 1
+		ZOffset: -1023
+		Offset: 0,-4
+
+acom:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make: acommake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+        Length: *
+
+acom.husk:
+	idle: acom
+		Start: 1
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+

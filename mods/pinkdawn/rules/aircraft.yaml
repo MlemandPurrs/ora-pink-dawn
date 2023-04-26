@@ -17,7 +17,7 @@ C17:
 		AlwaysVisibleRelationships: None
 		Type: CenterPosition
 	ParaDrop:
-		DropRange: 4c0
+		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
 		Types: Infantry, Vehicle, Crate
@@ -25,6 +25,13 @@ C17:
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
 	-MapEditorData:
+
+C17.Crate:
+    Inherits: C17
+	ParaDrop:
+		DropRange: 1c0
+    RenderSprites:
+        Image: c17
 
 A10:
 	Inherits: ^Plane
@@ -43,7 +50,7 @@ A10:
 		AddToAssetsValue: false
 	Aircraft:
 		TurnSpeed: 10
-		Speed: 400
+		Speed: 300
 		Repulsable: False
 		AirborneCondition: airborne
 	AttackBomber:
@@ -58,16 +65,6 @@ A10:
 		Name: bombs
 		Weapon: Napalm
 		LocalOffset: 0,-256,-43, 0,256,-43
-	Contrail@1:
-		Offset: -640,171,0
-		TrailLength: 8
-		TrailWidth: 32
-        StartColorUsePlayerColor: false
-	Contrail@2:
-		Offset: -640,-171,0
-		TrailLength: 8
-		TrailWidth: 32
-        StartColorUsePlayerColor: false
 	Targetable@AIRBORNE:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
@@ -83,8 +80,8 @@ A10:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: AirExplode
-		EmptyWeapon: AirExplode
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
 	-MapEditorData:
 
 TRAN:

@@ -1,0 +1,41 @@
+#50 -> 65
+HeliAAGun:
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Light: 65
+
+#Speed 256 -> 341, H. Damage 84 -> 120, Turn rate 60 -> 80
+OrcaAGMissiles:
+	Projectile: Missile
+		Speed: 341
+		HorizontalRateOfTurn: 80
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Heavy: 120
+
+#Speed 298 -> 341, Rangelimit: 6 -> 8c409
+OrcaAAMissiles:
+	Projectile: Missile
+		Speed: 341
+		RangeLimit: 8c409
+
+#4000 -> 5000
+^FlameWeapon:
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+FlamethrowerExplode:
+	Inherits: GrenadierExplode
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: flamer2.aud
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Scorch
+
+#50 -> 55
+Grenade:
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Wood: 55

@@ -559,7 +559,7 @@ AFLD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar:
@@ -626,7 +626,7 @@ WEAP:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar:
@@ -718,7 +718,7 @@ HPAD:
 		BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq
+		Prerequisites: vehicleproduction
 		Queue: Building.GDI, Building.Nod
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -754,7 +754,7 @@ HPAD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionQueue@Nod:
@@ -769,7 +769,7 @@ HPAD:
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
 		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Training
+		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionBar@GDI:
@@ -1137,7 +1137,7 @@ BIO:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 60000
+		HP: 70000
 	Valued:
 		Cost: 800
 	Buildable:

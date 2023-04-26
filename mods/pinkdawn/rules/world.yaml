@@ -251,7 +251,7 @@ World:
 	CrateSpawner:
 		Minimum: 1
 		Maximum: 6
-        DeliveryAircraft: c17
+        DeliveryAircraft: c17.crate
 		SpawnInterval: 3000
 		WaterChance: 0
 		InitialSpawnDelay: 1500
