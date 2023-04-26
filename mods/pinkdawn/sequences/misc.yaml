@@ -336,7 +336,7 @@ resources:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: DESERT
+			JUNGLE: TEMPERAT
             SNOW: TEMPERAT
 		Length: *
 	ti1: rtib1
