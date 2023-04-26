@@ -45,6 +45,8 @@ Packages:
 	pinkdawn|scripts
 	common|scripts
 	pinkdawn|uibits
+	pinkdawn|bits/snow.mix
+    pinkdawn|bits/snow
 
 MapFolders:
 	pinkdawn|maps: System
@@ -87,6 +89,7 @@ TileSets:
 	pinkdawn|tilesets/winter.yaml
 	pinkdawn|tilesets/temperat.yaml
 	pinkdawn|tilesets/jungle.yaml
+	pinkdawn|tilesets/snow.yaml
 
 Weapons:
 	pinkdawn|weapons/allweapons.yaml
@@ -253,11 +256,12 @@ SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 		WINTER: .win
 		DESERT: .des
 		JUNGLE: .jun
+		SNOW: .sno
 
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SpriteExtensions: .shp, .tem, .win, .des, .jun
+	SpriteExtensions: .shp, .tem, .win, .des, .jun, .sno
 	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var
 	VideoExtensions: .vqa, .wsa
 
