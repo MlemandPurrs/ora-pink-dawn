@@ -398,8 +398,11 @@
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: AirExplode
-		EmptyWeapon: AirExplode
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@AIR:
+		Weapon: HeliExplode
+		RequiresCondition: airborne
 
 ^RepairsAircraftWithRepairBay:
 	ExternalCondition@AIRCRAFTREPAIR:

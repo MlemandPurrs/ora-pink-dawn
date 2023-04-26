@@ -35,6 +35,18 @@ LST:
 		MaxWeight: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Sellable:
+		RequiresCondition: ship.sellable && !loaded
 
 BOAT:
 	Inherits: ^Ship

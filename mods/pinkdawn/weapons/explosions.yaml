@@ -174,8 +174,7 @@ CrateNapalm:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 
-#   visual only
-AirExplode:
+HeliExplode:
 	Warhead@1Eff: CreateEffect
-		Explosions: small_building
+		Explosions: building
 		ImpactSounds: xplos.aud
