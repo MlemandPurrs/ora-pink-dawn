@@ -262,7 +262,7 @@ COMM:
 
 COMM.Husk:
 	Inherits: ^TechBuildingHusk
-  Health:
+ 	Health:
 		HP: 40000
 	RevealsShroud:
 		Range: 12c0
