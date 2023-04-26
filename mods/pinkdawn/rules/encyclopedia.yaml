@@ -1028,3 +1028,14 @@ syrd.info:
 		Image: syrd
         Palette: civilian
     -MapEditorData:
+
+comm.info:
+    Inherits: COMM
+	Encyclopedia:
+		Description: This civilian array of long-range communications equipment can provide vision in a large radius when captured.
+        Category: Tech Buildings
+		Order: 2
+	RenderSprites:
+		Image: comm
+        Palette: gdi
+    -MapEditorData:
