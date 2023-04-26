@@ -160,7 +160,7 @@ fix.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Service Depot repairs any damaged vehicle that you move onto it. All repairs get deducted from your credits. If you run out of credits while repairs are in progress, repairs will stop.\n\nRepairing a vehicle is much faster than building one, and costs a fraction of the original price. This is a worthy investment. Damage to the facility significantly slows down repair work.
+        Description: The Service Depot repairs any damaged vehicle that you move onto it. All repairs get deducted from your credits. If you run out of credits while repairs are in progress, repairs will stop.\n\nRepairing a vehicle is much faster than building one, and costs a fraction of the original price. This is a worthy investment.
         Category: GDI Buildings
 		Order: 9
 	RenderSprites:

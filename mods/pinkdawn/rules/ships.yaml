@@ -12,7 +12,7 @@ LST:
         BuildPaletteOrder: 0
 		Queue: Navy.GDI, Navy.Nod
 		Prerequisites: syrd
-		Description: Transports ground units across water.
+		Description: Transports ground units across water.\n\nUnarmed.
 	Mobile:
 		Locomotor: hovercraft
 		InitialFacing: 0

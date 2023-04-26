@@ -988,7 +988,7 @@ Laser:
 #   24. SAM Missile
 SAMMissile:
 	ReloadDelay: 50
-	Range: 8c512 #  +1c range to compensate for pop-up
+	Range: 8c512
 	MinRange: 0c512
 	Report: rocket2.aud
 	Burst: 2
@@ -1002,7 +1002,7 @@ SAMMissile:
 		Shadow: true
 		HorizontalRateOfTurn: 80
 		TrailImage: smokey
-		Speed: 200
+		Speed: 426
 		RangeLimit: 10c512
         Acceleration: 8
 	Warhead@1Dam: SpreadDamage

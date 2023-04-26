@@ -579,6 +579,9 @@ production-icons:
 		aircraft: 836, 68, 16, 16
 		aircraft-disabled: 836, 85, 16, 16
 		aircraft-alert: 836, 102, 16, 16
+		navy: 955, 68, 16, 16
+		navy-disabled: 955, 85, 16, 16
+		navy-alert: 955, 102, 16, 16
 
 order-icons:
 	Inherits: ^Chrome

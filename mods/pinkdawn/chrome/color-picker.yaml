@@ -15,9 +15,9 @@ Background@COLOR_CHOOSER:
 			Height: 25
 			Text: Random
 		Button@STORE_BUTTON:
-			X: 229
-			Y: 118
-			Width: 77
+			X: 165
+			Y: PARENT_BOTTOM - 30
+			Width: 60
 			Height: 25
 			Text: Store
 			Font: Bold
@@ -35,7 +35,7 @@ Background@COLOR_CHOOSER:
 			Text: Mixer
 			Font: Bold
 		Button@PALETTE_TAB_BUTTON:
-			X: 90
+			X: 85
 			Y: PARENT_BOTTOM - 30
 			Height: 25
 			Width: 80

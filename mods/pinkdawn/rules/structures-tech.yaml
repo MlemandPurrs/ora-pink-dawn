@@ -142,7 +142,7 @@ SYRD:
 	ProductionQueue@GDINavy:
 		Type: Navy.GDI
 		DisplayOrder: 5
-		Group: Naval
+		Group: Navy
 		Factions: gdi
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -157,7 +157,7 @@ SYRD:
 	ProductionQueue@NodNavy:
 		Type: Navy.Nod
 		DisplayOrder: 5
-		Group: Naval
+		Group: Navy
 		Factions: nod
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
