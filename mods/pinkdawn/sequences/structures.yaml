@@ -1189,3 +1189,25 @@ acom.husk:
 		UseTilesetExtension: true
 		Length: *
 
+oil:
+	Defaults:
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+oil.husk:
+	idle: oil
+		Start: 2
+		Offset: 0,-2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0

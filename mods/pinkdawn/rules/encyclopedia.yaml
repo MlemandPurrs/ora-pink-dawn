@@ -966,7 +966,7 @@ atomic.info:
 v19.info:
     Inherits: V19
 	Encyclopedia:
-		Description: This civilian asset when captured will extract valuable oil from reserves deep underground thus generating income periodically. While the amount of income pales in comparison to tiberium, the rate at which extracted oil can get sold on the market makes it a worthwhile investion.
+		Description: This civilian asset when captured will extract valuable oil from reserves deep underground thus generating income periodically. While the amount of income pales in comparison to tiberium, the rate at which extracted oil can get sold on the market makes it a worthwhile investion.\nThe Oil Derrick will grant a one-time bonus of 500 on first capture, then generate 15 credits every 2 seconds.
         Category: Tech Buildings
 		Order: 0
 	RenderSprites:
@@ -979,7 +979,7 @@ hosp.info:
 	Encyclopedia:
 		Description: The hospital is a medical facility providing treatment and aid to the victims of warzones.\nCapturing this structure with an Engineer will enable self-heal to all Infantry units under your command.
         Category: Tech Buildings
-		Order: 1
+		Order: 2
 	RenderSprites:
 		Image: hosp
         Palette: civilian
@@ -990,7 +990,7 @@ comm.info:
 	Encyclopedia:
         Description: This facility houses an array of long-range communications equipment that can provide vision in a large radius when captured. While this facility is internally powered, it can also activate it's sensors when supplied with extra power from your base to detect cloaked units in a medium-range.
         Category: Tech Buildings
-		Order: 2
+		Order: 3
 	RenderSprites:
 		Image: comm
         Palette: civilian
@@ -1001,7 +1001,7 @@ aprt.info:
 	Encyclopedia:
         Description: The civilian airport can allow the usage of Paratroopers when captured.
         Category: Tech Buildings
-		Order: 3
+		Order: 4
 	RenderSprites:
 		Image: aprt
         Palette: civilian
@@ -1012,7 +1012,7 @@ expb.info:
 	Encyclopedia:
         Description: Construction outposts such as these can be used to expand your base. To do so, simply use an Engineer to capture the structure and you will able to build structures nearby it's location.
         Category: Tech Buildings
-		Order: 4
+		Order: 5
 	RenderSprites:
 		Image: acom
         Palette: civilian
@@ -1023,19 +1023,19 @@ syrd.info:
 	Encyclopedia:
         Description: The shipyard is a production facility for naval units. This structure will allow you to build naval transports and ships when captured.
         Category: Tech Buildings
-		Order: 5
+		Order: 6
 	RenderSprites:
 		Image: syrd
         Palette: civilian
     -MapEditorData:
 
-comm.info:
-    Inherits: COMM
+oil.info:
+    Inherits: OIL
 	Encyclopedia:
-		Description: This civilian array of long-range communications equipment can provide vision in a large radius when captured.
+        Description: The Oil Refinery when captured will reduce the manufactoring cost of fuel used, in effect reducing the production cost of all units by 10%. Capturing multiple oil refineries does not cumulatively stack the discount.\nDuring a lengthy battle the resources saved by the ownership of an Oil Refinery can be strategically important, and may alter the outcome of some important skirmishes.
         Category: Tech Buildings
 		Order: 2
 	RenderSprites:
-		Image: comm
-        Palette: gdi
+		Image: oil
+        Palette: civilian
     -MapEditorData:

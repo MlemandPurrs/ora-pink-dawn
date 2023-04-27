@@ -266,6 +266,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamaged
     Inherits@unitsellable: ^SellableOnRepairPad
 	Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -340,6 +341,7 @@
     Inherits@unitsellable: ^SellableOnHelipad
 	Inherits@slowdown: ^SlowdownWhenDamaged
 	Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -619,6 +621,7 @@
 ^Soldier:
 	Inherits: ^Infantry
 	Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
 	MustBeDestroyed:
 	Tooltip:
 		GenericName: Soldier
@@ -715,6 +718,7 @@
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@slowdown: ^SlowdownWhenDamagedShip
     Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1474,3 +1478,8 @@
         SourceCap: 1
     Targetable@BurnDamage:
 		TargetTypes: Incendiary
+
+^OilRefineryDiscount:
+	ProductionCostMultiplier@productionboost:
+		Multiplier: 90
+		Prerequisites: oil

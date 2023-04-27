@@ -5,9 +5,17 @@ V19:
 	RevealsShroud:
 		Range: 3c0
 	CashTrickler:
-        Interval: 100
-		Amount: 20
-		RequiresCondition: enabled
+        Interval: 50
+		Amount: 15
+		RequiresCondition: owner.is.player
+    #   GivesCashOnCapture:
+    #   Amount: 500
+    #   works always, grrr....
+    #   RequiresCondition: !owner.is.player
+    #   PauseOnCondition: owner.is.player
+    #   nope, didnt work either....
+    #   RequiresCondition: owner.is.neutral
+    #   so, this is why GrantConditionOnNeutral is a thing in CA....
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -27,15 +35,19 @@ V19:
 		Actor: V19.Husk
         OwnerType: InternalName
 	UpdatesDerrickCount:
-	GrantConditionOnCombatantOwner:
-		Condition: enabled
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+    #   GrantCondition@FirstCapture:
+    #   Condition: owner.is.neutral
+    #   RequiresCondition: !owner.is.player
+	WithSpriteBody:
+        PauseOnCondition: !owner.is.player
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
     Inherits@restorable: ^RestorableBuilding
 	Interactable:
 		Bounds: 1024, 1024
-	WithSpriteBody:
 	WithIdleOverlay:
 		StartSequence: fire-start
 		Sequence: fire-loop
@@ -390,3 +402,36 @@ EXPB.Husk:
 		Name: Expansion Post (Destroyed)
 	RenderSprites:
 		Image: acom.husk
+
+OIL:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 40000
+	Tooltip:
+		Name: Oil Refinery
+	TooltipDescription@ally:
+		Description: Reduces the production cost of all Units.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to produce all units more cheap.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: OIL.Husk
+	ProvidesPrerequisite@buildingname:
+	WithBuildingBib:
+
+OIL.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Oil Refinery (Destroyed)

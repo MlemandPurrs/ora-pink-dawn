@@ -375,7 +375,7 @@ MAAG:
 		BuildPaletteOrder: 10
 		Prerequisites: anyhq
 		Queue: Vehicle.GDI
-		Description: Mobile Anti-Air Gun\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
+		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 20

@@ -356,9 +356,9 @@ SILO:
 		FactionImages:
 			nod: nodsilo
 	CashTrickler:
-		Interval: 625
-		InitialDelay: 625
-		Amount: 30
+		Interval: 300
+		InitialDelay: 300
+		Amount: 200
 		UseResourceStorage: true
 		PauseOnCondition: lowpower || build-incomplete        
         RequiresCondition: infiniteincome-enabled
