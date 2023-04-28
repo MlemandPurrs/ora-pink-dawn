@@ -3,9 +3,9 @@
 	Shroud:
 	PlayerResources:
 		ResourceValues:
-			Tiberium: 35
-			BlueTiberium: 60
-            RedTiberium: 85
+			Tiberium: 25
+			BlueTiberium: 50
+            RedTiberium: 75
 
 EditorPlayer:
 	Inherits: ^BasePlayer

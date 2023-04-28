@@ -71,7 +71,7 @@ GUN:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 20
 		InitialFacing: 192
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete

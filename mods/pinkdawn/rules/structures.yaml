@@ -674,7 +674,8 @@ FIX:
 	Reservable:
 	RepairsUnits:
 		HpPerStep: 1000
-		Interval: 15
+		#   Interval: 87
+        Interval: 26
 		PlayerExperience: 0
 		StartRepairingNotification: Repairing
 		StartRepairingTextNotification: Repairing.

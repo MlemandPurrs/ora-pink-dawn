@@ -567,7 +567,7 @@ MammothGun:
 
 #   15. Gun Turret's weapon
 TurretGun:
-	ReloadDelay: 60
+	ReloadDelay: 50
 	Range: 5c128
     Report: tnkfire4.aud
 	Projectile: Bullet

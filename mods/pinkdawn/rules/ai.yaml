@@ -205,7 +205,7 @@ Player:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:
 		RequiresCondition: enable-ai-player
-		RushInterval: 400
+		#   RushInterval: 400
 		SquadSize: 16
         ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact

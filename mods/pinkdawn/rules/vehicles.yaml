@@ -23,8 +23,6 @@ MCV:
 		Locomotor: tracked-crusher
 	Health:
 		HP: 90000
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -84,8 +82,6 @@ HARV:
         PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 60000
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -189,8 +185,6 @@ JEEP:
 		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 15000
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -233,8 +227,6 @@ BGGY:
 		Speed: 150
 	Health:
 		HP: 12500
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -604,9 +596,7 @@ HTNK:
 		TurnSpeed: 10
         PauseOnCondition: emp-crate-collected
 	Health:
-		HP: 87000
-	Repairable:
-		HpPerStep: 2198
+		HP: 60000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -790,8 +780,6 @@ MSAM:
         PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Medium
 	RevealsShroud:
@@ -851,8 +839,6 @@ MLRS:
         PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
-	Repairable:
-		HpPerStep: -1
 	Armor:
 		Type: Light
 	RevealsShroud:
