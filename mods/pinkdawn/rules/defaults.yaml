@@ -310,6 +310,8 @@
 		TurnSpeed: 20
 	Tooltip:
 		GenericName: Tank
+    Targetable@Extra:
+		TargetTypes: Tank
 
 ^SellableOnRepairPad:
 	Sellable:
@@ -1483,3 +1485,62 @@
 	ProductionCostMultiplier@productionboost:
 		Multiplier: 90
 		Prerequisites: oil
+
+#   Infantry first, Light Vehicles second, then anything else
+^AutoTargetforGTWR:
+    Inherits: ^AutoTargetGround
+	AutoTargetPriority@HighPriority:
+        #   those are always on
+		RequiresCondition: !stance-attackanything || stance-attackanything
+		ValidTargets: Vehicle
+		InvalidTargets: NoAutoTarget, Tank, Artillery
+        Priority: 2
+	AutoTargetPriority@TopPriority:
+		RequiresCondition: !stance-attackanything || stance-attackanything
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
+        Priority: 3
+
+#   Tanks first, Vehicles second, then anything else
+^AutoTargetforGUN:
+    Inherits: ^AutoTargetGround
+	AutoTargetPriority@HighPriority:
+		RequiresCondition: !stance-attackanything || stance-attackanything
+		ValidTargets: Vehicle
+		InvalidTargets: NoAutoTarget, Tank
+        Priority: 2
+	AutoTargetPriority@TopPriority:
+		RequiresCondition: !stance-attackanything || stance-attackanything
+		ValidTargets: Tank
+		InvalidTargets: NoAutoTarget
+        Priority: 3
+
+#   like GTWR from above, except includes AssaultMove also
+^AutoTargetforLightVehicle:
+    Inherits: ^AutoTargetGroundAssaultMove
+	AutoTargetPriority@HighPriority:
+        #   those are always on
+		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
+		ValidTargets: Vehicle
+		InvalidTargets: NoAutoTarget, Tank, Artillery
+        Priority: 2
+	AutoTargetPriority@TopPriority:
+		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
+        Priority: 3
+
+#   like GUN from above, except includes AssaultMove also
+^AutoTargetforTanks:
+    Inherits: ^AutoTargetGroundAssaultMove
+	AutoTargetPriority@HighPriority:
+        #   those are always on
+		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
+		ValidTargets: Vehicle
+		InvalidTargets: NoAutoTarget, Tank
+        Priority: 2
+	AutoTargetPriority@TopPriority:
+		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
+		ValidTargets: Tank
+		InvalidTargets: NoAutoTarget
+        Priority: 3

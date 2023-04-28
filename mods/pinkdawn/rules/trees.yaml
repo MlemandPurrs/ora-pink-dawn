@@ -3,6 +3,9 @@ SPLIT2:
 	SeedsResource:
 		ResourceType: Tiberium
 		Interval: 300
+	SeedsResource@2:
+		ResourceType: Tiberium
+		Interval: 300
 	WithIdleAnimation:
 		Interval: 300
 
@@ -11,6 +14,9 @@ SPLIT3:
 	RenderSprites:
 		Image: split2
 	SeedsResource:
+		ResourceType: Tiberium
+		Interval: 300
+	SeedsResource@2:
 		ResourceType: Tiberium
 		Interval: 300
 	WithIdleAnimation:
@@ -22,9 +28,12 @@ SPLITBLUE:
 		Image: split3
 	SeedsResource:
 		ResourceType: BlueTiberium
-		Interval: 300
+		Interval: 450
+	SeedsResource@2:
+		ResourceType: BlueTiberium
+		Interval: 450
 	WithIdleAnimation:
-		Interval: 300
+		Interval: 450
 	Tooltip:
 		Name: Blossom Tree (blue)
 	RadarColorFromTerrain:

@@ -1122,22 +1122,13 @@ comm:
 	dead:
 		Start: 24
 		Tick: 800
-	bib: mbMISS
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
 		Length: *
 
 comm.husk:
 	idle: comm
 		Start: 24
-	bib: mbMISS
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-		Length: *
 
 aprt:
 	idle: 

@@ -164,7 +164,7 @@ TRUK:
 JEEP:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforLightVehicle
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -208,7 +208,7 @@ JEEP:
 BGGY:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforLightVehicle
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -224,7 +224,7 @@ BGGY:
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
 		TurnSpeed: 20
-		Speed: 150
+		Speed: 160
 	Health:
 		HP: 12500
 	Armor:
@@ -433,7 +433,7 @@ MAAG:
 LTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -478,7 +478,7 @@ LTNK:
 MTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -576,7 +576,7 @@ FTNK:
 HTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -641,7 +641,7 @@ STNK:
 	Inherits: ^Vehicle
 	Inherits@UpgradeCrates: ^AcceptsUpgradeCrates
 	Inherits@EMP: ^AcceptsEMPCrate
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	-MustBeDestroyed:
 	Valued:
 		Cost: 900
@@ -701,6 +701,8 @@ STNK:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
+    Targetable@Extra:
+		TargetTypes: Tank
 
 ARTY:
 	Inherits: ^TrackedVehicle
@@ -756,6 +758,8 @@ ARTY:
 	ReloadArmamentsBar:
 		Armaments: primary
 		Color: FFFF00
+    Targetable@Extra:
+		TargetTypes: Artillery
 
 MSAM:
 	Inherits: ^TrackedVehicle
@@ -815,6 +819,8 @@ MSAM:
         Armaments: primary
         Color: FFFF00
 	RenderRangeCircle:
+    Targetable@Extra:
+		TargetTypes: Artillery
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -886,6 +892,8 @@ MLRS:
 	#   ReloadArmamentsBar:
 	#	Armaments: primary
 	#	Color: FFFF00
+    Targetable@Extra:
+		TargetTypes: Artillery
 
 MHQ:
 	Inherits: ^Vehicle
@@ -944,3 +952,5 @@ MHQ:
 		Range: 15c256
 		Color: 0000FF80
         RequiresCondition: !emp-crate-collected
+    Targetable@Extra:
+		TargetTypes: Tank

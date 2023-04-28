@@ -931,7 +931,7 @@ MISS:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
-	AirstrikePower@Airstrike:
+	AirstrikePower@AirStrike:
 		OrderName: AirStrike
 		PauseOnCondition: lowpower
 		Prerequisites: ~eye, ~global-superweapons

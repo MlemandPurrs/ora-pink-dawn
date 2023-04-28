@@ -45,7 +45,7 @@ nuk2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This high-yield structure handles the energy strains of some later, more power-intensive structures. It may cost a bit more than the original Power Plant, but it generates double the amount of power (200 units).
+        Description: This high-yield structure handles the energy strains of some later, more power-intensive structures. It may cost a bit more than the original Power Plant, but it generates double the amount of power (200 units).\nIt's cheaper to build those rather than keep building the basic Power Plant when it has become available.
         Category: GDI Buildings
 		Order: 2
 	RenderSprites:
@@ -66,7 +66,7 @@ proc.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Ore Truck and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 2,000 credits of processed resources.
+        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Ore Truck and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
         Category: GDI Buildings
 		Order: 3
 	RenderSprites:
@@ -202,7 +202,7 @@ hq.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.
         Category: GDI Buildings
 		Order: 11
 	RenderSprites:
@@ -372,7 +372,7 @@ gtwr.nod.info:
         Category: Nod Defenses
 	RenderSprites:
 		Image: gtwr
-        Palette: nodunits
+        Palette: nod
 
 gun.info:
     Inherits: GUN
@@ -460,7 +460,7 @@ e2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Grenadier is a very useful all-purpose infantry unit. This troop is faster, can see further, and hit harder than regular infantry. The grenade this unit throws can not only go over walls, but can destroy them as well. They explode good, too !!
+        Description: The Grenadier is a very useful all-purpose infantry unit. This troop is faster, and hits harder than regular infantry. The grenade this unit throws can not only go over walls, but can destroy them as well. They explode good, too !!
         Category: GDI Infantry
 		Order: 1
 	RenderSprites:
@@ -494,7 +494,7 @@ e4.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Effective for maximum close-range destruction. Yields fire which burns more slowly than normal, allowing more effective elimination of humans and armament.
+        Description: Effective for maximum close-range destruction. Yields fire which burns more slowly than normal, allowing more effective elimination of humans and armament.\nBe careful when using these troops in groups - if this unit gets in front of another, chances are that the unit in front will catch some of the damage from the back unit. Spread them out.\nFlamethrowers wear fire-proof suits that makes them immune to their own weaponry, it does have its material limits however and will not protect against larger sources of heat.
         Category: Nod Infantry
 		Order: 3
 	RenderSprites:
@@ -507,7 +507,7 @@ e5.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Chemical Trooper is an advanced infantry unit immune to the effects of Tiberium. The chem-blast they carry produces a short-lived toxic cloud of Tiberium gas that will kill any infantry caught within its effects.
+        Description: The Chemical Trooper is an advanced infantry unit immune to the effects of Tiberium. The chem-blast they carry produces a short-lived toxic cloud of Tiberium gas that will kill any infantry caught within its effects.\nChemical Troopers wear Tiberium-proof suits that makes them immune to the effects of Tiberium, and renders their own weaponry harmless against them.
         Category: Nod Infantry
 		Order: 4
 	RenderSprites:
@@ -520,7 +520,7 @@ e6.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.
+        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.
         Category: GDI Infantry
 		Order: 5
 	RenderSprites:
@@ -560,7 +560,7 @@ rmbo.nod.info:
 tecn.info:
     Inherits: TECN
 	Encyclopedia:
-        Description: Technicians are the every-day workers employed inside the structures that make up your base. When those structures get destroyed, there is a chance of your workers emerging unscathedly from the wreckage.\nIn that case the Technician will desperately shoot at enemies using its assigned self-defense pistole, they panic when get shot back at however and will uncontrollably flee.
+        Description: Technicians are the every-day workers employed inside the structures that make up your base. When those structures get destroyed, there is a chance of your workers emerging unharmed from the wreckage.\nIn that case the Technician will desperately shoot at enemies using its assigned self-defense pistole, they panic when get shot back at however and will uncontrollably flee.
         Category: GDI Infantry
 		Order: 7
 	RenderSprites:
@@ -623,7 +623,7 @@ truk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This lightly armored truck, while moving slow is capable of transporting cargo worth 1000$, thus allowing to financially assist your allies should it have managed to reach their Construction Yard.
+        Description: This lightly armored truck, while moving slow is capable of transporting cargo worth 1,000 to financially assist your allies. The transported amount will be added to their resources should it have managed to reach their Construction Yard.\nBe careful however, as should the truck get destroyed it will drop a crate containing the transported amount, which can then be picked up by anyone.
         Category: GDI Vehicles
 		Order: 17
 	RenderSprites:
@@ -670,7 +670,7 @@ bike.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.
+        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.\nThis unit is outfitted with a sensor package that allows it to see any Stealth units nearby.
         Category: Nod Vehicles
 		Order: 10
 	RenderSprites:
@@ -717,7 +717,7 @@ ltnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry. Faster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.
+        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.
         Category: Nod Vehicles
 		Order: 11
 	RenderSprites:
@@ -769,7 +769,7 @@ stnk.info:
     Buildable:
         Queue: Nothing   
 	Encyclopedia:
-        Description: This lightly-armored tank is equipped with the Lazarus shield, cloaking it from enemy sight. This shield is neutralized during firing, giving the tanks the ability to appear out of thin air. Although vehicles and most structures are not able to see the tank while cloaked, Infantry and Defenses will reveal the tank if it gets too close to them.
+        Description: This lightly-armored tank is equipped with the Lazarus shield, cloaking it from enemy sight. This shield is neutralized during firing, giving the tanks the ability to 'appear' out of thin air. Although vehicles and most structures are not able to see the tank while cloaked, Infantry and Defenses will reveal the tank if it gets too close to them.
         Category: Nod Vehicles
 		Order: 14
 	RenderSprites:
@@ -999,7 +999,7 @@ comm.info:
 aprt.info:
     Inherits: APRT
 	Encyclopedia:
-        Description: The civilian airport can allow the usage of Paratroopers when captured.
+        Description: The civilian airport can allow the usage of Paratroopers when captured.\nParatroopers consist of a mixed group of regular Infantry that can be air-dropped anywhere on the map. 
         Category: Tech Buildings
 		Order: 4
 	RenderSprites:

@@ -346,8 +346,8 @@ ioncannon.splode:
 
 crate.airstrike:
 	AlwaysVisible:
-	AirstrikePower@AirstrikeOneShot:
-		OrderName: CrateAirstrike
+	AirstrikePower@AirStrikeOneShot:
+		OrderName: CrateAirStrike
 		Icon: airstrike
 		SquadSize: 1
 		QuantizedFacings: 8

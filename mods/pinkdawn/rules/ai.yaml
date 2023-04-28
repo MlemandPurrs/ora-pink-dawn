@@ -92,7 +92,7 @@ Player:
 					TargetMetric: Value
 					CheckRadius: 7c0
 			UseAirstrike:
-				OrderName: Airstrike
+				OrderName: AirStrike
 				MinimumAttractiveness: 2000
 				Consideration@1:
 					Against: Enemy
@@ -113,7 +113,7 @@ Player:
 					TargetMetric: Value
 					CheckRadius: 2c0
 			UseAirstrikefromCrate:
-				OrderName: CrateAirstrike
+				OrderName: CrateAirStrike
 				MinimumAttractiveness: 2000
 				Consideration@1:
 					Against: Enemy
@@ -169,6 +169,7 @@ Player:
 		SiloTypes: silo
         MinimumDefenseRadius: 5
         MaximumDefenseRadius: 20
+        PlaceDefenseTowardsEnemyChance: 1000 # never not
 		BuildingLimits:
 			proc: 4
 			pyle: 3

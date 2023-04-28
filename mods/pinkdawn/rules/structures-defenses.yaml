@@ -1,6 +1,6 @@
 GTWR:
 	Inherits: ^Defense
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetforGTWR
 	Selectable:
 		Bounds: 1024, 1024
 	Valued:
@@ -46,7 +46,7 @@ GTWR:
 
 GUN:
 	Inherits: ^Defense
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetforGUN
 	-BodyOrientation:
 	Selectable:
 		Bounds: 1024, 1024

@@ -102,7 +102,7 @@ TRAN:
 		BuildPaletteOrder: 0
 		Prerequisites: hpad
 		Queue: Aircraft.GDI, Aircraft.Nod
-		Description: Fast Infantry Transport Helicopter.\n\nUnarmed.
+		Description: Fast Infantry Transport.\n\nUnarmed.
 	Aircraft:
         IdleBehavior: Land
         TurnToLand: True
