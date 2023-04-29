@@ -76,7 +76,7 @@ GUN:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 18
 		InitialFacing: 192
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete
@@ -263,7 +263,7 @@ SAM:
         Modifier: 200
         RequiresCondition: is-shooting && !emp-affected-structure
 	Turreted:
-		TurnSpeed: 40
+		TurnSpeed: 24
 		InitialFacing: 0
 		RealignDelay: -1
 	WithEmbeddedTurretSpriteBody:

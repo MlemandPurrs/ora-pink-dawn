@@ -835,7 +835,7 @@ MachineGunLight:
 
 #   21. AGTMissile
 TowerMissileAG:
-	ReloadDelay: 40
+	ReloadDelay: 50
 	Burst: 2
 	BurstDelays: 8
 	Range: 7c0
@@ -881,7 +881,7 @@ TowerMissileAG:
 		InvalidTargets: Ground
 
 TowerMissileAA:
-	ReloadDelay: 40
+	ReloadDelay: 50
 	Burst: 2
 	BurstDelays: 8
 	Range: 7c0

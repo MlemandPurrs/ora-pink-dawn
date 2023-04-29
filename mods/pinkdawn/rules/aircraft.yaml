@@ -9,7 +9,7 @@ C17:
 	UpdatesPlayerStatistics:
 		AddToAssetsValue: false
 	Aircraft:
-		TurnSpeed: 20
+		TurnSpeed: 24
 		Speed: 400
 		Repulsable: False
 		MaximumPitch: 36
@@ -49,7 +49,7 @@ A10:
 	UpdatesPlayerStatistics:
 		AddToAssetsValue: false
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 300
 		Repulsable: False
 		AirborneCondition: airborne
@@ -106,7 +106,7 @@ TRAN:
 	Aircraft:
         IdleBehavior: Land
         TurnToLand: True
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 150
         MoveIntoShroud: false
         PauseOnCondition: emp-crate-collected
@@ -175,7 +175,7 @@ ORCA:
 		Queue: Aircraft.GDI
 		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
 	Aircraft:
-		TurnSpeed: 20
+		TurnSpeed: 24
 		Speed: 200
         MoveIntoShroud: false
 		PauseOnCondition: emp-crate-collected
@@ -243,7 +243,7 @@ HELI:
 		Queue: Aircraft.Nod
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
-		TurnSpeed: 20
+		TurnSpeed: 24
 		Speed: 200
         MoveIntoShroud: false
 		PauseOnCondition: emp-crate-collected

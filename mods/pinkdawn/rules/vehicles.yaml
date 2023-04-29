@@ -18,7 +18,7 @@ MCV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Mobile:
-        TurnSpeed: 10
+        TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
 	Health:
@@ -77,7 +77,7 @@ HARV:
 		HarvestFacings: 8
 	Mobile:
 		Speed: 60
-		TurnSpeed: 10
+		TurnSpeed: 12
         Locomotor: wheeled-crusher
         PauseOnCondition: emp-crate-collected
 	Health:
@@ -146,7 +146,7 @@ TRUK:
 		Type: Light
 	Mobile:
         Locomotor: wheeled-non-crusher
-        TurnSpeed: 10
+        TurnSpeed: 12
 		Speed: 60
 		PauseOnCondition: emp-crate-collected
 	RevealsShroud:
@@ -180,7 +180,7 @@ JEEP:
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: wheeled-non-crusher
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Speed: 150
 		PauseOnCondition: emp-crate-collected
 	Health:
@@ -190,7 +190,7 @@ JEEP:
 	RevealsShroud:
 		Range: 3c512
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Offset: -85,0,128
 	Armament:
 		Weapon: MachineGunLight
@@ -223,7 +223,7 @@ BGGY:
 		Queue: Vehicle.Nod
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Speed: 160
 	Health:
 		HP: 12500
@@ -232,7 +232,7 @@ BGGY:
 	RevealsShroud:
 		Range: 3c512
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Offset: -43,0,128
 	Armament:
 		Weapon: MachineGunLight
@@ -264,7 +264,7 @@ BIKE:
 		Description: Fast scout vehicle with rockets.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: wheeled-non-crusher
-		TurnSpeed: 40
+		TurnSpeed: 24
 		Speed: 175
 		PauseOnCondition: emp-crate-collected
 	Health:
@@ -309,7 +309,7 @@ APC:
 		Description: Armored infantry transport.\n\nStrong vs Infantry.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 110
 		PauseOnCondition: notmobile || emp-crate-collected
 	Health:
@@ -370,7 +370,7 @@ MAAG:
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
         Locomotor: tracked-crusher
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Speed: 110
 		PauseOnCondition: emp-crate-collected
 	Health:
@@ -380,7 +380,7 @@ MAAG:
 	RevealsShroud:
 		Range: 6c128
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 18
 	AutoTargetPriority@Air:
 		ValidTargets: Air
 		Priority: 2
@@ -449,7 +449,7 @@ LTNK:
 		Description: Fast, light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 90
         PauseOnCondition: emp-crate-collected
 	Health:
@@ -459,7 +459,7 @@ LTNK:
 	RevealsShroud:
 		Range: 4c128
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 	Armament:
 		Weapon: LightGun
 		Recoil: 85
@@ -493,7 +493,7 @@ MTNK:
 		Queue: Vehicle.GDI
 		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
-        TurnSpeed: 10
+        TurnSpeed: 12
         Locomotor: tracked-crusher
 		Speed: 90
 		PauseOnCondition: emp-crate-collected
@@ -504,7 +504,7 @@ MTNK:
 	RevealsShroud:
 		Range: 4c128
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 	Armament:
 		Weapon: MediumGun
 		Recoil: 128
@@ -543,7 +543,7 @@ FTNK:
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 90
 		PauseOnCondition: dont-move || emp-crate-collected
 	Health:
@@ -593,7 +593,7 @@ HTNK:
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
-		TurnSpeed: 10
+		TurnSpeed: 12
         PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 60000
@@ -603,7 +603,7 @@ HTNK:
 		Range: 5c128
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Weapon: MammothGun
 		LocalOffset: 900,180,340, 900,-180,340
@@ -658,7 +658,7 @@ STNK:
 		Description: Medium-range missile tank, capable of cloak.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
-		TurnSpeed: 20
+		TurnSpeed: 18
 		Speed: 150
 		PauseOnCondition: emp-crate-collected
 	Health:
@@ -679,6 +679,8 @@ STNK:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	Turreted:
+		TurnSpeed: 18
 	Armament@PRIMARY:
 		Weapon: StnkRocketsAG
 		LocalOffset: 213,43,128, 213,-43,128
@@ -687,8 +689,6 @@ STNK:
 		Weapon: StnkRocketsAA
 		LocalOffset: 213,43,128, 213,-43,128
 		PauseOnCondition: emp-crate-collected
-	Turreted:
-		TurnSpeed: 20
 	AttackTurreted:	
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
@@ -723,7 +723,7 @@ ARTY:
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
         Locomotor: tracked-non-crusher
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Speed: 70
         PauseOnCondition: emp-crate-collected
 	Health:
@@ -780,7 +780,7 @@ MSAM:
 		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
 	Mobile:
 		Speed: 90
-		TurnSpeed: 10
+		TurnSpeed: 12
         PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
@@ -789,7 +789,7 @@ MSAM:
 	RevealsShroud:
 		Range: 5c128
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Offset: -256,0,128
 	Armament@PRIMARY:
 		Weapon: MLRSMissiles
@@ -841,7 +841,7 @@ MLRS:
 		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
 	Mobile:
 		Speed: 90
-		TurnSpeed: 10
+		TurnSpeed: 12
         PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
@@ -850,7 +850,7 @@ MLRS:
 	RevealsShroud:
 		Range: 5c256
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
@@ -928,7 +928,7 @@ MHQ:
 		Queue: Vehicle.GDI
 		Description: Can detect cloaked units.\nJams enemy communications.\n\nStrong vs Infantry.
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 12
 		Offset: 246,-60,112
 	Armament:
 		Weapon: M16
