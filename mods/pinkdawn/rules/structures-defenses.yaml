@@ -1,6 +1,7 @@
 GTWR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetforGTWR
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 1024, 1024
 	Valued:
@@ -27,13 +28,14 @@ GTWR:
 		Weapon: TowerGun
 		LocalOffset: 256,0,256
 		MuzzleSequence: muzzle
+        PauseOnCondition: build-incomplete
 	AttackTurreted:
-		PauseOnCondition: build-incomplete
+		PauseOnCondition: build-incomplete || emp-affected-structure
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-        RequiresCondition: !lowpower && !build-incomplete
+        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -42,11 +44,14 @@ GTWR:
 		TurnSpeed: 512
 	Power:
 		Amount: -20
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetforGUN
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-BodyOrientation:
 	Selectable:
 		Bounds: 1024, 1024
@@ -84,25 +89,29 @@ GUN:
 		Weapon: TurretGun
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+        PauseOnCondition: build-incomplete
 	AttackTurreted:
-		PauseOnCondition: build-incomplete
+		PauseOnCondition: build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	Power:
 		Amount: -20
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	ClassicFacingBodyOrientation:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 ATWR:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetAll
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
 	-RenderRangeCircle:
 	Valued:
 		Cost: 1000
@@ -147,23 +156,26 @@ ATWR:
 		PauseOnCondition: build-incomplete || reload-ground || lowpower
         ReloadingCondition: reload-air
     AttackTurreted:
-        PauseOnCondition: build-incomplete || lowpower
+        PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	Power:
 		Amount: -60
-		RequiresCondition: !build-incomplete
-	Sellable:
-		RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 OBLI:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetGround
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -192,8 +204,9 @@ OBLI:
 	Armament:
 		Weapon: Laser
 		LocalOffset: 0,-85,1280
+        PauseOnCondition: build-incomplete
 	AttackCharges:
-		PauseOnCondition: lowpower || build-incomplete
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 		ChargeLevel: 50
 		ChargingCondition: charging
 	AmbientSound:
@@ -202,22 +215,26 @@ OBLI:
 		Interval: 30, 40
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete
+		RequiresCondition: !lowpower && !build-incomplete && emp-affected-structure
 	Power:
 		Amount: -75
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 SAM:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@shape: ^2x1Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-WithSpriteBody:
 	-RenderDetectionCircle:
 	-BodyOrientation:
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-        Class: SAM
 		Bounds: 2048, 1024
 	HitShape:
 		Type: Rectangle
@@ -242,9 +259,9 @@ SAM:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
-    RevealsShroudMultiplier:
+    RevealsShroudMultiplier@Shooting:
         Modifier: 200
-        RequiresCondition: is-shooting
+        RequiresCondition: is-shooting && !emp-affected-structure
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 0
@@ -254,7 +271,7 @@ SAM:
 	Armament:
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || !build-incomplete
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6
@@ -268,16 +285,16 @@ SAM:
 	ReloadAmmoPool:
 		Delay: 60
 		Count: 6
-		RequiresCondition: !ammo
+		RequiresCondition: !ammo && !emp-affected-structure
 	AttackPopupTurreted:
         ClosedDamageMultiplier: 50
-		PauseOnCondition: lowpower && build-incomplete
+		PauseOnCondition: lowpower && build-incomplete && emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
 	Power:
 		Amount: -30
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	ClassicFacingBodyOrientation:
 	SequencePlaceBuildingPreview:
 		Sequence: place
@@ -288,7 +305,7 @@ SAM:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakSound: appear1.aud
-		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower
+		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower || emp-affected-structure
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -296,6 +313,8 @@ SAM:
 		Condition: is-shooting
 		ArmamentNames: primary
 		RevokeDelay: 75
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 SBAG:
 	Inherits: ^Wall
@@ -419,6 +438,7 @@ WOOD:
 HGAT:
 	Inherits: ^Gate
     Inherits@productionboost: ^ProductionBoost
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -439,12 +459,15 @@ HGAT:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
-		RequiresCondition: !being-demolished
+		RequiresCondition: !being-demolished && !emp-affected-structure
 	CustomSellValue:
 		Value: 50
 	WithGateSpriteBody:
+        PauseOnCondition: lowpower || emp-affected-structure
 		WallConnections: -1,0, 3,0
         Type: concrete
+	Gate:
+		PauseOnCondition: lowpower || emp-affected-structure
 	LineBuildNode:
 		Connections: -1,0, 1,0
 	Tooltip:
@@ -468,6 +491,7 @@ HGAT:
 VGAT:
 	Inherits: ^Gate
     Inherits@productionboost: ^ProductionBoost
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -488,10 +512,13 @@ VGAT:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
-		RequiresCondition: !being-demolished
+		RequiresCondition: !being-demolished && !emp-affected-structure
 	CustomSellValue:
 		Value: 50
+	Gate:
+		PauseOnCondition: lowpower || emp-affected-structure
 	WithGateSpriteBody:
+        PauseOnCondition: lowpower || emp-affected-structure
 		WallConnections: 0,-1, 0,3
         Type: concrete
 	LineBuildNode:

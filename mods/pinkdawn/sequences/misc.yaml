@@ -173,6 +173,8 @@ beacon:
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
+    empmbcon: empmbcon
+        Offset: 0,-42
 
 select:
 	repair:
@@ -324,6 +326,7 @@ icon:
 	abomb: atomicon
 	radarscan: scanicon
     paratroopers: pinficon
+    empmissile: empmicon
  
 moveflsh:
 	idle:

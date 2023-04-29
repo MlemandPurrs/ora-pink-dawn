@@ -152,13 +152,14 @@ TRAN:
 		RequiresCondition: unit.sellable && !airborne && !loaded
 	Selectable:
 		DecorationBounds: 1749, 1749
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
 
 ORCA:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Selectable:
-        Class: ORCA
 		DecorationBounds: 1030,1024
 	Valued:
 		Cost: 1200
@@ -219,13 +220,14 @@ ORCA:
 		MoveSequence: move
 	Rearmable:
 		RearmActors: hpad
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
 
 HELI:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Selectable:
-        Class: HELI
 		DecorationBounds: 1280, 1024
 	Valued:
 		Cost: 1200
@@ -299,3 +301,5 @@ HELI:
 	WithMuzzleOverlay:
 	Rearmable:
 		RearmActors: hpad
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected

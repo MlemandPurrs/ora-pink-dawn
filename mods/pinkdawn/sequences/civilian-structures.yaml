@@ -308,6 +308,7 @@ v18.husk:
 			DESERT: TEMPERAT
 
 v19:
+    Inherits: emp-overlay
 	idle:
 		Length: 14
 		Tick: 120

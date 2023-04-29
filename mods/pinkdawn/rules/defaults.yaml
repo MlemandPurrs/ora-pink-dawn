@@ -1544,3 +1544,23 @@
 		ValidTargets: Tank
 		InvalidTargets: NoAutoTarget
         Priority: 3
+
+^EMPApplicableStructure:
+	WithColoredOverlay@EMPulse:
+		RequiresCondition: emp-affected-structure
+        Color: 000000A3
+	WithIdleOverlay@EMPulse:
+		Sequence: emp-overlay
+		RequiresCondition: emp-affected-structure
+	TimedConditionBar@EMPulse:
+		Condition: emp-affected-structure
+		Color: FFFFFF
+	ExternalCondition@EMPulse:
+		Condition: emp-affected-structure
+    Targetable@EMPulse:
+        TargetTypes: EMPApplicableBuilding
+	RejectsOrders:
+		RequiresCondition: emp-affected-structure
+    RevealsShroudMultiplier:
+        Modifier: 0
+        RequiresCondition: emp-affected-structure

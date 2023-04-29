@@ -1039,3 +1039,16 @@ oil.info:
 		Image: oil
         Palette: civilian
     -MapEditorData:
+
+empb.info:
+    Inherits: EMPB
+	Encyclopedia:
+        Description: Highly-experimental technology deployed in limited quantity for field-testing. Each of those structures houses a battery of missiles outfitted with an Electro Magnetic Pulse (E.M.P.) warhead, that can be fired to anywhere on the map.\nThe missile when hit discharges electro-magnetic particles that disable all mechanical units(and structures) affected within the blast radius.\nVehicles will stop working, Aircraft explodes on air, and Buildings malfunction until the effect has worn-off.
+        Category: Tech Buildings
+		Order: 7
+	Turreted:
+        InitialFacing: 288
+	RenderSprites:
+		Image: empb
+        Palette: civilian
+    -MapEditorData:

@@ -1,6 +1,7 @@
 FACT:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	WithColoredOverlay@Invulnerability:
 		RequiresCondition: invulnerability-crate-collected
         Color: 800000A3
@@ -31,10 +32,10 @@ FACT:
 		Range: 4c512
 	Production:
 		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
-		PauseOnCondition: being-demolished || build-incomplete
+		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure
 		IntoActor: mcv
 		Offset: 1,1
 		Facing: 432
@@ -133,7 +134,7 @@ FACT:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 30
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	Buildable:
         BuildDuration: 3900
@@ -157,10 +158,13 @@ FACT:
 		Animated: false
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 NUKE:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -189,16 +193,19 @@ NUKE:
 	WithBuildingBib:
 	Power:
 		Amount: 100
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuke
 		FactionImages:
 			nod: nodnuke
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 NUK2:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -227,16 +234,19 @@ NUK2:
 	WithBuildingBib:
 	Power:
 		Amount: 200
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk2
 		FactionImages:
 			nod: nodnuk2
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 PROC:
 	Inherits: ^BaseBuilding
 	Inherits@RESOURCES: ^StoresResources
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -512
@@ -280,7 +290,7 @@ PROC:
 		Bounds: 3072, 2389
 		DecorationBounds: 3114, 3072
 	CustomSellValue:
-		Value: 300
+		Value: 600
 	FreeActor:
 		Actor: HARV
 		SpawnOffset: 1,2
@@ -291,7 +301,7 @@ PROC:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -30
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	ExternalCondition@DOCKED:
 		Condition: dockinprocess
@@ -302,7 +312,7 @@ PROC:
 		Range: 1c0
 		ValidRelationships: Ally
 	Sellable:
-		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess && !emp-affected-structure
 	RenderSprites:
 		Image: proc
 		FactionImages:
@@ -314,6 +324,7 @@ SILO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@RESOURCES: ^StoresResources
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-GivesBuildableArea:
 	-WithSpriteBody:
 	-SpawnActorsOnSell:
@@ -360,7 +371,7 @@ SILO:
 		InitialDelay: 300
 		Amount: 200
 		UseResourceStorage: true
-		PauseOnCondition: lowpower || build-incomplete        
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
         RequiresCondition: infiniteincome-enabled
 	CashTricklerBar:
 		Color: FFFF9E
@@ -370,9 +381,12 @@ SILO:
     GrantConditionOnPrerequisite@PassiveIncome:
         Condition: infiniteincome-enabled
         Prerequisites: global-infiniteincome
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 PYLE:
 	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
@@ -412,7 +426,7 @@ PYLE:
 		ExitCell: 1,1
 	Production:
 		Produces: Infantry.GDI
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionQueue:
@@ -433,14 +447,17 @@ PYLE:
 		ProductionType: Infantry.GDI
 	Power:
 		Amount: -15
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 HAND:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
@@ -478,7 +495,7 @@ HAND:
 		ExitCell: -1,1
 	Production:
 		Produces: Infantry.Nod
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	ProductionQueue:
 		Type: Infantry.Nod
 		DisplayOrder: 2
@@ -497,14 +514,17 @@ HAND:
 		ProductionType: Infantry.Nod
 	Power:
 		Amount: -15
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete || emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	Selectable:
 		Bounds: 2048, 2048
 		DecorationBounds: 2048, 2901, 0, -426
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 AFLD:
 	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 4096, 2048
 	HitShape:
@@ -543,7 +563,7 @@ AFLD:
 		Produces: Vehicle.Nod
 		ActorType: c17
 		ReadyTextNotification: Reinforcements have arrived.
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	WithBuildingBib:
 	WithIdleOverlay@DISH:
 		RequiresCondition: !build-incomplete
@@ -566,12 +586,15 @@ AFLD:
 		ProductionType: Vehicle.Nod
 	Power:
 		Amount: -40
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete || emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 WEAP:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
 		Type: Rectangle
@@ -614,7 +637,7 @@ WEAP:
 		ExitDelay: 3
 	Production:
 		Produces: Vehicle.GDI
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	ProductionQueue:
 		Type: Vehicle.GDI
 		DisplayOrder: 3
@@ -633,15 +656,18 @@ WEAP:
 		ProductionType: Vehicle.GDI
 	Power:
 		Amount: -40
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete || emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 FIX:
 	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
 	HitShape:
 		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
 		Type: Polygon
@@ -670,7 +696,7 @@ FIX:
 	WithBuildingBib:
 		HasMinibib: true
 	WithResupplyAnimation:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	Reservable:
 	RepairsUnits:
 		HpPerStep: 1000
@@ -681,6 +707,7 @@ FIX:
 		StartRepairingTextNotification: Repairing.
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
+        PauseOnCondition: emp-affected-structure
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -692,7 +719,7 @@ FIX:
 		Condition: unit.sellable
 		Range: 1c0
 	Sellable:
-		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ExternalCondition@Docked:
 		Condition: unit.docked
 	ProximityExternalCondition@AIRCRAFTREPAIR:
@@ -706,6 +733,7 @@ HPAD:
 	Inherits: ^BaseBuilding
     Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -728,7 +756,7 @@ HPAD:
 	Health:
 		HP: 40000
 	RevealsShroud:
-		Range: 5c0
+		Range: 3c512
 	Exit@1:
 		SpawnOffset: 0,-256,0
 		ExitCell: 0,0
@@ -736,10 +764,10 @@ HPAD:
         ProductionTypes: Aircraft.GDI, Aircraft.Nod
 	Production:
 		Produces: Aircraft.GDI, Aircraft.Nod
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && emp-affected-structure
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -779,7 +807,7 @@ HPAD:
 		ProductionType: Aircraft.Nod
 	Power:
 		Amount: -20
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
     WithBuildingBib:
 	FreeActor@1:
@@ -813,13 +841,14 @@ HPAD:
 		Condition: unit.sellable
 		Range: 1c0
 	Sellable:
-		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ExternalCondition@Docked:
 		Condition: unit.docked
 
 HQ:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
 		Type: Rectangle
@@ -846,27 +875,27 @@ HQ:
 		Bounds: 2048, 1706, 0, 384
 		DecorationBounds: 2048, 2261, 0, -170
 	WithSpriteBody:
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || emp-affected-structure
 	Health:
 		HP: 100000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !lowpower
+		RequiresCondition: !jammed && !lowpower && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && !emp-affected-structure
 	Power:
 		Amount: -50
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	RenderSprites:
 		Image: hq
 		FactionImages:
 			nod: nodhq
 	SpawnActorPower@RadarScan:
-		PauseOnCondition: lowpower || jammed
+		PauseOnCondition: lowpower || jammed || emp-affected-structure
 		OrderName: RadarScan
 		Actor: camera.scan
 		LifeTime: 300
@@ -889,10 +918,15 @@ HQ:
 		Animated: false
 	ExternalCondition@JAMMED:
 		Condition: jammed
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 MISS:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 3072, 2048
 	HitShape:
@@ -924,7 +958,7 @@ MISS:
         HasMinibib: true
 	Power:
 		Amount: -100
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -933,7 +967,7 @@ MISS:
 		Prerequisite: anytier3
 	AirstrikePower@AirStrike:
 		OrderName: AirStrike
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || emp-affected-structure
 		Prerequisites: ~eye, ~global-superweapons
 		Icon: airstrike
 		ChargeInterval: 6750
@@ -967,11 +1001,14 @@ MISS:
 		ValidPowerStates: Low, Critical
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 
 TMPL:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -1002,7 +1039,7 @@ TMPL:
 		Range: 4c0
 	NukePower@NuclearStrike:
 		OrderName: NukeMissile
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || emp-affected-structure
 		Prerequisites: ~bio, ~global-superweapons
 		Icon: abomb
 		Cursor: nuke
@@ -1043,16 +1080,21 @@ TMPL:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -150
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 EYE:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
 		Type: Rectangle
@@ -1080,20 +1122,20 @@ EYE:
 		Bounds: 2048, 1706, 0, 384
 		DecorationBounds: 2048, 2261, 0, -170
 	WithSpriteBody:
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || emp-affected-structure
 	Health:
 		HP: 90000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !lowpower
+		RequiresCondition: !jammed && !lowpower && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && !emp-affected-structure
 	IonCannonPower@IonCannon:
-		PauseOnCondition: lowpower || jammed
+		PauseOnCondition: lowpower || jammed || emp-affected-structure
 		Prerequisites: ~global-superweapons
 		OrderName: IonCannon
 		Icon: ioncannon
@@ -1116,7 +1158,7 @@ EYE:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -100
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1125,11 +1167,15 @@ EYE:
 		Animated: false
 	ExternalCondition@JAMMED:
 		Condition: jammed
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
 
 BIO:
 	Inherits: ^BaseBuilding
-	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	SelectionDecorations:
 	Selectable:
 		Bounds: 2048, 2048
@@ -1158,10 +1204,9 @@ BIO:
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+ 
 INFANTRYPRODUCTION:
 	AlwaysVisible:
 	Interactable:

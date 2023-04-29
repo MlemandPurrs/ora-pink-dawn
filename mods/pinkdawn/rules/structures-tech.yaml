@@ -1,5 +1,6 @@
 V19:
 	Inherits: ^TechBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 1024, 1024
 	RevealsShroud:
@@ -7,15 +8,10 @@ V19:
 	CashTrickler:
         Interval: 50
 		Amount: 15
+        PauseOnCondition: emp-affected-structure
 		RequiresCondition: owner.is.player
     #   GivesCashOnCapture:
     #   Amount: 500
-    #   works always, grrr....
-    #   RequiresCondition: !owner.is.player
-    #   PauseOnCondition: owner.is.player
-    #   nope, didnt work either....
-    #   RequiresCondition: owner.is.neutral
-    #   so, this is why GrantConditionOnNeutral is a thing in CA....
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -37,11 +33,8 @@ V19:
 	UpdatesDerrickCount:
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
-    #   GrantCondition@FirstCapture:
-    #   Condition: owner.is.neutral
-    #   RequiresCondition: !owner.is.player
 	WithSpriteBody:
-        PauseOnCondition: !owner.is.player
+        PauseOnCondition: !owner.is.player || emp-affected-structure
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
@@ -63,6 +56,7 @@ V19.Husk:
 HOSP:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	Building:
@@ -88,6 +82,7 @@ HOSP:
 	WithBuildingBib:
 		HasMinibib: true
 	ProvidesPrerequisite@buildingname:
+        RequiresCondition: !emp-affected-structure
 
 HOSP.Husk:
 	Inherits: ^TechBuildingHusk
@@ -101,6 +96,7 @@ HOSP.Husk:
 
 SYRD:
 	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-GivesBuildableArea:
 	-SpawnActorsOnSell:
 	-Sellable:
@@ -150,7 +146,7 @@ SYRD:
 		Range: 3c0
 	Production:
 		Produces: Navy.GDI, Navy.Nod
-		PauseOnCondition: build-incomplete || being-demolished
+		PauseOnCondition: build-incomplete || being-demolished || emp-affected-structure
 	ProductionQueue@GDINavy:
 		Type: Navy.GDI
 		DisplayOrder: 5
@@ -193,6 +189,7 @@ SYRD:
 		StartRepairingTextNotification: Repairing.
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
+        PauseOnCondition: emp-affected-structure
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -220,17 +217,19 @@ SYRD:
 		ProductionTypes: Navy.GDI, Navy.Nod
 	Power:
 		Amount: -40
-		RequiresCondition: !build-incomplete && owner.is.player
+		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	ProvidesPrerequisite@buildingname:
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
 		Range: 3c768
+        RequiresCondition: !emp-affected-structure
 
 COMM:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
@@ -250,7 +249,7 @@ COMM:
 		Range: 12c0
 	DetectCloaked:
 		Range: 6c0
-		RequiresCondition: !lowpower && owner.is.player
+		RequiresCondition: !lowpower && owner.is.player && !emp-affected-structure
     RenderDetectionCircle:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -259,7 +258,7 @@ COMM:
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	WithSpriteBody:
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || emp-affected-structure
 	TooltipDescription@ally:
 		Description: Provides range of vision and detects stealth.
 		ValidRelationships: Ally
@@ -286,6 +285,7 @@ COMM.Husk:
 APRT:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	AppearsOnMapPreview:
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -313,7 +313,7 @@ APRT:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	ParatroopersPower@paratroopers:
-        PauseOnCondition: lowpower
+        PauseOnCondition: lowpower || emp-affected-structure
 		OrderName: Paratroopers
 		Icon: paratroopers
 		ChargeInterval: 6750
@@ -361,6 +361,7 @@ APRT.Husk:
 EXPB:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	Building:
@@ -375,6 +376,7 @@ EXPB:
 		MinRange: 5c0
 	GivesBuildableArea:
 		AreaTypes: building
+        RequiresCondition: !emp-affected-structure
 	TooltipDescription@ally:
 		Description: Provides buildable area.
 		ValidRelationships: Ally
@@ -406,6 +408,7 @@ EXPB.Husk:
 OIL:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
 	Selectable:
 		Bounds: 2048, 2048
 	Building:
@@ -424,6 +427,7 @@ OIL:
 	SpawnActorOnDeath:
 		Actor: OIL.Husk
 	ProvidesPrerequisite@buildingname:
+        RequiresCondition: !emp-affected-structure
 	WithBuildingBib:
 
 OIL.Husk:
@@ -435,3 +439,120 @@ OIL.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Oil Refinery (Destroyed)
+
+EMPB:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-GivesBuildableArea:
+	-SpawnActorsOnSell:
+	-Sellable:
+	-WithSpriteBody:
+    Demolishable:
+        -Condition: being-demolished
+	OwnerLostAction:
+		Action: ChangeOwner
+    CaptureManager:
+        -BeingCapturedCondition:
+	Capturable:
+		Types: building-neutral
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+	MapEditorData:
+		Categories: Tech building
+	AppearsOnMapPreview:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	Tooltip:
+		Name: E.M.P. Launcher
+	TooltipDescription@ally:
+		Description: Prepares and launches E.M.P. Missiles.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to fire E.M.P. Missiles.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: EMPB.Husk
+        OwnerType: InternalName
+	WithBuildingBib:
+		HasMinibib: true
+	ProvidesPrerequisite@buildingname:
+	Turreted:
+		TurnSpeed: 10
+		InitialFacing: 0
+		RealignDelay: -1
+	WithEmbeddedTurretSpriteBody:
+		PauseOnCondition: lowpower || emp-affected-structure
+	BodyOrientation:
+        UseClassicPerspectiveFudge: true
+	AttackTurreted:
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure || reloading
+        RequiresCondition: !reloading
+		OpportunityFire: False
+		PersistentTargeting: False
+		ForceFireIgnoresActors: True
+	Armament:
+		Weapon: EMPLauncher
+		PauseOnCondition: lowpower || emp-affected-structure
+		LocalOffset: 1000,0,500
+		ReloadingCondition: reloading
+	AttackOrderPower@EMPMISSILE:
+		OrderName: empmissile
+		PauseOnCondition: lowpower || emp-affected-structure
+		Cursor: empstrike
+		Icon: empmissile
+		ChargeInterval: 4500
+		Name: E.M.P. Missile
+		Description: Fires a Missile which disables all Vehicles in the area.\nAircraft caught within blast will explode if not landed.
+		BeginChargeSpeechNotification: EMPMissilePreparing
+        BeginChargeTextNotification: E.M.P. Missile preparing.
+		EndChargeSpeechNotification: EMPMissileReady
+        EndChargeTextNotification: E.M.P. Missile ready.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+        InsufficientPowerTextNotification: Insufficient power. 
+		IncomingSpeechNotification: EMPMissileLaunched
+        IncomingTextNotification: E.M.P. Missile launched.
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+        #  each E.M.P. Launcher will give its own strike
+        AllowMultiple: true
+        StartFullyCharged: true
+	SupportPowerChargeBar:
+	RejectsOrders:
+	Power:
+		Amount: -100
+		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	RevealsShroud:
+		Range: 3c0
+    -GrantConditionOnDamageState@LOWPOWERDMG:
+    -ChangesHealth@LOWPOWERDMG:
+    -GrantConditionOnPowerState@LOWPOWERDMG:
+	CommandBarBlacklist:
+		DisableStop: false
+
+EMPB.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: E.M.P. Launcher (Destroyed)
+	RenderSprites:
+        Image: empb.husk
