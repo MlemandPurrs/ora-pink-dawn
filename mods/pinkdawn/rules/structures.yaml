@@ -728,6 +728,10 @@ FIX:
 	WithRangeCircle@AIRCRAFTREPAIR:
 		Color: 888899AA
 		Range: 5c256
+	RenderSprites:
+		Image: fix
+		FactionImages:
+			nod: nodfix
 
 HPAD:
 	Inherits: ^BaseBuilding

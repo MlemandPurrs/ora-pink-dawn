@@ -529,6 +529,48 @@ fix.husk:
 		Length: *
 		Offset: 0,-9
 
+nodfix:
+    Inherits: emp-overlay
+	idle:
+		ZOffset: -1c511
+	damaged-idle:
+		Start: 7
+		ZOffset: -1c511
+	active:
+		Length: 7
+		ZOffset: -1c511
+	damaged-active:
+		Start: 7
+		Length: 7
+		ZOffset: -1c511
+	dead:
+		Start: 14
+		ZOffset: -1c511
+		Tick: 800
+	make: nodfixmake
+		Length: 14
+		Tick: 80
+	bib: mbFIX
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+		Offset: 0,-9
+	icon: nodfixicon
+
+nodfix.husk:
+	idle: nodfix
+		Start: 14
+		ZOffset: -1c511
+	bib: mbFIX
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+		Offset: 0,-9
+
 hpad:
     Inherits: emp-overlay
 	idle:
