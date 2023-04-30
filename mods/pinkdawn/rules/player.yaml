@@ -102,7 +102,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 14
 		Prerequisites: global-boosteron
-
+	LobbyPrerequisiteCheckbox@VETERANCY:
+		ID: unitveterancy
+		Label: Veterancy
+		Description: Units and Defenses can gain experience to level up for bonuses
+		Enabled: False
+		DisplayOrder: 16
+		Prerequisites: global-veterancy
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:

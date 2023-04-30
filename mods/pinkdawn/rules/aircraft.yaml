@@ -90,6 +90,19 @@ TRAN:
 	Inherits@Speed: ^AcceptsSpeedCrate
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
 		Cost: 750
 	Tooltip:

@@ -89,6 +89,9 @@ CRATE:
 		Units: harv
 		SelectionShares: 3
         Prerequisites: proc
+	LevelUpCrateAction:
+		SelectionShares: 5
+        Prerequisites: ~global-veterancy
 
 WCRATE:
 	Inherits: ^Crate

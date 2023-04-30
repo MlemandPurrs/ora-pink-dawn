@@ -618,6 +618,17 @@ BNKR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@TRANSPORT: ^Transport
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Tooltip:
 		Name: Bunker
 	Building:

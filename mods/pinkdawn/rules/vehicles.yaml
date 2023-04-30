@@ -2,6 +2,19 @@ MCV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
 	Valued:
@@ -53,6 +66,19 @@ HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
     Inherits@Crates: ^AcceptsAllCratesExceptFirepower
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -129,6 +155,19 @@ TRUK:
 	Inherits@Speed: ^AcceptsSpeedCrate
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100

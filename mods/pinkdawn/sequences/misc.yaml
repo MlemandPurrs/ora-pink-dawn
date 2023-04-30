@@ -234,6 +234,8 @@ crate-effects:
 	gridmap: stealth2
     invuln: invun
 	emp: empulse
+	levelup: levelup
+		Tick: 200
 
 atomic:
 	Defaults:
@@ -544,3 +546,11 @@ dummy:
 	idle: blank32
 		Facings: 32
 	icon: blankicon
+
+rank:
+	rank-veteran:
+		Start: 0
+        Offset: 0, 3
+	rank-elite:
+		Start: 1
+		Offset: 1, 3

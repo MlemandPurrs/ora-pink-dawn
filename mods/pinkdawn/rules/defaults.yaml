@@ -3,7 +3,13 @@
 	UpdatesPlayerStatistics:
 	CombatDebugOverlay:
 	GivesExperience:
-		PlayerExperienceModifier: 20
+		PlayerExperienceModifier: 1
+    GivesExperienceMultiplier@EXPTOGGLE:
+        Modifier: 0
+        RequiresCondition: !giver-veterancy-on
+    GrantConditionOnPrerequisite@EXPTOGGLE:
+        Condition: giver-veterancy-on
+        Prerequisites: ~global-veterancy
 	ScriptTriggers:
 	RenderDebugState:
 
@@ -267,6 +273,7 @@
     Inherits@unitsellable: ^SellableOnRepairPad
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -344,6 +351,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamaged
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -624,6 +632,7 @@
 	Inherits: ^Infantry
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanic
 	MustBeDestroyed:
 	Tooltip:
 		GenericName: Soldier
@@ -721,6 +730,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamagedShip
     Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -879,6 +889,7 @@
 ^Defense:
 	Inherits: ^BaseBuilding
 	Inherits@selection: ^SelectableCombatBuilding
+    Inherits@experience: ^ExperienceMechanicDefense
 	RenderRangeCircle:
 	RenderDetectionCircle:
 	-GivesBuildableArea:
@@ -1570,3 +1581,107 @@
 		CaptureTypes: building-occupy
         PlayerExperience: 0
 	CaptureManager:
+
+^ExperienceMechanic:
+	GainsExperience:
+		LevelUpNotification: LevelUp
+		LevelUpTextNotification: Unit promoted.
+		Conditions:
+			500: rank-veteran
+			1000: rank-elite
+		LevelUpImage: crate-effects
+	FirepowerMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 125
+	SpeedMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 130
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 75
+    ReloadDelayMultiplier@RANK-VETERAN:
+        RequiresCondition: rank-veteran
+        Modifier: 80
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 125
+	SpeedMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 130
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+    ReloadDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-veteran
+        Modifier: 80
+	WithDecoration@RANK-VETERAN:
+		Image: rank
+		Sequence: rank-veteran
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-veteran
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-elite
+    GainsExperienceMultiplier@EXPTOGGLE2:
+        Modifier: 0
+        RequiresCondition: !earner-veterancy-on
+    GrantConditionOnPrerequisite@EXPTOGGLE2:
+        Condition: earner-veterancy-on
+        Prerequisites: ~global-veterancy
+
+^ExperienceMechanicDefense:
+	GainsExperience:
+		LevelUpNotification: LevelUp
+		LevelUpTextNotification: Unit promoted.
+		Conditions:
+			500: rank-veteran
+			1000: rank-elite
+		LevelUpImage: crate-effects
+	FirepowerMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 125
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 75
+    ReloadDelayMultiplier@RANK-VETERAN:
+        RequiresCondition: rank-veteran
+        Modifier: 80
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 125
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+    ReloadDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-veteran
+        Modifier: 80
+	WithDecoration@RANK-VETERAN:
+		Image: rank
+		Sequence: rank-veteran
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-veteran
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-elite
+    GainsExperienceMultiplier@EXPTOGGLE2:
+        Modifier: 0
+        RequiresCondition: !earner-veterancy-on
+    GrantConditionOnPrerequisite@EXPTOGGLE2:
+        Condition: earner-veterancy-on
+        Prerequisites: ~global-veterancy
