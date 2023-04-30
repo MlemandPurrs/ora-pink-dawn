@@ -1564,3 +1564,9 @@
     RevealsShroudMultiplier:
         Modifier: 0
         RequiresCondition: emp-affected-structure
+
+^CanOccupyStructures:
+	Captures@OCCUPY:
+		CaptureTypes: building-occupy
+        PlayerExperience: 0
+	CaptureManager:

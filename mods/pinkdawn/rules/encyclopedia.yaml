@@ -1052,3 +1052,25 @@ empb.info:
 		Image: empb
         Palette: civilian
     -MapEditorData:
+
+wind.info:
+    Inherits: WIND
+	Encyclopedia:
+        Description: This structure is a type of power generation that is employed world-wide, especially in the developing or poor countries such as those located in the continent of Africa and Balkans. As it must harness the power of wind to generate some energy (only +30), they can be found spread across the countryside in groups that are at most minimum three placed near together.
+        Category: Tech Buildings
+		Order: 8
+	RenderSprites:
+		Image: wind
+        Palette: civilian
+    -MapEditorData:
+
+bnkr.info:
+    Inherits: BNKR
+	Encyclopedia:
+        Description: Static defense structure with a machinegun emplacement that can be captured by any Infantry. With any Infantry inside, it will defend the area acting as a Machinegun emplacement, also sees cloaked units nearby.
+        Category: Tech Buildings
+		Order: 9
+	RenderSprites:
+		Image: bnkr
+        Palette: civilian
+    -MapEditorData:

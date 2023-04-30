@@ -1,6 +1,7 @@
 E1:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -22,6 +23,10 @@ E1:
 		ScanRadius: 4
 	Armament:
 		Weapon: M16
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 0
@@ -34,6 +39,7 @@ E1:
 E2:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -57,6 +63,10 @@ E2:
 		Weapon: Grenade
 		LocalOffset: 0,0,427
 		FireDelay: 15
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 0
@@ -74,6 +84,7 @@ E2:
 E3:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -99,6 +110,10 @@ E3:
 		Weapon: Bazooka
 		LocalOffset: 256,43,341
 		FireDelay: 5
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 0
@@ -112,6 +127,7 @@ E3:
 E4:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -137,6 +153,10 @@ E4:
 		LocalOffset: 341,0,256
 		FireDelay: 3
 		MuzzleSequence: muzzle
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
         FacingTolerance: 0
 		Voice: Attack
@@ -158,6 +178,7 @@ E4:
 E5:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	-DamagedByTerrain@TIBERIUM:
 	-GrantConditionOnTerrain@HAZMAT:
 	-GrantConditionOnPrerequisite@HAZMAT:
@@ -189,6 +210,10 @@ E5:
 		LocalOffset: 341,0,256
 		FireDelay: 3
 		MuzzleSequence: muzzle
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	TakeCover:
 		ProneOffset: 190,0,-190
 	WithMuzzleOverlay:
@@ -254,10 +279,14 @@ E6:
 	GrantConditionOnPrerequisite@MULTIENGINEER:
 		Condition: multiengineer
 		Prerequisites: global-multiengineer
+	Captures@OCCUPY:
+		CaptureTypes: building-occupy
+        PlayerExperience: 0
 
 RMBO:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@GARRISON: ^CanOccupyStructures
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -287,6 +316,10 @@ RMBO:
 		Voice: Demolish
 	Armament:
 		Weapon: Sniper
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MachineGun
+		MuzzleSequence: garrison-muzzle
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
@@ -307,6 +340,7 @@ RMBO:
 
 TECN:
 	Inherits@1: ^ArmedCivilian
+    Inherits@GARRISON: ^CanOccupyStructures
 	Tooltip:
 		Name: Technician
 	Health:
@@ -320,7 +354,7 @@ TECN:
 		VoiceSet: CivilianMaleVoice
 	Armament@GARRISONED:
 		Name: garrisoned
-		Weapon: Pistol
+		Weapon: MachineGun
 		MuzzleSequence: garrison-muzzle
     AttackFrontal:
         FacingTolerance: 0

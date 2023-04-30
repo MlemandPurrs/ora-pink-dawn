@@ -5,8 +5,8 @@
 
 ^ChromePink:
 	Image: chrome-pink.png
-	Image2x: chrome-2x.png
-	Image3x: chrome-3x.png
+	Image2x: chrome-pink-2x.png
+	Image3x: chrome-pink-3x.png
 
 logos:
 	Inherits: ^Chrome

@@ -556,3 +556,143 @@ EMPB.Husk:
 		Name: E.M.P. Launcher (Destroyed)
 	RenderSprites:
         Image: empb.husk
+
+WIND:
+	Inherits: ^TechBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Bounds: 1024, 3072, 0, -1024
+        DecorationBounds: 1024, 3072, 0, -1024
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+		#   LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 20000
+	RevealsShroud:
+		Range: 3c512
+	Tooltip:
+		Name: Windmill Plant
+	TooltipDescription@ally:
+		Description: Provides a meagre amount of Power.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to obtain a little Power.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+        Actor: WIND.Husk
+        OwnerType: InternalName
+	Power:
+		Amount: 30
+		RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	WithBuildingBib:
+		HasMinibib: true
+	WithSpriteBody:
+		PauseOnCondition: emp-affected-structure
+	#  WithIdleAnimation:
+	#	Interval: 80, 100
+    #  PauseOnCondition: emp-affected-structure
+
+WIND.Husk:
+	Inherits: ^TechBuildingHusk
+    Inherits@restorable: ^RestorableBuilding
+	Interactable:
+		Bounds: 1024, 1024
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Windmill Plant (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: wind
+
+BNKR:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@TRANSPORT: ^Transport
+	Tooltip:
+		Name: Bunker
+	Building:
+	Valued:
+		Cost: 300
+	Health:
+		HP: 40000
+	Armor:
+		Type: Concrete
+	RevealsShroud:
+		Range: 5c0
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 512
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+    -RepairableBuilding:
+    -WithBuildingRepairDecoration:
+	EngineerRepairable:
+		RequiresCondition: damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+        LoadedCondition: loaded        
+	AttackGarrisoned:
+		PauseOnCondition: build-incomplete
+		Armaments: garrisoned
+		PortOffsets: 352,0,128, 192,-341,128, -192,-341,128, -352,0,128, -192,341,128, 192,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	RenderRangeCircle:
+		FallbackRange: 4c0
+	DetectCloaked:
+		Range: 3c768
+        RequiresCondition: loaded
+	OwnerLostAction:
+		Action: ChangeOwner
+	CaptureManager:
+		-BeingCapturedCondition: being-captured
+	Capturable:
+		Types: building-occupy
+		RequiresCondition: !loaded
+		ValidRelationships: Neutral
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+	MapEditorData:
+		Categories: Tech building
+	AppearsOnMapPreview:
+    -Sellable:
+    -GrantConditionOnDamageState@LOWPOWERDMG:
+    -ChangesHealth@LOWPOWERDMG:
+    -GrantConditionOnPowerState@LOWPOWERDMG:
+	CommandBarBlacklist:
+		DisableStop: false
+	Demolishable:
+		-Condition: being-demolished
+	SpawnActorOnDeath:
+        Actor: BNKR.Husk
+        OwnerType: InternalName
+
+BNKR.Husk:
+	Inherits: ^TechBuildingHusk
+    Inherits@restorable: ^RestorableBuilding
+	Interactable:
+		Bounds: 1024, 1024
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Bunker (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: bnkr

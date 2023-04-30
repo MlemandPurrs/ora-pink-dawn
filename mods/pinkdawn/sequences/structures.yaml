@@ -1313,3 +1313,68 @@ empb.husk:
 	idle: empbmake
 		Start: 10
         Length: 1
+
+wind:
+    Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-32
+	idle:
+        Length: 12
+        Tick: 90
+	damaged-idle:
+        Start: 12
+        Length: 36
+        Tick: 90
+    #  active:
+	#	Start: 0
+	#	Length: 12
+    #  damaged-active:
+    #  Start: 12
+    #  Length: 36
+	dead:
+		Start: 48
+        Length: 1
+		Tick: 800
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: -3,-6
+
+wind.husk:
+	idle: wind
+		Start: 48
+        Length: 1
+		Offset: 0,-32
+
+bnkr:
+    Inherits: emp-overlay
+	idle: bnkr
+        Offset: 0,-2
+	damaged-idle: bnkr
+		Start: 1
+        Offset: 0,-2
+	dead: bnkr
+		Start: 2
+        Offset: 0,-2
+	make: bnkrmake
+		Length: *
+		Tick: 80
+        Offset: 0,-2
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+            SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-2
+
+bnkr.husk:
+	idle: bnkr
+		Start: 2
+        Length: 1
+        Offset: 0,-2
