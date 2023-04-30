@@ -144,7 +144,7 @@
 		Palette: cloak
 		IsPlayerPalette: false
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 		RequiresCondition: cloak-crate-collected
 	ExternalCondition@CLOAK:
 		Condition: cloak-crate-collected
@@ -274,6 +274,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@airliftable: ^CarryallPassenger
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1685,3 +1686,53 @@
     GrantConditionOnPrerequisite@EXPTOGGLE2:
         Condition: earner-veterancy-on
         Prerequisites: ~global-veterancy
+
+#   Manual and Auto Carryable traits,
+#   the two still cannot co-exist...
+^CarryallPassenger:
+	Carryable:
+		ReservedCondition: awaiting
+		CarriedCondition: oncarryall
+		LockedCondition: boarding
+		LocalOffset: 0,0,200
+	WithDecoration@CARRYALL:
+		Image: pips
+		Margin: 0, 0
+		Sequence: pip-carryall
+		Position: Top
+		RequiresCondition: awaiting
+
+#   serves no purpose other than CTRL+C
+^ManualCarryallPassenger:
+	Carryable:
+		ReservedCondition: awaiting
+		CarriedCondition: oncarryall
+		LockedCondition: boarding
+		LocalOffset: 0,0,200
+        RequiresCondition: !autocarryalls-on
+	WithDecoration@CARRYALL:
+		Image: pips
+		Margin: 0, 0
+		Sequence: pip-carryall
+		Position: Top
+		RequiresCondition: awaiting
+    GrantConditionOnPrerequisite@AUTOCARRYALLS:
+        Condition: autocarryalls-on
+        Prerequisites: global-autocarryalls
+
+^AutomaticCarryallPassenger:
+    AutoCarryable:
+		ReservedCondition: awaiting
+		CarriedCondition: oncarryall
+		LockedCondition: boarding
+		LocalOffset: 0,0,200
+        RequiresCondition: autocarryalls-on
+	WithDecoration@CARRYALL:
+		Image: pips
+		Margin: 0, 0
+		Sequence: pip-carryall
+		Position: Top
+		RequiresCondition: awaiting
+    GrantConditionOnPrerequisite@AUTOCARRYALLS:
+        Condition: autocarryalls-on
+        Prerequisites: global-autocarryalls

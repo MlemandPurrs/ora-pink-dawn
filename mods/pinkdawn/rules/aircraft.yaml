@@ -316,3 +316,265 @@ HELI:
 		RearmActors: hpad
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+
+OCAR:
+	Inherits: ^Helicopter
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Carryall
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		CruiseAltitude: 2048
+		AltitudeVelocity: 0c100
+		IdealSeparation: 0c768
+		TurnSpeed: 12
+		Speed: 150
+		Repulsable: True
+		IdleTurnSpeed: 4
+		Voice: Action
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 15000
+	Armor:
+		Type: Aircraft
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+    # is a support unit....
+	Selectable:
+		Priority: 8
+		PriorityModifiers: Ctrl, Alt
+		DecorationBounds: 1044, 1048, 0, 0
+	WithMoveAnimation:
+		MoveSequence: move
+    -MapEditorData:
+
+OCAR.Manual:
+    Inherits: OCAR
+	EditorOnlyTooltip:
+		Name: Carryall (Manual)
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: fix, ~!global-autocarryalls, ~disabled
+		Queue: Aircraft.GDI
+		Description: VTOL aircraft capable of airlifting vehicles.\n\nUnarmed.
+	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
+	Carryall:
+		BeforeLoadDelay: 10
+		BeforeUnloadDelay: 15
+		LocalOffset: 0, 0, -128
+		Voice: Action
+		AllowDropOff: True
+		CarryCondition: carrying
+		PickUpCursor: guard
+		DropOffCursor: guard
+        CarryableConditions:
+            mcv: heavy
+            htnk: heavy
+	SpeedMultiplier@carrying:
+		Modifier: 80
+		RequiresCondition: carrying && !heavy
+	SpeedMultiplier@carryingheavy:
+        Modifier: 60
+        RequiresCondition: carrying && heavy
+	Sellable:
+		RequiresCondition: unit.sellable && !carrying
+    RenderSprites:
+        Image: ocar
+
+OCAR.Automatic:
+    Inherits: OCAR
+	EditorOnlyTooltip:
+		Name: Carryall (Automated)
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: fix, ~global-autocarryalls, ~disabled
+		Queue: Aircraft.GDI
+		Description: VTOL aircraft that will automatically transport Harvesters\nto and from the Tiberium fields.\nLifts vehicles to Service Depots when ordered.\n\nUnarmed.
+    Aircraft:
+        Repulsable: False
+        CanForceLand: False
+	AutoCarryall:
+		BeforeLoadDelay: 10
+		BeforeUnloadDelay: 15
+		LocalOffset: 0, 0, -128
+		Voice: Action
+		CarryCondition: carrying
+		PickUpCursor: guard
+		DropOffCursor: guard
+        CarryableConditions:
+            mcv: heavy
+            htnk: heavy
+	SpeedMultiplier@carrying:
+		Modifier: 80
+		RequiresCondition: carrying && !heavy
+	SpeedMultiplier@carryingheavy:
+        Modifier: 60
+        RequiresCondition: carrying && heavy
+	Sellable:
+		RequiresCondition: unit.sellable && !carrying
+    RenderSprites:
+        Image: ocar
+    RejectsOrders:
+    -Selectable:
+    Interactable:
+        Bounds: 1044, 1048, 0, 0
+
+NV22:
+	Inherits: ^Helicopter
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Nod Carryall
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		CruiseAltitude: 2048
+		AltitudeVelocity: 0c100
+		IdealSeparation: 0c768
+		TurnSpeed: 12
+		Speed: 150
+		Repulsable: True
+		IdleTurnSpeed: 4
+		Voice: Action
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 15000
+	Armor:
+		Type: Aircraft
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+    # is a support unit....
+	Selectable:
+		Priority: 8
+		PriorityModifiers: Ctrl, Alt
+		DecorationBounds: 1044, 1048, 0, 0
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 118,784,386
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 118,784,386
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: 118,-784,386
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: 118,-784,386
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+    -MapEditorData:
+
+NV22.Manual:
+    Inherits: NV22
+	EditorOnlyTooltip:
+		Name: Nod Carryall (Manual)
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: fix, ~!global-autocarryalls, ~disabled
+		Queue: Aircraft.Nod
+		Description: VTOL aircraft capable of airlifting vehicles.\n\nUnarmed.
+	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
+	Carryall:
+		BeforeLoadDelay: 10
+		BeforeUnloadDelay: 15
+		LocalOffset: 0, 0, -128
+		Voice: Action
+		AllowDropOff: True
+		CarryCondition: carrying
+		PickUpCursor: guard
+		DropOffCursor: guard
+        CarryableConditions:
+            mcv: heavy
+            htnk: heavy
+	SpeedMultiplier@carrying:
+		Modifier: 80
+		RequiresCondition: carrying && !heavy
+	SpeedMultiplier@carryingheavy:
+        Modifier: 60
+        RequiresCondition: carrying && heavy
+	Sellable:
+		RequiresCondition: unit.sellable && !carrying
+    RenderSprites:
+        Image: nv22
+
+NV22.Automatic:
+    Inherits: NV22
+	EditorOnlyTooltip:
+		Name: Nod Carryall (Automated)
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: fix, ~global-autocarryalls, ~disabled
+		Queue: Aircraft.Nod
+		Description: VTOL aircraft that will automatically transport Harvesters\nto and from the Tiberium fields.\nLifts vehicles to Service Depots when ordered.\n\nUnarmed.
+    Aircraft:
+        Repulsable: False
+        CanForceLand: False
+	AutoCarryall:
+		BeforeLoadDelay: 10
+		BeforeUnloadDelay: 15
+		LocalOffset: 0, 0, -128
+		Voice: Action
+		CarryCondition: carrying
+		PickUpCursor: guard
+		DropOffCursor: guard
+        CarryableConditions:
+            mcv: heavy
+            htnk: heavy
+	SpeedMultiplier@carrying:
+		Modifier: 80
+		RequiresCondition: carrying && !heavy
+	SpeedMultiplier@carryingheavy:
+        Modifier: 60
+        RequiresCondition: carrying && heavy
+	Sellable:
+		RequiresCondition: unit.sellable && !carrying
+    RenderSprites:
+        Image: nv22
+    RejectsOrders:
+    -Selectable:
+    Interactable:
+        Bounds: 1044, 1048, 0, 0
