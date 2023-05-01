@@ -620,6 +620,9 @@ FTNK:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+    SpeedMultiplier@DONTTURN:
+        Modifier: 0
+        RequiresCondition: dont-move
 
 HTNK:
 	Inherits: ^TrackedVehicle

@@ -317,7 +317,7 @@ APRT:
 		OrderName: Paratroopers
 		Icon: paratroopers
 		ChargeInterval: 6750
-		UnitType: c17
+		UnitType: c17.paradrop
 		Name: Paratroopers
 		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
 		DropItems: E1,E3,E1,E3,E1
@@ -341,6 +341,7 @@ APRT:
         EndChargeTextNotification: Reinforcements available.
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: true
 	SupportPowerChargeBar:
     WithBuildingBib:
     ProvidesPrerequisite@buildingname:

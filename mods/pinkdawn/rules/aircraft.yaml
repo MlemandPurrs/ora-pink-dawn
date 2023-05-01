@@ -33,6 +33,45 @@ C17.Crate:
     RenderSprites:
         Image: c17
 
+#   can be shot down, is slower
+C17.Paradrop:
+    Inherits: C17
+    -DamageMultiplier@INVULNERABLE:
+	Aircraft:
+		Speed: 300
+        AirborneCondition: airborne
+	HitShape:
+	Health:
+		HP: 9000
+	Armor:
+		Type: Aluminium
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+    Huntable:
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+    RenderSprites:
+        Image: c17
+
 A10:
 	Inherits: ^Plane
 	-ActorLostNotification:

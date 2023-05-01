@@ -269,9 +269,10 @@ SAM:
 	WithEmbeddedTurretSpriteBody:
 		QuantizedFacings: 32
 	Armament:
+        Name: primary
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo || !build-incomplete
+		PauseOnCondition: !ammo
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6
