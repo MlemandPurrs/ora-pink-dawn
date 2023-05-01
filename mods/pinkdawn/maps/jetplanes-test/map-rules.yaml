@@ -1,0 +1,253 @@
+
+World:
+	MissionData:
+		Briefing: -Jet Planes Test-\nAirports are able to build a ground-attack jet plane.\nJets can be selected when on ground and given a order to airstrike.\nCredits:\n*Unit art by Nolt
+
+#   how i'd like them get used:
+#   While on Airfield, can only be given:
+#   1. Order to attack, will fly there and execute command until ammo depleted, then return to assigned Airfield for resupply.
+#   2. Order to relocate to another Airfield.
+#   3. Guard command, which will make it fly to area and use Anti-Air missiles (NYI)
+#   While the Jet is on Air, can only be given order to Stop, which makes it return to it's assigned Airfield.
+#   It would reject any order else. You wont able to select Jet mid-air to give a new target, nor able to order it to move somewhere.
+#   Pretty much the unit can only be commanded while its on the Airfield be the result.
+
+^Jet:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: true
+	HiddenUnderFog:
+		Type: GroundPosition
+		AlwaysVisibleRelationships: None
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	RejectsOrders:
+        RequiresCondition: airborne
+	Aircraft:
+		AirborneCondition: airborne
+		CruisingCondition: cruising
+		CruiseAltitude: 2560
+        TakeOffOnCreation: true
+		TakeOffOnResupply: true
+        #   IdleBehavior: LeaveMap
+	MapEditorData:
+		Categories: Aircraft
+	Armor:
+		Type: Light
+	UpdatesPlayerStatistics:
+	Selectable:
+		Bounds: 1024, 1024
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+	Tooltip:
+		GenericName: Plane
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+	HitShape:
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@AIR:
+		Weapon: HeliExplode
+		RequiresCondition: airborne
+	Huntable:
+    CommandBarBlacklist:
+        DisableStop: false
+
+TRAN:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+HELI:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+ORCA:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+OCAR.Manual:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+OCAR.Automatic:
+	Buildable:
+		BuildAtProductionType: Chopper    
+        
+NV22.Manual:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+NV22.Automatic:
+	Buildable:
+		BuildAtProductionType: Chopper
+
+HPAD:
+    Production:
+    	Produces: Aircraft.GDI, Aircraft.Nod, Chopper
+	Exit@1:
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Chopper
+
+#   the structure is initially owned by Neutral, who randomizes GDI/Nod internally
+#   this means you can capture APRT as Nod and get to build GDI plane if Neutral
+#   player had gotten random faction as that. bummer....
+APRT:
+	Exit@1:
+		#   RequiresCondition: !being-captured
+		ExitCell: 1,1
+		Facing: 768
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Plane
+	RallyPoint:
+		ForceSetType: Plane
+	CommandBarBlacklist:
+		DisableStop: false
+	Production:
+		Produces: Aircraft.GDI, Aircraft.Nod, Plane
+        PauseOnCondition: emp-affected-structure
+	ProductionQueue@GDI:
+		Type: Aircraft.GDI
+		DisplayOrder: 4
+		Factions: gdi
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Nod:
+		Type: Aircraft.Nod
+		DisplayOrder: 4
+		Factions: nod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@GDI:
+		ProductionType: Aircraft.GDI
+	ProductionBar@Nod:
+		ProductionType: Aircraft.Nod
+
+#   this will be basic clone of MiG for now....
+#   the generic, base Jet plane
+GenericJet:
+	Inherits: ^Jet
+	Inherits@selection: ^SelectableCombatUnit
+    Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Attack Plane
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 10000
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	Armament:
+		Weapon: Maverick
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		OpportunityFire: False
+	Aircraft:
+        IdleBehavior: ReturnToBase
+        TakeOffOnCreation: false
+        TakeOffOnResupply: false
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 6
+		AmmoCondition: ammo
+    #   if something is to be selectable its on at all times.
+	Selectable:
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
+        #   PauseOnCondition: airborne
+    #  Interactable:
+    #  RequiresCondition: airborne
+	Rearmable:
+		RearmActors: aprt
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 3
+		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+    -MapEditorData:
+    RenderSprites:
+        Image: dummy
+
+#   GDI version
+F18:
+    Inherits: GenericJet
+	Tooltip:
+		Name: F/A-18 Hornet
+    Buildable:
+		Queue: Aircraft.GDI
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: ~aprt
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    RenderSprites:
+        Image: f18
+
+#   Nod version
+F22:
+    Inherits: GenericJet
+	Tooltip:
+		Name: F-22 Raptor
+	Buildable:
+		Queue: Aircraft.Nod
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: ~aprt
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    RenderSprites:
+        Image: f22

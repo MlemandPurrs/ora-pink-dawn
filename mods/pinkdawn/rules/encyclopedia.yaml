@@ -540,6 +540,7 @@ rmbo.info:
     Inherits: RMBO
     Buildable:
         Queue: Nothing
+        Prerequisites: miss
 	Encyclopedia:
         Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.
         Category: GDI Infantry
@@ -551,6 +552,8 @@ rmbo.info:
 
 rmbo.nod.info:
     Inherits: rmbo.info
+    Buildable:
+        Prerequisites: tmpl
 	Encyclopedia:
         Category: Nod Infantry
 	RenderSprites:
@@ -1076,7 +1079,7 @@ bnkr.info:
     -MapEditorData:
 
 ocar.info:
-    Inherits: OCAR
+    Inherits: GenericCarryall
     Buildable:
         Queue: Nothing
         Prerequisites: fix
@@ -1089,10 +1092,12 @@ ocar.info:
         Palette: gdi
 
 nv22.info:
-    Inherits: NV22
+    Inherits: GenericCarryall
     Buildable:
         Queue: Nothing
         Prerequisites: fix
+	Tooltip:
+		Name: Nod Carryall
 	Encyclopedia:
         Description: Carryalls are VTOL aircraft that are capable of airlifting Vehicles to carry them across the skies. The Carryall loses speed while carrying a unit, and particularly heavy cargo such as a MCV will cause it to slow-down considerably.
         Category: Nod Aircraft

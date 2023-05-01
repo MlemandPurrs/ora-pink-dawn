@@ -1,0 +1,9 @@
+f18:
+	idle:
+        Facings: 32
+	icon: f18icon
+
+f22:
+	idle:
+        Facings: 32
+	icon: f22icon
