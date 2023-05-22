@@ -201,6 +201,8 @@ NUKE:
 			nod: nodnuke
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -242,6 +244,53 @@ NUK2:
 			nod: nodnuk2
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+NUK3:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2148, 0, 0
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Hi-Tech Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: anytier3
+		Queue: Building.GDI, Building.Nod
+		Description: Provides a tremendous amount of power.
+	Building:
+		Footprint: xXx XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 80000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+	Power:
+		Amount: 400
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: nuk3
+		FactionImages:
+			nod: nodnuk3
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
 
 PROC:
 	Inherits: ^BaseBuilding
@@ -453,6 +502,8 @@ PYLE:
 		Bounds: 2048, 1792, 0, -213
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -590,6 +641,8 @@ AFLD:
 	ProvidesPrerequisite@buildingname:
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -771,7 +824,7 @@ HPAD:
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
-		RequiresCondition: !build-incomplete && emp-affected-structure
+		RequiresCondition: !build-incomplete && !emp-affected-structure
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -959,7 +1012,6 @@ MISS:
 	RevealsShroud:
 		Range: 4c0
 	WithBuildingBib:
-        HasMinibib: true
 	Power:
 		Amount: -100
 		RequiresCondition: !build-incomplete && !emp-affected-structure

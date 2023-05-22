@@ -421,16 +421,16 @@
 	ExternalCondition@AIRCRAFTREPAIR:
 		Condition: aircraft-repair
 	RepairsUnits:
-		ValuePercentage: 0
+		#   ValuePercentage: 0
 		HpPerStep: 1000
-		Interval: 15
+		Interval: 26
+		PlayerExperience: 0
 		StartRepairingNotification: Repairing
 		StartRepairingTextNotification: Repairing.
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
-		PlayerExperience: 0
 		RequiresCondition: aircraft-repair
-        RepairDamageTypes: Repair
+        #   RepairDamageTypes: Repair
 	WithDecoration@AIRCRAFTREPAIR:
 		Image: select
 		Palette: chrome

@@ -241,11 +241,11 @@ ORCA:
 	Armament@PRIMARY:
 		Weapon: OrcaRocketsAG
 		LocalOffset: 427,-171,-213, 427,171,-213
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || emp-crate-collected
 	Armament@SECONDARY:
 		Weapon: OrcaRocketsAA
 		LocalOffset: 427,-171,-213, 427,171,-213
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || emp-crate-collected
 	WithMuzzleOverlay:
 	AutoTarget:
 		ScanRadius: 5
@@ -255,7 +255,7 @@ ORCA:
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
-	AmmoPool@1:
+	AmmoPool:
         Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
@@ -311,26 +311,26 @@ HELI:
 		Weapon: HeliAGGun
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammogun || emp-crate-collected
+		PauseOnCondition: !ammo || emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: HeliAAGun
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammogun || emp-crate-collected
+		PauseOnCondition: !ammo || emp-crate-collected
 	AmmoPool:
-		Name: ammogun
+		Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
 		ReloadDelay: 40
-		AmmoCondition: ammogun
+		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		PipCount: 5
 		FullSequence: pip-yellow
+		AmmoPools: primary
 		RequiresSelection: true
-		AmmoPools: ammogun
 	AttackMove:
 		Voice: Attack
 	AutoTarget:

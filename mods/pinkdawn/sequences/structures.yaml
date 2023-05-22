@@ -151,10 +151,10 @@ nuk2.husk:
 
 nodnuk2:
     Inherits: emp-overlay
-	idle: nodnuk2
+	idle:
 		Length: 4
 		Tick: 1000
-	damaged-idle: nodnuk2
+	damaged-idle:
 		Start: 4
 		Length: 4
 		Tick: 1000
@@ -173,6 +173,60 @@ nodnuk2.husk:
 	idle: nodnuk2
 		Start: 8
 	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+nuk3:
+    Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+		Tick: 800
+	make: nuk3make
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: nuk2icon
+
+nuk3.husk:
+	idle: nuk3
+		Start: 8
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+nodnuk3:
+    Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead: nodnuk3
+		Start: 8
+        Tick: 800
+	make: nodnuk3make
+		Length: *
+		Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+	icon: nuk2icon
+
+nodnuk3.husk:
+	idle: nodnuk3
+		Start: 8
+	bib: bib2
 		UseTilesetExtension: true
 		Length: *
 
@@ -705,11 +759,8 @@ miss:
 		Start: 2
 		Offset: 0,-1
         Tick: 800
-	bib: mbMISS
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
 		Length: *
 		Offset: 0,-3
 	icon: missicon
@@ -718,11 +769,8 @@ miss.husk:
 	idle: miss
 		Start: 2
         Offset: 0,-1
-	bib: mbMISS
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
 		Length: *
 		Offset: 0,-3
 
@@ -1012,9 +1060,6 @@ sbag:
 
 barb:
 	idle:
-		Length: 16
-	damaged-idle:
-		Start: 16
 		Length: 16
 	icon: barbicon
 
