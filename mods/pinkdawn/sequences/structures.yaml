@@ -194,7 +194,7 @@ nuk3:
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
-	icon: nuk2icon
+	icon: nuk3icon
 
 nuk3.husk:
 	idle: nuk3
@@ -221,7 +221,7 @@ nodnuk3:
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
-	icon: nuk2icon
+	icon: nuk3icon
 
 nodnuk3.husk:
 	idle: nodnuk3
