@@ -167,9 +167,9 @@ Player:
 		VehiclesFactoryTypes: weap, afld
 		ProductionTypes: pyle, hand, weap, afld, hpad
 		SiloTypes: silo
-        MinimumDefenseRadius: 5
-        MaximumDefenseRadius: 20
-        PlaceDefenseTowardsEnemyChance: 1000 # never not
+        MinimumDefenseRadius: 8
+        MaximumDefenseRadius: 16
+        PlaceDefenseTowardsEnemyChance: 100 # never not
 		BuildingLimits:
 			proc: 4
 			pyle: 3

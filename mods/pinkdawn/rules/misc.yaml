@@ -213,7 +213,9 @@ CAMERA.scan:
 	AlwaysVisible:
 	WithSpriteBody:
 	RenderSpritesEditorOnly:
-		Image: camera
+        Image: camera
+    #  RenderSprites:
+    #  Image: blank1
 	BodyOrientation:
 		QuantizedFacings: 1
 	Immobile:
@@ -223,6 +225,11 @@ CAMERA.scan:
 		Type: CenterPosition
 	DetectCloaked:
 		Range: 5c512
+	RenderDetectionCircle:
+        TrailCount: 2
+        Visible: Always
+        UpdateLineTick: 6
+        BorderWidth: 0
 	MapEditorData:
 		Categories: System
     WithRangeCircle:

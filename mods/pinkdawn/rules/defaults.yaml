@@ -860,6 +860,7 @@
 	GivesBuildableArea:
 		AreaTypes: building
 	SpawnActorsOnSell:
+        ValuePercent: 20
 		ActorTypes: tecn,tecn,tecn,e1,e1
 	EngineerRepairable:
 		RequiresCondition: damaged

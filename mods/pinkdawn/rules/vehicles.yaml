@@ -21,6 +21,9 @@ MCV:
 		Cost: 2500
 	Tooltip:
 		Name: Mobile Construction Vehicle
+        GenericStancePrefix: false
+        GenericName: MCV
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
@@ -346,6 +349,9 @@ APC:
 		Cost: 500
 	Tooltip:
 		Name: Armored Personnel Carrier
+        GenericStancePrefix: false
+        GenericName: APC
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -553,6 +559,7 @@ MTNK:
 		Range: 4c128
 	Turreted:
 		TurnSpeed: 12
+        Offset: 0,0,24
 	Armament:
 		Weapon: MediumGun
 		Recoil: 128
@@ -819,7 +826,10 @@ MSAM:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Rocket Launcher
+		Name: Multiple Launch Rocket System
+        GenericStancePrefix: false
+        GenericName: MLRS
+        GenericVisibility: Ally, Neutral, Enemy        
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -880,7 +890,10 @@ MLRS:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: SSM Launcher
+		Name: Surface-to-Surface Missile Launcher
+        GenericStancePrefix: false
+        GenericName: SSM Launcher
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
