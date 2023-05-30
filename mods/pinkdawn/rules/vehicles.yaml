@@ -37,7 +37,6 @@ MCV:
         TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
-        PauseOnCondition: boarding
 	Health:
 		HP: 90000
 	Armor:
@@ -52,7 +51,6 @@ MCV:
 		NoTransformNotification: BuildingCannotPlaceAudio
 		NoTransformTextNotification: Cannot deploy here.
 		Voice: Unload
-        PauseOnCondition: oncarryall # some bogus to satisfy linter, unneeded
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -110,7 +108,7 @@ HARV:
 		Speed: 60
 		TurnSpeed: 12
         Locomotor: wheeled-crusher
-        PauseOnCondition: emp-crate-collected || boarding
+        PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 60000
 	Armor:
@@ -153,11 +151,6 @@ HARV:
 		Image: harv
 		FactionImages:
 			nod: nodharv
-    
-    #   This works OK with AutoCarryable, manual cant pick up unless called for.
-    #   After dropped off becomes bugged, for instance with manual carryall 
-    #   has caused to forget the IdleBehavior: Land given to the carryall Aircraft.
-    #   CarryableHarvester:
 
 TRUK:
 	Inherits: ^Vehicle
@@ -197,7 +190,7 @@ TRUK:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 12
 		Speed: 60
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
@@ -207,7 +200,6 @@ TRUK:
 		PlayerExperience: 0
 	SpawnActorOnDeath:
 		Actor: moneycrate
-        RequiresCondition: !oncarryall
 	Passenger:
 		CustomPipType: pip-blue
 
@@ -232,7 +224,7 @@ JEEP:
         Locomotor: wheeled-non-crusher
 		TurnSpeed: 18
 		Speed: 150
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 15000
 	Armor:
@@ -275,7 +267,7 @@ BGGY:
 	Mobile:
 		TurnSpeed: 18
 		Speed: 160
-        PauseOnCondition: emp-crate-collected || boarding
+        PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 12500
 	Armor:
@@ -317,7 +309,7 @@ BIKE:
     	Locomotor: wheeled-non-crusher
 		TurnSpeed: 24
 		Speed: 175
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 7500
 	Armor:
@@ -365,7 +357,7 @@ APC:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 110
-		PauseOnCondition: notmobile || emp-crate-collected || boarding
+		PauseOnCondition: notmobile || emp-crate-collected
 	Health:
 		HP: 20000
 	Armor:
@@ -426,7 +418,7 @@ MAAG:
         Locomotor: tracked-crusher
 		TurnSpeed: 18
 		Speed: 110
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 20000
 	Armor:
@@ -505,7 +497,7 @@ LTNK:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-        PauseOnCondition: emp-crate-collected || boarding
+        PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 30000
 	Armor:
@@ -550,7 +542,7 @@ MTNK:
         TurnSpeed: 12
         Locomotor: tracked-crusher
 		Speed: 90
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 40000
 	Armor:
@@ -600,7 +592,7 @@ FTNK:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-		PauseOnCondition: dont-move || emp-crate-collected || boarding
+		PauseOnCondition: dont-move || emp-crate-collected
 	Health:
 		HP: 35000
 	Armor:
@@ -652,7 +644,7 @@ HTNK:
 		Locomotor: tracked-crusher
 		Speed: 60
 		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected || boarding
+        PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 60000
 	Armor:
@@ -718,7 +710,7 @@ STNK:
 		Locomotor: tracked-crusher
 		TurnSpeed: 18
 		Speed: 150
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 12000
 	Armor:
@@ -733,7 +725,7 @@ STNK:
 		Palette: cloak
 		IsPlayerPalette: false
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -783,7 +775,7 @@ ARTY:
         Locomotor: tracked-non-crusher
 		TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: emp-crate-collected || boarding
+        PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 10000
 	Armor:
@@ -842,7 +834,7 @@ MSAM:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
-        PauseOnCondition: aiming || emp-crate-collected || boarding
+        PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
 	Armor:
@@ -906,7 +898,7 @@ MLRS:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
-        PauseOnCondition: aiming || emp-crate-collected || boarding
+        PauseOnCondition: aiming || emp-crate-collected
 	Health:
 		HP: 12000
 	Armor:
@@ -974,7 +966,7 @@ MHQ:
 	Mobile:
         Locomotor: tracked-non-crusher
 		Speed: 90
-		PauseOnCondition: emp-crate-collected || boarding
+		PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
 	WithIdleOverlay@SPINNER:

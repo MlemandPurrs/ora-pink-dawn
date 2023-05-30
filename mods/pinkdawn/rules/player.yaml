@@ -109,16 +109,6 @@ Player:
 		Enabled: False
 		DisplayOrder: 16
 		Prerequisites: global-veterancy
-	LobbyPrerequisiteCheckbox@AUTOCARRYALLS:
-		ID: autocarryalls
-		Label: Auto-Carryalls
-		Description: Automates Carryall units
-		Enabled: False
-		DisplayOrder: 18
-		Prerequisites: global-autocarryalls
-        # i misunderstood something....
-        Visible: False
-        Locked: True
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:

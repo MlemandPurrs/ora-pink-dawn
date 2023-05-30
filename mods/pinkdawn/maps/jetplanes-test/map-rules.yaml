@@ -97,30 +97,6 @@ ORCA:
 		Queue: Aircraft.GDI, Aircraft.Neutral
         Prerequisites: hpad, ~!owner.is.nod
 
-OCAR.Manual:
-	Buildable:
-		BuildAtProductionType: Chopper
-		Queue: Aircraft.GDI, Aircraft.Neutral
-        Prerequisites: fix, ~!global-autocarryalls, ~!owner.is.nod, ~disabled
-
-OCAR.Automatic:
-	Buildable:
-		BuildAtProductionType: Chopper    
-		Queue: Aircraft.GDI, Aircraft.Neutral
-        Prerequisites: fix, ~global-autocarryalls, ~!owner.is.nod, ~disabled
-
-NV22.Manual:
-	Buildable:
-		BuildAtProductionType: Chopper
-		Queue: Aircraft.Nod, Aircraft.Neutral
-        Prerequisites: fix, ~!global-autocarryalls, ~!owner.is.gdi, ~disabled
-
-NV22.Automatic:
-	Buildable:
-		BuildAtProductionType: Chopper
-		Queue: Aircraft.Nod, Aircraft.Neutral
-        Prerequisites: fix, ~global-autocarryalls, ~!owner.is.gdi, ~disabled
-
 HPAD:
     Production:
     	Produces: Aircraft.GDI, Aircraft.Nod, Chopper
