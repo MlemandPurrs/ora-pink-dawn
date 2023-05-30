@@ -634,6 +634,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@armory: ^AffectedByArmory
 	MustBeDestroyed:
 	Tooltip:
 		GenericName: Soldier
@@ -1020,6 +1021,8 @@
 		Notification: CivilianBuildingCaptured
 		TextNotification: Civilian building captured.
 	EngineerRepairable:
+    GivesCashOnCapture:
+        Amount: 500
 	RevealsShroud:
 		Range: 3c0
 	Tooltip:
@@ -1578,12 +1581,6 @@
         Modifier: 0
         RequiresCondition: emp-affected-structure
 
-^CanOccupyStructures:
-	Captures@OCCUPY:
-		CaptureTypes: building-occupy
-        PlayerExperience: 0
-	CaptureManager:
-
 ^ExperienceMechanic:
 	GainsExperience:
 		LevelUpNotification: LevelUp
@@ -1737,3 +1734,10 @@
     GrantConditionOnPrerequisite@AUTOCARRYALLS:
         Condition: autocarryalls-on
         Prerequisites: global-autocarryalls
+
+^AffectedByArmory:
+    ProducibleWithLevel:
+        Prerequisites: army, ~global-veterancy
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: army, ~global-veterancy

@@ -108,9 +108,6 @@ e1:
 		Tick: 1600
 		ZOffset: -511
 	icon: e1icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e1:
@@ -240,9 +237,6 @@ e2:
 		Tick: 1600
 		ZOffset: -511
 	icon: e2icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e2:
@@ -372,9 +366,6 @@ e3:
 		Tick: 1600
 		ZOffset: -511
 	icon: e3icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e3:
@@ -532,9 +523,6 @@ e4:
 		Facings: 8
 		Length: 13
 	icon: e4icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e4:
@@ -692,9 +680,6 @@ e5:
 		Facings: 8
 		Length: 13
 	icon: e5icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e5:
@@ -816,9 +801,6 @@ e6:
 		Tick: 1600
 		ZOffset: -511
 	icon: e6icon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			e6:
@@ -845,9 +827,6 @@ e6:
 			e6:
                 Frames: 246
 				Length: 1
-		Facings: 8
-    garrison-muzzle: minigun
-		Length: 6
 		Facings: 8
 
 rmbo:
@@ -953,9 +932,6 @@ rmbo:
 		Tick: 1600
 		ZOffset: -511
 	icon: rmboicon
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
     parachute:
 		Combine:
 			rmbo:
@@ -1044,9 +1020,6 @@ tecn:
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-    garrison-muzzle: minigun
-		Length: 6
-		Facings: 8
 	parachute:
         Start: 0
         Length: 1

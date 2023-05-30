@@ -130,3 +130,7 @@ Player:
 	PlayerRadarTerrain:
 	HarvesterAttackNotifier:
         NotifyInterval: 60000
+	ProductionIconOverlayManager:
+		Type: Veterancy
+		Image: veteranoverlay
+		Sequence: veteran

@@ -10,8 +10,6 @@ V19:
 		Amount: 15
         PauseOnCondition: emp-affected-structure
 		RequiresCondition: owner.is.player
-    #   GivesCashOnCapture:
-    #   Amount: 500
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -106,6 +104,8 @@ SYRD:
 		Types: building-neutral
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured
+    GivesCashOnCapture:
+        Amount: 500
 	MapEditorData:
 		Categories: Tech building
 	AppearsOnMapPreview:
@@ -459,6 +459,8 @@ EMPB:
 		Types: building-neutral
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured
+    GivesCashOnCapture:
+        Amount: 500
 	MapEditorData:
 		Categories: Tech building
 	AppearsOnMapPreview:
@@ -572,7 +574,6 @@ WIND:
 	Building:
 		Footprint: x
 		Dimensions: 1,1
-		#   LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 20000
 	RevealsShroud:
@@ -597,9 +598,6 @@ WIND:
 		HasMinibib: true
 	WithSpriteBody:
 		PauseOnCondition: emp-affected-structure
-	#  WithIdleAnimation:
-	#	Interval: 80, 100
-    #  PauseOnCondition: emp-affected-structure
 
 WIND.Husk:
 	Inherits: ^TechBuildingHusk
@@ -615,96 +613,43 @@ WIND.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: wind
 
-BNKR:
-	Inherits: ^Defense
-	Inherits@AUTOTARGET: ^AutoTargetAll
-	Inherits@TRANSPORT: ^Transport
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
-    -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
-    -GainsExperienceMultiplier@EXPTOGGLE2:
-    -GrantConditionOnPrerequisite@EXPTOGGLE2:
-	Tooltip:
-		Name: Bunker
+ARMY:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
 	Building:
-	Valued:
-		Cost: 300
+		Footprint: xx xx
+		Dimensions: 2,2
 	Health:
 		HP: 40000
 	Armor:
-		Type: Concrete
+		Type: Medium
 	RevealsShroud:
-		Range: 5c0
+		Range: 3c0
+	Tooltip:
+		Name: Armory
+	TooltipDescription@ally:
+		Description: Provides veterancy for trained Infantry.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to train ranked Infantry.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: ARMY.Husk
+        OwnerType: InternalName
 	WithBuildingBib:
 		HasMinibib: true
-	Turreted:
-		TurnSpeed: 512
-	-QuantizeFacingsFromSequence:
-	BodyOrientation:
-		QuantizedFacings: 8
-    -RepairableBuilding:
-    -WithBuildingRepairDecoration:
-	EngineerRepairable:
-		RequiresCondition: damaged
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
-	Cargo:
-		Types: Infantry
-		MaxWeight: 1
-        LoadedCondition: loaded        
-	AttackGarrisoned:
-		PauseOnCondition: build-incomplete
-		Armaments: garrisoned
-		PortOffsets: 352,0,128, 192,-341,128, -192,-341,128, -352,0,128, -192,341,128, 192,341,128
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
-	RenderRangeCircle:
-		FallbackRange: 4c0
-	DetectCloaked:
-		Range: 3c768
-        RequiresCondition: loaded
-	OwnerLostAction:
-		Action: ChangeOwner
-	CaptureManager:
-		-BeingCapturedCondition: being-captured
-	Capturable:
-		Types: building-occupy
-		RequiresCondition: !loaded
-		ValidRelationships: Neutral
-	CaptureNotification:
-		Notification: CivilianBuildingCaptured
-	MapEditorData:
-		Categories: Tech building
-	AppearsOnMapPreview:
-    -Sellable:
-    -GrantConditionOnDamageState@LOWPOWERDMG:
-    -ChangesHealth@LOWPOWERDMG:
-    -GrantConditionOnPowerState@LOWPOWERDMG:
-	CommandBarBlacklist:
-		DisableStop: false
-	Demolishable:
-		-Condition: being-demolished
-	SpawnActorOnDeath:
-        Actor: BNKR.Husk
-        OwnerType: InternalName
+	ProvidesPrerequisite@buildingname:
+        RequiresCondition: !emp-affected-structure
 
-BNKR.Husk:
+ARMY.Husk:
 	Inherits: ^TechBuildingHusk
-    Inherits@restorable: ^RestorableBuilding
 	Interactable:
-		Bounds: 1024, 1024
+		Bounds: 2048, 2048
 	Building:
-		Footprint: x
-		Dimensions: 1,1
+		Footprint: xx xx
+		Dimensions: 2,2
 	Tooltip:
-		Name: Bunker (Destroyed)
-	TransformOnCapture:
-		ForceHealthPercentage: 35
-		IntoActor: bnkr
+		Name: Armory (Destroyed)
