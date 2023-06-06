@@ -145,6 +145,8 @@ explosion:
 	pulse_explosion_small: pulsefx1
 		BlendMode: Alpha
 		Tick: 80
+	mini_nuke_explosion: miniatomsfx
+		Length: *
 
 rallypoint:
 	flag: flagfly
@@ -175,6 +177,13 @@ beacon:
 		Offset: 0,-42
     empmbcon: empmbcon
         Offset: 0,-42
+	pbmbbcon: pbmbbcon
+		Length: *
+		Offset: 0,-42
+    parainfra: pinfrabcon
+		Offset: 0,-42
+    spypbcon: spypbcon
+		Offset: 0,-42
 
 select:
 	repair:
@@ -296,6 +305,9 @@ pips:
 		Offset: -3, 0
 	pip-skull: pip-skull
 		Offset: -2, 0
+    tag-hold: tag-hold
+        Offset: 0, -2
+	tag-spy: tag-spy
 
 overlay:
 	Defaults: trans.icn
@@ -329,7 +341,14 @@ icon:
 	radarscan: scanicon
     paratroopers: pinficon
     empmissile: empmicon
- 
+ 	parabombs: pbmbicon
+    parainfra: pinfraicon
+    invulnerable: infxicon
+    spyplane: smigicon
+    chrono: warpicon
+    gpsprep: gpssicon
+	gpsactive: gpsaicon
+
 moveflsh:
 	idle:
 		Length: *
@@ -560,3 +579,76 @@ veteranoverlay:
 		Start: 0
 		Length: 1
 		Offset: 0, 0
+
+fact.colorpicker:
+	idle: fact
+		Start: 0
+        Length: 1
+
+fac2.colorpicker:
+	idle: fac2
+		Start: 0
+        Length: 1
+
+mcv.colorpicker:
+	idle: mcv
+		Start: 0
+        Length: 1
+
+mcv2.colorpicker:
+	idle: mcv2
+		Start: 0
+        Length: 1
+
+htnk.colorpicker:
+	idle: htnk-dummy
+		Start: 0
+        Length: 1
+
+4tnk.colorpicker:
+	idle: 4tnk-dummy
+		Start: 0
+        Length: 1
+
+v2:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+minv:
+	idle:
+		ZOffset: -512
+
+parabomb:
+	open:
+		Length: 8
+		ZOffset: 1023
+	idle:
+		Start: 8
+		Length: 5
+		ZOffset: 1023
+
+sputnik:
+	idle:
+		Length: *
+		Offset: -4,0
+		ZOffset: 1023
+
+gpsdot:
+	Infantry:
+	Vehicle:
+		Start: 1
+    Heavy:
+        Start: 2
+	Ship:
+		Start: 3
+    Sub:
+        Start: 4
+	Helicopter:
+		Start: 5
+	Plane:
+		Start: 6
+    BigPlane:
+        Start: 7
+	Harvester:
+		Start: 8

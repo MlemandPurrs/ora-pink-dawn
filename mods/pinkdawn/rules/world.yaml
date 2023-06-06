@@ -129,11 +129,43 @@
 	Locomotor@IMMOBILE:
 		Name: immobile
         TerrainSpeeds:
+    Locomotor@FOOT-AMPHIBIAN:
+		Name: foot-amphibian
+		Crushes: crate, mine
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Tiberium: 80
+				PathingCost: 300
+			BlueTiberium: 80
+				PathingCost: 300
+			RedTiberium: 80
+				PathingCost: 300
+			Beach: 80
+			Shallow: 80
+            Water: 50
+	Locomotor@TRACKED-AMPHIBIAN:
+		Name: tracked-amphibian
+		Crushes: crate, mine, infantry, wall
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Tiberium: 70
+			BlueTiberium: 70
+            RedTiberium: 70
+			Beach: 70
+			Shallow: 70
+            Water: 50
 	Faction@Random:
-		Name: Any
+		Name: Random TD
 		InternalName: Random
 		RandomFactionMembers: gdi, nod
-		Description: Random Faction\nA random faction will be chosen when the game starts.
+		Description: Random TD Faction\nGDI or Nod will be chosen at random when the game starts.
 	Faction@gdi:
 		Name: GDI
 		InternalName: gdi
@@ -142,6 +174,19 @@
 		Name: Nod
 		InternalName: nod
 		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.
+	Faction@allies:
+		Name: Allies
+		InternalName: allies
+		Description: European Allies\nThe military alliance of European nations, that hastily united against the imminent Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to many powerful\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.
+	Faction@soviet:
+		Name: Soviet
+		InternalName: soviet
+		Description: The Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.
+	Faction@RandomRA:
+		Name: Random RA
+		InternalName: Random2
+		RandomFactionMembers: allies, soviet
+		Description: Random RA Faction\nAllies or Soviet will be chosen at random when the game starts.
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:
@@ -240,11 +285,16 @@ World:
         SeparateTeamSpawnsCheckboxVisible: False
         SeparateTeamSpawnsCheckboxEnabled: True
 	CreateMapPlayers:
-	StartingUnits@mcvonly:
+	StartingUnits@mcvonlytd:
 		Class: none
 		ClassName: MCV Only
 		Factions: gdi, nod
 		BaseActor: mcv
+	StartingUnits@mcvonlyra:
+		Class: none
+		ClassName: MCV Only
+		Factions: allies, soviet
+		BaseActor: mcv2
 	SpawnStartingUnits:
         DropdownLocked: true
         DropdownVisible: false
@@ -285,8 +335,12 @@ World:
 	ColorPickerManager:
 		PreviewActor: fact.colorpicker
         FactionPreviewActors:
-            gdi: fact.colorpicker
-            nod: fact.colorpicker.nod
+            random: fact.colorpicker
+            gdi: htnk.colorpicker
+            nod: htnk.colorpicker
+            allies: 4tnk.colorpicker
+            soviet: 4tnk.colorpicker
+            random2: fac2.colorpicker
 		PresetHues: 0, 0.125, 0.185, 0.4, 0.54, 0.66, 0.79, 0.875, 0, 0.14, 0.23, 0.43, 0.54, 0.625, 0.77, 0.85
 		PresetSaturations: 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5
 	OrderEffects:

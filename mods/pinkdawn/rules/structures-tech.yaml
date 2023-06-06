@@ -145,7 +145,7 @@ SYRD:
 	RevealsShroud:
 		Range: 3c0
 	Production:
-		Produces: Navy.GDI, Navy.Nod
+		Produces: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 		PauseOnCondition: build-incomplete || being-demolished || emp-affected-structure
 	ProductionQueue@GDINavy:
 		Type: Navy.GDI
@@ -177,10 +177,44 @@ SYRD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@SovietNavy:
+		Type: Navy.Soviet
+		DisplayOrder: 5
+		Group: Navy
+		Factions: soviet
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@AlliesNavy:
+		Type: Navy.Allies
+		DisplayOrder: 5
+		Group: Navy
+		Factions: allies
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@GDINavy:
 		ProductionType: Navy.GDI
 	ProductionBar@NodNavy:
 		ProductionType: Navy.Nod
+	ProductionBar@SovietNavy:
+		ProductionType: Navy.Soviet
+	ProductionBar@AlliesNavy:
+		ProductionType: Navy.Allies
 	RepairsUnits:
 		HpPerStep: 1000
 		Interval: 15
@@ -196,25 +230,25 @@ SYRD:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
 		ExitCell: 0,2
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,1024,0
 		Facing: 224
 		ExitCell: 2,2
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: -1024,-1024,0
 		Facing: 96
 		ExitCell: 0,0
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,-1024,0
 		Facing: 32
 		ExitCell: 2,0
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 	Power:
 		Amount: -40
 		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
@@ -296,10 +330,10 @@ APRT:
 	Tooltip:
 		Name: Airport
 	TooltipDescription@ally:
-		Description: Grants the usage of Paratroopers.
+		Description: Grants the usage of Paratroopers and Planes.
 		ValidRelationships: Ally
 	TooltipDescription@other:
-		Description: Capture to obtain Paratroopers.
+		Description: Capture to obtain Paratroopers and Planes.
 		ValidRelationships: Neutral, Enemy
 	Selectable:
 		Bounds: 3072, 2048
@@ -348,6 +382,46 @@ APRT:
 	SpawnActorOnDeath:
 		Actor: APRT.Husk
         OwnerType: InternalName
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 768
+        ProductionTypes: Aircraft.Neutral, Plane, Chopper
+	RallyPoint:
+		ForceSetType: Plane
+	CommandBarBlacklist:
+		DisableStop: false
+	Production:
+		Produces: Aircraft.Neutral, Plane, Chopper
+        PauseOnCondition: emp-affected-structure
+	ProductionQueue@Neutral:
+		Type: Aircraft.Neutral
+		DisplayOrder: 4
+		Factions: gdi, nod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Neutral:
+		ProductionType: Aircraft.Neutral
+    ProvidesPrerequisite@GDI:
+        Prerequisite: owner.is.gdi
+        Factions: gdi
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@Nod:
+        Prerequisite: owner.is.nod
+        Factions: nod
+        ResetOnOwnerChange: true
+	Reservable:
+	WithResupplyAnimation:
+	ProvidesPrerequisite:
+		Prerequisite: anyafld
 
 APRT.Husk:
 	Inherits: ^TechBuildingHusk

@@ -17,6 +17,12 @@ CRATE:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv
+        ValidFactions: gdi, nod
+	GiveMcvCrateAction@RA:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: mcv2
+        ValidFactions: allies, soviet
 	ExplodeCrateAction@nuke:
 		Weapon: Atomic
 		SelectionShares: 1
@@ -89,6 +95,17 @@ CRATE:
 		Units: harv
 		SelectionShares: 3
         Prerequisites: proc
+        ValidFactions: gdi, nod
+	GiveUnitCrateAction@ohrv:
+		Units: ohrv
+		SelectionShares: 3
+        Prerequisites: oref
+        ValidFactions: allies
+	GiveUnitCrateAction@ahrv:
+		Units: ahrv
+		SelectionShares: 3
+        Prerequisites: oref
+        ValidFactions: soviet
 	LevelUpCrateAction:
 		SelectionShares: 5
         Prerequisites: ~global-veterancy
@@ -146,20 +163,6 @@ waypoint:
 		QuantizedFacings: 1
 	MapEditorData:
 		Categories: System
-
-fact.colorpicker:
-    AlwaysVisible:
-    WithSpriteBody:
-	RenderSprites:
-		Image: fact
-        Palette: colorpicker
-
-fact.colorpicker.nod:
-    AlwaysVisible:
-    WithSpriteBody:
-	RenderSprites:
-        Image: nodfact
-        Palette: colorpicker
 
 CAMERA:
 	Interactable:
@@ -236,6 +239,30 @@ CAMERA.scan:
         Range: 5c512
         Visible: Always
         UsePlayerColor: true
+
+CAMERA.spyplane:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (spy plane camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+        Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	DetectCloaked:
+		Range: 10c0
+    WithRangeCircle:
+        Range: 10c0
+        Visible: Always
+        UsePlayerColor: true
+	MapEditorData:
+		Categories: System
 
 FLARE:
 	Immobile:
@@ -385,3 +412,64 @@ crate.airstrike:
 		ChargeInterval: 0
 		OneShot: true
         AllowMultiple: true
+
+fact.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: fact.colorpicker
+        Palette: colorpicker
+
+fac2.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: fac2.colorpicker
+        Palette: colorpicker
+
+mcv.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: mcv.colorpicker
+        Palette: colorpicker
+
+mcv2.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: mcv2.colorpicker
+        Palette: colorpicker
+
+htnk.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: htnk.colorpicker
+        Palette: colorpicker
+
+4tnk.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: 4tnk.colorpicker
+        Palette: colorpicker
+
+MINV:
+	Inherits: ^Mine
+	RenderSprites:
+		Image: minv
+	Explodes:
+		Weapon: ATMine

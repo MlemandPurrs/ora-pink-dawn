@@ -1,0 +1,20 @@
+#   weapon Shock trooper uses to charge tesla coil
+TeslaCharge:
+	ReloadDelay: 120
+	Range: 1c0
+	Report: electro1.aud
+	ValidTargets: Charge
+	Projectile: TeslaZap
+	Warhead@CHARGE: GrantExternalCondition
+		Range: 0c256
+		Duration: 150
+		Condition: TeslaChargeApplied
+		ValidTargets: Charge
+
+#   used to make Demolition Truck able to target
+DemoTruckTargeting:
+	ValidTargets: Vehicle, Structure, Wall
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack

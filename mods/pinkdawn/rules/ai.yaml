@@ -148,105 +148,218 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			UseSpyPlane:
+				OrderName: SpyPlane
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			UseSovietParatroopers:
+				OrderName: SovietParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			UseSovietParabombs:
+				OrderName: SovietParabombs
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			UseNukeMissile:
+				OrderName: NukeMissileRA
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			UseInvulnerability:
+				OrderName: IronCurtain
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Ally
+					Types: Vehicle
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 1c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
-		HarvesterTypes: harv
-		RefineryTypes: proc
+		HarvesterTypes: harv, ohrv, ahrv
+		RefineryTypes: proc, oref
 	BaseBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defense.Nod, Defense.GDI
+		BuildingQueues: Building.Nod, Building.GDI, Building.Allies, Building.Soviet
+		DefenseQueues: Defense.Nod, Defense.GDI, Defense.Allies, Defense.Soviet
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 5
-		ConstructionYardTypes: fact
-		RefineryTypes: proc
-		PowerTypes: nuke, nuk2
-		BarracksTypes: pyle, hand
-		VehiclesFactoryTypes: weap, afld
-		ProductionTypes: pyle, hand, weap, afld, hpad
-		SiloTypes: silo
+		ConstructionYardTypes: fact, fac2
+		RefineryTypes: proc, oref
+		PowerTypes: nuke, nuk2, powr, apwr
+		BarracksTypes: pyle, hand, tent, barr
+		VehiclesFactoryTypes: weap, afld, warf
+		ProductionTypes: pyle, hand, weap, afld, hpad, tent, barr, warf
+		SiloTypes: silo, osil
+        DefenseTypes: gtwr, atwr, gun, obli, sam, hbox, pbox, ftur, tsla, agun, sam2
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
 		BuildingLimits:
 			proc: 4
+            oref: 4
 			pyle: 3
 			hand: 3
+            tent: 3
+            barr: 3
 			hq: 1
+            dome: 1
 			weap: 2
+            warf: 2
 			afld: 2
 			hpad: 0
+            3fld: 0
 			eye: 1
             bio: 1
+            fcom: 1
 			miss: 1
             tmpl: 1
+            atek: 1
+            stek: 1
 			fix: 1
+            fix2: 1
 			silo: 2
+            osil: 2
+            iron: 1
+            mslo: 1
 		BuildingFractions:
 			proc: 20
+            oref: 20
 			pyle: 5
 			hand: 5
+            tent: 5
+            barr: 5
 			hq: 4
+            dome: 4
 			weap: 9
+            warf: 9
 			afld: 9
 			gtwr: 5
 			gun: 5
-			atwr: 9
+			atwr: 7
 			obli: 7
 			sam: 7
+            pbox: 5
+            hbox: 5
+            ftur: 5
+            tsla: 7
+            agun: 7
+            sam2: 7
 			eye: 1
             bio: 1
+            fcom: 1
 			tmpl: 1
             miss: 1
+            atek: 1
+            stek: 1
 			fix: 1
+            fix2: 1
+            3fld: 1
 			hpad: 1
+            iron: 1
+            mslo: 1
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:
 		RequiresCondition: enable-ai-player
 		#   RushInterval: 400
 		SquadSize: 16
-        ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
-		ConstructionYardTypes: fact
-		AirUnitsTypes: heli, orca
+        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera
+		ConstructionYardTypes: fact, fac2
+		AirUnitsTypes: heli, orca, hind, yak, mig
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
+		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftur, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy.Nod, Navy.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Vehicle.Allies, Vehicle.Soviet, Infantry.Nod, Infantry.GDI, Infantry.Allies, Infantry.Soviet, Aircraft.Nod, Aircraft.GDI, Aircraft.Allies, Aircraft.Soviet, Navy.Nod, Navy.GDI, Navy.Allies, Navy.Soviet
 		UnitsToBuild:
 			e1: 65
 			e2: 25
 			e3: 40
 			e4: 15
 			e5: 15
+            e8: 15
+            shok: 15
 			harv: 10
+            ohrv: 10
+            ahrv: 10
 			jeep: 5
 			bggy: 5
+            r4wd: 10
+            ftrk: 20
 			bike: 40
             apc: 10
+            apc2: 10
             maag: 20
 			ltnk: 25
 			mtnk: 20
 			ftnk: 10
 			htnk: 50
 			stnk: 40
+            1tnk: 30
+            2tnk: 50
+            3tnk: 50
+            4tnk: 25
+            5tnk: 1
+            ctnk: 40
+            ttnk: 25
 			arty: 60
 			msam: 40
 			mlrs: 40
+            v2rl: 40
 			heli: 5
 			orca: 5
+            hind: 5
             boat: 3
 		UnitLimits:
 			harv: 8
+            ohrv: 8
+            ahrv: 8
             boat: 5
             orca: 2
             heli: 2
+            hind: 2
+            5tnk: 1
+            jeep: 4
+            bggy: 4
+            r4wd: 4
+            ftrk: 4
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
-		McvTypes: mcv
-		ConstructionYardTypes: fact
-		McvFactoryTypes: weap,afld
+		McvTypes: mcv, mcv2
+		ConstructionYardTypes: fact, fac2
+		McvFactoryTypes: weap,afld,warf

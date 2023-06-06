@@ -57,7 +57,75 @@ heli:
 	slow-rotor: lrotor
 		Start: 4
 		Length: 8
+	rotor2: lbrotor
+		Length: 4
+	slow-rotor2: lbrotor
+		Start: 4
+		Length: 8
 	muzzle: minigun16
 		Length: 6
 		Facings: 16
 	icon: heliicon
+	alticon: hel2icon
+
+hind:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	rotor: lrotorlg
+		Length: 4
+	slow-rotor: lrotorlg
+		Start: 4
+		Length: 8
+	muzzle: minigun16
+		Length: 6
+		Facings: 16
+	icon: hindicon
+
+badr:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: badricon
+
+yak:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: yakicon
+
+mig:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: migicon
+
+smig:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: smigicon
+
+nmig:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: nmigicon
+
+f18:
+	Inherits: emp-overlay
+	idle:
+        Facings: 32
+        UseClassicFacings: True
+	icon: f18icon
+
+f22:
+	Inherits: emp-overlay
+	idle:
+        Facings: 32
+        UseClassicFacings: True
+	icon: f22icon

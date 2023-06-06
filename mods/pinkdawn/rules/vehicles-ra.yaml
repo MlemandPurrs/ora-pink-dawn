@@ -1,0 +1,1210 @@
+MCV2:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability-crate-collected
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Mobile Construction Vehicle
+        GenericStancePrefix: false
+        GenericName: MCV
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 3900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 16
+        Prerequisites: anyhq, anyfix
+		Queue: Vehicle.Allies, Vehicle.Soviet
+		Description: Deploys into another Construction Yard.\n\nUnarmed.
+	Selectable:
+		DecorationBounds: 1536, 1536
+	Mobile:
+        TurnSpeed: 12
+		Speed: 60
+		Locomotor: tracked-crusher
+	Health:
+		HP: 90000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+	Transforms:
+		IntoActor: fac2
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
+		Voice: Unload
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	ProductionCostMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+	ProductionTimeMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+	GpsDot:
+		String: Heavy
+
+OHRV:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableEconomicUnit
+    Inherits@Crates: ^AcceptsAllCratesExceptFirepower
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Ore Harvester
+		GenericName: Harvester
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+    	BuildDuration: 1650
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: oref
+		Queue: Vehicle.Allies
+		Description: Collects Ore and Gems for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nUnarmed.
+	Selectable:
+		DecorationBounds: 1536, 1536
+	Harvester:
+		Resources: Tiberium, BlueTiberium, RedTiberium
+		Capacity: 21
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 6
+		SearchFromProcRadius: 15
+		SearchFromHarvesterRadius: 8
+		HarvestFacings: 8
+	Mobile:
+		Speed: 60
+		TurnSpeed: 12
+        Locomotor: wheeled-crusher
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+	ActorLostNotification:
+		Notification: HarvesterLost
+		TextNotification: Harvester lost.
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	Explodes:
+		Weapon: UnitExplodeHarv
+		EmptyWeapon: UnitExplodeHarv
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Tiberium: pip-green
+			BlueTiberium: pip-blue
+            RedTiberium: pip-red
+	ProximityExternalCondition@DOCKED:
+		Condition: dockinprocess
+		Range: 1c0
+		ValidRelationships: Ally
+	ExternalCondition@DOCKED:
+		Condition: docked
+		SourceCap: 1
+		TotalCap: 1        
+	RejectsOrders:
+		RequiresCondition: docked
+	ChangesHealth:
+		Step: 100
+		Delay: 3
+		StartIfBelow: 51
+		DamageCooldown: 150
+    -WithFacingSpriteBody:
+	WithHarvesterSpriteBody:
+		ImageByFullness: ohrv-empty, ohrv-half, ohrv-full
+    RenderSprites:
+        Image: ohrv-full
+	GpsDot:
+		String: Harvester
+
+AHRV:
+    Inherits: OHRV
+	Inherits@AUTOTARGET: ^AutoTargetforLightVehicle
+	Tooltip:
+		Name: Armed Ore Harvester
+		GenericName: Armed Harvester
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		BuildPaletteOrder: 1
+		Queue: Vehicle.Soviet
+		Description: Collects Ore and Gems for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints when current\nhealth is below half of maximum.\n\nStrong vs Infantry.\nWeak vs anything else.
+        Icon: alticon
+	Turreted@SECONDARY:
+		Turret: secondary
+		Offset: 508,0,128
+		TurnSpeed: 12
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: MachineGunLight
+		LocalOffset: 320,0,171
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+		Armaments: secondary
+		Turrets: secondary
+        PauseOnCondition: emp-crate-collected
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+	WithMuzzleOverlay:
+    RenderSprites:
+        Image: ohrv-full
+
+STRK:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 17
+		Queue: Vehicle.Allies, Vehicle.Soviet
+		Prerequisites: oref
+		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Supply Truck
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 12
+		Speed: 60
+		PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c0
+	DeliversCash:
+        Cursor: enter
+		Payload: 1000
+		Type: MoneyTransfer
+		PlayerExperience: 0
+	SpawnActorOnDeath:
+		Actor: moneycrate
+	Passenger:
+		CustomPipType: pip-blue
+
+DTRK:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 2100
+	Tooltip:
+		Name: Demolition Truck
+        GenericStancePrefix: false
+        GenericName: Demo Truck
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+    	BuildDuration: 3500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 18
+		Queue: Vehicle.Allies, Vehicle.Soviet
+		Prerequisites: anytier3
+		Description: Transports atomic demolition charge.\n\nCan be deployed for instant detonation.
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 12
+		Speed: 60
+		PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c0
+	Passenger:
+		CustomPipType: pip-blue
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+	AttackFrontal:
+		FacingTolerance: 512
+        PauseOnCondition: emp-crate-collected
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+        PauseOnCondition: emp-crate-collected
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+	Chronoshiftable:
+		ExplodeInstead: true
+	RevealOnDeath:
+		Duration: 50
+		Radius: 2c512
+
+R4WD:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforLightVehicle
+    Inherits@TRANSPORT: ^Transport
+	Valued:
+		Cost: 400
+	CustomSellValue:
+		Value: 300
+    Sellable:
+        RefundPercent: 100
+	Tooltip:
+		Name: Ranger
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: warf
+		Queue: Vehicle.Allies
+		Description: Fast scout and anti-infantry vehicle.\n\nCan carry one Infantry.\nCannot attack without passenger.\nComes with a initial passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: wheeled-non-crusher
+		TurnSpeed: 18
+		Speed: 150
+		PauseOnCondition: notmobile || emp-crate-collected
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c512
+	Turreted:
+		TurnSpeed: 18
+		Offset: -85,0,128
+	Armament:
+		Weapon: MachineGunLight
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected || !loaded
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected || !loaded
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+        RequiresCondition: loaded
+	Cargo:
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		Types: Infantry
+		MaxWeight: 1
+		InitialUnits: e1
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+
+#   todo: remake weapon into mini-ZSU23
+FTRK:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Mobile Flak
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: warf
+		Queue: Vehicle.Soviet
+		Description: Mobile anti-air unit with flak gun.\n\nCan attack Aircraft.\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: tracked-non-crusher
+		TurnSpeed: 18
+		Speed: 90
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c128
+	Turreted:
+		TurnSpeed: 18
+		Offset: -256,0,272 # 288
+	AutoTargetPriority@Air:
+		ValidTargets: Air
+		Priority: 2
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: QuadGunAG
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 468,85,0, 468,-85,0
+		MuzzleSequence: muzzle
+		PauseOnCondition: reload-air || emp-crate-collected
+		ReloadingCondition: reload-ground
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: QuadGunAA
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 176,85,96, 176,-85,96
+		MuzzleSequence: muzzle-air
+		PauseOnCondition: reload-ground || emp-crate-collected
+		ReloadingCondition: reload-air
+	GrantConditionOnAttack:
+		Condition: attack-air
+		ArmamentNames: secondary
+		RevokeDelay: 18
+		RevokeOnNewTarget: False
+		RevokeAll: True
+	AttackTurreted:
+        Armaments: primary, secondary
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		RequiresCondition: !attack-air
+	WithSpriteTurret@AIR:
+		Sequence: turret-air
+		RequiresCondition: attack-air
+	RenderRangeCircle:
+		RangeCircleType: aa
+
+APC2:
+	Inherits: ^TrackedVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@TRANSPORT: ^Transport
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Armored Personnel Carrier
+        GenericStancePrefix: false
+        GenericName: Heavy APC
+        GenericVisibility: Ally, Neutral, Enemy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: infantryproduction
+		Queue: Vehicle.Soviet
+		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 90
+		PauseOnCondition: notmobile || emp-crate-collected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	Armament:
+		Weapon: MachineGun
+		LocalOffset: 320,0,171
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Turreted:
+		TurnSpeed: 12
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithSpriteTurret:
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		UnloadVoice: Unload
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Sellable:
+		RequiresCondition: unit.sellable && !loaded
+
+MNLY:
+	Inherits: ^TrackedVehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Minelayer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		Prerequisites: anyfix
+        Queue: Vehicle.Soviet
+		Description: Carries and lays anti-tank land mines.\nCan lay up to eight land mines before\nneeding to resupply at a Service Depot.\n\nUnarmed.
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 90
+        PauseOnCondition: emp-crate-collected
+	Targetable:
+		TargetTypes: Ground, Vehicle, Mine
+	RevealsShroud:
+		Range: 5c128
+	Minelayer:
+		Mine: MINV
+		TileUnknownName: build-valid
+		TerrainTypes: Clear, Road, Beach, Tiberium, BlueTiberium, RedTiberium, Bridge
+	MineImmune:
+	AmmoPool:
+        Armaments: 
+		Ammo: 8
+		RearmSound: minelay1.aud
+		ReloadDelay: 35
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	Rearmable:
+		RearmActors: fix, fix2
+	DetectCloaked:
+		Range: 1c826
+		DetectionTypes: Mine
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: ATMine
+	Passenger:
+		CustomPipType: pip-blue
+	RenderSprites:
+		Image: MNLY
+
+1TNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Light Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 5
+		Prerequisites: warf
+		Queue: Vehicle.Allies
+		Description: Fast, amphibian light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        Locomotor: tracked-amphibian
+		TurnSpeed: 12
+		Speed: 90
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 4c128
+	Turreted:
+		TurnSpeed: 12
+	Armament:
+		Weapon: LightGun
+		Recoil: 85
+		RecoilRecovery: 17
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	WithFacingSpriteBody:
+		RequiresCondition: !onwater
+	WithFacingSpriteBody@WATER:
+		Sequence: idle-water
+		Name: body-water
+		RequiresCondition: onwater
+	GrantConditionOnTerrain:
+		TerrainTypes: Water
+		Condition: onwater
+
+2TNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Medium Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: anyfix
+		Queue: Vehicle.Allies
+		Description: Allies Main Battle Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        TurnSpeed: 12
+        Locomotor: tracked-crusher
+		Speed: 80
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Turreted:
+		TurnSpeed: 12
+        Offset: 0,0,12
+	Armament:
+		Weapon: MediumGun
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		Sequence: turret
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1194, 1194
+
+3TNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Heavy Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: anyfix
+		Queue: Vehicle.Soviet
+		Description: Dual-barreled Soviet Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        TurnSpeed: 12
+        Locomotor: tracked-crusher
+		Speed: 70
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Turreted:
+		TurnSpeed: 12
+        Offset: 0,0,24
+	Armament:
+		Weapon: HeavyGun
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		Sequence: turret
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1194, 1194
+
+4TNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mammoth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: anytier3
+		Queue: Vehicle.Soviet
+		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament@PRIMARY:
+		Weapon: MammothGun
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothTusk
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100, 100
+		Recoil: 10
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	ChangesHealth:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 51
+		DamageCooldown: 150
+        RequiresCondition: !emp-crate-collected
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+
+5TNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Behemoth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 5300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 14
+		BuildLimit: 1
+		Prerequisites: anyhq, fcom
+		Queue: Vehicle.Soviet
+		Description: Maximum one can be built.\nExtra large and slow tank.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 40
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || !wireless
+	Health:
+		HP: 100000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament@PRIMARY:
+		Weapon: BehemothGun
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: BehemothChaingun
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100, 100
+		Recoil: 10
+		MuzzleSequence: muzzle-mg
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	ChangesHealth:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 51
+		DamageCooldown: 150
+        RequiresCondition: !emp-crate-collected && wireless
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+	ExternalCondition@WIRELESS:
+		Condition: wireless
+	WithColoredOverlay@DISCONNECTED:
+		Color: 000000B4
+		RequiresCondition: !wireless
+	DamageMultiplier@DISCONNECTED:
+		Modifier: 200
+		RequiresCondition: !wireless
+    GrantConditionOnPrerequisite@WIRELESS:
+        Condition: wireless
+        Prerequisites: activeradar
+
+CTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Chrono Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		Prerequisites: atek
+		Queue: Vehicle.Allies
+		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instant relocate to any location.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
+	SelectionDecorations:
+	Health:
+		HP: 35000
+	Armor:
+		Type: Medium
+	Mobile:
+        Locomotor: tracked-crusher
+		Speed: 50
+        TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: APTusk
+		LocalOffset: -160,-276,232, -160,276,232
+		LocalYaw: 60, -60
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	PortableChrono:
+		ChargeDelay: 2250
+		HasDistanceLimit: false
+	Selectable:
+		DecorationBounds: 1030, 1030
+	Passenger:
+		CustomPipType: red
+
+#   current issues:
+#   Unit does not move into range when ordered to attack out of range.
+#   Charge up animation begins to occur at moment of attack order issued, 
+#   irrevelant if target was within range or not. Can suppose that is WAI.
+#   Unit needs to pause movement in order to able to attack. (but thats balanced! yay)
+TTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Tesla Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 15
+		Prerequisites: stek
+        Queue: Vehicle.Soviet
+		Description: Tank with mounted tesla coil.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
+	Health:
+		HP: 25000
+	Armor:
+		Type: Medium
+	Mobile:
+        Locomotor: tracked-crusher
+        TurnSpeed: 12
+		Speed: 70
+        PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: TeslaTankZap
+		LocalOffset: 0,0,213
+        PauseOnCondition: emp-crate-collected
+	#   AttackFrontal:
+    #   PauseOnCondition: emp-crate-collected
+	AttackTesla:
+		PauseOnCondition: emp-crate-collected
+		ChargeAudio: tslachg2.aud
+		MaxCharges: 1
+		ReloadDelay: 120
+    WithTeslaChargeAnimation:
+	#   WithIdleOverlay@SPINNER:
+	#	Sequence: spinner
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 1030, 1030
+	RenderRangeCircle:
+	Passenger:
+		CustomPipType: pip-yellow
+
+V2RL:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle.Soviet
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: anyhq
+		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings\nWeak vs Tanks, Aircraft.
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: V2 Rocket Launcher
+        GenericStancePrefix: false
+        GenericName: V2 Launcher
+        GenericVisibility: Ally, Neutral, Enemy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-crusher
+        TurnSpeed: 12
+		Speed: 70
+        PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: V2Missile
+		PauseOnCondition: !ammo || emp-crate-collected
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 400
+		Count: 1
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		Voice: Attack
+		FacingTolerance: 0
+        PauseOnCondition: emp-crate-collected
+	WithFacingSpriteBody:
+		Name: full
+		RequiresCondition: ammo
+	WithFacingSpriteBody@EMPTY:
+		Name: empty
+		RequiresCondition: !ammo
+		Sequence: empty-idle
+	SelectionDecorations:
+	Explodes:
+		Weapon: FlametankExplode
+	Selectable:
+		DecorationBounds: 1128, 1128
+	RenderRangeCircle:
+	Passenger:
+		CustomPipType: pip-yellow
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+
+MGG:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Mobile Gap Generator
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 11
+		Queue: Vehicle.Allies
+		Prerequisites: atek
+		Description: Regenerates the shroud nearby, obscuring the area.\nCan be toggled on/off via deploy command.\n\nUnarmed.
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 12
+		Speed: 80
+        PauseOnCondition: emp-crate-collected
+	WithIdleOverlay@SPINNER:
+		Offset: -299,0,171
+		Sequence: spinner
+        PauseOnCondition: emp-crate-collected || deployed
+	RevealsShroud:
+		Range: 4c0
+	CreatesShroud:
+		Range: 5c0
+        RequiresCondition: !emp-crate-collected && !deployed
+	WithRangeCircle@Normal:
+		Color: 008B8B
+		Width: 1
+		BorderColor: 000000
+		BorderWidth: 3
+		Range: 5c0
+		RequiresCondition: !deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		SkipMakeAnimation: true
+	WithDecoration@offline:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-hold
+		Position: Top
+		Margin: 0, -6
+		RequiresCondition: deployed
+
+APC3:
+	Inherits: ^TrackedVehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@UpgradeCrates: ^AcceptsUpgradeCrates
+	Inherits@EMP: ^AcceptsEMPCrate
+	Inherits@TRANSPORT: ^Transport
+	-MustBeDestroyed:
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Phase Vehicle
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1650
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		Prerequisites: atek
+		Queue: Vehicle.Allies
+		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 18
+		Speed: 90
+		PauseOnCondition: notmobile || emp-crate-collected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	AutoTargetPriority@Air:
+		ValidTargets: Air
+		Priority: 2
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: StingerAG
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-air || emp-crate-collected
+		ReloadingCondition: reload-ground
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: StingerAA
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-ground || emp-crate-collected
+		ReloadingCondition: reload-air
+	Turreted:
+		TurnSpeed: 18
+	AttackTurreted:
+        Armaments: primary, secondary
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithSpriteTurret:
+	AttackMove:
+		Voice: Attack
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		UnloadVoice: Unload
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Sellable:
+		RequiresCondition: unit.sellable && !loaded
+	Cloak:
+		InitialDelay: 85
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    Targetable@Extra:
+		TargetTypes: Tank
+	RenderRangeCircle:
+		RangeCircleType: aa

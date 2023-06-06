@@ -111,6 +111,8 @@ OCAR:
         CarryableConditions:
             mcv: heavy
             htnk: heavy
+            mcv2: heavy
+            4tnk: heavy
 	SpeedMultiplier@carrying:
 		Modifier: 80
 		RequiresCondition: carrying && !heavy
@@ -152,6 +154,8 @@ NV22:
         CarryableConditions:
             mcv: heavy
             htnk: heavy
+            mcv2: heavy
+            4tnk: heavy
 	SpeedMultiplier@carrying:
 		Modifier: 80
 		RequiresCondition: carrying && !heavy
@@ -184,7 +188,7 @@ MCV:
         PauseOnCondition: boarding
 	Transforms:
         PauseOnCondition: oncarryall # some bogus to satisfy linter, unneeded
-        
+
 HARV:
 	Mobile:
         PauseOnCondition: emp-crate-collected || boarding
@@ -263,6 +267,112 @@ MLRS:
 MHQ:
 	Mobile:
         PauseOnCondition: emp-crate-collected || boarding
+
+MCV2:
+	Mobile:
+        PauseOnCondition: boarding
+	Transforms:
+        PauseOnCondition: oncarryall # some bogus to satisfy linter, unneeded
+
+OHRV:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+AHRV:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+STRK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+	SpawnActorOnDeath:
+        RequiresCondition: !oncarryall
+
+DTRK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+	Carryable:
+        -CarriedCondition:
+
+R4WD:
+	Mobile:
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
+
+FTRK:
+    Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+
+APC2:
+	Mobile:
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
+
+MNLY:
+    Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+	Carryable:
+        -CarriedCondition:
+
+1TNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+2TNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+3TNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+4TNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+5TNK:
+    -Carryable:
+    -WithDecoration@CARRYALL:
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		DetectionTypes: Stealth
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		RequiresCondition: cloak-crate-collected
+
+CTNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+TTNK:
+	Mobile:
+        PauseOnCondition: emp-crate-collected || boarding
+
+V2RL:
+    Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+
+MGG:
+    Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+	Carryable:
+        -CarriedCondition:
+
+APC3:
+	Mobile:
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
+	Cloak:
+		InitialDelay: 85
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 
 ocar.info:
     Inherits: GenericCarryall

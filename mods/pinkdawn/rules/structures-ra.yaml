@@ -1,0 +1,1696 @@
+FAC2:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	WithColoredOverlay@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+        Color: 800000A3
+	DamageMultiplier@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+		Modifier: 0
+	TimedConditionBar@Invulnerability:
+		Condition: invulnerability-crate-collected
+	ExternalCondition@Invulnerability:
+		Condition: invulnerability-crate-collected
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability-crate-collected
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+	Selectable:
+		Bounds: 3072, 3072
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Construction Yard
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 90000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	Production:
+		Produces: Building.Allies, Building.Soviet, Defense.Allies, Defense.Soviet
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	Transforms:
+		RequiresCondition: factundeploy
+		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure
+		IntoActor: mcv2
+		Offset: 1,1
+		Facing: 384
+	TransformsIntoMobile:
+		RequiresCondition: factundeploy
+		Locomotor: tracked-crusher
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: factundeploy
+		CargoType: Vehicle
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: factundeploy
+		RepairActors: fix, fix2
+		RequiresForceMove: true
+	TransformsIntoTransforms:
+		RequiresCondition: factundeploy && build-incomplete
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	ProductionQueue@AlliesBuilding:
+		Type: Building.Allies
+		DisplayOrder: 0
+		Factions: allies
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@SovietBuilding:
+		Type: Building.Soviet
+		DisplayOrder: 0
+		Factions: soviet
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@AlliesDefense:
+		Type: Defense.Allies
+		DisplayOrder: 1
+		Factions: allies
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@SovietDefense:
+		Type: Defense.Soviet
+		DisplayOrder: 1
+		Factions: soviet
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	BaseBuilding:
+	ProductionBar@BuildingAllies:
+		ProductionType: Building.Allies
+	ProductionBar@BuildingSoviet:
+		ProductionType: Building.Soviet
+	ProductionBar@DefenseAllies:
+		ProductionType: Defense.Allies
+		Color: 8A8A8A
+	ProductionBar@DefenseSoviet:
+		ProductionType: Defense.Soviet
+		Color: 8A8A8A
+	#   BaseProvider:
+	#	Range: 14c0
+	WithBuildingBib:
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: 30
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	Buildable:
+        BuildDuration: 3900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 11
+		Prerequisites: anytier3, fix2
+		Queue: Building.Allies, Building.Soviet
+		Description: Builds Structures and Defenses.
+	ProductionCostMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+	ProductionTimeMultiplier@EXPENSIVEMCV:
+		Multiplier: 200
+		Prerequisites: global-expensivemcv
+    AcceptsDeliveredCash:
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	SpawnActorsOnSell:
+		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+
+POWR:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: fac2
+		Queue: Building.Allies, Building.Soviet
+		Description: Generates a standard amount of power.
+	Building:
+		Footprint: Xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+	Power:
+		Amount: 100
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ScalePowerWithHealth:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+APWR:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 3072, 2048
+        DecorationBounds: 3072, 2901, 0, -426
+	HitShape:
+		TargetableOffsets: -355,-1024,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: anyhq
+		Queue: Building.Allies, Building.Soviet
+		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
+	Building:
+		Footprint: XxX xXx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+	Power:
+		Amount: 200
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ScalePowerWithHealth:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+OREF:
+	Inherits: ^BaseBuilding
+	Inherits@RESOURCES: ^StoresResources
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 598
+	HitShape@TOP:
+		TargetableOffsets: 1680,0,0
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+	HitShape@BOTTOMLEFT:
+		TargetableOffsets: -1260,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, 598
+			BottomRight: -512, 1280
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Ore Refinery
+		GenericName: Refinery
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: fac2
+		Queue: Building.Allies, Building.Soviet
+		Description: Processes valuable minerals\ninto useable resources.
+	Building:
+		Footprint: _X_ xxx X== ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	Refinery:
+		DockAngle: 256
+		DockOffset: 1,2
+		TickRate: 15
+		DiscardExcessResources: True
+	StoresResources:
+		Capacity: 1500
+	Selectable:
+		Bounds: 3072, 2133, 0, 170
+		DecorationBounds: 3072, 2986, 0, -85
+	FreeActor@Allies:
+		Actor: OHRV
+		SpawnOffset: 1,2
+		Facing: 256
+        RequiresCondition: !build-incomplete && owner.is.allies
+	FreeActor@Soviet:
+		Actor: AHRV
+		SpawnOffset: 1,2
+		Facing: 256
+        RequiresCondition: !build-incomplete && owner.is.soviet
+	GrantConditionOnFaction@Soviet:
+		Condition: owner.is.soviet
+		Factions: soviet
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Allies:
+		Condition: owner.is.allies
+		Factions: allies
+		ResetOnOwnerChange: True
+	WithBuildingBib:
+	Power:
+		Amount: -30
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	ExternalCondition@DOCKED:
+		Condition: dockinprocess
+		SourceCap: 1
+		TotalCap: 1
+	ProximityExternalCondition@DOCKED:
+		Condition: docked
+		Range: 1c0
+		ValidRelationships: Ally
+	CustomSellValue:
+		Value: 300
+	Sellable:
+        RefundPercent: 100
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	InfiltrateForCash:
+		Percentage: 50
+		Types: ThiefInfiltrate
+		InfiltratedNotification: CreditsStolen
+		InfiltratedTextNotification: Credits stolen.
+	Targetable@Infiltration:
+        TargetTypes: ThiefInfiltrate
+	ProvidesPrerequisite:
+		Prerequisite: anyproc
+
+OSIL:
+	Inherits: ^BaseBuilding
+	Inherits@RESOURCES: ^StoresResources
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-GivesBuildableArea:
+	-WithSpriteBody:
+	-SpawnActorsOnSell:
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Ore Silo
+		GenericName: Silo
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		BuildDuration: 300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: oref
+		Queue: Building.Allies, Building.Soviet
+		Description: Stores processed Ore and Gems.
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 30000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+		HasMinibib: true
+	WithResourceLevelSpriteBody:
+		Sequence: stages
+	StoresResources:
+		Capacity: 1000
+	Power:
+		Amount: -10
+        RequiresCondition: !build-incomplete
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 1280, 1280
+	CashTrickler:
+		Interval: 300
+		InitialDelay: 300
+		Amount: 200
+		UseResourceStorage: true
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+        RequiresCondition: infiniteincome-enabled
+	CashTricklerBar:
+		Color: FFFF9E
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+    GrantConditionOnPrerequisite@PassiveIncome:
+        Condition: infiniteincome-enabled
+        Prerequisites: global-infiniteincome
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	WithResourceStoragePipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-yellow
+
+TENT:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Allies Barracks
+        GenericStancePrefix: false
+        GenericName: Barracks
+        GenericVisibility: Ally, Neutral, Enemy
+	ProvidesPrerequisite:
+		Prerequisite: infantryproduction
+	Buildable:
+		BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+        Prerequisites: fac2
+		Queue: Building.Allies
+		Description: Trains Infantry units.\nNearby infantry can heal.
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c512
+	WithBuildingBib:
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		SpawnOffset: -42,810,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Infantry.Allies
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	GrantExternalConditionToProduced:
+		Condition: produced
+	ProductionQueue:
+		Type: Infantry.Allies
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry.Allies
+	Power:
+		Amount: -15
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 2048, 1792, 0, -213
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	ProximityExternalCondition@barracksheal:
+		Condition: barracks
+		ValidRelationships: Ally
+		Range: 2c512
+	WithRangeCircle:
+		Range: 2c512
+        RequiresCondition: !build-incomplete
+
+BARR:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Soviet Barracks
+        GenericStancePrefix: false
+        GenericName: Barracks
+        GenericVisibility: Ally, Neutral, Enemy
+	ProvidesPrerequisite:
+		Prerequisite: infantryproduction
+	Buildable:
+		BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+        Prerequisites: fac2
+		Queue: Building.Soviet
+		Description: Trains Infantry units.
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c512
+	WithBuildingBib:
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		SpawnOffset: -170,810,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Infantry.Soviet
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	GrantExternalConditionToProduced:
+		Condition: produced
+	ProductionQueue:
+		Type: Infantry.Soviet
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry.Soviet
+	Power:
+		Amount: -15
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 2048, 1792, 0, -213
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+WARF:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: War Factory
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 5
+		Prerequisites: anypower, infantryproduction
+		Queue: Building.Allies, Building.Soviet
+		Description: Produces vehicles
+	Building:
+		Footprint: xxx x+x ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 3072, 2048
+	Health:
+		HP: 80000
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		RequiresCondition: !being-captured
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+		ExitDelay: 3
+	Exit@2:
+		RequiresCondition: !being-captured
+		SpawnOffset: 213,-128,0
+		ExitCell: 0,2
+		ExitDelay: 3
+	Production:
+		Produces: Vehicle.Allies, Vehicle.Soviet
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	ProductionQueue@Allies:
+		Type: Vehicle.Allies
+		DisplayOrder: 3
+		Group: Vehicle
+		Factions: allies
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Soviet:
+		Type: Vehicle.Soviet
+		DisplayOrder: 3
+		Group: Vehicle
+		Factions: soviet
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Allies:
+		ProductionType: Vehicle.Allies
+	ProductionBar@Soviet:
+		ProductionType: Vehicle.Soviet
+	Power:
+		Amount: -40
+        RequiresCondition: !build-incomplete || emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	-ActorPreviewPlaceBuildingPreview:
+	SequencePlaceBuildingPreview:
+		Sequence: place
+		SequenceAlpha: 0.65
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+
+FIX2:
+	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
+	HitShape:
+		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
+		Type: Polygon
+			Points: -1536,-300, -640,-811, 640,-811, 1536,-300, 1536,555, 640,1110, -640,1110, -1536,555
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Service Depot
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		Prerequisites: vehicleproduction
+		Queue: Building.Allies, Building.Soviet
+		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
+	Building:
+		Footprint: =+= +++ =+=
+		Dimensions: 3,3
+	Selectable:
+		Bounds: 2901, 1450, 0, 128
+		DecorationBounds: 3072, 2048
+	Health:
+		HP: 70000
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		HasMinibib: true
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	Reservable:
+	RepairsUnits:
+		HpPerStep: 1000
+        Interval: 26
+		PlayerExperience: 0
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: Repairing.
+        FinishRepairingNotification: UnitRepaired
+        FinishRepairingTextNotification: Unit repaired.
+        PauseOnCondition: emp-affected-structure
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Power:
+		Amount: -20
+        RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@buildingname:
+	ProximityExternalCondition:
+		Condition: unit.sellable
+		Range: 1c0
+	Sellable:
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ExternalCondition@Docked:
+		Condition: unit.docked
+	ProximityExternalCondition@AIRCRAFTREPAIR:
+		Condition: aircraft-repair
+		Range: 5c256
+	WithRangeCircle@AIRCRAFTREPAIR:
+		Color: 888899AA
+		Range: 5c256
+	ProvidesPrerequisite:
+		Prerequisite: anyfix
+
+2FLD:
+	Inherits: ^BaseBuilding
+    Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 3072, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Airfield
+	Buildable:
+        BuildDuration: 750
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: ~disabled
+		Queue: Building.Soviet
+		Description: Produces and reloads fixed wing aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c512
+	Exit@1:
+		RequiresCondition: !being-captured
+		ExitCell: 1,1
+		Facing: 768
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane
+	Production:
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	Reservable:
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	ProductionQueue@GDI:
+		Type: Aircraft.GDI
+		DisplayOrder: 4
+		Factions: gdi
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Nod:
+		Type: Aircraft.Nod
+		DisplayOrder: 4
+		Factions: nod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Allies:
+		Type: Aircraft.Allies
+		DisplayOrder: 4
+		Factions: allies
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Soviet:
+		Type: Aircraft.Soviet
+		DisplayOrder: 4
+		Factions: soviet
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@GDI:
+		ProductionType: Aircraft.GDI
+	ProductionBar@Nod:
+		ProductionType: Aircraft.Nod
+	ProductionBar@Allies:
+		ProductionType: Aircraft.Allies
+	ProductionBar@Soviet:
+		ProductionType: Aircraft.Soviet
+	Power:
+		Amount: -30
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+    WithBuildingBib:
+	ProximityExternalCondition:
+		Condition: unit.sellable
+		Range: 1c0
+	Sellable:
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ExternalCondition@Docked:
+		Condition: unit.docked
+	ProvidesPrerequisite:
+		Prerequisite: anyafld
+	ParatroopersPower@SovietParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+		OrderName: SovietParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratroopers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: E1,E3,E1,E3,E1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: ability
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	SupportPowerChargeBar:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+3FLD:
+	Inherits: ^BaseBuilding
+    Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 3072, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Airfield
+	Buildable:
+        BuildDuration: 750
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: vehicleproduction
+		Queue: Building.Soviet
+		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c512
+	Exit@1:
+		RequiresCondition: !being-captured
+		ExitCell: 1,1
+		Facing: 768
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane, Chopper
+	Production:
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane, Chopper
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	Reservable:
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	ProductionQueue@GDI:
+		Type: Aircraft.GDI
+		DisplayOrder: 4
+		Factions: gdi
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Nod:
+		Type: Aircraft.Nod
+		DisplayOrder: 4
+		Factions: nod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Allies:
+		Type: Aircraft.Allies
+		DisplayOrder: 4
+		Factions: allies
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Soviet:
+		Type: Aircraft.Soviet
+		DisplayOrder: 4
+		Factions: soviet
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@GDI:
+		ProductionType: Aircraft.GDI
+	ProductionBar@Nod:
+		ProductionType: Aircraft.Nod
+	ProductionBar@Allies:
+		ProductionType: Aircraft.Allies
+	ProductionBar@Soviet:
+		ProductionType: Aircraft.Soviet
+	Power:
+		Amount: -30
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+    WithBuildingBib:
+	FreeActor@1:
+		Actor: ORCA
+		Facing: 768
+		SpawnOffset: 1,1
+		RequiresCondition: !build-incomplete && gdi.player && gratisair
+	FreeActor@2:
+		Actor: HELI
+		Facing: 768
+		SpawnOffset: 1,1
+		RequiresCondition: !build-incomplete && nod.player && gratisair
+	FreeActor@3:
+		Actor: HELI
+		Facing: 768
+		SpawnOffset: 1,1
+		RequiresCondition: !build-incomplete && allies.player && gratisair
+	FreeActor@4:
+		Actor: HIND
+		Facing: 768
+		SpawnOffset: 1,1
+		RequiresCondition: !build-incomplete && soviet.player && gratisair
+	GrantConditionOnFaction@GDI:
+		Condition: gdi.player
+		Factions: gdi
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Nod:
+		Condition: nod.player
+		Factions: nod
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Allies:
+		Condition: allies.player
+		Factions: allies
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Soviet:
+		Condition: soviet.player
+		Factions: soviet
+		ResetOnOwnerChange: True
+	GrantConditionOnPrerequisite@FREEAIRCRAFT:
+		Prerequisites: global-freeaircraft
+		Condition: gratisair
+	ProductionCostMultiplier@FREEAIRCRAFT:
+		Multiplier: 300
+		Prerequisites: global-freeaircraft
+	ProductionTimeMultiplier@FREEAIRCRAFT:
+		Multiplier: 350
+		Prerequisites: global-freeaircraft
+	ProximityExternalCondition:
+		Condition: unit.sellable
+		Range: 1c0
+	Sellable:
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ExternalCondition@Docked:
+		Condition: unit.docked
+	ProvidesPrerequisite:
+		Prerequisite: anyafld
+	ProvidesPrerequisite@2:
+		Prerequisite: hpad
+	ParatroopersPower@paratroopersra:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.soviet
+		OrderName: SovietParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratroopers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: E1,E3,E1,E3,E1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: ability
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	SupportPowerChargeBar:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+    GrantConditionOnFaction@Soviet2:
+        Condition: owner.is.soviet
+        Factions: soviet
+        ResetOnOwnerChange: true
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+DOME:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Radar Dome
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: anypower, vehicleproduction
+		Queue: Building.Allies, Building.Soviet
+		Description: Provides Radar and 'Spy Plane' support-power.\n'Spy Plane' is only available for Soviet player.\nRequires power to operate.
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 2048, 1706, 0, 384
+		DecorationBounds: 2048, 2261, 0, -170
+	WithSpriteBody:
+		PauseOnCondition: lowpower || emp-affected-structure
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 10c0
+	WithBuildingBib:
+	ProvidesRadar:
+		RequiresCondition: !jammed && !lowpower && !emp-affected-structure
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !lowpower && !emp-affected-structure
+	Power:
+		Amount: -50
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	ExternalCondition@JAMMED:
+		Condition: jammed
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
+	AirstrikePower@SpyPlane:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.soviet
+		OrderName: SpyPlane
+		Prerequisites: anyafld
+		Icon: spyplane
+		ChargeInterval: 4500
+		Name: Spy Plane
+		Description: Reveals an area of the map\nand cloaked enemy units.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		SelectTargetTextNotification: Select target.
+		EndChargeTextNotification: Spy plane ready.
+		CameraActor: camera.spyplane
+		CameraRemoveDelay: 150
+		UnitType: smig
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: spypbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 5
+	SupportPowerChargeBar:
+    GrantConditionOnFaction@Soviet:
+        Condition: owner.is.soviet
+        Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@WIRELESS:
+		Prerequisite: activeradar
+		RequiresCondition: !jammed && !lowpower && !build-incomplete
+
+ATEK:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+        LocalCenterOffset: 0,-256,0
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		BuildLimit: 1
+		Prerequisites: vehicleproduction, anyhq
+		Queue: Building.Allies
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPeriodically revals the entire map aslong when powered.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Allies Technology Center
+        GenericStancePrefix: false
+        GenericName: Technology Center
+        GenericVisibility: Ally, Neutral, Enemy
+	Health:
+		HP: 100000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+	Power:
+		Amount: -200
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite:
+		Prerequisite: anytier3
+	SpawnActorsOnSell:
+		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	GpsPower:
+		PauseOnCondition: ( lowpower || emp-affected-structure ) || !gpsactivated
+		RequiresCondition: gpsactivated
+		Icon: gpsprep
+		OneShot: true
+		ChargeInterval: 1
+		Name: GPS Satellite
+		Description: Reveals map terrain and provides tactical\ninformation. Requires power and active radar.
+		RevealDelay: 30
+		LaunchSpeechNotification: SatelliteLaunched
+		LaunchTextNotification: Satellite launched.
+		DisplayTimerRelationships: None
+		SupportPowerPaletteOrder: 9
+		StartFullyCharged: True
+		RequiresActiveRadar: True        
+	ProduceActorPower@powergps:
+		Name: GPS Satellite
+		Description: Reveals map terrain and provides tactical\ninformation.
+		Icon: gpsprep
+		PauseOnCondition: lowpower || emp-affected-structure
+		Actors: gpsactivenoise
+		Type: GPSPower
+		ChargeInterval: 4500
+		OrderName: GPSSpawner
+		SupportPowerPaletteOrder: 9
+		LaunchSpeechNotification:
+		IncomingSpeechNotification:
+		DisplayTimerRelationships: None
+		EndChargeSpeechNotification: SatelliteReady
+		RequiresCondition: !gpsactivated
+	ProduceActorPower@gpsactivesign:
+		Name: GPS Active Timer
+		Description: Displays the amount of time the satellite is still active.
+		Icon: gpsactive
+		Actors: e1
+		Type: Infantry
+		ChargeInterval: 1501
+		SupportPowerPaletteOrder: 9
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		RequiresCondition: gpsactivated
+	GrantConditionOnPrerequisite@gpsactivation:
+		Prerequisites: gpsactiveprereq
+		Condition: gpsactivated
+	ProvidesPrerequisite@uplink:
+		Prerequisite: uplink
+	Exit@1:
+		SpawnOffset: -704,768,0
+		ExitCell: -1,2
+	Production@GPSPower:
+		Produces: GPSPower
+
+gpsactivenoise:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (GPS Active Noise Dummy)
+	AlwaysVisible:
+	Aircraft:
+		Repulsable: False
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	MapEditorData:
+		Categories: System
+	ProvidesPrerequisite@gap:
+		Prerequisite: gpsactiveprereq
+	ActorLostNotification:
+		Notification: SatelliteInitialized
+		NotifyAll: True
+	Health:
+		HP: 1
+	HitShape:
+	ChangesHealth:
+		Step: -1
+		StartIfBelow: 101
+		Delay: 1
+	SpawnActorOnDeath:
+		Actor: powergps
+		SpawnAfterDefeat: False
+	KillsSelf:
+
+powergps:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (GPS Power Dummy)
+	AlwaysVisible:
+	Aircraft:
+		Repulsable: False
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	MapEditorData:
+		Categories: System
+	ProvidesPrerequisite@gap:
+		Prerequisite: gpsactiveprereq
+	ActorLostNotification:
+		Notification: SatelliteTerminated
+		NotifyAll: True
+	Health:
+		HP: 1499
+	HitShape:
+	ChangesHealth:
+		Step: -1
+		StartIfBelow: 101
+		Delay: 1
+	GrantConditionOnPrerequisite@satelliteexists:
+		Prerequisites: uplink
+		Condition: uplinkexists
+	KillsSelf:
+		RequiresCondition: !uplinkexists
+
+STEK:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 3072, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+        LocalCenterOffset: 0,-256,0
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		BuildLimit: 1
+		Prerequisites: vehicleproduction, anyhq
+		Queue: Building.Soviet
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Soviet Technology Center
+        GenericStancePrefix: false
+        GenericName: Technology Center
+        GenericVisibility: Ally, Neutral, Enemy
+	Health:
+		HP: 100000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+	Power:
+		Amount: -100
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite:
+		Prerequisite: anytier3
+	SpawnActorsOnSell:
+		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+
+FCOM:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		BuildLimit: 1
+		Prerequisites: stek
+		Queue: Building.Soviet
+		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank\nand Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Command Post
+	Health:
+		HP: 60000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 5c0
+	WithBuildingBib:
+	Power:
+		Amount: -50
+	AirstrikePower@SovietParabombs:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.soviet
+		OrderName: SovietParabombs
+		Prerequisites: anyafld
+		Icon: parabombs
+		ChargeInterval: 7500
+		Name: Parabombs
+		Description: A Badger drops a load of parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		CameraActor: camera
+		CameraRemoveDelay: 150
+		UnitType: badr.bomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: pbmbbcon
+		SquadSize: 1
+		SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 3
+	SupportPowerChargeBar:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+    GrantConditionOnFaction@Soviet:
+        Condition: owner.is.soviet
+        Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@buildingname:
+
+CSPH:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	SelectionDecorations:
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 1400
+	Buildable:
+    	BuildDuration: 3900
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 15
+		BuildLimit: 1
+		Prerequisites: atek, ~global-superweapons
+		Queue: Building.Allies
+		Description: Maximum one can be built.\n\nEnables the usage of 'Chronosphere' super-weapon.
+	Tooltip:
+		Name: Chronosphere Device
+        GenericStancePrefix: false
+        GenericName: Chronosphere
+        GenericVisibility: Ally, Neutral, Enemy           
+	ProvidesPrerequisite@buildingname:
+	Power:
+		Amount: -150
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		HasMinibib: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ChronoshiftPower@chronoshift:
+		OrderName: Chronoshift
+		PauseOnCondition: lowpower
+		Icon: chrono
+		AllowMultiple: true
+		ChargeInterval: 10500
+		Name: Chronoshift
+		Description: Teleports a group of units\nacross the map for 1.5 minutes.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		BeginChargeSpeechNotification: ChronosphereCharging
+		EndChargeSpeechNotification: ChronosphereReady
+		Duration: 2250
+		KillCargo: true
+		DisplayRadarPing: True
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+        SupportPowerPaletteOrder: 2
+ 	SupportPowerChargeBar:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
+IRON:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	SelectionDecorations:
+	Selectable:
+		Bounds: 2048, 2048, 0, 2
+		DecorationBounds: 2050, 2050, 0, -12
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,-512
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 1400
+	Buildable:
+    	BuildDuration: 1400
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: stek, ~global-superweapons
+		Queue: Building.Soviet
+		Description: Maximum one can be built.\n\nEnables the usage of 'Iron Curtain' super-weapon.
+	Tooltip:
+		Name: Iron Curtain Device
+        GenericStancePrefix: false
+        GenericName: Iron Curtain
+        GenericVisibility: Ally, Neutral, Enemy        
+	ProvidesPrerequisite@buildingname:
+	Power:
+		Amount: -150
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+        HasMinibib: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+ 	GrantExternalConditionPower@IRONCURTAIN:
+		OrderName: IronCurtain
+		PauseOnCondition: lowpower
+		Icon: invulnerable
+		ChargeInterval: 9000
+		AllowMultiple: true
+        Name: Invulnerability
+		Description: Makes a group of units\nInvulnerable for 45 seconds.
+		Duration: 1125
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		BeginChargeSpeechNotification: IronCurtainCharging
+		EndChargeSpeechNotification: IronCurtainReady
+		DisplayRadarPing: True
+		Condition: invulnerability-crate-collected
+		OnFireSound: ironcur9.aud
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+        SupportPowerPaletteOrder: 2
+ 	SupportPowerChargeBar:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
+MSLO:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x1Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	SelectionDecorations:
+	Selectable:
+		Bounds: 2048, 1024, 0, 0
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 2500
+	Buildable:
+        BuildDuration: 3900
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 17
+		BuildLimit: 1
+		Prerequisites: anytier3, ~global-superweapons
+		Queue: Building.Allies, Building.Soviet
+		Description: Maximum one can be built.\n\nEnables the usage of 'Atomic Bomb' super-weapon.
+	Tooltip:
+		Name: Nuclear Missile Silo
+        GenericStancePrefix: false
+        GenericName: Missile Silo
+        GenericVisibility: Ally, Neutral, Enemy        
+	ProvidesPrerequisite@buildingname:
+	Power:
+		Amount: -150
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	NukePower@NuclearStrikeRA:
+        OrderName: NukeMissileRA
+		PauseOnCondition: lowpower || emp-affected-structure
+		Cursor: nuke
+		Icon: abomb
+		AllowMultiple: false
+		ChargeInterval: 13500
+		FlightDelay: 100
+		FlightVelocity: 1c0
+		Name: Nuclear Strike
+		Description: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+        EndChargeTextNotification: Nuclear weapon available.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+        InsufficientPowerTextNotification: Insufficient power.
+		LaunchSpeechNotification: NuclearWeaponLaunched
+        LaunchTextNotification: Nuclear weapon launched.
+		IncomingSpeechNotification: NuclearWarheadApproaching
+        IncomingTextNotification: Nuclear warhead approaching.
+		MissileWeapon: atomic
+        MissileImage: atomic
+        MissileDelay: 5
+		SpawnOffset: 1c0,427,0
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		BeaconPoster: atomic
+		BeaconPosterPalette: beaconposter
+		CameraRange: 10c0
+        CameraRemoveDelay: 50
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+        SupportPowerPaletteOrder: 1
+ 	SupportPowerChargeBar:
+	WithSupportPowerActivationAnimation:
+		RequiresCondition: !build-incomplete
+	WithSupportPowerActivationOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: smoke
+        #   Offset: 510, 388, 0
+         Offset: -68, 0, 0
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
+ANYAFLD:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Airport or Airfield
+
+ANYFIX:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: A Service Depot
+
+ANYPROC:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Any Refinery

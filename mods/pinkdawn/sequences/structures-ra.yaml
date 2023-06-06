@@ -1,0 +1,970 @@
+fac2:
+    Inherits: emp-overlay
+	build:
+		Start: 1
+		Length: 25
+		Tick: 100
+	idle:
+	damaged-idle:
+		Start: 26
+	damaged-build:
+		Start: 27
+		Length: 25
+		Tick: 100
+	dead:
+        Start: 52
+		Tick: 800
+	make: fac2make
+		Length: *
+		Tick: 40
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: fac2icon
+
+fac2.husk:
+	idle: fac2
+        Start: 52
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+powr:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: powrmake
+		Length: *
+        Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 2
+        Tick: 800
+	icon: powricon
+
+powr.husk:
+	idle: powr
+        Start: 2
+        Length: 1
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+
+apwr:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-10
+	damaged-idle:
+		Start: 1
+		Offset: 0,-10
+	make: apwrmake
+		Length: *
+		Offset: 0,-10
+        Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 2
+        Tick: 800
+        Offset: 0,-10
+	icon: apwricon
+
+apwr.husk:
+	idle: apwr
+		Start: 2
+		Length: 1
+		Offset: 0,-10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+
+oref:
+    Inherits: emp-overlay
+	idle:
+		ZOffset: -1c511
+	damaged-idle:
+        Start: 1
+		ZOffset: -1c511
+	idle-top: oreftop
+		ZOffset: 0
+	damaged-idle-top: oreftop
+		Start: 1
+		ZOffset: 0
+	make: orefmake
+		Length: *
+        Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1c510
+    dead:
+        Start: 2
+        ZOffset: -1c511
+        Tick: 800
+	icon: oreficon
+
+oref.husk:
+	idle: oref
+		Start: 2
+        Length: 1
+		ZOffset: -1c511
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+
+osil:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 9
+		Offset: 0,-1
+	stages: osil
+		Length: 9
+		Offset: 0,-1
+	damaged-stages: osil
+		Start: 9
+		Length: 9
+		Offset: 0,-1
+	make: osilmake
+		Length: *
+		Offset: 0,-1
+        Tick: 80
+	bib: mbOSIL
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+    dead: osil
+        Start: 9
+        Length: 1
+        Tick: 800
+	icon: osilicon
+
+osil.husk:
+	idle: osil
+		Start: 9
+		Length: 1
+	bib: mbOSIL
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+tent:
+    Inherits: emp-overlay
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+            JUNGLE: TEMPERAT
+            WINTER: TEMPERAT
+	idle:
+		Length: 10
+        Tick: 100
+	damaged-idle:
+		Start: 10
+		Length: 10
+        Tick: 100
+	make: tentmake
+		Length: *
+        Tick: 80
+	dead: tent
+		Start: 20
+		Length: 1
+        Tick: 800
+	bib: bib3
+		Length: *
+	icon: tenticon
+		UseTilesetExtension: false
+
+tent.husk:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	idle: tent
+		Start: 20
+		Length: 1
+	bib: bib3
+		Length: *
+
+barr:
+    Inherits: emp-overlay
+	idle:
+		Length: 10
+		Offset: 0,-6
+        Tick: 100
+	damaged-idle:
+		Start: 10
+		Length: 10
+		Offset: 0,-6
+        Tick: 100
+	make: barrmake
+		Length: *
+		Offset: 0,-6
+        Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 20
+        Offset: 0,-6
+        Tick: 800
+	icon: barricon
+
+barr.husk:
+	idle: barr
+		Start: 20
+		Length: 1
+		Offset: 0,-6
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+
+warf:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: warfmake
+		Length: *
+        Tick: 80
+	build-top: warf2
+		Length: 4
+        ZOffset: 0
+	damaged-build-top: warf2
+		Start: 4
+		Length: 4
+        ZOffset: 0
+	place: warfmake
+		Start: 14
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+    dead: warfdead
+        Tick: 800
+	icon: warficon
+
+warf.husk:
+	idle: warfdead
+        Start: 0
+        Length: 1
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+
+fix2:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,1
+		ZOffset: -1c511
+	damaged-idle:
+		Start: 7
+		Offset: 0,1
+		ZOffset: -1c511
+	active:
+		Start: 1
+		Length: 6
+		Offset: 0,1
+		ZOffset: -1c511
+	damaged-active:
+		Start: 8
+		Length: 6
+		Offset: 0,1
+		ZOffset: -1c511
+	make: fix2make
+		Length: *
+		Offset: 0,1
+        Tick: 60
+	bib: mbFIX2
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+    dead:
+        Start: 14
+        Tick: 800
+	icon: fix2icon
+
+fix2.husk:
+	idle: fix2
+		Start: 14
+		Length: 1
+		Offset: 0,1
+		ZOffset: -1c511
+	bib: mbFIX2
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+2fld:
+    Inherits: emp-overlay
+	idle:
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active:
+        Start: 16
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 24
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+    dead:
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4        
+	make: 2fldmake
+		Length: *
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+	icon: 2fldicon
+
+2fld.husk:
+	idle: 2fld
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+
+3fld:
+    Inherits: emp-overlay
+	idle:
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active:
+        Start: 16
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 24
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+    dead:
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4        
+	make: 3fldmake
+		Length: *
+		Offset: 0,-4
+		Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+	icon: 2fldicon
+
+3fld.husk:
+	idle: 3fld
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+
+dome:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-4
+        Tick: 100
+	damaged-idle:
+		Start: 1
+		Offset: 0,-4
+        Tick: 100
+	make: domemake
+		Length: *
+		Offset: 0,-4
+        Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 2
+        Offset: 0,-4
+        Tick: 800
+	icon: domeicon
+
+dome.husk:
+	idle: dome
+		Start: 2
+		Length: 1
+		Offset: 0,-4
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+
+atek:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: atekmake
+		Length: *
+        Tick: 80
+	active: atekdoor
+		Length: *
+		Offset: -4,0
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 2
+        Tick: 800
+	icon: atekicon
+
+atek.husk:
+	idle: atek
+        Start: 2
+        Length: 1
+
+stek:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: stekmake
+		Length: *
+        Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+    dead:
+        Start: 2
+        Tick: 800
+	icon: stekicon
+
+stek.husk:
+	idle: stek
+		Start: 2
+		Length: 1
+
+fcom:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: fcommake
+		Length: *
+        Tick: 80
+	dead: fcom
+		Start: 1
+        Length: 1
+        Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    icon: fcomicon
+
+fcom.husk:
+	idle: fcom
+		Start: 1
+        Length: 1
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+
+pbox:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: pboxmake
+		Length: *
+        Tick: 80
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: mbPBOX
+		Length: *
+        Offset: 0,-2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+    dead:
+        Start: 2
+        Tick: 800
+	icon: pboxicon
+
+pbox.husk:
+	idle: pbox
+        Start: 2
+        Length: 1
+ 	bib: mbPBOX
+		Length: *
+        Offset: 0,-2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+hbox:
+    Inherits: emp-overlay
+	Defaults:
+		UseTilesetExtension: true
+        TilesetOverrides:
+            JUNGLE: TEMPERAT
+			WINTER: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 2
+	make: hboxmake
+		Length: *
+        Tick: 80
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+		UseTilesetExtension: false
+    dead:
+        Start: 3
+        Tick: 800
+	icon: hboxicon
+		UseTilesetExtension: false
+
+hbox.husk:
+	Defaults:
+		UseTilesetExtension: true
+        TilesetOverrides:
+            JUNGLE: TEMPERAT
+			WINTER: TEMPERAT
+	idle: hbox
+        Start: 3
+        Length: 1
+
+ftur:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-2
+	damaged-idle:
+		Start: 1
+		Offset: 0,-2
+	make: fturmake
+		Length: *
+		Offset: 0,-2
+	bib: mbFTUR
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+    dead:
+        Start: 2
+        Offset: 0,-2
+        Tick: 800
+	muzzle:
+		Combine:
+			flame-n:
+				Length: *
+				Offset: 3,6
+			flame-nw:
+				Length: *
+				Offset: 8,7
+			flame-w:
+				Length: *
+				Offset: 8,2
+			flame-sw:
+				Length: *
+				Offset: 7,-2
+			flame-s:
+				Length: *
+				Offset: 3,-2
+			flame-se:
+				Length: *
+				Offset: -5,-2
+			flame-e:
+				Length: *
+				Offset: -7,2
+			flame-ne:
+				Length: *
+				Offset: -7,8
+		Facings: 8
+		Length: 13
+	icon: fturicon
+
+ftur.husk:
+	idle: ftur
+		Start: 2
+		Length: 1
+		Offset: 0,-2
+	bib: mbFTUR
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+tsla:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-13
+	damaged-idle:
+		Start: 10
+		Offset: 0,-13
+	make: tslamake
+		Length: *
+		Offset: 0,-13
+        Tick: 80
+	active:
+		Start: 1
+		Length: 9
+		Tick: 100
+		Offset: 0,-13
+	damaged-active:
+		Start: 11
+		Length: 9
+		Tick: 100
+		Offset: 0,-13
+	bib: mbTSLA
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+    dead:
+        Start: 20
+        Offset: 0,-13
+        Tick: 800
+	icon: tslaicon
+
+tsla.husk:
+	idle: tsla
+        Start: 20
+        Offset: 0,-13
+	bib: mbTSLA
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+gap:
+    Inherits: emp-overlay
+	idle:
+		Length: 32
+		Offset: 0,-14        
+        Tick: 90
+	damaged-idle:
+		Start: 32
+		Length: 32
+		Offset: 0,-14
+        Tick: 90
+	make: gapmake
+		Length: *
+		Offset: 0,-14
+        Tick: 80
+	dead: gap
+        Start: 32
+        Length: 1
+        Offset: 0,-14
+        Tick: 800
+	bib: mbGAP
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	icon: gapicon
+
+gap.husk:
+	idle: gap
+        Start: 32
+        Length: 1
+        Offset: 0,-14
+	bib: mbGAP
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+agun:
+    Inherits: emp-overlay
+	idle: blank1
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	damaged-turret:
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	recoil:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	damaged-recoil:
+		Start: 96
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	make: agunmake
+		Length: *
+		Offset: 0,-13
+        Tick: 80
+	muzzle: gunfire2
+		Start: 1
+		Length: 4
+    dead: agun
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+        Tick: 800
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	icon: agunicon
+
+agun.husk:
+    idle: agun
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+sam2:
+    Inherits: emp-overlay
+	idle: blank1
+	turret: sam2
+		Facings: 32
+		UseClassicFacings: True
+		Offset: -1,-2
+	damaged-turret: sam2
+		Start: 34
+		Facings: 32
+		UseClassicFacings: True
+		Offset: -1,-2
+	make: sam2make
+		Length: *
+		Offset: -1,-2
+		Tick: 50
+	muzzle: samfire
+		Length: 18
+		Facings: 8
+		Offset: -1,6
+	dead: sam2
+		Start: 67
+		Length: 1
+		Tick: 800
+		Offset: -1,-2
+    place: sam2make
+        Start: 17
+        Length: 1
+        Offset: -1,-2
+	bib: mbSAM2
+		Length: *
+		Offset: 0,1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	icon: samicon
+
+sam2.husk:
+	idle: sam2
+		Start: 67
+		Length: 1
+		Offset: -1,-2
+	bib: mbSAM2
+		Length: *
+		Offset: 0,1
+        UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+csph:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 29
+	active:
+		Length: 29
+	damaged-active:
+		Start: 29
+		Length: 29
+	make: csphmake
+		Length: *
+        Tick: 80
+    dead: csph
+		Start: 29
+		Length: 1
+        Tick: 800
+	bib: mbPDOX
+		Length: *
+		Offset: 0,-4
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	icon: csphicon
+
+csph.destroyed:
+	idle: csph
+		Start: 29
+		Length: 1
+	bib: mbPDOX
+		Length: *
+		Offset: 0,-4
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+iron:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-12
+	active:
+		Length: 11
+		Offset: 0,-12
+	damaged-idle:
+		Start: 11
+		Offset: 0,-12
+	damaged-active:
+		Start: 11
+		Length: 11
+		Offset: 0,-12
+	make: ironmake
+		Length: *
+		Offset: 0,-12
+        Tick: 80
+    dead: iron
+		Start: 11
+		Length: 1
+        Tick: 800
+		Offset: 0,-12
+	bib: mbIRON
+		Length: *
+		Offset: 0,-11
+        ZOffset: -1022
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+	icon: ironicon
+
+iron.husk:
+	idle: iron
+		Start: 11
+		Length: 1
+		Offset: 0,-12
+	bib: mbIRON
+		Length: *
+		Offset: 0,-10
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+
+mslo:
+    Inherits: emp-overlay
+	Defaults:
+		UseTilesetExtension: true
+ 		TilesetOverrides:
+            JUNGLE: TEMPERAT
+			WINTER: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 18
+	make: mslomake
+		Length: *
+        Tick: 80    
+	active:
+		Start: 1
+		Length: 17
+		Tick: 80
+	damaged-active:
+        Start: 19
+		Length: 17
+        Tick: 80
+	smoke: atomdoor
+		Length: *
+		Offset: 9, -11
+		UseTilesetExtension: false
+    dead:
+		Start: 12
+		Length: 1
+        Tick: 800
+	icon: msloicon
+		UseTilesetExtension: false
+
+mslo.husk:
+	Defaults:
+		UseTilesetExtension: true
+ 		TilesetOverrides:
+            JUNGLE: TEMPERAT
+			WINTER: TEMPERAT
+	idle: mslo
+		Start: 12
+		Length: 1
+
+fenc:
+	idle:
+		Length: 16
+	icon: fencicon

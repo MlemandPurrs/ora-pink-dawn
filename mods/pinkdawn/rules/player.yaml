@@ -124,3 +124,4 @@ Player:
 		Type: Veterancy
 		Image: veteranoverlay
 		Sequence: veteran
+	GpsWatcher:

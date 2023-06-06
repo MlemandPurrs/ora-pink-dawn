@@ -25,6 +25,8 @@ C17:
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
 	-MapEditorData:
+	GpsDot:
+		String: BigPlane
 
 C17.Crate:
     Inherits: C17
@@ -49,17 +51,8 @@ C17.Paradrop:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
     Huntable:
-	LeavesTrails@0:
-		Offsets: -432,560,0
-		MovingInterval: 2
-		Image: smokey
-		StationaryInterval: 2
-		SpawnAtLastPosition: False
-		TrailWhileStationary: True
-		Type: CenterPosition
-		RequiresCondition: enable-smoke
-	LeavesTrails@1:
-		Offsets: -432,-560,0
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
 		MovingInterval: 2
 		Image: smokey
 		StationaryInterval: 2
@@ -149,12 +142,13 @@ TRAN:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
+        BuildAtProductionType: Chopper
         BuildDuration: 1400
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: hpad
-		Queue: Aircraft.GDI, Aircraft.Nod
-		Description: Fast Infantry Transport.\n\nUnarmed.
+		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Neutral
+		Description: Flying infantry transport.\nCan transport up to 5 Infantry.\n\nUnarmed.
 	Aircraft:
         IdleBehavior: Land
         TurnToLand: True
@@ -193,6 +187,9 @@ TRAN:
         LoadedCondition: loaded
 		PassengerConditions:
 			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -220,11 +217,12 @@ ORCA:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
+        BuildAtProductionType: Chopper
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: hpad, anyhq
-		Queue: Aircraft.GDI
+		Queue: Aircraft.GDI, Aircraft.Neutral
 		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
 	Aircraft:
 		TurnSpeed: 24
@@ -271,7 +269,7 @@ ORCA:
 	WithMoveAnimation:
 		MoveSequence: move
 	Rearmable:
-		RearmActors: hpad
+		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 
@@ -288,11 +286,12 @@ HELI:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
+        BuildAtProductionType: Chopper
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq
-		Queue: Aircraft.Nod
+		Queue: Aircraft.Nod, Aircraft.Neutral
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
 		TurnSpeed: 24
@@ -352,6 +351,517 @@ HELI:
 		RequiresCondition: !airborne
 	WithMuzzleOverlay:
 	Rearmable:
-		RearmActors: hpad
+		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+
+HEL2:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Longbow
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: hpad, anyhq
+		Queue: Aircraft.Allies, Aircraft.Neutral
+		Description: Helicopter Gunship with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+        Icon: alticon
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 200
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12500
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected
+	RenderDetectionCircle:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: HeliRocketsAG
+		LocalOffset: 128,-213,-85, 128,213,-85
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliRocketsAA
+		LocalOffset: 128,-213,-85, 128,213,-85
+		PauseOnCondition: !ammo || emp-crate-collected
+	AmmoPool:
+		Name: primary
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 40
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		FullSequence: pip-yellow
+		AmmoPools: primary
+		RequiresSelection: true
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	Rearmable:
+		RearmActors: hpad, 3fld
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+    RenderSprites:
+        Image: heli
+
+HIND:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Hind
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: hpad, anyhq
+		Queue: Aircraft.Soviet, Aircraft.Neutral
+		Description: Dual armed, slow helicopter gunship.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+	Aircraft:
+		TurnSpeed: 24
+        Speed: 150
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: HeliAGGun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliAAGun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: HindRocketsAG
+		LocalOffset: 85,-213,-85, 85,213,-85
+		PauseOnCondition: !ammo2 || emp-crate-collected
+	Armament@QUARTENARY:
+		Name: quartenary
+		Weapon: HindRocketsAA
+		LocalOffset: 85,-213,-85, 85,213,-85
+		PauseOnCondition: !ammo2 || emp-crate-collected
+	AmmoPool@1:
+		Name: primary
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 40
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration@1:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		FullSequence: pip-yellow
+		AmmoPools: primary
+		RequiresSelection: true
+	AmmoPool@2:
+		Name: secondary
+		Armaments: tertiary, quartenary
+		Ammo: 10
+		ReloadDelay: 100
+		ReloadCount: 2
+		AmmoCondition: ammo2
+	WithAmmoPipsDecoration@2:
+		Position: BottomLeft
+		Margin: 4, 6
+		PipCount: 5
+		FullSequence: pip-red
+		AmmoPools: secondary
+		RequiresSelection: true
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary, tertiary, quartenary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithMuzzleOverlay:
+	Rearmable:
+        AmmoPools: ammo, ammo2
+		RearmActors: hpad, 3fld
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+
+BADR:
+	Inherits: ^Plane
+	Inherits@TRANSPORT: ^Transport
+	Interactable:
+	Tooltip:
+		Name: Badger
+	Valued:
+		Cost: 1000
+	UpdatesPlayerStatistics:
+		AddToAssetsValue: false
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 300
+		Repulsable: False
+		MaximumPitch: 36
+        AirborneCondition: airborne
+	HitShape:
+	Health:
+		HP: 9000
+    Armor:
+		Type: Aluminium
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+    Huntable:
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	HiddenUnderFog:
+		AlwaysVisibleRelationships: None
+		Type: CenterPosition
+	ParaDrop:
+		DropRange: 5c0
+		ChuteSound: chute1.aud
+	Cargo:
+		Types: Infantry, Vehicle, Crate
+		MaxWeight: 10
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	-MapEditorData:
+	GpsDot:
+		String: BigPlane
+
+BADR.Bomber:
+    Inherits: BADR
+    -Cargo:
+    -WithCargoPipsDecoration:
+    -ParaDrop:
+	AttackBomber:
+        FacingTolerance: 8
+	Armament:
+		Weapon: ParaBomb
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 7
+		AmmoCondition: ammo
+    SpeedMultiplier@BombingRun:
+        Modifier: 67
+        RequiresCondition: is-bombing
+    GrantConditionOnAttack@BombingRun:
+        Condition: is-bombing
+    RenderSprites:
+        Image: badr
+
+GenericJet:
+	Inherits: ^Jet
+	Inherits@selection: ^SelectableCombatUnit
+    Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Attack Plane
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 10000
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	Armament:
+		Weapon: Maverick
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		OpportunityFire: False
+	Aircraft:
+        IdleBehavior: ReturnToBase
+        TakeOffOnCreation: true
+        TakeOffOnResupply: false
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 6
+		AmmoCondition: ammo
+    #   if something is to be selectable its on at all times.
+	Selectable:
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
+        #   PauseOnCondition: airborne
+    #  Interactable:
+    #  RequiresCondition: airborne
+	Rearmable:
+		RearmActors: aprt, 2fld, 3fld
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 3
+		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+    -MapEditorData:
+    RenderSprites:
+        Image: dummy
+
+#   GDI version
+F18:
+    Inherits: GenericJet
+	Tooltip:
+		Name: F/A-18 Hornet
+    Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft.Neutral
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: ~aprt, ~owner.is.gdi
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    RenderSprites:
+        Image: f18
+
+#   Nod version
+F22:
+    Inherits: GenericJet
+	Tooltip:
+		Name: F-22 Raptor
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft.Neutral
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: ~aprt, ~owner.is.nod
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    RenderSprites:
+        Image: f22
+
+#   Soviet version
+MIG:
+    Inherits: GenericJet
+	Tooltip:
+		Name: MiG Attack Plane
+        GenericStancePrefix: false
+        GenericName: MiG
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft.Soviet
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 6
+		Prerequisites: ~anyafld, stek
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    RenderSprites:
+        Image: mig
+
+YAK:
+    Inherits: GenericJet
+    Aircraft:
+        Speed: 250
+    Valued:
+		Cost: 800
+	Health:
+		HP: 6000
+	Selectable:
+		DecorationBounds: 1030, 1028, 0, 2
+	Tooltip:
+		Name: Yak Attack Plane
+        GenericStancePrefix: false
+        GenericName: Yak
+        GenericVisibility: Ally, Neutral, Enemy        
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		Queue: Aircraft.Soviet
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: 3fld
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles\nWeak vs Infantry, Aircraft
+    -Armament:
+	Armament@PRIMARY:
+		Weapon: ChainGun.Yak.Left
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun.Yak.Right
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+		FireDelay: 1
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 16
+		ReloadDelay: 60
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 2
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+    RenderSprites:
+        Image: yak
+
+NMIG:
+    Inherits: GenericJet
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Nuclear Bomber
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft.Soviet
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 7
+		Prerequisites: ~anyafld, fcom
+		Description: Maximum one can be built.\n\nMiG modified to carry one Nuclear bomb.\n\nStrong vs Everything.\nWeak vs Anti-Air, Interceptors
+	Armament:
+		Weapon: ParaNuke
+		LocalOffset: 0,0,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		ReloadDelay: 400
+	WithAmmoPipsDecoration:
+        PipCount: 1
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+    RenderSprites:
+        Image: nmig
+
+SMIG:
+	Inherits: ^Plane
+	-ActorLostNotification:
+	Interactable:
+	HitShape:
+	Health:
+		HP: 3500
+	Armor:
+		Type: Aluminium
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+    Huntable:
+	Tooltip:
+		Name: Spy Plane
+	Valued:
+		Cost: 800
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 400
+		Repulsable: False
+		AirborneCondition: airborne
+	AttackBomber:
+		FacingTolerance: 8
+	LeavesTrails:
+		Offsets: -1043,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	-MapEditorData:

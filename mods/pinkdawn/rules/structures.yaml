@@ -49,7 +49,7 @@ FACT:
 		RequiresForceMove: true
 	TransformsIntoRepairable:
 		RequiresCondition: factundeploy
-		RepairActors: fix
+		RepairActors: fix, fix2
 		RequiresForceMove: true
 	TransformsIntoTransforms:
 		RequiresCondition: factundeploy && build-incomplete
@@ -140,7 +140,7 @@ FACT:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anytier3, fix
+		Prerequisites: anytier3, anyfix
 		Queue: Building.GDI, Building.Nod
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
@@ -308,6 +308,9 @@ PROC:
 		Cost: 1500
 	Tooltip:
 		Name: Tiberium Refinery
+		GenericName: Refinery
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
         BuildDuration: 2100
         BuildDurationModifier: 100
@@ -360,7 +363,10 @@ PROC:
 		Condition: docked
 		Range: 1c0
 		ValidRelationships: Ally
+	CustomSellValue:
+		Value: 300
 	Sellable:
+    	RefundPercent: 100
 		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess && !emp-affected-structure
 	RenderSprites:
 		Image: proc
@@ -368,6 +374,15 @@ PROC:
 			nod: nodproc
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	InfiltrateForCash:
+		Percentage: 50
+		Types: ThiefInfiltrate
+		InfiltratedNotification: CreditsStolen
+		InfiltratedTextNotification: Credits stolen.
+	Targetable@Infiltration:
+        TargetTypes: ThiefInfiltrate
+	ProvidesPrerequisite:
+		Prerequisite: anyproc
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -383,6 +398,9 @@ SILO:
 		Cost: 150
 	Tooltip:
 		Name: Tiberium Silo
+		GenericName: Silo
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
 		BuildDuration: 300
         BuildDurationModifier: 100
@@ -735,7 +753,7 @@ FIX:
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction
 		Queue: Building.GDI, Building.Nod
-		Description: Repairs Vehicles and Aircraft.\nCan sell Vehicles and Aircraft.
+		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
 		Footprint: =+= +++ =+=
 		Dimensions: 3,3
@@ -785,6 +803,8 @@ FIX:
 		Image: fix
 		FactionImages:
 			nod: nodfix
+	ProvidesPrerequisite:
+		Prerequisite: anyfix
 
 HPAD:
 	Inherits: ^BaseBuilding
@@ -805,7 +825,7 @@ HPAD:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Allies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
 		Footprint: xx xx
@@ -818,9 +838,9 @@ HPAD:
 		SpawnOffset: 0,-256,0
 		ExitCell: 0,0
 		Facing: 896
-        ProductionTypes: Aircraft.GDI, Aircraft.Nod
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Chopper
 	Production:
-		Produces: Aircraft.GDI, Aircraft.Nod
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Chopper
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
@@ -858,10 +878,44 @@ HPAD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Allies:
+		Type: Aircraft.Allies
+		DisplayOrder: 4
+		Factions: allies
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Soviet:
+		Type: Aircraft.Soviet
+		DisplayOrder: 4
+		Factions: soviet
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@GDI:
 		ProductionType: Aircraft.GDI
 	ProductionBar@Nod:
 		ProductionType: Aircraft.Nod
+	ProductionBar@Allies:
+		ProductionType: Aircraft.Allies
+	ProductionBar@Soviet:
+		ProductionType: Aircraft.Soviet
 	Power:
 		Amount: -20
         RequiresCondition: !build-incomplete && !emp-affected-structure
@@ -877,6 +931,16 @@ HPAD:
 		Facing: 896
 		SpawnOffset: 0,1
 		RequiresCondition: !build-incomplete && nod.player && gratisair
+	FreeActor@3:
+		Actor: HELI
+		Facing: 896
+		SpawnOffset: 0,1
+		RequiresCondition: !build-incomplete && allies.player && gratisair
+	FreeActor@4:
+		Actor: HIND
+		Facing: 896
+		SpawnOffset: 0,1
+		RequiresCondition: !build-incomplete && soviet.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
 		Factions: gdi
@@ -884,6 +948,14 @@ HPAD:
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
 		Factions: nod
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Allies:
+		Condition: allies.player
+		Factions: allies
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Soviet:
+		Condition: soviet.player
+		Factions: soviet
 		ResetOnOwnerChange: True
 	GrantConditionOnPrerequisite@FREEAIRCRAFT:
 		Prerequisites: global-freeaircraft
@@ -979,6 +1051,9 @@ HQ:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+	ProvidesPrerequisite@WIRELESS:
+		Prerequisite: activeradar
+		RequiresCondition: !jammed && !lowpower && !build-incomplete
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -1285,7 +1360,7 @@ ANYHQ:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: A Communications Center
+		Name: A Radar Structure
 
 ANYTIER3:
 	AlwaysVisible:

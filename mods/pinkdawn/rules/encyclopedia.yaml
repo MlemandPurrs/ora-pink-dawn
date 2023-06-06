@@ -1077,3 +1077,29 @@ wind.info:
 		Image: wind
         Palette: civilian
     -MapEditorData:
+
+f18.info:
+    Inherits: F18
+    Buildable:
+        Queue: Nothing
+        Prerequisites: anyafld
+	Encyclopedia:
+        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
+        Category: GDI Aircraft
+		Order: 5
+	RenderSprites:
+		Image: f18
+        Palette: gdi
+
+f22.info:
+    Inherits: F22
+    Buildable:
+        Queue: Nothing
+        Prerequisites: anyafld
+	Encyclopedia:
+        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
+        Category: Nod Aircraft
+		Order: 5
+	RenderSprites:
+		Image: f22
+        Palette: nod

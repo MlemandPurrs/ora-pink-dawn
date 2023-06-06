@@ -28,13 +28,32 @@ Packages:
 	~general.mix
 	pinkdawn|bits
     pinkdawn|bits/audio
+    pinkdawn|bits/audio/eva
+    pinkdawn|bits/audio/medic
+    pinkdawn|bits/audio/spy
+    pinkdawn|bits/audio/dog
+    pinkdawn|bits/audio/tanya
+    pinkdawn|bits/audio/volkov
+    pinkdawn|bits/audio/allies
+    pinkdawn|bits/audio/russian
+    pinkdawn|bits/audio/rainfdie
+    pinkdawn|bits/audio/temp
+    pinkdawn|bits/audio/mechanic
+    pinkdawn|bits/audio/thief
+    pinkdawn|bits/audio/engineer
     pinkdawn|bits/icons
+    pinkdawn|bits/icons/ra
     pinkdawn|bits/structures
+    pinkdawn|bits/structures/ra
     pinkdawn|bits/structures/bibs
     pinkdawn|bits/infantry
+    pinkdawn|bits/infantry/ra
     pinkdawn|bits/vehicles
+    pinkdawn|bits/vehicles/ra
     pinkdawn|bits/aircraft
+    pinkdawn|bits/aircraft/ra
 	pinkdawn|bits/naval
+    pinkdawn|bits/naval/ra
     pinkdawn|bits/audio
 	pinkdawn|bits/temperate
 	pinkdawn|bits/jungle
@@ -60,7 +79,7 @@ Rules:
 	pinkdawn|rules/palettes.yaml
 	pinkdawn|rules/defaults.yaml
 	pinkdawn|rules/structures.yaml
-    pinkdawn|rules/structures-defenses.yaml
+    pinkdawn|rules/defenses.yaml
 	pinkdawn|rules/infantry.yaml
 	pinkdawn|rules/vehicles.yaml
 	pinkdawn|rules/aircraft.yaml
@@ -72,6 +91,8 @@ Rules:
 	pinkdawn|rules/ships.yaml
 	pinkdawn|rules/dinosaurs.yaml
 	pinkdawn|rules/encyclopedia.yaml
+    pinkdawn|rules/structures-ra.yaml
+	pinkdawn|rules/vehicles-ra.yaml
 
 Sequences:
 	pinkdawn|sequences/structures.yaml
@@ -83,6 +104,8 @@ Sequences:
 	pinkdawn|sequences/civilian-infantry.yaml
     pinkdawn|sequences/civilian-structures.yaml
     pinkdawn|sequences/dinosaurs.yaml
+	pinkdawn|sequences/vehicles-ra.yaml
+	pinkdawn|sequences/structures-ra.yaml
 
 TileSets:
 	pinkdawn|tilesets/desert.yaml
@@ -96,6 +119,7 @@ Weapons:
 	pinkdawn|weapons/explosions.yaml
 	pinkdawn|weapons/superweapons.yaml
 	pinkdawn|weapons/dinosaurs.yaml
+	pinkdawn|weapons/misc.yaml
 
 Cursors:
 	pinkdawn|cursors.yaml

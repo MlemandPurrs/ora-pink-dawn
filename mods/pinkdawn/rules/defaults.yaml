@@ -274,6 +274,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@hijackable: ^HijackerMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -284,8 +285,14 @@
 		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Vehicle
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
-		RepairActors: fix
+		RepairActors: fix, fix2
 	Passenger:
 		CargoType: Vehicle
         Weight: 5
@@ -306,8 +313,11 @@
 	Voiced:
 		VoiceSet: VehicleVoice
 	HitShape:
+	Chronoshiftable:
 	MapEditorData:
 		Categories: Vehicle
+	GpsDot:
+		String: Vehicle
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -366,7 +376,7 @@
 	Selectable:
 		Bounds: 1024, 1024
 	Repairable:
-		RepairActors: hpad, fix
+		RepairActors: hpad, fix, fix2, 3fld
 	Aircraft:
 		AirborneCondition: airborne
 		CruisingCondition: cruising
@@ -415,6 +425,8 @@
 	Explodes@AIR:
 		Weapon: HeliExplode
 		RequiresCondition: airborne
+	GpsDot:
+		String: Helicopter
 
 ^RepairsAircraftWithRepairBay:
 	ExternalCondition@AIRCRAFTREPAIR:
@@ -465,6 +477,76 @@
 		IdleBehavior: LeaveMap
 	MapEditorData:
 		Categories: Aircraft
+	GpsDot:
+		String: Plane
+
+^Jet:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: true
+	HiddenUnderFog:
+		Type: GroundPosition
+		AlwaysVisibleRelationships: None
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	RejectsOrders:
+        RequiresCondition: airborne
+	Aircraft:
+		AirborneCondition: airborne
+		CruisingCondition: cruising
+		CruiseAltitude: 2560
+        TakeOffOnCreation: true
+		TakeOffOnResupply: true
+	MapEditorData:
+		Categories: Aircraft
+	Armor:
+		Type: Light
+	UpdatesPlayerStatistics:
+	Selectable:
+		Bounds: 1024, 1024
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+	Tooltip:
+		GenericName: Plane
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+	HitShape:
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@AIR:
+		Weapon: HeliExplode
+		RequiresCondition: airborne
+	Huntable:
+    CommandBarBlacklist:
+        DisableStop: false
+	GpsDot:
+		String: Plane
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -502,7 +584,7 @@
 		Delay: 100
 		StartIfBelow: 101
 		DamageCooldown: 125
-		RequiresCondition: hospitalheal
+		RequiresCondition: ( barracksheal || hospitalheal )
 	Targetable@HEAL:
 		TargetTypes: Heal
 		RequiresCondition: !parachute && damaged
@@ -523,6 +605,11 @@
 		RequiresCondition: hospitalheal
 		BlinkInterval: 32
 		BlinkPattern: On, Off
+	ExternalCondition@BARRACKS:
+		Condition: barracks
+	GrantCondition@BARRACKS:
+		RequiresCondition: barracks && damaged
+		Condition: barracksheal
 
 ^SlowdownWhenDamagedInfantry:
 	SpeedMultiplier@HEAVYDAMAGE:
@@ -627,6 +714,18 @@
 		RequiresCondition: parachute
         Palette: effect
         IsPlayerPalette: false
+	GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
+		WarnCrushCondition: crush-attempt-slow
+		WarnCrushDuration: 50
+		OnCrushCondition: crush-attempt-slow
+		OnCrushDuration: 100
+	GrantExternalConditionToCrusher@CRUSHSLOW:
+		OnCrushCondition: crush-slow
+		OnCrushDuration: 50
+	Targetable@SpyDisguise:
+		RequiresCondition: !parachute
+		TargetTypes: Disguise
+	EdibleByLeap:
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -649,6 +748,8 @@
 		StandSequences: stand, stand2
 	AttackFrontal:
 		FacingTolerance: 0
+	GpsDot:
+		String: Infantry
 
 ^CivInfantry:
 	Inherits: ^Infantry
@@ -773,6 +874,8 @@
 		Condition: ship.sellable
 	RenderSprites:
         PlayerPalette: playernavy
+	GpsDot:
+		String: Ship
 
 ^DamagedOnLowPower:
 	GrantConditionOnDamageState@LOWPOWERDMG:
@@ -1690,3 +1793,51 @@
 	WithProductionIconOverlay:
 		Types: Veterancy
 		Prerequisites: army, ~global-veterancy
+
+^Mine:
+	Inherits: ^SpriteActor
+	Interactable:
+		Bounds: 1024,1024
+	WithSpriteBody:
+	HiddenUnderFog:
+	Mine:
+		CrushClasses: mine
+		DetonateClasses: mine
+		AvoidFriendly: false
+		BlockFriendly: false
+	Health:
+		HP: 5000
+		NotifyAppliedDamage: false
+	Armor:
+		Type: None
+	Cloak:
+		DetectionTypes: Mine
+		CloakSound:
+		UncloakSound:
+		Palette:
+		IsPlayerPalette: false
+		InitialDelay: 0
+	Tooltip:
+		Name: Mine
+	Targetable:
+		TargetTypes: Ground, Mine
+	Immobile:
+		OccupiesSpace: true
+	HitShape:
+	MapEditorData:
+		Categories: System
+
+^HijackerMechanic:
+	CaptureManager:
+		BeingCapturedCondition: being-hijacked
+	Capturable:
+		Types: hijackable
+		CancelActivity: True
+	CaptureNotification:
+		Notification: UnitStolen
+		TextNotification: Unit stolen.
+		LoseNotification: UnitLost
+		LoseTextNotification: Unit lost.
+    SpeedMultiplier@Hijack:
+        Modifier: 0
+        RequiresCondition: being-hijacked

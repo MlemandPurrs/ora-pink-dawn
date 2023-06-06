@@ -23,7 +23,7 @@ LST:
         BuildDuration: 1400
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
-		Queue: Navy.GDI, Navy.Nod
+		Queue: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 		Prerequisites: syrd
 		Description: Transports ground units across water.\n\nUnarmed.
 	Mobile:
@@ -51,6 +51,9 @@ LST:
         LoadedCondition: loaded
 		PassengerConditions:
 			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -70,7 +73,7 @@ BOAT:
         BuildDuration: 900
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
-		Queue: Navy.GDI, Navy.Nod
+		Queue: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
 		Prerequisites: syrd
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
@@ -97,4 +100,3 @@ BOAT:
 	Selectable:
 		Bounds: 1792, 1024
 		DecorationBounds: 1792, 1024
-

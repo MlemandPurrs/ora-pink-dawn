@@ -28,7 +28,7 @@ MCV:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, fix
+        Prerequisites: anyhq, anyfix
 		Queue: Vehicle.GDI, Vehicle.Nod
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
@@ -37,7 +37,7 @@ MCV:
         TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
-	Health:
+ 	Health:
 		HP: 90000
 	Armor:
 		Type: Heavy
@@ -64,6 +64,8 @@ MCV:
 	ProductionTimeMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
 		Prerequisites: global-expensivemcv
+	GpsDot:
+		String: Heavy
 
 HARV:
 	Inherits: ^Vehicle
@@ -85,15 +87,17 @@ HARV:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Harvester
+		Name: Tiberium Harvester
 		GenericName: Harvester
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: proc
 		Queue: Vehicle.GDI, Vehicle.Nod
-		Description: Collects Tiberium for processing.\n\nUnarmed.
+		Description: Collects Tiberium for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Harvester:
@@ -151,6 +155,8 @@ HARV:
 		Image: harv
 		FactionImages:
 			nod: nodharv
+	GpsDot:
+		String: Harvester
 
 TRUK:
 	Inherits: ^Vehicle
@@ -304,7 +310,7 @@ BIKE:
 		BuildPaletteOrder: 11
 		Prerequisites: anyhq
 		Queue: Vehicle.Nod
-		Description: Fast scout vehicle with rockets.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+		Description: Fast scout vehicle with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: wheeled-non-crusher
 		TurnSpeed: 24
@@ -351,8 +357,8 @@ APC:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: infantryproduction
-		Queue: Vehicle.GDI, Vehicle.Nod
-		Description: Armored infantry transport.\n\nStrong vs Infantry.\nWeak vs Infantry.
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Allies
+		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
@@ -384,6 +390,9 @@ APC:
         LoadedCondition: loaded
 		PassengerConditions:
 			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -535,13 +544,13 @@ MTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: fix
+		Prerequisites: anyfix
 		Queue: Vehicle.GDI
 		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         TurnSpeed: 12
         Locomotor: tracked-crusher
-		Speed: 90
+		Speed: 80
 		PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 40000
@@ -585,7 +594,7 @@ FTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: fix
+		Prerequisites: anyfix
 		Queue: Vehicle.Nod
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -639,7 +648,7 @@ HTNK:
 		BuildPaletteOrder: 6
 		Prerequisites: miss
 		Queue: Vehicle.GDI
-		Description: Heavily armored GDI Tank.\n\nCan attack Aircraft.\nStrong vs Everything.
+		Description: Heavily armored GDI Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
@@ -686,6 +695,8 @@ HTNK:
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
 		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
 
 STNK:
 	Inherits: ^Vehicle
@@ -701,11 +712,11 @@ STNK:
 		AddToArmyValue: true
 	Buildable:
         BuildDuration: 1500
-        BuildDurationModifier: 100        
+        BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		Prerequisites: tmpl
 		Queue: Vehicle.Nod
-		Description: Medium-range missile tank, capable of cloak.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+		Description: Medium-range missile tank.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
 		TurnSpeed: 18
@@ -769,7 +780,7 @@ ARTY:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Allies
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
         Locomotor: tracked-non-crusher
@@ -874,6 +885,8 @@ MSAM:
 	RenderRangeCircle:
     Targetable@Extra:
 		TargetTypes: Artillery
+	Passenger:
+		CustomPipType: pip-yellow
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -950,6 +963,8 @@ MLRS:
 	#	Color: FFFF00
     Targetable@Extra:
 		TargetTypes: Artillery
+	Passenger:
+		CustomPipType: pip-yellow
 
 MHQ:
 	Inherits: ^Vehicle

@@ -2,6 +2,8 @@ GenericVoice:
 	Variants:
 		nod: .v01, .v03
 		gdi: .v01, .v03
+		allies: .a01,.a03
+		soviet: .r01,.r03
 	Voices:
 		Select: ackno, await1, ready, report1, yessir1
 		Action: affirm1, ritaway, ugotit, roger, movout1
@@ -16,11 +18,15 @@ VehicleVoice:
 	Variants:
 		nod: .v00, .v02
 		gdi: .v00, .v02
+		allies: .a00,.a02
+		soviet: .r00,.r02
 	Voices:
 		Select: vehic1, yessir1, await1, unit1, report1
 		Action: ackno, affirm1, movout1
 		Attack: ackno, affirm1, yessir1
 		Unload: movout1, affirm1
+
+# in RA is missing: movout1, unit1
 
 CivilianMaleVoice:
 	Voices:
@@ -70,3 +76,88 @@ DinoVoice:
 		Burned: dinodie1
 		Zapped: dinodie1
 		Poisoned: dinodie1
+
+MedicVoice:
+	Voices:
+		Select: mrespon1,myessir1
+		Action: maffirm1,mmovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Poisoned: dedman10
+
+DogVoice:
+	Voices:
+		Select: dogw3px
+		Move: dogy1
+		Attack: dogg5p
+		Die: dogw5,dogw7
+		Burned: dogw6
+		Zapped: dogw6
+		Poisoned: dogw6
+
+SpyVoice:
+	Voices:
+		Select: syessir1,scomnd1
+		Move: sonway1,sindeed1
+		Action: sking1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Poisoned: dedman10
+
+TanyaVoice:
+	Voices:
+		Select: yo1,yes1,yeah1
+		Move: onit1,cmon1,rokroll1
+		Action: tuffguy1,bombit1
+		Die: tandeth1
+		Burned: tandeth1
+		Zapped: tandeth1
+		Poisoned: tandeth1
+		Build: laugh1
+		Kill: gotit1,lefty1
+		Demolish: keepem1,tuffguy1
+
+VolkovVoice:
+	Voices:
+		Select: sv2await,sv2ready,sv2report,sv2yessir
+		Move: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Action: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Attack: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+        Poisoned: dedman10
+		Build: sv2ready
+		Kill: sv2ugotit,sv2noprob
+		Demolish: sv2ritaway,sv2overout
+
+MechanicVoice:
+	Voices:
+		Select: mhuh1,mhowdy1,mlaff1
+		Move: mboss1,mhear1,myes1,mrise1
+		Action: mhotdig1,mwrench1,myeehaw1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Poisoned: dedman10
+
+EngineerVoice:
+	Voices:
+		Select: eengin1,eyessir1
+		Action: eaffirm1,emovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Poisoned: dedman10
+
+ThiefVoice:
+	Voices:
+		Select: swhat1,syeah1,sokay1
+		Move: saffirm1,smout1,sokay1
+		Action: scandy,sclean1,ssteal1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+        Poisoned: dedman10

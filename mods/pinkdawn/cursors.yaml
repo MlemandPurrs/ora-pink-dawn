@@ -252,3 +252,37 @@ Cursors:
 		empstrike-minimap:
 			Start: 14
 			Length: 2
+    cursorchrono.shp: cursor
+		chrono-select:
+			Start: 0
+			Length: 8
+		chrono-target:
+			Start: 8
+			Length: 8
+	medicursor.shp: cursor
+		heal:
+			Start: 0
+			Length: 4
+		heal-minimap:
+			Start: 4
+			Length: 1
+	nopower.shp: cursor
+		powerdown-blocked:
+			Start: 0
+			Length: 1
+		powerdown:
+			Start: 1
+			Length: 3
+        powerup:
+            Start: 5
+            Length: 3
+		powerup-blocked:
+			Start: 8
+			Length: 1
+	mechcursor.shp: cursor
+		fix:
+			Start: 0
+			Length: 4
+		fix-minimap:
+			Start: 4
+			Length: 1
