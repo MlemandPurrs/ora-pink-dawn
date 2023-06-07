@@ -405,6 +405,8 @@ APC:
 		EmptyWeapon: UnitExplodeBig
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
+    Capturable:
+        RequiresCondition: !loaded
 
 MAAG:
 	Inherits: ^TrackedVehicle

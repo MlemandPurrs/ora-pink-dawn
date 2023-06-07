@@ -1,0 +1,428 @@
+FACF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+	Selectable:
+		Bounds: 3072, 3072
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: Fake Construction Yard
+        GenericStancePrefix: false
+        GenericName: Construction Yard
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 210
+		Prerequisites: atek
+		Description: Looks like a Construction Yard.
+		Icon: fake-icon
+	Health:
+		HP: 90000
+	Armor:
+		Type: Heavy
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	RenderSprites:
+		Image: FAC2
+
+FPWR:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Selectable:
+		Bounds: 2048, 2048
+	Valued:
+		Cost: 75
+	Tooltip:
+		Name: Fake Power Plant
+        GenericStancePrefix: false
+        GenericName: Power Plant
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 200
+		Prerequisites: anypower
+		Description: Looks like a Power Plant.
+		Icon: fake-icon
+	Health:
+		HP: 40000
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	RenderSprites:
+		Image: POWR
+
+FAPW:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 3072, 2048
+        DecorationBounds: 3072, 2901, 0, -426
+	HitShape:
+		TargetableOffsets: -355,-1024,0
+	Valued:
+		Cost: 125
+	Tooltip:
+		Name: Fake Advanced Power Plant
+        GenericStancePrefix: false
+        GenericName: Advanced Power Plant
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 203
+		Prerequisites: anyhq
+		Description: Looks like an Advanced Power Plant.
+		Icon: fake-icon
+	Health:
+		HP: 60000
+	Building:
+		Footprint: XxX xXx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	RenderSprites:
+		Image: APWR
+
+TENF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 1792, 0, -213
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 75
+	Tooltip:
+		Name: Fake Allies Barracks
+        GenericStancePrefix: false
+        GenericName: Barracks
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 201
+		Prerequisites: anypower
+		Description: Looks like an Allies Barracks.
+		Icon: fake-icon
+	Health:
+		HP: 60000
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	RenderSprites:
+		Image: TENT
+
+FREF:
+	Inherits: ^FakeBuilding
+	Selectable:
+		Bounds: 3072, 2133, 0, 170
+		DecorationBounds: 3072, 2986, 0, -85
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 598
+	HitShape@TOP:
+		TargetableOffsets: 1680,0,0
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+	HitShape@BOTTOMLEFT:
+		TargetableOffsets: -1260,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, 598
+			BottomRight: -512, 1280
+	Valued:
+		Cost: 375
+	Tooltip:
+		Name: Fake Ore Refinery
+		GenericName: Refinery
+        GenericStancePrefix: false
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 202
+		Prerequisites: anypower
+		Description: Looks like an Ore Refinery.
+		Icon: fake-icon
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	Building:
+		Footprint: _X_ xxx X== ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	RenderSprites:
+		Image: OREF
+
+WEAF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 3072, 2048
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Fake War Factory
+        GenericStancePrefix: false
+        GenericName: War Factory
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 204
+		Prerequisites: anypower, infantryproduction
+		Description: Looks like a War Factory.
+		Icon: fake-icon
+	Health:
+		HP: 80000
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+        RequiresCondition: !build-incomplete
+		Sequence: build-top
+	-ActorPreviewPlaceBuildingPreview:
+	SequencePlaceBuildingPreview:
+		Sequence: place
+		SequenceAlpha: 0.65
+	RenderSprites:
+		Image: WARF
+
+FIXF:
+	Inherits: ^FakeBuilding
+	HitShape:
+		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
+		Type: Polygon
+			Points: -1536,-300, -640,-811, 640,-811, 1536,-300, 1536,555, 640,1110, -640,1110, -1536,555
+	Selectable:
+		Bounds: 2901, 1450, 0, 128
+		DecorationBounds: 3072, 2048
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Fake Service Depot
+        GenericStancePrefix: false
+        GenericName: Service Depot
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 208
+		Prerequisites: vehicleproduction
+		Description: Looks like a Service Depot.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Service Depot
+		GenericName: Service Depot
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Health:
+		HP: 70000
+	Building:
+		Footprint: =+= +++ =+=
+		Dimensions: 3,3
+	WithBuildingBib:
+		HasMinibib: true
+	RenderSprites:
+		Image: FIX2
+
+HPAF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 75
+	Tooltip:
+		Name: Fake Helipad
+        GenericStancePrefix: false
+        GenericName: Helipad
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 207
+		Prerequisites: vehicleproduction
+		Description: Looks like a Helipad.
+		Icon: fake-icon
+	Health:
+		HP: 40000
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithBuildingBib:
+	RenderSprites:
+		Image: HPAD
+
+DOMF:
+	Inherits: ^FakeBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
+	Selectable:
+		Bounds: 2048, 1706, 0, 384
+		DecorationBounds: 2048, 2261, 0, -170
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Fake Radar Dome
+        GenericStancePrefix: false
+        GenericName: Radar Dome
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 205
+		Prerequisites: anypower, vehicleproduction
+		Description: Looks like a Radar Dome.
+		Icon: fake-icon
+	Health:
+		HP: 100000
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	WithSpriteBody:
+		PauseOnCondition: lowpower
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	RenderSprites:
+		Image: DOME
+
+ATEF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Allies Technology Center
+        GenericStancePrefix: false
+        GenericName: Technology Center
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 209
+        BuildLimit: 1
+		Prerequisites: vehicleproduction, anyhq
+		Description: Maximum one can be built.\nLooks like an Allies Technology Center.
+		Icon: fake-icon
+	Health:
+		HP: 100000
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+        LocalCenterOffset: 0,-256,0
+	WithBuildingBib:
+	RenderSprites:
+		Image: ATEK
+
+PDOF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+	Selectable:
+		Bounds: 2048, 2048
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Fake Chronosphere
+        GenericStancePrefix: false
+        GenericName: Chronosphere
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 211
+        BuildLimit: 1
+		Prerequisites: atek
+		Description: Maximum one can be built.\nLooks like a Chronosphere.
+		Icon: fake-icon
+	Health:
+		HP: 60000
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithBuildingBib:
+		HasMinibib: true
+	RenderSprites:
+		Image: CSPH
+
+MSLF:
+	Inherits: ^FakeBuilding
+	Inherits@shape: ^2x1Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+	Selectable:
+		Bounds: 2048, 1024, 0, 0
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: Fake Missile Silo
+		GenericName: Missile Silo
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Buildable:
+		Queue: Defense.Allies
+		BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 212
+        BuildLimit: 1
+		Prerequisites: atek
+		Description: Maximum one can be built.\nLooks like a Missile Silo.
+		Icon: fake-icon
+	Health:
+		HP: 60000
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	RenderSprites:
+		Image: MSLO

@@ -109,6 +109,24 @@ CRATE:
 	LevelUpCrateAction:
 		SelectionShares: 5
         Prerequisites: ~global-veterancy
+	SupportPowerCrateAction@parabombs:
+		Proxy: crate.parabombs
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: parabombs
+        Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@ironcurtain:
+		Proxy: crate.ironcurtain
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: curtain
+        Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@chronoshift:
+		Proxy: crate.chronoshift
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: chrono
+        Prerequisites: ~global-superweapons
 
 WCRATE:
 	Inherits: ^Crate
@@ -410,6 +428,76 @@ crate.airstrike:
 		Cursor: airstrike
 		SupportPowerPaletteOrder: 2
 		ChargeInterval: 0
+		OneShot: true
+        AllowMultiple: true
+
+crate.parabombs:
+	AlwaysVisible:
+	AirstrikePower@ParabombsOneShot:
+		OrderName: CrateParabombs
+		Icon: parabombs
+		ChargeInterval: 0
+		Name: Parabombs
+		Description: A Badger drops a load of parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		OneShot: true
+		AllowMultiple: true
+		CameraActor: camera
+		CameraRemoveDelay: 150
+		UnitType: badr.bomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: pbmbbcon
+		SquadSize: 1
+		SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 3
+
+crate.ironcurtain:
+	AlwaysVisible:
+ 	GrantExternalConditionPower@IronCurtainOneShot:
+		OrderName: CrateIronCurtain
+		Icon: invulnerable
+		ChargeInterval: 0
+        Name: Invulnerability
+		Description: Makes a group of units\nInvulnerable for 45 seconds.
+		Duration: 1125
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: IronCurtainReady
+		EndChargeTextNotification: Iron curtain ready.
+		DisplayRadarPing: True
+		Condition: invulnerability-crate-collected
+		OnFireSound: ironcur9.aud
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+        SupportPowerPaletteOrder: 2
+		OneShot: true
+        AllowMultiple: true
+
+crate.chronoshift:
+	AlwaysVisible:
+	ChronoshiftPower@ChronoshiftOneShot:
+		OrderName: CrateChronoshift
+		Icon: chrono
+		ChargeInterval: 0
+		Name: Chronoshift
+		Description: Teleports a group of units\nacross the map.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ChronosphereReady
+		EndChargeTextNotification: Chronosphere ready.
+		Duration: -1
+		KillCargo: true
+		DisplayRadarPing: True
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+        SupportPowerPaletteOrder: 2
 		OneShot: true
         AllowMultiple: true
 

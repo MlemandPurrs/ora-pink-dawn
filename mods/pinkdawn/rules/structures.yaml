@@ -193,7 +193,7 @@ NUKE:
 	WithBuildingBib:
 	Power:
 		Amount: 100
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuke
@@ -203,6 +203,25 @@ NUKE:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	AffectedByPowerOutage:
+		Condition: power-outage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+        Duration: 750
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate
+	WithDecoration@PowerOutage:
+		Image: nopower
+		Palette: chrome
+		Sequence: powerdown-blocked
+		Position: Center
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: power-outage
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral, Enemy
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -236,7 +255,7 @@ NUK2:
 	WithBuildingBib:
 	Power:
 		Amount: 200
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk2
@@ -246,6 +265,25 @@ NUK2:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	AffectedByPowerOutage:
+		Condition: power-outage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+        Duration: 750
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate
+	WithDecoration@PowerOutage:
+		Image: nopower
+		Palette: chrome
+		Sequence: powerdown-blocked
+		Position: Center
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: power-outage
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral, Enemy
 
 NUK3:
 	Inherits: ^BaseBuilding
@@ -281,7 +319,7 @@ NUK3:
 	WithBuildingBib:
 	Power:
 		Amount: 400
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk3
@@ -291,6 +329,25 @@ NUK3:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	AffectedByPowerOutage:
+		Condition: power-outage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+        Duration: 750
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate
+	WithDecoration@PowerOutage:
+		Image: nopower
+		Palette: chrome
+		Sequence: powerdown-blocked
+		Position: Center
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: power-outage
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral, Enemy
 
 PROC:
 	Inherits: ^BaseBuilding
@@ -674,7 +731,7 @@ WEAP:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: Weapons Factory
 	ProvidesPrerequisite:
 		Prerequisite: vehicleproduction
 	Buildable:

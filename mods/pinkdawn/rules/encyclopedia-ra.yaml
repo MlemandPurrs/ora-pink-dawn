@@ -1,0 +1,1045 @@
+fac2.info:
+    Inherits: FAC2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: The Construction Yard is the foundation of a base and allows the construction of other buildings. You must protect this structure! Without it, you cannot build any new structures.\n\nThe Construction Yard is fairly strong, but as with almost all structures, it is vulnerable to Engineers. Try surrounding your Construction Yard with walls to keep out unwanted guests.
+        Category: Allies Buildings
+		Order: 0
+	RenderSprites:
+		Image: fac2
+        Palette: allies
+    -MapEditorData:
+
+fac2.soviet.info:
+    Inherits: fac2.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: fac2
+        Palette: soviet
+
+powr.info:
+    Inherits: POWR
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.
+        Category: Allies Buildings
+		Order: 1
+	RenderSprites:
+		Image: powr
+        Palette: allies
+    -MapEditorData:
+
+powr.soviet.info:
+    Inherits: powr.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: powr
+        Palette: soviet
+
+apwr.info:
+    Inherits: APWR
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This high-yield structure handles the energy strains of some later, more power-intensive structures. It may cost a bit more than the original Power Plant, but it generates double the amount of power (200 units).\nIt's cheaper to build those rather than keep building the basic Power Plant when it has become available.
+        Category: Allies Buildings
+		Order: 2
+	RenderSprites:
+		Image: apwr
+        Palette: allies
+    -MapEditorData:
+
+apwr.soviet.info:
+    Inherits: apwr.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: apwr
+        Palette: soviet
+
+oref.info:
+    Inherits: OREF
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Harvester and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
+        Category: Allies Buildings
+		Order: 3
+	RenderSprites:
+		Image: oref
+        Palette: allies
+    -MapEditorData:
+
+oref.soviet.info:
+    Inherits: oref.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: oref
+        Palette: soviet
+
+osil.info:
+    Inherits: OSIL
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This Silo can hold up to 1,000 credits of processed resources. When the Refinery fills to its maximum capacity of storage, you will want to build Silos to handle the excess storage load. Guard it carefully, for if destroyed or captured, the amount stored is deducted from your account.
+        Category: Allies Buildings
+		Order: 4
+	RenderSprites:
+		Image: osil
+        Palette: allies
+    -MapEditorData:
+
+osil.soviet.info:
+    Inherits: osil.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: osil
+        Palette: soviet
+
+tent.info:
+    Inherits: TENT
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This structure is a field training center for the Allies infantry units. Building multiple Barracks will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.\nIn addition, the Allies Barracks is equipped with medicinal supplies, capable of allowing nearby wounded Infantry to automatically heal themselves. 
+        Category: Allies Buildings
+		Order: 5
+	RenderSprites:
+		Image: tent
+        Palette: allies
+    -MapEditorData:
+
+barr.info:
+    Inherits: BARR
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This structure is a field training center for the Soviet infantry units. Building multiples of this structure will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.
+        Category: Soviet Buildings
+		Order: 6
+	RenderSprites:
+		Image: barr
+        Palette: soviet
+    -MapEditorData:
+
+warf.info:
+    Inherits: WARF
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This structure builds any available Vehicles. It is well armored, but is also a favorite target for enemy Engineers. Building multiples of this structure will allow to produce multiple Vehicles at same time.
+        Category: Allies Buildings
+		Order: 7
+	RenderSprites:
+		Image: warf
+        Palette: allies
+    -MapEditorData:
+
+warf.soviet.info:
+    Inherits: warf.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: warf
+        Palette: soviet
+
+fix2.info:
+    Inherits: FIX2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Service Depot repairs any damaged vehicle that you move onto it. All repairs get deducted from your credits. If you run out of credits while repairs are in progress, repairs will stop.\n\nRepairing a vehicle is much faster than building one, and costs a fraction of the original price. This is a worthy investment.
+        Category: Allies Buildings
+		Order: 9
+	RenderSprites:
+		Image: fix2
+        Palette: allies
+    -MapEditorData:
+
+fix2.soviet.info:
+    Inherits: fix2.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: fix2
+        Palette: soviet
+
+hpad.allies.info:
+    Inherits: hpad.info
+	Encyclopedia:
+        Category: Allies Buildings
+	RenderSprites:
+		Image: hpad
+        Palette: allies
+
+3fld.info:
+    Inherits: 3FLD
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Airfield allows construction of helicopters and planes, and allows access to 'Paratroopers' by itself. Dropped from the Badger, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.\nIt will also allow the usage of 'Parachuted bombs' at a Command Post, and 'Spy Plane' together with a Radar Dome.
+        Category: Soviet Buildings
+		Order: 8
+	RenderSprites:
+		Image: 3fld
+        Palette: soviet
+    -MapEditorData:
+
+dome.info:
+    Inherits: DOME
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.
+        Category: Allies Buildings
+		Order: 11
+	RenderSprites:
+		Image: dome
+        Palette: allies
+    -MapEditorData:
+
+dome.soviet.info:
+    Inherits: dome.info
+	Encyclopedia:
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of a Spy Plane whenever one has became available, but only with a Airfield being present. This ability can be used to call in a fast aircraft that will reveal an area of the map to temporarily obtain vision for a duration.
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: dome
+        Palette: soviet
+
+atek.info:
+    Inherits: ATEK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: In addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nWhen launched from the tech center, the Global Positioning System (GPS) Satellite will, because the Satellite can see much more of the battlefield, reveal the entire map when it reaches orbit.\nIn addition, it will able to determine the position of enemy units through the fog of war, capable of displaying their locations to the player that launched it.
+        Category: Allies Buildings
+		Order: 13
+	RenderSprites:
+		Image: atek
+        Palette: allies
+    -MapEditorData:
+
+stek.info:
+    Inherits: STEK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: The Soviet Tech Center allows the construction of high-tech units like the Mammoth Tank and Tesla Tank.
+        Category: Soviet Buildings
+		Order: 14
+	RenderSprites:
+		Image: stek
+        Palette: soviet
+    -MapEditorData:
+
+fcom.info:
+    Inherits: FCOM
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: A forward command post that can be used to shelter high-ranking staff and vital equipment in the field to authorize the usage of most advanced soviet doctrine, including tactical nuclear weapons, construction of the Behemoth Tank, or the assistance of comrade Volkov.\nWhen used together with an Airfield, it allows access to 'Parachuted Bombs' to be used.\nDropped from Badger Bombers, these explosives fall in a line over their target, removing the object targeted and anything in the area around it. Troops can see these falling and will attempt to leave the targeted area.
+        Category: Soviet Buildings
+		Order: 15
+	RenderSprites:
+		Image: fcom
+        Palette: soviet
+    -MapEditorData:
+
+csph.info:
+    Inherits: CSPH
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: The evolution of the Philadelphia Experiment, the Chronosphere allows the Allies player to move a unit from one location to an other without having to cross the space in between. However, the unit will only exist in its new location for a brief time before returning to its point of origin.\nThis technology is still a bit unstable. Using it on certain units or using it constantly could produce unusual side effects.
+        Category: Allies Buildings
+		Order: 16
+	RenderSprites:
+		Image: csph
+        Palette: allies
+    -MapEditorData:
+
+iron.info:
+    Inherits: IRON
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: The Iron Curtain renders a vehicle or building invulnerable for a short period of time. A mysterious technology developed by the soviets in secret, its highly suspected of being alien in origin.
+        Category: Soviet Buildings
+		Order: 17
+	RenderSprites:
+		Image: iron
+        Palette: soviet
+    -MapEditorData:
+
+mslo.info:
+    Inherits: MSLO
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: Once built, the Missile Silo readies an Atomic Bomb that can be launched onto the battlefield, causing massive destruction to structures and infantry. The more heavily armored units will fare better, but not by much.
+        Category: Allies Buildings
+		Order: 18
+	RenderSprites:
+		Image: mslo
+        Palette: allies
+    -MapEditorData:
+
+mslo.soviet.info:
+    Inherits: mslo.info
+	Encyclopedia:
+        Category: Soviet Buildings
+	RenderSprites:
+		Image: mslo
+        Palette: soviet
+
+sbag.allies.info:
+    Inherits: sbag.info
+	Encyclopedia:
+        Category: Allies Defenses
+	RenderSprites:
+		Image: sbag
+        Palette: staticterrain
+
+fenc.info:
+    Inherits: FENC
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Used to deter the enemy from advancing. Wire Fence provide limited cover and may slow units down.\nOnly explosive weapons such as grenades, missiles and shells can damage Barbed Wires.
+        Category: Soviet Defenses
+		Order: 1
+	RenderSprites:
+		Image: fenc
+        Palette: staticterrain
+    -MapEditorData:
+
+cycl.allies.info:
+    Inherits: cycl.info
+	Encyclopedia:
+        Category: Allies Defenses
+
+cycl.soviet.info:
+    Inherits: cycl.info
+	Encyclopedia:
+        Category: Soviet Defenses
+
+brik.allies.info:
+    Inherits: brik.info
+	Encyclopedia:
+        Category: Allies Defenses
+
+brik.soviet.info:
+    Inherits: brik.info
+	Encyclopedia:
+        Category: Soviet Defenses
+
+hgat.allies.info:
+    Inherits: hgat.info
+	Encyclopedia:
+        Category: Allies Defenses
+	RenderSprites:
+		Image: hgat-allies
+        Palette: staticterrain
+
+hgat.soviet.info:
+    Inherits: hgat.info
+	Encyclopedia:
+        Category: Soviet Defenses
+	RenderSprites:
+		Image: hgat-soviet
+        Palette: staticterrain
+
+pbox.info:
+    Inherits: PBOX
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: Armed with a rapid fire machinegun, the Pillbox is ideal for defending your base from enemy infantry attacks.
+        Category: Allies Defenses
+		Order: 6
+	RenderSprites:
+		Image: pbox
+        Palette: allies
+    -MapEditorData:
+
+hbox.info:
+    Inherits: HBOX
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: A dedicated anti-infantry defense with a marksman rifle, this defensive structure has the advantage of near-perfect camouflage. It blends with the surrounding terrain, making it virtually invisible.
+        Category: Allies Defenses
+		Order: 7
+	RenderSprites:
+		Image: hbox
+        Palette: allies
+    -MapEditorData:
+
+gun.allies.info:
+    Inherits: gun.info
+	Encyclopedia:
+        Category: Allies Defenses
+	RenderSprites:
+		Image: gun
+        Palette: allies
+
+agun.info:
+    Inherits: AGUN
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: Although its range is not great, any enemy aircraft flying over these are guaranteed to be heavily damaged, if not destroyed. They may be inaccurate yet are deadly.
+        Category: Allies Defenses
+		Order: 11
+	RenderSprites:
+		Image: agun
+        Palette: allies
+    -MapEditorData:
+
+ftwr.info:
+    Inherits: FTWR
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: The Flame Tower targets and destroys approaching enemy ground units by shooting balls of fire. It is best used against large groups of infantry; it is effective against armored units as well. Since there are volatile fuels used in the Flame Tower, it damages nearby units and structures if destroyed.
+        Category: Soviet Defenses
+		Order: 7
+	RenderSprites:
+		Image: ftwr
+        Palette: soviet
+    -MapEditorData:
+
+tsla.info:
+    Inherits: TSLA
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: The Tesla Coil automatically directs bolts of lightning at enemy ground units, reducing men to ash and tanks to molten slag in seconds.
+        Category: Soviet Defenses
+		Order: 9
+	RenderSprites:
+		Image: tsla
+        Palette: soviet
+    -MapEditorData:
+
+gap.info:
+    Inherits: GAP
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: The Gap Generator allows the Allies to hide associated base from enemy sight. Any enemies scouting the area will only reveal around themselves. The Shroud will immediately close up once the invading unit is destroyed or leaves the area.
+        Category: Allies Defenses
+		Order: 10
+	RenderSprites:
+		Image: gap
+        Palette: allies
+    -MapEditorData:
+
+sam2.info:
+    Inherits: SAM2
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: Fires surface-to-air missiles at airborne enemy units. Position these around your base in a triangular layout.\nThis gives you the best chances of destroying aerial threats before they can cause serious damage to your base.
+        Category: Soviet Defenses
+		Order: 12
+	RenderSprites:
+		Image: sam2
+        Palette: soviet
+    -MapEditorData:
+
+e1.allies.info:
+    Inherits: e1.info
+	Encyclopedia:
+        Category: Allies Infantry
+	RenderSprites:
+		Image: e1
+        Palette: allies
+
+e1.soviet.info:
+    Inherits: e1.info
+	Encyclopedia:
+        Category: Soviet Infantry
+	RenderSprites:
+		Image: e1
+        Palette: soviet
+
+e2.soviet.info:
+    Inherits: e2.info
+	Encyclopedia:
+        Category: Soviet Infantry
+	RenderSprites:
+		Image: e2
+        Palette: soviet
+
+medi.info:
+    Inherits: MEDI
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Any wounded infantry near the Medic will be getting healed back to full health. The medic can slowly regenerate lost health by itself. Medics working in teams make excellent additions to any infantry force.
+        Category: Allies Infantry
+		Order: 4
+	RenderSprites:
+		Image: medi
+        Palette: allies
+    -MapEditorData:
+
+mech.info:
+    Inherits: MECH
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Any friendly vehicle near the Mechanic will automatically be repaired to full health. Mechanics working in conjunction with Ranger jeeps to provide fast relocation can make excellent support to any armored force.
+        Category: Allies Infantry
+		Order: 5
+	RenderSprites:
+		Image: mech
+        Palette: allies
+    -MapEditorData:
+
+e3.allies.info:
+    Inherits: e3.info
+	Encyclopedia:
+        Category: Allies Infantry
+	RenderSprites:
+		Image: e3
+        Palette: allies
+
+e3.soviet.info:
+    Inherits: e3.info
+	Encyclopedia:
+        Category: Soviet Infantry
+	RenderSprites:
+		Image: e3
+        Palette: soviet
+
+tany.info:
+    Inherits: TANY
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Armed with two Colt .45's, Tanya can mow through infantry like they weren't there. Her C-4 Explosives can destroy buildings, if you can get her to them. 
+        Category: Allies Infantry
+		Order: 6
+	RenderSprites:
+		Image: tany
+        Palette: allies
+    -MapEditorData:
+
+volk.info:
+    Inherits: VOLK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Comrade Volkov - the role model of any soviet soldier. Beyond the face of the man that personifies everything the soviets are living for sticks a terrible secret however - for the man is mechanical !\nArmed with a experimental, advanced gun that is capable of shooting a projectile that packs a punch like a cannon yet weighs about your ordinary rifle, this absolute unit of a soldier can solo entire scores of rival infantry, light vehicles and armor. Even buildings arent safe before him however, as he've got plenty of explosive charges enough to level a whole base.
+        Category: Soviet Infantry
+		Order: 6
+	RenderSprites:
+		Image: volk
+        Palette: soviet
+    -MapEditorData:
+
+spy.info:
+    Inherits: SPY
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Master of disguise, the Spy can slip by enemy forces undetected. A versatile unit, the Spy can gather many kinds of information on an enemy player - what they're building, how much money they have, how many units they have, etc. Beware that Attack Dogs are not fooled by the Spy's appearance.
+        Category: Allies Infantry
+		Order: 8
+	RenderSprites:
+		Image: spy
+        Palette: allies
+    -MapEditorData:
+
+dog.info:
+    Inherits: DOG
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Attack Dogs are the only unit that can detect Spies that are trying to infiltrate the base. Although unarmored and easy to kill, Dogs make the perfect in-base guard unit against sneak attacks by Engineers, Spies, and Thieves.\nThey also make fine pets.
+        Category: Soviet Infantry
+		Order: 9
+	RenderSprites:
+		Image: dog
+        Palette: soviet
+    -MapEditorData:
+
+e7.info:
+    Inherits: E7
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Elite special forces infantry that is equipped with a machinegun, can swim through waters to cross it and uses C4 explosives against enemy buildings.
+        Category: Allies Infantry
+		Order: 10
+	RenderSprites:
+		Image: e7
+        Palette: allies
+    -MapEditorData:
+
+e8.info:
+    Inherits: E8
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: These soldiers are slower and more susceptible to damage than other infantry (due to the large tanks of flammable chemicals they carry). The Flame Trooper can decimate structures and infantry in seconds with his fireballs-launching flamethrower.
+        Category: Soviet Infantry
+		Order: 11
+	RenderSprites:
+		Image: e8
+        Palette: soviet
+    -MapEditorData:
+
+shok.info:
+    Inherits: SHOK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Most ruthless and effective of soviet soldiers forming the Stalin's elite corps, each of those men was already a killing machine before picking up the portable tesla coil. This version has sacrificed some power in order to become man-portable, its still capable of zapping infantry in one-shot however.\nThe weapon was proponent of a discovery made in the field, as it has been determined the device can be used to empower a tesla coil when it had lost power. Since then, soviet commanders have been able to use this tactic for keeping their tesla coils up and running in case of a power failure. 
+        Category: Soviet Infantry
+		Order: 12
+	RenderSprites:
+		Image: shok
+        Palette: soviet
+    -MapEditorData:
+
+e6.allies.info:
+    Inherits: e6.info
+	Encyclopedia:
+        Category: Allies Infantry
+	RenderSprites:
+		Image: e6
+        Palette: allies
+
+e6.soviet.info:
+    Inherits: e6.info
+	Encyclopedia:
+        Category: Soviet Infantry
+	RenderSprites:
+		Image: e6
+        Palette: soviet
+
+tecn.allies.info:
+    Inherits: tecn.info
+	Encyclopedia:
+        Category: Allies Infantry
+	RenderSprites:
+		Image: tecn
+        Palette: allies
+
+tecn.soviet.info:
+    Inherits: tecn.info
+	Encyclopedia:
+        Category: Soviet Infantry
+	RenderSprites:
+		Image: tecn
+        Palette: soviet
+
+mcv2.info:
+    Inherits: MCV2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Mobile Construction Vehicle allows creation or expansion of a base. Although expensive, the MCV is useful to have around if the original Construction Yard (a favorite target of the enemy) is destroyed or captured. As with any other construction facility, the more of them you have, the faster construction will proceed.
+        Category: Allies Vehicles
+		Order: 0
+	RenderSprites:
+		Image: mcv2
+        Palette: allies
+    -MapEditorData:
+
+mcv2.soviet.info:
+    Inherits: mcv2.info
+	Encyclopedia:
+        Category: Soviet Vehicles
+	RenderSprites:
+		Image: mcv2
+        Palette: soviet
+
+ohrv.info:
+    Inherits: OHRV
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Ore Truck collects raw, unprocessed ore. Although slow, it is heavily armored, able to withstand a hammering and still escape intact.
+        Category: Allies Vehicles
+		Order: 1
+	RenderSprites:
+		Image: ohrv-full
+        Palette: allies
+    -MapEditorData:
+
+ahrv.info:
+    Inherits: AHRV
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Ore Truck collects raw, unprocessed ore. Although slow, it is heavily armored, able to withstand a hammering and still escape intact.\nSoviet engineers have accomplished the addition of a machinegun turret to the Vehicle, allowing it to defend itself against lone infantry stragglers.
+        Category: Soviet Vehicles
+		Order: 1
+	RenderSprites:
+		Image: ohrv-full
+        Palette: soviet
+    -MapEditorData:
+
+strk.info:
+    Inherits: STRK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This lightly armored truck, while moving slow is capable of transporting cargo worth 1,000 to financially assist your allies. The transported amount will be added to their resources should it have managed to reach their Construction Yard.\nBe careful however, as should the truck get destroyed it will drop a crate containing the transported amount, which can then be picked up by anyone.
+        Category: Allies Vehicles
+		Order: 17
+	RenderSprites:
+		Image: strk
+        Palette: allies
+    -MapEditorData:
+
+strk.soviet.info:
+    Inherits: strk.info
+	Encyclopedia:
+        Category: Soviet Vehicles
+	RenderSprites:
+		Image: strk
+        Palette: soviet
+
+r4wd.info:
+    Inherits: R4WD
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Fast and lightly armored, this unit is ideal for scouting an area quickly. Used as a support unit for an infantry squad, the Ranger can soften up the enemy before a direct confrontation occurs.
+        Category: Allies Vehicles
+		Order: 2
+	RenderSprites:
+		Image: r4wd
+        Palette: allies
+    -MapEditorData:
+
+ftrk.info:
+    Inherits: FTRK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A mobile anti-air platform made to accompany the tank battalions, providing anti-air cover and limited reconaissance. While individually weak, the quad-barrel flak cannon that allows it to have a superb rate of fire can enable it to punch targets beyond its weight-class, however it excels against enemy Infantry and when used as a helicopter-deterrent.
+        Category: Soviet Vehicles
+		Order: 3
+	RenderSprites:
+		Image: ftrk
+        Palette: soviet
+    -MapEditorData:
+
+apc.allies.info:
+    Inherits: apc.info
+	Encyclopedia:
+        Category: Allies Vehicles
+	RenderSprites:
+		Image: apc
+        Palette: allies
+
+apc2.info:
+    Inherits: APC2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: With the Heavy Personnel Carrier, the Soviets can transport up to 5 infantry units quickly across land. A tracked vehicle, the APC is the lightest unit with the ability to crush Sandbag and Wire Fences. The Turret-Mounted Machinegun helps keep infantry at bay while it goes about its mission.
+        Category: Soviet Vehicles
+		Order: 4
+	RenderSprites:
+		Image: apc2
+        Palette: soviet
+    -MapEditorData:
+
+1tnk.info:
+    Inherits: 1TNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The standard Allies Tank. Fast, with decent armor, the Light Tank works well in mixed groups, and also in large divisions. What it lacks in firepower, it makes up for in speed and rapid fire.\nIts also capable of crossing open bodies of water by itself, not requiring a transport to get across sea.
+        Category: Allies Vehicles
+		Order: 4
+	RenderSprites:
+		Image: 1tnk
+        Palette: allies
+    -MapEditorData:
+
+2tnk.info:
+    Inherits: 2TNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The higher-grade Allies Tank, this unit is just as well armored, faster, and less costly than the Soviet Heavy Tank, though armed with only a single barrel. Used in groups with Light Tanks, the Medium Tank can draw fire while the Lighter Tanks destroy the threat.
+        Category: Allies Vehicles
+		Order: 6
+	RenderSprites:
+		Image: 2tnk
+        Palette: allies
+    -MapEditorData:
+
+3tnk.info:
+    Inherits: 3TNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The basic tank of the Soviet Empire, this beast is equipped with twin 105mm cannons, giving it twice the punch of the nearest Allies equivalent, the Medium Tank. It sacrifices speed for this bonus, but the net result still makes it a formidable opponent on the battlefield.
+        Category: Soviet Vehicles
+		Order: 5
+	RenderSprites:
+		Image: 3tnk
+        Palette: soviet
+    -MapEditorData:
+
+4tnk.info:
+    Inherits: 4TNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.
+        Category: Soviet Vehicles
+		Order: 7
+	RenderSprites:
+		Image: 4tnk
+        Palette: soviet
+    -MapEditorData:
+
+5tnk.info:
+    Inherits: 5TNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Tanks don't come any bigger. The largest land-based weapons platform, the Behemoth Tank can take and dish out a lot of punishment. Its twin cannons are unmatched in power on land, and its chainguns make it effective against infantry units as well.
+        Category: Soviet Vehicles
+		Order: 8
+	RenderSprites:
+		Image: 5tnk
+        Palette: soviet
+    -MapEditorData:
+
+arty.allies.info:
+    Inherits: arty.info
+	Encyclopedia:
+        Category: Allies Vehicles
+	RenderSprites:
+		Image: arty
+        Palette: allies
+
+v2rl.info:
+    Inherits: V2RL
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The V2 Launcher can destroy most buildings with just two rockets. Factor in its incredible range, and it is easy to see why the Allies fear this weapons platform. Its drawbacks are its light armor, long reload time, and inability to hit fast-moving targets.
+        Category: Soviet Vehicles
+		Order: 9
+	RenderSprites:
+		Image: v2rl
+        Palette: soviet
+    -MapEditorData:
+
+mgg.info:
+    Inherits: MGG
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The mobile version of the Gap Generator functions in much the same way the stationary one does. Although it projects a smaller gap field, you can hide several units under its cover, blocking the enemy from seeing what you're sending against them.
+        Category: Allies Vehicles
+		Order: 11
+	RenderSprites:
+		Image: mgg
+        Palette: allies
+    -MapEditorData:
+
+mnly.info:
+    Inherits: MNLY
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Anti-Tank Mine Layer is one of the most effective units on the Soviet side. Able to destroy most units with just one mine, a savvy commander can neutralize an enemy force before they get near a base. The Mine Layer carries 8 mines, and can be reloaded at the Service Depot.
+        Category: Soviet Vehicles
+		Order: 10
+	RenderSprites:
+		Image: mnly
+        Palette: soviet
+    -MapEditorData:
+
+ctnk.info:
+    Inherits: CTNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Medium-armored, slow moving vehicle equipped with Anti-Tank missile pods. It has one unique advantage over any other of it's kind however - the capability of instant relocation, more commonly known as teleportation.\nThis miracular feat is accomplished thanks to the miniaturised paradox device that is utilized in the tank's construction, or rather the tank gets built around one, it's hull formed in a specific shape that allows ideal translocation.
+        Category: Allies Vehicles
+		Order: 10
+	RenderSprites:
+		Image: ctnk
+        Palette: allies
+    -MapEditorData:
+
+ttnk.info:
+    Inherits: TTNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This vehice is essentially a mobile tesla coil moving about on tracks. Its uniquely capable of attacking in full radius around itself, not requiring to get a facing or rotate a turret first. This advantage comes at a downside however, as the vehicle must remain stationary in order to stabilize the energy buildup required to discharge the weapon.
+        Category: Soviet Vehicles
+		Order: 7
+	RenderSprites:
+		Image: ttnk
+        Palette: soviet
+    -MapEditorData:
+
+apc3.info:
+    Inherits: APC3
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The result of long and ardous experimentation - first the cloaking device had been stolen by the Soviets and installed on a modified APC, which they used to breach into the hidden research base where it had been developed to destroy it's schematics. Then a lucky spy has managed to steal back the plans of the modified soviet APC, thus the design had found its way back into the hands of the Allies.\nThis unit is a mass-producible version derived on the stolen schematics, featuring its signature capability of cloaking, the capacity to carry one infantry and a missile turret that is capable of engaging air and ground targets equally.
+        Category: Allies Vehicles
+		Order: 11
+	RenderSprites:
+		Image: apc3
+        Palette: allies
+    -MapEditorData:
+
+badr.info:
+    Inherits: BADR
+	Encyclopedia:
+        Description: TODO.
+        Category: Soviet Aircraft
+		Order: 4
+	RenderSprites:
+		Image: badr
+        Palette: soviet
+
+tran.allies.info:
+    Inherits: tran.info
+	Encyclopedia:
+        Category: Allies Aircraft
+	RenderSprites:
+		Image: tran
+        Palette: allies
+
+tran.soviet.info:
+    Inherits: tran.info
+	Encyclopedia:
+        Category: Soviet Aircraft
+	RenderSprites:
+		Image: tran
+        Palette: soviet
+
+hel2.info:
+    Inherits: HEL2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Allies attack helicopter is loaded with hellfire missiles, allowing it to destroy armored targets with ease. Used in conjunction with naval or ground attacks, the Longbow is an ideal support aircraft, able to rapidly inflict additional damage to a target - usually with little or no return fire.\nIt can also detect cloaked units in the vicinity employing inbuilt sensors.
+        Category: Allies Aircraft
+		Order: 1
+	RenderSprites:
+		Image: heli
+        Palette: allies
+    -MapEditorData:
+
+hind.info:
+    Inherits: HIND
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Large and armored, the Hind uses its high-velocity chain-guns to tear apart enemy units and structure. Equipped with a large ammo supply, the Hind will follow its target for quite some time, all the while wearing away at its defenses.
+        Category: Soviet Aircraft
+		Order: 2
+	RenderSprites:
+		Image: hind
+        Palette: soviet
+    -MapEditorData:
+
+badr.info:
+    Inherits: BADR
+	Encyclopedia:
+        Description: The Badger is the soviet transport plane used for dropping Paratroopers and Parachuted Bombs onto a designated target.\nIt is somewhat slow, and its lack of armor can make it a snack for any enemy AA-guns that may be guarding the target.
+        Category: Soviet Aircraft
+		Order: 9
+	RenderSprites:
+		Image: badr
+        Palette: soviet
+
+yak.info:
+    Inherits: YAK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Sometimes called the 'Infantry Eraser', the Yak fires in strafing runs, swooping down on groups of marching infantry, potentially destroying them all in a single run. The Yak is not that fast, making it an easy target for Rocket Soldiers - those that actually survive the first strafing run.
+        Category: Soviet Aircraft
+		Order: 6
+	RenderSprites:
+		Image: yak
+        Palette: soviet
+
+smig.info:
+    Inherits: SMIG
+	Encyclopedia:
+        Description: When called in, the Spy Plane will swoop in from off board and take a snapshot of the targeted area, removing the shroud and revealing the fog of war there.
+        Category: Soviet Aircraft
+		Order: 7
+	RenderSprites:
+		Image: smig
+        Palette: soviet
+
+mig.info:
+    Inherits: MIG
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the MiG can remove armored craft before they can become a threat.
+        Category: Soviet Aircraft
+		Order: 8
+	RenderSprites:
+		Image: mig
+        Palette: soviet
+
+nmig.info:
+    Inherits: NMIG
+	Encyclopedia:
+        Description: A specially modified MiG design made with a singular purpose in mind - to carry one parachuted nuclear device to its destination. Reserved usage for the most high-ranking and distinguished commanders in rising, this type of tactical strike is efficient to wipe out a battalion of armor, a fleet of ships or a small scale enemy base on it's own.
+        Category: Soviet Aircraft
+		Order: 9
+	RenderSprites:
+		Image: nmig
+        Palette: soviet
+
+thf.info:
+    Inherits: THF
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Any Thief that enters an enemy Refinery will steal half the credits in that structure. Also they can hijack enemy vehicles, allowing you to comandeer the enemy arsenal to your purposes.
+        Category: Nod Infantry
+		Order: 8
+	RenderSprites:
+		Image: thf
+        Palette: nodunits
+    -MapEditorData:
+
+mega.info:
+    Inherits: MEGA
+    Buildable:
+        Queue: Nothing
+        Prerequisites: tmpl
+	Encyclopedia:
+        Description: Armed with a sniper rifle, Megan can pick Infantry at the distance. Her C4 Explosives can destroy buildings, if you can get her to them. 
+        Category: Nod Infantry
+		Order: 6
+	RenderSprites:
+		Image: mega
+        Palette: nodunits
+    -MapEditorData:

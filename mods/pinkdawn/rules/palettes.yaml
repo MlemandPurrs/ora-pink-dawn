@@ -121,7 +121,7 @@
 	CloakPaletteEffect:
 	FlashPaletteEffect:
 	RotationPaletteEffect@water:
-		ExcludePalettes: effect, chrome, gdi, nod, nodunits, civilian
+		ExcludePalettes: effect, chrome, gdi, nod, nodunits, civilian, allies, soviet
 		RotationBase: 32
 	PaletteFromPlayerPaletteWithAlpha@cloaktransparent:
 		BaseName: cloaktransparent
@@ -148,6 +148,16 @@
         ReplaceIndex: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
     IndexedPalette@civilian:
         Name: civilian
+        BasePalette: player-static
+        Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
+        ReplaceIndex: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+    IndexedPalette@allies:
+        Name: allies
+        BasePalette: player-static
+        Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
+        ReplaceIndex: 2, 119, 118, 135, 136, 138, 112, 12, 118, 135, 136, 137, 138, 139, 114, 112
+    IndexedPalette@soviet:
+        Name: soviet
         BasePalette: player-static
         Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
         ReplaceIndex: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198

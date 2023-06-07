@@ -374,6 +374,8 @@ R4WD:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+    Capturable:
+        RequiresCondition: !loaded
 
 #   todo: remake weapon into mini-ZSU23
 FTRK:
@@ -457,7 +459,7 @@ APC2:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Armored Personnel Carrier
+		Name: Heavy Personnel Carrier
         GenericStancePrefix: false
         GenericName: Heavy APC
         GenericVisibility: Ally, Neutral, Enemy
@@ -518,6 +520,8 @@ APC2:
 		EmptyWeapon: UnitExplodeBig
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
+    Capturable:
+        RequiresCondition: !loaded
 
 MNLY:
 	Inherits: ^TrackedVehicle
@@ -1105,7 +1109,7 @@ MGG:
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
 	WithDecoration@offline:
-		RequiresSelection: true
+		RequiresSelection: false
 		Image: pips
 		Sequence: tag-hold
 		Position: Top
@@ -1208,3 +1212,5 @@ APC3:
 		TargetTypes: Tank
 	RenderRangeCircle:
 		RangeCircleType: aa
+    Capturable:
+        RequiresCondition: !loaded

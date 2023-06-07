@@ -422,7 +422,7 @@
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
-	Explodes@AIR:
+	Explodes@Air:
 		Weapon: HeliExplode
 		RequiresCondition: airborne
 	GpsDot:
@@ -1415,11 +1415,6 @@
 		StartIfBelow: 101
 		Delay: 6
 
-^LightHusk:
-	Inherits: ^Husk
-	Health:
-		HP: 4000
-
 ^HelicopterHusk:
 	Inherits: ^CommonHuskDefaults
 	WithShadow:
@@ -1841,3 +1836,62 @@
     SpeedMultiplier@Hijack:
         Modifier: 0
         RequiresCondition: being-hijacked
+
+^FakeBuilding:
+	Inherits: ^Building
+    Inherits@LowPowerDamage: ^DamagedOnLowPower
+    #   Inherits@infiltration: ^InfiltratableFake
+	Health:
+		HP: 20000
+	Armor:
+		Type: Medium
+	Valued:
+		Cost: 50
+	Building:
+		RequiresBaseProvider: false
+		BuildSounds: constru2.aud, hvydoor1.aud
+		UndeploySounds: cashturn.aud
+		TerrainTypes: Clear,Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 2
+	RevealsShroud:
+		Range: 2c0
+	WithDecoration@fake:
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-fake
+    -ShakeOnDeath:
+    -Guardable:
+	Power:
+		Amount: 0
+	CaptureManager:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player
+	WithMakeAnimation:
+		Condition: build-incomplete
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	MapEditorData:
+		Categories: Fake building
+
+^BuildingHusk:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		GenericName: Civilian Building (Destroyed)
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	ScriptTriggers:
+	MapEditorData:
+		Categories: Husk

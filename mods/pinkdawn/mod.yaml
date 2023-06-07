@@ -43,6 +43,7 @@ Packages:
     pinkdawn|bits/audio/engineer
     pinkdawn|bits/icons
     pinkdawn|bits/icons/ra
+    pinkdawn|bits/icons/ra/fake
     pinkdawn|bits/structures
     pinkdawn|bits/structures/ra
     pinkdawn|bits/structures/bibs
@@ -91,7 +92,10 @@ Rules:
 	pinkdawn|rules/ships.yaml
 	pinkdawn|rules/dinosaurs.yaml
 	pinkdawn|rules/encyclopedia.yaml
+	pinkdawn|rules/encyclopedia-ra.yaml
     pinkdawn|rules/structures-ra.yaml
+    pinkdawn|rules/structures-fake.yaml
+    pinkdawn|rules/structures-husks-ra.yaml
 	pinkdawn|rules/vehicles-ra.yaml
 
 Sequences:

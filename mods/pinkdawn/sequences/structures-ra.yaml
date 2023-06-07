@@ -20,7 +20,8 @@ fac2:
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
-	icon: fac2icon
+    icon: fac2icon
+    fake-icon: facficon
 
 fac2.husk:
 	idle: fac2
@@ -44,6 +45,7 @@ powr:
         Start: 2
         Tick: 800
 	icon: powricon
+    fake-icon: powficon
 
 powr.husk:
 	idle: powr
@@ -72,6 +74,7 @@ apwr:
         Tick: 800
         Offset: 0,-10
 	icon: apwricon
+    fake-icon: apwficon
 
 apwr.husk:
 	idle: apwr
@@ -106,7 +109,8 @@ oref:
         ZOffset: -1c511
         Tick: 800
 	icon: oreficon
-
+    fake-icon: proficon
+    
 oref.husk:
 	idle: oref
 		Start: 2
@@ -182,6 +186,8 @@ tent:
 		Length: *
 	icon: tenticon
 		UseTilesetExtension: false
+    fake-icon: tenficon
+        UseTilesetExtension: false
 
 tent.husk:
 	Defaults:
@@ -251,6 +257,7 @@ warf:
     dead: warfdead
         Tick: 800
 	icon: warficon
+    fake-icon: weaficon
 
 warf.husk:
 	idle: warfdead
@@ -295,6 +302,7 @@ fix2:
         Start: 14
         Tick: 800
 	icon: fix2icon
+    fake-icon: fixficon
 
 fix2.husk:
 	idle: fix2
@@ -437,7 +445,8 @@ dome:
         Offset: 0,-4
         Tick: 800
 	icon: domeicon
-
+    fake-icon: domficon
+    
 dome.husk:
 	idle: dome
 		Start: 2
@@ -465,6 +474,7 @@ atek:
         Start: 2
         Tick: 800
 	icon: atekicon
+    fake-icon: ateficon
 
 atek.husk:
 	idle: atek
@@ -585,17 +595,17 @@ hbox.husk:
         Start: 3
         Length: 1
 
-ftur:
+ftwr:
     Inherits: emp-overlay
 	idle:
 		Offset: 0,-2
 	damaged-idle:
 		Start: 1
 		Offset: 0,-2
-	make: fturmake
+	make: ftwrmake
 		Length: *
 		Offset: 0,-2
-	bib: mbFTUR
+	bib: mbFTWR
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -633,14 +643,14 @@ ftur:
 				Offset: -7,8
 		Facings: 8
 		Length: 13
-	icon: fturicon
+	icon: ftwricon
 
-ftur.husk:
-	idle: ftur
+ftwr.husk:
+	idle: ftwr
 		Start: 2
 		Length: 1
 		Offset: 0,-2
-	bib: mbFTUR
+	bib: mbFTWR
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -863,8 +873,9 @@ csph:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
 	icon: csphicon
+    fake-icon: pdoficon
 
-csph.destroyed:
+csph.husk:
 	idle: csph
 		Start: 29
 		Length: 1
@@ -952,6 +963,8 @@ mslo:
 		Length: 1
         Tick: 800
 	icon: msloicon
+		UseTilesetExtension: false
+    fake-icon: mslficon
 		UseTilesetExtension: false
 
 mslo.husk:

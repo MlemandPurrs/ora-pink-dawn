@@ -245,6 +245,9 @@ crate-effects:
 	emp: empulse
 	levelup: levelup
 		Tick: 200
+    parabombs: parabox
+	chrono: pdoxbox
+	curtain: ironbox
 
 atomic:
 	Defaults:
@@ -306,7 +309,9 @@ pips:
 	pip-skull: pip-skull
 		Offset: -2, 0
     tag-hold: tag-hold
-        Offset: 0, -2
+        Offset: 0, 2
+    tag-fake: tag-fake
+        Offset: 0, 2
 	tag-spy: tag-spy
 
 overlay:
@@ -652,3 +657,17 @@ gpsdot:
         Start: 7
 	Harvester:
 		Start: 8
+
+nopower:
+    powerdown-blocked:
+		Start: 0
+		Length: 1
+	powerdown:
+		Start: 1
+		Length: 3
+    powerup:
+        Start: 5
+        Length: 3
+    powerup-blocked:
+		Start: 8
+		Length: 1

@@ -276,18 +276,18 @@ E7:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 400
+		Cost: 500
 	Tooltip:
 		Name: Special Forces
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 150
+        BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: atek
 		Queue: Infantry.Allies
-		Description: Elite amphibian infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Elite amphibian infantry.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
 		Speed: 60
         Locomotor: foot-amphibian
@@ -326,6 +326,9 @@ E7:
 	GrantConditionOnTerrain:
 		TerrainTypes: Water
 		Condition: onwater
+	Demolition:
+		DetonationDelay: 45
+		Voice: Action
 
 E8:
 	Inherits: ^Soldier
@@ -788,7 +791,7 @@ SPY:
 		BuildPaletteOrder: 8
 		Prerequisites: anyhq
 		Queue: Infantry.Allies
-		Description: Agent of the intelligence service.\n\nSpecial: Disguise\nCan disguise to appear like enemy\nInfantry to fool opponents.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+		Description: Agent of the intelligence service.\nCan infiltrate to cut enemy power.\n\nSpecial: Disguise\nCan disguise to appear like enemy\nInfantry to fool opponents.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 50
 		Voice: Move
@@ -846,6 +849,11 @@ SPY:
 		Voice: Move
 	RevealsShroud:
 		Range: 4c0
+	Infiltrates:
+		Types: SpyInfiltrate
+		Notification: BuildingInfiltrated
+		TextNotification: Building infiltrated.
+        PlayerExperience: 0
 
 DOG:
 	Inherits: ^Soldier

@@ -205,6 +205,15 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 1c0
+			UseParabombsfromCrate:
+				OrderName: CrateParabombs
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv, ohrv, ahrv

@@ -769,7 +769,7 @@ AGUN:
 	WithBuildingBib:
         HasMinibib: true
 
-FTUR:
+FTWR:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -780,7 +780,7 @@ FTUR:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Flame Turret
+		Name: Flame Tower
 	Buildable:
         BuildDuration: 900
         BuildDurationModifier: 100
@@ -1015,7 +1015,7 @@ GAP:
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
 	WithDecoration@offline:
-		RequiresSelection: true
+		RequiresSelection: false
 		Image: pips
 		Sequence: tag-hold
 		Position: Top
@@ -1036,6 +1036,14 @@ GAP:
 		Image: GAP
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+
+GAP.Clone:
+    Inherits: GAP
+	Buildable:
+		Queue: Defense.Allies
+	RenderSprites:
+		Image: gap
+    -MapEditorData:
 
 FENC:
 	Inherits: ^Wall

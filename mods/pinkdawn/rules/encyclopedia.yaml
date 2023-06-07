@@ -66,7 +66,7 @@ proc.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Ore Truck and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
+        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Harvester and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
         Category: GDI Buildings
 		Order: 3
 	RenderSprites:
@@ -173,7 +173,7 @@ fix.nod.info:
 	Encyclopedia:
         Category: Nod Buildings
 	RenderSprites:
-		Image: fix
+		Image: nodfix
         Palette: nod
 
 hpad.info:
@@ -288,7 +288,7 @@ barb.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Used to deter the enemy from advancing. Barbed Wire provide limited cover and may slow units down.\nOnly explosive weapons such as grenades, missiles, and shells can damage Barbed Wires.
+        Description: Used to deter the enemy from advancing. Barbed Wire provide limited cover and may slow units down.\nOnly explosive weapons such as grenades, missiles and shells can damage Barbed Wires.
         Category: Nod Defenses
 		Order: 1
 	RenderSprites:
@@ -319,7 +319,7 @@ brik.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Concrete walls are the most effective barrier. They are much harder to destroy and will take the enemy much longer to blast through.\nOnly explosive weapons such as grenades, missiles, and shells can damage Concrete Barriers.
+        Description: Concrete walls are the most effective barrier. They are much harder to destroy and will take the enemy much longer to blast through.\nOnly explosive weapons such as grenades, missiles and shells can damage Concrete Barriers.
         Category: GDI Defenses
 		Order: 3
 	RenderSprites:
@@ -549,16 +549,6 @@ rmbo.info:
 		Image: rmbo
         Palette: gdi
     -MapEditorData:
-
-rmbo.nod.info:
-    Inherits: rmbo.info
-    Buildable:
-        Prerequisites: tmpl
-	Encyclopedia:
-        Category: Nod Infantry
-	RenderSprites:
-		Image: rmbo
-        Palette: nodunits
 
 tecn.info:
     Inherits: TECN

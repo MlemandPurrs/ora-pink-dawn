@@ -543,7 +543,7 @@ HIND:
 		RequiresCondition: !airborne
 	WithMuzzleOverlay:
 	Rearmable:
-        AmmoPools: ammo, ammo2
+        AmmoPools: primary, secondary
 		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected

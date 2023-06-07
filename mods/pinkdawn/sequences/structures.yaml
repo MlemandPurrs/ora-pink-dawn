@@ -654,6 +654,7 @@ hpad:
 		UseTilesetExtension: true
         ZOffset: -1022
 	icon: hpadicon
+    fake-icon: hpaficon
 
 hpad.husk:
 	idle: hpad

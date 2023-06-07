@@ -70,7 +70,7 @@ Player:
 	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
 		ID: superweapons
 		Label: Super Weapons
-		Description: Enables Nuclear Strike and Ion Cannon
+		Description: Enables Nuclear Strike, Ion Cannon, Airstrike, Parabombs, Chronosphere, Iron Curtain
 		Enabled: True
 		DisplayOrder: 9
 		Prerequisites: global-superweapons
