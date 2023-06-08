@@ -167,6 +167,7 @@ Player:
 		VehiclesFactoryTypes: weap, afld
 		ProductionTypes: pyle, hand, weap, afld, hpad
 		SiloTypes: silo
+        DefenseTypes: gtwr, atwr, gun, obli, sam
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
@@ -206,8 +207,9 @@ Player:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:
 		RequiresCondition: enable-ai-player
-		#   RushInterval: 400
-		SquadSize: 16
+		RushInterval: 400
+		SquadSize: 12
+        SquadSizeRandomBonus: 8
         ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
@@ -245,6 +247,9 @@ Player:
             boat: 5
             orca: 2
             heli: 2
+            jeep: 4
+            bggy: 4
+            bike: 4
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv
