@@ -175,7 +175,7 @@ E5:
 		BuildPaletteOrder: 7
 		Prerequisites: bio
 		Queue: Infantry.Nod
-		Description: Advanced general-purpose Infantry.\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
+		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
 		Speed: 50
 		Locomotor: foot-immune
@@ -289,7 +289,7 @@ E7:
 		Queue: Infantry.Allies
 		Description: Elite amphibian infantry.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
-		Speed: 60
+		Speed: 50
         Locomotor: foot-amphibian
 	Health:
 		HP: 5000
@@ -1021,7 +1021,7 @@ THF:
 		Queue: Infantry.Nod
 		Description: Steals enemy credits.\nHijacks enemy vehicles.\n\nUnarmed.
 	Mobile:
-		Speed: 40
+		Speed: 50
 		Voice: Move
 	Health:
 		HP: 2500

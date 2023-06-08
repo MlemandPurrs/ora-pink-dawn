@@ -485,7 +485,7 @@ medi.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Any wounded infantry near the Medic will be getting healed back to full health. The medic can slowly regenerate lost health by itself. Medics working in teams make excellent additions to any infantry force.
+        Description: Any wounded infantry near the Medic will be getting healed back to full health. The medic can slowly regenerate lost health by itself.\nMedics working in teams make excellent additions to any infantry force.
         Category: Allies Infantry
 		Order: 4
 	RenderSprites:
@@ -1009,6 +1009,8 @@ mig.info:
 
 nmig.info:
     Inherits: NMIG
+    Buildable:
+        Queue: Nothing
 	Encyclopedia:
         Description: A specially modified MiG design made with a singular purpose in mind - to carry one parachuted nuclear device to its destination. Reserved usage for the most high-ranking and distinguished commanders in rising, this type of tactical strike is efficient to wipe out a battalion of armor, a fleet of ships or a small scale enemy base on it's own.
         Category: Soviet Aircraft

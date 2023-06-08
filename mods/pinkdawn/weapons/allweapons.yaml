@@ -1473,7 +1473,6 @@ APTusk:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
-#   this should charge then attack, essentially a mobile tesla coil, yee
 #   34. Tesla Tank's zap
 TeslaTankZap:
 	ReloadDelay: 120

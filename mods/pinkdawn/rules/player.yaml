@@ -63,7 +63,7 @@ Player:
 	LobbyPrerequisiteCheckbox@FREEAIRCRAFT:
 		ID: freeaircraft
 		Label: Free Aircraft
-		Description: Helipads come with free Helicopter, price increased to 1500
+		Description: Helipads/Airfields come with free Helicopter, price increased to 1500
 		Enabled: False
 		DisplayOrder: 8
 		Prerequisites: global-freeaircraft
@@ -91,7 +91,7 @@ Player:
 	LobbyPrerequisiteCheckbox@INFINITEINCOME:
 		ID: infiniteincome
 		Label: Infinite Income
-		Description: Tiberium Silos generate periodic income when powered
+		Description: Silos generate periodic income while powered
 		Enabled: False
 		DisplayOrder: 12
 		Prerequisites: global-infiniteincome

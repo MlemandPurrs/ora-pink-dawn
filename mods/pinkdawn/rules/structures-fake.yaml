@@ -319,8 +319,8 @@ DOMF:
 	Health:
 		HP: 100000
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	WithSpriteBody:
@@ -342,7 +342,7 @@ ATEF:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Allies Technology Center
+		Name: Fake Technology Center
         GenericStancePrefix: false
         GenericName: Technology Center
         GenericVisibility: Ally, Neutral, Enemy
@@ -407,9 +407,9 @@ MSLF:
 		Cost: 625
 	Tooltip:
 		Name: Fake Missile Silo
-		GenericName: Missile Silo
-		GenericVisibility: Enemy
-		GenericStancePrefix: False
+        GenericStancePrefix: false
+        GenericName: Missile Silo
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
 		Queue: Defense.Allies
 		BuildDuration: 500

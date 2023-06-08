@@ -787,7 +787,7 @@ FTWR:
 		BuildPaletteOrder: 6
 		Prerequisites: vehicleproduction
 		Queue: Defense.Soviet
-		Description: General-purpose base defense.\nRequires power to operate.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Building:
 	Health:
 		HP: 40000
@@ -834,7 +834,7 @@ TSLA:
 		BuildPaletteOrder: 8
 		Prerequisites: anyhq
 		Queue: Defense.Soviet
-		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
+		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
 	Health:
 		HP: 60000
 	Armor:
@@ -996,7 +996,7 @@ GAP:
 	WithSpriteBody:
 		PauseOnCondition: lowpower || deployed
 	Health:
-		HP: 600
+		HP: 60000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -1019,7 +1019,7 @@ GAP:
 		Image: pips
 		Sequence: tag-hold
 		Position: Top
-		Margin: 0, -6
+		Margin: 0, 4
 		RequiresCondition: deployed
 	Power:
 		Amount: -80

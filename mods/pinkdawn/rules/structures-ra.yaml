@@ -1044,7 +1044,7 @@ FIX2:
 		SpawnOffset: 1,1
 		RequiresCondition: !build-incomplete && nod.player && gratisair
 	FreeActor@3:
-		Actor: HELI
+		Actor: HEL2
 		Facing: 768
 		SpawnOffset: 1,1
 		RequiresCondition: !build-incomplete && allies.player && gratisair
@@ -1154,7 +1154,7 @@ DOME:
 		BuildPaletteOrder: 10
 		Prerequisites: anypower, vehicleproduction
 		Queue: Building.Allies, Building.Soviet
-		Description: Provides Radar and 'Spy Plane' support-power.\n'Spy Plane' is only available for Soviet player.\nRequires power to operate.
+		Description: Provides Radar and 'Spy Plane' support-power.\nRequires power to operate.\n\n'Spy Plane' is only available for Soviet player.
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3

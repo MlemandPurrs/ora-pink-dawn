@@ -989,7 +989,7 @@ HPAD:
 		SpawnOffset: 0,1
 		RequiresCondition: !build-incomplete && nod.player && gratisair
 	FreeActor@3:
-		Actor: HELI
+		Actor: HEL2
 		Facing: 896
 		SpawnOffset: 0,1
 		RequiresCondition: !build-incomplete && allies.player && gratisair

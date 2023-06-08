@@ -652,7 +652,7 @@ MNLY:
 		BuildPaletteOrder: 7
 		Prerequisites: anyfix
 		Queue: Vehicle.Allies
-		Description: Allies Main Battle Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+		Description: General-purpose Allies Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         TurnSpeed: 12
         Locomotor: tracked-crusher
@@ -823,7 +823,7 @@ MNLY:
 		BuildLimit: 1
 		Prerequisites: anyhq, fcom
 		Queue: Vehicle.Soviet
-		Description: Maximum one can be built.\nExtra large and slow tank.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
+		Description: Maximum one can be built.\n\nExtra large and slow tank.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 40
@@ -900,7 +900,7 @@ CTNK:
 		BuildPaletteOrder: 12
 		Prerequisites: atek
 		Queue: Vehicle.Allies
-		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instant relocate to any location.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
+		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
 	SelectionDecorations:
 	Health:
 		HP: 35000
@@ -994,7 +994,7 @@ V2RL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anyhq
-		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings\nWeak vs Tanks, Aircraft.
+		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks, Aircraft.
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -1113,7 +1113,7 @@ MGG:
 		Image: pips
 		Sequence: tag-hold
 		Position: Top
-		Margin: 0, -6
+		Margin: 0, 4
 		RequiresCondition: deployed
 
 APC3:
