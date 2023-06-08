@@ -593,7 +593,7 @@ PBOX:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && !loaded
+        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && loaded
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -663,7 +663,7 @@ HBOX:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && !loaded
+        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && loaded
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical

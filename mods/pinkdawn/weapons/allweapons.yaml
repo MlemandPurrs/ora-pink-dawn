@@ -1634,7 +1634,8 @@ PillboxGun:
 	ReloadDelay: 40
 	Range: 4c512
     InvalidTargets: Tree, Wall
-    Report: pillbox1.aud
+    StartBurstReport: pillbox1.aud
+    Burst: 3
 	Projectile: Bullet
 		Speed: 1c682
         Blockable: true
@@ -1835,7 +1836,7 @@ VolkovGun:
 ParaBomb:
 	ReloadDelay: 10
 	Range: 4c512
-	Report: chute1.aud
+	Report: grenade2.aud
 	Projectile: GravityBomb
 		Image: PARABOMB
 		OpenSequence: open
@@ -2046,12 +2047,12 @@ BehemothGun:
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
-		Explosions: small_frag
-		ImpactSounds: xplos.aud
+		Explosions: small_building
+		ImpactSounds: xplobig4.aud
 		ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
-		Explosions: sml_splash
+		Explosions: med_splash
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
@@ -2187,7 +2188,8 @@ Silenced:
 MachineGunInfantry:
 	ReloadDelay: 30
 	Range: 2c512
-	Report: mguninf1.aud
+	StartBurstReport: mguninf1.aud
+    Burst: 2
 	Projectile: Bullet
 		Speed: 1c682
     Warhead@1Dam: SpreadDamage

@@ -219,7 +219,7 @@ atek.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: In addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nWhen launched from the tech center, the Global Positioning System (GPS) Satellite will, because the Satellite can see much more of the battlefield, reveal the entire map when it reaches orbit.\nIn addition, it will able to determine the position of enemy units through the fog of war, capable of displaying their locations to the player that launched it.
+		Description: In addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nWhen launched from the tech center, the Global Positioning System (GPS) Satellite will, because the Satellite can see much more of the battlefield, reveal the entire map when it reaches orbit.\nIn addition, it will able to determine the position of enemy units through the fog of war, displaying their locations to the player that launched it.
         Category: Allies Buildings
 		Order: 13
 	RenderSprites:
@@ -713,6 +713,26 @@ strk.soviet.info:
 		Image: strk
         Palette: soviet
 
+dtrk.info:
+    Inherits: DTRK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A supply truck that has been loaded with a nuclear device to function as an adhoc delivery unit. It will detonate in a nuclear explosion when destroyed, causing destruction in the area.
+		Order: 18
+	RenderSprites:
+		Image: dtrk
+        Palette: allies
+    -MapEditorData:
+
+dtrk.soviet.info:
+    Inherits: dtrk.info
+	Encyclopedia:
+        Category: Soviet Vehicles
+	RenderSprites:
+		Image: dtrk
+        Palette: soviet
+
 r4wd.info:
     Inherits: R4WD
     Buildable:
@@ -1045,3 +1065,19 @@ mega.info:
 		Image: mega
         Palette: nodunits
     -MapEditorData:
+
+lst.allies.info:
+    Inherits: lst.info
+	Encyclopedia:
+        Category: Allies Navy
+	RenderSprites:
+		Image: lst
+        Palette: allies
+
+lst.soviet.info:
+    Inherits: lst.info
+	Encyclopedia:
+        Category: Soviet Navy
+	RenderSprites:
+		Image: lst
+        Palette: soviet

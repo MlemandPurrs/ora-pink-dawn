@@ -385,7 +385,7 @@
 		TakeOffOnResupply: true
 		VTOL: true
 		LandableTerrainTypes: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium
-		Crushes: crate, infantry
+		Crushes: mine, crate, infantry
 		CanSlide: True
 	HiddenUnderFog:
 		Type: GroundPosition
