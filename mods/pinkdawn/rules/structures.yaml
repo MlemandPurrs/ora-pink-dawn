@@ -368,6 +368,12 @@ PROC:
 			nod: nodproc
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+    ResourceValueMultiplier@AIBoost:
+        Modifier: 120
+        RequiresCondition: ai-income-boost
+	GrantConditionOnBotOwner@AIBoost:
+		Condition: ai-income-boost
+		Bots: normalai
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -432,6 +438,12 @@ SILO:
         Prerequisites: global-infiniteincome
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    CashTricklerMultiplier@AIBoost:
+        Modifier: 120
+        RequiresCondition: ai-income-boost && infiniteincome-enabled
+	GrantConditionOnBotOwner@AIBoost:
+		Condition: ai-income-boost
+		Bots: normalai
 
 PYLE:
 	Inherits: ^BaseBuilding
