@@ -1,5 +1,5 @@
 FACT.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -14,7 +14,7 @@ FACT.Husk:
 			nod: nodfact.husk
 
 NUKE.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -29,7 +29,7 @@ NUKE.Husk:
 			nod: nodnuke.husk
 
 NUK2.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -44,7 +44,7 @@ NUK2.Husk:
 			nod: nodnuk2.husk
 
 PROC.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 3072, 3056
 	Building:
@@ -59,7 +59,7 @@ PROC.Husk:
 			nod: nodproc.husk
 
 SILO.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 1024
 	Building:
@@ -73,7 +73,7 @@ SILO.Husk:
 			nod: nodsilo.husk
 
 PYLE.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -85,7 +85,7 @@ PYLE.Husk:
 		Image: pyle.husk
 
 HAND.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -97,7 +97,7 @@ HAND.Husk:
 		Image: hand.husk
 
 WEAP.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -110,7 +110,7 @@ WEAP.Husk:
 		Image: weap.husk
 
 AFLD.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 4096, 2048
 	Building:
@@ -123,7 +123,7 @@ AFLD.Husk:
 		Image: afld.husk
 
 FIX.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2730, 1450
 	Building:
@@ -135,7 +135,7 @@ FIX.Husk:
 		Image: fix.husk
 
 HPAD.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -145,7 +145,7 @@ HPAD.Husk:
 		Name: Helipad (Destroyed)
 
 HQ.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 1706
 	Building:
@@ -160,7 +160,7 @@ HQ.Husk:
 			nod: nodhq.husk
 
 EYE.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 1706
 	Building:
@@ -173,7 +173,7 @@ EYE.Husk:
 		Image: eye.husk
 
 MISS.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -186,7 +186,7 @@ MISS.Husk:
 		Image: miss.husk
 
 TMPL.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -199,7 +199,7 @@ TMPL.Husk:
 		Image: tmpl.husk
 
 BIO.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -212,7 +212,7 @@ BIO.Husk:
 		Image: bio.husk
 
 GTWR.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Tooltip:
@@ -221,7 +221,7 @@ GTWR.Husk:
 		Image: gtwr.husk
 
 GUN.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Turreted:
@@ -233,7 +233,7 @@ GUN.Husk:
 		Name: Gun Turret (Destroyed)
 
 ATWR.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 1024,1024
 	Tooltip:
@@ -242,7 +242,7 @@ ATWR.Husk:
 		Image: atwr.husk
 
 OBLI.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Tooltip:
@@ -251,7 +251,7 @@ OBLI.Husk:
 		Image: obli.husk
 
 SAM.Husk:
-	Inherits: ^CivBuildingHusk
+	Inherits: ^BaseBuildingHusk
 	Interactable:
 		Bounds: 2048, 1024
 	Building:

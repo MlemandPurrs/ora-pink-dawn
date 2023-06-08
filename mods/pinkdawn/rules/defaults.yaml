@@ -1698,3 +1698,20 @@
 	WithProductionIconOverlay:
 		Types: Veterancy
 		Prerequisites: army, ~global-veterancy
+
+^BaseBuildingHusk:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		GenericName: Building (Destroyed)
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	ScriptTriggers:
+	MapEditorData:
+		Categories: Husk
