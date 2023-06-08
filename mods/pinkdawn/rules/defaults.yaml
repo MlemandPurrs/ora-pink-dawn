@@ -627,6 +627,14 @@
 		RequiresCondition: parachute
         Palette: effect
         IsPlayerPalette: false
+	GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
+		WarnCrushCondition: crush-attempt-slow
+		WarnCrushDuration: 50
+		OnCrushCondition: crush-attempt-slow
+		OnCrushDuration: 100
+	GrantExternalConditionToCrusher@CRUSHSLOW:
+		OnCrushCondition: crush-slow
+		OnCrushDuration: 50
 
 ^Soldier:
 	Inherits: ^Infantry
