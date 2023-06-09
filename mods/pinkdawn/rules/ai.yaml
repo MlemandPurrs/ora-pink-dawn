@@ -167,7 +167,7 @@ Player:
 		VehiclesFactoryTypes: weap, afld
 		ProductionTypes: pyle, hand, weap, afld, hpad
 		SiloTypes: silo
-        DefenseTypes: gtwr, atwr, gun, obli, sam
+        DefenseTypes: gtwr, atwr, gun, obli
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
