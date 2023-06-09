@@ -613,7 +613,7 @@ MNLY:
 	Turreted:
 		TurnSpeed: 12
 	Armament:
-		Weapon: LightGun
+		Weapon: LightCannon
 		Recoil: 85
 		RecoilRecovery: 17
 		LocalOffset: 720,0,90
@@ -668,7 +668,7 @@ MNLY:
 		TurnSpeed: 12
         Offset: 0,0,12
 	Armament:
-		Weapon: MediumGun
+		Weapon: MediumCannon
 		Recoil: 128
 		RecoilRecovery: 26
 		LocalOffset: 768,0,90
@@ -720,7 +720,7 @@ MNLY:
 		TurnSpeed: 12
         Offset: 0,0,24
 	Armament:
-		Weapon: HeavyGun
+		Weapon: HeavyCannon
 		Recoil: 128
 		RecoilRecovery: 26
 		LocalOffset: 768,85,90, 768,-85,90
@@ -772,7 +772,7 @@ MNLY:
 	Turreted:
 		TurnSpeed: 12
 	Armament@PRIMARY:
-		Weapon: MammothGun
+		Weapon: MammothCannon
 		LocalOffset: 900,180,340, 900,-180,340
 		Recoil: 170
 		RecoilRecovery: 42
@@ -839,7 +839,7 @@ MNLY:
 	Turreted:
 		TurnSpeed: 12
 	Armament@PRIMARY:
-		Weapon: BehemothGun
+		Weapon: BehemothCannon
 		LocalOffset: 900,180,340, 900,-180,340
 		Recoil: 170
 		RecoilRecovery: 42

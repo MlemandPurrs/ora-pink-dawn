@@ -10,9 +10,9 @@
 #   9. TankFlamer
 #   10. ChemSpray
 #   11. Grenade
-#   12. LightGun
-#   13. MediumGun
-#   14. MammothGun
+#   12. LightCannon
+#   13. MediumCannon
+#   14. MammothCannon
 #   15. TurretGun
 #   16. MammothTusk
 #   17. MLRSMissiles
@@ -39,7 +39,7 @@
 #   38. PortaFireball
 #   39. PillboxGun
 #   40. PillboxSniper
-#   41. FlakCannon
+#   41. FlakGun
 #   42. Heal
 #   43. ATMine
 #   44. TanyaPistol
@@ -48,7 +48,7 @@
 #   47. Maverick
 #   48. ParaNuke
 #   49. ChainGun.Yak
-#   50. BehemothGun
+#   50. BehemothCannon
 #   51. BehemothChainGun
 #   52. MiniNuke
 #   53. DogJaw
@@ -480,7 +480,7 @@ Grenade:
 		InvalidTargets: Ground
 
 #   12. Light Tank's cannon
-LightGun:
+LightCannon:
 	ReloadDelay: 40
     Range: 5c768
 	Report: tnkfire3.aud
@@ -518,7 +518,7 @@ LightGun:
 		InvalidTargets: Ground
 
 #   13. Medium Tank's cannon
-MediumGun:
+MediumCannon:
 	ReloadDelay: 60
     Range: 5c256
     Report: tnkfire4.aud
@@ -556,7 +556,7 @@ MediumGun:
 		InvalidTargets: Ground
 
 #   14. Mammoth Tank's cannnons
-MammothGun:
+MammothCannon:
 	ReloadDelay: 80
     Range: 5c256
  	Burst: 2
@@ -1295,7 +1295,7 @@ BoatMissile:
 		InvalidTargets: Ground
 
 #   30. Heavy Tank's cannon
-HeavyGun:
+HeavyCannon:
 	ReloadDelay: 70
     Range: 5c256
  	Burst: 2
@@ -1690,7 +1690,7 @@ PillboxSniper:
 		ValidTargets: Ground
 
 #   41. weapon of Anti-Air Gun defense
-FlakCannon:
+FlakGun:
 	ReloadDelay: 10
 	Range: 6c0
 	Burst: 2
@@ -2018,7 +2018,7 @@ ChainGun.Yak.Left:
 	FirstBurstTargetOffset: -768,-64,0
 
 #   50. Behemoth Tank's cannons
-BehemothGun:
+BehemothCannon:
 	ReloadDelay: 100
     Range: 7c0
  	Burst: 2

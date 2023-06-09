@@ -740,7 +740,7 @@ AGUN:
 		Sequence: recoil
 	Armament:
         Name: primary
-		Weapon: FlakCannon
+		Weapon: FlakGun
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
         PauseOnCondition: !ammo
