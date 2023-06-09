@@ -374,7 +374,7 @@ HEL2:
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq
 		Queue: Aircraft.Allies, Aircraft.Neutral
-		Description: Helicopter Gunship with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description: Helicopter Gunship with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
 	Aircraft:
 		TurnSpeed: 24

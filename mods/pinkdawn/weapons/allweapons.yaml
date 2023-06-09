@@ -1414,7 +1414,7 @@ V2Missile:
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
 		ImpactSounds: xplos.aud, firebl3.aud
-		ValidTargets: Ground, Air, Ship, Trees
+		ValidTargets: Ground, Air, Ship, Tree
 	Warhead@5EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: ssplash3.aud
@@ -1858,7 +1858,7 @@ ParaBomb:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplos.aud
@@ -2007,7 +2007,7 @@ ChainGun.Yak.Right:
 		DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piffs
-		ValidTargets: Ground, Ship, Air, Trees
+		ValidTargets: Ground, Ship, Air, Tree
 	Warhead@3EffWater: CreateEffect
 		Explosions: water_piffs
 		ValidTargets: Water, Underwater
@@ -2031,7 +2031,7 @@ BehemothGun:
 		Inaccuracy: 128
 		InaccuracyType: PerCellIncrement
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 298
 		Damage: 12500
 		Versus:
             None: 25
@@ -2047,7 +2047,7 @@ BehemothGun:
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
-		Explosions: small_building
+		Explosions: building
 		ImpactSounds: xplobig4.aud
 		ImpactActors: false
 		InvalidTargets: Water
@@ -2069,7 +2069,6 @@ BehemothChainGun:
     Report: gun13.aud
 	Projectile: Bullet
 		Speed: 1c682
-        Inaccuracy: 256
         Blockable: true
     Warhead@1Dam: SpreadDamage
 		Spread: 128

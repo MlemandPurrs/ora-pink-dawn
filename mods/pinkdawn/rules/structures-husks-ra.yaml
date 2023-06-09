@@ -183,11 +183,11 @@ FCOM.Husk:
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: Forward Command (Destroyed)
+		Name: Command Post (Destroyed)
 	RenderSprites:
 		Image: fcom.husk
 

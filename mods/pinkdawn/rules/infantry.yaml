@@ -550,6 +550,7 @@ MEDI:
 		Description: Field medic infantry.\n\nSpecial: Regeneration\nSelf-heals slowly out of combat.\n\nHeals nearby Infantry units.
 	Mobile:
 		Speed: 40
+		PauseOnCondition: dont-move
 	RevealsShroud:
 		Range: 3c512
 	Health:
@@ -584,6 +585,11 @@ MEDI:
 	-WithDecoration@REDCROSS:
     -ExternalCondition@BARRACKS:
     -GrantCondition@BARRACKS:
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
 
 MECH:
 	Inherits: ^Soldier
@@ -619,6 +625,7 @@ MECH:
 	Mobile:
 		Speed: 40
 		Voice: Move
+		PauseOnCondition: dont-move
 	RevealsShroud:
 		Range: 3c512
 	Health:
@@ -645,6 +652,11 @@ MECH:
 		ValidTargets: Vehicle
 	Passenger:
 		CustomPipType: pip-blue
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
 
 TANY:
 	Inherits: ^Soldier

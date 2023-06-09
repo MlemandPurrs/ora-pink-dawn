@@ -219,7 +219,7 @@ atek.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: In addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nWhen launched from the tech center, the Global Positioning System (GPS) Satellite will, because the Satellite can see much more of the battlefield, reveal the entire map when it reaches orbit.\nIn addition, it will able to determine the position of enemy units through the fog of war, displaying their locations to the player that launched it.
+		Description: In addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nWhen launched from the tech center, the Global Positioning System (GPS) Satellite will, because the Satellite can see much more of the battlefield, reveal the entire map terrain when it reaches orbit.\nAdditionally, it will able to determine the position of enemy units through the fog of war, displaying their locations to the player that launched it.
         Category: Allies Buildings
 		Order: 13
 	RenderSprites:
@@ -437,7 +437,7 @@ gap.info:
 	Encyclopedia:
         Description: The Gap Generator allows the Allies to hide associated base from enemy sight. Any enemies scouting the area will only reveal around themselves. The Shroud will immediately close up once the invading unit is destroyed or leaves the area.
         Category: Allies Defenses
-		Order: 10
+		Order: 12
 	RenderSprites:
 		Image: gap
         Palette: allies
@@ -553,7 +553,7 @@ spy.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Master of disguise, the Spy can slip by enemy forces undetected. A versatile unit, the Spy can gather many kinds of information on an enemy player - what they're building, how much money they have, how many units they have, etc. Beware that Attack Dogs are not fooled by the Spy's appearance.
+        Description: Master of disguise, the Spy can slip by enemy forces undetected. A versatile unit, the Spy can gather many kinds of information on an enemy player - what they're building, how much money they have, how many units they have, etc. Beware that Attack Dogs are not fooled by the Spy's appearance.\nSpy are capable of cutting enemy base power by infiltration of their power production. A enemy base that has been cut power will not able to keep up their advanced or anti-air defenses running, or utilize the radar for a short duration.
         Category: Allies Infantry
 		Order: 8
 	RenderSprites:
@@ -720,6 +720,8 @@ dtrk.info:
 	Encyclopedia:
         Description: A supply truck that has been loaded with a nuclear device to function as an adhoc delivery unit. It will detonate in a nuclear explosion when destroyed, causing destruction in the area.
 		Order: 18
+	Encyclopedia:
+        Category: Allies Vehicles
 	RenderSprites:
 		Image: dtrk
         Palette: allies
@@ -772,7 +774,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: With the Heavy Personnel Carrier, the Soviets can transport up to 5 infantry units quickly across land. A tracked vehicle, the APC is the lightest unit with the ability to crush Sandbag and Wire Fences. The Turret-Mounted Machinegun helps keep infantry at bay while it goes about its mission.
+        Description: With the Heavy Personnel Carrier, the Soviets can transport up to 5 infantry units quickly across land. A tracked vehicle, the APC is the lightest unit with the ability to crush Sandbag and Wire Fences. The turret-mounted Machinegun helps to keep infantry at bay while it goes about its mission.
         Category: Soviet Vehicles
 		Order: 4
 	RenderSprites:

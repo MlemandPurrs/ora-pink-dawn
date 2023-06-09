@@ -242,7 +242,7 @@ Player:
 		VehiclesFactoryTypes: weap, afld, warf
 		ProductionTypes: pyle, hand, weap, afld, hpad, tent, barr, warf, 3fld
 		SiloTypes: silo, osil
-        DefenseTypes: gtwr, atwr, gun, obli, sam, hbox, pbox, ftur, tsla, agun, sam2
+        DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftur, tsla
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
@@ -333,6 +333,8 @@ Player:
 			e5: 15
             e8: 15
             shok: 15
+            medi: 5
+            mech: 5
 			harv: 10
             ohrv: 10
             ahrv: 10
@@ -375,8 +377,11 @@ Player:
             5tnk: 1
             jeep: 4
             bggy: 4
+            bike: 4
             r4wd: 4
             ftrk: 4
+            medi: 2
+            mech: 1
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2

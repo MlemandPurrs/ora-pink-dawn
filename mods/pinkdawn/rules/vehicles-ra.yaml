@@ -844,7 +844,7 @@ MNLY:
 		Recoil: 170
 		RecoilRecovery: 42
 		MuzzleSequence: muzzle
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || !wireless
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: BehemothChaingun
@@ -852,12 +852,12 @@ MNLY:
 		LocalYaw: -100, 100
 		Recoil: 10
 		MuzzleSequence: muzzle-mg
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || !wireless
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
 		Voice: Attack
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || !wireless
 	WithMuzzleOverlay:
 	ChangesHealth:
 		Step: 500
@@ -960,7 +960,7 @@ TTNK:
         Locomotor: tracked-crusher
         TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: dont-move || emp-crate-collected
 	RevealsShroud:
 		Range: 4c128
 	Armament:
@@ -983,6 +983,14 @@ TTNK:
 	RenderRangeCircle:
 	Passenger:
 		CustomPipType: pip-yellow
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
+    SpeedMultiplier@DONTTURN:
+        Modifier: 0
+        RequiresCondition: dont-move
 
 V2RL:
 	Inherits: ^Vehicle

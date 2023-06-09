@@ -702,7 +702,7 @@ AGUN:
     -RenderDetectionCircle:
 	Selectable:
 		Bounds: 1024, 1024
-		DecorationBounds: 1024, 1032, 0, -4
+		DecorationBounds: 1024, 1365, 0, -170
 	Valued:
 		Cost: 600
 	Tooltip:

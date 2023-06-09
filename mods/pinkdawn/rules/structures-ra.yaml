@@ -1459,8 +1459,8 @@ FCOM:
 		Queue: Building.Soviet
 		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank\nand Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Valued:
 		Cost: 1000
@@ -1584,7 +1584,7 @@ IRON:
 	SelectionDecorations:
 	Selectable:
 		Bounds: 2048, 2048, 0, 2
-		DecorationBounds: 2050, 2050, 0, -12
+		DecorationBounds: 2050, 2050, 0, -428
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1607,7 +1607,7 @@ IRON:
 		Name: Iron Curtain Device
         GenericStancePrefix: false
         GenericName: Iron Curtain
-        GenericVisibility: Ally, Neutral, Enemy        
+        GenericVisibility: Ally, Neutral, Enemy
 	ProvidesPrerequisite@buildingname:
 	Power:
 		Amount: -150
