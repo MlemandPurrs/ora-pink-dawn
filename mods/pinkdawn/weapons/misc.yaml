@@ -18,3 +18,26 @@ DemoTruckTargeting:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: DetonateAttack
+
+#   those dummies will help Artillery units that have
+#   ammo operated weaponry to remain at range proper
+#   when their ammo is reloading thus their weapon off 
+TargeterforV2RL:
+	ReloadDelay: 3
+	Range: 10c256
+    MinRange: 3c128
+    ValidTargets: Ground, Water, Tree
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+        ValidTargets: Ground, Water, Tree
+
+TargeterforMLRS:
+	ReloadDelay: 3
+	Range: 10c256
+    MinRange: 3c128
+    ValidTargets: Ground, Water, Tree
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+        ValidTargets: Ground, Water, Tree

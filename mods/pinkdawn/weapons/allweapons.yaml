@@ -1063,7 +1063,7 @@ HonestJohn:
 	Burst: 2
 	BurstDelays: 50
 	Range: 10c256
-	MinRange: 3c0
+	MinRange: 3c128
 	Report: rocket1.aud
 	Projectile: Bullet
 		Blockable: false

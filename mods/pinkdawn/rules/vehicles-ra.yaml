@@ -1024,9 +1024,15 @@ V2RL:
 	RevealsShroud:
 		Range: 6c0
 	Armament:
+        Name: primary
 		Weapon: V2Missile
 		PauseOnCondition: !ammo || emp-crate-collected
+    Armament@AIHelper:
+        Name: secondary
+        Weapon: TargeterforV2RL
+        PauseOnCondition: ammo || emp-crate-collected
 	AmmoPool:
+        Armaments: primary
 		Ammo: 1
 		AmmoCondition: ammo
 	ReloadAmmoPool:
