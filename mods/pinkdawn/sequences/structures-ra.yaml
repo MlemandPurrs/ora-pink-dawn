@@ -85,6 +85,25 @@ apwr.husk:
 		Length: *
 		UseTilesetExtension: true
 
+npwr:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+        Start: 1
+		Tick: 800
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+npwr.husk:
+	idle: npwr
+		Start: 1
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
 oref:
     Inherits: emp-overlay
 	idle:
