@@ -90,7 +90,7 @@ Sniper:
 		ValidTargets: Ground
 
 #   2. Apache's Chaingun
-HeliAGGun:
+HeliGunAG:
 	ReloadDelay: 25
 	Burst: 2
 	BurstDelays: 0
@@ -122,8 +122,8 @@ HeliAGGun:
         ValidTargets: Ground, Air, Helicopter
 
 #   ditto, against Air
-HeliAAGun:
-	Inherits: HeliAGGun
+HeliGunAA:
+	Inherits: HeliGunAG
 	ValidTargets: Air, Helicopter
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air, Helicopter
