@@ -628,6 +628,9 @@ HAND:
 		Priority: 2
 		SpawnOffset: 512,1024,0
 		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -1026,380,0
+		ExitCell: 0,2
 	Exit@fallback1:
 		SpawnOffset: -1024,256,0
 		ExitCell: -1,1
@@ -697,6 +700,9 @@ AFLD:
 	Exit@1:
 		SpawnOffset: -1024,0,0
 		ExitCell: 3,1
+	Exit@2:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,2
 	ProductionAirdrop:
 		Produces: Vehicle.Nod
 		ActorType: c17
@@ -774,6 +780,10 @@ WEAP:
 	Exit@1:
 		SpawnOffset: -512,-512,0
 		ExitCell: 0,1
+		ExitDelay: 3
+	Exit@2:
+		SpawnOffset: -512,-512,0
+		ExitCell: 0,2
 		ExitDelay: 3
 	Production:
 		Produces: Vehicle.GDI

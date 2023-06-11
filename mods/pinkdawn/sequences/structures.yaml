@@ -993,6 +993,15 @@ obli:
 		Offset: -1,-3
 	icon: obliicon
 		Offset: 0,0
+	active-lights: oblianim
+		Length: 17
+		Tick: 80
+		BlendMode: Additive
+	damaged-active-lights: oblianim
+        Start: 17
+		Length: 17
+		Tick: 80
+		BlendMode: Additive
 
 obli.husk:
 	idle: obli

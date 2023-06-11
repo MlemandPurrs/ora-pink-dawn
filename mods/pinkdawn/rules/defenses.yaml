@@ -223,6 +223,10 @@ OBLI:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+	WithChargeOverlay@BUILDUP:
+		Sequence: active-lights
+		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 
 SAM:
 	Inherits: ^Defense
