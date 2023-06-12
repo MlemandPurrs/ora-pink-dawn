@@ -97,6 +97,7 @@ Rules:
     pinkdawn|rules/structures-fake.yaml
     pinkdawn|rules/structures-husks-ra.yaml
 	pinkdawn|rules/vehicles-ra.yaml
+    pinkdawn|rules/ships-ra.yaml
 
 Sequences:
 	pinkdawn|sequences/structures.yaml

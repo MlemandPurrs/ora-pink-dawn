@@ -73,7 +73,7 @@ BOAT:
         BuildDuration: 900
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
-		Queue: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		Queue: Navy.GDI
 		Prerequisites: syrd
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:

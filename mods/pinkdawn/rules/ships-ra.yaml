@@ -1,0 +1,416 @@
+LST2:
+	Inherits: ^Ship
+	Inherits@TRANSPORT: ^Transport
+    Inherits@selection: ^SelectableSupportUnit
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Transport Ship
+	Buildable:
+        BuildDuration: 1400
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 0
+		Queue: Navy.Neutral
+		Prerequisites: syrd
+		Description: Transports ground units across water.\n\nUnarmed.
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	Mobile:
+		Locomotor: hovercraft
+		InitialFacing: 0
+		TurnSpeed: 40
+		Speed: 90
+		PauseOnCondition: notmobile
+	RevealsShroud:
+		Range: 3c512
+	Selectable:
+		Bounds: 2048, 2048
+		DecorationBounds: 1536, 1536
+	WithLandingCraftAnimation:
+		OpenTerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PassengerFacing: 0
+		LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	Sellable:
+		RequiresCondition: ship.sellable && !loaded
+
+PT:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Gunboat
+	Buildable:
+    	BuildDuration: 750
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 1
+		Queue: Navy.Neutral
+		Prerequisites: syrd
+		Description: Fast, scout and support ship.\n\nCan attack Submarines.\nStrong vs Naval units, Infantry.\nWeak vs Vehicles, Defenses.
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 60
+	RevealsShroud:
+		Range: 5c128
+	Turreted@PRIMARY:
+		Turret: primary
+		TurnSpeed: 12
+		Offset: 480,0,24
+	Turreted@SECONDARY:
+		Turret: secondary
+		TurnSpeed: 12
+		Offset: -461,0,18
+	Armament@PRIMARY:
+        Name: primary
+		Turret: primary
+		Weapon: BoatGun
+		LocalOffset: 480,0,40
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: MachineGunLight
+		LocalOffset: 128,0,43
+		MuzzleSequence: muzzle2
+        PauseOnCondition: reload-dc
+        ReloadingCondition: reload-mg
+	Armament@TERTIARY:
+		Name: tertiary
+		Turret: secondary
+		Weapon: DepthCharge
+		LocalOffset: 128,0,43
+		MuzzleSequence: muzzle
+        PauseOnCondition: reload-mg
+        ReloadingCondition: reload-dc
+    WithMuzzleOverlay:
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary
+		Turrets: primary, secondary
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+		Sequence: turret
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+		Sequence: turret2
+	RenderRangeCircle:
+	Selectable:
+        DecorationBounds: 1536, 1536
+
+CA:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Cruiser
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 3
+		Queue: Navy.Neutral
+		Prerequisites: syrd, anytier3
+		Description: Slow, long-ranged artillery ship.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units, Tanks.
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 8
+		Speed: 40
+	RevealsShroud:
+		Range: 6c0
+	Turreted@PRIMARY:
+		Turret: primary
+		Offset: -896,0,128
+		TurnSpeed: 12
+	Turreted@SECONDARY:
+		Turret: secondary
+		Offset: 768,0,128
+		TurnSpeed: 12
+	Armament@PRIMARY:
+        Name: primary
+		Turret: primary
+		Weapon: CruiserShell
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: CruiserShell
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+    WithMuzzleOverlay:
+	AttackTurreted:
+		Turrets: primary, secondary
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+	RenderRangeCircle:
+	Selectable:
+		DecorationBounds: 1877, 1877
+
+DD:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Destroyer
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 2
+		Queue: Navy.Neutral
+		Prerequisites: syrd, anyhq
+		Description: Multi-role fire-support ship.\n\nCan attack Aircraft and Submarines.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
+	Health:
+		HP: 50000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 50
+	RevealsShroud:
+		Range: 5c128
+	Turreted@PRIMARY:
+        Turret: primary
+		TurnSpeed: 12
+		Offset: 512,0,64
+	Turreted@SECONDARY:
+		Turret: secondary
+		TurnSpeed: 12
+		Offset: -761,0,128
+	Armament@PRIMARY:
+        Name: primary
+        Turret: primary
+		Weapon: StingerAG
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-air
+		ReloadingCondition: reload-ground
+	Armament@SECONDARY:
+		Name: secondary
+        Turret: primary
+		Weapon: StingerAA
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-ground
+		ReloadingCondition: reload-air
+	Armament@TERTIARY:
+		Name: tertiary
+		Turret: secondary
+		Weapon: MachineGunLight
+		LocalOffset: 128,0,43
+		MuzzleSequence: muzzle2
+        PauseOnCondition: reload-dc
+        ReloadingCondition: reload-mg
+	Armament@QUARTENARY:
+		Name: quartenary
+		Turret: secondary
+		Weapon: DepthCharge
+		LocalOffset: 128,0,43
+		MuzzleSequence: muzzle
+        PauseOnCondition: reload-mg
+        ReloadingCondition: reload-dc
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary, quartenary
+		Turrets: primary, secondary
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+		Sequence: turret
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+		Sequence: turret2
+    WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Selectable:
+		DecorationBounds: 1621, 1621
+
+SS:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Water, Underwater
+		InvalidTargets: NoAutoTarget, Structure
+	AutoTargetPriority@ATTACKANYTHING:
+		ValidTargets: Water, Underwater
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Submarine
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 5
+		Queue: Navy.Neutral
+		Prerequisites: syrd, anyhq
+		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
+	Health:
+		HP: 25000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: Torpedo
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+	AttackFrontal:
+        FacingTolerance: 0
+	Selectable:
+		DecorationBounds: 1621, 1621
+
+MSUB:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Missile Submarine
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 4
+		Queue: Navy.Neutral
+		Prerequisites: syrd, anytier3
+		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: SubMissile
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		FacingTolerance: 0
+	RenderRangeCircle:
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+	Selectable:
+		DecorationBounds: 1877, 1877
+
+NTS:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 2100
+	Tooltip:
+		Name: Nuclear Tactical Submarine
+        GenericStancePrefix: false
+        GenericName: Tactical Submarine
+        GenericVisibility: Ally, Neutral, Enemy        
+	Buildable:
+    	BuildDuration: 3500
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 6
+		BuildLimit: 1
+		Queue: Navy.Neutral
+		Prerequisites: syrd, anytier3
+		Description: Maximum one can be built.\n\nSubmerger nuclear-armed unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nLaunches nuclear torpedo against Ships.\nFires nuclear missile against Ground targets.
+	Health:
+		HP: 40000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 40
+	RevealsShroud:
+		Range: 5c0
+	Armament@AntiShip:
+        Name: primary
+		Weapon: NukeTorpedo
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: reload-antiground || !ammo
+		ReloadingCondition: reload-antiship
+	Armament@AntiGround:
+        Name: secondary
+		Weapon: NukeMissile
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: reload-antiship || !ammo
+		ReloadingCondition: reload-antiground
+	AttackFrontal:
+        Armaments: primary, secondary
+        FacingTolerance: 0
+	Selectable:
+		DecorationBounds: 1877, 1877
+	ReloadArmamentsBar:
+		Armaments: primary, secondary
+		Color: FFFF00
+	AmmoPool:
+        Armaments: primary
+		Ammo: 1
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 360
+		Count: 1

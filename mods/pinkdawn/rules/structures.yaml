@@ -532,7 +532,10 @@ PYLE:
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Barracks
+		Name: GDI Barracks
+        GenericStancePrefix: false
+        GenericName: Barracks
+        GenericVisibility: Ally, Neutral, Enemy
 	ProvidesPrerequisite:
 		Prerequisite: infantryproduction
 	Buildable:

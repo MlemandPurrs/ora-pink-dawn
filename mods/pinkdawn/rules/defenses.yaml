@@ -250,6 +250,7 @@ SAM:
 		Name: SAM Site
 	Buildable:
         BuildDuration: 1200
+        BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Nod
@@ -835,6 +836,7 @@ TSLA:
 		Name: Tesla Coil
 	Buildable:
         BuildDuration: 1200
+        BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: anyhq
 		Queue: Defense.Soviet
@@ -919,6 +921,7 @@ SAM2:
 		Name: SAM Site
 	Buildable:
         BuildDuration: 1200
+        BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Soviet

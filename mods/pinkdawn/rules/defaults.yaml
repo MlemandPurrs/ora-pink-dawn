@@ -842,7 +842,7 @@
 	Selectable:
 		Bounds: 1024,1024
 	Targetable:
-		TargetTypes: Ground, Water, Ship
+		TargetTypes: Ground, Ship
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	HiddenUnderFog:
@@ -876,6 +876,50 @@
         PlayerPalette: playernavy
 	GpsDot:
 		String: Ship
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 3c768
+	RenderDetectionCircle:
+
+^Submarine:
+	Inherits: ^Ship
+	-MustBeDestroyed:
+	Explodes:
+		Weapon: UnitExplodeSubmarine
+		EmptyWeapon: UnitExplodeSubmarine
+	Cloak:
+        DetectionTypes: Underwater
+		InitialDelay: 0
+		CloakDelay: 75
+		CloakSound: subshow1.aud
+		UncloakSound: subshow1.aud
+		CloakedCondition: underwater
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: !deployed
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+        AllowedTerrainTypes: Water
+    RevealsShroudMultiplier@Submerged:
+        Modifier: 50
+        RequiresCondition: underwater
+	Targetable:
+		TargetTypes: Ground, Ship, Submarine
+		RequiresCondition: !underwater
+	Targetable@Submerged:
+		TargetTypes: Underwater, Submarine
+		RequiresCondition: underwater
+	SpeedMultiplier@OnSurface:
+		Modifier: 120
+		RequiresCondition: deployed && !heavily-damaged
+	Targetable@AIHelper:
+		TargetTypes: SonarTarget
+		RequiresCondition: underwater
 
 ^DamagedOnLowPower:
 	GrantConditionOnDamageState@LOWPOWERDMG:
@@ -886,7 +930,7 @@
 		Delay: 52
 		StartIfBelow: 101
 		DamageCooldown: 0
-		RequiresCondition: atlowpower && !stopatmedium
+		RequiresCondition: atlowpower && !stopatmedium && !build-incomplete
 	GrantConditionOnPowerState@LOWPOWERDMG:
 		Condition: atlowpower
 		ValidPowerStates: Low, Critical

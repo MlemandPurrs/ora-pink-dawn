@@ -136,6 +136,8 @@ explosion:
 		Offset: 0, -2
 	big_splash: h2o_exp1
 		Offset: 0, -3
+	water_piff: wpiff
+	water_piffs: wpiffpiff
 	corpse: squish
 		ZOffset: -512
 		Tick: 1600
@@ -671,3 +673,18 @@ nopower:
     powerup-blocked:
 		Start: 8
 		Length: 1
+
+bubbles:
+	idle:
+		Length: *
+		Tick: 220
+
+torpedo:
+	idle: missile
+		Facings: 32
+		ZOffset: -1023
+
+missilets:
+	idle:
+		Facings: 32
+		ZOffset: 1023

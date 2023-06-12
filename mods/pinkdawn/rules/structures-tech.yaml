@@ -145,13 +145,13 @@ SYRD:
 	RevealsShroud:
 		Range: 3c0
 	Production:
-		Produces: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		Produces: Navy.Neutral
 		PauseOnCondition: build-incomplete || being-demolished || emp-affected-structure
-	ProductionQueue@GDINavy:
-		Type: Navy.GDI
+	ProductionQueue@NeutralNavy:
+		Type: Navy.Neutral
 		DisplayOrder: 5
 		Group: Navy
-		Factions: gdi
+		Factions: gdi, nod, allies, soviet
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
 		ReadyTextNotification: Unit ready.
@@ -162,59 +162,8 @@ SYRD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@NodNavy:
-		Type: Navy.Nod
-		DisplayOrder: 5
-		Group: Navy
-		Factions: nod
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@SovietNavy:
-		Type: Navy.Soviet
-		DisplayOrder: 5
-		Group: Navy
-		Factions: soviet
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@AlliesNavy:
-		Type: Navy.Allies
-		DisplayOrder: 5
-		Group: Navy
-		Factions: allies
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionBar@GDINavy:
-		ProductionType: Navy.GDI
-	ProductionBar@NodNavy:
-		ProductionType: Navy.Nod
-	ProductionBar@SovietNavy:
-		ProductionType: Navy.Soviet
-	ProductionBar@AlliesNavy:
-		ProductionType: Navy.Allies
+	ProductionBar@NeutralNavy:
+		ProductionType: Navy.Neutral
 	RepairsUnits:
 		HpPerStep: 1000
 		Interval: 15
@@ -230,25 +179,25 @@ SYRD:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
 		ExitCell: 0,2
-		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		ProductionTypes: Navy.Neutral
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,1024,0
 		Facing: 224
 		ExitCell: 2,2
-		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		ProductionTypes: Navy.Neutral
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: -1024,-1024,0
 		Facing: 96
 		ExitCell: 0,0
-		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		ProductionTypes: Navy.Neutral
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,-1024,0
 		Facing: 32
 		ExitCell: 2,0
-		ProductionTypes: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
+		ProductionTypes: Navy.Neutral
 	Power:
 		Amount: -40
 		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
@@ -259,6 +208,12 @@ SYRD:
 		Condition: ship.sellable
 		Range: 3c768
         RequiresCondition: !emp-affected-structure
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 7c512
+	RenderDetectionCircle:
+	Targetable@IsWaterStructure:
+		TargetTypes: WaterStructure
 
 COMM:
 	Inherits: ^TechBuilding

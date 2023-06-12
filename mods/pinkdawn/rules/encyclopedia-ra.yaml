@@ -1068,18 +1068,94 @@ mega.info:
         Palette: nodunits
     -MapEditorData:
 
-lst.allies.info:
-    Inherits: lst.info
+lst2.info:
+    Inherits: LST2
+    Buildable:
+        Queue: Nothing
 	Encyclopedia:
+        Description: This heavily-armored unit deploys men and vehicles during amphibious assault. It is not buildable unless a Shipyard is present.
         Category: Allies Navy
+		Order: 0
 	RenderSprites:
-		Image: lst
+		Image: lst2
         Palette: allies
 
-lst.soviet.info:
-    Inherits: lst.info
+lst2.soviet.info:
+    Inherits: lst2.info
 	Encyclopedia:
         Category: Soviet Navy
 	RenderSprites:
-		Image: lst
+		Image: lst2
+        Palette: soviet
+
+pt.info:
+    Inherits: PT
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The fastest and lightest of the Allies naval vessels, the Gunboat is good at scouting naval routes, and detecting Submarines before they can cause any mischief. Its depth charge launcher will automatically fire at any Submarine that is detected nearby.
+        Category: Allies Navy
+		Order: 0
+	RenderSprites:
+		Image: pt
+        Palette: allies
+
+dd.info:
+    Inherits: DD
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The mid-level naval vessel, the Destroyer is effective against land, air, and sea-based threats. Its fast-firing stinger missiles can hit air targets easily, and can also decimate nearby ground targets. If a Submarine gets detected nearby, its depth-charge launcher ensures that the Sub will be rapidly taken out of commission.
+        Category: Allies Navy
+		Order: 1
+	RenderSprites:
+		Image: dd
+        Palette: allies
+
+ca.info:
+    Inherits: CA
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Slow moving death and destruction. What the Cruiser lacks in speed, it makes up for in firepower and range. Able to lob destruction onto targets incredible distances away, this ship can decimate an enemy base in minutes. A favorite target of Submarines, these ships have no sea-based defenses, relying on the faster moving vessels like Destroyer and Gunboat to protect them.
+        Category: Allies Navy
+		Order: 2
+	RenderSprites:
+		Image: ca
+        Palette: allies
+
+ss.info:
+    Inherits: SS
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Silent and stealthy, Submarines can attack ships from afar. Subs must surface to fire, giving away their position, and opening themselves up to any nearby units that can hit them.
+        Category: Soviet Navy
+		Order: 1
+	RenderSprites:
+		Image: ss
+        Palette: soviet
+
+msub.info:
+    Inherits: MSUB
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: After it had became evident the allies have the advantage of attacking bases unhinderedly from sea out, a new fleet of submarines were comissioned that have got armed with deadly missile launchers. Their design objective being to reach the enemy shore unhinderedly and revealing themselves only to commence a barrage of rocket artillery that can make quick work of any enemy base unopposedly. 
+        Category: Soviet Navy
+		Order: 2
+	RenderSprites:
+		Image: msub
+        Palette: soviet
+
+nts.info:
+    Inherits: NTS
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Modeled after the success of the Advanced Tactical Submarine modification, each of those vessels carry a load of nuclear devices onboard, that can be either launched via torpedo or missile.
+        Category: Soviet Navy
+		Order: 3
+	RenderSprites:
+		Image: nts
         Palette: soviet
