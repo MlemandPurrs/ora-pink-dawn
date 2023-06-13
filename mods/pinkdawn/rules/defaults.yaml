@@ -791,7 +791,7 @@
 		Delay: 52
 		StartIfBelow: 101
 		DamageCooldown: 0
-		RequiresCondition: atlowpower && !stopatmedium
+		RequiresCondition: atlowpower && !stopatmedium && !build-incomplete
 	GrantConditionOnPowerState@LOWPOWERDMG:
 		Condition: atlowpower
 		ValidPowerStates: Low, Critical

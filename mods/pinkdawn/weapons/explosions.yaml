@@ -20,6 +20,11 @@
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@4EffWater: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
 
 BuildingExplode:
 	Warhead@1Eff: CreateEffect
@@ -77,9 +82,13 @@ UnitExplodeAir:
 
 UnitExplodeShip:
 	Inherits: UnitExplode
+    -Warhead@3Smu:
 	Warhead@2Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: xplobig6.aud
+	Warhead@4EffWater: CreateEffect
+		ValidTargets: Water
+		ImpactActors: false
 
 Demolish:
 	Warhead@1Dam: SpreadDamage

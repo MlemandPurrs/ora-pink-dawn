@@ -96,6 +96,7 @@ Weapons:
 	pinkdawn|weapons/explosions.yaml
 	pinkdawn|weapons/superweapons.yaml
 	pinkdawn|weapons/dinosaurs.yaml
+	pinkdawn|weapons/misc.yaml
 
 Cursors:
 	pinkdawn|cursors.yaml

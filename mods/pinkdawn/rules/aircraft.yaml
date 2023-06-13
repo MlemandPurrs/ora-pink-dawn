@@ -248,6 +248,7 @@ ORCA:
 		PauseOnCondition: !ammo || emp-crate-collected
 	WithMuzzleOverlay:
 	AutoTarget:
+        InitialStanceAI: HoldFire
 		ScanRadius: 5
 	AttackAircraft:
 		Armaments: primary, secondary
@@ -308,13 +309,13 @@ HELI:
 		Type: GroundPosition
 	Armament@PRIMARY:
 		Name: primary
-		Weapon: HeliAGGun
+		Weapon: HeliGunAG
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo || emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
-		Weapon: HeliAAGun
+		Weapon: HeliGunAA
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo || emp-crate-collected
@@ -334,6 +335,7 @@ HELI:
 	AttackMove:
 		Voice: Attack
 	AutoTarget:
+        InitialStanceAI: HoldFire
 		ScanRadius: 4
 	AttackAircraft:
 		Armaments: primary, secondary

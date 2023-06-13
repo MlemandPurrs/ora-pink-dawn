@@ -507,7 +507,7 @@ LTNK:
 	Turreted:
 		TurnSpeed: 12
 	Armament:
-		Weapon: LightGun
+		Weapon: LightCannon
 		Recoil: 85
 		RecoilRecovery: 17
 		LocalOffset: 720,0,90
@@ -553,7 +553,7 @@ MTNK:
 		TurnSpeed: 12
         Offset: 0,0,24
 	Armament:
-		Weapon: MediumGun
+		Weapon: MediumCannon
 		Recoil: 128
 		RecoilRecovery: 26
 		LocalOffset: 768,0,90
@@ -655,7 +655,7 @@ HTNK:
 	Turreted:
 		TurnSpeed: 12
 	Armament@PRIMARY:
-		Weapon: MammothGun
+		Weapon: MammothCannon
 		LocalOffset: 900,180,340, 900,-180,340
 		Recoil: 170
 		RecoilRecovery: 42
@@ -910,11 +910,17 @@ MLRS:
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
+        Name: primary
 		Weapon: HonestJohn
         Recoil: 0
 		LocalOffset: 0,-171,0, 0,171,0
         PauseOnCondition: !ammo || emp-crate-collected
+    Armament@AIHelper:
+        Name: secondary
+        Weapon: TargeterforMLRS
+        PauseOnCondition: ammo || emp-crate-collected
 	AmmoPool:
+        Armaments: primary
 		Ammo: 2
 		AmmoCondition: ammo
 	AttackMove:

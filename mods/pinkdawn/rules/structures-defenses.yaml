@@ -223,6 +223,10 @@ OBLI:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+    WithChargeOverlay@BUILDUP:
+		Sequence: active-lights
+		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 
 SAM:
 	Inherits: ^Defense
@@ -246,6 +250,7 @@ SAM:
 		Name: SAM Site
 	Buildable:
         BuildDuration: 1200
+        BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Nod
@@ -272,7 +277,7 @@ SAM:
         Name: primary
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || build-incomplete
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6

@@ -1,6 +1,6 @@
 #   Index weaponry
 #   1. Sniper
-#   2. HeliAGGun/HeliAAGun
+#   2. HeliGunAG/HeliGunAA
 #   3. TowerChaingun
 #   4. Pistol
 #   5. M16
@@ -10,9 +10,9 @@
 #   9. TankFlamer
 #   10. ChemSpray
 #   11. Grenade
-#   12. LightGun
-#   13. MediumGun
-#   14. MammothGun
+#   12. LightCannon
+#   13. MediumCannon
+#   14. MammothCannon
 #   15. TurretGun
 #   16. MammothTusk
 #   17. MLRSMissiles
@@ -58,9 +58,21 @@ Sniper:
 		ImpactActors: false
 		Inaccuracy: 171
 		ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piff
+		#   ImpactActors: false
+		Inaccuracy: 171
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piff
+        ImpactActors: true
+        Inaccuracy: 171
+		ValidTargets: Ship, WaterStructure
 
 #   2. Apache's Chaingun
-HeliAGGun:
+HeliGunAG:
 	ReloadDelay: 25
 	Burst: 2
 	BurstDelays: 0
@@ -90,10 +102,22 @@ HeliAGGun:
         ImpactActors: false
         Inaccuracy: 213
         ValidTargets: Ground, Air, Helicopter
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        #   ImpactActors: false
+        Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure
 
 #   ditto, against Air
-HeliAAGun:
-	Inherits: HeliAGGun
+HeliGunAA:
+	Inherits: HeliGunAG
 	ValidTargets: Air, Helicopter
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air, Helicopter
@@ -125,7 +149,19 @@ TowerGun:
 		Explosions: piffs
         ImpactActors: false
         Inaccuracy: 213
-        ValidTargets: Ground, Air
+        ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        #   ImpactActors: false
+		Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure
 
 #   4. Technician's Pistole
 Pistol:
@@ -154,6 +190,18 @@ Pistol:
         ImpactActors: false
 		Inaccuracy: 128
         ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piff
+        #   ImpactActors: false
+		Inaccuracy: 128
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piff
+        ImpactActors: true
+		Inaccuracy: 128
+		ValidTargets: Ship, WaterStructure
 
 #   5. Soldier's Rifle
 M16:
@@ -179,19 +227,53 @@ M16:
         DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
-        ImpactActors: false
 		Inaccuracy: 171
         ValidTargets: Ground
+        InvalidTargets: Water
 	Warhead@2Eff2: CreateEffect
 		Delay: 2
 		Explosions: piff
 		Inaccuracy: 171
         ValidTargets: Ground
+        InvalidTargets: Water
 	Warhead@2Eff3: CreateEffect
 		Delay: 4
 		Explosions: piff
 		Inaccuracy: 171
         ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piff
+		Inaccuracy: 171
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@3Eff2: CreateEffect
+		Delay: 2
+		Explosions: water_piff
+		Inaccuracy: 171
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@3Eff3: CreateEffect
+		Delay: 4
+		Explosions: water_piff
+		Inaccuracy: 171
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piff
+		Inaccuracy: 171
+		ValidTargets: Ship, WaterStructure
+	Warhead@5Eff2: CreateEffect
+		Delay: 2
+		Explosions: piff
+		Inaccuracy: 171
+		ValidTargets: Ship, WaterStructure
+	Warhead@5Eff3: CreateEffect
+		Delay: 4
+		Explosions: piff
+		Inaccuracy: 171
+		ValidTargets: Ship, WaterStructure
+
 
 #   6. Rocket Soldier's Bazooka
 Bazooka:
@@ -448,9 +530,14 @@ Grenade:
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   12. Light Tank's cannon
-LightGun:
+LightCannon:
 	ReloadDelay: 40
     Range: 5c768
 	Report: tnkfire3.aud
@@ -479,16 +566,22 @@ LightGun:
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
-		ImpactActors: false
+		ValidTargets: Ground, Tree
+        ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   13. Medium Tank's cannon
-MediumGun:
+MediumCannon:
 	ReloadDelay: 60
     Range: 5c256
     Report: tnkfire4.aud
@@ -517,16 +610,22 @@ MediumGun:
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
-		ImpactActors: false
+		ValidTargets: Ground, Tree
+        ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   14. Mammoth Tank's cannnons
-MammothGun:
+MammothCannon:
 	ReloadDelay: 80
     Range: 5c256
  	Burst: 2
@@ -557,13 +656,19 @@ MammothGun:
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
-		ImpactActors: false
+		ValidTargets: Ground, Tree
+        ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   15. Gun Turret's weapon
 TurretGun:
@@ -595,13 +700,19 @@ TurretGun:
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
-		ImpactActors: false
+		ValidTargets: Ground, Tree
+        ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   16. Mammoth Tank's rocket pods
 MammothTusk:
@@ -793,13 +904,19 @@ ArtilleryShell:
 	Warhead@3Eff: CreateEffect
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
-		ImpactActors: false
+		ValidTargets: Ground, Tree
+        ImpactActors: false
 		InvalidTargets: Water
 	Warhead@4Eff: CreateEffect
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   20. Machinegun for APC
 MachineGun:
@@ -826,6 +943,18 @@ MachineGun:
         ImpactActors: false
         Inaccuracy: 213
         ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        #   ImpactActors: false
+        Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure
 
 #   Machinegun for Jeep and Buggy
 MachineGunLight:
@@ -1031,7 +1160,7 @@ HonestJohn:
 	Burst: 2
 	BurstDelays: 50
 	Range: 10c256
-	MinRange: 3c0
+    MinRange: 3c128
 	Report: rocket1.aud
 	Projectile: Bullet
 		Blockable: false
@@ -1098,7 +1227,16 @@ APCGunAG:
 	Warhead@2Eff: CreateEffect
 		Explosions: small_frag
         ImpactActors: false
-		ValidTargets: Ground, Water
+		ValidTargets: Ground, Tree
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
 
 #   ditto, vs Air
 APCGunAA:
@@ -1207,6 +1345,17 @@ Vulcan:
         ImpactActors: false
         Inaccuracy: 213
         ValidTargets: Ground
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure
 
 #   29. Patrol boat Rockets
 BoatMissile:

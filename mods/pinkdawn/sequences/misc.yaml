@@ -145,6 +145,8 @@ explosion:
 	pulse_explosion_small: pulsefx1
 		BlendMode: Alpha
 		Tick: 80
+    water_piff: wpiff
+	water_piffs: wpiffpiff
 
 rallypoint:
 	flag: flagfly
