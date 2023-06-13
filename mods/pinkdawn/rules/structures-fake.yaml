@@ -67,6 +67,15 @@ FPWR:
 	WithBuildingBib:
 	RenderSprites:
 		Image: POWR
+	InfiltrateForDecoration:
+		Types: SpyInfiltrate
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate
 
 FAPW:
 	Inherits: ^FakeBuilding
@@ -100,6 +109,15 @@ FAPW:
 	WithBuildingBib:
 	RenderSprites:
 		Image: APWR
+	InfiltrateForDecoration:
+		Types: SpyInfiltrate
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate
 
 TENF:
 	Inherits: ^FakeBuilding

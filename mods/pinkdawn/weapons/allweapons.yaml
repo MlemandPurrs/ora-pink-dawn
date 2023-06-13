@@ -29,7 +29,7 @@
 #   28. A-10 Vulcan
 #   29. BoatMissile
 #   30. HeavyCannon
-#   31. FlakGun
+#   31. QuadGunAG/QuadGunAA
 #   32. V2Missile
 #   33. APTusk
 #   34. TeslaTankZap
@@ -1291,7 +1291,11 @@ APCGunAA:
 	Warhead@2Eff: CreateEffect
 		Explosions: small_poof
         ImpactActors: true
-		ValidTargets: Air, Helicopter
+		ValidTargets: Helicopter
+	Warhead@6Eff: CreateEffect
+		Explosions: flak_explosion
+        ValidTargets: Air
+        InvalidTargets: Helicopter, Airplane
 
 #   27. Orca Rockets
 OrcaRocketsAG:
@@ -1547,6 +1551,10 @@ QuadGunAA:
 		Explosions: small_poof
         ImpactActors: true
 		ValidTargets: Air, Helicopter
+	Warhead@6Eff: CreateEffect
+		Explosions: flak_explosion
+        ValidTargets: Air
+        InvalidTargets: Helicopter, Airplane
 
 #   32. V2 Rocket
 V2Missile:
@@ -1911,7 +1919,11 @@ FlakGun:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: small_poof
-        ValidTargets: Air, Helicopter, Airplane
+        ValidTargets: Helicopter, Airplane
+	Warhead@3Eff: CreateEffect
+		Explosions: flak_explosion
+        ValidTargets: Air
+        InvalidTargets: Helicopter, Airplane
 
 #   42. Medic's healing kit
 Heal:
@@ -1923,7 +1935,7 @@ Heal:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: -5000
+		Damage: -4000
 		ValidRelationships: Ally
 		ValidTargets: Heal
 		DebugOverlayColor: 00FF00
@@ -2376,7 +2388,7 @@ Repair:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: -7500
+		Damage: -6000
 		ValidRelationships: Ally
 		ValidTargets: Repair
 		DebugOverlayColor: 00FF00

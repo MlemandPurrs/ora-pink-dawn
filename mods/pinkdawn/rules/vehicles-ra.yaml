@@ -1129,6 +1129,11 @@ MGG:
 		Position: Top
 		Margin: 0, 4
 		RequiresCondition: deployed
+	ProximityExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+		ValidRelationships: Enemy, Neutral
+		Range: 5c0
+        RequiresCondition: !emp-crate-collected && !deployed
 
 APC3:
 	Inherits: ^TrackedVehicle

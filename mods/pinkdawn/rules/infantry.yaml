@@ -30,6 +30,15 @@ E1:
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
+    -RevealsShroudMultiplier@GAPGenerator:
+    -ExternalCondition@GAPGenerator:
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 
 E2:
 	Inherits: ^Soldier
@@ -70,6 +79,15 @@ E2:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 100
+    -RevealsShroudMultiplier@GAPGenerator:
+    -ExternalCondition@GAPGenerator:
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 
 E3:
 	Inherits: ^Soldier

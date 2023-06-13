@@ -149,6 +149,8 @@ explosion:
 		Tick: 80
 	mini_nuke_explosion: miniatomsfx
 		Length: *
+    flak_explosion: flak-hit
+        ZOffset: 511
 
 rallypoint:
 	flag: flagfly

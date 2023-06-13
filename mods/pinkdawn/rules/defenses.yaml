@@ -46,7 +46,7 @@ GTWR:
 		Amount: -20
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 GUN:
 	Inherits: ^Defense
@@ -105,7 +105,7 @@ GUN:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 ATWR:
 	Inherits: ^Defense
@@ -167,7 +167,7 @@ ATWR:
 		Amount: -60
 		RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
 
@@ -220,7 +220,7 @@ OBLI:
 		Amount: -75
 		RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
 	WithChargeOverlay@BUILDUP:
@@ -321,6 +321,8 @@ SAM:
 		RevokeDelay: 75
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 SBAG:
 	Inherits: ^Wall
@@ -611,7 +613,7 @@ PBOX:
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
         RefundPercent: 100
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 HBOX:
 	Inherits: ^Defense
@@ -681,7 +683,7 @@ HBOX:
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
         RefundPercent: 100
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 75
@@ -764,15 +766,17 @@ AGUN:
 		Count: 10
 		RequiresCondition: !ammo && !emp-affected-structure
 	AttackTurreted:
-		PauseOnCondition: lowpower && build-incomplete && emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
 	Power:
 		Amount: -45
-        RequiresCondition: !build-incomplete
+        RequiresCondition: !build-incomplete && !emp-affected-structure
 	WithBuildingBib:
         HasMinibib: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 FTWR:
 	Inherits: ^Defense
@@ -821,7 +825,8 @@ FTWR:
 	Power:
 		Amount: -20
         RequiresCondition: !build-incomplete && !emp-affected-structure
-	ProvidesPrerequisite@buildingname:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 TSLA:
 	Inherits: ^Defense
@@ -969,13 +974,15 @@ SAM2:
 		Count: 6
 		RequiresCondition: !ammo && !emp-affected-structure
 	AttackTurreted:
-		PauseOnCondition: lowpower && build-incomplete && emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
 	Power:
 		Amount: -30
 		RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
 	SequencePlaceBuildingPreview:
@@ -985,6 +992,7 @@ SAM2:
 GAP:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -1001,7 +1009,7 @@ GAP:
 		DecorationBounds: 1024, 2048, 0, -512
 	SelectionDecorations:
 	WithSpriteBody:
-		PauseOnCondition: lowpower || deployed
+		PauseOnCondition: lowpower || deployed || emp-affected-structure
 	Health:
 		HP: 60000
 	Armor:
@@ -1010,14 +1018,14 @@ GAP:
 		Range: 8c0
 	CreatesShroud:
 		Range: 9c0
-		RequiresCondition: !lowpower && !deployed
+		RequiresCondition: !lowpower && !deployed && !emp-affected-structure
 	WithRangeCircle@Normal:
 		Color: 008B8B
 		Width: 1
 		BorderColor: 000000
 		BorderWidth: 3
 		Range: 9c0
-		RequiresCondition: !deployed
+		RequiresCondition: !deployed && !emp-affected-structure
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
@@ -1030,7 +1038,7 @@ GAP:
 		RequiresCondition: deployed
 	Power:
 		Amount: -80
-        RequiresCondition: !build-incomplete && !deployed
+        RequiresCondition: !build-incomplete && !deployed && !emp-affected-structure
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	HitShape:
@@ -1043,6 +1051,17 @@ GAP:
 		Image: GAP
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
+	ProximityExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+		ValidRelationships: Enemy, Neutral
+		Range: 9c0
+        RequiresCondition: !deployed && !emp-affected-structure
+    -CaptureManager:
+    -Capturable:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished
 
 GAP.Clone:
     Inherits: GAP

@@ -244,6 +244,7 @@ ORCA:
 		Weapon: OrcaRocketsAA
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: HoldFire
@@ -273,6 +274,9 @@ ORCA:
 		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	GrantConditionOnBotOwner@simplified:
+		Condition: controlled-by-ai
+		Bots: normalai
 
 HELI:
 	Inherits: ^Helicopter
@@ -318,6 +322,7 @@ HELI:
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
 	AmmoPool:
 		Name: primary
 		Armaments: primary, secondary
@@ -356,6 +361,9 @@ HELI:
 		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	GrantConditionOnBotOwner@simplified:
+		Condition: controlled-by-ai
+		Bots: normalai
 
 HEL2:
 	Inherits: ^Helicopter
@@ -404,6 +412,7 @@ HEL2:
 		Weapon: HeliRocketsAA
 		LocalOffset: 128,-213,-85, 128,213,-85
 		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
 	AmmoPool:
 		Name: primary
 		Armaments: primary, secondary
@@ -443,6 +452,9 @@ HEL2:
 		RequiresCondition: airborne && emp-crate-collected
     RenderSprites:
         Image: heli
+	GrantConditionOnBotOwner@simplified:
+		Condition: controlled-by-ai
+		Bots: normalai
 
 HIND:
 	Inherits: ^Helicopter
@@ -461,7 +473,7 @@ HIND:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq
+		Prerequisites: 3fld, anyhq
 		Queue: Aircraft.Soviet, Aircraft.Neutral
 		Description: Dual armed, slow helicopter gunship.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -488,6 +500,7 @@ HIND:
 		LocalOffset: 128,-213,-85, 128,213,-85
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
 	Armament@TERTIARY:
 		Name: tertiary
 		Weapon: HindRocketsAG
@@ -498,6 +511,7 @@ HIND:
 		Weapon: HindRocketsAA
 		LocalOffset: 85,-213,-85, 85,213,-85
 		PauseOnCondition: !ammo2 || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
 	AmmoPool@1:
 		Name: primary
 		Armaments: primary, secondary
@@ -551,6 +565,9 @@ HIND:
 		RearmActors: hpad, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	GrantConditionOnBotOwner@simplified:
+		Condition: controlled-by-ai
+		Bots: normalai
 
 BADR:
 	Inherits: ^Plane

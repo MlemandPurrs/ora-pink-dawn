@@ -223,6 +223,10 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 1c0
+			UseGPSSattelite:
+				OrderName: GPSSpawner
+				Consideration@1:
+					Against: Ally
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv, ohrv, ahrv

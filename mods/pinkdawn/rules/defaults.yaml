@@ -318,6 +318,11 @@
 		Categories: Vehicle
 	GpsDot:
 		String: Vehicle
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -427,6 +432,13 @@
 		RequiresCondition: airborne
 	GpsDot:
 		String: Helicopter
+	RevealsShroud:
+		Range: 2c0
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^RepairsAircraftWithRepairBay:
 	ExternalCondition@AIRCRAFTREPAIR:
@@ -547,6 +559,13 @@
         DisableStop: false
 	GpsDot:
 		String: Plane
+	RevealsShroud:
+		Range: 2c0
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -726,6 +745,11 @@
 		RequiresCondition: !parachute
 		TargetTypes: Disguise
 	EdibleByLeap:
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -880,6 +904,13 @@
 		DetectionTypes: Underwater
 		Range: 3c768
 	RenderDetectionCircle:
+	RevealsShroud:
+		Range: 2c512
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^Submarine:
 	Inherits: ^Ship
@@ -920,6 +951,8 @@
 	Targetable@AIHelper:
 		TargetTypes: SonarTarget
 		RequiresCondition: underwater
+    RevealsShroudMultiplier@GAPGenerator:
+        RequiresCondition: within-gap-radius || !underwater
 
 ^DamagedOnLowPower:
 	GrantConditionOnDamageState@LOWPOWERDMG:
@@ -980,6 +1013,8 @@
 	MapEditorData:
 		Categories: Building
 	CommandBarBlacklist:
+	RevealsShroud:
+		Range: 3c0
 
 ^BaseBuilding:
 	Inherits: ^Building
@@ -1050,6 +1085,10 @@
 		Categories: Defense
 	-CommandBarBlacklist:
     -SpawnActorsOnSell:
+    -CaptureManager:
+    -Capturable:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished
 
 ^CivBuilding:
 	Inherits: ^Building
@@ -1718,7 +1757,7 @@
         TargetTypes: EMPApplicableBuilding
 	RejectsOrders:
 		RequiresCondition: emp-affected-structure
-    RevealsShroudMultiplier:
+    RevealsShroudMultiplier@EMPulse:
         Modifier: 0
         RequiresCondition: emp-affected-structure
 
@@ -1884,7 +1923,6 @@
 ^FakeBuilding:
 	Inherits: ^Building
     Inherits@LowPowerDamage: ^DamagedOnLowPower
-    #   Inherits@infiltration: ^InfiltratableFake
 	Health:
 		HP: 20000
 	Armor:
