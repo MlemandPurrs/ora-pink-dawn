@@ -1,0 +1,42 @@
+^AntMelee:
+	ReloadDelay: 30
+	Range: 1c512
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 3250
+        Versus:
+            None: 100
+            Light: 50
+            Medium: 56
+            Heavy: 25
+            Concrete: 0
+            Wood: 50
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+AntMandible:
+	Inherits: ^AntMelee
+	ReloadDelay: 10
+	Warhead@1Dam: SpreadDamage
+		Damage: 6500
+
+AntMandibleHeavy:
+	Inherits: AntMandible
+	ReloadDelay: 15
+	Burst: 2
+	BurstDelays: 20
+	StartBurstReport: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 9750
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+AntFireball:
+	Inherits: FireballLauncher
+	-Burst:
+	-BurstDelays:
+	Report: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 6200

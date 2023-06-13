@@ -1,0 +1,156 @@
+^GiantAnt:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@4: ^GenericSpeedModifier
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+        DeathTypes: DefaultDeath
+	Health:
+		HP: 2500
+	Armor:
+		Type: None
+	RevealsShroud:
+		Range: 3c0
+	AttackFrontal:
+	Mobile:
+		Speed: 90
+		TurnSpeed: 24
+        AlwaysTurnInPlace: true
+		Locomotor: wheeled-non-crusher
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 1024,1024,0,-5
+		DecorationBounds: 1030,1030,0,-2
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	WithDeathAnimation:
+        UseDeathTypeSuffix: false
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+            TiberiumDeath: 6
+			ElectricityDeath: 7
+		CrushedSequence: die-crushed
+	AttackMove:
+	HiddenUnderFog:
+	ActorLostNotification:
+	Guard:
+	Guardable:
+	Tooltip:
+		Name: Giant Ant
+		GenericName: Ant
+	DeathSounds@NORMAL:
+		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath
+	DeathSounds@BURNED:
+		Voice: Burned
+		DeathTypes: FireDeath
+	DeathSounds@ZAPPED:
+		Voice: Zapped
+		DeathTypes: ElectricityDeath
+	Voiced:
+		VoiceSet: GenericVoice
+	HitShape:
+		Type: Circle
+			Radius: 469
+	MapEditorData:
+		Categories: Critter
+	DrawLineToTarget:
+	RenderSprites:
+		Image: ant1
+
+BaseAnt:
+	Inherits: ^GiantAnt
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Giant Ant
+	Buildable:
+		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 1954
+    	BuildDuration: 450
+        BuildDurationModifier: 100
+		Prerequisites: ~disabled
+		Description: Irradiated insect that grew oversize.
+	Selectable:
+		Bounds: 1024, 1024, 0, -5
+		DecorationBounds: 1030, 1030, 0, -2
+	SelectionDecorations:
+	Health:
+		HP: 7500
+	Mobile:
+		Speed: 90
+		TurnSpeed: 24
+		Locomotor: wheeled-non-crusher
+	AutoTarget:
+		ScanRadius: 5
+	Armament:
+		Weapon: AntMandible
+	Voiced:
+		VoiceSet: AntVoice
+	AttackWander:
+		WanderMoveRadius: 30
+
+ScoutAnt:
+	Inherits: BaseAnt
+	Tooltip:
+		Name: Scout Ant
+	Health:
+		HP: 8500
+	Armor:
+		Type: Light
+	AutoTarget:
+		ScanRadius: 7
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: scoutant
+
+FireAnt:
+	Inherits: BaseAnt
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Fire Ant
+	Mobile:
+		Speed: 60
+	Armament:
+		Weapon: AntFireball
+	Health:
+		HP: 7500
+	Armor:
+		Type: Heavy
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: fireant
+
+WarriorAnt:
+	Inherits: BaseAnt
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Warrior Ant
+	Mobile:
+		Speed: 50
+	Health:
+		HP: 12500
+	Armor:
+		Type: Heavy
+	Armament:
+		Weapon: AntMandibleHeavy
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: warriorant

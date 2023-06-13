@@ -161,3 +161,11 @@ ThiefVoice:
 		Burned: dedman10
 		Zapped: dedman6
         Poisoned: dedman10
+
+AntVoice:
+	Voices:
+		Select: antbite
+		Action: antbite
+		Die: antdie
+		Burned: antdie
+		Zapped: antdie

@@ -98,6 +98,7 @@ Rules:
     pinkdawn|rules/structures-husks-ra.yaml
 	pinkdawn|rules/vehicles-ra.yaml
     pinkdawn|rules/ships-ra.yaml
+    pinkdawn|rules/giantants.yaml
 
 Sequences:
 	pinkdawn|sequences/structures.yaml
@@ -111,6 +112,7 @@ Sequences:
     pinkdawn|sequences/dinosaurs.yaml
 	pinkdawn|sequences/vehicles-ra.yaml
 	pinkdawn|sequences/structures-ra.yaml
+	pinkdawn|sequences/giantants.yaml
 
 TileSets:
 	pinkdawn|tilesets/desert.yaml
@@ -125,6 +127,7 @@ Weapons:
 	pinkdawn|weapons/superweapons.yaml
 	pinkdawn|weapons/dinosaurs.yaml
 	pinkdawn|weapons/misc.yaml
+	pinkdawn|weapons/giantants.yaml
 
 Cursors:
 	pinkdawn|cursors.yaml

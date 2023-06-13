@@ -1,0 +1,39 @@
+ant1:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Length: 8
+	run:
+		Start: 8
+		Length: 8
+		Facings: 8
+	bite:
+		Start: 72
+		Length: 4
+		Facings: 8
+	die:
+		Start: 104
+		Length: 8
+		Tick: 300
+	die-crushed:
+		Start: 104
+		Length: 8
+		Tick: 400
+		ZOffset: -511
+	icon: anticon
+
+fireant:
+	Inherits: ant1
+	Defaults: fireant
+	icon: anticon
+
+scoutant:
+	Inherits: ant1
+	Defaults: scoutant
+	icon: anticon
+
+warriorant:
+	Inherits: ant1
+	Defaults: warriorant
+	icon: anticon
