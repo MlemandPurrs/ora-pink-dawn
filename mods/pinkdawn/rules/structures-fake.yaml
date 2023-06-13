@@ -200,6 +200,15 @@ FREF:
 		Sequence: idle-top
 	RenderSprites:
 		Image: OREF
+	InfiltrateForDecoration:
+		Types: ThiefInfiltrate
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: ThiefInfiltrate
 
 WEAF:
 	Inherits: ^FakeBuilding
