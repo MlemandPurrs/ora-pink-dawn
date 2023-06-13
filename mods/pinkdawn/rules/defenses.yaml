@@ -277,7 +277,7 @@ SAM:
         Name: primary
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || build-incomplete
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6
@@ -953,7 +953,7 @@ SAM2:
         Name: primary
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || build-incomplete
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6
