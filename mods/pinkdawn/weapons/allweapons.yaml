@@ -1658,6 +1658,8 @@ TeslaTankZap:
 	Range: 7c0
 	Report: tesla1.aud
 	Projectile: TeslaZap
+	ValidTargets: Ground, Water
+    InvalidTargets: Wall
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 7500
@@ -1670,6 +1672,8 @@ TeslaTankZap:
             Wood: 100
             Aluminium: 100
             Steel: 100   
+        ValidTargets: Ground, Water
+        InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 	Warhead@2: GrantExternalCondition
 		Range: 0c256
@@ -1690,6 +1694,8 @@ PortaTesla:
 	Range: 3c512
 	Report: tesla1.aud
 	Projectile: TeslaZap
+	ValidTargets: Ground, Water
+    InvalidTargets: Wall
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 5000
@@ -1702,6 +1708,8 @@ PortaTesla:
             Wood: 100
             Aluminium: 100
             Steel: 100   
+        ValidTargets: Ground, Water
+        InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 
 #   36. Tesla Coil's zap
@@ -1710,6 +1718,8 @@ TeslaZap:
 	Range: 8c512
 	Report: tesla1.aud
 	Projectile: TeslaZap
+	ValidTargets: Ground, Water
+    InvalidTargets: Wall
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 10000
@@ -1722,6 +1732,8 @@ TeslaZap:
             Wood: 100
             Aluminium: 100
             Steel: 100   
+        ValidTargets: Ground, Water
+        InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 	Warhead@2: GrantExternalCondition
 		Range: 0c256

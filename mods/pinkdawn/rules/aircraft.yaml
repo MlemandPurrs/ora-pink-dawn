@@ -248,7 +248,7 @@ ORCA:
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 6
+		#   ScanRadius: 5c767
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -340,7 +340,7 @@ HELI:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 5
+		#   ScanRadius: 4c767
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -430,7 +430,7 @@ HEL2:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-        #   ScanRadius: 5
+        #   ScanRadius: 4c767
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -543,7 +543,7 @@ HIND:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 5
+		#   ScanRadius: 4c767
 	AttackAircraft:
 		Armaments: primary, secondary, tertiary, quartenary
 		FacingTolerance: 80
@@ -827,6 +827,7 @@ NMIG:
 		Queue: Aircraft.Soviet
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
+		BuildLimit: 1
 		Prerequisites: ~anyafld, fcom
 		Description: Maximum one can be built.\n\nMiG modified to carry one Nuclear bomb.\n\nStrong vs Everything.
 	Armament:

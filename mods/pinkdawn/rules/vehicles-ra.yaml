@@ -1055,6 +1055,7 @@ V2RL:
 	SelectionDecorations:
 	Explodes:
 		Weapon: FlametankExplode
+        EmptyWeapon: UnitExplode
 	Selectable:
 		DecorationBounds: 1128, 1128
 	RenderRangeCircle:
