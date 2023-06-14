@@ -681,6 +681,12 @@ hq:
 		UseTilesetExtension: true
 		Length: *
 	icon: gdihqicon
+	white-light: white-light
+		Length: *
+		Tick: 80
+	damaged-white-light: white-light
+		Length: *
+		Tick: 80
 
 hq.husk:
 	idle: hq
@@ -708,6 +714,12 @@ nodhq:
 		Length: *
 		UseTilesetExtension: true
 	icon: hqicon
+	white-light: white-light
+		Length: *
+		Tick: 80
+	damaged-white-light: white-light
+		Length: *
+		Tick: 80
 
 nodhq.husk:
 	idle: nodhq
@@ -803,6 +815,16 @@ tmpl:
 		Offset: 0,0
 	icon: tmplicon
 		Offset: 0,0
+	red-light: red-light
+		Length: *
+		Offset: 0,0
+		Tick: 100
+		BlendMode: Additive
+	damaged-red-light: red-light
+		Length: *
+		Offset: 0,0
+		Tick: 100
+		BlendMode: Additive
 
 tmpl.husk:
 	idle: tmpl

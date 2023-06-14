@@ -1136,6 +1136,12 @@ HQ:
 	ProvidesPrerequisite@WIRELESS:
 		Prerequisite: activeradar
 		RequiresCondition: !jammed && !lowpower && !build-incomplete
+    WithIdleOverlay@1:
+        Palette: effect
+        Sequence: white-light
+        Offset: 640,300,0
+        PauseOnCondition: lowpower
+        RequiresCondition: !build-incomplete
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -1236,7 +1242,7 @@ TMPL:
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq
 		Queue: Building.Nod
-		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Biological Laboratory to charge-up)
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -1252,8 +1258,8 @@ TMPL:
 		Range: 4c0
 	NukePower@NuclearStrike:
 		OrderName: NukeMissile
-		PauseOnCondition: lowpower || emp-affected-structure
-		Prerequisites: ~bio, ~global-superweapons
+		PauseOnCondition: lowpower || emp-affected-structure || !bio-available
+		Prerequisites: ~global-superweapons
 		Icon: abomb
 		Cursor: nuke
 		ChargeInterval: 13500
@@ -1284,7 +1290,9 @@ TMPL:
 		ClockSequence: clock
 		CircleSequence: circles
 		SupportPowerPaletteOrder: 1
-	WithBuildingBib:
+    GrantConditionOnPrerequisite@BioCheck:
+        Condition: bio-available
+        Prerequisites: bio
 	WithSupportPowerActivationAnimation:
 		RequiresCondition: !build-incomplete
 	WithSupportPowerActivationOverlay:
@@ -1294,6 +1302,7 @@ TMPL:
 	Power:
 		Amount: -150
 		RequiresCondition: !build-incomplete && !emp-affected-structure
+	WithBuildingBib:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
@@ -1303,6 +1312,22 @@ TMPL:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+    #   yeah, great.. but for what purpose
+    #   and why there tho.
+    #   WithIdleOverlay@1:
+	#   Palette: effect
+    #   Sequence: red-light
+	#   Offset: 0,-426,1
+    #   PauseOnCondition: lowpower
+    #   RequiresCondition: !build-incomplete
+    #   WithIdleOverlay@2:
+    #   Palette: effect
+    #   Sequence: red-light
+    #   Offset: -43,0,1
+    #   PauseOnCondition: lowpower
+    #   RequiresCondition: !build-incomplete
+    #   i could tie this into Superweapon becoming ready,
+    #   or during superweapon chargeup, if a trait existed...
 
 EYE:
 	Inherits: ^BaseBuilding
