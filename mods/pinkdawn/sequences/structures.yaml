@@ -687,6 +687,7 @@ hq:
 	damaged-white-light: white-light
 		Length: *
 		Tick: 80
+        Offset: -2,0
 
 hq.husk:
 	idle: hq
@@ -720,6 +721,7 @@ nodhq:
 	damaged-white-light: white-light
 		Length: *
 		Tick: 80
+        Offset: -2,0
 
 nodhq.husk:
 	idle: nodhq

@@ -108,16 +108,16 @@ SpyVoice:
 
 TanyaVoice:
 	Voices:
-		Select: yo1,yes1,yeah1
-		Move: onit1,cmon1,rokroll1
-		Action: tuffguy1,bombit1
+		Select: yo2,yes2,yeah2
+		Move: onit2,cmon2,rokroll2
+		Action: tuffguy2,bombit2
 		Die: tandeth1
 		Burned: tandeth1
 		Zapped: tandeth1
 		Poisoned: tandeth1
-		Build: laugh1
-		Kill: gotit1,lefty1
-		Demolish: keepem1,tuffguy1
+		Build: laugh2
+		Kill: gotit2,lefty2
+		Demolish: keepem2,tuffguy2
 
 VolkovVoice:
 	Voices:

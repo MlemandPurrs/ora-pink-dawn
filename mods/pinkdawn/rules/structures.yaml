@@ -1432,7 +1432,7 @@ BIO:
 		BuildLimit: 1
 		Prerequisites: tmpl
 		Queue: Building.Nod
-		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon at Temple of Nod.\nUnlocks Chemical Trooper and SSM Launcher.
+		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon to charge.\nUnlocks Chemical Trooper and SSM Launcher.
 	Tooltip:
 		Name: Biological Laboratory
 	ProvidesPrerequisite@buildingname:

@@ -196,16 +196,16 @@ Cursors:
 			Start: 8
 			Length: 8
 	mouse6.shp: cursor
-		goldwrench:
+		enter-yellow:
 			Start: 0
 			Length: 3
-		goldwrench-minimap:
+		enter-yellow-minimap:
 			Start: 3
 			Length: 3
-		goldwrench-blocked:
+		enter-yellow-blocked:
 			Start: 6
 			Length: 1
-		goldwrench-blocked-minimap:
+		enter-yellow-blocked-minimap:
 			Start: 7
 			Length: 1
 		capture:
@@ -285,4 +285,11 @@ Cursors:
 			Length: 4
 		fix-minimap:
 			Start: 4
+			Length: 1
+    goldwrench.shp: cursor
+		goldwrench:
+			Start: 0
+			Length: 24
+		goldwrench-blocked:
+			Start: 24
 			Length: 1

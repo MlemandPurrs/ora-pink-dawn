@@ -1244,7 +1244,7 @@
 	CaptureNotification:
 		Notification: CivilianBuildingRestored
 	Capturable:
-		Types: building-neutral
+		Types: building-restore
 		ValidRelationships: Enemy, Neutral, Ally
 
 ^Gate:

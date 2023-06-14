@@ -268,6 +268,9 @@ E6:
 	Passenger:
 		CustomPipType: blue
 	EngineerRepair:
+        Cursor: enter-yellow
+        RepairBlockedCursor: enter-yellow-blocked
+        #   RepairSound: 
 	RepairsBridges:
         RepairNotification: BridgeRepaired
 	CaptureManager:
@@ -284,6 +287,11 @@ E6:
 		CaptureTypes: building-player
 		PlayerExperience: 0
 		RequiresCondition: !multiengineer
+	Captures@NEUTRALRESTORE:
+		CaptureTypes: building-restore
+		PlayerExperience: 0
+        EnterCursor: goldwrench
+        EnterBlockedCursor: goldwrench-blocked
 	GrantConditionOnPrerequisite@MULTIENGINEER:
 		Condition: multiengineer
 		Prerequisites: global-multiengineer
@@ -1131,3 +1139,47 @@ MEGA:
 	Passenger:
 		CustomPipType: red
 		Voice: Move
+
+E9:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Mortar Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: miss
+		Queue: Infantry.GDI
+		Description: Slow artillery infantry.\n\nStrong vs Buildings, slow-moving targets.
+	Mobile:
+		Speed: 30
+	Health:
+		HP: 2500
+	RevealsShroud:
+		Range: 3c512
+	AutoTarget:
+		ScanRadius: 8
+	RenderRangeCircle:
+	Armament:
+		Weapon: MortarShell
+		LocalOffset: 200,0,427
+		FireDelay: 15
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Attack
+	TakeCover:
+		ProneOffset: 300,0,-227
+	WithInfantryBody:
+        StandSequences: stand
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: GrenadierExplode
+		EmptyWeapon: GrenadierExplode
+		Chance: 100
