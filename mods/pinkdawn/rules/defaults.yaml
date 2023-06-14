@@ -428,7 +428,7 @@
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	Explodes@Air:
-		Weapon: HeliExplode
+		Weapon: UnitExplodeAir
 		RequiresCondition: airborne
 	GpsDot:
 		String: Helicopter

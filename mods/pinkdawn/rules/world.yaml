@@ -177,7 +177,7 @@
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
-		Description: European Allies\nThe military alliance of European nations, that hastily united against the imminent Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to many powerful\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.
+		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet

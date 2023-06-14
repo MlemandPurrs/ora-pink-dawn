@@ -112,8 +112,8 @@ A10:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: HeliExplode
-		EmptyWeapon: HeliExplode
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
 	-MapEditorData:
 
 TRAN:
@@ -223,7 +223,7 @@ ORCA:
 		BuildPaletteOrder: 1
 		Prerequisites: hpad, anyhq
 		Queue: Aircraft.GDI, Aircraft.Neutral
-		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
+		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200
@@ -248,7 +248,7 @@ ORCA:
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 5c767
+		ScanRadius: 5
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -340,7 +340,7 @@ HELI:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 4c767
+		ScanRadius: 4
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -430,7 +430,7 @@ HEL2:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-        #   ScanRadius: 4c767
+        ScanRadius: 4
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
@@ -543,7 +543,7 @@ HIND:
 		Voice: Attack
 	AutoTarget:
 		InitialStanceAI: HoldFire
-		#   ScanRadius: 4c767
+		ScanRadius: 4
 	AttackAircraft:
 		Armaments: primary, secondary, tertiary, quartenary
 		FacingTolerance: 80
@@ -624,8 +624,8 @@ BADR:
 		Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	Explodes:
-		Weapon: HeliExplode
-		EmptyWeapon: HeliExplode
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
 	-MapEditorData:
 	GpsDot:
 		String: BigPlane
@@ -706,6 +706,9 @@ GenericJet:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
     -MapEditorData:
+	Explodes:
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
     RenderSprites:
         Image: dummy
 
@@ -884,6 +887,6 @@ SMIG:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: HeliExplode
-		EmptyWeapon: HeliExplode
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
 	-MapEditorData:

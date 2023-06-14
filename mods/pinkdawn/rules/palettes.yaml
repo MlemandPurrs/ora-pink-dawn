@@ -170,3 +170,7 @@
 	PaletteFromFile@alphafx:
 		Name: alphafx
 		Filename: alphafx.pal
+	LightPaletteRotator:
+		ExcludePalettes: terrain, effect, desert
+        ModifyIndex: 8
+        RotationIndices: 127, 126, 125, 124, 123, 122, 121, 120, 121, 122, 123, 124, 125, 126

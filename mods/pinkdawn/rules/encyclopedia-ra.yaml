@@ -1159,3 +1159,16 @@ nts.info:
 	RenderSprites:
 		Image: nts
         Palette: soviet
+
+e9.info:
+    Inherits: E9
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Capable of rapidly damaging structures, these infantry make up for their lack of speed with a powerful punch. In addition to dealing with targeted structures, their shells are also effective against infantry attackers.
+        Category: GDI Infantry
+		Order: 8
+	RenderSprites:
+		Image: e9
+        Palette: gdi
+    -MapEditorData:

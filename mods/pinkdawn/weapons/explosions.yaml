@@ -72,12 +72,26 @@ UnitExplodeHarv:
 
 UnitExplodeAir:
 	Inherits: UnitExplode
-    ValidTargets: Air, Helicopter
+    ValidTargets: Ground, Water, Air, Helicopter
 	Warhead@1Dam: SpreadDamage
         ValidTargets: Air, Helicopter
 	Warhead@2Eff: CreateEffect
 		Explosions: small_building
+		ImpactActors: false
 		ImpactSounds: xplos.aud
+        ValidTargets: Ground, Air, Water, Tree
+    -Warhead@3Smu:
+
+UnitExplodeAirBig:
+	Inherits: UnitExplode
+    ValidTargets: Ground, Water, Air, Helicopter
+	Warhead@1Dam: SpreadDamage
+        ValidTargets: Air, Helicopter
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactActors: false
+		ImpactSounds: xplos.aud
+        ValidTargets: Ground, Air, Water, Tree
     -Warhead@3Smu:
 
 UnitExplodeShip:
@@ -196,4 +210,5 @@ CrateNapalm:
 HeliExplode:
 	Warhead@1Eff: CreateEffect
 		Explosions: building
+        ImpactActors: false
 		ImpactSounds: xplos.aud
