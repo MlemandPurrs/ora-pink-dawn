@@ -1172,3 +1172,19 @@ e9.info:
 		Image: e9
         Palette: gdi
     -MapEditorData:
+
+parabombs.info:
+    AlwaysVisible:
+    WithSpriteBody:
+	Interactable:
+	Buildable:
+		Prerequisites: fcom
+	Tooltip:
+		Name: Parabombs
+	Encyclopedia:
+		Description: Dropped from Badger Bombers, these explosives fall in a line over their target, removing the object targeted and anything in the area around it. Troops can see these falling and will attempt to leave the targeted area.
+		Order: 3
+		Category: Super Weapons
+	RenderSprites:
+		Image: pbmbicon
+        Palette: effect

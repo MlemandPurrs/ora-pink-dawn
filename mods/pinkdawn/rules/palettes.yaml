@@ -150,7 +150,7 @@
         Name: civilian
         BasePalette: player-static
         Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
-        ReplaceIndex: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+        ReplaceIndex: 192, 193, 195, 194, 197, 169, 199, 169, 195, 194, 196, 197, 42, 198, 199, 199
     IndexedPalette@allies:
         Name: allies
         BasePalette: player-static

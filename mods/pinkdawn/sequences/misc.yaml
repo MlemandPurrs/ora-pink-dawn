@@ -692,3 +692,12 @@ missilets:
 	idle:
 		Facings: 32
 		ZOffset: 1023
+
+bombicon:
+    idle: bombicnh.tem
+		AddExtension: False
+    icon: blank1
+
+pbmbicon:
+    idle: pbmbicon
+    icon: blank1
