@@ -17,7 +17,7 @@ fac2.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: fac2
-        Palette: soviet
+        Palette: nod
 
 powr.info:
     Inherits: POWR
@@ -38,7 +38,7 @@ powr.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: powr
-        Palette: soviet
+        Palette: nod
 
 apwr.info:
     Inherits: APWR
@@ -59,14 +59,14 @@ apwr.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: apwr
-        Palette: soviet
+        Palette: nod
 
 oref.info:
     Inherits: OREF
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Harvester and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
+        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys one Harvester and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
         Category: Allies Buildings
 		Order: 3
 	RenderSprites:
@@ -80,7 +80,7 @@ oref.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: oref
-        Palette: soviet
+        Palette: nod
 
 osil.info:
     Inherits: OSIL
@@ -101,7 +101,7 @@ osil.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: osil
-        Palette: soviet
+        Palette: nod
 
 tent.info:
     Inherits: TENT
@@ -126,7 +126,7 @@ barr.info:
 		Order: 6
 	RenderSprites:
 		Image: barr
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 warf.info:
@@ -148,7 +148,7 @@ warf.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: warf
-        Palette: soviet
+        Palette: nod
 
 fix2.info:
     Inherits: FIX2
@@ -169,7 +169,7 @@ fix2.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: fix2
-        Palette: soviet
+        Palette: nod
 
 hpad.allies.info:
     Inherits: hpad.info
@@ -189,7 +189,7 @@ hpad.allies.info:
 		Order: 8
 	RenderSprites:
 		Image: 3fld
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 dome.info:
@@ -212,7 +212,7 @@ dome.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: dome
-        Palette: soviet
+        Palette: nod
 
 atek.info:
     Inherits: ATEK
@@ -237,7 +237,7 @@ stek.info:
 		Order: 14
 	RenderSprites:
 		Image: stek
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 fcom.info:
@@ -250,7 +250,7 @@ fcom.info:
 		Order: 15
 	RenderSprites:
 		Image: fcom
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 csph.info:
@@ -276,7 +276,7 @@ iron.info:
 		Order: 17
 	RenderSprites:
 		Image: iron
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 mslo.info:
@@ -298,7 +298,7 @@ mslo.soviet.info:
         Category: Soviet Buildings
 	RenderSprites:
 		Image: mslo
-        Palette: soviet
+        Palette: nod
 
 sbag.allies.info:
     Inherits: sbag.info
@@ -414,7 +414,7 @@ ftwr.info:
 		Order: 7
 	RenderSprites:
 		Image: ftwr
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 tsla.info:
@@ -427,7 +427,7 @@ tsla.info:
 		Order: 9
 	RenderSprites:
 		Image: tsla
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 gap.info:
@@ -453,7 +453,7 @@ sam2.info:
 		Order: 12
 	RenderSprites:
 		Image: sam2
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 e1.allies.info:
@@ -643,7 +643,7 @@ tecn.soviet.info:
         Category: Soviet Infantry
 	RenderSprites:
 		Image: tecn
-        Palette: soviet
+        Palette: nod
 
 mcv2.info:
     Inherits: MCV2
@@ -664,7 +664,7 @@ mcv2.soviet.info:
         Category: Soviet Vehicles
 	RenderSprites:
 		Image: mcv2
-        Palette: soviet
+        Palette: nod
 
 ohrv.info:
     Inherits: OHRV
@@ -689,7 +689,7 @@ ahrv.info:
 		Order: 1
 	RenderSprites:
 		Image: ohrv-full
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 strk.info:
