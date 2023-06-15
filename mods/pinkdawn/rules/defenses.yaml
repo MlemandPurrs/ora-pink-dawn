@@ -294,7 +294,7 @@ SAM:
 		RequiresCondition: !ammo && !emp-affected-structure
 	AttackPopupTurreted:
         ClosedDamageMultiplier: 50
-		PauseOnCondition: lowpower && build-incomplete && emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
@@ -319,8 +319,6 @@ SAM:
 		Condition: is-shooting
 		ArmamentNames: primary
 		RevokeDelay: 75
-    WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
@@ -958,7 +956,7 @@ SAM2:
         Name: primary
 		Weapon: SAMMissile
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo || build-incomplete || lowpower || emp-affected-structure
+        PauseOnCondition: !ammo || build-incomplete || lowpower || emp-affected-structure
 	AmmoPool:
 		Armaments: primary
 		Ammo: 6
@@ -972,9 +970,9 @@ SAM2:
 	ReloadAmmoPool:
 		Delay: 60
 		Count: 6
-		RequiresCondition: !ammo && !emp-affected-structure
+        RequiresCondition: !ammo && !emp-affected-structure
 	AttackTurreted:
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+        PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
@@ -983,8 +981,6 @@ SAM2:
 		RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
-    WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65

@@ -716,6 +716,7 @@ NPWR:
 		Amount: 2000
         RequiresCondition: !emp-affected-structure
 	Explodes:
+        Type: CenterPosition
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 	RevealOnDeath:

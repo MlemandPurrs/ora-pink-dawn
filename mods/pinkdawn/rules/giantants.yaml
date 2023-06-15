@@ -106,6 +106,8 @@ ScoutAnt:
 	Inherits: BaseAnt
 	Tooltip:
 		Name: Scout Ant
+    Buildable:
+		Description: Fast moving, light ant.
 	Health:
 		HP: 8500
 	Armor:
@@ -123,6 +125,8 @@ FireAnt:
 		Cost: 750
 	Tooltip:
 		Name: Fire Ant
+    Buildable:
+		Description: Spits balls of fire.
 	Mobile:
 		Speed: 60
 	Armament:
@@ -140,6 +144,8 @@ WarriorAnt:
 	Inherits: BaseAnt
 	Valued:
 		Cost: 600
+    Buildable:
+		Description: Armored, hard hitting ant.
 	Tooltip:
 		Name: Warrior Ant
 	Mobile:

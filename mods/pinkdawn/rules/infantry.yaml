@@ -914,7 +914,7 @@ DOG:
 		BuildPaletteOrder: 8
 		Prerequisites: anyhq
 		Queue: Infantry.Soviet
-		Description: Canine with combat training.\nCan detect cloaked units.\n\nSpecial: Devouring\nGains health whenever eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
+		Description: Canine with combat training.\nCan detect cloaked units.\n\nSpecial: Devouring\nGains health while eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
 	RevealsShroud:
 		Range: 4c0
 	DetectCloaked:

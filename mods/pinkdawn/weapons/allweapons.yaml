@@ -1683,7 +1683,7 @@ TeslaTankZap:
 		ValidTargets: EMPApplicable
         InvalidTargets: Invulnerable
 	Warhead@3: GrantExternalCondition
-		Range: 0c256
+		Range: 0c512
 		Duration: 25
 		Condition: emp-affected-structure
 		ValidTargets: EMPApplicableBuilding
@@ -1743,7 +1743,7 @@ TeslaZap:
 		ValidTargets: EMPApplicable
         InvalidTargets: Invulnerable
 	Warhead@3: GrantExternalCondition
-		Range: 0c256
+		Range: 0c512
 		Duration: 25
 		Condition: emp-affected-structure
 		ValidTargets: EMPApplicableBuilding

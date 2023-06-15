@@ -83,16 +83,9 @@ UnitExplodeAir:
     -Warhead@3Smu:
 
 UnitExplodeAirBig:
-	Inherits: UnitExplode
-    ValidTargets: Ground, Water, Air, Helicopter
-	Warhead@1Dam: SpreadDamage
-        ValidTargets: Air, Helicopter
+	Inherits: UnitExplodeAir
 	Warhead@2Eff: CreateEffect
 		Explosions: building
-		ImpactActors: false
-		ImpactSounds: xplos.aud
-        ValidTargets: Ground, Air, Water, Tree
-    -Warhead@3Smu:
 
 UnitExplodeShip:
 	Inherits: UnitExplode

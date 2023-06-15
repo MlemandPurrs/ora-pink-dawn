@@ -707,8 +707,11 @@ GenericJet:
 		Condition: enable-smoke
     -MapEditorData:
 	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@Air:
 		Weapon: UnitExplodeAirBig
-		EmptyWeapon: UnitExplodeAirBig
+		RequiresCondition: airborne
     RenderSprites:
         Image: dummy
 
@@ -821,11 +824,11 @@ YAK:
 NMIG:
     Inherits: GenericJet
 	Valued:
-		Cost: 1600
+		Cost: 1800
 	Tooltip:
 		Name: Nuclear Bomber
 	Buildable:
-        BuildDuration: 2100
+        BuildDuration: 2700
         BuildDurationModifier: 100
 		Queue: Aircraft.Soviet
 		BuildAtProductionType: Plane
