@@ -1144,13 +1144,13 @@ E9:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 350
+		Cost: 450
 	Tooltip:
 		Name: Mortar Soldier
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 500
+		BuildDuration: 700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: miss

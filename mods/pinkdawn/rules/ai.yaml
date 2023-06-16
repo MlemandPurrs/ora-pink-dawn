@@ -277,6 +277,10 @@ Player:
             osil: 2
             iron: 1
             mslo: 1
+            fpwr: 2
+            fapw: 1
+            tenf: 1
+            weaf: 1
 		BuildingFractions:
 			proc: 20
             oref: 20
@@ -313,6 +317,10 @@ Player:
 			hpad: 1
             iron: 1
             mslo: 1
+            fpwr: 1
+            fapw: 1
+            tenf: 1
+            weaf: 1
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:

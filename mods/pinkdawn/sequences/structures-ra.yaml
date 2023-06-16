@@ -203,6 +203,10 @@ tent:
         Tick: 800
 	bib: bib3
 		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+            JUNGLE: JUNGLE
+            WINTER: WINTER
 	icon: tenticon
 		UseTilesetExtension: false
     fake-icon: tenficon
@@ -219,6 +223,10 @@ tent.husk:
 		Length: 1
 	bib: bib3
 		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+            JUNGLE: JUNGLE
+            WINTER: WINTER
 
 barr:
     Inherits: emp-overlay
@@ -892,7 +900,7 @@ csph:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
 	icon: csphicon
-    fake-icon: pdoficon
+    fake-icon: cspficon
 
 csph.husk:
 	idle: csph

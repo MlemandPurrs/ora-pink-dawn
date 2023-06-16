@@ -1521,7 +1521,7 @@ CSPH:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-		LocalCenterOffset: 0,-512,0
+		LocalCenterOffset: 0,-256,0
 	Health:
 		HP: 60000
 	Armor:

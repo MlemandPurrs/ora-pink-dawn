@@ -1761,6 +1761,21 @@
         Modifier: 0
         RequiresCondition: emp-affected-structure
 
+^EMPApplicableFake:
+	WithColoredOverlay@EMPulse:
+		RequiresCondition: emp-affected-structure
+        Color: 000000A3
+	WithIdleOverlay@EMPulse:
+		Sequence: emp-overlay
+		RequiresCondition: emp-affected-structure
+	TimedConditionBar@EMPulse:
+		Condition: emp-affected-structure
+		Color: FFFFFF
+	ExternalCondition@EMPulse:
+		Condition: emp-affected-structure
+    Targetable@EMPulse:
+        TargetTypes: EMPApplicableBuilding
+
 ^ExperienceMechanic:
 	GainsExperience:
 		LevelUpNotification: LevelUp

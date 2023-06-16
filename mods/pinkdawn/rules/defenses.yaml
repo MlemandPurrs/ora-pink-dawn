@@ -1025,6 +1025,8 @@ GAP:
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
+        DeployCursor: powerdown
+        DeployBlockedCursor: powerdown-blocked
 	WithDecoration@offline:
 		RequiresSelection: false
 		Image: pips

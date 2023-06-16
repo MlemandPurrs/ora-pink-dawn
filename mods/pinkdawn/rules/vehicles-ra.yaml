@@ -1123,6 +1123,8 @@ MGG:
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
+        DeployCursor: powerdown
+        DeployBlockedCursor: powerdown-blocked
 	WithDecoration@offline:
 		RequiresSelection: false
 		Image: pips
@@ -1134,6 +1136,9 @@ MGG:
 		Condition: within-gap-radius
 		ValidRelationships: Enemy, Neutral
 		Range: 5c0
+        RequiresCondition: !emp-crate-collected && !deployed
+	Power:
+		Amount: -15
         RequiresCondition: !emp-crate-collected && !deployed
 
 APC3:
