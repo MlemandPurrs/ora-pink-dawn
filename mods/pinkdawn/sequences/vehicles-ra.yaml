@@ -227,9 +227,6 @@ ttnk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	#  spinner: ttnk
-	#	Start: 32
-	#	Length: 32
 	active: ttnk-charge
 		Start: 0
 		Length: 14

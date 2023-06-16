@@ -418,10 +418,6 @@ Player:
 		McvTypes: mcv, mcv2
 		ConstructionYardTypes: fact, fac2
         McvFactoryTypes: weap,afld,warf
-    #   gamebreaking issue with AI aircraft is their refusal to return to rearm
-    #   because the way AI sees they are part of a task force, and should wait
-    #   until rest of it arrives before they can return to base when force scatters.
-    #   to let AI manage each Aircraft as its own single squad might work....
 	SquadManagerBotModule@AircraftOne:
 		RequiresCondition: enable-ai-player
 		RushInterval: 400

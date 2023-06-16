@@ -26,12 +26,10 @@ e1:
 		Length: 4
 		Facings: 8
 		Tick: 100
-	# stand -> prone transition
 	liedown:
 		Start: 128
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 176
 		Length: 2
@@ -57,42 +55,34 @@ e1:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Dancing
 	idle4:
 		Start: 517
 		Length: 9
 		Tick: 120
-	# Shot
 	die1:
 		Start: 381
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 390
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 398
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 406
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 418
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 366
 		Length: 11
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -101,7 +91,6 @@ e1:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -151,12 +140,10 @@ e2:
 		Start: 64
 		Length: 20
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 224
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 272
 		Length: 2
@@ -191,37 +178,30 @@ e2:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 494
 		Length: 11
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -230,7 +210,6 @@ e2:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e2rot
 		Start: 16
 		Length: 4
@@ -280,12 +259,10 @@ e3:
 		Start: 64
 		Length: 8
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 128
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 176
 		Length: 2
@@ -320,37 +297,30 @@ e3:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 397
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 406
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 414
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 422
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 434
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 382
 		Length: 11
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -359,7 +329,6 @@ e3:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e3rot
 		Start: 16
 		Length: 4
@@ -409,12 +378,10 @@ e4:
 		Start: 64
 		Length: 16
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 192
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 240
 		Length: 2
@@ -449,37 +416,30 @@ e4:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 494
 		Length: 10
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -488,7 +448,6 @@ e4:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -566,12 +525,10 @@ e5:
 		Start: 64
 		Length: 16
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 192
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 240
 		Length: 2
@@ -606,37 +563,30 @@ e5:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 494
 		Length: 10
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -645,7 +595,6 @@ e5:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -719,12 +668,10 @@ e6:
 		Length: 6
 		Facings: 8
 		Tick: 100
-	# stand -> prone transition
 	liedown:
 		Start: 66
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 114
 		Length: 2
@@ -755,37 +702,30 @@ e6:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 146
 		Length: 8
 		Tick: 80
-	# Explode
 	die2:
 		Start: 154
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 162
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 170
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 182
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 130
 		Length: 4
 		Tick: 80
-    # Zap
 	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
@@ -794,7 +734,6 @@ e6:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-    # Squish
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -844,12 +783,10 @@ rmbo:
 		Start: 64
 		Length: 4
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 96
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 144
 		Length: 2
@@ -888,32 +825,26 @@ rmbo:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 318
 		Length: 8
 		Tick: 80
-	# Explode
 	die2:
 		Start: 326
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 334
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 342
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 354
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 308
 		Length: 4

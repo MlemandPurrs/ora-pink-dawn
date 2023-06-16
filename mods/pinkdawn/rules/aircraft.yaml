@@ -689,13 +689,9 @@ GenericJet:
 	AmmoPool:
 		Ammo: 6
 		AmmoCondition: ammo
-    #   if something is to be selectable its on at all times.
 	Selectable:
 		Bounds: 1536, 1194, 0, 85
 		DecorationBounds: 1706, 1237, 0, 42
-        #   PauseOnCondition: airborne
-    #  Interactable:
-    #  RequiresCondition: airborne
 	Rearmable:
 		RearmActors: aprt, 2fld, 3fld
 	WithAmmoPipsDecoration:

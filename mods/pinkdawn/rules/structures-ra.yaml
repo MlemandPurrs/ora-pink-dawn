@@ -159,6 +159,8 @@ FAC2:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	DamageMultiplier@IsConyard:
+		Modifier: 90
 
 POWR:
 	Inherits: ^BaseBuilding
@@ -1724,7 +1726,6 @@ MSLO:
 	WithSupportPowerActivationOverlay:
 		RequiresCondition: !build-incomplete
 		Sequence: smoke
-        #   Offset: 510, 388, 0
          Offset: -68, 0, 0
 	MustBeDestroyed:
 		RequiredForShortGame: false

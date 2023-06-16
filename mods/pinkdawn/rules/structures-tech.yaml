@@ -153,8 +153,8 @@ SYRD:
 		Group: Navy
 		Factions: gdi, nod, allies, soviet
 		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyAudio: NavalUnitReady
+		ReadyTextNotification: Naval unit ready.
 		BlockedAudio: NoBuild
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress

@@ -1,4 +1,4 @@
-#   added: AirstrikeInbound, BridgeRepaired, BuildingSold, CivilianBuildingDestroyed, CivilianBuildingRestored, HarvesterAttack, InsufficientFunds, 
+#   added: AirstrikeInbound, BridgeRepaired, BuildingSold, CivilianBuildingDestroyed, CivilianBuildingRestored, HarvesterAttack, InsufficientFunds, NavalUnitLost, NavalUnitReady,
 #   RadarScanReady, StartGame, GameLoaded, GameSaved, Training, UnitRepaired, UnitSold, UnitStolen, all Timer announcements, ReinforceAvailable, ReinforceEnroute, 
 #   all EMP Missile related. Borrowed from RA: All chronosphere, iron curtain, gps sattelite related, spy plane ready.
 Speech:
@@ -40,6 +40,8 @@ Speech:
 		LowPower: lopower1
 		MissionAccomplished: accom1
 		MissionFailed: fail1
+		NavalUnitLost: navylst1
+        NavalUnitReady: navyrdy1
 		NewOptions: newopt1
 		NoBuild: nobuild1
 		NodStructureDestroyed: nstruc1
@@ -92,7 +94,7 @@ Speech:
 		SatelliteInitialized: satinit1
 		SatelliteReady: satredy1
 		SatelliteTerminated: satstop1
-	DisablePrefixes: AirstrikeReady, AirstrikeInbound, BaseAttack, BridgeRepaired, Building, BuildingCannotPlaceAudio, BuildingInfiltrated, BuildingInProgress, BuildingLost, BuildingSold, Cancelled, CivilianBuildingCaptured, CivilianBuildingDestroyed, CivilianBuildingRestored, CivilianKilled, ConstructionComplete, CreditsStolen, EnemyUnitsApproaching, EnemyStructureDestroyed, EnemyPlanesApproaching, HarvesterAttack, HarvesterLost, InsufficientPower, InsufficientFunds, RadarScanReady, IonCannonCharging, IonCannonReady, Leave, Lose, LowPower, MissionAccomplished, MissionFailed, NewOptions, NoBuild, NodStructureDestroyed, NotReady, NuclearWarheadApproaching, NuclearWeaponAvailable, NuclearWeaponLaunched, OnHold, PrimaryBuildingSelected, Reinforce, ReinforceAvailable, ReinforceEnroute, Repairing, SelectTarget, SilosNeeded, Training, UnitLost, UnitReady, UnitRepaired, UnitSold, UnitStolen, Win, StartGame, GameLoaded, GameSaved, OneMinuteRemaining, TwoMinutesRemaining, ThreeMinutesRemaining, FourMinutesRemaining, FiveMinutesRemaining, TenMinutesRemaining, TwentyMinutesRemaining, ThirtyMinutesRemaining, FourtyMinutesRemaining, FiftyMinutesRemaining, OneHourRemaining, TwoHoursRemaining, ThreeHoursRemaining, EMPMissileReady, EMPMissilePreparing, EMPMissileLaunched, ChronosphereCharging, ChronosphereReady, IronCurtainCharging, IronCurtainReady, SpyPlaneReady, SatteliteLaunched, SatelliteInitialized, SatelliteReady, SatelliteTerminated
+	DisablePrefixes: AirstrikeReady, AirstrikeInbound, BaseAttack, BridgeRepaired, Building, BuildingCannotPlaceAudio, BuildingInfiltrated, BuildingInProgress, BuildingLost, BuildingSold, Cancelled, CivilianBuildingCaptured, CivilianBuildingDestroyed, CivilianBuildingRestored, CivilianKilled, ConstructionComplete, CreditsStolen, EnemyUnitsApproaching, EnemyStructureDestroyed, EnemyPlanesApproaching, HarvesterAttack, HarvesterLost, InsufficientPower, InsufficientFunds, RadarScanReady, IonCannonCharging, IonCannonReady, Leave, Lose, LowPower, MissionAccomplished, MissionFailed, NavalUnitLost, NavalUnitReady, NewOptions, NoBuild, NodStructureDestroyed, NotReady, NuclearWarheadApproaching, NuclearWeaponAvailable, NuclearWeaponLaunched, OnHold, PrimaryBuildingSelected, Reinforce, ReinforceAvailable, ReinforceEnroute, Repairing, SelectTarget, SilosNeeded, Training, UnitLost, UnitReady, UnitRepaired, UnitSold, UnitStolen, Win, StartGame, GameLoaded, GameSaved, OneMinuteRemaining, TwoMinutesRemaining, ThreeMinutesRemaining, FourMinutesRemaining, FiveMinutesRemaining, TenMinutesRemaining, TwentyMinutesRemaining, ThirtyMinutesRemaining, FourtyMinutesRemaining, FiftyMinutesRemaining, OneHourRemaining, TwoHoursRemaining, ThreeHoursRemaining, EMPMissileReady, EMPMissilePreparing, EMPMissileLaunched, ChronosphereCharging, ChronosphereReady, IronCurtainCharging, IronCurtainReady, SpyPlaneReady, SatteliteLaunched, SatelliteInitialized, SatelliteReady, SatelliteTerminated
 
 Sounds:
 	Notifications:

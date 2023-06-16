@@ -965,10 +965,6 @@ MLRS:
 		Delay: 200
 		Count: 1
         PauseOnCondition: emp-crate-collected
-    #   this remains inaccurate here
-	#   ReloadArmamentsBar:
-	#	Armaments: primary
-	#	Color: FFFF00
     Targetable@Extra:
 		TargetTypes: Artillery
 	Passenger:

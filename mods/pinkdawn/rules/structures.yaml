@@ -160,6 +160,8 @@ FACT:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	DamageMultiplier@IsConyard:
+		Modifier: 90
 
 NUKE:
 	Inherits: ^BaseBuilding
@@ -304,10 +306,9 @@ NUK3:
 		BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-		BuildLimit: 1
 		Prerequisites: anytier3
 		Queue: Building.GDI, Building.Nod
-		Description: Provides a tremendous amount of power.
+		Description: Provides even more power,\nabove triple the standard amount.
 	Building:
 		Footprint: xXx XxX
 		Dimensions: 3,2
@@ -318,7 +319,7 @@ NUK3:
 		Range: 2c512
 	WithBuildingBib:
 	Power:
-		Amount: 400
+		Amount: 350
         RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
 	ScalePowerWithHealth:
 	RenderSprites:
@@ -853,7 +854,6 @@ FIX:
 	Reservable:
 	RepairsUnits:
 		HpPerStep: 1000
-		#   Interval: 87
         Interval: 26
 		PlayerExperience: 0
 		StartRepairingNotification: Repairing
@@ -1351,7 +1351,7 @@ EYE:
 		Prerequisites: miss
 		Queue: Building.GDI
 		BuildLimit: 1
-		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' super-weapon at Technology Center.\nRequires power to operate.
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3

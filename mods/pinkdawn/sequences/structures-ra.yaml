@@ -128,7 +128,7 @@ oref:
         ZOffset: -1c511
         Tick: 800
 	icon: oreficon
-    fake-icon: proficon
+    fake-icon: freficon
     
 oref.husk:
 	idle: oref
@@ -284,7 +284,7 @@ warf:
     dead: warfdead
         Tick: 800
 	icon: warficon
-    fake-icon: weaficon
+    fake-icon: fwaricon
 
 warf.husk:
 	idle: warfdead
@@ -826,7 +826,7 @@ agun.husk:
 
 sam2:
     Inherits: emp-overlay
-	idle: blank1
+	idle: blank1 # Empty first frame. We need WithSpriteBody for the make anim, and WSB needs at least a placeholder default sequence to work
 	turret: sam2
 		Facings: 32
 		UseClassicFacings: True

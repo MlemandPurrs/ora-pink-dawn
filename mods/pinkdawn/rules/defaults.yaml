@@ -444,7 +444,6 @@
 	ExternalCondition@AIRCRAFTREPAIR:
 		Condition: aircraft-repair
 	RepairsUnits:
-		#   ValuePercentage: 0
 		HpPerStep: 1000
 		Interval: 26
 		PlayerExperience: 0
@@ -453,7 +452,6 @@
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
 		RequiresCondition: aircraft-repair
-        #   RepairDamageTypes: Repair
 	WithDecoration@AIRCRAFTREPAIR:
 		Image: select
 		Palette: chrome
@@ -868,7 +866,8 @@
 	Targetable:
 		TargetTypes: Ground, Ship
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		Notification: NavalUnitLost
+		TextNotification: Naval unit lost.
 	HiddenUnderFog:
 	AttackMove:
 	WithDamageOverlay:
@@ -1259,7 +1258,6 @@
 		Types: concrete, gate
 	WithGateSpriteBody:
 		PauseOnCondition: lowpower
-        #   OpenSequence: open
 	Tooltip:
 		Name: Gate
 	Building:
@@ -1275,7 +1273,6 @@
 		PauseOnCondition: lowpower
 		OpeningSound: hydrod1.aud
 		ClosingSound: hvydoor1.aud
-		#   BlocksProjectilesHeight: 768
         BlocksProjectilesHeight: 1
 	RepairableBuilding:
 		RepairPercent: 20
@@ -1686,7 +1683,6 @@
 ^AutoTargetforGTWR:
     Inherits: ^AutoTargetGround
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank, Artillery
@@ -1715,7 +1711,6 @@
 ^AutoTargetforLightVehicle:
     Inherits: ^AutoTargetGroundAssaultMove
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank, Artillery
@@ -1730,7 +1725,6 @@
 ^AutoTargetforTanks:
     Inherits: ^AutoTargetGroundAssaultMove
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank

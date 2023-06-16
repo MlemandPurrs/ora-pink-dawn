@@ -6,8 +6,8 @@
 #   5. M16
 #   6. Bazooka
 #   7. BikeRockets
-#   8. InfantryFlamer
-#   9. TankFlamer
+#   8. Flamer
+#   9. BigFlamer
 #   10. ChemSpray
 #   11. Grenade
 #   12. LightCannon
@@ -19,14 +19,14 @@
 #   18. StnkRocketsAG/StnkRocketsAA
 #   19. ArtilleryShell
 #   20. Machinegun/MachinegunLight
-#   21. AGTMissile
-#   22. A-10 Napalm
-#   23. LASER
+#   21. TowerMissileAG/TowerMissileAA
+#   22. Napalm
+#   23. Laser
 #   24. SAMMissile
 #   25. HonestJohn
 #   26. APCGunAG/APCGunAA
 #   27. OrcaRocketsAG/OrcaRocketsAA
-#   28. A-10 Vulcan
+#   28. Vulcan
 #   29. BoatMissile
 #   30. HeavyCannon
 #   31. QuadGunAG/QuadGunAA

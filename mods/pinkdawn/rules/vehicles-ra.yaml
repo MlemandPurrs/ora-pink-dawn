@@ -377,7 +377,6 @@ R4WD:
     Capturable:
         RequiresCondition: !loaded
 
-#   todo: remake weapon into mini-ZSU23
 FTRK:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -408,7 +407,7 @@ FTRK:
 		Range: 6c128
 	Turreted:
 		TurnSpeed: 18
-		Offset: -256,0,272 # 288
+		Offset: -256,0,272
 	AutoTargetPriority@Air:
 		ValidTargets: Air
 		Priority: 2
@@ -967,16 +966,12 @@ TTNK:
 		Weapon: TeslaTankZap
 		LocalOffset: 0,0,213
         PauseOnCondition: emp-crate-collected
-	#   AttackFrontal:
-    #   PauseOnCondition: emp-crate-collected
 	AttackTesla:
 		PauseOnCondition: emp-crate-collected
 		ChargeAudio: tslachg2.aud
 		MaxCharges: 1
 		ReloadDelay: 120
     WithTeslaChargeAnimation:
-	#   WithIdleOverlay@SPINNER:
-	#	Sequence: spinner
 	SelectionDecorations:
 	Selectable:
 		DecorationBounds: 1030, 1030

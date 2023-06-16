@@ -876,8 +876,6 @@ TSLA:
 	GrantCondition@Overcharge:
 		Condition: TeslaHasCharge
 		RequiresCondition: TeslaChargeApplied
-        #   PauseOnCondition: 
-        #   && ( !TeslaChargeApplied2 || haspower )
 	TimedConditionBar@Charged:
 		Condition: TeslaChargeApplied
 		Color: f4f442
@@ -886,9 +884,6 @@ TSLA:
 		RequiresCondition: ( lowpower || TeslaHasCharge )
 	ExternalCondition@Overcharge:
         Condition: TeslaChargeApplied
-    #   GrantCondition@Overcharge2:
-    #   Condition: TeslaChargeApplied2
-    #   RequiresCondition: TeslaChargeApplied
 	WithDecoration@Overcharge:
 		Image: poweroff
 		Sequence: offline

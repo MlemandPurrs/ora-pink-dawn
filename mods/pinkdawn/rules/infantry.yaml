@@ -999,8 +999,6 @@ SHOK:
 		Weapon: PortaTesla
 		LocalOffset: 427,0,341
         FireDelay: 3
-		#   PauseOnCondition: reload-assist
-        #   ReloadingCondition: reload-normal
 	Armament@SECONDARY:
 		Weapon: TeslaCharge
 		LocalOffset: 427,0,341
@@ -1008,8 +1006,6 @@ SHOK:
 		OutsideRangeCursor: powerup
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
-		#   PauseOnCondition: reload-normal
-        #   ReloadingCondition: reload-assist
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 0
