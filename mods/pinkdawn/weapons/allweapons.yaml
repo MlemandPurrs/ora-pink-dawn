@@ -1564,18 +1564,18 @@ V2Missile:
 	MinRange: 3c128
 	Report: missile1.aud
 	Projectile: Bullet
-		Speed: 250
+		Speed: 162
 		Blockable: false
 		TrailImage: smokey
 		TrailDelay: 5
-		TrailInterval: 1
+		TrailInterval: 3
 		Inaccuracy: 213
 		Image: V2
 		Shadow: True
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 4500
+		Damage: 4000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Water, Tree
 		Versus:
@@ -2758,10 +2758,10 @@ SubMissile:
 		Speed: 162
 		Blockable: false
 		Image: MISSILE
-		LaunchAngle: 120
+		LaunchAngle: 124
 		TrailImage: smokey
 		TrailDelay: 5
-		TrailInterval: 1
+		TrailInterval: 3
 		Inaccuracy: 0c614
 		Shadow: True
 	Warhead@1Dam: SpreadDamage

@@ -35,7 +35,6 @@ Players:
 		Color: F5D378
 		LockColor: True
         LockFaction: True
-        LockTeam: True
 	PlayerReference@Multi1:
 		Name: Allies
 		Playable: True
@@ -44,7 +43,6 @@ Players:
 		Color: ABB7E4
 		LockColor: True
         LockFaction: True
-        LockTeam: True
 	PlayerReference@Multi2:
 		Name: Soviet
 		Playable: True
@@ -53,7 +51,6 @@ Players:
 		Color: D1987C
 		LockColor: True
         LockFaction: True
-        LockTeam: True
 	PlayerReference@Multi3:
 		Name: Nod
 		Playable: True
@@ -62,7 +59,6 @@ Players:
 		Color: FE1100
 		LockColor: True
         LockFaction: True
-        LockTeam: True
 
 Actors:
 	Actor83: tc02
