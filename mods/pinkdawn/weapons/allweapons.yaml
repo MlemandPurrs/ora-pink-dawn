@@ -1022,7 +1022,7 @@ TowerMissileAG:
 		RangeLimit: 8c409
 	Warhead@1Dam: SpreadDamage
 		Spread: 483
-		Damage: 3000
+		Damage: 6000
 		ValidTargets: Ground
 		Versus:
             None: 25

@@ -1061,7 +1061,7 @@ HQ:
 	Inherits@IDISABLE: ^DisabledOverlay
     Inherits@EMPMechanic: ^EMPApplicableStructure    
 	HitShape:
-		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		TargetableOffsets: 0,0,0, 0,512,0, 120,-598,0
 		Type: Rectangle
 			TopLeft: -1024, -384
 			BottomRight: 1024, 1024
@@ -1334,7 +1334,7 @@ EYE:
 	Inherits@IDISABLE: ^DisabledOverlay
     Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
-		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
+		TargetableOffsets: 0,0,0, 0,512,128, 120,-598,0
 		Type: Rectangle
 			TopLeft: -1024, -384
 			BottomRight: 1024, 1024
