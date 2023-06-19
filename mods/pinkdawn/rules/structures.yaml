@@ -674,7 +674,7 @@ WEAP:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: Weapons Factory
 	ProvidesPrerequisite:
 		Prerequisite: vehicleproduction
 	Buildable:
