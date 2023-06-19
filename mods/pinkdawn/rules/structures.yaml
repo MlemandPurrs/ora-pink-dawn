@@ -1367,11 +1367,11 @@ EYE:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !lowpower && !emp-affected-structure
+		RequiresCondition: !jammed && !build-incomplete && !lowpower && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower && !emp-affected-structure
+		RequiresCondition: !build-incomplete && !lowpower && !emp-affected-structure
 	IonCannonPower@IonCannon:
 		PauseOnCondition: lowpower || jammed || emp-affected-structure
 		Prerequisites: ~global-superweapons
