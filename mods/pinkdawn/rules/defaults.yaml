@@ -138,7 +138,6 @@
 	Cloak:
 		InitialDelay: 90
 		CloakDelay: 90
-		DetectionTypes: Stealth
 		CloakSound: trans1.aud
 		UncloakSound: trans1.aud
 		Palette: cloak
