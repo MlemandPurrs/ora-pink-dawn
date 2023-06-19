@@ -173,7 +173,7 @@ fix.nod.info:
 	Encyclopedia:
         Category: Nod Buildings
 	RenderSprites:
-		Image: fix
+		Image: nodfix
         Palette: nod
 
 hpad.info:

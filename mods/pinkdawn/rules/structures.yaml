@@ -267,7 +267,7 @@ NUK3:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
 		BuildLimit: 1
-		Prerequisites: anytier3
+		Prerequisites: ~disabled # anytier3
 		Queue: Building.GDI, Building.Nod
 		Description: Provides a tremendous amount of power.
 	Building:
