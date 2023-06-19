@@ -62,6 +62,7 @@ Packages:
 	pinkdawn|bits/winter
 	pinkdawn|bits/ss
 	pinkdawn|bits/flame32
+    pinkdawn|bits/chem32
 	pinkdawn|scripts
 	common|scripts
 	pinkdawn|uibits

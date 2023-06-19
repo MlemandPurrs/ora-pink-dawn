@@ -129,3 +129,22 @@ f22:
         Facings: 32
         UseClassicFacings: True
 	icon: f22icon
+
+rh66:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	rotor: lbrotor
+		Length: 4
+	slow-rotor: lbrotor
+		Start: 4
+		Length: 8
+	icon: rh66icon
+
+sfig:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: sfigicon

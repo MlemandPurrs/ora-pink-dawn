@@ -29,7 +29,7 @@ MCV:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
         Prerequisites: anyhq, anyfix
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -58,6 +58,7 @@ MCV:
 		Image: mcv
 		FactionImages:
 			nod: nodmcv
+            bossnod: nodmcv
 	ProductionCostMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
 		Prerequisites: global-expensivemcv
@@ -66,6 +67,20 @@ MCV:
 		Prerequisites: global-expensivemcv
 	GpsDot:
 		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 HARV:
 	Inherits: ^Vehicle
@@ -96,7 +111,7 @@ HARV:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: proc
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
 		Description: Collects Tiberium for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -155,8 +170,20 @@ HARV:
 		Image: harv
 		FactionImages:
 			nod: nodharv
+            bossnod: nodharv
 	GpsDot:
 		String: Harvester
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 TRUK:
 	Inherits: ^Vehicle
@@ -181,7 +208,7 @@ TRUK:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
 		Prerequisites: proc
 		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
 	Valued:
@@ -208,6 +235,20 @@ TRUK:
 		Actor: moneycrate
 	Passenger:
 		CustomPipType: pip-blue
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 JEEP:
 	Inherits: ^Vehicle
@@ -223,7 +264,7 @@ JEEP:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: weap
+		Prerequisites: vehicleproduction
 		Queue: Vehicle.GDI
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -252,6 +293,17 @@ JEEP:
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 BGGY:
 	Inherits: ^Vehicle
@@ -267,8 +319,8 @@ BGGY:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: afld
-		Queue: Vehicle.Nod
+		Prerequisites: vehicleproduction
+		Queue: Vehicle.Nod, Vehicle.Blackhand
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
 		TurnSpeed: 18
@@ -293,6 +345,17 @@ BGGY:
 		Voice: Attack
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 BIKE:
 	Inherits: ^Vehicle
@@ -309,7 +372,7 @@ BIKE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: anyhq
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Blackhand
 		Description: Fast scout vehicle with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: wheeled-non-crusher
@@ -337,6 +400,17 @@ BIKE:
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 APC:
 	Inherits: ^TrackedVehicle
@@ -357,7 +431,7 @@ APC:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: infantryproduction
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Allies
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Allies, Vehicle.Blackhand
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
@@ -407,6 +481,17 @@ APC:
 		RequiresCondition: unit.sellable && !loaded
     Capturable:
         RequiresCondition: !loaded
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MAAG:
 	Inherits: ^TrackedVehicle
@@ -486,6 +571,17 @@ MAAG:
         Image: maag
 	RenderRangeCircle:
 		RangeCircleType: aa
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 LTNK:
 	Inherits: ^TrackedVehicle
@@ -531,6 +627,17 @@ LTNK:
 		Voice: Attack
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MTNK:
 	Inherits: ^TrackedVehicle
@@ -583,6 +690,17 @@ MTNK:
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
 		DecorationBounds: 1194, 1194
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 FTNK:
 	Inherits: ^TrackedVehicle
@@ -633,6 +751,17 @@ FTNK:
     SpeedMultiplier@DONTTURN:
         Modifier: 0
         RequiresCondition: dont-move
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 HTNK:
 	Inherits: ^TrackedVehicle
@@ -699,6 +828,17 @@ HTNK:
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 STNK:
 	Inherits: ^Vehicle
@@ -782,7 +922,7 @@ ARTY:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
-		Queue: Vehicle.Nod, Vehicle.Allies
+		Queue: Vehicle.Nod, Vehicle.Allies, Vehicle.Blackhand
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
         Locomotor: tracked-non-crusher
@@ -823,6 +963,17 @@ ARTY:
 		Color: FFFF00
     Targetable@Extra:
 		TargetTypes: Artillery
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MSAM:
 	Inherits: ^TrackedVehicle
@@ -889,6 +1040,17 @@ MSAM:
 		TargetTypes: Artillery
 	Passenger:
 		CustomPipType: pip-yellow
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -969,6 +1131,17 @@ MLRS:
 		TargetTypes: Artillery
 	Passenger:
 		CustomPipType: pip-yellow
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MHQ:
 	Inherits: ^Vehicle
@@ -1029,3 +1202,400 @@ MHQ:
         RequiresCondition: !emp-crate-collected
     Targetable@Extra:
 		TargetTypes: Tank
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+
+#   todo: implement Ammo. tie JamsMissiles to having Ammo.
+WTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Selectable:
+		DecorationBounds: 1194, 1194
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Microwave Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: miss
+		Queue: Vehicle.Blackhand
+		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles with ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament:
+		Weapon: MicroWave
+		FireDelay: 7
+		LocalOffset: 500,0,140
+		MuzzleSequence: muzzle
+		PauseOnCondition: emp-crate-collected || !ammo
+	Armament@Sound:
+		Weapon: MicroWaveSound
+		PauseOnCondition: emp-crate-collected || !ammo
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		TargetFrozenActors: True
+		OpportunityFire: False
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	JamsMissiles:
+		Range: 5c0
+		DeflectionRelationships: Neutral, Enemy
+        RequiresCondition: ammo
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 5c0
+		Color: 0000FF80
+        RequiresCondition: ammo
+ 	AmmoPool:
+        Name: primary
+        Armaments: primary
+		Ammo: 1
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 1
+        AmmoPools: primary
+        FullSequence: pip-yellow
+		RequiresSelection: false
+	ReloadAmmoPool:
+		Delay: 91
+		Count: 1
+        PauseOnCondition: emp-crate-collected
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+
+#   im sorry but this really aint interesting unit to use.
+#   i mean its just a beefed up flametank that somehow performs worser.
+CHTK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Chemical Tank
+	Buildable:
+    	BuildDuration: 1650
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		Prerequisites: ~disabled # miss
+		Queue: Vehicle.Blackhand
+		Description: Heavily armored chemicals-spraying vehicle.\n\nStrong vs all Ground units.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 60
+		PauseOnCondition: dont-move || emp-crate-collected
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: BigChemSpray
+		LocalOffset: 512,128,42, 512,-128,42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: ChemTankExplode
+		EmptyWeapon: ChemTankExplode
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
+    SpeedMultiplier@DONTTURN:
+        Modifier: 0
+        RequiresCondition: dont-move
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+
+#   todo: make MSG also use-up Charge when deployed. via Ammo mechanic. To make it consistent with SGEN.
+MSG:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile Stealth Generator
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		Queue: Vehicle.Blackhand
+		Prerequisites: sgen
+		Description: Cloaks all nearby when deployed.\n\nUnarmed.
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 12
+		Speed: 80
+        PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c0
+	GrantCondition@PREVIEWWORKAROUND:
+		Condition: real-actor
+	WithMakeAnimation:
+		BodyNames: deployedbody
+	WithSpriteBody@deployed:
+		Sequence: idle-deployed
+		RequiresCondition: !undeployed && real-actor
+		Name: deployedbody
+	WithFacingSpriteBody:
+		RequiresCondition: undeployed || !real-actor
+	GrantConditionOnDeploy:
+		PauseOnCondition: emp-crate-collected
+        DeployedCondition: deployed
+        UndeployedCondition: undeployed
+		SkipMakeAnimation: false
+		Facing: 368
+		AllowedTerrainTypes: Clear, Road, Rough, Tiberium, BlueTiberium, RedTiberium
+		DeploySounds: placbldg.aud
+		UndeploySounds: clicky1.aud
+		UndeployOnMove: true
+	ProximityExternalCondition@StealthGenerator:
+		Condition: cloakfield-on
+		ValidRelationships: Ally
+		Range: 6c0
+        RequiresCondition: !emp-crate-collected && deployed && ammo
+	DetectCloaked@RadialIndicator:
+        DetectionTypes: Nonsense # we do this to get visual indicator
+		Range: 6c0
+        RequiresCondition: deployed && ammo
+	RenderDetectionCircle@RadialIndicator:
+        TrailCount: 2
+        Visible: Always
+        UpdateLineTick: 6
+        BorderWidth: 0
+        Color: 8b008b
+	Power:
+		Amount: -15
+        RequiresCondition: !emp-crate-collected && !deployed
+    PowerMultiplier@deployed:
+        Modifier: 200
+        RequiresCondition: !emp-crate-collected && deployed
+	AmmoPool:
+        Name: charge
+        Armaments: 
+		Ammo: 50
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 5
+        AmmoPools: charge
+        FullSequence: pip-blue
+		RequiresSelection: false
+    #   it turns out -value no longer works on ReloadAmmoPool
+	ReloadAmmoPool@Deployed:
+        AmmoPool: charge
+		Delay: 25
+		Count: -2
+        PauseOnCondition: emp-crate-collected || undeployed
+	ReloadAmmoPool@Undeployed:
+        AmmoPool: charge
+        Delay: 25
+        Count: 2
+        PauseOnCondition: emp-crate-collected || deployed
+
+T55H:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Scorpion Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 3900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 12
+		BuildLimit: 1
+		Prerequisites: ncom
+		Queue: Vehicle.Blackhand
+		Description: Maximum one can be built.\n\nExperimental modified tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nScorpion tail shoots Laser.\nStrong vs Everything.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || pauseforlaser
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament@Primary:
+		Weapon: MammothCannon
+		LocalOffset: 821,85,171, 821,-85,171
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected || ammoready
+		#	pausing on Laser firing to account for the below
+		#	issue somehwat as otherwise Laser can end up
+		#	going across the screen if both actors move away
+	Armament@Secondary:
+		Name: secondary
+		#	Ignores max range because LaserZap projectile 
+		#	doesnt have a RangeLimit field at all
+		Weapon: TankLaser
+		LocalOffset: -326,0,560
+		FireDelay: 90
+		MuzzlePalette: player-static
+        PauseOnCondition: emp-crate-collected || !ammoready
+	Armament@Tertiary:
+		Name: tertiary
+		Weapon: TankLaserFiringGFX
+		LocalOffset: -326,0,560
+		FireDelay: 20
+		MuzzleSequence: laser-muzzle
+		MuzzlePalette: player-static
+		PauseOnCondition: emp-crate-collected || !ammoready || !pointinglazer
+	Armament@Quartenary:
+		Name: quartenary
+		Weapon: TankLaserFiringSFX
+		LocalOffset: -326,0,560
+		PauseOnCondition: emp-crate-collected || !ammoready || !pointinglazer
+	GrantConditionWhileAiming:
+		Condition: pointinglazer
+	GrantCondition@momentaryimmobilize:
+		Condition: pauseforlaser
+		RequiresCondition: ammoready && pointinglazer
+    #   this is band-aid to prevent cancel attack order then move while charge-up
+	RejectsOrders:
+		RequiresCondition: emp-crate-collected || pauseforlaser
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        Armaments: primary, secondary, tertiary, quartenary
+        PauseOnCondition: emp-crate-collected
+	AmmoPool:
+		Name: lasercharge
+		Armaments: secondary
+		Ammo: 1
+		AmmoCondition: ammoready
+	ReloadAmmoPool:
+		AmmoPool: lasercharge
+		Delay: 400
+		Count: 1
+		PauseOnCondition: emp-crate-collected
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 1
+		FullSequence: pip-red
+		RequiresSelection: true
+		AmmoPools: lasercharge
+	WithMuzzleOverlay:
+	ChangesHealth:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 51
+		DamageCooldown: 150
+        RequiresCondition: !emp-crate-collected
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on

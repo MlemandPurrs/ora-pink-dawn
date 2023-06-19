@@ -42,6 +42,11 @@ button-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 385, 1, 2, 2, 26, 26, 2, 2
 
+button-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 129, 1, 2, 2, 26, 26, 2, 2
+	Inherits: button
+
 button-hover:
 	Inherits: ^ChromePink
 	PanelRegion: 161, 1, 2, 2, 26, 26, 2, 2
@@ -64,6 +69,11 @@ button-allies-hover:
 	Inherits: ^ChromePink
 	PanelRegion: 417, 1, 2, 2, 26, 26, 2, 2
 
+button-bossnod-hover:
+	Inherits: ^Chrome
+	PanelRegion: 161, 1, 2, 2, 26, 26, 2, 2
+	Inherits: button-hover
+
 button-disabled:
 	Inherits: ^ChromePink
 	PanelRegion: 161, 33, 2, 2, 26, 26, 2, 2
@@ -83,6 +93,10 @@ button-soviet-disabled:
 button-allies-disabled:
 	Inherits: ^ChromePink
 	PanelRegion: 417, 33, 2, 2, 26, 26, 2, 2
+
+button-bossnod-disabled:
+	Inherits: ^Chrome
+	PanelRegion: 161, 33, 2, 2, 26, 26, 2, 2
 
 button-pressed:
 	Inherits: ^ChromePink
@@ -104,6 +118,10 @@ button-allies-pressed:
 	Inherits: ^ChromePink
 	PanelRegion: 385, 33, 2, 2, 26, 26, 2, 2
 
+button-bossnod-pressed:
+	Inherits: ^Chrome
+	PanelRegion: 129, 33, 2, 2, 26, 26, 2, 2
+
 button-highlighted:
 	Inherits: ^ChromePink
 	PanelRegion: 129, 65, 2, 2, 26, 26, 2, 2
@@ -123,6 +141,10 @@ button-soviet-highlighted:
 button-allies-highlighted:
 	Inherits: ^ChromePink
 	PanelRegion: 385, 65, 2, 2, 26, 26, 2, 2
+
+button-bossnod-highlighted:
+	Inherits: ^Chrome
+	PanelRegion: 129, 65, 2, 2, 26, 26, 2, 2
 
 button-highlighted-hover:
 	Inherits: ^ChromePink
@@ -144,6 +166,10 @@ button-allies-highlighted-hover:
 	Inherits: ^ChromePink
 	PanelRegion: 417, 65, 2, 2, 26, 26, 2, 2
 
+button-bossnod-highlighted-hover:
+	Inherits: ^Chrome
+	PanelRegion: 161, 65, 2, 2, 26, 26, 2, 2
+
 button-highlighted-pressed:
 	Inherits: ^ChromePink
 	PanelRegion: 129, 97, 2, 2, 26, 26, 2, 2
@@ -164,6 +190,10 @@ button-allies-highlighted-pressed:
 	Inherits: ^ChromePink
 	PanelRegion: 385, 97, 2, 2, 26, 26, 2, 2
 
+button-bossnod-highlighted-pressed:
+	Inherits: ^Chrome
+	PanelRegion: 129, 97, 2, 2, 26, 26, 2, 2
+
 button-highlighted-disabled:
 	Inherits: ^ChromePink
 	PanelRegion: 161, 97, 2, 2, 26, 26, 2, 2
@@ -183,6 +213,10 @@ button-soviet-highlighted-disabled:
 button-allies-highlighted-disabled:
 	Inherits: ^ChromePink
 	PanelRegion: 417, 97, 2, 2, 26, 26, 2, 2
+
+button-bossnod-highlighted-disabled:
+	Inherits: ^Chrome
+	PanelRegion: 161, 97, 2, 2, 26, 26, 2, 2
 
 #
 # Textfield
@@ -248,6 +282,18 @@ textfield-allies-disabled:
 
 textfield-allies-focused:
 	Inherits: button-allies-pressed
+
+textfield-bossnod:
+	Inherits: button-bossnod
+
+textfield-bossnod-hover:
+	Inherits: button-bossnod-hover
+
+textfield-bossnod-disabled:
+	Inherits: button-bossnod-disabled
+
+textfield-bossnod-focused:
+	Inherits: button-bossnod-pressed
 
 #
 # Progress bar
@@ -339,6 +385,21 @@ scrollpanel-button-allies-disabled:
 
 scrollpanel-button-allies-pressed:
 	Inherits: button-allies-pressed
+
+scrollpanel-bg-bossnod:
+	Inherits: panel-gray-bossnod
+
+scrollpanel-button-bossnod:
+	Inherits: button-bossnod
+
+scrollpanel-button-bossnod-hover:
+	Inherits: button-bossnod-hover
+
+scrollpanel-button-bossnod-disabled:
+	Inherits: button-bossnod-disabled
+
+scrollpanel-button-bossnod-pressed:
+	Inherits: button-bossnod-pressed
 
 scrollitem:
 
@@ -457,6 +518,10 @@ panel-black-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 321, 1, 2, 2, 58, 58, 2, 2
 
+panel-black-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 65, 1, 2, 2, 58, 58, 2, 2
+
 panel-darkred:
 	Inherits: ^ChromePink
 	PanelRegion: 1, 65, 2, 2, 58, 58, 2, 2
@@ -477,6 +542,10 @@ panel-darkred-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 257, 65, 2, 2, 58, 58, 2, 2
 
+panel-darkred-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 1, 65, 2, 2, 58, 58, 2, 2
+
 panel-gray:
 	Inherits: ^ChromePink
 	PanelRegion: 65, 65, 2, 2, 58, 58, 2, 2
@@ -496,6 +565,10 @@ panel-gray-soviet:
 panel-gray-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 321, 65, 2, 2, 58, 58, 2, 2
+
+panel-gray-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 65, 65, 2, 2, 58, 58, 2, 2
 
 panel-allblack:
 	Inherits: ^ChromePink
@@ -520,6 +593,11 @@ panel-allblack-soviet:
 panel-allblack-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 257, 1, 2, 2, 26, 26, 2, 2
+	PanelSides: Center
+
+panel-allblack-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 1, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 panel-transparent:
@@ -547,6 +625,11 @@ panel-transparent-allies:
 	PanelRegion: 257, 33, 0, 0, 30, 30, 0, 0
 	PanelSides: Edges
 
+panel-transparent-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 1, 33, 1, 1, 28, 28, 1, 1
+	PanelSides: Edges
+
 shellmapborder:
 	Inherits: ^ChromePink
 	PanelRegion: 129, 129, 32, 32, 62, 62, 32, 32
@@ -570,6 +653,11 @@ shellmapborder-soviet:
 shellmapborder-allies:
 	Inherits: ^ChromePink
 	PanelRegion: 385, 129, 32, 32, 62, 62, 32, 32
+	PanelSides: Edges
+
+shellmapborder-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 129, 129, 32, 32, 62, 62, 32, 32
 	PanelSides: Edges
 
 #
@@ -667,6 +755,7 @@ flags:
 		allies: 844, 385, 32, 16
 		Random: 811, 419, 32, 16
         Random2: 844, 419, 32, 16
+        bossnod: 811, 436, 32, 16
 
 strategic:
 	Inherits: ^Chrome
@@ -1068,3 +1157,58 @@ chrome-radar-allies:
 	Inherits: ^ChromePink
 	Regions:
 		logo: 644, 320, 132, 132
+
+#
+# BLACKHAND chrome
+# ===
+#
+
+chrome-button-background-bossnod:
+	Inherits: ^Chrome
+	PanelRegion: 193, 1, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-hover:
+	Inherits: ^Chrome
+	PanelRegion: 225, 1, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-disabled:
+	Inherits: ^Chrome
+	PanelRegion: 193, 1, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-pressed:
+	Inherits: ^Chrome
+	PanelRegion: 225, 33, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-highlighted:
+	Inherits: ^Chrome
+	PanelRegion: 193, 65, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-highlighted-hover:
+	Inherits: ^Chrome
+	PanelRegion: 225, 65, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-highlighted-pressed:
+	Inherits: ^Chrome
+	PanelRegion: 193, 97, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-background-bossnod-highlighted-disabled:
+	Inherits: ^Chrome
+	PanelRegion: 225, 97, 0, 0, 30, 30, 0, 0
+	PanelSides: Center
+
+chrome-button-bossnod:
+	Inherits: ^Chrome
+	Regions:
+		separator: 745, 192, 1, 22
+
+chrome-radar-bossnod:
+	Inherits: ^ChromePink
+	Regions:
+		logo: 892, 320, 132, 132

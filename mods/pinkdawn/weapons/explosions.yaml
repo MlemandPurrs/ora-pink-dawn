@@ -205,3 +205,24 @@ HeliExplode:
 		Explosions: building
         ImpactActors: false
 		ImpactSounds: xplos.aud
+
+ChemTankExplode:
+	Inherits: ^DamagingExplosion
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 11500
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: flamer2.aud
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Scorch

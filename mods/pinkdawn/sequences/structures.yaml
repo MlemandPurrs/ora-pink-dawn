@@ -789,6 +789,36 @@ miss.husk:
 		Length: *
 		Offset: 0,-3
 
+nodmiss:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 1
+		Offset: 0,-1
+	make: nodmissmake
+		Length: *
+		Tick: 80
+		Offset: 0,-1
+	dead: nodmiss
+		Start: 2
+		Offset: 0,-1
+        Tick: 800
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,-3
+	icon: missicon
+
+nodmiss.husk:
+	idle: nodmiss
+		Start: 2
+        Offset: 0,-1
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,-3
+
 tmpl:
     Inherits: emp-overlay
 	Defaults:
@@ -1512,3 +1542,128 @@ army.husk:
 			JUNGLE: TEMPERAT
 		Length: *
 		Offset: 0,1
+
+ltur:
+    Inherits: emp-overlay
+	idle: blank1
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+	damaged-turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	make: lturmake
+		Length: *
+		Tick: 80
+	dead: ltur
+		Start: 32
+		Tick: 800
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+		Offset: -1,-1
+	icon: lturicon
+
+ufld:
+    Inherits: emp-overlay
+	idle:
+		ZOffset: -1023
+	damaged-idle:
+		Start: 1
+		ZOffset: -1023
+	build-top: ufld-top
+		Length: 10
+		ZOffset: 1024
+	damaged-build-top: ufld-top
+		Start: 10
+		Length: 10
+		ZOffset: 1024
+	dead:
+		Start: 2
+		ZOffset: -1023
+		Tick: 800
+	make: ufldmake
+		Length: *
+		Tick: 80
+	bib: bib1
+		UseTilesetExtension: true
+		Length: *
+	icon: ufldicon
+
+ufld.husk:
+	idle: ufld
+		Start: 2
+		ZOffset: -1023
+	bib: bib1
+		UseTilesetExtension: true
+		Length: *
+
+sgen:
+    Inherits: emp-overlay
+	idle:
+        Start: 0
+        Length: 1
+		Offset: 0,-10
+	damaged-idle:
+		Start: 6
+        Length: 1
+		Offset: 0,-10
+	active: sgen
+        Start: 1
+		Length: 5
+		Tick: 160
+		Offset: 0,-10
+	damaged-active: sgen
+		Start: 7
+		Length: 5
+		Tick: 160
+		Offset: 0,-10
+	make: sgenmake
+		Length: *
+		Offset: 0,-10
+		Tick: 80
+	dead: sgen
+		Start: 6
+		Tick: 800
+		Offset: 0,-10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+	icon: sgenicon
+
+sgen.husk:
+	idle: sgen
+		Start: 6
+		Offset: 0,-10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+
+ncom:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	make: ncommake
+		Length: *
+        Tick: 80
+	dead: ncom
+		Start: 1
+        Length: 1
+        Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+    icon: ncomicon
+
+ncom.husk:
+	idle: ncom
+		Start: 1
+        Length: 1
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true

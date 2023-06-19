@@ -4,6 +4,7 @@ GenericVoice:
 		gdi: .v01, .v03
 		allies: .a01,.a03
 		soviet: .r01,.r03
+		bossnod: .v01, .v03
 	Voices:
 		Select: ackno, await1, ready, report1, yessir1
 		Action: affirm1, ritaway, ugotit, roger, movout1
@@ -20,6 +21,7 @@ VehicleVoice:
 		gdi: .v00, .v02
 		allies: .a00,.a02
 		soviet: .r00,.r02
+		bossnod: .v00, .v02
 	Voices:
 		Select: vehic1, yessir1, await1, unit1, report1
 		Action: ackno, affirm1, movout1

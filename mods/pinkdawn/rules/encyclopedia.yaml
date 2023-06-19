@@ -262,7 +262,7 @@ bio.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.
+		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.\nIts presence is required to facilitate the procurement of materials used in the assembly of a Nuclear device.\nIt will also provide the components necessary to unlock the SSM Launcher and Chem Trooper for production.
         Category: Nod Buildings
 		Order: 15
 	RenderSprites:
@@ -534,7 +534,6 @@ e6.nod.info:
         Category: Nod Infantry
 	RenderSprites:
 		Image: e6
-        Palette: nodunits
 
 rmbo.info:
     Inherits: RMBO
@@ -804,6 +803,10 @@ mlrs.info:
         Description: The SSM is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.
         Category: Nod Vehicles
 		Order: 15
+	WithSpriteTurret:
+		-RequiresCondition:
+    -WithSpriteTurret@OneMissile:
+    -WithSpriteTurret@NoMissiles:
 	RenderSprites:
 		Image: mlrs
         Palette: nodunits
@@ -1108,4 +1111,126 @@ f22.info:
 		Order: 5
 	RenderSprites:
 		Image: f22
+        Palette: nod
+
+ncom.info:
+    Inherits: NCOM
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: This structure enables the training of Infiltrators and allows the usage of a 'Stealth Airstrike'. It also unlocks the Scorpion Tank for construction.
+        Category: Nod Buildings
+		Order: 16
+	RenderSprites:
+		Image: ncom
+        Palette: nod
+    -MapEditorData:
+
+sgen.info:
+    Inherits: SGEN
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: This highly sophisticated device of intricate design is nothing short of a technological marvel. It takes rather long for the device to powerup, once it has been fully charged however can be turned on at leisure to enjoy the benefits of wide area-scale cloaking field, although at the expense of vastly increased power consumption while activated.\nAny friendly structures, vehicle, even ships and infantry will turn invisible aslong they remaint within the effective range around the structure. 
+        Category: Nod Buildings
+		Order: 17
+	RenderSprites:
+		Image: sgen
+        Palette: nod
+    -MapEditorData:
+
+ltur.info:
+    Inherits: LTUR
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+		Description: The laser turret is an all-rounder defensive structure, equally capable of zapping infantry and tanks to molten slag.
+        Category: Nod Defenses
+		Order: 8
+	RenderSprites:
+		Image: ltur
+        Palette: nod
+    -MapEditorData:
+
+rmbo.nod.info:
+    Inherits: rmbo.info
+	Encyclopedia:
+        Category: Nod Infantry
+	RenderSprites:
+		Image: rmbo
+        Palette: nodunits
+
+inf.info:
+    Inherits: INF
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Equipped with a personal cloaking device, those troops can move about virtually unseen to get into positions for ambush. When not taking care of enemy soldiers with their man-portable laser guns, they are acting as the ears and eyes of the Blackhand, ensuring the enemies of Nod never gain the advantage in the battlefield.
+        Category: Nod Infantry
+		Order: 9
+	RenderSprites:
+		Image: inf
+        Palette: nod
+    -MapEditorData:
+
+wtnk.info:
+    Inherits: WTNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The MGT-1A Microwave Tank is a success story of persistent experimentation with heat-based wave-form weaponry. The tank is capable of striking at the distance, incinerating Infantry units caught in the blast. Enemy vehicles and defenses that get hit by the heatwave blast will suffer malfunctions due to sudden accumulated excessive heat.\nThe powersource used to operate the weaponry can also be used to haywire and deflect incoming missiles, aslong the unit has accumlated enough extensive heat for it to function.
+        Category: Nod Vehicles
+		Order: 16
+	RenderSprites:
+		Image: wtnk
+        Palette: nodunits
+    -MapEditorData:
+
+t55h.info:
+    Inherits: T55H
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A heavy tank sporting a scorpion tail capable of shooting the same Laser as an obelisk, its cannons have the same firepower as a Mammoth Tank of the GDI, with added capacity to self-repair on top of that to boot.
+        Category: Nod Vehicles
+		Order: 17
+	RenderSprites:
+		Image: t55h
+        Palette: nodunits
+    -MapEditorData:
+
+msg.info:
+    Inherits: MSG
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The miniaturised version of the Stealth generator operates on the same principle as it's larger cousin. When deployed, it will able to allow units and structures in the vicinity of employing the stealth field to cloak themselves. 
+        Category: Nod Vehicles
+		Order: 18
+	RenderSprites:
+		Image: msg
+        Palette: nodunits
+    -MapEditorData:
+
+rh66.info:
+    Inherits: RH66
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Essentially a flying, nimbler Stealth Tank, this helicopter can perform precision strikes against enemy bases, approaching unseen to unload the payload and return before the enemy had any chance to react.
+        Category: Nod Aircraft
+		Order: 2
+	RenderSprites:
+		Image: rh66
+        Palette: nodunits
+    -MapEditorData:
+
+sfig.info:
+    Inherits: SFIG
+	Encyclopedia:
+        Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
+        Category: Nod Aircraft
+		Order: 3
+	RenderSprites:
+		Image: sfig
         Palette: nod

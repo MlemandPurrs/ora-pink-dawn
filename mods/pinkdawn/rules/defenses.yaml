@@ -184,8 +184,8 @@ OBLI:
 		BuildDuration: 2700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: tmpl
-		Queue: Defense.Nod
+		Prerequisites: anytier3
+		Queue: Defense.Nod, Defense.Blackhand
 		Description: Advanced base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Selectable:
 		Bounds: 1024, 1024
@@ -238,6 +238,8 @@ SAM:
 	-RenderDetectionCircle:
 	-BodyOrientation:
 	-ActorPreviewPlaceBuildingPreview:
+    -ExternalCondition@CloakingField:
+    -Cloak@CloakingField:
 	Selectable:
 		Bounds: 2048, 1024
 	HitShape:
@@ -253,7 +255,7 @@ SAM:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
-		Queue: Defense.Nod
+		Queue: Defense.Nod, Defense.Blackhand
 		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx
@@ -361,7 +363,7 @@ BARB:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: infantryproduction
-		Queue: Defense.Nod
+		Queue: Defense.Nod, Defense.Blackhand
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -386,7 +388,7 @@ CYCL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		Description: Stops infantry and light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
 	Armor:
 		Type: Aluminium
@@ -412,7 +414,7 @@ BRIK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: anytier3
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		Description: Stops infantry and vehicles.\nBlocks projectiles.
 	Health:
 		HP: 20000
@@ -458,7 +460,7 @@ HGAT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anytier3
-		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies
+		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.Blackhand
 		Description: Places a gate that blocks enemy access into your base.\n\nYou can rotate using Rotate Building hotkey (default: V)
 	Valued:
 		Cost: 100
@@ -487,6 +489,7 @@ HGAT:
 			nod: hgat-nod
             soviet: hgat-soviet
             allies: hgat-allies
+            bossnod: hgat-nod
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -513,7 +516,7 @@ VGAT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: ~disabled
-		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies
+		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.Blackhand
 		Description: Places an vertical gate.\nBlocks enemy access into your base.
 	Valued:
 		Cost: 100
@@ -1088,3 +1091,59 @@ FENC:
 		Types: fenc
 	WithWallSpriteBody:
 		Type: fenc
+
+LTUR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetGround
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-BodyOrientation:
+	Selectable:
+		Bounds: 1024, 1024
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Laser Turret
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: vehicleproduction
+		Queue: Defense.Blackhand
+		Description: All-purpose base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
+	Building:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 18
+		InitialFacing: 192
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+		Weapon: TurretLaser
+        LocalOffset: 512,0,189
+        PauseOnCondition: build-incomplete
+	AttackTurreted:
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+	RenderDetectionCircle:
+	Power:
+		Amount: -20
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	ClassicFacingBodyOrientation:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure

@@ -64,3 +64,19 @@ OHRV:
 AHRV:
 	RenderSprites:
 		PlayerPalette: player-buildings
+
+INF:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+TECN:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+F22:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+SFIG:
+	RenderSprites:
+		PlayerPalette: player-buildings

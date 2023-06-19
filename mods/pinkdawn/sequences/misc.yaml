@@ -359,6 +359,8 @@ icon:
     chrono: warpicon
     gpsprep: gpssicon
 	gpsactive: gpsaicon
+    cloakfield: cfldicon
+    airstrike2: sfigicon
 
 moveflsh:
 	idle:
@@ -701,3 +703,12 @@ bombicon:
 pbmbicon:
     idle: pbmbicon
     icon: blank1
+
+sparks_overlay:
+	Defaults:
+		IgnoreWorldTint: true
+	idle: empfx01
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		ZOffset: 512

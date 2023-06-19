@@ -192,6 +192,16 @@ hpad.allies.info:
         Palette: nod
     -MapEditorData:
 
+3fld.nod.info:
+    Inherits: 3fld.info
+	Encyclopedia:
+        Description: The Airfield allows construction of helicopters and planes.
+        Category: Nod Buildings
+		Order: 9
+	RenderSprites:
+		Image: 3fld
+        Palette: nod
+
 dome.info:
     Inherits: DOME
     Buildable:
@@ -863,7 +873,10 @@ v2rl.info:
         Description: The V2 Launcher can destroy most buildings with just two rockets. Factor in its incredible range, and it is easy to see why the Allies fear this weapons platform. Its drawbacks are its light armor, long reload time, and inability to hit fast-moving targets.
         Category: Soviet Vehicles
 		Order: 9
-	RenderSprites:
+    WithFacingSpriteBody:
+        -RequiresCondition:
+    -WithFacingSpriteBody@EMPTY:
+    RenderSprites:
 		Image: v2rl
         Palette: soviet
     -MapEditorData:

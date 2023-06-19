@@ -187,6 +187,10 @@
 		InternalName: Random2
 		RandomFactionMembers: allies, soviet
 		Description: Random RA Faction\nAllies or Soviet will be chosen at random when the game starts.
+	Faction@blackhand:
+		Name: Blackhand
+		InternalName: bossnod
+		Description: the Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:
@@ -288,7 +292,7 @@ World:
 	StartingUnits@mcvonlytd:
 		Class: none
 		ClassName: MCV Only
-		Factions: gdi, nod
+		Factions: gdi, nod, bossnod
 		BaseActor: mcv
 	StartingUnits@mcvonlyra:
 		Class: none

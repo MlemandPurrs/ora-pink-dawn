@@ -367,6 +367,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -644,6 +645,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamagedInfantry
 	Inherits@hazmat: ^InfantryTiberiumDamage
 	Inherits@healing: ^InfantryHealing
+    Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -855,6 +857,7 @@
     Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -973,6 +976,7 @@
 	Inherits@shape: ^1x1Shape
 	Inherits@selection: ^SelectableBuilding
 	Inherits@handicaps: ^PlayerHandicaps
+    Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1986,3 +1990,19 @@
 	ScriptTriggers:
 	MapEditorData:
 		Categories: Husk
+
+^AffectedByCloakingField:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical

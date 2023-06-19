@@ -147,7 +147,7 @@ TRAN:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: hpad
-		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Neutral
+		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Neutral, Aircraft.Blackhand
 		Description: Flying infantry transport.\nCan transport up to 5 Infantry.\n\nUnarmed.
 	Aircraft:
         IdleBehavior: Land
@@ -735,10 +735,10 @@ F22:
 	Buildable:
         BuildDuration: 2100
         BuildDurationModifier: 100
-		Queue: Aircraft.Neutral
+		Queue: Aircraft.Neutral, Aircraft.Blackhand
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~aprt, ~owner.is.nod
+		Prerequisites: ~anyafld
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
     RenderSprites:
         Image: f22
@@ -888,4 +888,168 @@ SMIG:
 	Explodes:
 		Weapon: UnitExplodeAirBig
 		EmptyWeapon: UnitExplodeAirBig
+	-MapEditorData:
+
+#   a flying Stealth Tank, basically
+RH66:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	-MustBeDestroyed:
+	Selectable:
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Comanche
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: hpad, anyhq
+		Queue: Aircraft.Blackhand, Aircraft.Neutral
+		Description: Light helicopter with rockets.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 200
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected
+	RenderDetectionCircle:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: StnkRocketsAG
+		LocalOffset: 128,-213,-85, 128,213,-85
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: StnkRocketsAA
+		LocalOffset: 128,-213,-85, 128,213,-85
+		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !controlled-by-ai
+	AmmoPool:
+		Name: primary
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 80
+        ReloadCount: 2
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		FullSequence: pip-yellow
+		AmmoPools: primary
+		RequiresSelection: true
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		InitialStanceAI: HoldFire
+        ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	Rearmable:
+		RearmActors: hpad, 3fld
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+	GrantConditionOnBotOwner@simplified:
+		Condition: controlled-by-ai
+		Bots: normalai
+	Cloak:
+		InitialDelay: 85
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Dock, Damage, Heal
+		PauseOnCondition: ( cloak-force-disabled && !airborne ) || emp-crate-collected
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    -ExternalCondition@CloakingField:
+    -Cloak@CloakingField:
+
+SFIG:
+	Inherits: ^Plane
+	-ActorLostNotification:
+	Interactable:
+	HitShape:
+	Health:
+		HP: 9000
+	Armor:
+		Type: Aluminium
+	Tooltip:
+		Name: Stealth Bomber
+	Valued:
+		Cost: 800
+	UpdatesPlayerStatistics:
+		AddToAssetsValue: false
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 300
+		Repulsable: False
+		AirborneCondition: airborne
+	AttackBomber:
+		Armaments: bombs
+        FacingTolerance: 8
+	WithMuzzleOverlay:
+	Armament@BOMBS:
+		Name: bombs
+		Weapon: Napalm
+		LocalOffset: 0,-256,-43, 0,256,-43
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
+	Cloak:
+		InitialDelay: 0
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Dock, Damage, Heal
+		PauseOnCondition: ( cloak-force-disabled && !airborne )
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	-MapEditorData:

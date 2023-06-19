@@ -227,14 +227,35 @@ Player:
 				OrderName: GPSSpawner
 				Consideration@1:
 					Against: Ally
+			UseNodAirstrike:
+				OrderName: StealthAirStrike
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 3
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -20
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv, ohrv, ahrv
 		RefineryTypes: proc, oref
 	BaseBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		BuildingQueues: Building.Nod, Building.GDI, Building.Allies, Building.Soviet
-		DefenseQueues: Defense.Nod, Defense.GDI, Defense.Allies, Defense.Soviet
+		BuildingQueues: Building.Nod, Building.GDI, Building.Allies, Building.Soviet, Building.Blackhand
+		DefenseQueues: Defense.Nod, Defense.GDI, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
@@ -243,10 +264,10 @@ Player:
 		RefineryTypes: proc, oref
 		PowerTypes: nuke, nuk2, powr, apwr
 		BarracksTypes: pyle, hand, tent, barr
-		VehiclesFactoryTypes: weap, afld, warf
-		ProductionTypes: pyle, hand, weap, afld, hpad, tent, barr, warf, 3fld
+		VehiclesFactoryTypes: weap, afld, warf, ufld
+		ProductionTypes: pyle, hand, weap, afld, hpad, tent, barr, warf, 3fld, ufld
 		SiloTypes: silo, osil
-        DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftur, tsla
+        DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftwr, tsla, ltur
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
@@ -281,6 +302,8 @@ Player:
             fapw: 1
             tenf: 1
             weaf: 1
+            ufld: 2
+            ncom: 1
 		BuildingFractions:
 			proc: 20
             oref: 20
@@ -300,7 +323,7 @@ Player:
 			sam: 7
             pbox: 5
             hbox: 5
-            ftur: 5
+            ftwr: 5
             tsla: 7
             agun: 7
             sam2: 7
@@ -321,6 +344,9 @@ Player:
             fapw: 1
             tenf: 1
             weaf: 1
+            ufld: 9
+            ncom: 1
+            ltur: 5
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule:
@@ -328,15 +354,15 @@ Player:
 		RushInterval: 400
 		SquadSize: 12
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, heli, orca, hel2, hind, yak, mig, e6
+        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, heli, orca, hel2, hind, yak, mig, e6, rh66, sfig
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftur, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
+		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Vehicle.Allies, Vehicle.Soviet, Infantry.Nod, Infantry.GDI, Infantry.Allies, Infantry.Soviet, Aircraft.Nod, Aircraft.GDI, Aircraft.Allies, Aircraft.Soviet, Navy.Neutral
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Vehicle.Allies, Vehicle.Soviet, Vehicle.Blackhand, Infantry.Nod, Infantry.GDI, Infantry.Allies, Infantry.Soviet, Infantry.Blackhand, Aircraft.Nod, Aircraft.GDI, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Navy.Neutral
 		UnitsToBuild:
 			e1: 65
 			e2: 25
@@ -387,6 +413,9 @@ Player:
 			dd: 10
 			ca: 10
 			pt: 10
+            3t1b: 20
+            wtnk: 15
+            t55h: 1
 		UnitLimits:
 			harv: 8
             ohrv: 8
@@ -413,22 +442,24 @@ Player:
             sub: 3
             msub: 2
             e6: 1
+            wtnk: 3
+            t55h: 1
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
 		ConstructionYardTypes: fact, fac2
-        McvFactoryTypes: weap,afld,warf
+        McvFactoryTypes: weap, afld, warf, ufld
 	SquadManagerBotModule@AircraftOne:
 		RequiresCondition: enable-ai-player
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 0
-        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts
+        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, sfig, 3t1b, wtnk, t55h
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftur, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
+		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
     CaptureManagerBotModule:
         CapturingActorTypes: e6
         CapturableActorTypes: syrd, v19, oil, hosp

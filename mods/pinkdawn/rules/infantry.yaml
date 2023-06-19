@@ -12,7 +12,7 @@ E1:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: infantryproduction
-		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet
+		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet, Infantry.Blackhand
 		Description: General-purpose infantry.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 40
@@ -103,7 +103,7 @@ E3:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: vehicleproduction
-		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet
+		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet, Infantry.Blackhand
 		Description: Anti-tank infantry.\n\nCan attack Aircraft.\nStrong vs Tanks, Aircraft.\nWeak vs Infantry.
 	Mobile:
 		Speed: 30
@@ -141,7 +141,7 @@ E4:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: anyhq
-		Queue: Infantry.Nod
+		Queue: Infantry.Nod, Infantry.Blackhand
 		Description: Anti-infantry unit.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
 		Speed: 40
@@ -203,7 +203,7 @@ E5:
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
-		Weapon: Chemspray
+		Weapon: ChemSpray
 		LocalOffset: 341,0,256
 		FireDelay: 3
 		MuzzleSequence: muzzle
@@ -257,7 +257,7 @@ E6:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: anyproc
-		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet
+		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet, Infantry.Blackhand
 		Description: Captures enemy and tech structures.\nCan repair destroyed bridges.\n\nUnarmed.
 	Mobile:
 		Speed: 40
@@ -420,7 +420,7 @@ RMBO:
 		BuildPaletteOrder: 5
 		Prerequisites: miss
 		BuildLimit: 1
-		Queue: Infantry.GDI
+		Queue: Infantry.GDI, Infantry.Blackhand
 		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 50
@@ -1179,3 +1179,64 @@ E9:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 100
+
+INF:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Infiltrator
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		Prerequisites: ncom
+		Queue: Infantry.Blackhand
+		Description: Specialist recon soldier.\nCan infiltrate to cut enemy power.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+	Mobile:
+		Speed: 50
+		Voice: Move
+	Health:
+		HP: 2500
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: PortaLaser
+		LocalOffset: 427,0,341
+	AttackFrontal:
+		Voice: Action
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Action
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		StandSequences: stand
+	Voiced:
+		VoiceSet: ThiefVoice
+	Passenger:
+        Voice: Move
+	RevealsShroud:
+		Range: 4c0
+	Cloak:
+		InitialDelay: 85
+		CloakDelay: 85
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    -ExternalCondition@CloakingField:
+    -Cloak@CloakingField:
+	Infiltrates:
+		Types: SpyInfiltrate
+		Notification: BuildingInfiltrated
+		TextNotification: Building infiltrated.
+        PlayerExperience: 0

@@ -337,3 +337,17 @@ nts:
 	idle:
 		Facings: 16
 	icon: ntsicon
+
+3t1b:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: 3t1bicon

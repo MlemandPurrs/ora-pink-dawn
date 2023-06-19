@@ -31,7 +31,7 @@ FACT:
 	RevealsShroud:
 		Range: 4c512
 	Production:
-		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod
+		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod, Building.Blackhand, Defense.Blackhand
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
@@ -86,6 +86,21 @@ FACT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@BlackhandBuilding:
+		Type: Building.Blackhand
+		DisplayOrder: 0
+		Factions: bossnod
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@GDIDefense:
 		Type: Defense.GDI
 		DisplayOrder: 1
@@ -116,16 +131,36 @@ FACT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@BlackhandDefense:
+		Type: Defense.Blackhand
+		DisplayOrder: 1
+		Factions: bossnod
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	BaseBuilding:
 	ProductionBar@BuildingGDI:
 		ProductionType: Building.GDI
 	ProductionBar@BuildingNod:
 		ProductionType: Building.Nod
+	ProductionBar@BuildingBlackhand:
+		ProductionType: Building.Blackhand
 	ProductionBar@DefenseGDI:
 		ProductionType: Defense.GDI
 		Color: 8A8A8A
 	ProductionBar@DefenseNod:
 		ProductionType: Defense.Nod
+		Color: 8A8A8A
+	ProductionBar@DefenseBlackhand:
+		ProductionType: Defense.Blackhand
 		Color: 8A8A8A
 	#   BaseProvider:
 	#	Range: 14c0
@@ -141,7 +176,7 @@ FACT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: anytier3, anyfix
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
@@ -153,6 +188,7 @@ FACT:
 		Image: fact
 		FactionImages:
 			nod: nodfact
+            bossnod: nodfact
     AcceptsDeliveredCash:
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
@@ -182,7 +218,7 @@ NUKE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Generates a standard amount of power.
 	Building:
 		Footprint: Xx xx
@@ -201,6 +237,7 @@ NUKE:
 		Image: nuke
 		FactionImages:
 			nod: nodnuke
+            bossnod: nodnuke
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -244,7 +281,7 @@ NUK2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
 		Footprint: Xx xX
@@ -263,6 +300,7 @@ NUK2:
 		Image: nuk2
 		FactionImages:
 			nod: nodnuk2
+            bossnod: nodnuk2
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -307,7 +345,7 @@ NUK3:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
 		Prerequisites: anytier3
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides even more power,\nabove triple the standard amount.
 	Building:
 		Footprint: xXx XxX
@@ -326,6 +364,7 @@ NUK3:
 		Image: nuk3
 		FactionImages:
 			nod: nodnuk3
+            bossnod: nodnuk3
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -374,7 +413,7 @@ PROC:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Processes raw Tiberium\ninto useable resources.
 	Building:
 		Footprint: _x_ xxx ++x ===
@@ -430,6 +469,7 @@ PROC:
 		Image: proc
 		FactionImages:
 			nod: nodproc
+            bossnod: nodproc
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	InfiltrateForCash:
@@ -470,7 +510,7 @@ SILO:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: proc
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Stores processed Tiberium.
 	Building:
 		Footprint: xx
@@ -497,6 +537,7 @@ SILO:
 		Image: silo
 		FactionImages:
 			nod: nodsilo
+            bossnod: nodsilo
 	CashTrickler:
 		Interval: 300
 		InitialDelay: 300
@@ -614,7 +655,7 @@ HAND:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: fact
-		Queue: Building.Nod
+		Queue: Building.Nod, Building.Blackhand
 		Description: Trains Infantry units.
 	Building:
 		Footprint: xx xx ==
@@ -639,11 +680,12 @@ HAND:
 		SpawnOffset: -1024,256,0
 		ExitCell: -1,1
 	Production:
-		Produces: Infantry.Nod
+		Produces: Infantry.Nod, Infantry.Blackhand
         PauseOnCondition: build-incomplete || emp-affected-structure
-	ProductionQueue:
+	ProductionQueue@NodInfantry:
 		Type: Infantry.Nod
 		DisplayOrder: 2
+        Factions: nod
 		Group: Infantry
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -655,8 +697,25 @@ HAND:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionBar:
+	ProductionQueue@BlackhandInfantry:
+		Type: Infantry.Blackhand
+		DisplayOrder: 2
+        Factions: bossnod
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@NodInfantry:
 		ProductionType: Infantry.Nod
+	ProductionBar@BlackhandInfantry:
+		ProductionType: Infantry.Blackhand
 	Power:
 		Amount: -15
         RequiresCondition: !build-incomplete || emp-affected-structure
@@ -718,9 +777,10 @@ AFLD:
 		Sequence: idle-dish
 	WithDeliveryAnimation:
 		RequiresCondition: !build-incomplete
-	ProductionQueue:
+	ProductionQueue@NodVehicle:
 		Type: Vehicle.Nod
 		DisplayOrder: 3
+        Factions: nod
 		Group: Vehicle
 		LowPowerModifier: 150
 		BlockedAudio: NoBuild
@@ -730,7 +790,7 @@ AFLD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionBar:
+	ProductionBar@NodVehicle:
 		ProductionType: Vehicle.Nod
 	Power:
 		Amount: -40
@@ -762,7 +822,7 @@ WEAP:
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, infantryproduction
 		Queue: Building.GDI
-		Description: Produces vehicles
+		Description: Produces Vehicle units.
 	Building:
 		Footprint: xxx +++ ===
 		Dimensions: 3,3
@@ -835,7 +895,7 @@ FIX:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
 		Footprint: =+= +++ =+=
@@ -885,6 +945,7 @@ FIX:
 		Image: fix
 		FactionImages:
 			nod: nodfix
+            bossnod: nodfix
 	ProvidesPrerequisite:
 		Prerequisite: anyfix
 
@@ -920,9 +981,9 @@ HPAD:
 		SpawnOffset: 0,-256,0
 		ExitCell: 0,0
 		Facing: 896
-        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Chopper
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Chopper
 	Production:
-		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Chopper
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Chopper
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
@@ -990,6 +1051,21 @@ HPAD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Blackhand:
+		Type: Aircraft.Blackhand
+		DisplayOrder: 4
+		Factions: bossnod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@GDI:
 		ProductionType: Aircraft.GDI
 	ProductionBar@Nod:
@@ -998,6 +1074,8 @@ HPAD:
 		ProductionType: Aircraft.Allies
 	ProductionBar@Soviet:
 		ProductionType: Aircraft.Soviet
+	ProductionBar@Blackhand:
+		ProductionType: Aircraft.Blackhand
 	Power:
 		Amount: -20
         RequiresCondition: !build-incomplete && !emp-affected-structure
@@ -1023,6 +1101,11 @@ HPAD:
 		Facing: 896
 		SpawnOffset: 0,1
 		RequiresCondition: !build-incomplete && soviet.player && gratisair
+	FreeActor@5:
+		Actor: RH66
+		Facing: 896
+		SpawnOffset: 0,1
+		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
 		Factions: gdi
@@ -1038,6 +1121,10 @@ HPAD:
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
 		Factions: soviet
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Blackhand:
+		Condition: bossnod.player
+		Factions: bossnod
 		ResetOnOwnerChange: True
 	GrantConditionOnPrerequisite@FREEAIRCRAFT:
 		Prerequisites: global-freeaircraft
@@ -1076,7 +1163,7 @@ HQ:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anypower, vehicleproduction
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
@@ -1105,6 +1192,7 @@ HQ:
 		Image: hq
 		FactionImages:
 			nod: nodhq
+            bossnod: nodhq
 	SpawnActorPower@RadarScan:
 		PauseOnCondition: lowpower || jammed || emp-affected-structure
 		OrderName: RadarScan
@@ -1162,7 +1250,7 @@ MISS:
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq
-		Queue: Building.GDI
+		Queue: Building.GDI, Building.Blackhand
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
 	Valued:
 		Cost: 2000
@@ -1222,6 +1310,10 @@ MISS:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	RenderSprites:
+		Image: miss
+		FactionImages:
+            bossnod: nodmiss
 
 TMPL:
 	Inherits: ^BaseBuilding
@@ -1474,3 +1566,249 @@ ANYTIER3:
 	Interactable:
 	Tooltip:
 		Name: Tech Center or Temple of Nod
+
+UFLD:
+	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 4096, 2048
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Subterranean War Factory
+        GenericStancePrefix: false
+        GenericName: War Factory
+        GenericVisibility: Ally, Neutral, Enemy
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: anypower, infantryproduction
+		Queue: Building.Blackhand
+		Description: Produces Vehicle units.
+	Building:
+		Footprint: XXX+ xxx+ ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 5c512
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,1
+        ExitDelay: 5
+	Exit@2:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,2
+        ExitDelay: 5
+	Production:
+		Produces: Vehicle.Blackhand
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	ProductionQueue@BlackhandVehicle:
+		Type: Vehicle.Blackhand
+		DisplayOrder: 3
+        Factions: bossnod
+		Group: Vehicle
+		LowPowerModifier: 150
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@BlackhandVehicle:
+		ProductionType: Vehicle.Blackhand
+	Power:
+		Amount: -40
+        RequiresCondition: !build-incomplete || emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+
+SGEN:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 1024
+	SelectionDecorations:
+	Selectable:
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2148, 0, -320
+	Building:
+		Footprint: XXx XXx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,0,0
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 1400
+	Buildable:
+    	BuildDuration: 1400
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: miss, ~global-superweapons
+		Queue: Building.Blackhand
+		Description: Maximum one can be built.\n\nEnables the usage of 'Stealth Field'\nto activate cloaking when ready.
+	Tooltip:
+		Name: Stealth Generator
+	ProvidesPrerequisite@buildingname:
+	Power:
+		Amount: -150
+		RequiresCondition: !build-incomplete
+    PowerMultiplier@activated:
+        Modifier: 200
+        RequiresCondition: !build-incomplete && cloakingfield-active
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	GrantPrerequisiteChargeDrainPower@StealthGenerator:
+		PauseOnCondition: lowpower
+		Prerequisite: cloakingfield-active
+		OrderName: CloakingField
+		DischargeModifier: 300
+		ActiveText: ACTIVE
+		AvailableText: READY
+		ChargeInterval: 4500 #  6-minutes cloaking was insane, reduced to 3min
+		Icon: cloakfield
+		Name: Stealth Field
+		Description: Activate to render everything invisible\nwithin a radius of 12-cells.\n\nCan be toggled active once charged.
+        LaunchSound: cloak6.aud
+		InsufficientPowerSpeechNotification: InsufficientPower
+		InsufficientPowerTextNotification: Insufficient power.
+		BeginChargeSpeechNotification: IronCurtainCharging
+		BeginChargeTextNotification: Cloaking field charging.
+		EndChargeSpeechNotification: IronCurtainReady
+		EndChargeTextNotification: Cloaking field ready.
+		SupportPowerPaletteOrder: 2 
+ 	SupportPowerChargeBar:
+    #   the initial pulse animation
+    WithSupportPowerActivationAnimation:
+    	RequiresCondition: !build-incomplete
+    #   to keep pulsing while active
+    WithIdleAnimation@StealthGenerator:
+        #   Interval: 40    # noice
+        Interval: 23 # this should loop purrfectly
+        RequiresCondition: cloakingfield-active
+	GrantConditionOnPrerequisite@StealthGenerator:
+		Condition: cloakingfield-active
+		Prerequisites: cloakingfield-active
+	ProximityExternalCondition@StealthGenerator:
+		Condition: cloakfield-on
+        ValidRelationships: Ally
+		Range: 12c0
+        RequiresCondition: cloakingfield-active
+	DetectCloaked@RadialIndicator:
+        DetectionTypes: Nonsense # we do this to get visual indicator
+		Range: 12c0
+        RequiresCondition: cloakingfield-active
+	RenderDetectionCircle@RadialIndicator:
+        TrailCount: 2
+        Visible: Always
+        UpdateLineTick: 6
+        BorderWidth: 0
+        Color: 8b008b
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
+NCOM:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		BuildLimit: 1
+		Prerequisites: miss
+		Queue: Building.Blackhand
+		Description: Maximum one can be built.\n\nUnlocks Infiltrator and Scorpion Tank.\n\nProvides 'Stealth Airstrike' super-weapon.
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Intelligence Center
+	Health:
+		HP: 60000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 5c0
+	WithBuildingBib:
+	Power:
+		Amount: -50
+	AirstrikePower@StealthAirStrike:
+		PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.blackhand
+		OrderName: StealthAirStrike
+		Prerequisites: ~global-superweapons
+		Icon: airstrike2
+		ChargeInterval: 6750
+		SquadSize: 1
+		QuantizedFacings: 8
+		Name: Stealth Air Strike
+		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+        EndChargeTextNotification: Airstrike ready.
+        LaunchSpeechNotification: AirstrikeInbound
+        LaunchTextNotification: Airstrike inbound.
+        SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+        IncomingSpeechNotification: EnemyPlanesApproaching
+        IncomingTextNotification: Enemy planes approaching.
+        InsufficientPowerTextNotification: Insufficient power.
+		UnitType: sfig
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		DisplayRadarPing: True
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		Cursor: airstrike
+		SupportPowerPaletteOrder: 2
+	SupportPowerChargeBar:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+    GrantConditionOnFaction@Blackhand:
+        Condition: owner.is.blackhand
+        Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@buildingname:

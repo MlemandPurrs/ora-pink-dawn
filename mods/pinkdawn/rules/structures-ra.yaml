@@ -951,7 +951,7 @@ FIX2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction
-		Queue: Building.Soviet
+		Queue: Building.Soviet, Building.Blackhand
 		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
 		Footprint: xxx xxx
@@ -964,9 +964,9 @@ FIX2:
 		RequiresCondition: !being-captured
 		ExitCell: 1,1
 		Facing: 768
-        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane, Chopper
+        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Plane, Chopper
 	Production:
-		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane, Chopper
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Plane, Chopper
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
@@ -1034,6 +1034,21 @@ FIX2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Blackhand:
+		Type: Aircraft.Blackhand
+		DisplayOrder: 4
+		Factions: bossnod
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@GDI:
 		ProductionType: Aircraft.GDI
 	ProductionBar@Nod:
@@ -1042,6 +1057,8 @@ FIX2:
 		ProductionType: Aircraft.Allies
 	ProductionBar@Soviet:
 		ProductionType: Aircraft.Soviet
+	ProductionBar@Blackhand:
+		ProductionType: Aircraft.Blackhand
 	Power:
 		Amount: -30
         RequiresCondition: !build-incomplete && !emp-affected-structure
@@ -1067,6 +1084,11 @@ FIX2:
 		Facing: 768
 		SpawnOffset: 1,1
 		RequiresCondition: !build-incomplete && soviet.player && gratisair
+	FreeActor@5:
+		Actor: RH66
+		Facing: 768
+		SpawnOffset: 1,1
+		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
 		Factions: gdi
@@ -1082,6 +1104,10 @@ FIX2:
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
 		Factions: soviet
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@Blackhand:
+		Condition: bossnod.player
+		Factions: bossnod
 		ResetOnOwnerChange: True
 	GrantConditionOnPrerequisite@FREEAIRCRAFT:
 		Prerequisites: global-freeaircraft
@@ -1669,7 +1695,7 @@ MSLO:
         BuildPaletteOrder: 17
 		BuildLimit: 1
 		Prerequisites: anytier3, ~global-superweapons
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.Blackhand
 		Description: Maximum one can be built.\n\nEnables the usage of 'Atomic Bomb' super-weapon.
 	Tooltip:
 		Name: Nuclear Missile Silo

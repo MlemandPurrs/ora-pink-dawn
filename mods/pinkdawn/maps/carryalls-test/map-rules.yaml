@@ -374,6 +374,24 @@ APC3:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 
+WTNK:
+	Mobile:
+		PauseOnCondition: emp-crate-collected || boarding    
+
+CHTK:
+	Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+
+T55H:
+	Mobile:
+		PauseOnCondition: emp-crate-collected || pauseforlaser || boarding
+
+MSG:
+	Mobile:
+		PauseOnCondition: emp-crate-collected || boarding
+	Carryable:
+        -CarriedCondition:
+
 ocar.info:
     Inherits: GenericCarryall
     Buildable:

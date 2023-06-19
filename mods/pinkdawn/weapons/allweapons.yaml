@@ -66,6 +66,11 @@
 #   65. NukeMissile
 #   66. DepthCharge
 #   67. MortarShell
+#   68. TurretLaser
+#   69. MicroWave
+#   70. BigChemSpray
+#   71. PortaLaser
+#   72. TankLaser
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1499,6 +1504,12 @@ HeavyCannon:
 		ImpactSounds: xplos.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+HeavyCannon1B:
+    Inherits: HeavyCannon
+	ReloadDelay: 60
+    -Burst:
+    -BurstDelays:
 
 #   31. Mobile Flak's Gun
 QuadGunAG:
@@ -2987,3 +2998,202 @@ MortarShell:
 		ImpactSounds: xplosml2.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+#   68. Turret's Laser
+TurretLaser:
+	ReloadDelay: 45
+	Range: 7c512
+	Report: lastur1.aud
+	Projectile: LaserZap
+		Width: 45
+		HitAnim: laserfire
+		ZOffset: 2047
+        Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 5000
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
+
+#   69. Microwave Tank's zap
+MicroWave:
+	ReloadDelay: 90
+    Range: 5c768
+	Report: corefir1.aud
+	ValidTargets: Ground, Water
+	InvalidTargets: Air, Helicopter, Airplane, Wall
+	TargetActorCenter: true
+	Projectile: Railgun
+		Duration: 5
+		Blockable: true
+		DamageActorsInLine: false
+		BeamColor: FFFFFFFF
+		BeamWidth: 0c0
+		HelixThickness: 0c32
+		HelixRadius: 0c16
+		HelixAngleDeltaPerTick: 64
+		QuantizationCount: 64
+		HitAnim: sparks_overlay
+		ZOffset: 2046
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Air, Helicopter, Airplane, Wall
+		Spread: 512
+		Damage: 5000
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25        
+		DamageTypes: Prone50Percent, TriggerProne, Incendiary, FireDeath
+		AffectsParent: false
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+	Warhead@3Emp: GrantExternalCondition
+		Range: 0c256
+		Duration: 25
+		Condition: emp-crate-collected
+		ValidTargets: EMPApplicable
+        InvalidTargets: Invulnerable
+	Warhead@4Emp: GrantExternalCondition
+		Range: 0c512
+		Duration: 25
+		Condition: emp-affected-structure
+		ValidTargets: EMPApplicableBuilding
+        InvalidTargets: Invulnerable
+
+#   this is dummy for emulate impact Sound
+MicroWaveSound:
+	Inherits: MicroWave
+	Report: coreup1.aud
+	Projectile: InstantHit
+	-Warhead@2Smu:
+    -Warhead@3Emp:
+    -Warhead@4Emp:
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+            None: 0
+            Light: 0
+            Medium: 0
+            Heavy: 0
+            Concrete: 0
+            Wood: 0
+            Aluminium: 0
+            Steel: 0
+
+#   70. Chemical Tank's weapon
+BigChemSpray:
+	ReloadDelay: 70
+	Range: 1c768
+	Burst: 2
+	BurstDelays: 10
+	Report: flamer2.aud
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, ChemImmune
+	Projectile: Bullet
+		Speed: 341
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 7000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, ChemImmune
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+
+#   71. Infiltrator's laser gun.
+PortaLaser:
+	ReloadDelay: 45
+	Range: 3c512
+	Burst: 2
+	BurstDelays: 4
+	StartBurstReport: lasgun.aud
+	Projectile: LaserZap
+		Width: 30
+		Duration: 3
+		SecondaryBeamWidth: 50
+		SecondaryBeamColor: FF000030
+		HitAnim: laserfire
+		ZOffset: 2047
+        Blockable: true
+		Inaccuracy: 0c256
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 2500
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
+
+#   72. Scorpion Tank's tail laser.
+TankLaser:
+	ReloadDelay: 91
+	Range: 7c512
+	Report: obelray1.aud
+	Projectile: LaserZap
+		Width: 85
+		HitAnim: laserfire
+		ZOffset: 2047
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 20000
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100            
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath, ObeliskLaser
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+
+TankLaserFiringGFX:
+	ReloadDelay: 91
+	Range: 7c512
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+TankLaserFiringSFX:
+	ReloadDelay: 91
+	Range: 7c512
+	StartBurstReport: obelpowr.aud
+	Report: obelpowr.aud
+	BurstDelays: 40
+	Burst: 2
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0

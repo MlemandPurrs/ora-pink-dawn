@@ -62,6 +62,20 @@ MCV2:
 		Prerequisites: global-expensivemcv
 	GpsDot:
 		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 OHRV:
 	Inherits: ^Vehicle
@@ -154,6 +168,17 @@ OHRV:
         Image: ohrv-full
 	GpsDot:
 		String: Harvester
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 AHRV:
     Inherits: OHRV
@@ -239,6 +264,20 @@ STRK:
 		Actor: moneycrate
 	Passenger:
 		CustomPipType: pip-blue
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 DTRK:
 	Inherits: ^Vehicle
@@ -306,6 +345,20 @@ DTRK:
 	RevealOnDeath:
 		Duration: 50
 		Radius: 2c512
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 R4WD:
 	Inherits: ^Vehicle
@@ -376,6 +429,17 @@ R4WD:
 		RequiresCondition: commandoinside
     Capturable:
         RequiresCondition: !loaded
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 FTRK:
 	Inherits: ^Vehicle
@@ -449,6 +513,17 @@ FTRK:
 		RequiresCondition: attack-air
 	RenderRangeCircle:
 		RangeCircleType: aa
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 APC2:
 	Inherits: ^TrackedVehicle
@@ -521,6 +596,17 @@ APC2:
 		RequiresCondition: unit.sellable && !loaded
     Capturable:
         RequiresCondition: !loaded
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MNLY:
 	Inherits: ^TrackedVehicle
@@ -580,6 +666,20 @@ MNLY:
 		CustomPipType: pip-blue
 	RenderSprites:
 		Image: MNLY
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 1TNK:
 	Inherits: ^TrackedVehicle
@@ -634,6 +734,17 @@ MNLY:
 	GrantConditionOnTerrain:
 		TerrainTypes: Water
 		Condition: onwater
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 2TNK:
 	Inherits: ^TrackedVehicle
@@ -686,6 +797,17 @@ MNLY:
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
 		DecorationBounds: 1194, 1194
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 3TNK:
 	Inherits: ^TrackedVehicle
@@ -738,6 +860,17 @@ MNLY:
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
 		DecorationBounds: 1194, 1194
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 4TNK:
 	Inherits: ^TrackedVehicle
@@ -804,6 +937,17 @@ MNLY:
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -882,6 +1026,17 @@ MNLY:
     GrantConditionOnPrerequisite@WIRELESS:
         Condition: wireless
         Prerequisites: activeradar
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -928,6 +1083,17 @@ CTNK:
 		DecorationBounds: 1030, 1030
 	Passenger:
 		CustomPipType: red
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 #   current issues:
 #   Unit does not move into range when ordered to attack out of range.
@@ -986,6 +1152,17 @@ TTNK:
     SpeedMultiplier@DONTTURN:
         Modifier: 0
         RequiresCondition: dont-move
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 V2RL:
 	Inherits: ^Vehicle
@@ -1060,6 +1237,17 @@ V2RL:
 	ReloadArmamentsBar:
 		Armaments: primary
 		Color: FFFF00
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 
 MGG:
 	Inherits: ^Vehicle
@@ -1117,6 +1305,7 @@ MGG:
 		Range: 5c0
 		RequiresCondition: !deployed
 	GrantConditionOnDeploy:
+		PauseOnCondition: emp-crate-collected
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
         DeployCursor: powerdown
@@ -1136,6 +1325,20 @@ MGG:
 	Power:
 		Amount: -15
         RequiresCondition: !emp-crate-collected && !deployed
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 APC3:
 	Inherits: ^TrackedVehicle
@@ -1235,3 +1438,15 @@ APC3:
 		RangeCircleType: aa
     Capturable:
         RequiresCondition: !loaded
+
+3T1B:
+    Inherits: 3TNK
+    Buildable:
+		BuildPaletteOrder: 5
+		Queue: Vehicle.Blackhand
+		Description: Heavily-armored Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Armament:
+        Weapon: HeavyCannon1B
+        LocalOffset: 768,0,90
+    RenderSprites:
+        Image: 3t1b
