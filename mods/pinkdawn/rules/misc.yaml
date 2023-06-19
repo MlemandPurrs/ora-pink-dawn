@@ -214,8 +214,6 @@ CAMERA.scan:
 	WithSpriteBody:
 	RenderSpritesEditorOnly:
         Image: camera
-    #  RenderSprites:
-    #  Image: blank1
 	BodyOrientation:
 		QuantizedFacings: 1
 	Immobile:

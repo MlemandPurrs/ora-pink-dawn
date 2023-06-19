@@ -84,6 +84,12 @@ IonCannon:
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 		Size: 2,1
 		Delay: 6
+    Warhead@7Eff_impact: CreateEffect
+        Explosions: ionflash
+        ExplosionPalette: alphafx
+        Delay: 3
+        ValidTargets: Ground, Water, Air
+        ImpactActors: false
 
 #   for Crate version, with extra explosion attached and delays to compensate
 IonCannon.crate:

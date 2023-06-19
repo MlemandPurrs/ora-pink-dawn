@@ -713,7 +713,7 @@ Container@OBSERVER_WIDGETS:
 						ScrollItem@TEAM_TEMPLATE:
 							X: 0
 							Y: 0
-							Width: 650 #PARENT_RIGHT - 35
+							Width: 650
 							Height: 24
 							Children:
 								ColorBlock@TEAM_COLOR:

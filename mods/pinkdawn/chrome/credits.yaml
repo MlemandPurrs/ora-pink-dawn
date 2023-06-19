@@ -2,7 +2,6 @@ Container@CREDITS_PANEL:
 	Logic: CreditsLogic
 	X: (WINDOW_RIGHT - WIDTH) / 2
 	Y: (WINDOW_BOTTOM - HEIGHT) / 2
-	#   Width: 410
 	Width: 615
     Height: 435
 	Children:

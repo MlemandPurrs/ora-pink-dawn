@@ -138,7 +138,6 @@
 	Cloak:
 		InitialDelay: 90
 		CloakDelay: 90
-		DetectionTypes: Stealth
 		CloakSound: trans1.aud
 		UncloakSound: trans1.aud
 		Palette: cloak
@@ -412,15 +411,14 @@
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
-	Explodes@AIR:
-		Weapon: HeliExplode
+	Explodes@Air:
+		Weapon: UnitExplodeAir
 		RequiresCondition: airborne
 
 ^RepairsAircraftWithRepairBay:
 	ExternalCondition@AIRCRAFTREPAIR:
 		Condition: aircraft-repair
 	RepairsUnits:
-		#   ValuePercentage: 0
 		HpPerStep: 1000
 		Interval: 26
 		PlayerExperience: 0
@@ -429,7 +427,6 @@
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
 		RequiresCondition: aircraft-repair
-        #   RepairDamageTypes: Repair
 	WithDecoration@AIRCRAFTREPAIR:
 		Image: select
 		Palette: chrome
@@ -911,6 +908,10 @@
 		Categories: Defense
 	-CommandBarBlacklist:
     -SpawnActorsOnSell:
+    -CaptureManager:
+    -Capturable:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished
 
 ^CivBuilding:
 	Inherits: ^Building
@@ -1066,7 +1067,7 @@
 	CaptureNotification:
 		Notification: CivilianBuildingRestored
 	Capturable:
-		Types: building-neutral
+		Types: building-restore
 		ValidRelationships: Enemy, Neutral, Ally
 
 ^Gate:
@@ -1513,7 +1514,6 @@
 ^AutoTargetforGTWR:
     Inherits: ^AutoTargetGround
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank, Artillery
@@ -1542,7 +1542,6 @@
 ^AutoTargetforLightVehicle:
     Inherits: ^AutoTargetGroundAssaultMove
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank, Artillery
@@ -1557,7 +1556,6 @@
 ^AutoTargetforTanks:
     Inherits: ^AutoTargetGroundAssaultMove
 	AutoTargetPriority@HighPriority:
-        #   those are always on
 		RequiresCondition: !stance-attackanything || stance-attackanything || !assault-move || assault-move
 		ValidTargets: Vehicle
 		InvalidTargets: NoAutoTarget, Tank

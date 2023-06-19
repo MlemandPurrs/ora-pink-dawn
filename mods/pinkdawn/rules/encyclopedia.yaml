@@ -966,6 +966,22 @@ atomic.info:
 		Image: atomic
         Palette: effect
 
+airstrike.info:
+    AlwaysVisible:
+    WithSpriteBody:
+	Interactable:
+	Buildable:
+		Prerequisites: miss
+	Tooltip:
+		Name: Airstrike
+	Encyclopedia:
+		Description: A-10 'Warthog' plane will drop bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
+		Order: 2
+		Category: Super Weapons
+	RenderSprites:
+		Image: bombicon
+        Palette: effect
+
 v19.info:
     Inherits: V19
 	Encyclopedia:

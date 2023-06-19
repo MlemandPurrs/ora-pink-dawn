@@ -1,13 +1,13 @@
 #   Index weaponry
 #   1. Sniper
 #   2. HeliGunAG/HeliGunAA
-#   3. TowerChaingun
+#   3. TowerGun
 #   4. Pistol
 #   5. M16
 #   6. Bazooka
 #   7. BikeRockets
-#   8. InfantryFlamer
-#   9. TankFlamer
+#   8. Flamer
+#   9. BigFlamer
 #   10. ChemSpray
 #   11. Grenade
 #   12. LightCannon
@@ -19,9 +19,9 @@
 #   18. StnkRocketsAG/StnkRocketsAA
 #   19. ArtilleryShell
 #   20. Machinegun/MachinegunLight
-#   21. AGTMissile
+#   21. TowerMissileAG/TowerMissileAA
 #   22. A-10 Napalm
-#   23. LASER
+#   23. Laser
 #   24. SAMMissile
 #   25. HonestJohn
 #   26. APCGunAG/APCGunAA
@@ -61,7 +61,6 @@ Sniper:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piff
-		#   ImpactActors: false
 		Inaccuracy: 171
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -105,7 +104,6 @@ HeliGunAG:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
         Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -153,7 +151,6 @@ TowerGun:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
 		Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -193,7 +190,6 @@ Pistol:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piff
-        #   ImpactActors: false
 		Inaccuracy: 128
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -946,7 +942,6 @@ MachineGun:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
         Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -983,7 +978,7 @@ TowerMissileAG:
 		RangeLimit: 8c409
 	Warhead@1Dam: SpreadDamage
 		Spread: 483
-		Damage: 3000
+		Damage: 6000
 		ValidTargets: Ground
 		Versus:
             None: 25

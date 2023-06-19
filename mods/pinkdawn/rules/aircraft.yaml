@@ -119,8 +119,8 @@ A10:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	Explodes:
-		Weapon: HeliExplode
-		EmptyWeapon: HeliExplode
+        Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
 	-MapEditorData:
 
 TRAN:

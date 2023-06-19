@@ -46,7 +46,7 @@ GTWR:
 		Amount: -20
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 GUN:
 	Inherits: ^Defense
@@ -105,7 +105,7 @@ GUN:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 ATWR:
 	Inherits: ^Defense
@@ -167,7 +167,7 @@ ATWR:
 		Amount: -60
 		RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
 
@@ -220,7 +220,7 @@ OBLI:
 		Amount: -75
 		RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
     WithChargeOverlay@BUILDUP:
@@ -294,7 +294,7 @@ SAM:
 		RequiresCondition: !ammo && !emp-affected-structure
 	AttackPopupTurreted:
         ClosedDamageMultiplier: 50
-		PauseOnCondition: lowpower && build-incomplete && emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
@@ -321,6 +321,8 @@ SAM:
 		RevokeDelay: 75
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 
 SBAG:
 	Inherits: ^Wall

@@ -11,7 +11,6 @@ World:
 #   While the Jet is on Air, can only be given order to Stop, which makes it return to it's assigned Airfield.
 #   It would reject any order else. You wont able to select Jet mid-air to give a new target, nor able to order it to move somewhere.
 #   Pretty much the unit can only be commanded while its on the Airfield would've been the result.
-
 ^Jet:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^ClassicFacingSpriteActor
@@ -38,7 +37,6 @@ World:
 		CruiseAltitude: 2560
         TakeOffOnCreation: true
 		TakeOffOnResupply: true
-        #   IdleBehavior: LeaveMap
 	MapEditorData:
 		Categories: Aircraft
 	Armor:
@@ -73,11 +71,13 @@ World:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	Explodes@AIR:
-		Weapon: HeliExplode
+		Weapon: UnitExplodeAir
 		RequiresCondition: airborne
 	Huntable:
     CommandBarBlacklist:
         DisableStop: false
+	RevealsShroud:
+		Range: 2c0
 
 TRAN:
 	Buildable:
@@ -111,7 +111,6 @@ APRT:
 		Description: Capture to obtain Paratroopers and Planes.
 		ValidRelationships: Neutral, Enemy
 	Exit@1:
-		#   RequiresCondition: !being-captured
 		ExitCell: 1,1
 		Facing: 768
         ProductionTypes: Aircraft.Neutral, Plane, Chopper
@@ -190,13 +189,9 @@ GenericJet:
 	AmmoPool:
 		Ammo: 6
 		AmmoCondition: ammo
-    #   if something is to be selectable its on at all times.
 	Selectable:
 		Bounds: 1536, 1194, 0, 85
 		DecorationBounds: 1706, 1237, 0, 42
-        #   PauseOnCondition: airborne
-    #  Interactable:
-    #  RequiresCondition: airborne
 	Rearmable:
 		RearmActors: aprt
 	WithAmmoPipsDecoration:
@@ -207,6 +202,12 @@ GenericJet:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
     -MapEditorData:
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@Air:
+		Weapon: UnitExplodeAirBig
+		RequiresCondition: airborne
     RenderSprites:
         Image: dummy
 

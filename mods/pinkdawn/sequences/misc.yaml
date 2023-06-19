@@ -147,6 +147,8 @@ explosion:
 		Tick: 80
     water_piff: wpiff
 	water_piffs: wpiffpiff
+    ionflash: ionflash
+		BlendMode: DoubleMultiplicative
 
 rallypoint:
 	flag: flagfly
@@ -562,3 +564,8 @@ veteranoverlay:
 		Start: 0
 		Length: 1
 		Offset: 0, 0
+
+bombicon:
+    idle: bombicnh.tem
+		AddExtension: False
+    icon: blank1
