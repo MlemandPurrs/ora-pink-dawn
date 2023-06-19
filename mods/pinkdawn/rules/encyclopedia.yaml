@@ -16,7 +16,7 @@ fact.nod.info:
 	Encyclopedia:
         Category: Nod Buildings
 	RenderSprites:
-		Image: fact
+		Image: nodfact
         Palette: nod
 
 nuke.info:
