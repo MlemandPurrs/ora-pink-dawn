@@ -1214,7 +1214,6 @@ MHQ:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
-#   todo: implement Ammo. tie JamsMissiles to having Ammo.
 WTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -1274,12 +1273,12 @@ WTNK:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	JamsMissiles:
-		Range: 5c0
+		Range: 3c0
 		DeflectionRelationships: Neutral, Enemy
         RequiresCondition: ammo
 	WithRangeCircle@JAMMER:
 		Type: jammer
-		Range: 5c0
+		Range: 3c0
 		Color: 0000FF80
         RequiresCondition: ammo
  	AmmoPool:
