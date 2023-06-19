@@ -1201,3 +1201,16 @@ parabombs.info:
 	RenderSprites:
 		Image: pbmbicon
         Palette: effect
+
+3t1b.info:
+    Inherits: 3T1B
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A one-barreled version of the soviet Heavy Tank, its not known how this design have seemingly found its way into the Brotherhood's ranks. Suspicions range from outright collaboration, to theft on Nod's behalf, although a curious report obtained during a raid suggests the usage date back all the way to the Soviet collapse in the wake of the Allies invasion.\nThis formidable tank has got its usage reserved for only the most loyal and distinguished tank crews in the Brotherhood, being deployed only when brute force has become absolute necessary.
+        Category: Nod Vehicles
+		Order: 13
+	RenderSprites:
+		Image: 3t1b
+        Palette: nodunits
+    -MapEditorData:

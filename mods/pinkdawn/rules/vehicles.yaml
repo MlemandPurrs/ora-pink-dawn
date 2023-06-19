@@ -1233,7 +1233,7 @@ WTNK:
 		BuildPaletteOrder: 6
 		Prerequisites: miss
 		Queue: Vehicle.Blackhand
-		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles with ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
+		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60

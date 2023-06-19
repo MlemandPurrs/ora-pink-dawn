@@ -1207,11 +1207,11 @@ DOME:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !lowpower && !emp-affected-structure
+		RequiresCondition: !jammed && !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower && !emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	Power:
 		Amount: -50
         RequiresCondition: !build-incomplete && !emp-affected-structure

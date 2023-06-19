@@ -1021,6 +1021,7 @@ GAP:
 		Range: 9c0
 		RequiresCondition: !deployed && !emp-affected-structure
 	GrantConditionOnDeploy:
+		PauseOnCondition: emp-affected-structure
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
         DeployCursor: powerdown

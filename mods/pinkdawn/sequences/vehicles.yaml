@@ -376,4 +376,4 @@ t55h:
 	laser-muzzle: laserchargetiny
 		Length: 10
 		Tick: 360
-	icon: htnkicon
+	icon: t55hicon

@@ -416,6 +416,7 @@ Player:
             3t1b: 20
             wtnk: 15
             t55h: 1
+            rh66: 5
 		UnitLimits:
 			harv: 8
             ohrv: 8
@@ -444,6 +445,7 @@ Player:
             e6: 1
             wtnk: 3
             t55h: 1
+            rh66: 1
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
