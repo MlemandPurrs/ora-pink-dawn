@@ -1117,6 +1117,7 @@ MGG:
 		Range: 5c0
 		RequiresCondition: !deployed
 	GrantConditionOnDeploy:
+        PauseOnCondition: emp-crate-collected
 		DeployedCondition: deployed
 		SkipMakeAnimation: true
         DeployCursor: powerdown

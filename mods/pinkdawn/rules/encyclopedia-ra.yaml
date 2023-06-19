@@ -863,6 +863,9 @@ v2rl.info:
         Description: The V2 Launcher can destroy most buildings with just two rockets. Factor in its incredible range, and it is easy to see why the Allies fear this weapons platform. Its drawbacks are its light armor, long reload time, and inability to hit fast-moving targets.
         Category: Soviet Vehicles
 		Order: 9
+    WithFacingSpriteBody:
+        -RequiresCondition:
+    -WithFacingSpriteBody@EMPTY:
 	RenderSprites:
 		Image: v2rl
         Palette: soviet

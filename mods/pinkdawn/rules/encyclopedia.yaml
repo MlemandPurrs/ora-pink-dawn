@@ -262,7 +262,7 @@ bio.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.
+		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.\nIts presence is required to facilitate the procurement of materials used in the assembly of a Nuclear device.\nIt will also provide the components necessary to unlock the SSM Launcher and Chem Trooper for production.
         Category: Nod Buildings
 		Order: 15
 	RenderSprites:
@@ -804,6 +804,10 @@ mlrs.info:
         Description: The SSM is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.
         Category: Nod Vehicles
 		Order: 15
+    WithSpriteTurret:
+        -RequiresCondition:
+    -WithSpriteTurret@OneMissile:
+    -WithSpriteTurret@NoMissiles:
 	RenderSprites:
 		Image: mlrs
         Palette: nodunits

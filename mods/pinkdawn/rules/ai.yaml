@@ -246,7 +246,7 @@ Player:
 		VehiclesFactoryTypes: weap, afld, warf
 		ProductionTypes: pyle, hand, weap, afld, hpad, tent, barr, warf, 3fld
 		SiloTypes: silo, osil
-        DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftur, tsla
+        DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftwr, tsla
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
@@ -300,7 +300,7 @@ Player:
 			sam: 7
             pbox: 5
             hbox: 5
-            ftur: 5
+            ftwr: 5
             tsla: 7
             agun: 7
             sam2: 7
@@ -333,7 +333,7 @@ Player:
 		AirUnitsTypes: heli, orca, hind, hel2, yak, mig
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftur, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
+		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
 		UnitQueues: Vehicle.Nod, Vehicle.GDI, Vehicle.Allies, Vehicle.Soviet, Infantry.Nod, Infantry.GDI, Infantry.Allies, Infantry.Soviet, Aircraft.Nod, Aircraft.GDI, Aircraft.Allies, Aircraft.Soviet, Navy.Neutral
@@ -417,7 +417,7 @@ Player:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
 		ConstructionYardTypes: fact, fac2
-        McvFactoryTypes: weap,afld,warf
+        McvFactoryTypes: weap, afld, warf
 	SquadManagerBotModule@AircraftOne:
 		RequiresCondition: enable-ai-player
 		RushInterval: 400
@@ -428,7 +428,7 @@ Player:
 		AirUnitsTypes: heli, orca, hind, hel2, yak, mig
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftur, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
+		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv
     CaptureManagerBotModule:
         CapturingActorTypes: e6
         CapturableActorTypes: syrd, v19, oil, hosp
