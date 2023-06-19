@@ -924,10 +924,6 @@ RH66:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
-	DetectCloaked:
-		Range: 3c768
-		RequiresCondition: !emp-crate-collected
-	RenderDetectionCircle:
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: StnkRocketsAG

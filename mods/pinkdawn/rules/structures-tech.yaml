@@ -151,7 +151,7 @@ SYRD:
 		Type: Navy.Neutral
 		DisplayOrder: 5
 		Group: Navy
-		Factions: gdi, nod, allies, soviet, blackhand
+		Factions: gdi, nod, allies, soviet, bossnod
 		LowPowerModifier: 150
 		ReadyAudio: NavalUnitReady
 		ReadyTextNotification: Naval unit ready.

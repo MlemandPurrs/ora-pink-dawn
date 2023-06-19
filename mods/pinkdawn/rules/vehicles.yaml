@@ -1257,9 +1257,14 @@ WTNK:
 	Armament@Sound:
 		Weapon: MicroWaveSound
 		PauseOnCondition: emp-crate-collected || !ammo
+    Armament@AIHelper:
+        Name: tertiary
+        Weapon: TargeterforWTNK
+        PauseOnCondition: ammo || emp-crate-collected
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
+        Armaments: primary, secondary, tertiary
 		TargetFrozenActors: True
 		OpportunityFire: False
 		Voice: Attack

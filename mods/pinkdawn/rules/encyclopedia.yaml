@@ -534,6 +534,7 @@ e6.nod.info:
         Category: Nod Infantry
 	RenderSprites:
 		Image: e6
+        Palette: nodunits
 
 rmbo.info:
     Inherits: RMBO
@@ -1178,7 +1179,7 @@ wtnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The MGT-1A Microwave Tank is a success story of persistent experimentation with heat-based wave-form weaponry. The tank is capable of striking at the distance, incinerating Infantry units caught in the blast. Enemy vehicles and defenses that get hit by the heatwave blast will suffer malfunctions due to sudden accumulated excessive heat.\nThe powersource used to operate the weaponry can also be used to haywire and deflect incoming missiles, aslong the unit has accumlated enough extensive heat for it to function.
+        Description: The MGT-1A Microwave Tank is a success story of persistent experimentation with heat-based wave-form weaponry. The tank is capable of striking at the distance, incinerating Infantry units caught in the blast. Enemy vehicles and defenses that get hit by the heatwave blast will suffer malfunctions due to sudden accumulated excessive heat.\nThe powersource used to operate the weaponry can also be used to haywire and deflect incoming missiles, aslong the unit has accumulated enough extensive heat for it to function.
         Category: Nod Vehicles
 		Order: 16
 	RenderSprites:

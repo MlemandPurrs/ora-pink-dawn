@@ -41,3 +41,12 @@ TargeterforMLRS:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
         ValidTargets: Ground, Water, Tree
+
+TargeterforWTNK:
+	ReloadDelay: 3
+	Range: 5c768
+    ValidTargets: Ground, Water, Tree
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+        ValidTargets: Ground, Water, Tree
