@@ -148,13 +148,28 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
-	HarvesterBotModule:
+	HarvesterBotModuleCA:
 		RequiresCondition: enable-ai-player
+        # those 3 below, CA allows to set specifics on usage of Harvesters
+        HarvestersPerRefinery: 2
+        MaxHarvesters: 8
+        ProduceHarvestersInterval: 375
 		HarvesterTypes: harv
 		RefineryTypes: proc
-	BaseBuilderBotModule:
+	BaseBuilderBotModuleCA:
 		RequiresCondition: enable-ai-player
-		BuildingQueues: Building.Nod, Building.GDI
+        # eww, no...
+        StructureProductionRandomBonusDelay: 0
+        # CA was setting this to 10k, i set it back down to 5k
+        NewProductionCashThreshold: 5000
+        # below 3 are new from CA
+        MaxExtraRefineries: 1
+        InitialMinimumRefineryCount: 1
+        NormalMinimumRefineryCount: 1
+        # those two below are also from CA
+        BuildingProductionMinCashRequirement: 1750
+        DefenseProductionMinCashRequirement: 2250
+        BuildingQueues: Building.Nod, Building.GDI
 		DefenseQueues: Defense.Nod, Defense.GDI
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
@@ -166,11 +181,17 @@ Player:
 		BarracksTypes: pyle, hand
 		VehiclesFactoryTypes: weap, afld
 		ProductionTypes: pyle, hand, weap, afld, hpad
-		SiloTypes: silo
+        NavalProductionTypes: syrd
+        SiloTypes: silo
         DefenseTypes: gtwr, atwr, gun, obli
+        # new below, CA allows to set seperately AA defense.
+        AntiAirTypes: sam
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 100 # never not
+        # CA allows AI to sell buildings when required.
+        SellScanRadius: 8
+        #   IgnoredUnitTargetTypes: ImportantBuilding
 		BuildingLimits:
 			proc: 4
 			pyle: 3
@@ -203,29 +224,79 @@ Player:
             miss: 1
 			fix: 1
 			hpad: 1
-	BuildingRepairBotModule:
+			silo: 1
+		BuildingIntervals:
+			proc: 2250
+            weap: 2250
+            afld: 2250
+        BuildingDelays:
+            hq: 4500
+            hpad: 6375
+			tmpl: 6375
+            miss: 6375
+            eye: 8000
+            bio: 8000
+    BuildingRepairBotModuleCA:
 		RequiresCondition: enable-ai-player
-	SquadManagerBotModule:
+	SquadManagerBotModuleCA:
 		RequiresCondition: enable-ai-player
-		RushInterval: 400
+        # CA does not make use of RushInterval
+		#   RushInterval: 400
+		MinimumAttackForceDelay: 25
 		SquadSize: 12
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, heli, orca
+        # those two below are CA additions
+        SquadValue: 1500
+        SquadValueRandomBonus: 1500
+        ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, e6
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
-	UnitBuilderBotModule:
+		# CA does not make use of ProtectionTypes
+        #   ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
+        ProtectInterval: 50
+        # in addition CA has no RushAttackScan radius
+        # the following are all CA additions.
+        # AI will prioritise attacking those over others.
+        HighValueTargetPriority: 15
+        HighValueTargetTypes: fact, tmpl, miss, eye, bio
+        # Is Aircraft, has AA weapon, puts weight on when can choose to attack enemy Aircraft.
+        AirToAirPriority: 45
+        # when doing Air-to-Air, those get prioritised
+        BigAirThreats: tran
+        AirSquadTargetTypes:
+			heli: Aircraft, Vehicle
+			orca: Aircraft, Vehicle
+        # Air units will avoid these
+        StaticAntiAirTypes: sam
+		IdleScanRadius: 18
+		AttackScanRadius: 9
+		MaxBaseRadius: 16
+		ProtectUnitScanRadius: 28
+		ProtectionScanRadius: 16
+	UnitBuilderBotModuleCA:
 		RequiresCondition: enable-ai-player
 		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy.Nod, Navy.GDI
-		UnitsToBuild:
+		IdleBaseUnitsMaximum: 24
+        # below are CA additions
+        UnitBuilderInterval: 25
+        ProductionMinCashRequirement: 2000
+        MaximiseProductionCashRequirement: 8000
+        MaxAircraft: 1
+        AirThreatUnits: tran, orca, heli
+        MaintainAirSuperiority: false
+        MaxAirSuperiority: 0
+        AirToAirUnits: orca, heli
+		# with CA you dont include Harv in the UnitsToBuild
+        UnitsToBuild:
 			e1: 65
 			e2: 25
 			e3: 40
 			e4: 15
 			e5: 15
-			harv: 10
+			e6: 5
+			rmbo: 15
 			jeep: 5
 			bggy: 5
 			bike: 20
@@ -242,27 +313,41 @@ Player:
 			heli: 5
 			orca: 5
             boat: 3
+        # including limit for Harv here is still necessary
 		UnitLimits:
 			harv: 8
-            boat: 5
-            orca: 1
-            heli: 1
+            boat: 4
             jeep: 4
             bggy: 4
             bike: 4
-	McvManagerBotModule:
+			e6: 1
+            rmbo: 1
+        UnitIntervals:
+ 			mcv: 3750
+            harv: 2250
+			rmbo: 4500
+		UnitDelays:
+			arty: 5250
+	McvManagerBotModuleCA:
 		RequiresCondition: enable-ai-player
-		McvTypes: mcv
+        # ai keeps feeding MCV to enemy...
+		# MinimumConstructionYardCount: 2
+        MinimumConstructionYardCount: 1
+        McvTypes: mcv
 		ConstructionYardTypes: fact
-		McvFactoryTypes: weap,afld
-	SquadManagerBotModule@AircraftOne:
+		McvFactoryTypes: weap, afld
+		ScanForNewMcvInterval: 80
+        # this is new, tells to stay away off this much around enemy Conyards
+        EnemyScanRadius: 16
+        MaxBaseRadius: 24
+	CaptureManagerBotModuleCA:
 		RequiresCondition: enable-ai-player
-		RushInterval: 400
-		SquadSize: 1
-        SquadSizeRandomBonus: 0
-        ExcludeFromSquadsTypes: harv, mcv, a10, c17, c17.paradrop, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, boat, e1, e2, e3, e4, e5
-		ConstructionYardTypes: fact
-		AirUnitsTypes: heli, orca
-        NavalUnitsTypes: boat
-        NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
+		CapturingActorTypes: e6
+		CapturableActorTypes: v19,hosp,syrd,comm,aprt,expb,oil,empb,wind,army # fact,hand,pyle,weap,afld,miss,tmpl,hq,eye,bio, # for now lets keep it neutrals only
+		CheckCaptureTargetsForVisibility: false
+		MaximumCaptureTargetOptions: 6
+		EnemyAvoidanceRadius: 4c0
+	BridgeRepairBotModule:
+		RequiresCondition: enable-ai-player
+		RepairActorTypes: e6
+		EnemyAvoidanceRadius: 4c0

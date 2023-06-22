@@ -5,6 +5,9 @@ E1:
 		Cost: 100
 	Tooltip:
 		Name: Soldier
+	TooltipExtras:
+		Strengths: Strong vs Infantry.
+		Weaknesses: Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -13,7 +16,7 @@ E1:
 		BuildPaletteOrder: 0
 		Prerequisites: infantryproduction
 		Queue: Infantry.GDI, Infantry.Nod
-		Description: General-purpose infantry.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+		Description: General-purpose infantry.\n
 	Mobile:
 		Speed: 40
 	Health:
@@ -38,6 +41,8 @@ E2:
 		Cost: 150
 	Tooltip:
 		Name: Grenadier
+	TooltipExtras:
+		Strengths: Strong vs Buildings, Slow units.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -46,7 +51,7 @@ E2:
 		BuildPaletteOrder: 2
 		Prerequisites: anyhq
 		Queue: Infantry.GDI
-		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow-moving targets.
+		Description: Fast infantry armed with grenades.\n
 	Mobile:
 		Speed: 50
 	Health:
@@ -78,6 +83,9 @@ E3:
 		Cost: 300
 	Tooltip:
 		Name: Rocket Soldier
+	TooltipExtras:
+		Strengths: Can attack Aircraft.\nStrong vs Tanks, Aircraft.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -86,7 +94,7 @@ E3:
 		BuildPaletteOrder: 1
 		Prerequisites: vehicleproduction
 		Queue: Infantry.GDI, Infantry.Nod
-		Description: Anti-tank infantry.\n\nCan attack Aircraft.\nStrong vs Tanks, Aircraft.\nWeak vs Infantry.
+		Description: Anti-tank infantry.\n
 	Mobile:
 		Speed: 30
 	RevealsShroud:
@@ -116,6 +124,10 @@ E4:
 		Cost: 200
 	Tooltip:
 		Name: Flamethrower
+	TooltipExtras:
+        Attributes: Immune to it's own weapon.
+		Strengths: Strong vs Infantry, Buildings.
+		Weaknesses: Weak vs Tanks.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -124,7 +136,7 @@ E4:
 		BuildPaletteOrder: 3
 		Prerequisites: anyhq
 		Queue: Infantry.Nod
-		Description: Anti-infantry unit.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
+		Description: Anti-infantry unit.\n
 	Mobile:
 		Speed: 40
 		PauseOnCondition: dont-move
@@ -167,6 +179,9 @@ E5:
 		Cost: 400
 	Tooltip:
 		Name: Chemical Trooper
+	TooltipExtras:
+        Attributes: Immune to Tiberium.
+		Strengths: Strong vs all Ground units.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -175,7 +190,7 @@ E5:
 		BuildPaletteOrder: 7
 		Prerequisites: bio
 		Queue: Infantry.Nod
-		Description: Advanced general-purpose Infantry.\n\nStrong vs all Ground units.
+		Description: Advanced general-purpose Infantry.\n
 	Mobile:
 		Speed: 50
 		Locomotor: foot-immune
@@ -232,6 +247,8 @@ E6:
 		Cost: 500
 	Tooltip:
 		Name: Engineer
+	TooltipExtras:
+		Weaknesses: Unarmed.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -240,7 +257,7 @@ E6:
 		BuildPaletteOrder: 4
 		Prerequisites: proc
 		Queue: Infantry.GDI, Infantry.Nod
-		Description: Captures enemy and tech structures.\nCan repair destroyed bridges.\n\nUnarmed.
+		Description: Captures enemy and tech structures.\nCan repair destroyed bridges.\n
 	Mobile:
 		Speed: 40
 	RevealsShroud:
@@ -284,6 +301,10 @@ RMBO:
 		Cost: 1200
 	Tooltip:
 		Name: Commando
+	TooltipExtras:
+        Attributes: Uses C-4 to demolish buildings.
+		Strengths: Strong vs Infantry, Buildings.
+		Weaknesses: Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -293,7 +314,7 @@ RMBO:
 		Prerequisites: anytier3
 		BuildLimit: 1
 		Queue: Infantry.GDI, Infantry.Nod
-		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
+		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n
 	Mobile:
 		Speed: 50
 	Health:

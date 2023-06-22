@@ -24,13 +24,15 @@ MCV:
         GenericStancePrefix: false
         GenericName: MCV
         GenericVisibility: Ally, Neutral, Enemy
+	TooltipExtras:
+		Weaknesses: Unarmed.
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
         Prerequisites: anyhq, fix
 		Queue: Vehicle.GDI, Vehicle.Nod
-		Description: Deploys into another Construction Yard.\n\nUnarmed.
+		Description: Deploys into another Construction Yard.\n
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Mobile:
@@ -64,6 +66,8 @@ MCV:
 	ProductionTimeMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
 		Prerequisites: global-expensivemcv
+	DamageMultiplier@IsConyard:
+		Modifier: 90
 
 HARV:
 	Inherits: ^Vehicle
@@ -87,13 +91,16 @@ HARV:
 	Tooltip:
 		Name: Harvester
 		GenericName: Harvester
+	TooltipExtras:
+        Attributes: Self-repairs out of combat.
+		Weaknesses: Unarmed.
 	Buildable:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: proc
 		Queue: Vehicle.GDI, Vehicle.Nod
-		Description: Collects Tiberium for processing.\n\nUnarmed.
+		Description: Collects Tiberium for processing.\n
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Harvester:
@@ -151,6 +158,14 @@ HARV:
 		Image: harv
 		FactionImages:
 			nod: nodharv
+	SpeedMultiplier@HARVBALANCE:
+		RequiresCondition: harv-balance
+		Modifier: 138
+	HarvesterBalancer:
+		Condition: harv-balance
+        RequiresCondition: get-this-working
+    GrantCondition@HARVBALANCE:
+        Condition: get-this-working
 
 TRUK:
 	Inherits: ^Vehicle
@@ -177,11 +192,13 @@ TRUK:
 		BuildPaletteOrder: 17
 		Queue: Vehicle.GDI, Vehicle.Nod
 		Prerequisites: proc
-		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
+		Description: Transports 1000 credits to\nother allied players.\n
 	Valued:
 		Cost: 1000
 	Tooltip:
 		Name: Supply Truck
+	TooltipExtras:
+		Weaknesses: Unarmed.
 	Health:
 		HP: 12000
 	Armor:
@@ -211,6 +228,9 @@ JEEP:
 		Cost: 400
 	Tooltip:
 		Name: Humvee
+	TooltipExtras:
+		Strengths: Strong vs Infantry.
+		Weaknesses: Weak vs Tanks.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -219,7 +239,7 @@ JEEP:
 		BuildPaletteOrder: 1
 		Prerequisites: weap
 		Queue: Vehicle.GDI
-		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Fast scout and anti-infantry vehicle.\n
 	Mobile:
         Locomotor: wheeled-non-crusher
 		TurnSpeed: 18
@@ -255,6 +275,9 @@ BGGY:
 		Cost: 300
 	Tooltip:
 		Name: Buggy
+	TooltipExtras:
+		Strengths: Strong vs Infantry.
+		Weaknesses: Weak vs Tanks.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -263,7 +286,7 @@ BGGY:
 		BuildPaletteOrder: 2
 		Prerequisites: afld
 		Queue: Vehicle.Nod
-		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Fast scout and anti-infantry vehicle.\n
 	Mobile:
 		TurnSpeed: 18
 		Speed: 160
@@ -296,6 +319,10 @@ BIKE:
 		Cost: 500
 	Tooltip:
 		Name: Recon Bike
+	TooltipExtras:
+        Attributes: Can detect cloaked units.
+		Strengths: Can attack Aircraft.\nStrong vs Vehicles, Tanks.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -304,7 +331,7 @@ BIKE:
 		BuildPaletteOrder: 11
 		Prerequisites: anyhq
 		Queue: Vehicle.Nod
-		Description: Fast scout vehicle with rockets.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+		Description: Fast scout vehicle with rockets.\n
 	Mobile:
     	Locomotor: wheeled-non-crusher
 		TurnSpeed: 24
@@ -344,6 +371,9 @@ APC:
         GenericStancePrefix: false
         GenericName: APC
         GenericVisibility: Ally, Neutral, Enemy
+	TooltipExtras:
+		Strengths: Strong vs Infantry.
+		Weaknesses: Weak vs Tanks.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -352,7 +382,7 @@ APC:
 		BuildPaletteOrder: 3
 		Prerequisites: infantryproduction
 		Queue: Vehicle.GDI, Vehicle.Nod
-		Description: Armored infantry transport.\n\nStrong vs Infantry.\nWeak vs Infantry.
+		Description: Armored infantry transport.\n
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
@@ -405,6 +435,9 @@ MAAG:
 		Cost: 700
 	Tooltip:
 		Name: Mobile Anti-Air Gun
+	TooltipExtras:
+		Strengths: Can attack Aircraft.\nStrong vs Helicopters, Infantry.
+		Weaknesses: Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -413,7 +446,7 @@ MAAG:
 		BuildPaletteOrder: 10
 		Prerequisites: anyhq
 		Queue: Vehicle.GDI
-		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
+		Description: All-rounder fire-support vehicle.\n
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 18
@@ -484,6 +517,9 @@ LTNK:
 		Cost: 600
 	Tooltip:
 		Name: Light Tank
+	TooltipExtras:
+		Strengths: Strong vs Tanks, Vehicles.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -492,7 +528,7 @@ LTNK:
 		BuildPaletteOrder: 5
 		Prerequisites: afld
 		Queue: Vehicle.Nod
-		Description: Fast, light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+		Description: Fast, light tank.\n
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
@@ -529,6 +565,9 @@ MTNK:
 		Cost: 800
 	Tooltip:
 		Name: Main Battle Tank
+	TooltipExtras:
+		Strengths: Strong vs Tanks, Vehicles.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -537,7 +576,7 @@ MTNK:
 		BuildPaletteOrder: 4
 		Prerequisites: fix
 		Queue: Vehicle.GDI
-		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+		Description: General-Purpose GDI Tank.\n
 	Mobile:
         TurnSpeed: 12
         Locomotor: tracked-crusher
@@ -581,13 +620,16 @@ FTNK:
 		Cost: 800
 	Tooltip:
 		Name: Flame Tank
+	TooltipExtras:
+		Strengths: Strong vs Infantry, Buildings.
+		Weaknesses: Weak vs Tanks.
 	Buildable:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: fix
 		Queue: Vehicle.Nod
-		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
+		Description: Heavily armored flame-throwing vehicle.\n
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
@@ -631,6 +673,9 @@ HTNK:
 		Cost: 1500
 	Tooltip:
 		Name: Mammoth Tank
+	TooltipExtras:
+        Attributes: Self-repairs out of combat.
+		Strengths: Can attack Aircraft.\nStrong vs Everything.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -639,7 +684,7 @@ HTNK:
 		BuildPaletteOrder: 6
 		Prerequisites: miss
 		Queue: Vehicle.GDI
-		Description: Heavily armored GDI Tank.\n\nCan attack Aircraft.\nStrong vs Everything.
+		Description: Heavily armored GDI Tank.\n
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
@@ -667,7 +712,6 @@ HTNK:
 		LocalOffset: -85,384,340, -85,-384,340
 		LocalYaw: -100, 100
 		Recoil: 10
-		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
 	AttackMove:
 		Voice: Attack
@@ -697,6 +741,10 @@ STNK:
 		Cost: 900
 	Tooltip:
 		Name: Stealth Tank
+	TooltipExtras:
+        Attributes: Can cloak to be invisible.
+		Strengths: Can attack Aircraft.\nStrong vs Vehicles, Tanks.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -705,7 +753,7 @@ STNK:
 		BuildPaletteOrder: 13
 		Prerequisites: tmpl
 		Queue: Vehicle.Nod
-		Description: Medium-range missile tank, capable of cloak.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+		Description: Medium-range missile tank.\n
 	Mobile:
 		Locomotor: tracked-crusher
 		TurnSpeed: 18
@@ -762,6 +810,9 @@ ARTY:
 		Cost: 700
 	Tooltip:
 		Name: Artillery
+	TooltipExtras:
+		Strengths: Strong vs Infantry and Buildings.
+		Weaknesses: Weak vs Helicopters, Fast units.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -770,7 +821,7 @@ ARTY:
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Vehicle.Nod
-		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
+		Description: Long-range artillery.\n
 	Mobile:
         Locomotor: tracked-non-crusher
 		TurnSpeed: 12
@@ -822,6 +873,9 @@ MSAM:
         GenericStancePrefix: false
         GenericName: MLRS
         GenericVisibility: Ally, Neutral, Enemy        
+	TooltipExtras:
+		Strengths: Strong vs all Ground units.
+		Weaknesses: Weak vs Helicopters, Fast units.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -830,7 +884,7 @@ MSAM:
 		BuildPaletteOrder: 8
 		Prerequisites: eye
 		Queue: Vehicle.GDI
-		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
+		Description: Long range rocket artillery.\n
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
@@ -886,6 +940,9 @@ MLRS:
         GenericStancePrefix: false
         GenericName: SSM Launcher
         GenericVisibility: Ally, Neutral, Enemy
+	TooltipExtras:
+		Strengths: Strong vs all Ground units.
+		Weaknesses: Weak vs Helicopters, Fast units.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -894,7 +951,7 @@ MLRS:
 		BuildPaletteOrder: 15
 		Prerequisites: bio
 		Queue: Vehicle.Nod
-		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
+		Description: Long range missile artillery.\n
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
@@ -946,9 +1003,10 @@ MLRS:
 	AutoTarget:
 		InitialStanceAI: Defend
 	RenderRangeCircle:
-	ReloadAmmoPool:
+	ReloadAmmoPoolCA:
 		Delay: 200
 		Count: 1
+        SelectionBarColor: FFFF00
         PauseOnCondition: emp-crate-collected
     Targetable@Extra:
 		TargetTypes: Artillery
@@ -961,6 +1019,9 @@ MHQ:
 		Cost: 600
 	Tooltip:
 		Name: Mobile Jammer
+	TooltipExtras:
+        Attributes: Can detect cloaked units.
+		Strengths: Strong vs Infantry.
 	Health:
 		HP: 12000
 	Armor:
@@ -984,7 +1045,7 @@ MHQ:
 		BuildPaletteOrder: 12
 		Prerequisites: eye
 		Queue: Vehicle.GDI
-		Description: Can detect cloaked units.\nJams enemy communications.\n\nStrong vs Infantry.
+		Description: Jams enemy communications.\n
 	Turreted:
 		TurnSpeed: 12
 		Offset: 246,-60,112

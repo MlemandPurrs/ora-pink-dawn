@@ -14,6 +14,7 @@ Background@COLOR_CHOOSER:
 			Width: 77
 			Height: 25
 			Text: Random
+			Font: Bold
 		Button@STORE_BUTTON:
 			X: 165
 			Y: PARENT_BOTTOM - 30
@@ -47,6 +48,19 @@ Background@COLOR_CHOOSER:
 			Width: PARENT_RIGHT - 91
 			Height: PARENT_BOTTOM - 34
 			Children:
+				Background@HUEBG:
+					Background: panel-black
+					X: 0
+					Y: 0
+					Width: PARENT_RIGHT
+					Height: 17
+					Children:
+						HueSlider@HUE_SLIDER:
+							X: 2
+							Y: 2
+							Width: PARENT_RIGHT - 4
+							Height: PARENT_BOTTOM - 4
+							Ticks: 5
 				Background@MIXERBG:
 					Background: panel-black
 					X: 0

@@ -11,8 +11,8 @@ Packages:
 	~^SupportDir|Content/cnc
 	~^SupportDir|Content/cnc/movies
 	^EngineDir
-	$pinkdawn: pinkdawn    
 	^EngineDir|mods/common: common
+	$pinkdawn: pinkdawn
 	~speech.mix
 	~conquer.mix
 	~sounds.mix
@@ -107,6 +107,7 @@ Chrome:
 Assemblies:
 	^BinDir|OpenRA.Mods.Common.dll
 	^BinDir|OpenRA.Mods.Cnc.dll
+	^BinDir|OpenRA.Mods.CA.dll
 
 ChromeLayout:
 	pinkdawn|chrome/mainmenu.yaml

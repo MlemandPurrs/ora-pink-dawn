@@ -8,13 +8,16 @@ GTWR:
 		Cost: 500
 	Tooltip:
 		Name: Guard Tower
+	TooltipExtras:
+		Strengths: Strong vs Infantry.
+		Weaknesses: Weak vs Tanks.
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: infantryproduction
 		Queue: Defense.GDI, Defense.Nod
-		Description: Basic defensive structure.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Basic defensive structure.\n
 	Building:
 	Health:
 		HP: 40000
@@ -59,13 +62,16 @@ GUN:
 		Cost: 500
 	Tooltip:
 		Name: Gun Turret
+	TooltipExtras:
+		Strengths: Strong vs Tanks, Vehicles.
+		Weaknesses: Weak vs Infantry.
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: vehicleproduction
 		Queue: Defense.GDI, Defense.Nod
-		Description: Anti-Tank base defense.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+		Description: Anti-Tank base defense.\n
 	Building:
 	Health:
 		HP: 40000
@@ -117,13 +123,17 @@ ATWR:
 		Cost: 1000
 	Tooltip:
 		Name: Advanced Guard Tower
+	TooltipExtras:
+        Attributes: Requires power to operate.
+		Strengths: Can attack Aircraft.\nStrong vs Aircraft, Vehicles.
+		Weaknesses: Weak vs Tanks, Artillery.
 	Buildable:
 		BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: miss
 		Queue: Defense.GDI
-		Description: All-purpose defensive structure.\nRequires power to operate.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
+		Description: All-purpose defensive structure.\n
 	Selectable:
 		Bounds: 1024, 1024
 		DecorationBounds: 938, 2048, 0, -512
@@ -180,13 +190,16 @@ OBLI:
 		Cost: 1500
 	Tooltip:
 		Name: Obelisk of Light
+	TooltipExtras:
+        Attributes: Requires power to operate.
+		Strengths: Strong vs all Ground units.
 	Buildable:
 		BuildDuration: 2700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: tmpl
 		Queue: Defense.Nod
-		Description: Advanced base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
+		Description: Advanced base defense.\n
 	Selectable:
 		Bounds: 1024, 1024
 		DecorationBounds: 938, 1877, 0, -426
@@ -248,13 +261,17 @@ SAM:
 		Cost: 750
 	Tooltip:
 		Name: SAM Site
+	TooltipExtras:
+        Attributes: Requires power to operate.
+		Strengths: Can attack only Aircraft.
+        Weaknesses: Can attack only Aircraft.
 	Buildable:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Nod
-		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
+		Description: Cloaked Anti-Aircraft base defense.\n
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -389,7 +406,7 @@ CYCL:
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction
 		Queue: Defense.GDI, Defense.Nod
-		Description: Stops Infantry and Light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
+		Description: Stops infantry and light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
 	Armor:
 		Type: Aluminium
 	BlocksProjectiles:
@@ -415,7 +432,7 @@ BRIK:
 		BuildPaletteOrder: 3
 		Prerequisites: anytier3
 		Queue: Defense.GDI, Defense.Nod
-		Description: Stops Infantry and Vehicles.\nBlocks projectiles.
+		Description: Stops infantry and vehicles.\nBlocks projectiles.
 	Health:
 		HP: 20000
 	Armor:

@@ -67,7 +67,12 @@
 		Name: effect
 		Filename: temperat.pal
 		ShadowIndex: 4
-	ColorPickerPalette@colorpicker:
+	#   ColorPickerPalette@colorpicker:
+	#	Name: colorpicker
+	#	BasePalette: terrain
+	#	RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	#	AllowModifiers: false
+	OverlayColorPickerPalette@colorpicker:
 		Name: colorpicker
 		BasePalette: terrain
 		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
@@ -112,9 +117,13 @@
 		Name: player-noshadow
 		Filename: desert.pal
 		TransparentIndex: 0, 4
-	PlayerColorPalette@normal:
-		BaseName: player
+	#   PlayerColorPalette@normal:
+	#	BaseName: player
+	#	BasePalette: player-static
+	#	RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	OverlayPlayerColorPalette:
 		BasePalette: player-static
+		BaseName: player
 		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 	MenuPaletteEffect:
 		MenuEffect: Desaturated

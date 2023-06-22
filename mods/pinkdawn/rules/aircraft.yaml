@@ -146,6 +146,8 @@ TRAN:
 		Cost: 750
 	Tooltip:
 		Name: Transport Helicopter
+	TooltipExtras:
+		Weaknesses: Unarmed.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -154,7 +156,7 @@ TRAN:
 		BuildPaletteOrder: 0
 		Prerequisites: hpad
 		Queue: Aircraft.GDI, Aircraft.Nod
-		Description: Fast Infantry Transport.\n\nUnarmed.
+		Description: Fast Infantry Transport.\n
 	Aircraft:
         IdleBehavior: Land
         TurnToLand: True
@@ -217,6 +219,9 @@ ORCA:
 		Cost: 1200
 	Tooltip:
 		Name: Orca
+	TooltipExtras:
+		Strengths: Can attack Aircraft.\nStrong vs Buildings, Tanks.
+		Weaknesses: Weak vs Infantry.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -225,7 +230,7 @@ ORCA:
 		BuildPaletteOrder: 1
 		Prerequisites: hpad, anyhq
 		Queue: Aircraft.GDI
-		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
+		Description: VTOL Gunship with Missiles.\n
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200
@@ -286,6 +291,9 @@ HELI:
 		Cost: 1200
 	Tooltip:
 		Name: Apache
+	TooltipExtras:
+		Strengths: Can attack Aircraft.\nStrong vs Infantry, Light Vehicles.
+		Weaknesses: Weak vs Tanks.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -294,7 +302,7 @@ HELI:
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq
 		Queue: Aircraft.Nod
-		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description:  Helicopter Gunship with Chainguns.\n
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200

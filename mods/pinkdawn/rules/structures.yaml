@@ -610,7 +610,7 @@ AFLD:
 		BuildPaletteOrder: 6
 		Prerequisites: anypower, infantryproduction
 		Queue: Building.Nod
-		Description: Provides a dropzone\nfor vehicle reinforcements.
+		Description: Provides a dropzone for Vehicle reinforcements.
 	Building:
 		Footprint: XXX+ xxx+ ====
 		Dimensions: 4,3
@@ -683,7 +683,7 @@ WEAP:
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, infantryproduction
 		Queue: Building.GDI
-		Description: Produces vehicles
+		Description: Produces Vehicle units.
 	Building:
 		Footprint: xxx +++ ===
 		Dimensions: 3,3
@@ -757,7 +757,7 @@ FIX:
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction
 		Queue: Building.GDI, Building.Nod
-		Description: Repairs Vehicles and Aircraft.\nCan sell Vehicles and Aircraft.
+		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
 		Footprint: =+= +++ =+=
 		Dimensions: 3,3
@@ -936,6 +936,8 @@ HQ:
 		Cost: 1000
 	Tooltip:
 		Name: Communications Center
+	TooltipExtras:
+        Attributes: Requires power to operate.
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
 	Buildable:
@@ -944,7 +946,7 @@ HQ:
 		BuildPaletteOrder: 10
 		Prerequisites: anypower, vehicleproduction
 		Queue: Building.GDI, Building.Nod
-		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
+		Description: Provides Radar and 'Radar Scan' support-power.\n
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3
@@ -1190,6 +1192,8 @@ EYE:
 		Cost: 1800
 	Tooltip:
 		Name: Advanced Communications Center
+	TooltipExtras:
+        Attributes: Requires power to operate.
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
 	Buildable:
@@ -1199,7 +1203,7 @@ EYE:
 		Prerequisites: miss
 		Queue: Building.GDI
 		BuildLimit: 1
-		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' super-weapon at Technology Center.\nRequires power to operate.
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' super-weapon at Technology Center.\n
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3

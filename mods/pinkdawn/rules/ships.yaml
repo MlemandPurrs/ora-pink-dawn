@@ -19,13 +19,15 @@ LST:
 		Cost: 750
 	Tooltip:
 		Name: Landing Craft
+	TooltipExtras:
+		Weaknesses: Unarmed.
 	Buildable:
         BuildDuration: 1400
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
 		Queue: Navy.GDI, Navy.Nod
 		Prerequisites: syrd
-		Description: Transports ground units across water.\n\nUnarmed.
+		Description: Transports ground units across water.\n
 	Mobile:
 		Locomotor: hovercraft
 		InitialFacing: 0
@@ -72,9 +74,12 @@ BOAT:
         BuildPaletteOrder: 1
 		Queue: Navy.GDI, Navy.Nod
 		Prerequisites: syrd
-		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
+		Description: Multi-role fire-support ship.\n
 	Tooltip:
 		Name: Patrol Boat
+	TooltipExtras:
+		Strengths: Strong vs Buildings, Infantry.
+		Weaknesses: Weak vs Tanks.
 	Health:
 		HP: 70000
 	Armor:
