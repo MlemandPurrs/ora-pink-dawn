@@ -429,6 +429,7 @@ BRIK:
 		Type: concrete
 	Replaceable:
 		Types: Gate
+    -Crushable:
 
 WOOD:
 	Inherits: ^Wall
