@@ -610,7 +610,7 @@ AFLD:
 		BuildPaletteOrder: 6
 		Prerequisites: anypower, infantryproduction
 		Queue: Building.Nod
-		Description: Provides a dropzone\nfor vehicle reinforcements.
+		Description: Provides a dropzone for Vehicle reinforcements.
 	Building:
 		Footprint: XXX+ xxx+ ====
 		Dimensions: 4,3
@@ -683,7 +683,7 @@ WEAP:
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, infantryproduction
 		Queue: Building.GDI
-		Description: Produces vehicles
+		Description: Produces Vehicle units.
 	Building:
 		Footprint: xxx +++ ===
 		Dimensions: 3,3
@@ -1106,7 +1106,7 @@ TMPL:
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq
 		Queue: Building.Nod
-		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Biological Laboratory to charge-up)
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -1199,7 +1199,7 @@ EYE:
 		Prerequisites: miss
 		Queue: Building.GDI
 		BuildLimit: 1
-		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' super-weapon at Technology Center.\nRequires power to operate.
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3

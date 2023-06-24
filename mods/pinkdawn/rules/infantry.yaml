@@ -46,7 +46,7 @@ E2:
 		BuildPaletteOrder: 2
 		Prerequisites: anyhq
 		Queue: Infantry.GDI
-		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow-moving targets.
+		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow units.
 	Mobile:
 		Speed: 50
 	Health:
@@ -124,7 +124,7 @@ E4:
 		BuildPaletteOrder: 3
 		Prerequisites: anyhq
 		Queue: Infantry.Nod
-		Description: Anti-infantry unit.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
+		Description: Anti-infantry unit.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
 		Speed: 40
 		PauseOnCondition: dont-move
@@ -175,7 +175,7 @@ E5:
 		BuildPaletteOrder: 7
 		Prerequisites: bio
 		Queue: Infantry.Nod
-		Description: Advanced general-purpose Infantry.\n\nStrong vs all Ground units.
+		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
 		Speed: 50
 		Locomotor: foot-immune
@@ -293,7 +293,7 @@ RMBO:
 		Prerequisites: anytier3
 		BuildLimit: 1
 		Queue: Infantry.GDI, Infantry.Nod
-		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
+		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 to blow up\nenemy Buildings.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 50
 	Health:
