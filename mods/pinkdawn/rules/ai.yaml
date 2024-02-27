@@ -362,7 +362,7 @@ Player:
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Vehicle.Allies, Vehicle.Soviet, Vehicle.Blackhand, Infantry.Nod, Infantry.GDI, Infantry.Allies, Infantry.Soviet, Infantry.Blackhand, Aircraft.Nod, Aircraft.GDI, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Navy.Neutral
+		UnitQueues: Vehicle, Infantry, Aircraft, Navy
 		UnitsToBuild:
 			e1: 65
 			e2: 25

@@ -438,6 +438,16 @@ hand:
 		Length: *
 		Tick: 80
 		Offset: 0,-8
+	build-top: hand2
+        Start: 0
+		Length: 4
+		ZOffset: -1024
+		Offset: 0,-8
+	damaged-build-top: hand2
+		Start: 4
+		Length: 4
+		ZOffset: -1024
+		Offset: 0,-8
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -1071,51 +1081,65 @@ obli.husk:
 
 sam:
     Inherits: emp-overlay
-	closed-idle:
-		Start: 0
 	opening:
 		Start: 1
 		Length: 16
 		Tick: 15
+		Offset: -1,-2
 	idle:
 		Start: 17
 		Facings: 32
 		UseClassicFacings: True
+		Offset: -1,-2
 	closing:
 		Start: 50
 		Length: 14
 		Tick: 15
-	damaged-closed-idle:
-		Start: 64
+		Offset: -1,-2
+	closed-idle:
+		Start: 0
+		Offset: -1,-2
 	damaged-opening:
 		Start: 65
 		Length: 16
 		Tick: 30
+		Offset: -1,-2
 	damaged-idle:
 		Start: 81
 		Facings: 32
 		UseClassicFacings: True
+		Offset: -1,-2
 	damaged-closing:
 		Start: 114
 		Length: 14
 		Tick: 30
+		Offset: -1,-2
+	damaged-closed-idle:
+		Start: 64
+		Offset: -1,-2
 	dead:
 		Start: 128
 		Tick: 800
+		Offset: -1,-2
 	place:
 		Start: 0
+		Offset: -1,-2
 	make: sammake
 		Length: 20
 		Tick: 50
+		Offset: -1,-2
 	muzzle: samfire
 		Length: 18
 		Facings: 8
+		Offset: -1,3
+        ZOffset: -1024
 	icon: samicon
 
 sam.husk:
 	idle: sam
 		Start: 128
 		Length: 1
+		Offset: -1,-2
 
 sbag:
 	idle:

@@ -33,6 +33,9 @@ FACF:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-5
 	RenderSprites:
 		Image: FAC2
 
@@ -78,6 +81,9 @@ FPWR:
 		Sequence: tag-fake
 	Targetable@Infiltration:
         TargetTypes: SpyInfiltrate
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 FAPW:
 	Inherits: ^FakeBuilding
@@ -121,6 +127,9 @@ FAPW:
 		Sequence: tag-fake
 	Targetable@Infiltration:
         TargetTypes: SpyInfiltrate
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 TENF:
 	Inherits: ^FakeBuilding
@@ -153,6 +162,9 @@ TENF:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 	RenderSprites:
 		Image: TENT
 
@@ -214,6 +226,9 @@ FREF:
 		Sequence: tag-fake
 	Targetable@Infiltration:
         TargetTypes: ThiefInfiltrate
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-3
 
 WEAF:
 	Inherits: ^FakeBuilding
@@ -250,6 +265,9 @@ WEAF:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
 	RenderSprites:
 		Image: WARF
 
@@ -290,6 +308,9 @@ FIXF:
 		Dimensions: 3,3
 	WithBuildingBib:
 		HasMinibib: true
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
 	RenderSprites:
 		Image: FIX2
 
@@ -323,6 +344,9 @@ HPAF:
 		Footprint: xx xx
 		Dimensions: 2,2
 	WithBuildingBib:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 	RenderSprites:
 		Image: HPAD
 
@@ -363,6 +387,9 @@ DOMF:
 		PauseOnCondition: lowpower
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
 	RenderSprites:
 		Image: DOME
 
@@ -399,6 +426,9 @@ ATEF:
 		Dimensions: 2,3
         LocalCenterOffset: 0,-256,0
 	WithBuildingBib:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
 	RenderSprites:
 		Image: ATEK
 
@@ -433,6 +463,9 @@ CSPF:
 		LocalCenterOffset: 0,-256,0
 	WithBuildingBib:
 		HasMinibib: true
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-3
 	RenderSprites:
 		Image: CSPH
 
@@ -464,5 +497,8 @@ MSLF:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-5
 	RenderSprites:
 		Image: MSLO

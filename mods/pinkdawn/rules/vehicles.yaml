@@ -28,8 +28,8 @@ MCV:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, anyfix
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
+        Prerequisites: anyhq, anyfix, ~vehicle.mcv
+		Queue: Vehicle
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -110,8 +110,8 @@ HARV:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: proc
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
+		Prerequisites: proc, ~vehicle.harv
+		Queue: Vehicle
 		Description: Collects Tiberium for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -208,9 +208,9 @@ TRUK:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Blackhand
-		Prerequisites: proc
-		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
+		Queue: Vehicle
+		Prerequisites: anyproc
+		Description: Transports 1000 credits to\nother allied Construction Yard.\n\nUnarmed.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -249,6 +249,11 @@ TRUK:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	RenderSprites:
+		Image: truk
+		FactionImages:
+			allies: strk 
+            soviet: strk
 
 JEEP:
 	Inherits: ^Vehicle
@@ -264,8 +269,8 @@ JEEP:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: vehicleproduction
-		Queue: Vehicle.GDI
+		Prerequisites: vehicleproduction, ~vehicle.gdi
+		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: wheeled-non-crusher
@@ -319,8 +324,8 @@ BGGY:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: vehicleproduction
-		Queue: Vehicle.Nod, Vehicle.Blackhand
+		Prerequisites: vehicleproduction, ~vehicle.bggy
+		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
 		TurnSpeed: 18
@@ -371,8 +376,8 @@ BIKE:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anyhq
-		Queue: Vehicle.Nod, Vehicle.Blackhand
+		Prerequisites: anyhq, ~vehicle.nod
+		Queue: Vehicle
 		Description: Fast scout vehicle with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: wheeled-non-crusher
@@ -430,8 +435,8 @@ APC:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Allies, Vehicle.Blackhand
+		Prerequisites: infantryproduction, ~vehicle.apc
+		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
@@ -501,14 +506,17 @@ MAAG:
 		Cost: 700
 	Tooltip:
 		Name: Mobile Anti-Air Gun
+        GenericStancePrefix: false
+        GenericName: MAAG
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq
-		Queue: Vehicle.GDI
+		Prerequisites: anyhq, ~vehicle.gdi
+		Queue: Vehicle
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
         Locomotor: tracked-crusher
@@ -597,8 +605,8 @@ LTNK:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: afld
-		Queue: Vehicle.Nod
+		Prerequisites: afld, ~vehicle.nod
+		Queue: Vehicle
 		Description: Fast, light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
@@ -653,8 +661,8 @@ MTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: anyfix
-		Queue: Vehicle.GDI
+		Prerequisites: anyfix, ~vehicle.gdi
+		Queue: Vehicle
 		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         TurnSpeed: 12
@@ -714,8 +722,8 @@ FTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix
-		Queue: Vehicle.Nod
+		Prerequisites: anyfix, ~vehicle.nod
+		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
@@ -777,8 +785,8 @@ HTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss
-		Queue: Vehicle.GDI
+		Prerequisites: miss, ~vehicle.gdi
+		Queue: Vehicle
 		Description: Heavily armored GDI Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
@@ -856,8 +864,8 @@ STNK:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: tmpl
-		Queue: Vehicle.Nod
+		Prerequisites: tmpl, ~vehicle.nod
+		Queue: Vehicle
 		Description: Medium-range missile tank.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
@@ -921,8 +929,8 @@ ARTY:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq
-		Queue: Vehicle.Nod, Vehicle.Allies, Vehicle.Blackhand
+		Prerequisites: anyhq, ~vehicle.arty
+		Queue: Vehicle
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
         Locomotor: tracked-non-crusher
@@ -992,8 +1000,8 @@ MSAM:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: eye
-		Queue: Vehicle.GDI
+		Prerequisites: eye, ~vehicle.gdi
+		Queue: Vehicle
 		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
 	Mobile:
 		Speed: 90
@@ -1069,8 +1077,8 @@ MLRS:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: bio
-		Queue: Vehicle.Nod
+		Prerequisites: bio, ~vehicle.nod
+		Queue: Vehicle
 		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
 	Mobile:
 		Speed: 90
@@ -1172,8 +1180,8 @@ MHQ:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: eye
-		Queue: Vehicle.GDI
+		Prerequisites: eye, ~vehicle.gdi
+		Queue: Vehicle
 		Description: Can detect cloaked units.\nJams enemy communications.\n\nStrong vs Infantry.
 	Turreted:
 		TurnSpeed: 12
@@ -1230,8 +1238,8 @@ WTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss
-		Queue: Vehicle.Blackhand
+		Prerequisites: miss, ~vehicle.bossnod
+		Queue: Vehicle
 		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
@@ -1324,7 +1332,7 @@ CHTK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		Prerequisites: ~disabled # miss
-		Queue: Vehicle.Blackhand
+		Queue: Vehicle
 		Description: Heavily armored chemicals-spraying vehicle.\n\nStrong vs all Ground units.
 	Mobile:
         Locomotor: tracked-crusher
@@ -1404,8 +1412,8 @@ MSG:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Queue: Vehicle.Blackhand
-		Prerequisites: sgen
+		Prerequisites: sgen, ~vehicle.bossnod
+		Queue: Vehicle
 		Description: Cloaks all nearby when deployed.\n\nUnarmed.
 	Health:
 		HP: 10000
@@ -1498,8 +1506,8 @@ T55H:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: ncom
-		Queue: Vehicle.Blackhand
+		Prerequisites: ncom, ~vehicle.bossnod
+		Queue: Vehicle
 		Description: Maximum one can be built.\n\nExperimental modified tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nScorpion tail shoots Laser.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher

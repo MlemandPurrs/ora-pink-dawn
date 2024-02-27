@@ -161,6 +161,9 @@ FAC2:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	DamageMultiplier@IsConyard:
 		Modifier: 90
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-5
 
 POWR:
 	Inherits: ^BaseBuilding
@@ -220,6 +223,9 @@ POWR:
 		RequiresCondition: power-outage
 		RequiresSelection: False
 		ValidRelationships: Ally, Neutral, Enemy
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 APWR:
 	Inherits: ^BaseBuilding
@@ -279,6 +285,9 @@ APWR:
 		RequiresCondition: power-outage
 		RequiresSelection: False
 		ValidRelationships: Ally, Neutral, Enemy
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 OREF:
 	Inherits: ^BaseBuilding
@@ -386,6 +395,9 @@ OREF:
 	GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-3
 
 OSIL:
 	Inherits: ^BaseBuilding
@@ -460,6 +472,9 @@ OSIL:
 	GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 TENT:
 	Inherits: ^BaseBuilding
@@ -505,12 +520,10 @@ TENT:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
 	Production:
-		Produces: Infantry.Allies
+		Produces: Infantry
         PauseOnCondition: build-incomplete || emp-affected-structure
-	GrantExternalConditionToProduced:
-		Condition: produced
 	ProductionQueue:
-		Type: Infantry.Allies
+		Type: Infantry
 		DisplayOrder: 2
 		Group: Infantry
 		LowPowerModifier: 150
@@ -523,12 +536,19 @@ TENT:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
-		ProductionType: Infantry.Allies
+		ProductionType: Infantry
+	GrantExternalConditionToProduced:
+		Condition: produced
 	Power:
 		Amount: -15
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@allies:
+		Prerequisite: infantry.allies
+		Factions: allies
+        ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -540,6 +560,9 @@ TENT:
 	WithRangeCircle:
 		Range: 2c512
         RequiresCondition: !build-incomplete
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 BARR:
 	Inherits: ^BaseBuilding
@@ -585,12 +608,10 @@ BARR:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
 	Production:
-		Produces: Infantry.Soviet
+		Produces: Infantry
         PauseOnCondition: build-incomplete || emp-affected-structure
-	GrantExternalConditionToProduced:
-		Condition: produced
 	ProductionQueue:
-		Type: Infantry.Soviet
+		Type: Infantry
 		DisplayOrder: 2
 		Group: Infantry
 		LowPowerModifier: 150
@@ -603,16 +624,39 @@ BARR:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
-		ProductionType: Infantry.Soviet
+		ProductionType: Infantry
+	GrantExternalConditionToProduced:
+		Condition: produced
 	Power:
 		Amount: -15
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@soviet:
+		Prerequisite: infantry.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@e2:
+		Prerequisite: infantry.e2
+		Factions: gdi, soviet
+        ResetOnOwnerChange: true
+    #   ProvidesPrerequisite@InfantrySoviet:
+    #   Prerequisite: producer.is.soviet
+    #   Factions: soviet
+    #   ResetOnOwnerChange: true
+    #   RequiresCondition: !owner.is.not.soviet
+    #   GrantConditionOnFaction@Others:
+    #   Condition: owner.is.not.soviet
+    #   Factions: gdi, nod, allies, bossnod
+    #   ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 WARF:
 	Inherits: ^BaseBuilding
@@ -634,7 +678,7 @@ WARF:
 		Queue: Building.Allies, Building.Soviet
 		Description: Produces vehicles
 	Building:
-		Footprint: xxx x+x ===
+		Footprint: xxx xxx ===
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Health:
@@ -659,13 +703,12 @@ WARF:
 		ExitCell: 0,2
 		ExitDelay: 3
 	Production:
-		Produces: Vehicle.Allies, Vehicle.Soviet
+		Produces: Vehicle
         PauseOnCondition: build-incomplete || emp-affected-structure
-	ProductionQueue@Allies:
-		Type: Vehicle.Allies
+	ProductionQueue:
+		Type: Vehicle
 		DisplayOrder: 3
 		Group: Vehicle
-		Factions: allies
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
 		ReadyTextNotification: Unit ready.
@@ -676,35 +719,57 @@ WARF:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Soviet:
-		Type: Vehicle.Soviet
-		DisplayOrder: 3
-		Group: Vehicle
-		Factions: soviet
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionBar@Allies:
-		ProductionType: Vehicle.Allies
-	ProductionBar@Soviet:
-		ProductionType: Vehicle.Soviet
+	ProductionBar:
+		ProductionType: Vehicle
 	Power:
 		Amount: -40
         RequiresCondition: !build-incomplete || emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@allies:
+		Prerequisite: vehicle.allies
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: vehicle.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@mcv2:
+		Prerequisite: vehicle.mcv2
+		Factions: allies, soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ohrv:
+		Prerequisite: vehicle.ohrv
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ahrv:
+		Prerequisite: vehicle.ahrv
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@apc:
+		Prerequisite: vehicle.apc
+		Factions: gdi, nod, allies, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@apc2:
+		Prerequisite: vehicle.apc2
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@arty:
+		Prerequisite: vehicle.arty
+		Factions: nod, allies, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@dtrk:
+		Prerequisite: vehicle.dtrk
+		Factions: allies, soviet
+        ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
 
 FIX2:
 	Inherits: ^BaseBuilding
@@ -770,6 +835,9 @@ FIX2:
 		Range: 5c256
 	ProvidesPrerequisite:
 		Prerequisite: anyfix
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
 
 2FLD:
 	Inherits: ^BaseBuilding
@@ -803,9 +871,9 @@ FIX2:
 		RequiresCondition: !being-captured
 		ExitCell: 1,1
 		Facing: 768
-        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane
+        ProductionTypes: Aircraft, Plane
 	Production:
-		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Plane
+		Produces: Aircraft, Plane
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
@@ -813,10 +881,9 @@ FIX2:
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
-	ProductionQueue@GDI:
-		Type: Aircraft.GDI
+	ProductionQueue:
+		Type: Aircraft
 		DisplayOrder: 4
-		Factions: gdi
 		Group: Aircraft
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -828,63 +895,32 @@ FIX2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Nod:
-		Type: Aircraft.Nod
-		DisplayOrder: 4
-		Factions: nod
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Allies:
-		Type: Aircraft.Allies
-		DisplayOrder: 4
-		Factions: allies
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Soviet:
-		Type: Aircraft.Soviet
-		DisplayOrder: 4
-		Factions: soviet
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionBar@GDI:
-		ProductionType: Aircraft.GDI
-	ProductionBar@Nod:
-		ProductionType: Aircraft.Nod
-	ProductionBar@Allies:
-		ProductionType: Aircraft.Allies
-	ProductionBar@Soviet:
-		ProductionType: Aircraft.Soviet
+	ProductionBar:
+		ProductionType: Aircraft
 	Power:
 		Amount: -30
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: aircraft.gdi
+		Factions: gdi
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nod:
+		Prerequisite: aircraft.nod
+		Factions: nod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@allies:
+		Prerequisite: aircraft.allies
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: aircraft.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@bossnod:
+		Prerequisite: aircraft.bossnod
+		Factions: bossnod
+        ResetOnOwnerChange: true
     WithBuildingBib:
 	ProximityExternalCondition:
 		Condition: unit.sellable
@@ -931,6 +967,9 @@ FIX2:
 		ValidPowerStates: Low, Critical
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 3FLD:
 	Inherits: ^BaseBuilding
@@ -964,9 +1003,9 @@ FIX2:
 		RequiresCondition: !being-captured
 		ExitCell: 1,1
 		Facing: 768
-        ProductionTypes: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Plane, Chopper
+        ProductionTypes: Aircraft, Plane, Chopper
 	Production:
-		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Allies, Aircraft.Soviet, Aircraft.Blackhand, Plane, Chopper
+		Produces: Aircraft, Plane, Chopper
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Reservable:
 	WithResupplyAnimation:
@@ -974,10 +1013,9 @@ FIX2:
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
-	ProductionQueue@GDI:
-		Type: Aircraft.GDI
+	ProductionQueue:
+		Type: Aircraft
 		DisplayOrder: 4
-		Factions: gdi
 		Group: Aircraft
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -989,80 +1027,36 @@ FIX2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Nod:
-		Type: Aircraft.Nod
-		DisplayOrder: 4
-		Factions: nod
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Allies:
-		Type: Aircraft.Allies
-		DisplayOrder: 4
-		Factions: allies
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Soviet:
-		Type: Aircraft.Soviet
-		DisplayOrder: 4
-		Factions: soviet
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Blackhand:
-		Type: Aircraft.Blackhand
-		DisplayOrder: 4
-		Factions: bossnod
-		Group: Aircraft
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionBar@GDI:
-		ProductionType: Aircraft.GDI
-	ProductionBar@Nod:
-		ProductionType: Aircraft.Nod
-	ProductionBar@Allies:
-		ProductionType: Aircraft.Allies
-	ProductionBar@Soviet:
-		ProductionType: Aircraft.Soviet
-	ProductionBar@Blackhand:
-		ProductionType: Aircraft.Blackhand
+	ProductionBar:
+		ProductionType: Aircraft
 	Power:
 		Amount: -30
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: aircraft.gdi
+		Factions: gdi
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nod:
+		Prerequisite: aircraft.nod
+		Factions: nod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@allies:
+		Prerequisite: aircraft.allies
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: aircraft.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@bossnod:
+		Prerequisite: aircraft.bossnod
+		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@f22:
+		Prerequisite: aircraft.f22
+		Factions: nod, bossnod
+        ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
 		Actor: ORCA
@@ -1170,6 +1164,9 @@ FIX2:
         ResetOnOwnerChange: true
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
 
 DOME:
 	Inherits: ^BaseBuilding
@@ -1256,6 +1253,9 @@ DOME:
 	ProvidesPrerequisite@WIRELESS:
 		Prerequisite: activeradar
 		RequiresCondition: !jammed && !lowpower && !build-incomplete
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
 
 ATEK:
 	Inherits: ^BaseBuilding
@@ -1356,6 +1356,9 @@ ATEK:
 		ExitCell: -1,2
 	Production@GPSPower:
 		Produces: GPSPower
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
 
 gpsactivenoise:
 	Interactable:
@@ -1468,6 +1471,9 @@ STEK:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
 
 FCOM:
 	Inherits: ^BaseBuilding
@@ -1537,6 +1543,9 @@ FCOM:
         Factions: soviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
 
 CSPH:
 	Inherits: ^BaseBuilding
@@ -1603,6 +1612,9 @@ CSPH:
  	SupportPowerChargeBar:
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-3
 
 IRON:
 	Inherits: ^BaseBuilding
@@ -1671,6 +1683,9 @@ IRON:
  	SupportPowerChargeBar:
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-3
 
 MSLO:
 	Inherits: ^BaseBuilding
@@ -1755,6 +1770,9 @@ MSLO:
          Offset: -68, 0, 0
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-5
 
 ANYAFLD:
 	AlwaysVisible:

@@ -25,8 +25,8 @@ LST2:
         BuildDuration: 1400
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
-		Queue: Navy.Neutral
-		Prerequisites: syrd
+		Queue: Navy
+		Prerequisites: syrd, ~navy.lst2
 		Description: Transports ground units across water.\n\nUnarmed.
 	Health:
 		HP: 30000
@@ -79,8 +79,8 @@ PT:
     	BuildDuration: 750
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
-		Queue: Navy.Neutral
-		Prerequisites: syrd
+		Queue: Navy
+		Prerequisites: syrd, ~navy.allies
 		Description: Fast, scout and support ship.\n\nCan attack Submarines.\nStrong vs Naval units, Infantry.\nWeak vs Vehicles, Defenses.
 	Health:
 		HP: 30000
@@ -148,8 +148,8 @@ CA:
     	BuildDuration: 3300
         BuildDurationModifier: 100
         BuildPaletteOrder: 3
-		Queue: Navy.Neutral
-		Prerequisites: syrd, anytier3
+		Queue: Navy
+		Prerequisites: syrd, anytier3, ~navy.allies
 		Description: Slow, long-ranged artillery ship.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units, Tanks.
 	Health:
 		HP: 70000
@@ -210,8 +210,8 @@ DD:
         BuildDuration: 900
         BuildDurationModifier: 100
         BuildPaletteOrder: 2
-		Queue: Navy.Neutral
-		Prerequisites: syrd, anyhq
+		Queue: Navy
+		Prerequisites: syrd, anyhq, ~navy.allies
 		Description: Multi-role fire-support ship.\n\nCan attack Aircraft and Submarines.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Health:
 		HP: 50000
@@ -295,8 +295,8 @@ SS:
         BuildDuration: 1200
         BuildDurationModifier: 100
         BuildPaletteOrder: 5
-		Queue: Navy.Neutral
-		Prerequisites: syrd, anyhq
+		Queue: Navy
+		Prerequisites: syrd, anyhq, ~navy.soviet
 		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
 	Health:
 		HP: 25000
@@ -329,8 +329,8 @@ MSUB:
         BuildDuration: 2100
         BuildDurationModifier: 100
         BuildPaletteOrder: 4
-		Queue: Navy.Neutral
-		Prerequisites: syrd, anytier3
+		Queue: Navy
+		Prerequisites: syrd, anytier3, ~navy.soviet
 		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.
 	Health:
 		HP: 30000
@@ -373,8 +373,8 @@ NTS:
         BuildDurationModifier: 100
         BuildPaletteOrder: 6
 		BuildLimit: 1
-		Queue: Navy.Neutral
-		Prerequisites: syrd, anytier3
+		Queue: Navy
+		Prerequisites: syrd, anytier3, ~navy.soviet
 		Description: Maximum one can be built.\n\nSubmerger nuclear-armed unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nLaunches nuclear torpedo against Ships.\nFires nuclear missile against Ground targets.
 	Health:
 		HP: 40000

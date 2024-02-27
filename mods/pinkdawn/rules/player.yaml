@@ -46,13 +46,13 @@ Player:
 		AllyTextNotification: Our ally is under attack.
 	Shroud:
 		FogCheckboxDisplayOrder: 3
-	LobbyPrerequisiteCheckbox@GLOBALMULTIENGINEER:
-		ID: multiengineer
-		Label: Multi Engineer
-		Description: Multiple Engineers are required to capture a building
-		Enabled: True
+	LobbyPrerequisiteCheckbox@GLOBALSINGLEENGINEER:
+		ID: singleengineer
+		Label: Single Engineer
+		Description: Buildings can be captured with one Engineer.
+		Enabled: False
 		DisplayOrder: 6
-		Prerequisites: global-multiengineer
+		Prerequisites: global-singleengineer
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		ID: factundeploy
 		Label: Redeployable MCVs

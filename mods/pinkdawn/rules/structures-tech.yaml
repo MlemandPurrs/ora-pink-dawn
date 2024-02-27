@@ -145,13 +145,12 @@ SYRD:
 	RevealsShroud:
 		Range: 3c0
 	Production:
-		Produces: Navy.Neutral
+		Produces: Navy
 		PauseOnCondition: build-incomplete || being-demolished || emp-affected-structure
-	ProductionQueue@NeutralNavy:
-		Type: Navy.Neutral
+	ProductionQueue:
+		Type: Navy
 		DisplayOrder: 5
 		Group: Navy
-		Factions: gdi, nod, allies, soviet, bossnod
 		LowPowerModifier: 150
 		ReadyAudio: NavalUnitReady
 		ReadyTextNotification: Naval unit ready.
@@ -162,8 +161,8 @@ SYRD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionBar@NeutralNavy:
-		ProductionType: Navy.Neutral
+	ProductionBar:
+		ProductionType: Navy
 	RepairsUnits:
 		HpPerStep: 1000
 		Interval: 15
@@ -179,31 +178,59 @@ SYRD:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
 		ExitCell: 0,2
-		ProductionTypes: Navy.Neutral
+		ProductionTypes: Navy
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,1024,0
 		Facing: 224
 		ExitCell: 2,2
-		ProductionTypes: Navy.Neutral
+		ProductionTypes: Navy
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: -1024,-1024,0
 		Facing: 96
 		ExitCell: 0,0
-		ProductionTypes: Navy.Neutral
+		ProductionTypes: Navy
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,-1024,0
 		Facing: 32
 		ExitCell: 2,0
-		ProductionTypes: Navy.Neutral
+		ProductionTypes: Navy
 	Power:
 		Amount: -40
 		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: navy.gdi
+		Factions: gdi
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nod:
+		Prerequisite: navy.nod
+		Factions: nod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@allies:
+		Prerequisite: navy.allies
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: navy.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@bossnod:
+		Prerequisite: navy.bossnod
+		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@lst:
+		Prerequisite: navy.lst
+		Factions: gdi, nod, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@lst2:
+		Prerequisite: navy.lst2
+		Factions: allies, soviet
+        ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
 		Range: 3c768
@@ -340,18 +367,17 @@ APRT:
 	Exit@1:
 		ExitCell: 1,1
 		Facing: 768
-        ProductionTypes: Aircraft.Neutral, Plane, Chopper
+        ProductionTypes: Aircraft, Plane, Chopper
 	RallyPoint:
 		ForceSetType: Plane
 	CommandBarBlacklist:
 		DisableStop: false
 	Production:
-		Produces: Aircraft.Neutral, Plane, Chopper
+		Produces: Aircraft, Plane, Chopper
         PauseOnCondition: emp-affected-structure
-	ProductionQueue@Neutral:
-		Type: Aircraft.Neutral
+	ProductionQueue:
+		Type: Aircraft
 		DisplayOrder: 4
-		Factions: gdi, nod
 		Group: Aircraft
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -363,20 +389,16 @@ APRT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionBar@Neutral:
-		ProductionType: Aircraft.Neutral
-    ProvidesPrerequisite@GDI:
-        Prerequisite: owner.is.gdi
-        Factions: gdi
-        ResetOnOwnerChange: true
-    ProvidesPrerequisite@Nod:
-        Prerequisite: owner.is.nod
-        Factions: nod
-        ResetOnOwnerChange: true
+	ProductionBar:
+		ProductionType: Aircraft
 	Reservable:
 	WithResupplyAnimation:
 	ProvidesPrerequisite:
 		Prerequisite: anyafld
+	ProvidesPrerequisite@f22:
+		Prerequisite: aircraft.f22
+		Factions: nod, bossnod
+        ResetOnOwnerChange: true
 
 APRT.Husk:
 	Inherits: ^TechBuildingHusk

@@ -28,8 +28,8 @@ MCV2:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, anyfix
-		Queue: Vehicle.Allies, Vehicle.Soviet
+        Prerequisites: anyhq, anyfix, ~vehicle.mcv2
+		Queue: Vehicle
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -105,8 +105,8 @@ OHRV:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: oref
-		Queue: Vehicle.Allies
+		Prerequisites: oref, ~vehicle.ohrv
+		Queue: Vehicle
 		Description: Collects Ore and Gems for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nUnarmed.
 	Selectable:
 		DecorationBounds: 1536, 1536
@@ -190,7 +190,8 @@ AHRV:
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
 		BuildPaletteOrder: 1
-		Queue: Vehicle.Soviet
+        Prerequisites: oref, ~vehicle.ahrv
+		Queue: Vehicle
 		Description: Collects Ore and Gems for processing.\n\nSpecial: Self-repair\nRegenerates lost hitpoints when current\nhealth is below half of maximum.\n\nStrong vs Infantry.\nWeak vs anything else.
         Icon: alticon
 	Turreted@SECONDARY:
@@ -237,8 +238,8 @@ STRK:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
-		Queue: Vehicle.Allies, Vehicle.Soviet
-		Prerequisites: oref
+		Prerequisites: ~disabled
+		Queue: Vehicle
 		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
 	Valued:
 		Cost: 1000
@@ -308,8 +309,8 @@ DTRK:
     	BuildDuration: 3500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 18
-		Queue: Vehicle.Allies, Vehicle.Soviet
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~vehicle.dtrk
+		Queue: Vehicle
 		Description: Transports atomic demolition charge.\n\nCan be deployed for instant detonation.
 	Health:
 		HP: 12000
@@ -379,8 +380,8 @@ R4WD:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: warf
-		Queue: Vehicle.Allies
+		Prerequisites: warf, ~vehicle.allies
+		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nCan carry one Infantry.\nCannot attack without passenger.\nComes with a initial passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: wheeled-non-crusher
@@ -455,8 +456,8 @@ FTRK:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: warf
-		Queue: Vehicle.Soviet
+		Prerequisites: warf, ~vehicle.soviet
+		Queue: Vehicle
 		Description: Mobile anti-air unit.\n\nCan attack Aircraft.\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-non-crusher
@@ -543,8 +544,8 @@ APC2:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: infantryproduction
-		Queue: Vehicle.Soviet
+		Prerequisites: infantryproduction, ~vehicle.apc2
+		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
@@ -624,8 +625,8 @@ MNLY:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: anyfix
-        Queue: Vehicle.Soviet
+		Prerequisites: anyfix, ~vehicle.soviet
+        Queue: Vehicle
 		Description: Carries and lays anti-tank land mines.\nCan lay up to eight land mines before\nneeding to resupply at a Service Depot.\n\nUnarmed.
 	Health:
 		HP: 20000
@@ -695,8 +696,8 @@ MNLY:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: warf
-		Queue: Vehicle.Allies
+		Prerequisites: warf, ~vehicle.allies
+		Queue: Vehicle
 		Description: Fast, amphibian light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-amphibian
@@ -760,8 +761,8 @@ MNLY:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix
-		Queue: Vehicle.Allies
+		Prerequisites: anyfix, ~vehicle.allies
+		Queue: Vehicle
 		Description: General-purpose Allies Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         TurnSpeed: 12
@@ -823,8 +824,8 @@ MNLY:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: anyfix
-		Queue: Vehicle.Soviet
+		Prerequisites: anyfix, ~vehicle.soviet
+		Queue: Vehicle
 		Description: Dual-barreled Soviet Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         TurnSpeed: 12
@@ -886,8 +887,8 @@ MNLY:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3
-		Queue: Vehicle.Soviet
+		Prerequisites: anytier3, ~vehicle.soviet
+		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
@@ -964,8 +965,8 @@ MNLY:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
 		BuildLimit: 1
-		Prerequisites: anyhq, fcom
-		Queue: Vehicle.Soviet
+		Prerequisites: anyhq, fcom, ~vehicle.soviet
+		Queue: Vehicle
 		Description: Maximum one can be built.\n\nExtra large and slow tank.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
@@ -1052,8 +1053,8 @@ CTNK:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: atek
-		Queue: Vehicle.Allies
+		Prerequisites: atek, ~vehicle.allies
+		Queue: Vehicle
 		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
 	SelectionDecorations:
 	Health:
@@ -1114,8 +1115,8 @@ TTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: stek
-        Queue: Vehicle.Soviet
+		Prerequisites: stek, ~vehicle.soviet
+        Queue: Vehicle
 		Description: Tank with mounted tesla coil.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
 	Health:
 		HP: 25000
@@ -1169,11 +1170,11 @@ V2RL:
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle.Soviet
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~vehicle.soviet
+		Queue: Vehicle
 		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks, Aircraft.
 	Valued:
 		Cost: 900
@@ -1276,8 +1277,8 @@ MGG:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Queue: Vehicle.Allies
-		Prerequisites: atek
+		Prerequisites: atek, ~vehicle.allies
+		Queue: Vehicle
 		Description: Regenerates the shroud nearby, obscuring the area.\nCan be toggled on/off via deploy command.\n\nUnarmed.
 	Health:
 		HP: 10000
@@ -1357,8 +1358,8 @@ APC3:
         BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: atek
-		Queue: Vehicle.Allies
+		Prerequisites: atek, ~vehicle.allies
+		Queue: Vehicle
 		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
@@ -1443,7 +1444,8 @@ APC3:
     Inherits: 3TNK
     Buildable:
 		BuildPaletteOrder: 5
-		Queue: Vehicle.Blackhand
+		Prerequisites: anyfix, ~vehicle.bossnod
+		Queue: Vehicle
 		Description: Heavily-armored Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Armament:
         Weapon: HeavyCannon1B

@@ -1962,6 +1962,7 @@
 	Power:
 		Amount: 0
 	CaptureManager:
+		BeingCapturedCondition: being-captured
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player

@@ -23,8 +23,8 @@ LST:
         BuildDuration: 1400
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
-		Queue: Navy.GDI, Navy.Nod, Navy.Soviet, Navy.Allies
-		Prerequisites: syrd
+		Queue: Navy
+		Prerequisites: syrd, ~navy.lst
 		Description: Transports ground units across water.\n\nUnarmed.
 	Mobile:
 		Locomotor: hovercraft
@@ -73,8 +73,8 @@ BOAT:
         BuildDuration: 900
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
-		Queue: Navy.GDI
-		Prerequisites: syrd
+		Queue: Navy
+		Prerequisites: syrd, ~navy.gdi
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
 		Name: Patrol Boat

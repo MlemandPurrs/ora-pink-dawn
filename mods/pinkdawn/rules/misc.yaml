@@ -17,7 +17,7 @@ CRATE:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv
-        ValidFactions: gdi, nod
+        ValidFactions: gdi, nod, bossnod
 	GiveMcvCrateAction@RA:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
@@ -95,7 +95,7 @@ CRATE:
 		Units: harv
 		SelectionShares: 3
         Prerequisites: proc
-        ValidFactions: gdi, nod
+        ValidFactions: gdi, nod, bossnod
 	GiveUnitCrateAction@ohrv:
 		Units: ohrv
 		SelectionShares: 3
