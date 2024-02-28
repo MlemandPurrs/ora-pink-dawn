@@ -458,7 +458,7 @@ Player:
         SquadSizeRandomBonus: 0
         ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, sfig, 3t1b, wtnk, t55h
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nebr
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur

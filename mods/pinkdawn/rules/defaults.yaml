@@ -1973,6 +1973,14 @@
 		UseDeathTypeSuffix: false
 	MapEditorData:
 		Categories: Fake building
+	Demolishable:
+		Condition: being-demolished
+	Sellable:
+		RefundPercent: 100
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+		SellSounds: cashturn.aud
+        Notification: BuildingSold
+        TextNotification: Structure sold.
 
 ^BuildingHusk:
 	Inherits@1: ^SpriteActor

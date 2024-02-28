@@ -294,7 +294,7 @@ SS:
 	Buildable:
         BuildDuration: 1200
         BuildDurationModifier: 100
-        BuildPaletteOrder: 5
+        BuildPaletteOrder: 4
 		Queue: Navy
 		Prerequisites: syrd, anyhq, ~navy.soviet
 		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
@@ -328,7 +328,7 @@ MSUB:
 	Buildable:
         BuildDuration: 2100
         BuildDurationModifier: 100
-        BuildPaletteOrder: 4
+        BuildPaletteOrder: 5
 		Queue: Navy
 		Prerequisites: syrd, anytier3, ~navy.soviet
 		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.

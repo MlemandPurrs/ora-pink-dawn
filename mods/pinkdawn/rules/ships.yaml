@@ -74,7 +74,7 @@ BOAT:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.gdi
+		Prerequisites: syrd, ~navy.td
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
 		Name: Patrol Boat
