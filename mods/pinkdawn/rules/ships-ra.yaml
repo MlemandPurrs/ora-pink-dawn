@@ -284,7 +284,7 @@ SS:
 		ValidTargets: Water, Underwater
 		InvalidTargets: NoAutoTarget, Structure
 	AutoTargetPriority@ATTACKANYTHING:
-		ValidTargets: Water, Underwater
+		ValidTargets: Water, Underwater, Ground
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -297,7 +297,7 @@ SS:
         BuildPaletteOrder: 4
 		Queue: Navy
 		Prerequisites: syrd, anyhq, ~navy.soviet
-		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
+		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.
 	Health:
 		HP: 25000
 	Armor:
@@ -307,14 +307,30 @@ SS:
 		Speed: 60
 	RevealsShroud:
 		Range: 5c0
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: Torpedo
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: GrenadeLauncher
+		LocalOffset: 132,0,96
+		MuzzleSequence: muzzle
 	AttackFrontal:
+        Armaments: primary, secondary
         FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1621, 1621
+    WithMuzzleOverlay:
+	Turreted:
+		Turret: secondary
+		TurnSpeed: 8
+		Offset: 648,0,24
+	WithSpriteTurret:
+		Turret: secondary
+		RequiresCondition: !underwater
 
 MSUB:
 	Inherits: ^Submarine
@@ -404,8 +420,11 @@ NTS:
         FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1877, 1877
-	ReloadArmamentsBar:
-		Armaments: primary, secondary
+	ReloadArmamentsBar@PRIMARY:
+		Armaments: primary
+		Color: FFFF00
+	ReloadArmamentsBar@SECONDARY:
+		Armaments: secondary
 		Color: FFFF00
 	AmmoPool:
         Armaments: primary

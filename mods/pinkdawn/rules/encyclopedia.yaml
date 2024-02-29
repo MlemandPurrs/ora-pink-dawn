@@ -927,6 +927,42 @@ boat.info:
         Palette: gdi
     -MapEditorData:
 
+pt2.info:
+    Inherits: PT2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A fast naval vessel, the Patrol Boat is armed with multi-purpose missile launchers effective against land and air threats. Its fast-firing stinger missiles can hit air targets easily, and can also decimate nearby ground targets.
+        Category: Nod Navy
+		Order: 1
+	RenderSprites:
+		Image: pt2
+        Palette: nod
+
+dd2.info:
+    Inherits: DD2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A mid-level naval vessel, the Battleship sports only a cannon that is effective against land-based threats and other ships. Being unable to fire against submarines, it has to rely on protection provided by other ships.
+        Category: Nod Navy
+		Order: 2
+	RenderSprites:
+		Image: dd2
+        Palette: nod
+
+ss2.info:
+    Inherits: SS2
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Silent and stealthy, Submarines can attack ships from afar. Subs must surface to fire, giving away their position, and opening themselves up to any nearby units that can hit them.
+        Category: Nod Navy
+		Order: 3
+	RenderSprites:
+		Image: ss2
+        Palette: nod
+
 ioncannon.info:
     AlwaysVisible:
     WithSpriteBody:

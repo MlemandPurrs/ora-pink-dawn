@@ -352,10 +352,12 @@ HELI:
 		Offset: 0,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
 		RearmActors: hpad, 3fld
@@ -831,7 +833,7 @@ NMIG:
 		BuildPaletteOrder: 7
 		BuildLimit: 1
 		Prerequisites: ~anyafld, fcom, ~aircraft.soviet
-		Description: Maximum one can be built.\n\nMiG modified to carry one Nuclear bomb.\n\nStrong vs Everything.
+		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
 	Armament:
 		Weapon: ParaNuke
 		LocalOffset: 0,0,0

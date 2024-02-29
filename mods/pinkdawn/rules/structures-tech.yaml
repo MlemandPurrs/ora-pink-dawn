@@ -209,11 +209,7 @@ SYRD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: navy.nod
-		Factions: nod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@td:
-		Prerequisite: navy.td
-		Factions: gdi, nod
+		Factions: nod, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: navy.allies

@@ -74,7 +74,7 @@ BOAT:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.td
+		Prerequisites: syrd, ~navy.gdi
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
 		Name: Patrol Boat
@@ -100,3 +100,144 @@ BOAT:
 	Selectable:
 		Bounds: 1792, 1024
 		DecorationBounds: 1792, 1024
+
+PT2:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Patrol Boat
+	Buildable:
+    	BuildDuration: 850
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 1
+		Queue: Navy
+		Prerequisites: syrd, ~navy.nod
+		Description: Fast, multi-role attack ship.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs fast units, Submarines.
+	Health:
+		HP: 30000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 60
+	RevealsShroud:
+		Range: 5c128
+	Turreted@PRIMARY:
+		Turret: primary
+		TurnSpeed: 12
+		Offset: 480,0,24
+	Turreted@SECONDARY:
+		Turret: secondary
+		TurnSpeed: 12
+		Offset: -461,0,18
+	Armament@PRIMARY:
+        Name: primary
+        Turret: primary
+		Weapon: StingerAG
+		LocalOffset: 85,-85,88, 85,85,88
+		LocalYaw: 64, -64
+	Armament@SECONDARY:
+		Name: secondary
+        Turret: secondary
+		Weapon: StingerAA
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+    WithMuzzleOverlay:
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary
+		Turrets: primary, secondary
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+		Sequence: turret
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+		Sequence: turret2
+	RenderRangeCircle:
+	Selectable:
+        DecorationBounds: 1536, 1536
+
+DD2:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Battleship
+	Buildable:
+        BuildDuration: 1000
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 2
+		Queue: Navy
+		Prerequisites: syrd, anyhq, ~navy.nod
+		Description: Ground attack ship.\n\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
+	Health:
+		HP: 50000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 50
+	RevealsShroud:
+		Range: 5c128
+	Turreted:
+		TurnSpeed: 12
+		Offset: 512,0,64
+	Armament:
+        Name: primary
+        Turret: primary
+		Weapon: TurretGun
+		LocalOffset: 480,0,40
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		Armaments: primary, secondary
+	WithSpriteTurret:
+		Sequence: turret
+    WithMuzzleOverlay:
+	RenderRangeCircle:
+	Selectable:
+		DecorationBounds: 1621, 1621
+
+SS2:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Water, Underwater
+		InvalidTargets: NoAutoTarget, Structure
+	AutoTargetPriority@ATTACKANYTHING:
+		ValidTargets: Water, Underwater
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Submarine
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 3
+		Queue: Navy
+		Prerequisites: syrd, anyhq, ~navy.nod
+		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
+	Health:
+		HP: 25000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: Torpedo
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+	AttackFrontal:
+        FacingTolerance: 0
+	Selectable:
+		DecorationBounds: 1621, 1621

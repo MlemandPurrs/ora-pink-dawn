@@ -1,0 +1,122 @@
+lst:
+	idle: lstnew
+		UseClassicFacings: True
+		Facings: 32
+	roof: lstnew2
+		UseClassicFacings: True
+		Facings: 32
+	icon: lsticon
+
+boat:
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret: boattur
+		Facings: 32
+		UseClassicFacings: True
+	icon: boaticon
+
+lst2:
+    Inherits: emp-overlay
+	idle:
+	open:
+		Start: 1
+		Length: 4
+		Tick: 150
+	close:
+		Frames: 4, 3, 2, 1
+		Length: 4
+		Tick: 150
+	unload:
+		Start: 4
+		ZOffset: -511
+	icon: lst2icon
+
+pt:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ptturr
+		Facings: 32
+    turret2: mgturr
+		Facings: 32
+	muzzle: gunfire2
+		Length: *
+	muzzle2: minigun
+		Length: 6
+		Facings: 8
+	icon: pticon
+
+dd:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ddturr
+		Facings: 32
+    turret2: mgturr
+		Facings: 32
+	muzzle: gunfire2
+		Length: *
+	muzzle2: minigun
+		Length: 6
+		Facings: 8
+	icon: ddicon
+
+ca:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: caturr
+		Facings: 32
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: caicon
+
+ss:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+    turret: ssturr
+        Facings: 16
+	muzzle: gunfire2
+		Length: *
+	icon: ssicon
+
+msub:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: msubicon
+
+nts:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: ntsicon
+
+pt2:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ifvmis
+		Facings: 32
+  	turret2: ifvsam
+		Facings: 32
+	icon: boaticon
+
+dd2:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ifvgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: *
+	icon: dd2icon
+
+ss2:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: ssicon

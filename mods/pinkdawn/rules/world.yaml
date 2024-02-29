@@ -181,7 +181,7 @@
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
-		Description: The Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.
+		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.
 	Faction@RandomRA:
 		Name: Random RA
 		InternalName: Random2
@@ -190,7 +190,7 @@
 	Faction@blackhand:
 		Name: Blackhand
 		InternalName: bossnod
-		Description: the Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.
+		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:

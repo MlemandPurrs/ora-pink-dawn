@@ -818,7 +818,7 @@ nodmiss:
 		UseTilesetExtension: true
 		Length: *
 		Offset: 0,-3
-	icon: missicon
+	icon: nodmissicon
 
 nodmiss.husk:
 	idle: nodmiss

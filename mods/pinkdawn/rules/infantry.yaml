@@ -270,7 +270,7 @@ E6:
 	EngineerRepair:
         Cursor: enter-yellow
         RepairBlockedCursor: enter-yellow-blocked
-        #   RepairSound:
+        RepairSound: build5.aud
 	RepairsBridges:
         RepairNotification: BridgeRepaired
 	CaptureManager:

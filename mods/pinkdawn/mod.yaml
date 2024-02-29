@@ -113,6 +113,7 @@ Sequences:
     pinkdawn|sequences/dinosaurs.yaml
 	pinkdawn|sequences/vehicles-ra.yaml
 	pinkdawn|sequences/structures-ra.yaml
+	pinkdawn|sequences/naval.yaml
 	pinkdawn|sequences/giantants.yaml
 
 TileSets:

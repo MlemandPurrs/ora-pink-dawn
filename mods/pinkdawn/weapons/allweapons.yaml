@@ -71,6 +71,7 @@
 #   70. BigChemSpray
 #   71. PortaLaser
 #   72. TankLaser
+#   73. GrenadeLauncher
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -2809,7 +2810,7 @@ NukeTorpedo:
 	Range: 10c512
 	MinRange: 3c128
 	Report: torpedo1.aud
-	ValidTargets: Ship, WaterStructure, Underwater, Bridge
+	ValidTargets: Ship, WaterStructure, Underwater, Bridge, Submarine
 	Projectile: Missile
 		Image: torpedo
 		Arm: 3
@@ -2864,7 +2865,8 @@ NukeMissile:
 	Range: 10c512
 	MinRange: 3c128
 	Report: missile7nuclear.aud
-    InvalidTargets: Ship
+    ValidTargets: Ground, Tree
+    InvalidTargets: Water, Ship, WaterStructure, Underwater, Bridge, Submarine
 	Projectile: Bullet
 		Speed: 162
 		Blockable: false
@@ -3197,3 +3199,51 @@ TankLaserFiringSFX:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
+
+#   73. soviet Submarine's Anti-Ground weapon.
+GrenadeLauncher:
+	ReloadDelay: 60
+    Range: 5c256
+    ValidTargets: Ground, Tree
+    InvalidTargets: Water
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 140
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 554
+		Image: BOMB
+        Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 5000
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
