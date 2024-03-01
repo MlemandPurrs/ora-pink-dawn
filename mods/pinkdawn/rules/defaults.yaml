@@ -2014,3 +2014,14 @@
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+
+# The Bot does not know how to sell up when he does not have an income. This provides an income, when floating less than 2500$
+^BotFallbackInsurance:
+	GrantConditionOnPlayerResources@botinsurance:
+		Condition: noinsurance
+		Threshold: 2500
+	CashTrickler@botinsurance:
+		Interval: 450
+		Amount: 500
+		ShowTicks: False
+		RequiresCondition: bot-insurance-enabler && !noinsurance

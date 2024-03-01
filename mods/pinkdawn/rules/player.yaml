@@ -99,7 +99,7 @@ Player:
 		ID: productionbooster
 		Label: Fast Production
 		Description: Everything gets built 50% faster
-		Enabled: False
+		Enabled: True
 		DisplayOrder: 14
 		Prerequisites: global-boosteron
 	LobbyPrerequisiteCheckbox@VETERANCY:

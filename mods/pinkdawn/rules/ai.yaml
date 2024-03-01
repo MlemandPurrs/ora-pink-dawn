@@ -284,7 +284,7 @@ Player:
             warf: 2
 			afld: 2
 			hpad: 1
-            3fld: 1
+            3fld: 2
 			eye: 1
             bio: 1
             fcom: 1
@@ -352,14 +352,15 @@ Player:
 	SquadManagerBotModule:
 		RequiresCondition: enable-ai-player
 		RushInterval: 400
-		SquadSize: 12
+		SquadSize: 4
         SquadSizeRandomBonus: 8
         ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, heli, orca, hel2, hind, yak, mig, e6, rh66, sfig
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66
-        NavalUnitsTypes: pt, dd, ca, ss, msub, nts
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig
+        NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
+        MinimumAttackForceDelay: 200
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy
@@ -413,19 +414,25 @@ Player:
 			dd: 10
 			ca: 10
 			pt: 10
+            pt2: 10
+            dd2: 10
+            ss2: 10
             3t1b: 20
             wtnk: 15
             t55h: 1
             rh66: 5
+            yak: 5
+            mig: 5
 		UnitLimits:
 			harv: 8
             ohrv: 8
             ahrv: 8
             boat: 3
-            heli: 1
-            orca: 1
-            hel2: 1
-            hind: 1
+            heli: 2
+            orca: 2
+            hel2: 2
+            hind: 2
+            rh66: 2
             5tnk: 1
             jeep: 4
             bggy: 4
@@ -440,26 +447,31 @@ Player:
             pt: 3
             dd: 2
             ca: 1
-            sub: 3
+            ss: 3
             msub: 2
+            nts: 1
             e6: 1
             wtnk: 3
             t55h: 1
-            rh66: 1
+            pt2: 4
+            dd2: 3
+            ss2: 2
+            yak: 2
+            mig: 1
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
 		ConstructionYardTypes: fact, fac2
         McvFactoryTypes: weap, afld, warf, ufld
 	SquadManagerBotModule@AircraftOne:
-		RequiresCondition: enable-ai-player
+        RequiresCondition: enable-ai-player
 		RushInterval: 400
 		SquadSize: 1
-        SquadSizeRandomBonus: 0
-        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, sfig, 3t1b, wtnk, t55h
+        SquadSizeRandomBonus: 1
+        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2, sfig, 3t1b, wtnk, t55h
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nebr
-        NavalUnitsTypes: pt, dd, ca, ss, msub, nts
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig
+        NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
     CaptureManagerBotModule:

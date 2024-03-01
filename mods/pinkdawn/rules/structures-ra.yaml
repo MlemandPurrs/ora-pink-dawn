@@ -2,6 +2,7 @@ FAC2:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
+	Inherits@BOTI: ^BotFallbackInsurance
 	WithColoredOverlay@Invulnerability:
 		RequiresCondition: invulnerability-crate-collected
         Color: 800000A3
@@ -164,6 +165,9 @@ FAC2:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-5
+	GrantConditionOnBotOwner@botinsurance:
+		Condition: bot-insurance-enabler
+		Bots: normalai
 
 POWR:
 	Inherits: ^BaseBuilding
