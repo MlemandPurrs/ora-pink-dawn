@@ -1461,6 +1461,9 @@ oil:
 	dead:
 		Start: 2
 		Tick: 800
+	make: oilmake
+		Length: *
+		Tick: 80
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *

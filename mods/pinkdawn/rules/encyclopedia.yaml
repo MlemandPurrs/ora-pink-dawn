@@ -938,6 +938,7 @@ pt2.info:
 	RenderSprites:
 		Image: pt2
         Palette: nod
+    -MapEditorData:
 
 dd2.info:
     Inherits: DD2
@@ -950,6 +951,7 @@ dd2.info:
 	RenderSprites:
 		Image: dd2
         Palette: nod
+    -MapEditorData:
 
 ss2.info:
     Inherits: SS2
@@ -962,6 +964,7 @@ ss2.info:
 	RenderSprites:
 		Image: ss2
         Palette: nod
+    -MapEditorData:
 
 ioncannon.info:
     AlwaysVisible:
