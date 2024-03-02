@@ -33,6 +33,41 @@ fact.husk:
 		UseTilesetExtension: true
 		Length: *
 
+gdifact:
+    Inherits: emp-overlay
+	build:
+		Start: 4
+		Length: 20
+		Tick: 100
+	idle: 
+		Length: 4
+		Tick: 100
+	damaged-idle:
+		Start: 24
+		Length: 4
+		Tick: 100
+	damaged-build:
+		Start: 28
+		Length: 20
+		Tick: 100
+	dead:
+		Start: 48
+		Tick: 800
+	make: gdifactmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: facticon
+
+gdifact.husk:
+	idle: gdifact
+		Start: 48
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
 nodfact:
     Inherits: emp-overlay
 	build:

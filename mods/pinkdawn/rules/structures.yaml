@@ -188,6 +188,7 @@ FACT:
 	RenderSprites:
 		Image: fact
 		FactionImages:
+            gdi: gdifact
 			nod: nodfact
             bossnod: nodfact
     AcceptsDeliveredCash:
@@ -674,6 +675,8 @@ PYLE:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	AcceptsDeliveredCash:
+		ValidTypes: InfantryRefund
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -770,6 +773,8 @@ HAND:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	AcceptsDeliveredCash:
+		ValidTypes: InfantryRefund
 
 AFLD:
 	Inherits: ^BaseBuilding

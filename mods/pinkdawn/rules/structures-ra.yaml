@@ -567,6 +567,8 @@ TENT:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	AcceptsDeliveredCash:
+		ValidTypes: InfantryRefund
 
 BARR:
 	Inherits: ^BaseBuilding
@@ -661,6 +663,8 @@ BARR:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	AcceptsDeliveredCash:
+		ValidTypes: InfantryRefund
 
 WARF:
 	Inherits: ^BaseBuilding

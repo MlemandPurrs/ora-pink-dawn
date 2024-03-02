@@ -494,6 +494,10 @@ TECN:
         FacingTolerance: 0
 	ActorLostNotification:
 		TextNotification: Unit lost.
+	DeliversCash:
+        Cursor: enter-yellow
+		Payload: 10
+		Type: InfantryRefund
 
 VICE:
 	Inherits@1: ^ExistsInWorld
