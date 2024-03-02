@@ -340,7 +340,7 @@
 	Sellable:
 		RefundPercent: 50
 		SellSounds: cashturn.aud
-		Cursor: sell-vehicle
+		Cursor: sell-unit
 		ShowTicks: false
 		RequiresCondition: unit.sellable
         Notification: UnitSold

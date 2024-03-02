@@ -495,7 +495,7 @@ TECN:
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	DeliversCash:
-        Cursor: enter-yellow
+        Cursor: sell-unit
 		Payload: 10
 		Type: InfantryRefund
 

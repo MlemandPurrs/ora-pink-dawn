@@ -959,7 +959,7 @@ FIX2:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 9
-        Cursor: ability
+        Cursor: para
 		ReinforcementsArrivedSpeechNotification: Reinforce
         ReinforcementsArrivedTextNotification: Reinforcements arrived.
 		SelectTargetSpeechNotification: SelectTarget
@@ -1152,7 +1152,7 @@ FIX2:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 9
-        Cursor: ability
+        Cursor: para
 		ReinforcementsArrivedSpeechNotification: Reinforce
         ReinforcementsArrivedTextNotification: Reinforcements arrived.
 		SelectTargetSpeechNotification: SelectTarget
@@ -1529,7 +1529,8 @@ FCOM:
 		Description: A Badger drops a load of parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: Select target.
-		CameraActor: camera
+		Cursor: para
+        CameraActor: camera
 		CameraRemoveDelay: 150
 		UnitType: badr.bomber
 		QuantizedFacings: 8

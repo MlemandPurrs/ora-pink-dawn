@@ -1260,7 +1260,7 @@ HQ:
         EndChargeTextNotification: Radar Scan ready.
 		SelectTargetSpeechNotification: SelectTarget
         SelectTargetTextNotification: Select target.
-		Cursor: sonar-target
+		Cursor: chrono-target
 		SupportPowerPaletteOrder: 4
 		EffectImage: sonarbox
 		EffectSequence: scanping

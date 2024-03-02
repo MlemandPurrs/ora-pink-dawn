@@ -258,7 +258,7 @@ SYRD:
 		EndChargeTextNotification: Sonar pulse ready.
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: Select target.
-		Cursor: sonar-target
+		Cursor: sonar
 		SupportPowerPaletteOrder: 8
 		EffectImage: moveflsh
 		EffectSequence: idle
@@ -374,7 +374,7 @@ APRT:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 9
-        Cursor: ability
+        Cursor: para
 		ReinforcementsArrivedSpeechNotification: Reinforce
         ReinforcementsArrivedTextNotification: Reinforcements arrived.
 		SelectTargetSpeechNotification: SelectTarget

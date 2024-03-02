@@ -167,7 +167,7 @@ beacon:
 	Defaults:
 		ZOffset: 2535
 	arrow: mouse2
-		Start: 5
+		Start: 6
 		Offset: 1,-12
 	circles: fpls
 		Length: *
@@ -440,64 +440,64 @@ smokland:
 
 airstrikedirection:
 	arrow-t: mouse2
-		Start: 1
+		Start: 2
 		Offset: 0, -15, 0
 	arrow-tr: mouse2
-		Start: 2
+		Start: 3
 		Offset: 7, -7, 0
 	arrow-r: mouse2
-		Start: 3
+		Start: 4
 		Offset: 12, 0, 0
 	arrow-br: mouse2
-		Start: 4
+		Start: 5
 		Offset: 7, 7, 0
 	arrow-b: mouse2
-		Start: 5
+		Start: 6
 		Offset: 0, 15, 0
 	arrow-bl: mouse2
-		Start: 6
+		Start: 7
 		Offset: -7, 7, 0
 	arrow-l: mouse2
-		Start: 7
+		Start: 8
 		Offset: -12, 0, 0
 	arrow-tl: mouse2
-		Start: 8
+		Start: 9
 		Offset: -7, -7, 0
 
 paradirection:
 	arrow-t: mouse2
-		Start: 1
+		Start: 2
 		Y: -7
 		Offset: 0, -19, 0
 	arrow-tr: mouse2
-		Start: 2
+		Start: 3
 		X: 6
 		Y: -5
 		Offset: 15, -15, 0
 	arrow-r: mouse2
-		Start: 3
+		Start: 4
 		X: 7
 		Offset: 19, 0, 0
 	arrow-br: mouse2
-		Start: 4
+		Start: 5
 		X: 6
 		Y: 5
 		Offset: 15, 15, 0
 	arrow-b: mouse2
-		Start: 5
+		Start: 6
 		Y: 7
 		Offset: 0, 19, 0
 	arrow-bl: mouse2
-		Start: 6
+		Start: 7
 		X: -6
 		Y: 5
 		Offset: -15, 15, 0
 	arrow-l: mouse2
-		Start: 7
+		Start: 8
 		X: -8
 		Offset: -19, 0, 0
 	arrow-tl: mouse2
-		Start: 8
+		Start: 9
 		X: -6
 		y: 5
 		Offset: -15, -15, 0
