@@ -65,6 +65,8 @@ MCV2:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -171,6 +173,8 @@ OHRV:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -268,6 +272,8 @@ STRK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -349,6 +355,8 @@ DTRK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -433,6 +441,8 @@ R4WD:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -517,6 +527,8 @@ FTRK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -600,6 +612,8 @@ APC2:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -627,7 +641,7 @@ MNLY:
 		BuildPaletteOrder: 12
 		Prerequisites: anyfix, ~vehicle.soviet
         Queue: Vehicle
-		Description: Carries and lays anti-tank land mines.\nCan lay up to eight land mines before\nneeding to resupply at a Service Depot.\n\nUnarmed.
+		Description: Carries and lays anti-tank land mines.\nCan detect mines.\nSpecial: Minelayer\nCan lay up to eight land mines before\nneeding to resupply at a Service Depot.\n\nUnarmed.
 	Health:
 		HP: 20000
 	Armor:
@@ -658,8 +672,8 @@ MNLY:
 	Rearmable:
 		RearmActors: fix, fix2
 	DetectCloaked:
+        DetectionTypes: Underground
 		Range: 1c826
-		DetectionTypes: Mine
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: ATMine
@@ -967,7 +981,7 @@ MNLY:
 		BuildLimit: 1
 		Prerequisites: anyhq, fcom, ~vehicle.soviet
 		Queue: Vehicle
-		Description: Maximum one can be built.\n\nExtra large and slow tank.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
+		Description: Maximum one can be built.\n\nExtra large and slow tank.\nCan detect cloaked units and mines.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 40
@@ -979,6 +993,11 @@ MNLY:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected && !wireless
+	RenderDetectionCircle:
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12
@@ -1030,6 +1049,8 @@ MNLY:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1087,6 +1108,8 @@ CTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1156,6 +1179,8 @@ TTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1241,6 +1266,8 @@ V2RL:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1329,6 +1356,8 @@ MGG:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1422,6 +1451,8 @@ APC3:
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
 	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 85
 		CloakDelay: 85
 		CloakSound: trans1.aud

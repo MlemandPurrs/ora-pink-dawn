@@ -70,6 +70,8 @@ MCV:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -176,7 +178,9 @@ HARV:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
-		InitialDelay: 90
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
@@ -238,6 +242,8 @@ TRUK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -301,6 +307,8 @@ JEEP:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -353,6 +361,8 @@ BGGY:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -376,9 +386,9 @@ BIKE:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anyhq, ~vehicle.nod
+		Prerequisites: anyhq, ~vehicle.bggy
 		Queue: Vehicle
-		Description: Fast scout vehicle with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
+		Description: Fast scout vehicle with rockets.\nCan detect cloaked units and mines.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: wheeled-non-crusher
 		TurnSpeed: 24
@@ -402,12 +412,15 @@ BIKE:
 	AttackMove:
 		Voice: Attack
 	DetectCloaked:
+        DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -489,6 +502,8 @@ APC:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -582,6 +597,8 @@ MAAG:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -638,6 +655,8 @@ LTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -701,6 +720,8 @@ MTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -762,6 +783,8 @@ FTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -839,6 +862,8 @@ HTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -879,6 +904,8 @@ STNK:
 	RevealsShroud:
 		Range: 4c128
 	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 85
 		CloakDelay: 85
 		CloakSound: trans1.aud
@@ -974,6 +1001,8 @@ ARTY:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1051,6 +1080,8 @@ MSAM:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1142,6 +1173,8 @@ MLRS:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1173,6 +1206,7 @@ MHQ:
 		Sequence: spinner
 		Offset: -256,0,256
 	DetectCloaked:
+        DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
@@ -1182,7 +1216,7 @@ MHQ:
 		BuildPaletteOrder: 12
 		Prerequisites: eye, ~vehicle.gdi
 		Queue: Vehicle
-		Description: Can detect cloaked units.\nJams enemy communications.\n\nStrong vs Infantry.
+		Description: Can detect cloaked units and mines.\nJams enemy communications.\n\nStrong vs Infantry.
 	Turreted:
 		TurnSpeed: 12
 		Offset: 246,-60,112
@@ -1213,6 +1247,8 @@ MHQ:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1308,6 +1344,8 @@ WTNK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1373,6 +1411,8 @@ CHTK:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
@@ -1603,6 +1643,8 @@ T55H:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud

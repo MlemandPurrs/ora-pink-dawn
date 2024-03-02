@@ -378,7 +378,7 @@ HEL2:
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq, ~aircraft.allies
 		Queue: Aircraft
-		Description: Helicopter Gunship with rockets.\nCan detect cloaked units.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
+		Description: Helicopter Gunship with rockets.\nCan detect cloaked units and mines.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
 	Aircraft:
 		TurnSpeed: 24
@@ -393,6 +393,7 @@ HEL2:
 		Range: 3c512
 		Type: GroundPosition
 	DetectCloaked:
+        DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
@@ -958,6 +959,8 @@ RH66:
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	Cloak:
+        CloakType: AirStealth
+        DetectionTypes: AirStealth
 		InitialDelay: 85
 		CloakDelay: 85
 		CloakSound: trans1.aud
@@ -1018,6 +1021,8 @@ SFIG:
 		Weapon: UnitExplodeAirBig
 		EmptyWeapon: UnitExplodeAirBig
 	Cloak:
+        CloakType: AirStealth
+        DetectionTypes: AirStealth
 		InitialDelay: 0
 		CloakDelay: 85
 		CloakSound: trans1.aud

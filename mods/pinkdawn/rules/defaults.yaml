@@ -136,6 +136,8 @@
 
 ^AcceptsCloakCrate:
 	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 90
 		CloakDelay: 90
 		CloakSound: trans1.aud
@@ -694,6 +696,7 @@
 		CrushSound: squish2.aud
 	Guardable:
 	DetectCloaked:
+        DetectionTypes: Stealth, Underground
 		Range: 1c826
         RequiresCondition: !parachute
 	DeathSounds@NORMAL:
@@ -920,6 +923,7 @@
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Cloak:
+        CloakType: Underwater
         DetectionTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 75
@@ -1901,7 +1905,8 @@
 	Armor:
 		Type: None
 	Cloak:
-		DetectionTypes: Mine
+        CloakType: Underground
+		DetectionTypes: Underground
 		CloakSound:
 		UncloakSound:
 		Palette:
@@ -2003,12 +2008,14 @@
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
-		InitialDelay: 90
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
 		CloakDelay: 90
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:

@@ -241,6 +241,31 @@ SYRD:
 	RenderDetectionCircle:
 	Targetable@IsWaterStructure:
 		TargetTypes: WaterStructure
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	SpawnActorPower@SonarPulse:
+        PauseOnCondition: lowpower || emp-affected-structure
+		OrderName: SonarPulse
+		Actor: camera.sonar
+		LifeTime: 250
+		ChargeInterval: 750
+		Icon: sonar
+		Name: Sonar Pulse
+		Description: Reveals water terrain and submarines\nfor a short duration.
+		StartFullyCharged: false
+		EndChargeSpeechNotification: SonarPulseReady
+		EndChargeTextNotification: Sonar pulse ready.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		Cursor: sonar-target
+		SupportPowerPaletteOrder: 8
+		EffectImage: moveflsh
+		EffectSequence: idle
+		EffectPalette: moveflash
+		DeploySound: sonpulse.aud
+		Terrain: Water
+		AllowUnderShroud: false
 
 COMM:
 	Inherits: ^TechBuilding
@@ -264,6 +289,7 @@ COMM:
 	RevealsShroud:
 		Range: 12c0
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 6c0
 		RequiresCondition: !lowpower && owner.is.player && !emp-affected-structure
     RenderDetectionCircle:

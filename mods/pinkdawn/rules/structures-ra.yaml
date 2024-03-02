@@ -1211,6 +1211,7 @@ DOME:
 		RequiresCondition: !jammed && !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 5c0
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	Power:

@@ -361,6 +361,7 @@ icon:
 	gpsactive: gpsaicon
     cloakfield: cfldicon
     airstrike2: sfigicon
+    sonar: sonricon
 
 moveflsh:
 	idle:

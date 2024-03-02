@@ -1230,6 +1230,7 @@ HQ:
 		RequiresCondition: !jammed && !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 5c0
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	Power:
@@ -1518,7 +1519,8 @@ EYE:
 		RequiresCondition: !jammed && !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
 	DetectCloaked:
-		Range: 5c0
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+        Range: 5c0
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	IonCannonPower@IonCannon:
 		PauseOnCondition: lowpower || jammed || emp-affected-structure

@@ -34,6 +34,7 @@ GTWR:
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
         RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	GrantConditionOnPowerState@LOWPOWER:
@@ -94,6 +95,7 @@ GUN:
 		PauseOnCondition: build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
@@ -160,6 +162,7 @@ ATWR:
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
@@ -214,6 +217,7 @@ OBLI:
 		SoundFiles: obelpowr.aud
 		Interval: 30, 40
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete && emp-affected-structure
 	Power:
@@ -308,10 +312,12 @@ SAM:
 		Sequence: place
 		SequenceAlpha: 0.65
 	Cloak:
+        CloakType: Underground
+        DetectionTypes: Underground
 		InitialDelay: 125
 		CloakDelay: 75
-		Palette: cloaktransparent
-		IsPlayerPalette: true
+		Palette:
+		IsPlayerPalette: false
 		UncloakSound: appear1.aud
 		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower || emp-affected-structure
 	GrantConditionOnDamageState@UNCLOAK:
@@ -601,6 +607,7 @@ PBOX:
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
         RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && loaded
 	GrantConditionOnPowerState@LOWPOWER:
@@ -671,6 +678,7 @@ HBOX:
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
         RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && loaded
 	GrantConditionOnPowerState@LOWPOWER:
@@ -687,6 +695,8 @@ HBOX:
         RefundPercent: 100
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 125
 		CloakDelay: 75
 		Palette: cloaktransparent
@@ -818,6 +828,7 @@ FTWR:
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:
@@ -871,6 +882,7 @@ TSLA:
 		Amount: -100
         RequiresCondition: !build-incomplete
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete
 	WithRangeCircle:
@@ -1138,6 +1150,7 @@ LTUR:
 		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
 	WithMuzzleOverlay:
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
 	RenderDetectionCircle:

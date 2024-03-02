@@ -243,6 +243,7 @@ CAMERA.scan:
 		Range: 5c512
 		Type: CenterPosition
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 5c512
 	RenderDetectionCircle:
         TrailCount: 2
@@ -272,9 +273,35 @@ CAMERA.spyplane:
 		Range: 10c0
 		Type: CenterPosition
 	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 10c0
     WithRangeCircle:
         Range: 10c0
+        Visible: Always
+        UsePlayerColor: true
+	MapEditorData:
+		Categories: System
+
+CAMERA.sonar:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (sonar pulse camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+        Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 3c0
+    WithRangeCircle:
+        Range: 3c0
         Visible: Always
         UsePlayerColor: true
 	MapEditorData:

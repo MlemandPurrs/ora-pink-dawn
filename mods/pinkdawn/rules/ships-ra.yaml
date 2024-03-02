@@ -297,7 +297,7 @@ SS:
         BuildPaletteOrder: 4
 		Queue: Navy
 		Prerequisites: syrd, anyhq, ~navy.soviet
-		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.
+		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\nCan attack ground and naval units.
 	Health:
 		HP: 25000
 	Armor:

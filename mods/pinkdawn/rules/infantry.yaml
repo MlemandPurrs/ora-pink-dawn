@@ -940,6 +940,7 @@ DOG:
 	RevealsShroud:
 		Range: 4c0
 	DetectCloaked:
+        DetectionTypes: Stealth, Underground
 		Range: 3c768
 	RenderDetectionCircle:
 	Mobile:
@@ -1244,6 +1245,8 @@ INF:
 	RevealsShroud:
 		Range: 4c0
 	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
 		InitialDelay: 85
 		CloakDelay: 85
 		CloakSound: trans1.aud
