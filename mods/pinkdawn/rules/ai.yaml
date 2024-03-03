@@ -404,8 +404,8 @@ Player:
             apc: 10
             apc2: 10
             maag: 20
-			ltnk: 25
-			mtnk: 20
+			ltnk: 35
+			mtnk: 30
 			ftnk: 10
 			htnk: 50
 			stnk: 40
@@ -418,7 +418,7 @@ Player:
             ttnk: 25
 			arty: 60
 			msam: 40
-			mlrs: 40
+			mlrs: 30
             v2rl: 40
 			heli: 5
 			orca: 5
@@ -473,6 +473,7 @@ Player:
             ss2: 2
             yak: 2
             mig: 1
+            mlrs: 2
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2

@@ -697,12 +697,19 @@ MTNK:
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,24
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: MediumCannon
 		Recoil: 128
 		RecoilRecovery: 26
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: M16
+		LocalOffset: 85,128,85
+		MuzzleSequence: muzzle2
         PauseOnCondition: emp-crate-collected
 	AttackTurreted:
         Voice: Attack

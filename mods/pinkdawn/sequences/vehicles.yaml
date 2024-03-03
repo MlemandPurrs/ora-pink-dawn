@@ -131,9 +131,16 @@ mtnk:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+	turret2:
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
 	muzzle: cannmuzz
 		Length: 2
 		Facings: 16
+	muzzle2: minigun
+		Length: 6
+		Facings: 8
 	icon: mtnkicon
 
 ftnk:
