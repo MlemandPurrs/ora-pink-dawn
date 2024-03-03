@@ -324,6 +324,22 @@
         RequiresCondition: within-gap-radius
 	ExternalCondition@GAPGenerator:
 		Condition: within-gap-radius
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		WaterImpactSound: splash9.aud
+		WaterCorpseSequence: med_splash
+		ParachutingCondition: parachute
+	WithParachute:
+		ShadowImage: parach-shadow
+		ShadowSequence: idle
+		Image: maxichute
+		Sequence: idle
+		OpeningSequence: open
+		Offset: 0,0,200
+		RequiresCondition: parachute
+        Palette: effect
+        IsPlayerPalette: false
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -561,6 +577,7 @@
 		String: Plane
 	RevealsShroud:
 		Range: 2c0
+		Type: GroundPosition
     RevealsShroudMultiplier@GAPGenerator:
         Modifier: 50
         RequiresCondition: within-gap-radius
@@ -933,7 +950,7 @@
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || minehit
 		RequiresCondition: !deployed
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -958,6 +975,8 @@
 		RequiresCondition: underwater
     RevealsShroudMultiplier@GAPGenerator:
         RequiresCondition: within-gap-radius || !underwater
+	ExternalCondition@MINEHIT:
+		Condition: minehit
 
 ^DamagedOnLowPower:
 	GrantConditionOnDamageState@LOWPOWERDMG:

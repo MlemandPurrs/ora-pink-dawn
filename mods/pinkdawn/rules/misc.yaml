@@ -295,11 +295,11 @@ CAMERA.sonar:
 	Immobile:
 		OccupiesSpace: false
 	RevealsShroud:
-		Range: 3c0
+		Range: 3c256
 		Type: CenterPosition
 	DetectCloaked:
 		DetectionTypes: Underwater
-		Range: 3c0
+		Range: 3c256
     WithRangeCircle:
         Range: 3c0
         Visible: Always
@@ -586,3 +586,26 @@ MINV:
 		Image: minv
 	Explodes:
 		Weapon: ATMine
+
+MINW:
+	Inherits: ^Mine
+    -Cloak:
+	Tooltip:
+		Name: Sea Mine
+	RenderSprites:
+		Image: minw
+	Cloak:
+        CloakType: Underwater
+		DetectionTypes: Underwater
+		CloakSound:
+		UncloakSound:
+		Palette:
+		IsPlayerPalette: false
+		InitialDelay: 0
+	Targetable:
+		TargetTypes: Underwater, Mine
+	Explodes:
+		Weapon: ASMine
+	GrantExternalConditionToCrusher:
+		OnCrushCondition: minehit
+		OnCrushDuration: 50

@@ -101,13 +101,13 @@
 			Shallow: 70
 	Locomotor@NAVAL:
 		Name: naval
-		Crushes: crate
+		Crushes: crate, mine
 		TerrainSpeeds:
 			Water: 100
 			Shallow: 80
 	Locomotor@HOVERCRAFT:
 		Name: hovercraft
-		Crushes: crate
+		Crushes: crate, mine
 		TerrainSpeeds:
 			Beach: 100
 			River: 100
@@ -320,6 +320,8 @@ World:
 		ShellmapRoot: MENU_BACKGROUND
 	ScriptTriggers:
 	CellTriggerOverlay:
+	LuaScript:
+		Scripts: transportscript.lua
 	TimeLimitManager:
 		TimeLimitDisplayOrder: 2
 		TimeLimitWarnings:

@@ -333,7 +333,7 @@ APRT:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
 	Building:
-		Footprint: xxx xxx
+		Footprint: x=x =xx
 		Dimensions: 3,2	
 	Tooltip:
 		Name: Airport

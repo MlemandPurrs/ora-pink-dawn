@@ -315,7 +315,7 @@ DTRK:
     	BuildDuration: 3500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 18
-		Prerequisites: anytier3, ~vehicle.dtrk
+		Prerequisites: anytechra, ~vehicle.dtrk
 		Queue: Vehicle
 		Description: Transports atomic demolition charge.\n\nCan be deployed for instant detonation.
 	Health:

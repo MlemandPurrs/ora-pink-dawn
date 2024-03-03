@@ -16,11 +16,8 @@ C17:
 	HiddenUnderFog:
 		AlwaysVisibleRelationships: None
 		Type: CenterPosition
-	ParaDrop:
-		DropRange: 5c0
-		ChuteSound: chute1.aud
 	Cargo:
-		Types: Infantry, Vehicle, Crate
+		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
@@ -32,6 +29,7 @@ C17.Crate:
     Inherits: C17
 	ParaDrop:
 		DropRange: 1c0
+		ChuteSound: chute1.aud
     RenderSprites:
         Image: c17
 
@@ -47,9 +45,15 @@ C17.Paradrop:
 		HP: 9000
 	Armor:
 		Type: Aluminium
+	ParaDrop:
+		DropRange: 5c0
+		ChuteSound: chute1.aud
 	Targetable@AIRBORNE:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
+	Targetable@GROUND:
+		RequiresCondition: !airborne
+		TargetTypes: Ground
     Huntable:
 	LeavesTrails:
 		Offsets: -432,560,0, -432,-560,0
@@ -270,7 +274,7 @@ ORCA:
 	WithMoveAnimation:
 		MoveSequence: move
 	Rearmable:
-		RearmActors: hpad, 3fld
+		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 
@@ -355,7 +359,7 @@ HELI:
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
-		RearmActors: hpad, 3fld
+		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 
@@ -378,7 +382,7 @@ HEL2:
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq, ~aircraft.allies
 		Queue: Aircraft
-		Description: Helicopter Gunship with rockets.\nCan detect cloaked units and mines.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
+		Description: Helicopter Gunship with rockets.\nCan detect cloaked units,\nmines and submarines.\n\nCan attack Aircraft, Submarines.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
 	Aircraft:
 		TurnSpeed: 24
@@ -393,7 +397,7 @@ HEL2:
 		Range: 3c512
 		Type: GroundPosition
 	DetectCloaked:
-        DetectionTypes: Stealth, Underground
+        DetectionTypes: Stealth, Underground, Underwater
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
@@ -407,18 +411,37 @@ HEL2:
 		Weapon: HeliRocketsAA
 		LocalOffset: 128,-213,-85, 128,213,-85
 		PauseOnCondition: !ammo || emp-crate-collected
-	AmmoPool:
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: HeliDepthCharges
+		LocalOffset: 128,-213,-85, 128,213,-85
+		PauseOnCondition: !ammo2 || emp-crate-collected
+	AmmoPool@1:
 		Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
 		ReloadDelay: 40
 		AmmoCondition: ammo
-	WithAmmoPipsDecoration:
+	WithAmmoPipsDecoration@1:
+		AmmoPools: primary
 		Position: BottomLeft
 		Margin: 4, 3
 		PipCount: 5
 		FullSequence: pip-yellow
-		AmmoPools: primary
+		RequiresSelection: true
+	AmmoPool@2:
+		Name: secondary
+		Armaments: tertiary
+		Ammo: 3
+		ReloadDelay: 80
+		ReloadCount: 3
+        AmmoCondition: ammo2
+	WithAmmoPipsDecoration@2:
+		AmmoPools: secondary
+		Position: BottomLeft
+		Margin: 4, 6
+		PipCount: 1
+		FullSequence: pip-blue
 		RequiresSelection: true
 	AttackMove:
 		Voice: Attack
@@ -426,7 +449,7 @@ HEL2:
 		InitialStanceAI: HoldFire
         ScanRadius: 4
 	AttackAircraft:
-		Armaments: primary, secondary
+		Armaments: primary, secondary, tertiary
 		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
@@ -441,7 +464,8 @@ HEL2:
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
 	Rearmable:
-		RearmActors: hpad, 3fld
+        AmmoPools: primary, secondary
+		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
     RenderSprites:
@@ -551,7 +575,7 @@ HIND:
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary, secondary
-		RearmActors: hpad, 3fld
+		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 
@@ -579,6 +603,9 @@ BADR:
 	Targetable@AIRBORNE:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
+ 	Targetable@GROUND:
+		RequiresCondition: !airborne
+		TargetTypes: Ground
     Huntable:
 	LeavesTrails@0:
 		Offsets: -432,560,0
@@ -607,7 +634,7 @@ BADR:
 		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
-		Types: Infantry, Vehicle, Crate
+		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	Explodes:
 		Weapon: UnitExplodeAirBig
@@ -636,6 +663,125 @@ BADR.Bomber:
         Condition: is-bombing
     RenderSprites:
         Image: badr
+
+BADR.tran:
+	Inherits: ^Plane
+	Inherits@TRANSPORT: ^Transport
+	RejectsOrders:
+        RequiresCondition: airborne
+	HitShape:
+	Health:
+		HP: 9000
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 2133, 1706, 0, 85
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+		Margin: -2, 0
+	DrawLineToTarget:
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+	Targetable@GROUND:
+		RequiresCondition: !airborne
+		TargetTypes: Ground
+    Huntable:
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Badger Transport Plane
+        GenericStancePrefix: false
+        GenericName: Badger
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 3000
+        BuildDurationModifier: 100
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 8
+		BuildLimit: 1
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet
+		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
+    Armor:
+		Type: Aluminium
+	AmmoPool:
+		Ammo: 1
+	ReloadAmmoPool:
+		Delay: 60
+		Count: 1
+	AttackAircraft:
+		FacingTolerance: 20
+		PersistentTargeting: false
+		OpportunityFire: False
+	Armament:
+		Weapon: DropDummy
+	ParaDrop:
+		ChuteSound: chute1.aud
+	Aircraft:
+		IdleBehavior: ReturnToBase
+        CruiseAltitude: 2560
+		InitialFacing: 768
+		TurnSpeed: 12
+		Speed: 300
+		RepulsionSpeed: 40
+		MaximumPitch: 36
+		AirborneCondition: airborne
+		CruisingCondition: cruising 
+        WaitDistanceFromResupplyBase: 4c0
+		Crushes: crate, mine, infantry
+		TakeOffOnCreation: false
+        TakeOffOnResupply: false
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 10
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@Air:
+		Weapon: UnitExplodeAirBig
+		RequiresCondition: airborne
+	RenderSprites:
+		Image: badr
+	Rearmable:
+		RearmActors: aprt, 2fld, 3fld
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+    CommandBarBlacklist:
+        DisableStop: false
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 GenericJet:
 	Inherits: ^Jet
@@ -955,7 +1101,7 @@ RH66:
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
 	Rearmable:
-		RearmActors: hpad, 3fld
+		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	Cloak:

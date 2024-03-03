@@ -346,7 +346,7 @@ MSUB:
         BuildDurationModifier: 100
         BuildPaletteOrder: 5
 		Queue: Navy
-		Prerequisites: syrd, anytier3, ~navy.soviet
+		Prerequisites: syrd, stek, ~navy.soviet
 		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.
 	Health:
 		HP: 30000
@@ -390,7 +390,7 @@ NTS:
         BuildPaletteOrder: 6
 		BuildLimit: 1
 		Queue: Navy
-		Prerequisites: syrd, anytier3, ~navy.soviet
+		Prerequisites: syrd, fcom, ~navy.soviet
 		Description: Maximum one can be built.\n\nSubmerger nuclear-armed unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nLaunches nuclear torpedo against Ships.\nFires nuclear missile against Ground targets.
 	Health:
 		HP: 40000

@@ -869,7 +869,7 @@ FIX2:
 		Queue: Building.Soviet
 		Description: Produces and reloads fixed wing aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
-		Footprint: xxx xxx
+		Footprint: x=x =xx
 		Dimensions: 3,2
 	Health:
 		HP: 60000
@@ -1001,7 +1001,7 @@ FIX2:
 		Queue: Building.Soviet, Building.Blackhand
 		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
-		Footprint: xxx xxx
+		Footprint: x=x =xx
 		Dimensions: 3,2
 	Health:
 		HP: 60000
@@ -1311,6 +1311,10 @@ ATEK:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
+	ProvidesPrerequisite@2:
+		Prerequisite: anytechra
+        Factions: allies, soviet
+        ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
@@ -1476,6 +1480,10 @@ STEK:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
+	ProvidesPrerequisite@2:
+		Prerequisite: anytechra
+        Factions: allies, soviet
+        ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
@@ -1500,7 +1508,7 @@ FCOM:
 		BuildLimit: 1
 		Prerequisites: stek
 		Queue: Building.Soviet
-		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank\nand Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
+		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank,\nNuclear Tactical Submarine,\nand MiG Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3
@@ -1801,3 +1809,9 @@ ANYPROC:
 	Interactable:
 	Tooltip:
 		Name: Any Refinery
+
+ANYTECHRA:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a Tech Center

@@ -72,6 +72,9 @@
 #   71. PortaLaser
 #   72. TankLaser
 #   73. GrenadeLauncher
+#   74. HeliDepthCharges
+#   75. DropDummy
+#   76. ASMine
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -815,7 +818,7 @@ MLRSMissiles:
 	Range: 7c0
 	MinRange: 3c0
 	Burst: 4
-	BurstDelays: 4
+	BurstDelays: 7
 	Report: rocket1.aud
 	ValidTargets: Ground, Water
 	TargetActorCenter: true
@@ -2126,7 +2129,7 @@ Maverick:
 	Report: missile7.aud
 	Burst: 2
 	BurstDelays: 7
-	ValidTargets: Ground, Water
+	ValidTargets: Ground, Water, Underwater
 	Projectile: Missile
     	Arm: 0
         Speed: 298
@@ -2140,7 +2143,7 @@ Maverick:
 	Warhead@1Dam: SpreadDamage
 		Spread: 326
 		Damage: 5000
-		ValidTargets: Ground, Tree, Wall
+		ValidTargets: Ground, Tree, Wall, Submarine
 		Versus:
             None: 25
             Light: 75
@@ -2157,11 +2160,11 @@ Maverick:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplos.aud
-		ValidTargets: Ground, Air, Tree, Wall
+		ValidTargets: Ground, Air, Tree, Wall, Submarine
 	Warhead@4EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
+		ValidTargets: Water, Underwater
 		InvalidTargets: Bridge
 
 #   48. Parachuted nuclear bomb
@@ -2718,6 +2721,7 @@ CruiserShell:
 Torpedo:
 	ReloadDelay: 60
 	Range: 9c0
+    MinRange: 2c0
 	Burst: 2
 	BurstDelays: 30
 	Report: torpedo1.aud
@@ -2733,6 +2737,7 @@ Torpedo:
 		Palette: cloak
 		MaximumLaunchAngle: 0
 		CruiseAltitude: 0
+        Jammable: False
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
 		Damage: 9000
@@ -3247,3 +3252,80 @@ GrenadeLauncher:
 		ImpactSounds: xplos.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+#   74. Anti-Submarine extra for Longbow.
+HeliDepthCharges:
+	ReloadDelay: 30
+	Range: 0c128
+    Burst: 3
+	BurstDelays: 5
+    Report: chute1.aud
+	ValidTargets: Underwater
+	Projectile: Bullet
+		Speed: 125
+		Image: BOMB
+		Shadow: True
+		Blockable: false
+		Inaccuracy: 128
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 8000
+		ValidTargets: Submarine
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: kaboom15.aud
+		ValidTargets: Submarine
+	Warhead@4EffWater: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: h2obomb2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, WaterStructure, Bridge
+
+#   75. dummy weapon used by the Badger Transport Plane
+DropDummy:
+	ValidTargets: Ground
+	InvalidTargets: Infantry, Ship, Tank, Structure, WaterStructure, Air, Wall, Husk, Tree, Creep, Water, Underwater
+	ReloadDelay: 50
+	Range: 2c0
+	Projectile: Bullet
+		Speed: 200
+	Warhead: SpreadDamage
+		Spread: 56
+		Damage: 1
+
+#   76. Battleship's Anti-Ship Water Mine
+ASMine:
+	ValidTargets: Ship, Submarine, Underwater
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 10000
+		AffectsParent: true
+		ValidTargets: Ship, Submarine, Underwater
+		InvalidTargets: Mine
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: big_frag
+		ImpactSounds: mineblo1.aud
+		ImpactActors: false
