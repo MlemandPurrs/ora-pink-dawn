@@ -1181,3 +1181,98 @@ SFIG:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	-MapEditorData:
+
+GenericCarryall:
+	Inherits: ^Helicopter
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Carryall
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		CruiseAltitude: 2048
+		AltitudeVelocity: 0c100
+		IdealSeparation: 0c768
+		TurnSpeed: 12
+		Speed: 150
+		Repulsable: True
+		IdleTurnSpeed: 4
+		Voice: Action
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 15000
+	Armor:
+		Type: Aircraft
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+    # is a support unit....
+	Selectable:
+		Priority: 8
+		PriorityModifiers: Ctrl, Alt
+		DecorationBounds: 1749, 1749, 0, 0
+    -MapEditorData:
+    RenderSprites:
+        Image: dummy
+
+OCAR:
+    Inherits: GenericCarryall
+	EditorOnlyTooltip:
+		Name: Carryall
+	Tooltip:
+		Name: Carryall
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		Prerequisites: fix, ~aircraft.gdi
+		Queue: Aircraft
+		Description: VTOL aircraft capable\nof airlifting vehicles.\n\nUnarmed.
+	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
+	Carryall:
+		BeforeLoadDelay: 10
+		BeforeUnloadDelay: 15
+		LocalOffset: 0, 0, -128
+		Voice: Action
+		AllowDropOff: True
+		CarryCondition: carrying
+		PickUpCursor: guard
+		DropOffCursor: guard
+        CarryableConditions:
+            mcv: heavy
+            htnk: heavy
+            mcv2: heavy
+            4tnk: heavy
+            t55h: heavy
+	SpeedMultiplier@carrying:
+		Modifier: 80
+		RequiresCondition: carrying && !heavy
+	SpeedMultiplier@carryingheavy:
+        Modifier: 60
+        RequiresCondition: carrying && heavy
+	Sellable:
+		RequiresCondition: unit.sellable && !carrying
+	WithMoveAnimation:
+		MoveSequence: move
+    RenderSprites:
+        Image: ocar

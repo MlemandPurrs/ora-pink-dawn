@@ -37,6 +37,7 @@ MCV:
         TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
+        PauseOnCondition: boarding
  	Health:
 		HP: 90000
 	Armor:
@@ -78,7 +79,7 @@ MCV:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -118,6 +119,7 @@ HARV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Harvester:
+        DeliveryBuildings: proc
 		Resources: Tiberium, BlueTiberium, RedTiberium
 		Capacity: 21
 		BaleLoadDelay: 12
@@ -129,7 +131,7 @@ HARV:
 		Speed: 60
 		TurnSpeed: 12
         Locomotor: wheeled-crusher
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -227,7 +229,7 @@ TRUK:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 12
 		Speed: 60
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
@@ -237,6 +239,7 @@ TRUK:
 		PlayerExperience: 0
 	SpawnActorOnDeath:
 		Actor: moneycrate
+        RequiresCondition: !oncarryall
 	Passenger:
 		CustomPipType: pip-blue
     ExternalCondition@CloakingField:
@@ -250,7 +253,7 @@ TRUK:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -282,7 +285,7 @@ JEEP:
         Locomotor: wheeled-non-crusher
 		TurnSpeed: 18
 		Speed: 150
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 15000
 	Armor:
@@ -338,7 +341,7 @@ BGGY:
 	Mobile:
 		TurnSpeed: 18
 		Speed: 160
-        PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 12500
 	Armor:
@@ -393,7 +396,7 @@ BIKE:
     	Locomotor: wheeled-non-crusher
 		TurnSpeed: 24
 		Speed: 175
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 7500
 	Armor:
@@ -455,7 +458,7 @@ APC:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 110
-		PauseOnCondition: notmobile || emp-crate-collected
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
 	Health:
 		HP: 20000
 	Armor:
@@ -537,7 +540,7 @@ MAAG:
         Locomotor: tracked-crusher
 		TurnSpeed: 18
 		Speed: 110
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 20000
 	Armor:
@@ -629,7 +632,7 @@ LTNK:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 30000
 	Armor:
@@ -687,7 +690,7 @@ MTNK:
         TurnSpeed: 12
         Locomotor: tracked-crusher
 		Speed: 80
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 40000
 	Armor:
@@ -757,7 +760,7 @@ FTNK:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-		PauseOnCondition: dont-move || emp-crate-collected
+        PauseOnCondition: dont-move || emp-crate-collected || boarding
 	Health:
 		HP: 35000
 	Armor:
@@ -822,7 +825,7 @@ HTNK:
 		Locomotor: tracked-crusher
 		Speed: 60
 		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -903,7 +906,7 @@ STNK:
 		Locomotor: tracked-crusher
 		TurnSpeed: 18
 		Speed: 150
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 12000
 	Armor:
@@ -920,7 +923,7 @@ STNK:
 		Palette: cloak
 		IsPlayerPalette: false
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -970,7 +973,7 @@ ARTY:
         Locomotor: tracked-non-crusher
 		TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 10000
 	Armor:
@@ -1042,7 +1045,7 @@ MSAM:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
-        PauseOnCondition: aiming || emp-crate-collected
+        PauseOnCondition: aiming || emp-crate-collected || boarding
 	Health:
 		HP: 12000
 	Armor:
@@ -1121,7 +1124,7 @@ MLRS:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
-        PauseOnCondition: aiming || emp-crate-collected
+        PauseOnCondition: aiming || emp-crate-collected || boarding
 	Health:
 		HP: 12000
 	Armor:
@@ -1206,7 +1209,7 @@ MHQ:
 	Mobile:
         Locomotor: tracked-non-crusher
 		Speed: 90
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 5c128
 	WithIdleOverlay@SPINNER:
@@ -1288,7 +1291,7 @@ WTNK:
 		Locomotor: tracked-crusher
 		Speed: 60
 		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 45000
 	Armor:
@@ -1326,12 +1329,12 @@ WTNK:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionRelationships: Neutral, Enemy
-        RequiresCondition: ammo
+        RequiresCondition: ammo && !oncarryall
 	WithRangeCircle@JAMMER:
 		Type: jammer
 		Range: 3c0
 		Color: 0000FF80
-        RequiresCondition: ammo
+        RequiresCondition: ammo && !oncarryall
  	AmmoPool:
         Name: primary
         Armaments: primary
@@ -1359,7 +1362,7 @@ WTNK:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
 
 #   im sorry but this really aint interesting unit to use.
@@ -1383,7 +1386,7 @@ CHTK:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 60
-		PauseOnCondition: dont-move || emp-crate-collected
+		PauseOnCondition: dont-move || emp-crate-collected || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -1426,7 +1429,7 @@ CHTK:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
 
 #   todo: make MSG also use-up Charge when deployed. via Ammo mechanic. To make it consistent with SGEN.
@@ -1470,7 +1473,7 @@ MSG:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 12
 		Speed: 80
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 4c0
 	GrantCondition@PREVIEWWORKAROUND:
@@ -1537,6 +1540,8 @@ MSG:
         Delay: 25
         Count: 2
         PauseOnCondition: emp-crate-collected || deployed
+	Carryable:
+		-CarriedCondition: oncarryall
 
 T55H:
 	Inherits: ^TrackedVehicle
@@ -1560,7 +1565,7 @@ T55H:
 		Locomotor: tracked-crusher
 		Speed: 60
 		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected || pauseforlaser
+        PauseOnCondition: emp-crate-collected || pauseforlaser || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -1658,5 +1663,5 @@ T55H:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on

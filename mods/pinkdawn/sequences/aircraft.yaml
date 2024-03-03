@@ -148,3 +148,13 @@ sfig:
 		Facings: 32
 		UseClassicFacings: True
 	icon: sfigicon
+
+ocar:
+    Inherits: emp-overlay
+	idle: ocar
+		Facings: 32
+		UseClassicFacings: True
+	move: ocar
+		Start: 32
+		Facings: 32
+	icon: ocaricon

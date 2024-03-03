@@ -145,7 +145,7 @@
 		Palette: cloak
 		IsPlayerPalette: false
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 		RequiresCondition: cloak-crate-collected
 	ExternalCondition@CLOAK:
 		Condition: cloak-crate-collected
@@ -276,6 +276,7 @@
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
     Inherits@hijackable: ^HijackerMechanic
+    Inherits@airliftable: ^CarryallPassenger
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -2051,3 +2052,16 @@
 		Amount: 500
 		ShowTicks: False
 		RequiresCondition: bot-insurance-enabler && !noinsurance
+
+^CarryallPassenger:
+	Carryable:
+		ReservedCondition: awaiting
+		CarriedCondition: oncarryall
+		LockedCondition: boarding
+		LocalOffset: 0,0,200
+	WithDecoration@CARRYALL:
+		Image: pips
+		Margin: 0, 0
+		Sequence: pip-carryall
+		Position: Top
+		RequiresCondition: awaiting

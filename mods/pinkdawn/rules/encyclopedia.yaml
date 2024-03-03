@@ -893,6 +893,19 @@ heli.info:
         Palette: nodunits
     -MapEditorData:
 
+ocar.info:
+    Inherits: OCAR
+    Buildable:
+        Queue: Nothing
+        Prerequisites: fix
+	Encyclopedia:
+        Description: Carryalls are VTOL aircraft that are capable of airlifting Vehicles to carry them across the skies. The Carryall loses speed while carrying a unit, and particularly heavy cargo such as a MCV will cause it to slow-down considerably.
+        Category: GDI Aircraft
+		Order: 3
+	RenderSprites:
+		Image: ocar
+        Palette: gdi
+
 lst.info:
     Inherits: LST
     Buildable:
@@ -1135,7 +1148,7 @@ f18.info:
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: GDI Aircraft
-		Order: 5
+		Order: 4
 	RenderSprites:
 		Image: f18
         Palette: gdi

@@ -37,6 +37,7 @@ MCV2:
         TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
+        PauseOnCondition: boarding
 	Health:
 		HP: 90000
 	Armor:
@@ -73,7 +74,7 @@ MCV2:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -113,6 +114,7 @@ OHRV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Harvester:
+        DeliveryBuildings: oref
 		Resources: Tiberium, BlueTiberium, RedTiberium
 		Capacity: 21
 		BaleLoadDelay: 12
@@ -124,7 +126,7 @@ OHRV:
 		Speed: 60
 		TurnSpeed: 12
         Locomotor: wheeled-crusher
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -257,7 +259,7 @@ STRK:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 12
 		Speed: 60
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
@@ -267,6 +269,7 @@ STRK:
 		PlayerExperience: 0
 	SpawnActorOnDeath:
 		Actor: moneycrate
+        RequiresCondition: !oncarryall
 	Passenger:
 		CustomPipType: pip-blue
     ExternalCondition@CloakingField:
@@ -280,7 +283,7 @@ STRK:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -326,7 +329,7 @@ DTRK:
         Locomotor: wheeled-non-crusher
         TurnSpeed: 12
 		Speed: 60
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 4c0
 	Passenger:
@@ -363,7 +366,7 @@ DTRK:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -395,7 +398,7 @@ R4WD:
         Locomotor: wheeled-non-crusher
 		TurnSpeed: 18
 		Speed: 150
-		PauseOnCondition: notmobile || emp-crate-collected
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
 	Health:
 		HP: 15000
 	Armor:
@@ -473,7 +476,7 @@ FTRK:
         Locomotor: tracked-non-crusher
 		TurnSpeed: 18
 		Speed: 90
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 15000
 	Armor:
@@ -563,7 +566,7 @@ APC2:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-		PauseOnCondition: notmobile || emp-crate-collected
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
 	Health:
 		HP: 20000
 	Armor:
@@ -650,7 +653,7 @@ MNLY:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Targetable:
 		TargetTypes: Ground, Vehicle, Mine
 	RevealsShroud:
@@ -690,7 +693,7 @@ MNLY:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -717,7 +720,7 @@ MNLY:
         Locomotor: tracked-amphibian
 		TurnSpeed: 12
 		Speed: 90
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 30000
 	Armor:
@@ -782,7 +785,7 @@ MNLY:
         TurnSpeed: 12
         Locomotor: tracked-crusher
 		Speed: 80
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 40000
 	Armor:
@@ -845,7 +848,7 @@ MNLY:
         TurnSpeed: 12
         Locomotor: tracked-crusher
 		Speed: 70
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 45000
 	Armor:
@@ -908,7 +911,7 @@ MNLY:
 		Locomotor: tracked-crusher
 		Speed: 60
 		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
 	Armor:
@@ -966,7 +969,7 @@ MNLY:
 
 5TNK:
 	Inherits: ^TrackedVehicle
-	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	Valued:
 		Cost: 3000
@@ -1057,8 +1060,13 @@ MNLY:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    -Carryable:
+    -WithDecoration@CARRYALL:
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -1086,7 +1094,7 @@ CTNK:
         Locomotor: tracked-crusher
 		Speed: 50
         TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 5c0
 	Armament:
@@ -1149,7 +1157,7 @@ TTNK:
         Locomotor: tracked-crusher
         TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: dont-move || emp-crate-collected
+        PauseOnCondition: dont-move || emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 4c128
 	Armament:
@@ -1218,7 +1226,7 @@ V2RL:
         Locomotor: wheeled-crusher
         TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 6c0
 	Armament:
@@ -1319,7 +1327,7 @@ MGG:
 	WithIdleOverlay@SPINNER:
 		Offset: -299,0,171
 		Sequence: spinner
-        PauseOnCondition: emp-crate-collected || deployed
+        PauseOnCondition: emp-crate-collected || deployed || boarding
 	RevealsShroud:
 		Range: 4c0
 	CreatesShroud:
@@ -1364,7 +1372,7 @@ MGG:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
+		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1394,7 +1402,7 @@ APC3:
         Locomotor: tracked-crusher
 		TurnSpeed: 18
 		Speed: 90
-		PauseOnCondition: notmobile || emp-crate-collected
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
 	Health:
 		HP: 20000
 	Armor:
@@ -1460,7 +1468,7 @@ APC3:
 		Palette: cloak
 		IsPlayerPalette: false
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical

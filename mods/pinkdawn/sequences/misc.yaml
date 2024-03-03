@@ -314,6 +314,8 @@ pips:
 		Offset: -3, 0
 	pip-skull: pip-skull
 		Offset: -2, 0
+    pip-carryall: pip-carryall
+		Offset: 0, -6
     tag-hold: tag-hold
         Offset: 0, 2
     tag-fake: tag-fake
