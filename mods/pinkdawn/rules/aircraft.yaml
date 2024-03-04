@@ -128,15 +128,22 @@ TRAN:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadAmmoDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -262,7 +269,7 @@ ORCA:
         Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
-		ReloadDelay: 100
+		ReloadDelay: 80
 		ReloadCount: 2
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
@@ -277,6 +284,11 @@ ORCA:
 		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        AmmoPool: primary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
 HELI:
 	Inherits: ^Helicopter
@@ -362,6 +374,10 @@ HELI:
 		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+		Delay: 40
+		Count: 1
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
 HEL2:
 	Inherits: ^Helicopter
@@ -420,7 +436,8 @@ HEL2:
 		Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
-		ReloadDelay: 40
+		ReloadDelay: 80
+        ReloadCount: 2
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration@1:
 		AmmoPools: primary
@@ -470,6 +487,16 @@ HEL2:
 		RequiresCondition: airborne && emp-crate-collected
     RenderSprites:
         Image: heli
+	ReloadAmmoPool@HEROIC:
+        AmmoPool: primary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	ReloadAmmoPool@HEROIC2:
+        AmmoPool: secondary
+		Delay: 80
+		Count: 3
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
 HIND:
 	Inherits: ^Helicopter
@@ -542,7 +569,7 @@ HIND:
 		Name: secondary
 		Armaments: tertiary, quartenary
 		Ammo: 10
-		ReloadDelay: 100
+		ReloadDelay: 80
 		ReloadCount: 2
 		AmmoCondition: ammo2
 	WithAmmoPipsDecoration@2:
@@ -578,6 +605,16 @@ HIND:
 		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        AmmoPool: primary
+		Delay: 40
+		Count: 1
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	ReloadAmmoPool@HEROIC2:
+        AmmoPool: secondary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
 BADR:
 	Inherits: ^Plane
@@ -667,6 +704,7 @@ BADR.Bomber:
 BADR.tran:
 	Inherits: ^Plane
 	Inherits@TRANSPORT: ^Transport
+    Inherits@unitsellable: ^SellableOnHelipad
 	RejectsOrders:
         RequiresCondition: airborne
 	HitShape:
@@ -698,7 +736,7 @@ BADR.tran:
         BuildDurationModifier: 100
 		Queue: Aircraft
 		BuildAtProductionType: Plane
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 7
 		BuildLimit: 1
 		Prerequisites: ~anyafld, stek, ~aircraft.soviet
 		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
@@ -734,6 +772,19 @@ BADR.tran:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 10
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
 	LeavesTrails@0:
 		Offsets: -432,560,0
 		MovingInterval: 2
@@ -782,10 +833,11 @@ BADR.tran:
         RequiresCondition: within-gap-radius
 	ExternalCondition@GAPGenerator:
 		Condition: within-gap-radius
+	Sellable:
+		RequiresCondition: unit.sellable && !airborne && !loaded
 
 GenericJet:
 	Inherits: ^Jet
-	Inherits@selection: ^SelectableCombatUnit
     Valued:
 		Cost: 1200
 	Tooltip:
@@ -929,7 +981,7 @@ YAK:
 		LocalOffset: 256,213,0
 		MuzzleSequence: muzzle
 		FireDelay: 1
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo    
 	AmmoPool:
 		Ammo: 16
 		ReloadDelay: 60
@@ -951,6 +1003,26 @@ YAK:
 
 NMIG:
     Inherits: GenericJet
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadAmmoDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
 		Cost: 1800
 	Tooltip:
@@ -960,7 +1032,7 @@ NMIG:
         BuildDurationModifier: 100
 		Queue: Aircraft
 		BuildAtProductionType: Plane
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 8
 		BuildLimit: 1
 		Prerequisites: ~anyafld, fcom, ~aircraft.soviet
 		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
@@ -1189,15 +1261,22 @@ GenericCarryall:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadAmmoDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:

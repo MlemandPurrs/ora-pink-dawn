@@ -4,15 +4,22 @@ MCV2:
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	TransferTimedExternalConditionOnTransform:
@@ -86,15 +93,22 @@ OHRV:
     Inherits@Crates: ^AcceptsAllCratesExceptFirepower
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -229,15 +243,22 @@ STRK:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Buildable:
@@ -296,15 +317,22 @@ DTRK:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -333,6 +361,7 @@ DTRK:
 	RevealsShroud:
 		Range: 4c0
 	Passenger:
+        CargoType: Vehicle2
 		CustomPipType: pip-blue
 	Explodes:
 		Weapon: MiniNuke
@@ -947,7 +976,7 @@ MNLY:
 		Delay: 25
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected
+        RequiresCondition: !rank-heroic && !emp-crate-collected
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -966,6 +995,13 @@ MNLY:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+    -ChangesHealth@RANK-HEROIC:
+	ChangesHealth@RANK-HEROIC:
+		Step: 530
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !emp-crate-collected
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -1030,7 +1066,7 @@ MNLY:
 		Delay: 25
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected && wireless
+        RequiresCondition: !rank-heroic && !emp-crate-collected && wireless
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -1067,6 +1103,22 @@ MNLY:
 		ValidDamageStates: Critical
     -Carryable:
     -WithDecoration@CARRYALL:
+    -ChangesHealth@RANK-HEROIC:
+	ChangesHealth@RANK-HEROIC:
+		Step: 530
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !emp-crate-collected && wireless
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+        RequiresCondition: !rank-heroic
+    Explodes@2:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+        RequiresCondition: rank-heroic
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -1293,15 +1345,22 @@ MGG:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:

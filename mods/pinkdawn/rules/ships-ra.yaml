@@ -1,18 +1,28 @@
 LST2:
 	Inherits: ^Ship
 	Inherits@TRANSPORT: ^Transport
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
     Inherits@selection: ^SelectableSupportUnit
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
+	-GainsExperience:
+	-FirepowerMultiplier@RANK-VETERAN:
     -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-VETERAN:
+	-DamageMultiplier@RANK-VETERAN:
+	-FirepowerMultiplier@RANK-ELITE:
     -ReloadDelayMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-ELITE:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+	-SpeedMultiplier@RANK-HEROIC:
+	-DamageMultiplier@RANK-HEROIC:
+	-ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
+	-WithDecoration@RANK-ELITE:
+ 	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	UpdatesPlayerStatistics:
@@ -37,7 +47,7 @@ LST2:
 		InitialFacing: 0
 		TurnSpeed: 40
 		Speed: 90
-		PauseOnCondition: notmobile
+		PauseOnCondition: notmobile || emp-crate-collected
 	RevealsShroud:
 		Range: 3c512
 	Selectable:
@@ -46,7 +56,7 @@ LST2:
 	WithLandingCraftAnimation:
 		OpenTerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
 	Cargo:
-		Types: Infantry, Vehicle
+		Types: Infantry, Vehicle, Vehicle2
 		MaxWeight: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
@@ -69,6 +79,7 @@ LST2:
 PT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -89,6 +100,7 @@ PT:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
 	Turreted@PRIMARY:
@@ -105,13 +117,14 @@ PT:
 		Weapon: BoatGun
 		LocalOffset: 480,0,40
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
 		Weapon: MachineGunLight
 		LocalOffset: 128,0,43
 		MuzzleSequence: muzzle2
-        PauseOnCondition: reload-dc
+        PauseOnCondition: reload-dc || emp-crate-collected
         ReloadingCondition: reload-mg
 	Armament@TERTIARY:
 		Name: tertiary
@@ -119,7 +132,7 @@ PT:
 		Weapon: DepthCharge
 		LocalOffset: 128,0,43
 		MuzzleSequence: muzzle
-        PauseOnCondition: reload-mg
+        PauseOnCondition: reload-mg || emp-crate-collected
         ReloadingCondition: reload-dc
     WithMuzzleOverlay:
 	AttackTurreted:
@@ -138,6 +151,7 @@ PT:
 CA:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -158,6 +172,7 @@ CA:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 40
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 6c0
 	Turreted@PRIMARY:
@@ -176,6 +191,7 @@ CA:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
@@ -184,9 +200,11 @@ CA:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
     WithMuzzleOverlay:
 	AttackTurreted:
 		Turrets: primary, secondary
+        Armaments: primary, secondary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 	WithSpriteTurret@PRIMARY:
@@ -196,10 +214,14 @@ CA:
 	RenderRangeCircle:
 	Selectable:
 		DecorationBounds: 1877, 1877
+    RangeMultiplier@Heroic:
+        Modifier: 200
+        RequiresCondition: rank-heroic
 
 DD:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -220,6 +242,7 @@ DD:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 50
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
 	Turreted@PRIMARY:
@@ -236,7 +259,7 @@ DD:
 		Weapon: StingerAG
 		LocalOffset: 192,-100,176, 192,100,176
 		LocalYaw: 64, -64
-		PauseOnCondition: reload-air
+		PauseOnCondition: reload-air || emp-crate-collected
 		ReloadingCondition: reload-ground
 	Armament@SECONDARY:
 		Name: secondary
@@ -244,7 +267,7 @@ DD:
 		Weapon: StingerAA
 		LocalOffset: 192,-100,176, 192,100,176
 		LocalYaw: 64, -64
-		PauseOnCondition: reload-ground
+		PauseOnCondition: reload-ground || emp-crate-collected
 		ReloadingCondition: reload-air
 	Armament@TERTIARY:
 		Name: tertiary
@@ -252,7 +275,7 @@ DD:
 		Weapon: MachineGunLight
 		LocalOffset: 128,0,43
 		MuzzleSequence: muzzle2
-        PauseOnCondition: reload-dc
+        PauseOnCondition: reload-dc || emp-crate-collected
         ReloadingCondition: reload-mg
 	Armament@QUARTENARY:
 		Name: quartenary
@@ -260,7 +283,7 @@ DD:
 		Weapon: DepthCharge
 		LocalOffset: 128,0,43
 		MuzzleSequence: muzzle
-        PauseOnCondition: reload-mg
+        PauseOnCondition: reload-mg || emp-crate-collected
         ReloadingCondition: reload-dc
 	AttackTurreted:
 		Armaments: primary, secondary, tertiary, quartenary
@@ -305,6 +328,7 @@ SS:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
 	Armament@PRIMARY:
@@ -312,12 +336,14 @@ SS:
 		Weapon: Torpedo
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
+        PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
 		Weapon: GrenadeLauncher
 		LocalOffset: 132,0,96
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
 	AttackFrontal:
         Armaments: primary, secondary
         FacingTolerance: 0
@@ -355,12 +381,23 @@ MSUB:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 50
+        PauseOnCondition: aiming || emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: SubMissile
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: SubMissile2
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
@@ -371,10 +408,38 @@ MSUB:
 		Color: FFFF00
 	Selectable:
 		DecorationBounds: 1877, 1877
+    GrantConditionOnAttack:
+		ArmamentNames: primary
+    	Condition: aiming
+		RevokeDelay: 32
+    	RevokeAll: false
+    RangeMultiplier@Heroic:
+        Modifier: 200
+        RequiresCondition: rank-heroic
 
 NTS:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -399,6 +464,7 @@ NTS:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 40
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
 	Armament@AntiShip:
@@ -406,14 +472,14 @@ NTS:
 		Weapon: NukeTorpedo
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
-		PauseOnCondition: reload-antiground || !ammo
+		PauseOnCondition: reload-antiground || !ammo || emp-crate-collected
 		ReloadingCondition: reload-antiship
 	Armament@AntiGround:
         Name: secondary
 		Weapon: NukeMissile
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
-		PauseOnCondition: reload-antiship || !ammo
+		PauseOnCondition: reload-antiship || !ammo || emp-crate-collected
 		ReloadingCondition: reload-antiground
 	AttackFrontal:
         Armaments: primary, secondary
@@ -433,3 +499,4 @@ NTS:
 	ReloadAmmoPool:
 		Delay: 360
 		Count: 1
+        PauseOnCondition: emp-crate-collected

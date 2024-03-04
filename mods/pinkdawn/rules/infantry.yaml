@@ -232,19 +232,28 @@ E6:
 	Inherits@selection: ^SelectableSupportUnit
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	-AttackFrontal:
 	Valued:
 		Cost: 500
@@ -479,6 +488,8 @@ RMBO:
 
 TECN:
 	Inherits@1: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Tooltip:
 		Name: Technician
 	Health:
@@ -571,22 +582,31 @@ VICE:
 
 MEDI:
 	Inherits: ^Soldier
-	Inherits@selection: ^SelectableSupportUnit
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
+	Inherits@selection: ^SelectableSupportUnit    
+	-GainsExperience:
+	-FirepowerMultiplier@RANK-VETERAN:
     -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-VETERAN:
+	-DamageMultiplier@RANK-VETERAN:
+	-FirepowerMultiplier@RANK-ELITE:
     -ReloadDelayMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-ELITE:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+	-SpeedMultiplier@RANK-HEROIC:
+	-DamageMultiplier@RANK-HEROIC:
+	-ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
+	-WithDecoration@RANK-ELITE:
+ 	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Tooltip:
 		Name: Medic
 	Valued:
@@ -648,19 +668,28 @@ MECH:
 	Inherits@selection: ^SelectableSupportUnit
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Tooltip:
 		Name: Mechanic
 	Valued:
@@ -1053,19 +1082,28 @@ THF:
 	Inherits@selection: ^SelectableSupportUnit
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+ 	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
     -AttackFrontal:
     -Guard
 	Tooltip:

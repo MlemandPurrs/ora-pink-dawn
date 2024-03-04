@@ -384,7 +384,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamaged
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
-    Inherits@experience: ^ExperienceMechanic
+    Inherits@experience: ^ExperienceMechanicAircraft
     Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
@@ -458,6 +458,18 @@
         RequiresCondition: within-gap-radius
 	ExternalCondition@GAPGenerator:
 		Condition: within-gap-radius
+    -Cloak@CloakingField:
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on && !airborne
 
 ^RepairsAircraftWithRepairBay:
 	ExternalCondition@AIRCRAFTREPAIR:
@@ -512,7 +524,13 @@
 ^Jet:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
+    Inherits@unitsellable: ^SellableOnHelipad
+	Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanicAircraft
+    Inherits@stealthgen: ^AffectedByCloakingField
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
@@ -584,6 +602,18 @@
         RequiresCondition: within-gap-radius
 	ExternalCondition@GAPGenerator:
 		Condition: within-gap-radius
+    -Cloak@CloakingField:
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on && !airborne
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -599,7 +629,7 @@
 		Condition: hazmatenabled
 		Prerequisites: global-givehazmat
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || rank-heroic && ontiberium
 		Condition: hazmatsuits
 	WithDecoration@HAZMAT:
 		Image: pips
@@ -936,6 +966,7 @@
 
 ^Submarine:
 	Inherits: ^Ship
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	-MustBeDestroyed:
 	Explodes:
 		Weapon: UnitExplodeSubmarine
@@ -951,7 +982,7 @@
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
-		PauseOnCondition: cloak-force-disabled || minehit
+		PauseOnCondition: cloak-force-disabled || minehit || emp-crate-collected
 		RequiresCondition: !deployed
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1245,6 +1276,7 @@
 ^TechBuildingHusk:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^1x1Shape
+    Inherits@restorable: ^RestorableBuilding
 	AppearsOnRadar:
 	Interactable:
 	Building:
@@ -1804,32 +1836,55 @@
 		Conditions:
 			500: rank-veteran
 			1000: rank-elite
+            1500: rank-heroic
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 125
-	SpeedMultiplier@RANK-VETERAN:
-		RequiresCondition: rank-veteran
-		Modifier: 130
-	DamageMultiplier@RANK-VETERAN:
-		RequiresCondition: rank-veteran
-		Modifier: 75
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
         Modifier: 80
+	SpeedMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 120
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 90
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 125
+		Modifier: 150
+    ReloadDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-elite
+        Modifier: 65
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 130
+		Modifier: 135
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 75
-    ReloadDelayMultiplier@RANK-ELITE:
-        RequiresCondition: rank-veteran
-        Modifier: 80
-	WithDecoration@RANK-VETERAN:
+		Modifier: 80
+	FirepowerMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 150
+    ReloadDelayMultiplier@RANK-HEROIC:
+        RequiresCondition: rank-heroic
+        Modifier: 65
+	SpeedMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 135
+	DamageMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 80
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 5
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic
+    GivesExperienceMultiplier@RANK-HEROIC:
+        Modifier: 200
+        RequiresCondition: rank-heroic
+    WithDecoration@RANK-VETERAN:
 		Image: rank
 		Sequence: rank-veteran
 		Palette: effect
@@ -1845,6 +1900,100 @@
 		Margin: 5, 6
 		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-elite
+ 	WithDecoration@RANK-HEROIC:
+		Image: rank
+		Sequence: rank-heroic
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-heroic
+    GainsExperienceMultiplier@EXPTOGGLE2:
+        Modifier: 0
+        RequiresCondition: !earner-veterancy-on
+    GrantConditionOnPrerequisite@EXPTOGGLE2:
+        Condition: earner-veterancy-on
+        Prerequisites: ~global-veterancy
+
+^ExperienceMechanicAircraft:
+	GainsExperience:
+		LevelUpNotification: LevelUp
+		LevelUpTextNotification: Unit promoted.
+		Conditions:
+			500: rank-veteran
+			1000: rank-elite
+            1500: rank-heroic
+		LevelUpImage: crate-effects
+	FirepowerMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 125
+    ReloadAmmoDelayMultiplier@RANK-VETERAN:
+        RequiresCondition: rank-veteran
+        Modifier: 80
+	SpeedMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 120
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 90
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 150
+    ReloadAmmoDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-elite
+        Modifier: 65
+	SpeedMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 135
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 80
+	FirepowerMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 150
+    ReloadAmmoDelayMultiplier@RANK-HEROIC:
+        RequiresCondition: rank-heroic
+        Modifier: 65
+	SpeedMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 135
+	DamageMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 80
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 5
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic
+    GivesExperienceMultiplier@RANK-HEROIC:
+        Modifier: 200
+        RequiresCondition: rank-heroic
+    WithDecoration@RANK-VETERAN:
+		Image: rank
+		Sequence: rank-veteran
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-veteran
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-elite
+ 	WithDecoration@RANK-HEROIC:
+		Image: rank
+		Sequence: rank-heroic
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-heroic
     GainsExperienceMultiplier@EXPTOGGLE2:
         Modifier: 0
         RequiresCondition: !earner-veterancy-on
@@ -1869,15 +2018,27 @@
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
         Modifier: 80
+	RangeMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 125
+	RevealsShroudMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 120
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 125
+		Modifier: 150
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 75
+		Modifier: 50
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 60
+	RangeMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 150
+	RevealsShroudMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 140
 	WithDecoration@RANK-VETERAN:
 		Image: rank
 		Sequence: rank-veteran

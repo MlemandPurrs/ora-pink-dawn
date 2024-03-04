@@ -1365,6 +1365,7 @@ hosp:
 	damaged-idle:
 		Start: 4
 		Length: 4
+		Tick: 100
 		Offset: 0,-2
 	make: hospmake
 		Length: *

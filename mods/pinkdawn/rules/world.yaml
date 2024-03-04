@@ -307,7 +307,7 @@ World:
 		Maximum: 6
         DeliveryAircraft: c17.crate
 		SpawnInterval: 3000
-		WaterChance: 0
+		WaterChance: 20
 		InitialSpawnDelay: 1500
 		CheckboxDisplayOrder: 1
 	PathFinder:

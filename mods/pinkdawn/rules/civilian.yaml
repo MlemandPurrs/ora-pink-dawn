@@ -440,53 +440,79 @@ BRIDGEHUT:
 
 C1:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C2:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C3:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C4:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C5:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C6:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C7:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C8:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C9:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 C10:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 
 DELPHI:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	-Wanders:
 	Tooltip:
 		Name: Agent Delphi
 
 CHAN:
 	Inherits: ^CivInfantry
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	Tooltip:
 		Name: Dr. Chan
 
 MOEBIUS:
 	Inherits: ^CivInfantry
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
 	-Wanders:
 	Voiced:
 		VoiceSet: MoebiusVoice

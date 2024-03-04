@@ -36,7 +36,6 @@ V19:
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
-    Inherits@restorable: ^RestorableBuilding
 	Interactable:
 		Bounds: 1024, 1024
 	WithIdleOverlay:

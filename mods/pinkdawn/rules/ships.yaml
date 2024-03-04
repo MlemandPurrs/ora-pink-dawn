@@ -1,18 +1,28 @@
 LST:
 	Inherits: ^Ship
 	Inherits@TRANSPORT: ^Transport
+ 	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
     Inherits@selection: ^SelectableSupportUnit
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
+	-GainsExperience:
+	-FirepowerMultiplier@RANK-VETERAN:
     -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-VETERAN:
+	-DamageMultiplier@RANK-VETERAN:
+	-FirepowerMultiplier@RANK-ELITE:
     -ReloadDelayMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-ELITE:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+	-SpeedMultiplier@RANK-HEROIC:
+	-DamageMultiplier@RANK-HEROIC:
+	-ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
+	-WithDecoration@RANK-ELITE:
+ 	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -31,7 +41,7 @@ LST:
 		InitialFacing: 0
 		TurnSpeed: 10
 		Speed: 110
-		PauseOnCondition: notmobile
+        PauseOnCondition: notmobile || emp-crate-collected
 	Health:
 		HP: 40000
 	Armor:
@@ -44,7 +54,7 @@ LST:
 		DisplayTypes: Infantry, Vehicle
 		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
 	Cargo:
-		Types: Infantry, Vehicle
+		Types: Infantry, Vehicle, Vehicle2
 		MaxWeight: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
@@ -67,6 +77,7 @@ LST:
 BOAT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Valued:
 		Cost: 600
 	Buildable:
@@ -85,6 +96,7 @@ BOAT:
 	Mobile:
 		TurnSpeed: 10
 		Speed: 60
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
 	Turreted:
@@ -94,6 +106,7 @@ BOAT:
 		Weapon: BoatMissile
 		LocalOffset: 85,-85,0, 85,85,0
 		LocalYaw: 64, -64
+        PauseOnCondition: emp-crate-collected
 	AttackTurreted:
 	WithSpriteTurret:
 	RenderRangeCircle:
@@ -104,6 +117,7 @@ BOAT:
 PT2:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -124,6 +138,7 @@ PT2:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
 	Turreted@PRIMARY:
@@ -140,12 +155,14 @@ PT2:
 		Weapon: StingerAG
 		LocalOffset: 85,-85,88, 85,85,88
 		LocalYaw: 64, -64
+        PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
 		Name: secondary
         Turret: secondary
 		Weapon: StingerAA
 		LocalOffset: 192,-100,176, 192,100,176
 		LocalYaw: 64, -64
+        PauseOnCondition: emp-crate-collected
     WithMuzzleOverlay:
 	AttackTurreted:
 		Armaments: primary, secondary, tertiary
@@ -162,6 +179,7 @@ PT2:
 
 DD2:
 	Inherits: ^Ship
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -194,6 +212,7 @@ DD2:
 		Weapon: TurretGun
 		LocalOffset: 480,0,40
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
 	AttackTurreted:
 		Armaments: primary, secondary
 	WithSpriteTurret:
@@ -219,6 +238,7 @@ DD2:
 		Count: 1
 		Sound: minelay1.aud
 		RequiresCondition: !ammo
+        PauseOnCondition: emp-crate-collected
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
@@ -252,6 +272,7 @@ SS2:
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
+        PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
 	Armament:

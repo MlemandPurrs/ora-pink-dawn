@@ -595,6 +595,9 @@ rank:
         Offset: 0, 3
 	rank-elite:
 		Start: 1
+		Offset: 0, 3
+	rank-heroic:
+		Start: 2
 		Offset: 1, 3
 
 veteranoverlay:

@@ -858,6 +858,10 @@ MLRSMissiles:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
+MLRSMissiles2:
+    Inherits: MLRSMissiles
+    Burst: 8
+
 #   18. Stealth Tank rockets
 StnkRocketsAG:
 	ReloadDelay: 70
@@ -965,6 +969,11 @@ ArtilleryShell:
 		ImpactSounds: xplosml2.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+ArtilleryShell2:
+    Inherits: ArtilleryShell
+    Burst: 2
+    BurstDelays: 10
 
 #   20. Machinegun for APC
 MachineGun:
@@ -2272,8 +2281,8 @@ ChainGun.Yak.Left:
 BehemothCannon:
 	ReloadDelay: 100
     Range: 7c0
- 	Burst: 2
-	BurstDelays: 8
+ 	Burst: 4
+	BurstDelays: 8, 16, 8
     Report: turret1.aud
 	Projectile: Bullet
 		Image: 120MM
@@ -2808,7 +2817,11 @@ SubMissile:
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
-        
+
+SubMissile2:
+    Inherits: SubMissile
+	Burst: 4
+
 #   64. Nuclear Torpedo
 NukeTorpedo:
 	ReloadDelay: 359

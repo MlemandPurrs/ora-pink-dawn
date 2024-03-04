@@ -4,15 +4,22 @@ MCV:
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	TransferTimedExternalConditionOnTransform:
@@ -91,15 +98,22 @@ HARV:
     Inherits@Crates: ^AcceptsAllCratesExceptFirepower
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -199,15 +213,22 @@ TRUK:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Buildable:
@@ -295,14 +316,24 @@ JEEP:
 	Turreted:
 		TurnSpeed: 18
 		Offset: -85,0,128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: MachineGunLight
 		LocalOffset: 171,0,85
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+    Armament@PRIMARYHEROIC:
+        Name: primaryheroic
+		Weapon: MachineGun
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
+        Armaments: primary, primaryheroic
 		Voice: Attack
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
@@ -372,8 +403,21 @@ BGGY:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || rank-heroic
 		RequiresCondition: cloakfield-on
+    -Cloak:
+	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
+		RequiresCondition: cloak-crate-collected && rank-heroic
 
 BIKE:
 	Inherits: ^Vehicle
@@ -403,12 +447,22 @@ BIKE:
 		Type: Light
 	RevealsShroud:
 		Range: 4c128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: BikeRockets
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
+        ReloadingCondition: first-burst
 		PauseOnCondition: emp-crate-collected
+ 	Armament@SECONDARY:
+        Name: secondary
+		Weapon: BikeRockets
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: !first-burst || emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
         FacingTolerance: 0
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
@@ -641,14 +695,26 @@ LTNK:
 		Range: 4c128
 	Turreted:
 		TurnSpeed: 12
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: LightCannon
 		Recoil: 85
 		RecoilRecovery: 17
 		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
 		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: MediumCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackTurreted:
+        Armaments: primary, secondary
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
 	AttackMove:
@@ -861,7 +927,7 @@ HTNK:
 		Delay: 25
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected
+        RequiresCondition: !rank-heroic && !emp-crate-collected
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -882,6 +948,13 @@ HTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+    -ChangesHealth@RANK-HEROIC:
+	ChangesHealth@RANK-HEROIC:
+		Step: 530
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !emp-crate-collected
 
 STNK:
 	Inherits: ^Vehicle
@@ -930,14 +1003,17 @@ STNK:
 	Turreted:
 		TurnSpeed: 18
 	Armament@PRIMARY:
+        Name: primary
 		Weapon: StnkRocketsAG
 		LocalOffset: 213,43,128, 213,-43,128
 		PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
+        Name: secondary
 		Weapon: StnkRocketsAA
 		LocalOffset: 213,43,128, 213,-43,128
 		PauseOnCondition: emp-crate-collected
-	AttackTurreted:	
+	AttackTurreted:
+        Armaments: primary, secondary
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
 	AttackMove:
@@ -951,6 +1027,7 @@ STNK:
 		EmptyWeapon: UnitExplode
     Targetable@Extra:
 		TargetTypes: Tank
+    
 
 ARTY:
 	Inherits: ^TrackedVehicle
@@ -980,12 +1057,22 @@ ARTY:
 		Type: Light
 	RevealsShroud:
 		Range: 6c0
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: ArtilleryShell
 		LocalOffset: 624,0,208
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: ArtilleryShell2
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
@@ -1056,11 +1143,20 @@ MSAM:
 		TurnSpeed: 12
 		Offset: -256,0,128
 	Armament@PRIMARY:
+        Name: primary
 		Weapon: MLRSMissiles
 		LocalOffset: 213,128,0, 213,-128,0
 		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
+        Name: secondary
+		Weapon: MLRSMissiles2
+		LocalOffset: 213,128,0, 213,-128,0
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic        
 	AttackFrontal:
-		TargetFrozenActors: True
+        Armaments: primary, secondary
+        TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
 		FacingTolerance: 0
@@ -1441,15 +1537,22 @@ MSG:
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Selectable:
