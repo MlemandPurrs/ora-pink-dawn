@@ -651,7 +651,7 @@
 		Delay: 100
 		StartIfBelow: 101
 		DamageCooldown: 125
-		RequiresCondition: ( barracksheal || hospitalheal )
+		RequiresCondition: ( barracksheal || hospitalheal ) && !rank-heroic
 	Targetable@HEAL:
 		TargetTypes: Heal
 		RequiresCondition: !parachute && damaged
@@ -1834,9 +1834,9 @@
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
-			500: rank-veteran
-            1000: rank-elite
-            1500: rank-heroic
+			250: rank-veteran
+            500: rank-elite
+            750: rank-heroic
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
@@ -1920,9 +1920,9 @@
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
-            500: rank-veteran
-            1000: rank-elite
-            1500: rank-heroic
+			250: rank-veteran
+            500: rank-elite
+            750: rank-heroic
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
@@ -2007,7 +2007,7 @@
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
 			500: rank-veteran
-			1000: rank-elite
+            1000: rank-elite
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran

@@ -254,9 +254,8 @@ TRUK:
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
-        Cursor: enter
+        Cursor: sell-unit
 		Payload: 1000
-		Type: MoneyTransfer
 		PlayerExperience: 0
 	SpawnActorOnDeath:
 		Actor: moneycrate

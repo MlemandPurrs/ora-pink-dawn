@@ -567,8 +567,6 @@ TENT:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
-	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund
 
 BARR:
 	Inherits: ^BaseBuilding
@@ -663,8 +661,6 @@ BARR:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
-	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund
 
 WARF:
 	Inherits: ^BaseBuilding
@@ -727,6 +723,7 @@ WARF:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Vehicle
 	Power:
@@ -903,6 +900,7 @@ FIX2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Aircraft
 	Power:
@@ -1035,6 +1033,7 @@ FIX2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Aircraft
 	Power:

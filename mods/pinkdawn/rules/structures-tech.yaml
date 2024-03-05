@@ -160,6 +160,7 @@ SYRD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Navy
 	RepairsUnits:
@@ -414,12 +415,33 @@ APRT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Aircraft
 	Reservable:
 	WithResupplyAnimation:
 	ProvidesPrerequisite:
 		Prerequisite: anyafld
+	ProvidesPrerequisite@gdi:
+		Prerequisite: aircraft.gdi
+		Factions: gdi
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nod:
+		Prerequisite: aircraft.nod
+		Factions: nod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@allies:
+		Prerequisite: aircraft.allies
+		Factions: allies
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: aircraft.soviet
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@bossnod:
+		Prerequisite: aircraft.bossnod
+		Factions: bossnod
+        ResetOnOwnerChange: true
 	ProvidesPrerequisite@f22:
 		Prerequisite: aircraft.f22
 		Factions: nod, bossnod

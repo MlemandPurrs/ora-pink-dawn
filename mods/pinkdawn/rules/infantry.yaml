@@ -254,6 +254,8 @@ E6:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	-AttackFrontal:
 	Valued:
 		Cost: 500
@@ -490,6 +492,8 @@ TECN:
 	Inherits@1: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Tooltip:
 		Name: Technician
 	Health:
@@ -508,7 +512,7 @@ TECN:
 	DeliversCash:
         Cursor: sell-unit
 		Payload: 10
-		Type: InfantryRefund
+        PlayerExperience: 0
 
 VICE:
 	Inherits@1: ^ExistsInWorld
@@ -690,6 +694,8 @@ MECH:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Tooltip:
 		Name: Mechanic
 	Valued:
@@ -951,6 +957,32 @@ SPY:
 DOG:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	-GainsExperience:
+	-FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+	-SpeedMultiplier@RANK-VETERAN:
+	-DamageMultiplier@RANK-VETERAN:
+	-FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-ELITE:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+	-SpeedMultiplier@RANK-HEROIC:
+	-DamageMultiplier@RANK-HEROIC:
+	-ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+	-WithDecoration@RANK-ELITE:
+ 	-WithDecoration@RANK-HEROIC:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Selectable:
 		Bounds: 512, 725, -42, -170
 		DecorationBounds: 512, 725, -42, -170
@@ -1104,6 +1136,8 @@ THF:
     -WithProductionIconOverlay:
  	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
     -AttackFrontal:
     -Guard
 	Tooltip:

@@ -442,16 +442,22 @@ C1:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 C2:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 C3:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
@@ -459,6 +465,8 @@ C4:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
@@ -466,6 +474,8 @@ C5:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
@@ -473,31 +483,43 @@ C6:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 C7:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 C8:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
-
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
+        
 C9:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 C10:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 
 DELPHI:
 	Inherits: ^ArmedCivilian
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	-Wanders:
 	Tooltip:
 		Name: Agent Delphi
@@ -506,6 +528,8 @@ CHAN:
 	Inherits: ^CivInfantry
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	Tooltip:
 		Name: Dr. Chan
 
@@ -513,6 +537,8 @@ MOEBIUS:
 	Inherits: ^CivInfantry
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal )
 	-Wanders:
 	Voiced:
 		VoiceSet: MoebiusVoice

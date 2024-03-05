@@ -675,8 +675,6 @@ PYLE:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
-	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -773,8 +771,6 @@ HAND:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
-	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund
 
 AFLD:
 	Inherits: ^BaseBuilding
@@ -839,6 +835,7 @@ AFLD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Vehicle
 	Power:
@@ -942,6 +939,7 @@ WEAP:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Vehicle
 	Power:
@@ -1103,6 +1101,7 @@ HPAD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Aircraft
 	Power:
@@ -1700,6 +1699,7 @@ UFLD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+        Sticky: false
 	ProductionBar:
 		ProductionType: Vehicle
 	Power:
