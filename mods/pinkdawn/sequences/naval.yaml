@@ -1,4 +1,5 @@
 lst:
+    Inherits: emp-overlay
 	idle: lstnew
 		UseClassicFacings: True
 		Facings: 32
@@ -8,6 +9,7 @@ lst:
 	icon: lsticon
 
 boat:
+    Inherits: emp-overlay
 	idle:
 		Facings: 32
 		UseClassicFacings: True
