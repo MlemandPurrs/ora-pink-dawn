@@ -285,6 +285,7 @@ ORCA:
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
+        ResetOnFire: true
         AmmoPool: primary
 		Delay: 80
 		Count: 2
@@ -375,7 +376,8 @@ HELI:
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
-		Delay: 40
+        ResetOnFire: true
+		Delay: 80
 		Count: 1
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
@@ -489,11 +491,13 @@ HEL2:
         Image: heli
 	ReloadAmmoPool@HEROIC:
         AmmoPool: primary
+        ResetOnFire: true
 		Delay: 80
 		Count: 2
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 	ReloadAmmoPool@HEROIC2:
         AmmoPool: secondary
+        ResetOnFire: true
 		Delay: 80
 		Count: 3
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
@@ -607,11 +611,13 @@ HIND:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
         AmmoPool: primary
-		Delay: 40
+        ResetOnFire: true
+		Delay: 80
 		Count: 1
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 	ReloadAmmoPool@HEROIC2:
         AmmoPool: secondary
+        ResetOnFire: true
 		Delay: 80
 		Count: 2
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
@@ -1192,6 +1198,11 @@ RH66:
 		ValidDamageStates: Critical
     -ExternalCondition@CloakingField:
     -Cloak@CloakingField:
+	ReloadAmmoPool@HEROIC:
+        AmmoPool: primary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
 
 SFIG:
 	Inherits: ^Plane

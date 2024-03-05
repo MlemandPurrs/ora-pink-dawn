@@ -13,7 +13,7 @@ Players:
 		Name: Neutral
 		OwnsWorld: True
 		NonCombatant: True
-		Faction: Random
+		Faction: Neutral
 
 Actors:
 

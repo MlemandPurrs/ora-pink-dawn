@@ -1,5 +1,6 @@
 GenericVoice:
 	Variants:
+        neutral: .v01, .v03
 		nod: .v01, .v03
 		gdi: .v01, .v03
 		allies: .a01,.a03

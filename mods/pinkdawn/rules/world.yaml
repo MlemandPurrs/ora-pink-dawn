@@ -161,6 +161,11 @@
 			Beach: 70
 			Shallow: 70
             Water: 50
+    Faction@0:
+		Name: Neutral
+		InternalName: Neutral
+        Description: Neutral\nPlaceholder used by Civilians.
+        Selectable: false
 	Faction@Random:
 		Name: Random TD
 		InternalName: Random

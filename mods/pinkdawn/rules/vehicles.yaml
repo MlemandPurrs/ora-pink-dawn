@@ -459,6 +459,7 @@ BIKE:
 		Weapon: BikeRockets
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
+        FireDelay: 2
 		PauseOnCondition: !first-burst || emp-crate-collected
         RequiresCondition: rank-heroic
 	AttackFrontal:
@@ -1091,7 +1092,7 @@ ARTY:
 		CustomPipType: pip-yellow
 	RenderRangeCircle:
 	ReloadArmamentsBar:
-		Armaments: primary
+		Armaments: primary, secondary
 		Color: FFFF00
     Targetable@Extra:
 		TargetTypes: Artillery
@@ -1176,7 +1177,7 @@ MSAM:
 		RevokeDelay: 32
     	RevokeAll: false
 	ReloadArmamentsBar:
-        Armaments: primary
+        Armaments: primary, secondary
         Color: FFFF00
 	RenderRangeCircle:
     Targetable@Extra:

@@ -1835,45 +1835,45 @@
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
 			500: rank-veteran
-			1000: rank-elite
+            1000: rank-elite
             1500: rank-heroic
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 125
+		Modifier: 110
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
 	SpeedMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 120
+		Modifier: 110
 	DamageMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 90
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 150
+		Modifier: 120
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-elite
-        Modifier: 65
+        Modifier: 80
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 135
+		Modifier: 120
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 80
 	FirepowerMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 150
+		Modifier: 130
     ReloadDelayMultiplier@RANK-HEROIC:
         RequiresCondition: rank-heroic
-        Modifier: 65
+        Modifier: 70
 	SpeedMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 135
+		Modifier: 130
 	DamageMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 80
+		Modifier: 70
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
 		PercentageStep: 5
@@ -1920,46 +1920,46 @@
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
-			500: rank-veteran
-			1000: rank-elite
+            500: rank-veteran
+            1000: rank-elite
             1500: rank-heroic
 		LevelUpImage: crate-effects
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 125
+		Modifier: 110
     ReloadAmmoDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
 	SpeedMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 120
+		Modifier: 110
 	DamageMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 90
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 150
+		Modifier: 120
     ReloadAmmoDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-elite
-        Modifier: 65
+        Modifier: 80
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 135
+		Modifier: 120
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 80
 	FirepowerMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 150
+		Modifier: 130
     ReloadAmmoDelayMultiplier@RANK-HEROIC:
         RequiresCondition: rank-heroic
-        Modifier: 65
+        Modifier: 70
 	SpeedMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 135
+		Modifier: 130
 	DamageMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 80
+		Modifier: 70
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
 		PercentageStep: 5

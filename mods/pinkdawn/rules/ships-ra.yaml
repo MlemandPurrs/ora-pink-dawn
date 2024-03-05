@@ -404,7 +404,7 @@ MSUB:
 		FacingTolerance: 0
 	RenderRangeCircle:
 	ReloadArmamentsBar:
-		Armaments: primary
+		Armaments: primary, secondary
 		Color: FFFF00
 	Selectable:
 		DecorationBounds: 1877, 1877

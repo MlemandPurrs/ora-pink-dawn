@@ -3,6 +3,7 @@
 #   all EMP Missile related. Borrowed from RA: All chronosphere, iron curtain, gps sattelite related, spy plane ready.
 Speech:
 	Prefixes:
+        neutral: gdi
 		gdi: gdi
 		nod: nod
         allies: allies
