@@ -494,7 +494,7 @@ e4.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Effective for maximum close-range destruction. Yields fire which burns more slowly than normal, allowing more effective elimination of humans and armament.\nBe careful when using these troops in groups - if this unit gets in front of another, chances are that the unit in front will catch some of the damage from the back unit. Spread them out.\nFlamethrowers wear fire-proof suits that makes them immune to their own weaponry, it does have its material limits however and will not protect against larger sources of heat.
+        Description: Effective for maximum close-range destruction. Yields fire which burns more slowly than normal, allowing more effective elimination of humans and armament.\nBe careful when using these troops in groups - if this unit gets in front of another, chances are that the unit in front will catch some of the damage from the back unit. Spread them out.\nFlamethrowers wear fire-proof suits that makes them immune to their own weaponry, it does have its material limits however and will not protect against larger sources of heat.\n\nHeroic rank:\nShoots a ball of fire over the distance.
         Category: Nod Infantry
 		Order: 3
 	RenderSprites:
@@ -507,7 +507,7 @@ e5.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Chemical Trooper is an advanced infantry unit immune to the effects of Tiberium. The chem-blast they carry produces a short-lived toxic cloud of Tiberium gas that will kill any infantry caught within its effects.\nChemical Troopers wear Tiberium-proof suits that makes them immune to the effects of Tiberium, and renders their own weaponry harmless against them.
+        Description: The Chemical Trooper is an advanced infantry unit immune to the effects of Tiberium. The chem-blast they carry produces a short-lived toxic cloud of Tiberium gas that will kill any infantry caught within its effects.\nChemical Troopers wear Tiberium-proof suits that makes them immune to the effects of Tiberium, and renders their own weaponry harmless against them.\n\nHeroic rank:\nShoots a ball of chemical over the distance.
         Category: Nod Infantry
 		Order: 4
 	RenderSprites:
@@ -637,7 +637,7 @@ jeep.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: These all-terrain attack vehicles are fast and very useful against infantry and can wipeout large numbers of Recon Bikes when used en masse. Its light armor makes it vulnerable to any explosive weapon.
+        Description: These all-terrain attack vehicles are fast and very useful against infantry and can wipeout large numbers of Recon Bikes when used en masse. Its light armor makes it vulnerable to any explosive weapon.\n\nHeroic rank:\nMachinegun gets an upgrade, becoming the same as an APC.
         Category: GDI Vehicles
 		Order: 2
 	RenderSprites:
@@ -650,7 +650,7 @@ bggy.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.
+        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.\n\nHeroic rank:\nGains Stealth capability, becoming cloaked itself.
         Category: Nod Vehicles
 		Order: 9
 	RenderSprites:
@@ -663,7 +663,7 @@ bike.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.\nThis unit is outfitted with a sensor package that allows it to see any Stealth units nearby.
+        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.\nThis unit is outfitted with a sensor package that allows it to see any Stealth units nearby.\n\nHeroic rank:\nShoots double the amount of rockets.
         Category: Nod Vehicles
 		Order: 10
 	RenderSprites:
@@ -676,7 +676,7 @@ apc.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Armored Personnel Carrier (APC) transports and protects up to five troops heading to and from battle locations. Its heavy armor, fast speed, and long sight range make it an ideal scouting unit. It is also useful for crushing infantry.
+        Description: The Armored Personnel Carrier (APC) transports and protects up to five troops heading to and from battle locations. Its heavy armor, fast speed, and long sight range make it an ideal scouting unit. It is also useful for crushing infantry.\n\nHeroic rank:\nGain increased sight-radius, about 50% more.
         Category: GDI Vehicles
 		Order: 3
 	RenderSprites:
@@ -710,7 +710,7 @@ ltnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.
+        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.\n\nHeroic rank:\nThe gun gets a calibre upgrade, becoming the same as a Medium Tank's weapon. 
         Category: Nod Vehicles
 		Order: 11
 	RenderSprites:
@@ -736,7 +736,7 @@ ftnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Especially useful against infantry and structures, the Flame Tank can mow through swarms of infantry with little or no damage to itself. To top off its destructive capabilities, the flame tank is fast, able to avoid some of the slower firing weapons and get close to its target quickly.
+        Description: Especially useful against infantry and structures, the Flame Tank can mow through swarms of infantry with little or no damage to itself. To top off its destructive capabilities, the flame tank is fast, able to avoid some of the slower firing weapons and get close to its target quickly.\n\nHeroic rank:\nA heroic flame tank is especially dangerous as it gains the capability to shoot balls of fire over the distance.
         Category: Nod Vehicles
 		Order: 12
 	RenderSprites:
@@ -775,7 +775,7 @@ arty.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This massive cannon has great range and ballistic power.\nThis unit is very slow. Any attacks using this unit have to be orchestrated carefully-just getting the unit to its target can be difficult. However, once it gets within range, little stands in the way of its firepower.\nBy nature, artillery is somewhat innacurate.
+        Description: This massive cannon has great range and ballistic power.\nThis unit is very slow. Any attacks using this unit have to be orchestrated carefully-just getting the unit to its target can be difficult. However, once it gets within range, little stands in the way of its firepower.\nBy nature, artillery is somewhat innacurate.\n\nHeroic rank:\nShoots two shells in rapid succession.
         Category: Nod Vehicles
 		Order: 13
 	RenderSprites:
@@ -788,7 +788,7 @@ msam.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Mobile devastation. GDI's longest-range attacker fires 227mm rockets and is effective against just about everything, excluding aerial threats. With no short-range fighting ability, this unit needs close-quarter backup. Keep it in the background and don't let enemies in close to it.
+        Description: Mobile devastation. GDI's longest-range attacker fires 227mm rockets and is effective against just about everything, excluding aerial threats. With no short-range fighting ability, this unit needs close-quarter backup. Keep it in the background and don't let enemies in close to it.\n\nHeroic rank:\nAmount of rockets per salvo gets doubled.
         Category: GDI Vehicles
 		Order: 7
 	RenderSprites:
@@ -801,7 +801,7 @@ mlrs.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The SSM is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.
+        Description: The SSM Launcher is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.\n\nHeroic rank:\nShoots nuclear warhead equipped missiles. Extreme care is advised however, as the unit will detonate nuclear when destroyed.
         Category: Nod Vehicles
 		Order: 15
 	WithSpriteTurret:
@@ -872,7 +872,7 @@ orca.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.
+        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: GDI Aircraft
 		Order: 2
 	RenderSprites:
@@ -885,7 +885,7 @@ heli.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Nod's Apache Helicopter is fast, mobile, and carries a large quantity of ammunition. Used primarily against infantry and structures, the Apache can take down armored units when en-masse. Use them to soften up bases before a nuclear weapon is dropped, or gun through a horde of engineers coming towards your base.
+        Description: Nod's Apache Helicopter is fast, mobile, and carries a large quantity of ammunition. Used primarily against infantry and structures, the Apache can take down armored units when en-masse. Use them to soften up bases before a nuclear weapon is dropped, or gun through a horde of engineers coming towards your base.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: Nod Aircraft
 		Order: 1
 	RenderSprites:
@@ -1270,7 +1270,7 @@ rh66.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Essentially a flying, nimbler Stealth Tank, this helicopter can perform precision strikes against enemy bases, approaching unseen to unload the payload and return before the enemy had any chance to react.
+        Description: Essentially a flying, nimbler Stealth Tank, this helicopter can perform precision strikes against enemy bases, approaching unseen to unload the payload and return before the enemy had any chance to react.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: Nod Aircraft
 		Order: 2
 	RenderSprites:
@@ -1281,7 +1281,7 @@ rh66.info:
 sfig.info:
     Inherits: SFIG
 	Encyclopedia:
-        Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
+        Description: A Stealth capable precision bomber, the elite of Nod has acquired enough of those aircraft through clandestine means, that are being used to airstrike at unsuspecting enemy forces with napalm. Since the Stealth Fighter bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
         Category: Nod Aircraft
 		Order: 3
 	RenderSprites:

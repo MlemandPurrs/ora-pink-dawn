@@ -1213,7 +1213,7 @@ HQ:
     	BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anypower, vehicleproduction
+		Prerequisites: anyproc, vehicleproduction
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:

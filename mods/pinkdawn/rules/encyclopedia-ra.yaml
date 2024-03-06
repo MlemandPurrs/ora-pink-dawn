@@ -783,7 +783,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: With the Heavy Personnel Carrier, the Soviets can transport up to 5 infantry units quickly across land. A tracked vehicle, the APC is the lightest unit with the ability to crush Sandbag and Wire Fences. The turret-mounted Machinegun helps to keep infantry at bay while it goes about its mission.
+        Description: With the Heavy Personnel Carrier, the Soviets can transport up to 5 infantry units quickly across land. A tracked vehicle, the APC is the lightest unit with the ability to crush Sandbag and Wire Fences. The turret-mounted Machinegun helps to keep infantry at bay while it goes about its mission.\n\nHeroic rank:\nGain increased sight-radius, about 50% more.
         Category: Soviet Vehicles
 		Order: 4
 	RenderSprites:
@@ -937,7 +937,7 @@ apc3.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The result of long and ardous experimentation - first the cloaking device had been stolen by the Soviets and installed on a modified APC, which they used to breach into the hidden research base where it had been developed to destroy it's schematics. Then a lucky spy has managed to steal back the plans of the modified soviet APC, thus the design had found its way back into the hands of the Allies.\nThis unit is a mass-producible version derived on the stolen schematics, featuring its signature capability of cloaking, the capacity to carry one infantry and a missile turret that is capable of engaging air and ground targets equally.
+        Description: The result of long and ardous experimentation - first the cloaking device had been stolen by the Soviets and installed on a modified APC, which they used to breach into the hidden research base where it had been developed to destroy it's schematics. Then a lucky spy has managed to steal back the plans of the modified soviet APC, thus the design had found its way back into the hands of the Allies.\nThis unit is a mass-producible version derived on the stolen schematics, featuring its signature capability of cloaking, the capacity to carry one infantry and a missile turret that is capable of engaging air and ground targets equally.\n\nHeroic rank:\nGain increased sight-radius, about 50% more.
         Category: Allies Vehicles
 		Order: 11
 	RenderSprites:
@@ -976,7 +976,7 @@ hel2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Allies attack helicopter is loaded with hellfire missiles, allowing it to destroy armored targets with ease. Used in conjunction with naval or ground attacks, the Longbow is an ideal support aircraft, able to rapidly inflict additional damage to a target - usually with little or no return fire.\nIt can also detect cloaked units in the vicinity employing inbuilt sensors.
+        Description: The Allies attack helicopter is loaded with hellfire missiles, allowing it to destroy armored targets with ease. Used in conjunction with naval or ground attacks, the Longbow is an ideal support aircraft, able to rapidly inflict additional damage to a target - usually with little or no return fire.\nIt can also detect cloaked units, and submarines in the vicinity by inbuilt sensors.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: Allies Aircraft
 		Order: 1
 	RenderSprites:
@@ -989,7 +989,7 @@ hind.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Large and armored, the Hind uses its high-velocity chain-guns to tear apart enemy units and structure. Equipped with a large ammo supply, the Hind will follow its target for quite some time, all the while wearing away at its defenses.
+        Description: Large and armored, the Hind uses its high-velocity chain-guns to tear apart enemy units and structure. Equipped with a large ammo supply, the Hind will follow its target for quite some time, all the while wearing away at its defenses.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: Soviet Aircraft
 		Order: 2
 	RenderSprites:
@@ -1012,7 +1012,7 @@ yak.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Sometimes called the 'Infantry Eraser', the Yak fires in strafing runs, swooping down on groups of marching infantry, potentially destroying them all in a single run. The Yak is not that fast, making it an easy target for Rocket Soldiers - those that actually survive the first strafing run.
+        Description: Sometimes called the 'Infantry Eraser', the Yak fires in strafing runs, swooping down on groups of marching infantry, potentially destroying them all in a single run. The Yak is not that fast, making it an easy target for Rocket Soldiers - those that actually survive the first strafing run.\n\nHeroic rank:\nGains extra Napalm bombs to attack with.
         Category: Soviet Aircraft
 		Order: 6
 	RenderSprites:
@@ -1034,7 +1034,7 @@ mig.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the MiG can remove armored craft before they can become a threat.
+        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the MiG can remove armored craft before they can become a threat.\nIt can also target Submarines, however has no means of detecting them, having to rely on a naval unit to do so.
         Category: Soviet Aircraft
 		Order: 8
 	RenderSprites:
@@ -1132,7 +1132,7 @@ ca.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Slow moving death and destruction. What the Cruiser lacks in speed, it makes up for in firepower and range. Able to lob destruction onto targets incredible distances away, this ship can decimate an enemy base in minutes. A favorite target of Submarines, these ships have no sea-based defenses, relying on the faster moving vessels like Destroyer and Gunboat to protect them.
+        Description: Slow moving death and destruction. What the Cruiser lacks in speed, it makes up for in firepower and range. Able to lob destruction onto targets incredible distances away, this ship can decimate an enemy base in minutes. A favorite target of Submarines, these ships have no sea-based defenses, relying on the faster moving vessels like Destroyer and Gunboat to protect them.\n\nHeroic rank:\nAttack range gets doubled.
         Category: Allies Navy
 		Order: 2
 	RenderSprites:
@@ -1158,7 +1158,7 @@ msub.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: After it had became evident the allies have the advantage of attacking bases unhinderedly from sea out, a new fleet of submarines were comissioned that have got armed with deadly missile launchers. Their design objective being to reach the enemy shore unhinderedly and revealing themselves only to commence a barrage of rocket artillery that can make quick work of any enemy base unopposedly. 
+        Description: After it had became evident the allies have the advantage of attacking bases unhinderedly from sea out, a new fleet of submarines were comissioned that have got armed with deadly missile launchers. Their design objective being to reach the enemy shore unhinderedly and revealing themselves only to commence a barrage of rocket artillery that can make quick work of any enemy base unopposedly.\n\nHeroic rank:\nAttack range gets doubled.
         Category: Soviet Navy
 		Order: 2
 	RenderSprites:

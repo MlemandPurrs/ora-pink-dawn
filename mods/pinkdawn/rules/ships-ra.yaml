@@ -384,27 +384,19 @@ MSUB:
         PauseOnCondition: aiming || emp-crate-collected
 	RevealsShroud:
 		Range: 5c0
-	Armament@PRIMARY:
+	Armament:
         Name: primary
 		Weapon: SubMissile
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
         PauseOnCondition: emp-crate-collected
-        RequiresCondition: !rank-heroic
-	Armament@SECONDARY:
-        Name: secondary
-		Weapon: SubMissile2
-		LocalOffset: 0,-171,0, 0,171,0
-		FireDelay: 2
-        PauseOnCondition: emp-crate-collected
-        RequiresCondition: rank-heroic
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		FacingTolerance: 0
 	RenderRangeCircle:
 	ReloadArmamentsBar:
-		Armaments: primary, secondary
+		Armaments: primary
 		Color: FFFF00
 	Selectable:
 		DecorationBounds: 1877, 1877

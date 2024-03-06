@@ -150,12 +150,21 @@ E4:
 		HP: 7500
 	AutoTarget:
 		ScanRadius: 4
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: Flamer
 		LocalOffset: 341,0,256
 		FireDelay: 3
 		MuzzleSequence: muzzle
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: PortaFireball
+		LocalOffset: 341,0,256
+		FireDelay: 5
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
         FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
@@ -202,11 +211,18 @@ E5:
 		HP: 7500
 	AutoTarget:
 		ScanRadius: 4
-	Armament:
+	Armament@PRIMARY:
 		Weapon: ChemSpray
 		LocalOffset: 341,0,256
 		FireDelay: 3
 		MuzzleSequence: muzzle
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: PortaChemball
+		LocalOffset: 341,0,256
+		FireDelay: 5
+        RequiresCondition: rank-heroic
 	TakeCover:
 		ProneOffset: 190,0,-190
 	WithMuzzleOverlay:

@@ -322,8 +322,8 @@ JEEP:
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
         RequiresCondition: !rank-heroic
-    Armament@PRIMARYHEROIC:
-        Name: primaryheroic
+    Armament@SECONDARY:
+        Name: secondary
 		Weapon: MachineGun
 		LocalOffset: 171,0,85
 		MuzzleSequence: muzzle
@@ -332,7 +332,7 @@ JEEP:
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
-        Armaments: primary, primaryheroic
+        Armaments: primary, secondary
 		Voice: Attack
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
@@ -451,15 +451,14 @@ BIKE:
 		Weapon: BikeRockets
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
-        ReloadingCondition: first-burst
 		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
  	Armament@SECONDARY:
         Name: secondary
-		Weapon: BikeRockets
+		Weapon: BikeRockets2
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
-        FireDelay: 2
-		PauseOnCondition: !first-burst || emp-crate-collected
+		PauseOnCondition: emp-crate-collected
         RequiresCondition: rank-heroic
 	AttackFrontal:
         Armaments: primary, secondary
@@ -569,6 +568,9 @@ APC:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+    RevealsShroudMultiplier@heroic:
+        Modifier: 150
+        RequiresCondition: rank-heroic
 
 MAAG:
 	Inherits: ^TrackedVehicle
@@ -833,11 +835,19 @@ FTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: BigFlamer
 		LocalOffset: 512,128,42, 512,-128,42
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: FireballLauncherTank
+		LocalOffset: 512,128,42, 512,-128,42
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
         FacingTolerance: 0
         Voice: Attack
@@ -1027,7 +1037,6 @@ STNK:
 		EmptyWeapon: UnitExplode
     Targetable@Extra:
 		TargetTypes: Tank
-    
 
 ARTY:
 	Inherits: ^TrackedVehicle
@@ -1084,9 +1093,8 @@ ARTY:
 	AutoTarget:
 		InitialStanceAI: Defend
 	Explodes:
-		Weapon: ArtilleryShell
+		Weapon: ArtyExplode
 		EmptyWeapon: UnitExplode
-		LoadedChance: 75
 	Passenger:
 		CustomPipType: pip-yellow
 	RenderRangeCircle:
@@ -1165,8 +1173,8 @@ MSAM:
 		Voice: Attack
 	WithSpriteTurret:
 	Explodes:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
+		Weapon: MsamExplode
+		EmptyWeapon: UnitExplodeSmall
 	WithTurretAimAnimation:
 		Sequence: aim
         RequiresCondition: aiming
@@ -1231,23 +1239,32 @@ MLRS:
 		TurnSpeed: 12
 		Offset: -128,0,128
 		RealignDelay: 0
-	Armament:
+	Armament@PRIMARY:
         Name: primary
 		Weapon: HonestJohn
         Recoil: 0
 		LocalOffset: 0,-171,0, 0,171,0
         PauseOnCondition: !ammo || emp-crate-collected
-    Armament@AIHelper:
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
         Name: secondary
+		Weapon: HonestJohnNuke
+        Recoil: 0
+		LocalOffset: 0,-171,0, 0,171,0
+        PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: rank-heroic
+    Armament@AIHelper:
+        Name: tertiary
         Weapon: TargeterforMLRS
         PauseOnCondition: ammo || emp-crate-collected
 	AmmoPool:
-        Armaments: primary
+        Armaments: primary, secondary
 		Ammo: 2
 		AmmoCondition: ammo
 	AttackMove:
 		Voice: Attack
 	AttackFrontal:
+        Armaments: primary, secondary, tertiary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
@@ -1289,6 +1306,14 @@ MLRS:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	Explodes:
+		Weapon: MlrsExplode
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: !rank-heroic
+	Explodes@2:
+		Weapon: MlrsExplodeNuke
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: rank-heroic
 
 MHQ:
 	Inherits: ^Vehicle

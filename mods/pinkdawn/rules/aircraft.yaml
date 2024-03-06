@@ -977,6 +977,7 @@ YAK:
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
+        Name: primary
 		Weapon: ChainGun.Yak.Left
 		LocalOffset: 256,-213,0
 		MuzzleSequence: muzzle
@@ -988,15 +989,50 @@ YAK:
 		MuzzleSequence: muzzle
 		FireDelay: 1
 		PauseOnCondition: !ammo    
-	AmmoPool:
+	#   Armament@TERTIARY:
+	#   Name: tertiary
+	#   Weapon: Napalm
+	#   LocalOffset: 0,-213,-43, 0,213,-43
+    #   PauseOnCondition: !ammo2
+    #   RequiresCondition: rank-heroic
+	AttackAircraft:
+        #   Armaments: primary, secondary
+		Armaments: primary, secondary
+	AmmoPool@1:
+        Name: primary
+        Armaments: primary, secondary
 		Ammo: 16
 		ReloadDelay: 60
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
-		RequiresSelection: true
 		PipCount: 2
+        FullSequence: pip-green
+        AmmoPools: primary
+		RequiresSelection: true
+	#   AmmoPool@2:
+    #   Name: secondary
+    #   Armaments: tertiary
+    #   InitialAmmo: 0
+    #   Ammo: 3
+    #   ReloadCount: 3
+    #   ReloadDelay: 120
+	#   AmmoCondition: ammo2
+    #   hmm.... 
+    #   RequiresCondition: rank-heroic
+	#   WithAmmoPipsDecoration@2:
+    #   Position: BottomLeft
+	#   Margin: 4, 6
+	#   PipCount: 1
+    #   FullSequence: pip-red
+    #   AmmoPools: secondary
+	#   RequiresSelection: true
+    #   RequiresCondition: rank-heroic
+	Rearmable:
+        #   AmmoPools: primary, secondary
+        AmmoPools: primary
+		RearmActors: aprt, 2fld, 3fld
 	LeavesTrails:
 		Offsets: -853,0,0
 		MovingInterval: 2

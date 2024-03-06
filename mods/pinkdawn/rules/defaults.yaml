@@ -2109,6 +2109,7 @@
 	Capturable:
 		Types: hijackable
 		CancelActivity: True
+        RequiresCondition: !parachute
 	CaptureNotification:
 		Notification: UnitStolen
 		TextNotification: Unit stolen.

@@ -49,7 +49,7 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALSINGLEENGINEER:
 		ID: singleengineer
 		Label: Single Engineer
-		Description: Buildings can be captured with one Engineer.
+		Description: Buildings can be captured with one Engineer
 		Enabled: False
 		DisplayOrder: 6
 		Prerequisites: global-singleengineer

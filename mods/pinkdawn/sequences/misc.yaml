@@ -641,6 +641,11 @@ v2:
 		Facings: 32
 		ZOffset: 1023
 
+v2g:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
 minv:
 	idle:
 		ZOffset: -512
@@ -731,3 +736,13 @@ sparks_overlay:
 		BlendMode: Additive
 		Offset: 0, 0
 		ZOffset: 512
+
+cb1:
+	idle: cb1
+		Length: *
+		ZOffset: 1023
+
+cb2:
+	idle: cb2
+		Length: *
+		ZOffset: 1023

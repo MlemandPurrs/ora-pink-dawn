@@ -1585,6 +1585,7 @@ army:
 	damaged-idle:
 		Start: 4
 		Length: 4
+		Tick: 100
 		Offset: 0,-2
 	bib: mbHOSP
 		UseTilesetExtension: true

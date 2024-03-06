@@ -654,6 +654,9 @@ APC2:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+    RevealsShroudMultiplier@heroic:
+        Modifier: 150
+        RequiresCondition: rank-heroic
 
 MNLY:
 	Inherits: ^TrackedVehicle
@@ -1113,12 +1116,6 @@ MNLY:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
-        RequiresCondition: !rank-heroic
-    Explodes@2:
-		Weapon: MiniNuke
-		EmptyWeapon: MiniNuke
-		DamageSource: Killer
-        RequiresCondition: rank-heroic
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -1200,7 +1197,7 @@ TTNK:
 		BuildPaletteOrder: 15
 		Prerequisites: stek, ~vehicle.soviet
         Queue: Vehicle
-		Description: Tank with mounted tesla coil.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
+		Description: Tank with mounted tesla coil.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
 	Health:
 		HP: 25000
 	Armor:
@@ -1209,15 +1206,15 @@ TTNK:
         Locomotor: tracked-crusher
         TurnSpeed: 12
 		Speed: 70
-        PauseOnCondition: dont-move || emp-crate-collected || boarding
+        PauseOnCondition: dont-move || emp-crate-collected || boarding || lowpower
 	RevealsShroud:
 		Range: 4c128
 	Armament:
 		Weapon: TeslaTankZap
 		LocalOffset: 0,0,213
-        PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected || lowpower
 	AttackTesla:
-		PauseOnCondition: emp-crate-collected
+		PauseOnCondition: emp-crate-collected || lowpower
 		ChargeAudio: tslachg2.aud
 		MaxCharges: 1
 		ReloadDelay: 120
@@ -1249,6 +1246,15 @@ TTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	Power:
+		Amount: -20
+        RequiresCondition: !emp-crate-collected
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	WithColoredOverlay@LOWPOWER:
+		Color: 000000B4
+		RequiresCondition: lowpower
 
 V2RL:
 	Inherits: ^Vehicle
@@ -1281,17 +1287,24 @@ V2RL:
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 6c0
-	Armament:
+	Armament@PRIMARY:
         Name: primary
 		Weapon: V2Missile
-		PauseOnCondition: !ammo || emp-crate-collected
         FireDelay: 6
-    Armament@AIHelper:
+		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
         Name: secondary
+		Weapon: V2MissileChem
+        FireDelay: 6
+		PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: rank-heroic
+    Armament@AIHelper:
+        Name: tertiary
         Weapon: TargeterforV2RL
         PauseOnCondition: ammo || emp-crate-collected
 	AmmoPool:
-        Armaments: primary
+        Armaments: primary, secondary
 		Ammo: 1
 		AmmoCondition: ammo
 	ReloadAmmoPool:
@@ -1299,6 +1312,7 @@ V2RL:
 		Count: 1
         PauseOnCondition: emp-crate-collected
 	AttackFrontal:
+        Armaments: primary, secondary, tertiary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
@@ -1306,22 +1320,32 @@ V2RL:
         PauseOnCondition: emp-crate-collected
 	WithFacingSpriteBody:
 		Name: full
-		RequiresCondition: ammo
+        Sequence: idle2
+		RequiresCondition: ammo && !rank-heroic
+	WithFacingSpriteBody@HEROIC:
+		Name: full2
+        Sequence: idle
+		RequiresCondition: ammo && rank-heroic
 	WithFacingSpriteBody@EMPTY:
 		Name: empty
 		RequiresCondition: !ammo
 		Sequence: empty-idle
 	SelectionDecorations:
 	Explodes:
-		Weapon: FlametankExplode
-        EmptyWeapon: UnitExplode
+		Weapon: V2RLExplode
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: rank-heroic
+	Explodes@2:
+		Weapon: V2RLExplodeChem
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: !rank-heroic
 	Selectable:
 		DecorationBounds: 1128, 1128
 	RenderRangeCircle:
 	Passenger:
 		CustomPipType: pip-yellow
 	ReloadArmamentsBar:
-		Armaments: primary
+		Armaments: primary, secondary
 		Color: FFFF00
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
@@ -1537,6 +1561,9 @@ APC3:
 		RangeCircleType: aa
     Capturable:
         RequiresCondition: !loaded
+    RevealsShroudMultiplier@heroic:
+        Modifier: 150
+        RequiresCondition: rank-heroic
 
 3T1B:
     Inherits: 3TNK

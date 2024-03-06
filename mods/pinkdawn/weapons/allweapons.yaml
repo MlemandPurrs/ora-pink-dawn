@@ -377,7 +377,7 @@ BikeRockets:
     Range: 5c128
 	MinRange: 0c512
 	Burst: 2
-	BurstDelays: 10
+	BurstDelays: 7
     Report: bazook1.aud
     ValidTargets: Ground, Water, Tree, Helicopter
 	Projectile: Missile
@@ -422,6 +422,11 @@ BikeRockets:
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
+
+BikeRockets2:
+    Inherits: BikeRockets
+    ReloadDelay: 40
+    Burst: 4
 
 #   8. E4's weapon
 Flamer:
@@ -1240,7 +1245,7 @@ HonestJohn:
             Wood: 100
             Aluminium: 56
             Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 	Warhead@3Eff: CreateEffect
@@ -1256,6 +1261,44 @@ HonestJohn:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
+
+HonestJohnNuke:
+    Inherits: HonestJohn
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Range: 1c0, 2c512, 3c768
+        Falloff: 900, 600, 300
+        AffectsParent: True
+		Damage: 15000
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@3Eff: CreateEffect
+		Explosions: mini_nuke_explosion
+		ImpactSounds: nukexplo.aud
+		ImpactActors: false
+	Warhead@5EffWater: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water
+		InvalidTargets: Ship, Structure, Underwater, Bridge
+	Warhead@6Eff_areanuke: CreateEffect
+		ImpactSounds: xplobig4.aud
+		Delay: 3
+		ImpactActors: false
+	Warhead@13Shake: ShakeScreen
+		Duration: 20
+		Intensity: 5
+		Multiplier: 1,1
+	Warhead@14FlashEffect: FlashPaletteEffect
+		Duration: 20
 
 #   26. Mobile Anti-Air Gun
 APCGunAG:
@@ -1625,6 +1668,38 @@ V2Missile:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
+V2MissileChem:
+    Inherits: V2Missile
+	Projectile: Bullet
+		Speed: 162
+		Blockable: false
+		TrailImage: smokey
+		TrailDelay: 5
+		TrailInterval: 3
+		Inaccuracy: 213
+		Image: V2G
+		Shadow: True
+		LaunchAngle: 62
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 6000
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+
 #   33. Chrono Tank's rockets
 APTusk:
 	ReloadDelay: 80
@@ -1810,6 +1885,18 @@ FireballLauncher:
 		ImpactSounds: firebl3.aud
 		ImpactActors: false
 
+FireballLauncherTank:
+    Inherits: FireballLauncher
+    Range: 3c512
+    BurstDelays: 10
+	Projectile: Bullet
+		Speed: 240
+		TrailImage: fb2
+		Image: FB1
+        Blockable: true 
+    Warhead@1Dam: SpreadDamage
+		Damage: 7000
+
 #   38. Soviet Flame Trooper weapon
 PortaFireball:
 	ReloadDelay: 50
@@ -1844,6 +1931,35 @@ PortaFireball:
 		Explosions: med_napalm
 		ImpactSounds: firebl3.aud
 		ImpactActors: false
+
+PortaChemball:
+    Inherits: PortaFireball
+    InvalidTargets: Wall, ChemImmune
+	Projectile: Bullet
+		Speed: 240
+		TrailImage: cb2
+		Image: CB1
+        Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 9000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, ChemImmune
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+    Warhead@3Eff: CreateEffect
+        Explosions: med_chem
 
 #   39. Pillbox' machinegun
 PillboxGun:
@@ -2817,10 +2933,6 @@ SubMissile:
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
-
-SubMissile2:
-    Inherits: SubMissile
-	Burst: 4
 
 #   64. Nuclear Torpedo
 NukeTorpedo:
