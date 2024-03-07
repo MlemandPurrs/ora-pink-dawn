@@ -80,3 +80,23 @@ F22:
 SFIG:
 	RenderSprites:
 		PlayerPalette: player-buildings
+
+YAK:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+MIG:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+NMIG:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+BADR:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
+BADR.tran:
+	RenderSprites:
+		PlayerPalette: player-buildings

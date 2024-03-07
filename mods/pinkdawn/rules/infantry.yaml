@@ -1357,3 +1357,139 @@ INF:
 		Notification: BuildingInfiltrated
 		TextNotification: Building infiltrated.
         PlayerExperience: 0
+
+JET:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	HiddenUnderFog:
+		Type: GroundPosition
+	-TakeCover:
+    -Crushable:
+    -Passenger:
+    -Parachutable:
+    -WithParachute:
+    -EdibleByLeap:
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Jumpjet Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 150
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 90
+		Prerequisites: eye, ~infantry.gdi
+		Queue: Infantry
+		Description: Flying reconnaisance infantry.\nCan detect cloaked units and mines.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+	Health:
+		HP: 7500
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: MachineGunLight
+    -Mobile:
+	-AttackFrontal:
+	Aircraft:
+		CruiseAltitude: 1c0
+		IdealSeparation: 0c384
+		InitialFacing: 92
+		Speed: 70
+		LandableTerrainTypes: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium
+		Crushes: mine, crate
+        AirborneCondition: airborne
+		CruisingCondition: cruising
+		CanHover: true
+		CanSlide: true
+		VTOL: true
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 0
+		Voice: Attack
+	Hovers:
+		RequiresCondition: cruising
+	AttackMove:
+		Voice: Attack
+	Targetable:
+		TargetTypes: Ground, Infantry
+        RequiresCondition: !airborne
+	Targetable@AIR:
+		TargetTypes: Air, Helicopter
+		RequiresCondition: airborne
+	Explodes@AIR:
+		Weapon: UnitExplodeAir
+		RequiresCondition: airborne
+    DamagedByTerrain@TIBERIUM:
+        RequiresCondition: !(hazmatsuits || airborne)
+    Targetable@HEAL:
+        RequiresCondition: !airborne && damaged
+    -WithInfantryBody@PARACHUTE:
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+        StandSequences: stand
+		DefaultAttackSequence: attack
+		RequiresCondition: !airborne
+	WithInfantryBody@AIRBORNE:
+		DefaultAttackSequence: flying-attack
+		StandSequences: hover
+		MinIdleDelay: 0
+		MaxIdleDelay: 1
+		MoveSequence: flying
+		RequiresCondition: airborne
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: 512
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplodeAir
+		RequiresCondition: airborne
+    WithDeathAnimation:
+        RequiresCondition: !airborne
+	DeathSounds@NORMAL:
+		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath, RippedApartDeath
+        RequiresCondition: !airborne
+	DeathSounds@BURNED:
+		Voice: Burned
+		DeathTypes: FireDeath
+        RequiresCondition: !airborne
+	DeathSounds@POISONED:
+		Voice: Poisoned
+		DeathTypes: TiberiumDeath
+        RequiresCondition: !airborne
+	DeathSounds@ZAPPED:
+		Voice: Zapped
+		DeathTypes: ElectricityDeath
+        RequiresCondition: !airborne
+    -RevealsShroudMultiplier@GAPGenerator:
+    -ExternalCondition@GAPGenerator:
+	RevealsShroud:
+		Range: 3c512
+        Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c768
+        Type: GroundPosition
+        RevealGeneratedShroud: True
+    RevealsShroudMultiplier@AIR:
+        Modifier: 150
+        RequiresCondition: airborne
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+        RequiresCondition: airborne
+	RenderDetectionCircle:
+    -Cloak@CloakingField:
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+        RequiresCondition: cloakfield-on && !airborne
+	Targetable@SpyDisguise:
+        RequiresCondition: !airborne

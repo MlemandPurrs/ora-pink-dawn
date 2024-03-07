@@ -352,6 +352,7 @@ World:
             allies: 4tnk.colorpicker
             soviet: 4tnk.colorpicker
             random2: fac2.colorpicker
+            bossnod: htnk.colorpicker
 		PresetHues: 0, 0.125, 0.185, 0.4, 0.54, 0.66, 0.79, 0.875, 0, 0.14, 0.23, 0.43, 0.54, 0.625, 0.77, 0.85
 		PresetSaturations: 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5
 	OrderEffects:

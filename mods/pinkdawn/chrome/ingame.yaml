@@ -1886,6 +1886,8 @@ Container@PLAYER_WIDGETS:
 			HoldText: On Hold
 			HotkeyPrefix: Production
 			HotkeyCount: 24
+			MinimumRows: 7
+			MaximumRows: 7
 			SelectProductionBuildingHotkey: SelectProductionBuilding
 		ProductionTabs@PRODUCTION_TABS:
 			Logic: AddFactionSuffixLogic, ProductionTabsLogic
