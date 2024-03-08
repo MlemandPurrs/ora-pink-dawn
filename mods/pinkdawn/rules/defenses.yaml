@@ -135,9 +135,18 @@ ATWR:
 		Type: Heavy
 	RevealsShroud:
 		Range: 8c0
-	WithRangeCircle:
+	WithRangeCircle@1:
 		Range: 7c0
 		Color: FFFF0080
+        RequiresCondition: !rank-veteran && !rank-elite
+	WithRangeCircle@2:
+		Range: 8c750
+		Color: FFFF0080
+        RequiresCondition: rank-veteran
+	WithRangeCircle@3:
+		Range: 10c500
+		Color: FFFF0080
+        RequiresCondition: rank-elite
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
@@ -316,8 +325,8 @@ SAM:
         DetectionTypes: Underground
 		InitialDelay: 125
 		CloakDelay: 75
-		Palette:
-		IsPlayerPalette: false
+		Palette: cloaktransparent
+		IsPlayerPalette: true
 		UncloakSound: appear1.aud
 		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower || emp-affected-structure
 	GrantConditionOnDamageState@UNCLOAK:
@@ -590,6 +599,7 @@ PBOX:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -597,12 +607,22 @@ PBOX:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: PillboxGun
 		MuzzleSequence: muzzle
 		LocalOffset: 448,0,0
         PauseOnCondition: build-incomplete || !loaded
+        RequiresCondition: !sniperinside
+    Armament@SECONDARY:
+        Name: secondary
+        Weapon: PillboxSniper
+ 		MuzzleSequence: muzzle
+		LocalOffset: 448,0,0       
+        PauseOnCondition: build-incomplete || !loaded
+        RequiresCondition: sniperinside
 	AttackTurreted:
+        Armaments: primary, secondary
 		PauseOnCondition: build-incomplete || emp-affected-structure
 	BodyOrientation:
 		QuantizedFacings: 8
@@ -643,7 +663,7 @@ HBOX:
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq
 		Queue: Defense.Allies
-		Description: Camouflaged static defense with a silenced sniper.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs everything Else.
+		Description: Camouflaged static defense with a heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:
 		HP: 40000
@@ -661,6 +681,7 @@ HBOX:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -668,12 +689,22 @@ HBOX:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
-	Armament:
-		Weapon: PillboxSniper
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: PillboxGun
 		MuzzleSequence: muzzle
 		LocalOffset: 448,0,0
         PauseOnCondition: build-incomplete || !loaded
+        RequiresCondition: !sniperinside
+    Armament@SECONDARY:
+        Name: secondary
+        Weapon: PillboxSniper
+ 		MuzzleSequence: muzzle
+		LocalOffset: 448,0,0
+        PauseOnCondition: build-incomplete || !loaded
+        RequiresCondition: sniperinside
 	AttackTurreted:
+        Armaments: primary, secondary
 		PauseOnCondition: build-incomplete || emp-affected-structure || !loaded
 	BodyOrientation:
 		QuantizedFacings: 8
@@ -695,13 +726,13 @@ HBOX:
         RefundPercent: 100
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 	Cloak:
-        CloakType: Stealth
-        DetectionTypes: Stealth
+        CloakType: Underground
+        DetectionTypes: Underground
 		InitialDelay: 125
 		CloakDelay: 75
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakSound: appear1.aud
+        UncloakSound: appear1.aud
 		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower || emp-affected-structure
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled

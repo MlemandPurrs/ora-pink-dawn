@@ -584,18 +584,18 @@ dog.info:
         Palette: soviet
     -MapEditorData:
 
-e7.info:
-    Inherits: E7
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Elite special forces infantry that is equipped with a machinegun, can swim through waters to cross it and uses C4 explosives against enemy buildings.
-        Category: Allies Infantry
-		Order: 10
-	RenderSprites:
-		Image: e7
-        Palette: allies
-    -MapEditorData:
+#   e7.info:
+#    Inherits: E7
+#    Buildable:
+#        Queue: Nothing
+#	Encyclopedia:
+#        Description: Elite special forces infantry that is equipped with a machinegun, can swim through waters to cross it and uses C4 explosives against enemy buildings.
+#      Category: Allies Infantry
+#		Order: 10
+#	RenderSprites:
+#		Image: e7
+#        Palette: allies
+#    -MapEditorData:
 
 e8.info:
     Inherits: E8
@@ -1219,4 +1219,17 @@ parabombs.info:
 	RenderSprites:
 		Image: 3t1b
         Palette: nodunits
+    -MapEditorData:
+
+snip.info:
+    Inherits: SNIP
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Long-ranged sharpshooter infantry that can one-shot almost all enemy infantry units. Best used in a Pillbox as its low durability can be an issue. On the field it can detect cloaked units and mines over the distance.
+        Category: Allies Infantry
+		Order: 10
+	RenderSprites:
+		Image: snip
+        Palette: allies
     -MapEditorData:

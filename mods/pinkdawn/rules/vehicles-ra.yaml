@@ -1320,11 +1320,11 @@ V2RL:
         PauseOnCondition: emp-crate-collected
 	WithFacingSpriteBody:
 		Name: full
-        Sequence: idle2
+        Sequence: idle
 		RequiresCondition: ammo && !rank-heroic
 	WithFacingSpriteBody@HEROIC:
 		Name: full2
-        Sequence: idle
+        Sequence: idle2
 		RequiresCondition: ammo && rank-heroic
 	WithFacingSpriteBody@EMPTY:
 		Name: empty
@@ -1334,11 +1334,11 @@ V2RL:
 	Explodes:
 		Weapon: V2RLExplode
         EmptyWeapon: UnitExplodeSmall
-        RequiresCondition: rank-heroic
+        RequiresCondition: !rank-heroic
 	Explodes@2:
 		Weapon: V2RLExplodeChem
         EmptyWeapon: UnitExplodeSmall
-        RequiresCondition: !rank-heroic
+        RequiresCondition: rank-heroic
 	Selectable:
 		DecorationBounds: 1128, 1128
 	RenderRangeCircle:

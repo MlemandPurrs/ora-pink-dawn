@@ -2014,10 +2014,10 @@
 		Modifier: 125
 	DamageMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 75
+		Modifier: 90
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
 	RangeMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 125
@@ -2029,10 +2029,10 @@
 		Modifier: 150
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 50
+		Modifier: 80
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-veteran
-        Modifier: 60
+        Modifier: 80
 	RangeMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 150

@@ -360,7 +360,7 @@ E7:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: atek, ~infantry.allies
+		Prerequisites: ~disabled
 		Queue: Infantry
 		Description: Elite amphibian infantry.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -1017,7 +1017,7 @@ DOG:
 		BuildPaletteOrder: 8
 		Prerequisites: anyhq, ~infantry.soviet
 		Queue: Infantry
-		Description: Canine with combat training.\nCan detect cloaked units.\n\nSpecial: Devouring\nGains health while eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
+		Description: Canine with combat training.\nCan detect cloaked units and mines.\n\nSpecial: Devouring\nGains health while eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
 	RevealsShroud:
 		Range: 4c0
 	DetectCloaked:
@@ -1384,6 +1384,8 @@ JET:
 		Description: Flying reconnaisance infantry.\nCan detect cloaked units and mines.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Health:
 		HP: 7500
+    Armor:
+        Type: Light
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -1493,3 +1495,51 @@ JET:
         RequiresCondition: cloakfield-on && !airborne
 	Targetable@SpyDisguise:
         RequiresCondition: !airborne
+
+SNIP:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Sniper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 950
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: atek, ~infantry.allies
+		Queue: Infantry
+		Description: Sharpshooter infantry.\nCan detect cloaked units and mines.\nUses Sniper rifle when in a Pillbox.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+	Mobile:
+		Speed: 50
+	Health:
+		HP: 2500
+	AutoTarget:
+		ScanRadius: 6
+	Armament:
+		Weapon: Sniper
+        FireDelay: 2
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+        StandSequences: stand,stand2
+		DefaultAttackSequence: shoot
+    -RevealsShroudMultiplier@GAPGenerator:
+    -ExternalCondition@GAPGenerator:
+	RevealsShroud:
+		Range: 5c768
+		RevealGeneratedShroud: False
+        MinRange: 2c256
+	RevealsShroud@GAPGenerator:
+		Range: 2c256
+        RevealGeneratedShroud: True
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+	RenderDetectionCircle:
