@@ -285,7 +285,7 @@ Player:
         DefenseTypes: gtwr, atwr, gun, obli, hbox, pbox, ftwr, tsla, ltur
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
-        PlaceDefenseTowardsEnemyChance: 100 # never not
+        PlaceDefenseTowardsEnemyChance: 90
 		BuildingLimits:
 			proc: 4
             oref: 4
@@ -371,7 +371,7 @@ Player:
         SquadSizeRandomBonus: 8
         ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, heli, orca, hel2, hind, yak, mig, e6, rh66, sfig
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig, jet
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
@@ -393,6 +393,7 @@ Player:
             medi: 5
             mech: 5
             dog: 10
+            jet: 5
 			harv: 10
             ohrv: 10
             ahrv: 10
@@ -468,12 +469,13 @@ Player:
             e6: 1
             wtnk: 3
             t55h: 1
-            pt2: 4
-            dd2: 3
+            pt2: 3
+            dd2: 2
             ss2: 2
             yak: 2
             mig: 1
             mlrs: 2
+            jet: 1
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
@@ -484,9 +486,9 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2, sfig, 3t1b, wtnk, t55h
+        ExcludeFromSquadsTypes: harv, ahrv, ohrv, mcv, mcv2, a10, smig, c17, c17.paradrop, badr, badr.bomber, camera.scan, camera.spyplane, ioncannon.splode, camera.small, camera.small.timed, camera, gpsactivenoise, powergps, jeep, bggy, bike, r4wd, ftrk, apc, apc2, apc3, maag, ltnk, mtnk, htnk, ftnk, stnk, 1tnk, 2tnk, 3tnk, 4tnk, 5tnk, ctnk, ttnk, arty, msam, mlrs, v2rl, boat, e1, e2, e3, e4, e5, e6, e7, e8, e9, shok, medi, mech, pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2, sfig, 3t1b, wtnk, t55h, jet
 		ConstructionYardTypes: fact, fac2
-		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig
+		AirUnitsTypes: heli, orca, hind, hel2, yak, mig, rh66, f18, f22, nmig, jet
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur

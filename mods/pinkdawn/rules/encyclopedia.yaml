@@ -1287,3 +1287,16 @@ sfig.info:
 	RenderSprites:
 		Image: sfig
         Palette: nod
+
+jet.info:
+    Inherits: JET
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Recruited from among the airborne divisions of GDI's infantry, these soldiers are capable of flight allowing them to reach targets normally inaccesible to standard infantry. Armed with a light-weight machinegun and equipped with a package of detectors, these flying soldiers can perform quick surgical hits on poorly defended targets, and reveal cloaked units over the distance that would have remain hidden to standard infantry until they have had came up close enough to see.
+        Category: GDI Infantry
+		Order: 9
+	RenderSprites:
+		Image: jet
+        Palette: gdi
+    -MapEditorData:

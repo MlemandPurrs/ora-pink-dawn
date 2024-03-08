@@ -1376,7 +1376,7 @@ JET:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 150
+        BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 		Prerequisites: eye, ~infantry.gdi
