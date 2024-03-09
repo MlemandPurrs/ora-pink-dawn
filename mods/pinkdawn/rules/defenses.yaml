@@ -607,6 +607,13 @@ PBOX:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Armament@PRIMARY:
         Name: primary
 		Weapon: PillboxGun
@@ -689,6 +696,13 @@ HBOX:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Armament@PRIMARY:
         Name: primary
 		Weapon: PillboxGun

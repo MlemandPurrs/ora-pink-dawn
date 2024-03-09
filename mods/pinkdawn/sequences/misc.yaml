@@ -321,6 +321,8 @@ pips:
     tag-fake: tag-fake
         Offset: 0, 2
 	tag-spy: tag-spy
+    pip-sniper: pip-sniper
+        Offset: 6, 5
 
 overlay:
 	Defaults: trans.icn

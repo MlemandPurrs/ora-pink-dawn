@@ -372,7 +372,7 @@ pbox.info:
     Buildable:
         Queue: Nothing    
 	Encyclopedia:
-        Description: Armed with a rapid fire machinegun, the Pillbox is ideal for defending your base from enemy infantry attacks.
+        Description: Armed with a rapid fire machinegun, the Pillbox is ideal for defending your base from enemy infantry attacks.\nWith a Sniper stationed inside, it can get turned into a deadly anti-infantry defense.
         Category: Allies Defenses
 		Order: 6
 	RenderSprites:
@@ -385,7 +385,7 @@ hbox.info:
     Buildable:
         Queue: Nothing    
 	Encyclopedia:
-        Description: A dedicated anti-infantry defense with a marksman rifle, this defensive structure has the advantage of near-perfect camouflage. It blends with the surrounding terrain, making it virtually invisible.
+        Description: A cloaked defense with a rapid-fire machinegun, this defensive structure has the advantage of near-perfect camouflage. It blends with the surrounding terrain, making it virtually invisible.\nWith a Sniper stationed inside, it can get turned into a deadly anti-infantry defense.
         Category: Allies Defenses
 		Order: 7
 	RenderSprites:
@@ -749,7 +749,7 @@ r4wd.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Fast and lightly armored, this unit is ideal for scouting an area quickly. Used as a support unit for an infantry squad, the Ranger can soften up the enemy before a direct confrontation occurs.
+        Description: Fast and lightly armored, this unit is ideal for scouting an area quickly. Used as a support unit for an infantry squad, the Ranger can soften up the enemy before a direct confrontation occurs.\nWith a Sniper as passenger, it can also detect cloaked units and mines.
         Category: Allies Vehicles
 		Order: 2
 	RenderSprites:
@@ -983,6 +983,19 @@ hel2.info:
 		Image: heli
         Palette: allies
     -MapEditorData:
+
+f16.info:
+    Inherits: F16
+    Buildable:
+        Queue: Nothing
+        Prerequisites: anyafld
+	Encyclopedia:
+        Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
+        Category: Allies Aircraft
+		Order: 4
+	RenderSprites:
+		Image: f16
+        Palette: allies
 
 hind.info:
     Inherits: HIND
@@ -1226,7 +1239,7 @@ snip.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Long-ranged sharpshooter infantry that can one-shot almost all enemy infantry units. Best used in a Pillbox as its low durability can be an issue. On the field it can detect cloaked units and mines over the distance.
+        Description: Long-ranged sharpshooter infantry that can one-shot kill almost all enemy infantry units. Best used in a Pillbox structure, or in a Ranger jeep as its low endurance can be an survivability issue. On the field it can detect cloaked units and mines over the distance, even when inside a Ranger jeep.
         Category: Allies Infantry
 		Order: 10
 	RenderSprites:

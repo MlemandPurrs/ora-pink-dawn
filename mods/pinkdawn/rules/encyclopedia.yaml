@@ -379,7 +379,7 @@ gun.info:
     Buildable:
         Queue: Nothing    
 	Encyclopedia:
-        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.
+        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.\nGun turrets are capable of firing on detected Submarines in range.
         Category: GDI Defenses
 		Order: 8
 	RenderSprites:

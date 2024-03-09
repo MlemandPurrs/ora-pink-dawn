@@ -201,6 +201,7 @@ TRAN:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -208,6 +209,13 @@ TRAN:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Sellable:
 		RequiresCondition: unit.sellable && !airborne && !loaded
 	Selectable:
@@ -784,6 +792,7 @@ BADR.tran:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -791,6 +800,13 @@ BADR.tran:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	LeavesTrails@0:
 		Offsets: -432,560,0
 		MovingInterval: 2
@@ -906,6 +922,9 @@ F18:
     Inherits: GenericJet
 	Tooltip:
 		Name: F/A-18 Hornet
+        GenericStancePrefix: false
+        GenericName: Hornet
+        GenericVisibility: Ally, Neutral, Enemy
     Buildable:
         BuildDuration: 2100
         BuildDurationModifier: 100
@@ -922,16 +941,38 @@ F22:
     Inherits: GenericJet
 	Tooltip:
 		Name: F-22 Raptor
+        GenericStancePrefix: false
+        GenericName: Raptor
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, miss, ~aircraft.f22
+		Prerequisites: ~anyafld, anytier3, ~aircraft.f22
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
     RenderSprites:
         Image: f22
+
+#   Allies version
+F16:
+    Inherits: GenericJet
+	Tooltip:
+		Name: F-16 Falcon
+        GenericStancePrefix: false
+        GenericName: Falcon
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 6
+		Prerequisites: ~anyafld, atek, ~aircraft.allies
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+    RenderSprites:
+        Image: f16
 
 #   Soviet version
 MIG:

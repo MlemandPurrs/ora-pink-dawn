@@ -1511,7 +1511,7 @@ SNIP:
 		BuildPaletteOrder: 10
 		Prerequisites: atek, ~infantry.allies
 		Queue: Infantry
-		Description: Sharpshooter infantry.\nCan detect cloaked units and mines.\nUses Sniper rifle when in a Pillbox.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+		Description: Sharpshooter infantry.\nCan detect cloaked units and mines.\nUses Sniper rifle when in a Pillbox,\nor when inside a Ranger jeep.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 50
 	Health:

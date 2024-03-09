@@ -422,6 +422,7 @@ APRT:
 	WithResupplyAnimation:
 	ProvidesPrerequisite:
 		Prerequisite: anyafld
+	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
 		Factions: gdi

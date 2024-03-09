@@ -541,6 +541,7 @@ APC:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -548,6 +549,13 @@ APC:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig

@@ -158,3 +158,9 @@ ocar:
 		Start: 32
 		Facings: 32
 	icon: ocaricon
+
+f16:
+	Inherits: emp-overlay
+	idle:
+        Facings: 16
+	icon: f16icon

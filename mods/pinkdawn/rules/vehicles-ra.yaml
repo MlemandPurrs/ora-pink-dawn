@@ -437,11 +437,20 @@ R4WD:
 	Turreted:
 		TurnSpeed: 18
 		Offset: -85,0,128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: MachineGunLight
 		LocalOffset: 171,0,85
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected || !loaded
+        RequiresCondition: !sniperinside
+	Armament@SECONDARY:
+        Name: secondary
+ 		Weapon: Sniper
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected || !loaded
+        RequiresCondition: sniperinside
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
@@ -461,6 +470,7 @@ R4WD:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -468,6 +478,13 @@ R4WD:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
     Capturable:
         RequiresCondition: !loaded
     ExternalCondition@CloakingField:
@@ -483,6 +500,11 @@ R4WD:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+        RequiresCondition: sniperinside
+	RenderDetectionCircle:
 
 FTRK:
 	Inherits: ^Vehicle
@@ -627,6 +649,7 @@ APC2:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -634,6 +657,13 @@ APC2:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -1529,6 +1559,7 @@ APC3:
             tany: commandoinside
             volk: commandoinside
             mega: commandoinside
+            snip: sniperinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -1536,6 +1567,13 @@ APC3:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig

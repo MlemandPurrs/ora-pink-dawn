@@ -1378,6 +1378,7 @@ hosp:
 			JUNGLE: TEMPERAT
 		Length: *
 		Offset: 0,1
+	icon: hospicon
 
 hosp.husk:
 	idle: hosp
@@ -1631,6 +1632,17 @@ ltur:
 		Length: *
 		Offset: -1,-1
 	icon: lturicon
+
+ltur.husk:
+	idle: ltur
+		Start: 32
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+		Offset: -1,-1
 
 ufld:
     Inherits: emp-overlay

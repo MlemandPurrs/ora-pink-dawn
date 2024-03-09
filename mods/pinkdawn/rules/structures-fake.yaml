@@ -17,7 +17,7 @@ FACF:
         GenericName: Construction Yard
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 210
@@ -56,11 +56,11 @@ FPWR:
         GenericName: Power Plant
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 200
-		Prerequisites: anypower
+		Prerequisites: infantryproduction
 		Description: Looks like a Power Plant.
 		Icon: fake-icon
 	Health:
@@ -102,7 +102,7 @@ FAPW:
         GenericName: Advanced Power Plant
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 203
@@ -148,11 +148,11 @@ TENF:
         GenericName: Barracks
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 201
-		Prerequisites: anypower
+		Prerequisites: infantryproduction
 		Description: Looks like an Allies Barracks.
 		Icon: fake-icon
 	Health:
@@ -196,11 +196,11 @@ FREF:
         GenericStancePrefix: false
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 202
-		Prerequisites: anypower
+		Prerequisites: infantryproduction
 		Description: Looks like an Ore Refinery.
 		Icon: fake-icon
 	Health:
@@ -244,7 +244,7 @@ WEAF:
         GenericName: War Factory
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 204
@@ -289,7 +289,7 @@ FIXF:
         GenericName: Service Depot
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 208
@@ -331,7 +331,7 @@ HPAF:
         GenericName: Helipad
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 207
@@ -369,7 +369,7 @@ DOMF:
         GenericName: Radar Dome
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 205
@@ -411,7 +411,7 @@ ATEF:
         GenericName: Technology Center
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 209
@@ -447,7 +447,7 @@ CSPF:
         GenericName: Chronosphere
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 211
@@ -484,7 +484,7 @@ MSLF:
         GenericName: Missile Silo
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies2
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 212

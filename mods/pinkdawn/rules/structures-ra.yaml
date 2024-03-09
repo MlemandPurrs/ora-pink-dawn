@@ -37,7 +37,7 @@ FAC2:
 	RevealsShroud:
 		Range: 4c512
 	Production:
-		Produces: Building.Allies, Building.Soviet, Defense.Allies, Defense.Soviet
+		Produces: Building.Allies, Building.Soviet, Defense.Allies, Defense.Soviet, Defense.Allies2
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
@@ -122,6 +122,21 @@ FAC2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@AlliesFake:
+		Type: Defense.Allies2
+		DisplayOrder: 2
+		Factions: allies
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	BaseBuilding:
 	ProductionBar@BuildingAllies:
 		ProductionType: Building.Allies
@@ -132,6 +147,9 @@ FAC2:
 		Color: 8A8A8A
 	ProductionBar@DefenseSoviet:
 		ProductionType: Defense.Soviet
+		Color: 8A8A8A
+	ProductionBar@AlliesFake:
+		ProductionType: Defense.Allies2
 		Color: 8A8A8A
 	#   BaseProvider:
 	#	Range: 14c0

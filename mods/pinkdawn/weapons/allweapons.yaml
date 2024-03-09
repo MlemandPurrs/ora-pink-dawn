@@ -726,6 +726,7 @@ TurretGun:
 	ReloadDelay: 50
 	Range: 5c128
     Report: turret1.aud
+    ValidTargets: Ground, Water, Underwater
 	Projectile: Bullet
 		Image: 120MM
 		Speed: 853
@@ -735,6 +736,7 @@ TurretGun:
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 4000
+        ValidTargets: Ground, Tree, Wall, Submarine
 		Versus:
             None: 25
             Light: 75
@@ -762,7 +764,7 @@ TurretGun:
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
-		ValidTargets: Ship, WaterStructure
+		ValidTargets: Ship, WaterStructure, Submarine
         ImpactActors: true
 
 #   16. Mammoth Tank's rocket pods
