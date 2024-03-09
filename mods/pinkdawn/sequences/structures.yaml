@@ -1743,3 +1743,30 @@ ncom.husk:
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
+
+cstl:
+    Inherits: emp-overlay
+	idle: blank1 # Empty first frame.
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+	damaged-turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	make: cstlmake
+		Length: *
+		Tick: 80
+	dead: cstl
+		Start: 63
+		Tick: 800
+	muzzle: gunfire2
+		Length: *
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+		Length: *
+		Offset: -1,-1
+	icon: cstlicon

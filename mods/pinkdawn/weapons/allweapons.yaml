@@ -75,6 +75,7 @@
 #   74. HeliDepthCharges
 #   75. DropDummy
 #   76. ASMine
+#   77. CoastalGun
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1026,7 +1027,7 @@ MachineGunLight:
     ReloadDelay: 25
     Burst: 0
 
-#   21. AGTMissile
+#   21. Advanced Guard Tower's Missile
 TowerMissileAG:
 	ReloadDelay: 50
 	Burst: 2
@@ -3456,3 +3457,45 @@ ASMine:
 		Explosions: big_frag
 		ImpactSounds: mineblo1.aud
 		ImpactActors: false
+
+#   77. Coastal Defense Turret weaponry
+CoastalGun:
+	ReloadDelay: 60
+	Range: 7c256
+	MinRange: 0c512
+    Report: cstlgun.aud
+	Burst: 3
+	BurstDelays: 7
+    ValidTargets: Water, Underwater, Ship, WaterStructure, Submarine
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+        Inaccuracy: 321
+		InaccuracyType: PerCellIncrement
+        Blockable: false
+		LaunchAngle: 37
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 6000
+        ValidTargets: Water, Underwater, Ship, WaterStructure, Submarine
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+    Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure, Submarine
+        ImpactActors: true
+	Warhead@4Eff: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, WaterStructure, Bridge

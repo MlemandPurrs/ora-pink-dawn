@@ -1252,7 +1252,7 @@
 	Tooltip:
 		GenericName: Tech Building
 		GenericStancePrefix: false
-		ShowOwnerRow: false
+		ShowOwnerRow: True
 	FrozenUnderFog:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -1267,8 +1267,6 @@
         Amount: 500
 	RevealsShroud:
 		Range: 3c0
-	Tooltip:
-		ShowOwnerRow: True
 	MapEditorData:
 		Categories: Tech building
 	AppearsOnMapPreview:
@@ -2227,3 +2225,9 @@
 		Sequence: pip-carryall
 		Position: Top
 		RequiresCondition: awaiting
+
+^AutoTargetNaval:
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Water, Underwater
+		InvalidTargets: NoAutoTarget

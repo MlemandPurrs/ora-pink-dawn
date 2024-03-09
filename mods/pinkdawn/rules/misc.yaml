@@ -580,6 +580,15 @@ htnk.colorpicker:
         Image: 4tnk.colorpicker
         Palette: colorpicker
 
+t55h.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: t55h.colorpicker
+        Palette: colorpicker
+
 MINV:
 	Inherits: ^Mine
 	RenderSprites:

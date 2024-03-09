@@ -638,6 +638,11 @@ htnk.colorpicker:
 		Start: 0
         Length: 1
 
+t55h.colorpicker:
+	idle: t55h-dummy
+		Start: 0
+        Length: 1
+
 v2:
 	idle:
 		Facings: 32

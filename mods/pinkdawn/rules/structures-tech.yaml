@@ -94,6 +94,8 @@ HOSP.Husk:
 SYRD:
 	Inherits: ^BaseBuilding
     Inherits@EMPMechanic: ^EMPApplicableStructure
+	ChangesHealth@LOWPOWERDMG:
+		RequiresCondition: atlowpower && owner.is.player && !stopatmedium && !build-incomplete
 	-GivesBuildableArea:
 	-SpawnActorsOnSell:
 	-Sellable:
@@ -238,21 +240,23 @@ SYRD:
 	DetectCloaked:
 		DetectionTypes: Underwater
 		Range: 7c512
+        RequiresCondition: owner.is.player
 	RenderDetectionCircle:
 	Targetable@IsWaterStructure:
 		TargetTypes: WaterStructure
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+        RequiresCondition: owner.is.player
 	SpawnActorPower@SonarPulse:
         PauseOnCondition: lowpower || emp-affected-structure
 		OrderName: SonarPulse
 		Actor: camera.sonar
-		LifeTime: 250
+		LifeTime: 65
 		ChargeInterval: 750
 		Icon: sonar
 		Name: Sonar Pulse
-		Description: Reveals water terrain and submarines\nfor a short duration.
+		Description: Reveals water terrain and submarines\nfor a brief, very short duration.
 		StartFullyCharged: false
 		EndChargeSpeechNotification: SonarPulseReady
 		EndChargeTextNotification: Sonar pulse ready.
@@ -803,3 +807,102 @@ NPWR.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Nuclear Plant (Destroyed)
+
+CSTL:
+	Inherits: ^TechBuilding
+	Inherits@selection: ^SelectableCombatBuilding
+	Inherits@AUTOTARGET: ^AutoTargetNaval
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+    Inherits@experience: ^ExperienceMechanicDefense
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	Targetable:
+		TargetTypes: Ground, C4, Structure, Defense
+	WithMakeAnimation:
+		Condition: build-incomplete
+	-CommandBarBlacklist:
+	-BodyOrientation:
+	Selectable:
+		Bounds: 1024, 1024
+	Valued:
+		Cost: 700
+	Tooltip:
+		GenericName: Tech Building
+		GenericStancePrefix: false
+		Name: Coastal Defense Turret
+		ShowOwnerRow: True
+	TooltipDescription@ally:
+		Description: Anti-Ship base defense.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to obtain formidable anti-ship defense.
+		ValidRelationships: Neutral, Enemy
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 99
+		Prerequisites: ~disabled
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet
+		Description: Anti-Ship base defense.\n\nCan attack only Naval units.
+	Building:
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudMultiplier@LOWPOWER:
+		RequiresCondition: lowpower
+		Modifier: 50
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 192
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+        Name: primary
+		Weapon: CoastalGun
+		LocalOffset: 821,-171,112, 821,0,112, 821,171,112
+		MuzzleSequence: muzzle
+        PauseOnCondition: !ammo || build-incomplete
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+	AmmoPool:
+        Name: primary
+        Armaments: primary
+		Ammo: 15
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 5
+        AmmoPools: primary
+		RequiresSelection: true
+	ReloadAmmoPool:
+        ResetOnFire: false
+        AmmoPool: primary
+		Delay: 120
+		Count: 3
+        PauseOnCondition: emp-affected-structure
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure && owner.is.player
+	RenderDetectionCircle:
+	Power:
+		Amount: -25
+		RequiresCondition: !build-incomplete && !emp-affected-structure && owner.is.player
+	ClassicFacingBodyOrientation:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+        RequiresCondition: owner.is.player
+	MapEditorData:
+		Categories: Tech building

@@ -1300,3 +1300,16 @@ jet.info:
 		Image: jet
         Palette: gdi
     -MapEditorData:
+
+cstl.info:
+    Inherits: CSTL
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: A durable, formidable anti-ship defense, armed with a battery of long-range guns that can fire ammunition specially tooled to be used against ships only.\nThose defenses are even capable of firing on and hitting submarines.
+        Category: Tech Buildings
+		Order: 10
+	RenderSprites:
+		Image: cstl
+        Palette: civilian
+    -MapEditorData:
