@@ -643,6 +643,11 @@ t55h.colorpicker:
 		Start: 0
         Length: 1
 
+csph.colorpicker:
+	idle: csph		
+        Start: 0
+        Length: 1
+
 v2:
 	idle:
 		Facings: 32

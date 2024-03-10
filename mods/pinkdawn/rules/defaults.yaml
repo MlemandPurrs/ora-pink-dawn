@@ -1850,28 +1850,28 @@
 		Modifier: 90
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 120
+		Modifier: 110
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-elite
-        Modifier: 80
+        Modifier: 90
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 120
+		Modifier: 110
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 80
+		Modifier: 90
 	FirepowerMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 130
+		Modifier: 110
     ReloadDelayMultiplier@RANK-HEROIC:
         RequiresCondition: rank-heroic
-        Modifier: 70
+        Modifier: 90
 	SpeedMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 130
+		Modifier: 110
 	DamageMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 70
+		Modifier: 90
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
 		PercentageStep: 5
@@ -1936,28 +1936,28 @@
 		Modifier: 90
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 120
+		Modifier: 110
     ReloadAmmoDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-elite
-        Modifier: 80
+        Modifier: 90
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 120
+		Modifier: 110
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 80
+		Modifier: 90
 	FirepowerMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 130
+		Modifier: 110
     ReloadAmmoDelayMultiplier@RANK-HEROIC:
         RequiresCondition: rank-heroic
-        Modifier: 70
+        Modifier: 90
 	SpeedMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 130
+		Modifier: 110
 	DamageMultiplier@RANK-HEROIC:
 		RequiresCondition: rank-heroic
-		Modifier: 70
+		Modifier: 90
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
 		PercentageStep: 5
@@ -2024,19 +2024,19 @@
 		Modifier: 120
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 150
+		Modifier: 125
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 80
+		Modifier: 90
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
 	RangeMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 150
+		Modifier: 125
 	RevealsShroudMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 140
+		Modifier: 120
 	WithDecoration@RANK-VETERAN:
 		Image: rank
 		Sequence: rank-veteran

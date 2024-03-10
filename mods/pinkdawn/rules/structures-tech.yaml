@@ -842,7 +842,7 @@ CSTL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 99
 		Prerequisites: ~disabled
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		Description: Anti-Ship base defense.\n\nCan attack only Naval units.
 	Building:
 	Health:

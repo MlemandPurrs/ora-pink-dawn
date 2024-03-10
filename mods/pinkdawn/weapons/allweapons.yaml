@@ -76,6 +76,7 @@
 #   75. DropDummy
 #   76. ASMine
 #   77. CoastalGun
+#   78. Railgun
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -2803,7 +2804,7 @@ CruiserShell:
 	MinRange: 3c0
 	StartBurstReport: tank6.aud
     Burst: 2
-	BurstDelays: 2
+	BurstDelays: 3
 	TargetActorCenter: true
 	Projectile: Bullet
 		Image: 120MM
@@ -3499,3 +3500,41 @@ CoastalGun:
 		ImpactSounds: ssplash1.aud
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, WaterStructure, Bridge
+        
+#   78. GDI Frigate's Railgun
+Railgun:
+	ReloadDelay: 90
+	Range: 6c512
+	Report: railgun.aud
+	ValidTargets: Ground, Water
+    InvalidTargets: Wall
+	Projectile: Railgun
+		Duration: 8
+		Blockable: true
+		DamageActorsInLine: true
+		BeamColor: 00FFFFC8
+		BeamWidth: 40
+		HelixThickness: 16
+		HelixRadius: 32
+		HitAnim: explosion
+		HitAnimSequence: small_frag
+		ZOffset: 2047
+	Warhead@1Dam: SpreadDamage
+        Range: 0, 32, 48, 64, 80
+		Spread: 0c64
+		Falloff: 100, 37, 14, 5, 0
+		Damage: 7500
+		AffectsParent: false
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100
+        ValidTargets: Ground, Water
+        InvalidTargets: Wall
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
+		ValidRelationships: Ally, Neutral, Enemy

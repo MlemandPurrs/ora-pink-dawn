@@ -589,6 +589,15 @@ t55h.colorpicker:
         Image: t55h.colorpicker
         Palette: colorpicker
 
+csph.colorpicker:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+    WithSpriteBody:
+    RenderSprites:
+        Image: csph.colorpicker
+        Palette: colorpicker
+
 MINV:
 	Inherits: ^Mine
 	RenderSprites:

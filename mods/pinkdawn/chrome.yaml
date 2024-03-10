@@ -756,6 +756,7 @@ flags:
 		neutral: 811, 419, 32, 16
 		Random: 811, 419, 32, 16
         Random2: 844, 419, 32, 16
+        Random3: 844, 436, 32, 16
         bossnod: 811, 436, 32, 16
 
 strategic:

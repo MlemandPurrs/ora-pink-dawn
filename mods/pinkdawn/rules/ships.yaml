@@ -93,7 +93,7 @@ BOAT:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.gdi
+		Prerequisites: ~disabled
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
 		Name: Patrol Boat
@@ -137,7 +137,7 @@ PT2:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.nod
+		Prerequisites: syrd, ~navy.lst
 		Description: Fast, multi-role attack ship.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs fast units, Submarines.
 	Health:
 		HP: 30000
@@ -184,6 +184,17 @@ PT2:
 	RenderRangeCircle:
 	Selectable:
         DecorationBounds: 1536, 1536
+	WithFacingSpriteBody:
+        Sequence: idle
+		RequiresCondition: !owner.is.gdi
+	WithFacingSpriteBody@GDI:
+		Name: body2
+        Sequence: idle2
+		RequiresCondition: owner.is.gdi
+	GrantConditionOnFaction@GDI:
+		Condition: owner.is.gdi
+		Factions: gdi
+		ResetOnOwnerChange: True
 
 DD2:
 	Inherits: ^Ship
@@ -291,3 +302,53 @@ SS2:
         FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1621, 1621
+
+DD3:
+	Inherits: ^Ship
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Frigate
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 2
+		Queue: Navy
+		Prerequisites: syrd, miss, ~navy.gdi
+		Description: Battleship armed with a railgun.\nThe armament damages in a line.\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
+	Health:
+		HP: 50000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 50
+	RevealsShroud:
+		Range: 5c128
+	Turreted:
+		TurnSpeed: 12
+		Offset: 576,0,144
+	Armament:
+        Name: primary
+        Turret: primary
+		Weapon: Railgun
+		LocalOffset: 200,0,30
+		Recoil: 0
+		RecoilRecovery: 0
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+		Armaments: primary
+	WithSpriteTurret:
+		Sequence: turret
+    WithMuzzleOverlay:
+	RenderRangeCircle:
+	Selectable:
+		DecorationBounds: 1621, 1621
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00

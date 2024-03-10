@@ -42,6 +42,8 @@ pt:
 		Facings: 32
     turret2: mgturr
 		Facings: 32
+    turret3: boattur2
+        Facings: 32
 	muzzle: gunfire2
 		Length: *
 	muzzle2: minigun
@@ -101,6 +103,8 @@ pt2:
     Inherits: emp-overlay
 	idle:
 		Facings: 16
+    idle2: pt
+        Facings: 16
 	turret: ifvmis
 		Facings: 32
   	turret2: ifvsam
@@ -122,3 +126,13 @@ ss2:
 	idle:
 		Facings: 16
 	icon: ssicon
+
+dd3:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: railtur
+		Facings: 32
+	muzzle: gunfire2
+		Length: *
+	icon: dd3icon

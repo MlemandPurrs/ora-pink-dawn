@@ -179,6 +179,11 @@
 		Name: Nod
 		InternalName: nod
 		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.
+	Faction@Random3:
+		Name: Random Any
+		InternalName: Random3
+		RandomFactionMembers: gdi, nod, allies, soviet
+		Description: Random Any Faction\nOne of GDI, Nod, Allies, Soviet will be chosen at random when the game starts.
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
@@ -349,6 +354,7 @@ World:
             random: fact.colorpicker
             gdi: htnk.colorpicker
             nod: htnk.colorpicker
+            random3: csph.colorpicker
             allies: 4tnk.colorpicker
             soviet: 4tnk.colorpicker
             random2: fac2.colorpicker

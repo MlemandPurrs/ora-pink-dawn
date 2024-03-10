@@ -927,18 +927,18 @@ lst.nod.info:
 		Image: lst
         Palette: nodunits
 
-boat.info:
-    Inherits: BOAT
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Heavily armored, and armed with surface-to-surface missiles, this unit is the backbone of GDI's naval forces.
-        Category: GDI Navy
-		Order: 1
-	RenderSprites:
-		Image: boat
-        Palette: gdi
-    -MapEditorData:
+#   boat.info:
+#    Inherits: BOAT
+#    Buildable:
+#    Queue: Nothing
+#   Encyclopedia:
+#   Description: Heavily armored, and armed with surface-to-surface missiles, this unit is the backbone of GDI's naval forces.
+#   Category: GDI Navy
+#   Order: 1
+#   RenderSprites:
+#   Image: boat
+#   Palette: gdi
+#   -MapEditorData:
 
 pt2.info:
     Inherits: PT2
@@ -946,12 +946,26 @@ pt2.info:
         Queue: Nothing
 	Encyclopedia:
         Description: A fast naval vessel, the Patrol Boat is armed with multi-purpose missile launchers effective against land and air threats. Its fast-firing stinger missiles can hit air targets easily, and can also decimate nearby ground targets.
-        Category: Nod Navy
+        Category: GDI Navy
 		Order: 1
+    WithFacingSpriteBody:
+        Sequence: idle2
+	RenderSprites:
+		Image: pt2
+        Palette: gdi
+    -MapEditorData:
+
+pt2.nod.info:
+    Inherits: pt2.info
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Category: Nod Navy
+    WithFacingSpriteBody:
+        Sequence: idle
 	RenderSprites:
 		Image: pt2
         Palette: nod
-    -MapEditorData:
 
 dd2.info:
     Inherits: DD2
@@ -964,6 +978,19 @@ dd2.info:
 	RenderSprites:
 		Image: dd2
         Palette: nod
+    -MapEditorData:
+
+dd3.info:
+    Inherits: DD3
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This GDI battleship is equipped with a Railgun, an experimental weapon technology. The Railgun is a energy weapon that fires a hyper-accelerated projectile that damages all targets caught within its trajectory.
+        Category: GDI Navy
+		Order: 3
+	RenderSprites:
+		Image: dd3
+        Palette: gdi
     -MapEditorData:
 
 ss2.info:
