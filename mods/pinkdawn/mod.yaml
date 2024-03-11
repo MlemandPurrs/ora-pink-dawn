@@ -60,6 +60,7 @@ Packages:
 	pinkdawn|bits/jungle
 	pinkdawn|bits/desert
 	pinkdawn|bits/winter
+	pinkdawn|bits/tropic
 	pinkdawn|bits/ss
 	pinkdawn|bits/flame32
     pinkdawn|bits/chem32
@@ -122,6 +123,7 @@ TileSets:
 	pinkdawn|tilesets/temperat.yaml
 	pinkdawn|tilesets/jungle.yaml
 	pinkdawn|tilesets/snow.yaml
+	pinkdawn|tilesets/tropic.yaml
 
 Weapons:
 	pinkdawn|weapons/allweapons.yaml
@@ -291,6 +293,7 @@ SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 		DESERT: .des
 		JUNGLE: .jun
 		SNOW: .sno
+        TROPIC: .tro
 
 ModelSequenceFormat: PlaceholderModelSequence
 

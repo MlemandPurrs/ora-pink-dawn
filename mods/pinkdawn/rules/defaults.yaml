@@ -1506,6 +1506,8 @@
 		Categories: Decoration
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral
+	RenderSprites:
+		Palette: staticdesert
 
 ^CommonHuskDefaults:
 	Inherits@1: ^ClassicFacingSpriteActor

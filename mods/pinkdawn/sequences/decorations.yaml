@@ -5,6 +5,7 @@ split2:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
+            TROPIC: TEMPERAT
 	make:
 		Length: 30
 		Tick: 120
@@ -18,6 +19,9 @@ split3:
 	Defaults:
 		Offset: 7, -13
 		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+            TROPIC: TEMPERAT
 	make:
 		Length: 30
 		Tick: 120
@@ -482,3 +486,9 @@ rock6:
 rock7:
 	idle: rock7.des
 		AddExtension: false
+
+piraship:
+	Defaults:
+		AddExtension: false
+		Offset: 2, -10
+	idle: piraship.tro

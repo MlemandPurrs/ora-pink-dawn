@@ -544,3 +544,15 @@ MOEBIUS:
 		VoiceSet: MoebiusVoice
 	Tooltip:
 		Name: Dr. Moebius
+
+PIRASHIP:
+	Inherits: ^CivBuilding
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Tooltip:
+		Name: Broken Pirate Ship
+	MapEditorData:
+		RequireTilesets: TROPIC
+	RenderSprites:
+		Palette: terrain

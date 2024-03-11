@@ -162,7 +162,7 @@ osil:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
     dead: osil
         Start: 9
         Length: 1
@@ -178,7 +178,7 @@ osil.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 tent:
     Inherits: emp-overlay
@@ -187,6 +187,7 @@ tent:
 		TilesetOverrides:
             JUNGLE: TEMPERAT
             WINTER: TEMPERAT
+            TROPIC: TEMPERAT
 	idle:
 		Length: 10
         Tick: 100
@@ -207,6 +208,7 @@ tent:
 		TilesetOverrides:
             JUNGLE: JUNGLE
             WINTER: WINTER
+            TROPIC: TEMPERAT
 	icon: tenticon
 		UseTilesetExtension: false
     fake-icon: tenficon
@@ -218,6 +220,7 @@ tent.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	idle: tent
 		Start: 20
 		Length: 1
@@ -227,6 +230,7 @@ tent.husk:
 		TilesetOverrides:
             JUNGLE: JUNGLE
             WINTER: WINTER
+            TROPIC: TEMPERAT
 
 barr:
     Inherits: emp-overlay
@@ -324,7 +328,7 @@ fix2:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
     dead:
         Start: 14
         Tick: 800
@@ -344,7 +348,7 @@ fix2.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 2fld:
     Inherits: emp-overlay
@@ -572,6 +576,7 @@ pbox:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
     dead:
         Start: 2
         Tick: 800
@@ -588,6 +593,7 @@ pbox.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 hbox:
     Inherits: emp-overlay
@@ -596,6 +602,7 @@ hbox:
         TilesetOverrides:
             JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
 	idle:
 	damaged-idle:
 		Start: 2
@@ -618,6 +625,7 @@ hbox.husk:
         TilesetOverrides:
             JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
 	idle: hbox
         Start: 3
         Length: 1
@@ -637,7 +645,7 @@ ftwr:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
     dead:
         Start: 2
         Offset: 0,-2
@@ -682,7 +690,7 @@ ftwr.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 tsla:
     Inherits: emp-overlay
@@ -710,7 +718,7 @@ tsla:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
     dead:
         Start: 20
         Offset: 0,-13
@@ -726,7 +734,7 @@ tsla.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 gap:
     Inherits: emp-overlay
@@ -754,6 +762,7 @@ gap:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	icon: gapicon
 
 gap.husk:
@@ -767,6 +776,7 @@ gap.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 agun:
     Inherits: emp-overlay
@@ -809,6 +819,7 @@ agun:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	icon: agunicon
 
 agun.husk:
@@ -823,6 +834,7 @@ agun.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 sam2:
     Inherits: emp-overlay
@@ -859,7 +871,7 @@ sam2:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	icon: samicon
 
 sam2.husk:
@@ -873,7 +885,7 @@ sam2.husk:
         UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 csph:
     Inherits: emp-overlay
@@ -899,6 +911,7 @@ csph:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	icon: csphicon
     fake-icon: cspficon
 
@@ -913,6 +926,7 @@ csph.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 iron:
     Inherits: emp-overlay
@@ -945,6 +959,7 @@ iron:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	icon: ironicon
 
 iron.husk:
@@ -959,6 +974,7 @@ iron.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 
 mslo:
     Inherits: emp-overlay
@@ -967,6 +983,7 @@ mslo:
  		TilesetOverrides:
             JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
 	idle:
 	damaged-idle:
 		Start: 18
@@ -1000,6 +1017,7 @@ mslo.husk:
  		TilesetOverrides:
             JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
 	idle: mslo
 		Start: 12
 		Length: 1

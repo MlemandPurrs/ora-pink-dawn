@@ -91,6 +91,7 @@ e1:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -210,6 +211,7 @@ e2:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e2rot
 		Start: 16
 		Length: 4
@@ -329,6 +331,7 @@ e3:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e3rot
 		Start: 16
 		Length: 4
@@ -448,6 +451,7 @@ e4:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -595,6 +599,7 @@ e5:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -734,6 +739,7 @@ e6:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -855,8 +861,9 @@ rmbo:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
+			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
-            SNOW: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -946,6 +953,7 @@ tecn:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1044,6 +1052,7 @@ medi:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1115,6 +1124,7 @@ mech:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1183,6 +1193,7 @@ spy:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1323,6 +1334,7 @@ tany:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1460,6 +1472,7 @@ volk:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1553,6 +1566,7 @@ shok:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1643,6 +1657,7 @@ e8:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -1689,6 +1704,7 @@ thf:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e4rot
 		Start: 16
 		Length: 4
@@ -1786,6 +1802,7 @@ mega:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1866,6 +1883,7 @@ e7:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -1966,6 +1984,7 @@ e9:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -2069,6 +2088,7 @@ inf:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		Start: 16
 		Length: 4
@@ -2244,6 +2264,7 @@ snip:
 			WINTER: TEMPERAT
 			SNOW: TEMPERAT
 			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
 	die-crushed: e1rot
 		UseTilesetExtension: false
 		Start: 16

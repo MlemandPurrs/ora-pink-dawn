@@ -3456,7 +3456,7 @@ ASMine:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: big_frag
-		ImpactSounds: mineblo1.aud
+		ImpactSounds: h2omine.aud
 		ImpactActors: false
 
 #   77. Coastal Defense Turret weaponry

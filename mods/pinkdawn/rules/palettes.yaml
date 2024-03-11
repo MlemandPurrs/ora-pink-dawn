@@ -24,6 +24,11 @@
 		Tileset: JUNGLE
 		Filename: jungle.pal
 		ShadowIndex: 4
+	PaletteFromFile@terrain-tropic:
+		Name: terrain
+		Tileset: TROPIC
+		Filename: tropic.pal
+		ShadowIndex: 4
 	PaletteFromFile@staticterrain-desert:
 		Name: staticterrain
 		Tileset: DESERT
@@ -48,6 +53,11 @@
 		Name: staticterrain
 		Tileset: JUNGLE
 		Filename: jungle.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-tropic:
+		Name: staticterrain
+		Tileset: TROPIC
+		Filename: tropic.pal
 		ShadowIndex: 4
 	PaletteFromFile@chrome:
 		Name: chrome
@@ -174,3 +184,7 @@
 		ExcludePalettes: terrain, effect, desert
         ModifyIndex: 8
         RotationIndices: 127, 126, 125, 124, 123, 122, 121, 120, 121, 122, 123, 124, 125, 126
+	PaletteFromFile@staticdesert:
+		Name: staticdesert
+		Filename: desert.pal
+		ShadowIndex: 4

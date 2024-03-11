@@ -12,7 +12,7 @@ V20:
 	SpawnActorOnDeath:
 		Actor: V20.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Sala's House
 
@@ -22,7 +22,7 @@ V20.Husk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Sala's House (Destroyed)
 
@@ -45,7 +45,7 @@ V21:
 	SpawnActorOnDeath:
 		Actor: V21.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Abdul's House
 
@@ -55,7 +55,7 @@ V21.Husk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Abdul's House (Destroyed)
 
@@ -68,7 +68,7 @@ V22:
 	SpawnActorOnDeath:
 		Actor: V22.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Pablo's Wicked Pub
 
@@ -78,7 +78,7 @@ V22.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Pablo's Wicked Pub (Destroyed)
 
@@ -87,14 +87,14 @@ V23:
 	SpawnActorOnDeath:
 		Actor: V23.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Village Well
 
 V23.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Village Well (Destroyed)
 
@@ -112,7 +112,7 @@ V24:
 	SpawnActorOnDeath:
 		Actor: V24.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Camel Trader
 
@@ -122,7 +122,7 @@ V24.Husk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Camel Trader (Destroyed)
 
@@ -142,7 +142,7 @@ V25:
 	SpawnActorOnDeath:
 		Actor: V25.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 
 V25.Husk:
 	Inherits: ^CivBuildingHusk
@@ -152,7 +152,7 @@ V25.Husk:
 	Tooltip:
 		Name: Church (Destroyed)
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 
 V26:
 	Inherits: ^CivBuilding
@@ -163,7 +163,7 @@ V26:
 	SpawnActorOnDeath:
 		Actor: V26.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Ali's House
 
@@ -173,7 +173,7 @@ V26.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Ali's House (Destroyed)
 
@@ -182,14 +182,14 @@ V27:
 	SpawnActorOnDeath:
 		Actor: V27.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Trader Ted's
 
 V27.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Trader Ted's (Destroyed)
 
@@ -198,14 +198,14 @@ V28:
 	SpawnActorOnDeath:
 		Actor: V28.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Menelik's House
 
 V28.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Menelik's House (Destroyed)
 
@@ -214,14 +214,14 @@ V29:
 	SpawnActorOnDeath:
 		Actor: V29.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Prestor John's House
 
 V29.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Prestor John's House (Destroyed)
 
@@ -234,7 +234,7 @@ V30:
 	SpawnActorOnDeath:
 		Actor: V30.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Village Well
 
@@ -244,7 +244,7 @@ V30.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Village Well (Destroyed)
 
@@ -257,7 +257,7 @@ V31:
 	SpawnActorOnDeath:
 		Actor: V31.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Witch Doctor's Hut
 
@@ -267,7 +267,7 @@ V31.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Witch Doctor's Hut (Destroyed)
 
@@ -280,7 +280,7 @@ V32:
 	SpawnActorOnDeath:
 		Actor: V32.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Rikitikitembo's Hut
 
@@ -290,7 +290,7 @@ V32.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Rikitikitembo's Hut (Destroyed)
 
@@ -303,7 +303,7 @@ V33:
 	SpawnActorOnDeath:
 		Actor: V33.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Roarke's Hut
 
@@ -313,7 +313,7 @@ V33.Husk:
 		Footprint: xx
 		Dimensions: 2,1
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Roarke's Hut (Destroyed)
 
@@ -322,14 +322,14 @@ V34:
 	SpawnActorOnDeath:
 		Actor: V34.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Mubasa's Hut
 
 V34.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Mubasa's Hut (Destroyed)
 
@@ -338,14 +338,14 @@ V35:
 	SpawnActorOnDeath:
 		Actor: V35.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Aksum's Hut
 
 V35.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Aksum's Hut (Destroyed)
 
@@ -354,14 +354,14 @@ V36:
 	SpawnActorOnDeath:
 		Actor: V36.Husk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Mambo's Hut
 
 V36.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: Mambo's Hut (Destroyed)
 
@@ -379,7 +379,7 @@ V37:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: The Studio
 
@@ -389,6 +389,6 @@ V37.Husk:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
 	MapEditorData:
-		RequireTilesets: DESERT
+		RequireTilesets: DESERT, TROPIC
 	Tooltip:
 		Name: The Studio (Destroyed)
