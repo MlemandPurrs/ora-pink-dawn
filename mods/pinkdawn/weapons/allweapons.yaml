@@ -2941,7 +2941,7 @@ SubMissile:
 #   64. Nuclear Torpedo
 NukeTorpedo:
 	ReloadDelay: 359
-	Range: 10c512
+	Range: 12c512
 	MinRange: 3c128
 	Report: torpedo1.aud
 	ValidTargets: Ship, WaterStructure, Underwater, Bridge, Submarine
@@ -2996,7 +2996,7 @@ NukeTorpedo:
 #   65. Nuclear Submarine Missile
 NukeMissile:
     ReloadDelay: 359
-	Range: 10c512
+	Range: 12c512
 	MinRange: 3c128
 	Report: missile7nuclear.aud
     ValidTargets: Ground, Tree

@@ -1356,6 +1356,7 @@ MISS:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		Cursor: airstrike
+        CameraActor: camera.small
 		SupportPowerPaletteOrder: 2
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
@@ -1911,6 +1912,7 @@ NCOM:
 		DirectionArrowAnimation: paradirection
 		Cursor: airstrike
 		SupportPowerPaletteOrder: 2
+        CameraActor: camera.small
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower

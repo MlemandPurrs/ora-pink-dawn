@@ -452,6 +452,7 @@ crate.airstrike:
 		DirectionArrowAnimation: paradirection
 		Cursor: airstrike
 		SupportPowerPaletteOrder: 2
+        CameraActor: camera.small
 		ChargeInterval: 0
 		OneShot: true
         AllowMultiple: true
@@ -468,8 +469,7 @@ crate.parabombs:
 		SelectTargetTextNotification: Select target.
 		OneShot: true
 		AllowMultiple: true
-		CameraActor: camera
-		CameraRemoveDelay: 150
+		CameraActor: camera.small
 		UnitType: badr.bomber
 		QuantizedFacings: 8
 		DisplayBeacon: true

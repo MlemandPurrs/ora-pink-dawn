@@ -93,6 +93,10 @@ NMIG:
 	RenderSprites:
 		PlayerPalette: player-buildings
 
+SMIG:
+	RenderSprites:
+		PlayerPalette: player-buildings
+
 BADR:
 	RenderSprites:
 		PlayerPalette: player-buildings

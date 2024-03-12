@@ -500,3 +500,4 @@ NTS:
 		Delay: 360
 		Count: 1
         PauseOnCondition: emp-crate-collected
+	RenderRangeCircle:

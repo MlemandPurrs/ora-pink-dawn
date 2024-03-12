@@ -1555,8 +1555,7 @@ FCOM:
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: Select target.
 		Cursor: para
-        CameraActor: camera
-		CameraRemoveDelay: 150
+        CameraActor: camera.small
 		UnitType: badr.bomber
 		QuantizedFacings: 8
 		DisplayBeacon: true

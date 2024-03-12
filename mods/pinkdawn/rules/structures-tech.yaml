@@ -235,7 +235,7 @@ SYRD:
         ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
-		Range: 4c0
+		Range: 5c0
         RequiresCondition: !emp-affected-structure
 	DetectCloaked:
 		DetectionTypes: Underwater

@@ -753,7 +753,7 @@ BADR.tran:
 		BuildPaletteOrder: 7
 		BuildLimit: 1
 		Prerequisites: ~anyafld, stek, ~aircraft.soviet
-		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
+		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop Transport\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
     Armor:
 		Type: Aluminium
 	AmmoPool:
