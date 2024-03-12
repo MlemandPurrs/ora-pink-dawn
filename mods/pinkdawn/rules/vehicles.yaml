@@ -85,7 +85,7 @@ MCV:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -201,7 +201,7 @@ HARV:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -272,7 +272,7 @@ TRUK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -347,7 +347,7 @@ JEEP:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -1620,7 +1620,7 @@ MSG:
 		BuildPaletteOrder: 13
 		Prerequisites: sgen, ~vehicle.bossnod
 		Queue: Vehicle
-		Description: Cloaks all nearby when deployed.\n\nUnarmed.
+		Description: Cloaks all units nearby when deployed.\nThe units need to remain stationary,\nand out of combat to be cloaked.\n\nUnarmed.
 	Health:
 		HP: 10000
 	Armor:
@@ -1656,11 +1656,11 @@ MSG:
 		Condition: cloakfield-on
 		ValidRelationships: Ally
 		Range: 6c0
-        RequiresCondition: !emp-crate-collected && deployed && ammo
+        RequiresCondition: !emp-crate-collected && deployed
 	DetectCloaked@RadialIndicator:
         DetectionTypes: Nonsense # we do this to get visual indicator
 		Range: 6c0
-        RequiresCondition: deployed && ammo
+        RequiresCondition: deployed
 	RenderDetectionCircle@RadialIndicator:
         TrailCount: 2
         Visible: Always
@@ -1673,29 +1673,29 @@ MSG:
     PowerMultiplier@deployed:
         Modifier: 200
         RequiresCondition: !emp-crate-collected && deployed
-	AmmoPool:
-        Name: charge
-        Armaments: 
-		Ammo: 50
-		AmmoCondition: ammo
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-        PipCount: 5
-        AmmoPools: charge
-        FullSequence: pip-blue
-		RequiresSelection: false
+    #  AmmoPool:
+    #  Name: charge
+    #  Armaments: 
+	#	Ammo: 50
+	#	AmmoCondition: ammo
+	#   WithAmmoPipsDecoration:
+	#   Position: BottomLeft
+	#   Margin: 4, 3
+    #   PipCount: 5
+    #   AmmoPools: charge
+    #   FullSequence: pip-blue
+    #   RequiresSelection: false
     #   it turns out -value no longer works on ReloadAmmoPool
-	ReloadAmmoPool@Deployed:
-        AmmoPool: charge
-		Delay: 25
-		Count: -2
-        PauseOnCondition: emp-crate-collected || undeployed
-	ReloadAmmoPool@Undeployed:
-        AmmoPool: charge
-        Delay: 25
-        Count: 2
-        PauseOnCondition: emp-crate-collected || deployed
+	#   ReloadAmmoPool@Deployed:
+    #   AmmoPool: charge
+    #   Delay: 25
+	#   Count: -2
+    #   PauseOnCondition: emp-crate-collected || undeployed
+	#   ReloadAmmoPool@Undeployed:
+    #   AmmoPool: charge
+    #   Delay: 25
+    #   Count: 2
+    #   PauseOnCondition: emp-crate-collected || deployed
 	Carryable:
 		-CarriedCondition: oncarryall
 

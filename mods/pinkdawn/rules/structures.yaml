@@ -1776,17 +1776,19 @@ SGEN:
 	Power:
 		Amount: -150
 		RequiresCondition: !build-incomplete
-    PowerMultiplier@activated:
-        Modifier: 200
-        RequiresCondition: !build-incomplete && cloakingfield-active
+    #  so, this was causing the bug...
+    #  PowerMultiplier@activated:
+    #  Modifier: 200
+    #  RequiresCondition: cloakingfield-active
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
+    #  made it not sellable while cloaking to avoid persistency glitch
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure && !cloakingfield-active
 	GrantPrerequisiteChargeDrainPower@StealthGenerator:
 		PauseOnCondition: lowpower
-		Prerequisite: cloakingfield-active
+        Prerequisite: cloakingfield-active
 		OrderName: CloakingField
 		DischargeModifier: 300
 		ActiveText: ACTIVE
@@ -1794,7 +1796,7 @@ SGEN:
 		ChargeInterval: 4500 #  6-minutes cloaking was insane, reduced to 3min
 		Icon: cloakfield
 		Name: Stealth Field
-		Description: Activate to render everything invisible\nwithin a radius of 12-cells.\n\nCan be toggled active once charged.
+		Description: Activate to render everything invisible\nwithin a radius of 12-cells.\nDoes not cloak moving, or flying units.\n\nCan be toggled active once charged.
         LaunchSound: cloak6.aud
 		InsufficientPowerSpeechNotification: InsufficientPower
 		InsufficientPowerTextNotification: Insufficient power.
@@ -1802,7 +1804,9 @@ SGEN:
 		BeginChargeTextNotification: Cloaking field charging.
 		EndChargeSpeechNotification: IronCurtainReady
 		EndChargeTextNotification: Cloaking field ready.
-		SupportPowerPaletteOrder: 2 
+		SupportPowerPaletteOrder: 2
+        #   Prerequisites: !cloakingfield-stop
+        AllowMultiple: true
  	SupportPowerChargeBar:
     #   the initial pulse animation
     WithSupportPowerActivationAnimation:
@@ -1812,9 +1816,12 @@ SGEN:
         #   Interval: 40    # noice
         Interval: 23 # this should loop purrfectly
         RequiresCondition: cloakingfield-active
+    ProvidesPrerequisite@StealthGeneratorOffline:
+        Prerequisite: cloakingfield-stop
+        RequiresCondition: lowpower
 	GrantConditionOnPrerequisite@StealthGenerator:
 		Condition: cloakingfield-active
-		Prerequisites: cloakingfield-active
+		Prerequisites: cloakingfield-active, !cloakingfield-stop
 	ProximityExternalCondition@StealthGenerator:
 		Condition: cloakfield-on
         ValidRelationships: Ally
@@ -1835,6 +1842,9 @@ SGEN:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+    -ExternalCondition@CloakingField:
+    -Cloak@CloakingField:
+    -GrantConditionOnDamageState@UNCLOAK:
 
 NCOM:
 	Inherits: ^BaseBuilding

@@ -188,3 +188,11 @@
 		Name: staticdesert
 		Filename: desert.pal
 		ShadowIndex: 4
+	PaletteFromFile@player-tropic-static:
+		Name: player-tropic-static
+		Filename: tropic.pal
+		ShadowIndex: 4
+	PlayerColorPalette@tropic:
+		BaseName: player-tropic
+		BasePalette: player-tropic-static
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190

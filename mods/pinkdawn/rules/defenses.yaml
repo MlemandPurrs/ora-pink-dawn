@@ -1181,7 +1181,7 @@ LTUR:
 		HasMinibib: true
 	Turreted:
 		TurnSpeed: 18
-		InitialFacing: 192
+		InitialFacing: 128
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete
 	WithSpriteTurret:

@@ -184,6 +184,9 @@
         TargetTypes: EMPApplicable
 	RejectsOrders:
 		RequiresCondition: emp-crate-collected
+    RevealsShroudMultiplier@EMPulse:
+        Modifier: 0
+        RequiresCondition: emp-crate-collected
 
 ^AcceptsDeathCrate:
 	ExternalCondition@InstaDeath:
@@ -470,8 +473,17 @@
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on && !airborne
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	ProximityExternalCondition@DOCKEDREPAIR:
+		Condition: repair.docked
+        RequiresCondition: damaged
+		Range: 1c0
 
 ^RepairsAircraftWithRepairBay:
+	ExternalCondition@Docked2:
+		Condition: repair.docked
 	ExternalCondition@AIRCRAFTREPAIR:
 		Condition: aircraft-repair
 	RepairsUnits:
@@ -490,7 +502,7 @@
 		Position: Bottom
 		BlinkInterval: 15
 		BlinkPattern: on, off
-		RequiresCondition: aircraft-repair && unit.docked
+		RequiresCondition: aircraft-repair && repair.docked
 		RequiresSelection: False
 		ValidRelationships: Ally, Neutral
 
@@ -614,6 +626,13 @@
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on && !airborne
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	ProximityExternalCondition@DOCKEDREPAIR:
+		Condition: repair.docked
+        RequiresCondition: damaged
+		Range: 1c0
 
 ^InfantryTiberiumDamage:
 	DamagedByTerrain@TIBERIUM:
@@ -943,7 +962,7 @@
 	Sellable:
 		RefundPercent: 50
 		SellSounds: cashturn.aud
-		Cursor: sell
+		Cursor: sell-unit
 		ShowTicks: false
 		RequiresCondition: ship.sellable
 	ExternalCondition@Sellable:

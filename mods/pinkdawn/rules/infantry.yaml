@@ -931,6 +931,7 @@ SPY:
             tany: commandodisguise
             volk: commandodisguise
             mega: commandodisguise
+            snip: sniperdisguise
     -Tooltip:
 	DisguiseTooltip:
 		Name: Spy
@@ -941,6 +942,18 @@ SPY:
         MoveSequence: run
 		IdleSequences: idle1,idle2
 		StandSequences: stand,stand2
+        RequiresCondition: !(at-tropic && sniperdisguise)
+	WithDisguisingInfantryBody@sniperfixtropical:
+		DefaultAttackSequence: shoot
+        MoveSequence: run
+		IdleSequences: idle1,idle2
+		StandSequences: stand,stand2
+        Palette: player-tropic
+        IsPlayerPalette: true
+        RequiresCondition: at-tropic && sniperdisguise
+	GrantConditionOnTileSet@tropical:
+		Condition: at-tropic
+		TileSets: TROPIC
 	IgnoresDisguise:
 	Voiced:
 		VoiceSet: SpyVoice
@@ -1530,6 +1543,42 @@ SNIP:
 		IdleSequences: idle1,idle2
         StandSequences: stand,stand2
 		DefaultAttackSequence: shoot
+        RequiresCondition: !at-tropic
+	WithInfantryBody@tropical:
+		IdleSequences: idle1,idle2
+        StandSequences: stand,stand2
+		DefaultAttackSequence: shoot
+		RequiresCondition: at-tropic
+        Palette: player-tropic
+        IsPlayerPalette: true
+	GrantConditionOnTileSet@tropical:
+		Condition: at-tropic
+		TileSets: TROPIC
+ 	WithDeathAnimation:
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 1
+			RippedApartDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+			TiberiumDeath: 6
+			ElectricityDeath: 7
+		CrushedSequence: die-crushed
+        RequiresCondition: !at-tropic
+	WithDeathAnimation@tropical:
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 1
+			RippedApartDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+			TiberiumDeath: 6
+			ElectricityDeath: 7
+		CrushedSequence: die-crushed
+        DeathSequencePalette: player-tropic
+        RequiresCondition: at-tropic
     -RevealsShroudMultiplier@GAPGenerator:
     -ExternalCondition@GAPGenerator:
 	RevealsShroud:

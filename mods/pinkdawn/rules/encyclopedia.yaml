@@ -1211,7 +1211,7 @@ sgen.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This highly sophisticated device of intricate design is nothing short of a technological marvel. It takes rather long for the device to powerup, once it has been fully charged however can be turned on at leisure to enjoy the benefits of wide area-scale cloaking field, although at the expense of vastly increased power consumption while activated.\nAny friendly structures, vehicle, even ships and infantry will turn invisible aslong they remaint within the effective range around the structure. 
+		Description: This highly sophisticated device of intricate design is nothing short of a technological marvel. It takes rather long for the device to powerup, once it has been fully charged however can be turned on at leisure to enjoy the benefits of wide area-scale cloaking field.\nAny friendly structures, vehicle, even ships and infantry will turn invisible aslong they remain stationary within the effective radius around the structure.\nThe technology has one flaw however, as the device itself is not capable of cloaking, due to excessive emissions output while the device is activated.
         Category: Nod Buildings
 		Order: 17
 	RenderSprites:
@@ -1284,7 +1284,7 @@ msg.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The miniaturised version of the Stealth generator operates on the same principle as it's larger cousin. When deployed, it will able to allow units and structures in the vicinity of employing the stealth field to cloak themselves. 
+        Description: The miniaturised version of the Stealth generator operates on the same principle as it's larger cousin. When deployed, it will able to allow units and structures in the vicinity of employing the stealth field to cloak themselves. The units will get revealed however, if they move, attack or get attacked themselves. Also the Mobile Stealth Generator is not capable of cloaking itself, even while in the overlapping radius to another of its kind. 
         Category: Nod Vehicles
 		Order: 18
 	RenderSprites:

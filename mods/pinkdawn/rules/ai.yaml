@@ -376,6 +376,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
         MinimumAttackForceDelay: 200
+        IgnoredEnemyTargetTypes: Helicopter, Airplane
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy
@@ -494,6 +495,7 @@ Player:
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2, dd3
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, fac2, nuke, nuk2, powr, apwr, proc, oref, silo, osil, pyle, hand, tent, barr, afld, weap, warf, hpad, 3fld, hq, dome, fix, fix2, eye, bio, fcom, tmpl, miss, atek, stek, iron, mslo, gun, ftwr, sam, sam2, obli, tsla, gtwr, atwr, pbox, hbox, mcv, mcv2, harv, ohrv, ahrv, ufld, ncom, ltur
+        IgnoredEnemyTargetTypes: Helicopter, Airplane
 	SquadManagerBotModule@Naval:
         RequiresCondition: enable-ai-player
 		RushInterval: 400
@@ -505,6 +507,7 @@ Player:
         NavalUnitsTypes: pt, dd, ca, ss, msub, nts, boat, pt2, dd2, ss2, dd3
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
+        IgnoredEnemyTargetTypes: Helicopter, Airplane
     CaptureManagerBotModule:
         CapturingActorTypes: e6
         CapturableActorTypes: syrd, v19, oil, hosp, comm

@@ -235,7 +235,7 @@ SYRD:
         ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
-		Range: 3c768
+		Range: 4c0
         RequiresCondition: !emp-affected-structure
 	DetectCloaked:
 		DetectionTypes: Underwater
@@ -837,6 +837,9 @@ CSTL:
 	TooltipDescription@other:
 		Description: Capture to obtain formidable anti-ship defense.
 		ValidRelationships: Neutral, Enemy
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 2
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100

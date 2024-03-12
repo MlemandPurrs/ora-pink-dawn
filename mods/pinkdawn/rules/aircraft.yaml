@@ -898,6 +898,8 @@ GenericJet:
 	Selectable:
 		Bounds: 1536, 1194, 0, 85
 		DecorationBounds: 1706, 1237, 0, 42
+	Repairable:
+		RepairActors: fix, fix2, 2fld, 3fld
 	Rearmable:
 		RearmActors: aprt, 2fld, 3fld
 	WithAmmoPipsDecoration:

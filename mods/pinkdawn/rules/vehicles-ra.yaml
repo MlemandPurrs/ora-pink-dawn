@@ -80,7 +80,7 @@ MCV2:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+        UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -196,7 +196,7 @@ OHRV:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -303,7 +303,7 @@ STRK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -394,7 +394,7 @@ DTRK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -497,7 +497,7 @@ R4WD:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 	DetectCloaked:
@@ -588,7 +588,7 @@ FTRK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -681,7 +681,7 @@ APC2:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
     RevealsShroudMultiplier@heroic:
@@ -754,7 +754,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -822,7 +822,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -885,7 +885,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -948,7 +948,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -1025,7 +1025,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
     -ChangesHealth@RANK-HEROIC:
@@ -1128,7 +1128,7 @@ MNLY:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1202,7 +1202,7 @@ CTNK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -1273,7 +1273,7 @@ TTNK:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 	Power:
@@ -1387,7 +1387,7 @@ V2RL:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
@@ -1484,7 +1484,7 @@ MGG:
 		UncloakSound: cloak5.aud
 		Palette: cloaktransparent
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || oncarryall
 		RequiresCondition: cloakfield-on
 	GrantConditionOnDamageState@UNCLOAK:
