@@ -300,6 +300,7 @@ E6:
         RepairSound: build5.aud
 	RepairsBridges:
         RepairNotification: BridgeRepaired
+        RepairTextNotification: Bridge repaired.
 	CaptureManager:
 	Captures@NEUTRALCAPTURES:
 		CaptureTypes: building-neutral
@@ -784,7 +785,7 @@ TANY:
 	Health:
 		HP: 10000
 	Mobile:
-		Speed: 50
+		Speed: 60
 		Voice: Move
 	Guard:
 		Voice: Move
@@ -1225,7 +1226,7 @@ MEGA:
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper mercenary.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
 	Mobile:
-		Speed: 50
+		Speed: 60
 		Voice: Move
 	Guard:
 		Voice: Move

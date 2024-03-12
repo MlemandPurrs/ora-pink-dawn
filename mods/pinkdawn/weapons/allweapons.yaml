@@ -110,7 +110,6 @@ Sniper:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piff
-		#   ImpactActors: false
 		Inaccuracy: 171
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -154,7 +153,6 @@ HeliGunAG:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
         Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -202,7 +200,6 @@ TowerGun:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
 		Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -223,7 +220,6 @@ Pistol:
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 1000
-        InvalidTargets: Tree, Wall
 		Versus:
             None: 100
             Light: 50
@@ -233,6 +229,7 @@ Pistol:
             Wood: 50
             Aluminium: 56
             Steel: 25
+        InvalidTargets: Tree, Wall
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
@@ -242,7 +239,6 @@ Pistol:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piff
-        #   ImpactActors: false
 		Inaccuracy: 128
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -329,7 +325,7 @@ Bazooka:
 	Range: 3c512
 	MinRange: 0c512
 	Report: bazook1.aud
-    ValidTargets: Ground, Water, Tree, Wall, Vehicle, Helicopter
+    ValidTargets: Ground, Water, Helicopter
 	Projectile: Missile
 		Arm: 0
 		Blockable: true
@@ -343,7 +339,7 @@ Bazooka:
 	Warhead@1Dam: SpreadDamage
 		Spread: 320
 		Damage: 3000
-		ValidTargets: Ground, Tree, Wall, Vehicle, Helicopter
+		ValidTargets: Ground, Helicopter
 		Versus:
             None: 25
             Light: 75
@@ -370,8 +366,8 @@ Bazooka:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   7. Recon Bike's Rockets
 BikeRockets:
@@ -381,7 +377,7 @@ BikeRockets:
 	Burst: 2
 	BurstDelays: 7
     Report: bazook1.aud
-    ValidTargets: Ground, Water, Tree, Helicopter
+    ValidTargets: Ground, Water, Helicopter
 	Projectile: Missile
 		Arm: 0
 		Blockable: true
@@ -422,8 +418,8 @@ BikeRockets:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 BikeRockets2:
     Inherits: BikeRockets
@@ -558,6 +554,7 @@ Grenade:
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
 		Damage: 5000
+		ValidTargets: Ground, Water, Tree
 		Versus:
             None: 87
             Light: 75
@@ -570,19 +567,19 @@ Grenade:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ImpactActors: false
-		InvalidTargets: Water
+		InvalidTargets: Water, Underwater
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -615,13 +612,13 @@ LightCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ValidTargets: Ground, Tree
         ImpactActors: false
-		InvalidTargets: Water
+		InvalidTargets: Water, Underwater
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
@@ -659,13 +656,13 @@ MediumCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ValidTargets: Ground, Tree
         ImpactActors: false
-		InvalidTargets: Water
+		InvalidTargets: Water, Underwater
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -705,13 +702,13 @@ MammothCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ValidTargets: Ground, Tree
         ImpactActors: false
-		InvalidTargets: Water
+		InvalidTargets: Water, Underwater
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -751,13 +748,13 @@ TurretGun:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ValidTargets: Ground, Tree
         ImpactActors: false
-		InvalidTargets: Water
+		InvalidTargets: Water, Underwater
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
@@ -804,7 +801,7 @@ MammothTusk:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 		ImpactSounds: xplobig4.aud
@@ -818,8 +815,8 @@ MammothTusk:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   17. MLRS rockets
 MLRSMissiles:
@@ -855,7 +852,7 @@ MLRSMissiles:
         DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplobig4.aud
@@ -864,8 +861,8 @@ MLRSMissiles:
 	Warhead@5EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 MLRSMissiles2:
     Inherits: MLRSMissiles
@@ -874,7 +871,7 @@ MLRSMissiles2:
 #   18. Stealth Tank rockets
 StnkRocketsAG:
 	ReloadDelay: 70
-	Range: 4c128
+	Range: 5c128
 	MinRange: 0c512
 	Burst: 2
 	BurstDelays: 10
@@ -907,7 +904,7 @@ StnkRocketsAG:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -921,8 +918,8 @@ StnkRocketsAG:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   ditto, against Air
 StnkRocketsAA:
@@ -961,7 +958,7 @@ ArtilleryShell:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
@@ -1012,7 +1009,6 @@ MachineGun:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
         Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -1072,8 +1068,8 @@ TowerMissileAG:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 TowerMissileAA:
 	ReloadDelay: 50
@@ -1147,6 +1143,12 @@ Napalm:
 		InvalidTargets: Vehicle, Structure, Wall
 	Warhead@3Eff: CreateEffect
 		Explosions: med_napalm
+        ValidTargets: Ground, Water
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 	Warhead@Flames: FireCluster
 		Weapon: BurnFx
 		RandomClusterCount: 3
@@ -1255,10 +1257,12 @@ HonestJohn:
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
 		ImpactSounds: firebl3.aud
+		ValidTargets: Ground, Water
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 	Warhead@Flames: FireCluster
 		Weapon: BurnFx
 		RandomClusterCount: 3
@@ -1291,8 +1295,8 @@ HonestJohnNuke:
 	Warhead@5EffWater: CreateEffect
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
-		ValidTargets: Water
-		InvalidTargets: Ship, Structure, Underwater, Bridge
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 	Warhead@6Eff_areanuke: CreateEffect
 		ImpactSounds: xplobig4.aud
 		Delay: 3
@@ -1338,7 +1342,7 @@ APCGunAG:
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ValidTargets: Ship, WaterStructure
@@ -1396,7 +1400,7 @@ OrcaRocketsAG:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -1405,8 +1409,8 @@ OrcaRocketsAG:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 OrcaRocketsAA:
 	Inherits: OrcaRocketsAG
@@ -1502,7 +1506,7 @@ BoatMissile:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 		ImpactSounds: xplobig4.aud
@@ -1516,8 +1520,8 @@ BoatMissile:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   30. Heavy Tank's cannon
 HeavyCannon:
@@ -1547,7 +1551,7 @@ HeavyCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -1558,7 +1562,7 @@ HeavyCannon:
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -1603,7 +1607,7 @@ QuadGunAG:
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ValidTargets: Ship, WaterStructure
@@ -1630,6 +1634,7 @@ QuadGunAA:
 
 #   32. V2 Rocket
 V2Missile:
+    ValidTargets: Ground, Water, Tree
 	ReloadDelay: 399
 	Range: 10c256
 	MinRange: 3c128
@@ -1661,7 +1666,7 @@ V2Missile:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, Incendiary
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
 		ImpactSounds: xplos.aud, firebl3.aud
@@ -1669,8 +1674,8 @@ V2Missile:
 	Warhead@5EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 V2MissileChem:
     Inherits: V2Missile
@@ -1711,7 +1716,6 @@ APTusk:
 	MinRange: 1c512
 	Burst: 2
 	BurstDelays: 15
-	ValidTargets: Ground, Water, Helicopter
 	Report: rocket1.aud
 	Projectile: Missile
 		Arm: 0
@@ -1726,7 +1730,6 @@ APTusk:
 	Warhead@1Dam: SpreadDamage
 		Spread: 298
 		Damage: 7500
-		ValidTargets: Ground, Helicopter
 		Versus:
             None: 25
             Light: 75
@@ -1739,22 +1742,17 @@ APTusk:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: xplobig4.aud
 		ImpactActors: false
 		ValidTargets: Ground, Water
-	Warhead@4EffAir: CreateEffect
-		Explosions: small_building
-		ImpactSounds: xplos.aud
-		ImpactActors: true
-		ValidTargets: Air, Helicopter
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   34. Tesla Tank's zap
 TeslaTankZap:
@@ -2122,8 +2120,7 @@ ATMine:
 		ImpactActors: false
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
-		ValidTargets: Ground
-		InvalidTargets: Structure, Wall, Bridge
+        InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 
 #   44. Tanya's akimbo pistols
 TanyaPistol:
@@ -2194,7 +2191,7 @@ VolkovGun:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -2238,7 +2235,7 @@ ParaBomb:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplos.aud
@@ -2247,8 +2244,8 @@ ParaBomb:
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   47. Jet Plane rockets
 Maverick:
@@ -2285,7 +2282,8 @@ Maverick:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
     Warhead@2Smu: LeaveSmudge
         SmudgeType: Crater
-        ValidTargets: Ground, Infantry
+        ValidTargets: Ground
+        InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplos.aud
@@ -2294,7 +2292,7 @@ Maverick:
 		Explosions: med_splash
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   48. Parachuted nuclear bomb
 ParaNuke:
@@ -2388,10 +2386,11 @@ ChainGun.Yak.Right:
 	Warhead@2Eff: CreateEffect
 		Explosions: piffs
 		ValidTargets: Ground, Ship, Air, Tree
+        InvalidTargets: Water
 	Warhead@3EffWater: CreateEffect
 		Explosions: water_piffs
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 ChainGun.Yak.Left:
 	Inherits: ChainGun.Yak.Right
@@ -2436,7 +2435,7 @@ BehemothCannon:
 		Explosions: med_splash
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -2620,7 +2619,6 @@ MachineGunInfantry:
         InvalidTargets: Water
 	Warhead@3Eff: CreateEffect
 		Explosions: water_piffs
-        #   ImpactActors: false
         Inaccuracy: 213
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
@@ -2681,8 +2679,8 @@ StingerAG:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 StingerAA:
 	Inherits: StingerAG
@@ -2733,8 +2731,8 @@ HeliRocketsAG:
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash2.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 HeliRocketsAA:
 	Inherits: HeliRocketsAG
@@ -2790,7 +2788,7 @@ BoatGun:
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -2839,7 +2837,7 @@ CruiserShell:
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
@@ -2935,8 +2933,8 @@ SubMissile:
 	Warhead@5EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 #   64. Nuclear Torpedo
 NukeTorpedo:
@@ -2951,7 +2949,7 @@ NukeTorpedo:
 		Speed: 150
 		TrailImage: bubbles
 		HorizontalRateOfTurn: 4
-		RangeLimit: 11c256
+		RangeLimit: 13c256
 		BoundToTerrainType: Water
 		Palette: cloak
 		MaximumLaunchAngle: 0
@@ -3035,8 +3033,8 @@ NukeMissile:
 	Warhead@4EffWater: CreateEffect
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
-		ValidTargets: Water
-		InvalidTargets: Ship, Structure, Underwater, Bridge
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
 	Warhead@6Eff_areanuke: CreateEffect
 		ImpactSounds: xplobig4.aud
 		Delay: 3
@@ -3128,7 +3126,7 @@ MortarShell:
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
@@ -3374,8 +3372,8 @@ GrenadeLauncher:
 	Warhead@4Eff: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
     Warhead@5Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -3499,8 +3497,8 @@ CoastalGun:
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, WaterStructure, Bridge
-        
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
 #   78. GDI Frigate's Railgun
 Railgun:
 	ReloadDelay: 90
