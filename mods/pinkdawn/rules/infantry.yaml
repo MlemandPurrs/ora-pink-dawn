@@ -42,6 +42,7 @@ E1:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E2:
 	Inherits: ^Soldier
@@ -94,6 +95,7 @@ E2:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E3:
 	Inherits: ^Soldier
@@ -135,6 +137,7 @@ E3:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E4:
 	Inherits: ^Soldier
@@ -193,6 +196,7 @@ E4:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E5:
 	Inherits: ^Soldier
@@ -257,6 +261,7 @@ E5:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E6:
 	Inherits: ^Soldier
@@ -469,6 +474,7 @@ E8:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 RMBO:
 	Inherits: ^Soldier
@@ -525,6 +531,7 @@ RMBO:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 TECN:
 	Inherits@1: ^ArmedCivilian
@@ -554,6 +561,7 @@ TECN:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 VICE:
 	Inherits@1: ^ExistsInWorld
@@ -627,6 +635,7 @@ VICE:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 MEDI:
 	Inherits: ^Soldier
@@ -710,9 +719,6 @@ MEDI:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
 
 MECH:
 	Inherits: ^Soldier
@@ -791,9 +797,6 @@ MECH:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
 
 TANY:
 	Inherits: ^Soldier
@@ -858,6 +861,7 @@ TANY:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 VOLK:
 	Inherits: ^Soldier
@@ -932,6 +936,7 @@ VOLK:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SPY:
 	Inherits: ^Soldier
@@ -1180,6 +1185,7 @@ SHOK:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 THF:
 	Inherits: ^Soldier
@@ -1309,6 +1315,7 @@ MEGA:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 E9:
 	Inherits: ^Soldier
@@ -1356,6 +1363,7 @@ E9:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 INF:
 	Inherits: ^Soldier
@@ -1422,6 +1430,10 @@ INF:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+    AppearsOnRadar:
+        ValidRelationships: Ally
+    -GpsDot:
 
 JET:
 	Inherits: ^Soldier
@@ -1563,6 +1575,7 @@ JET:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SNIP:
 	Inherits: ^Soldier
@@ -1650,3 +1663,4 @@ SNIP:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false

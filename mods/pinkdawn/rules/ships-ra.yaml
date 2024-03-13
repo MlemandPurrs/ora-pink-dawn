@@ -158,6 +158,7 @@ PT:
 	RevealOnFire:
 		ArmamentNames: primary, secondary, tertiary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 CA:
 	Inherits: ^Ship
@@ -231,6 +232,7 @@ CA:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 DD:
 	Inherits: ^Ship
@@ -316,6 +318,7 @@ DD:
 	RevealOnFire:
 		ArmamentNames: primary, secondary, tertiary, quartenary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SS:
 	Inherits: ^Submarine
@@ -377,6 +380,7 @@ SS:
 	RevealOnFire:
 		ArmamentNames: secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 MSUB:
 	Inherits: ^Submarine
@@ -431,6 +435,7 @@ MSUB:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 NTS:
 	Inherits: ^Submarine
@@ -519,3 +524,4 @@ NTS:
 	RevealOnFire:
 		ArmamentNames: secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false

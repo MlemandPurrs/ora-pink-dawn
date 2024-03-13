@@ -300,6 +300,7 @@ ORCA:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 HELI:
 	Inherits: ^Helicopter
@@ -393,6 +394,7 @@ HELI:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 HEL2:
 	Inherits: ^Helicopter
@@ -517,6 +519,7 @@ HEL2:
 	RevealOnFire:
 		ArmamentNames: primary, secondary, tertiary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 HIND:
 	Inherits: ^Helicopter
@@ -640,6 +643,7 @@ HIND:
 	RevealOnFire:
 		ArmamentNames: primary, secondary, tertiary, quartenary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 BADR:
 	Inherits: ^Plane
@@ -1300,6 +1304,10 @@ RH66:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+    AppearsOnRadar:
+        ValidRelationships: Ally
+    -GpsDot:
 
 SFIG:
 	Inherits: ^Plane
@@ -1360,6 +1368,9 @@ SFIG:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+    AppearsOnRadar:
+        ValidRelationships: Ally
+    -GpsDot:
 	-MapEditorData:
 
 GenericCarryall:

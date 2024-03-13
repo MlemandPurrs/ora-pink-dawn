@@ -51,6 +51,7 @@ GTWR:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 GUN:
 	Inherits: ^Defense
@@ -114,6 +115,7 @@ GUN:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 ATWR:
 	Inherits: ^Defense
@@ -191,6 +193,7 @@ ATWR:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 OBLI:
 	Inherits: ^Defense
@@ -252,6 +255,7 @@ OBLI:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SAM:
 	Inherits: ^Defense
@@ -665,6 +669,7 @@ PBOX:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 HBOX:
 	Inherits: ^Defense
@@ -852,6 +857,7 @@ AGUN:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 FTWR:
 	Inherits: ^Defense
@@ -906,6 +912,7 @@ FTWR:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 TSLA:
 	Inherits: ^Defense
@@ -981,6 +988,7 @@ TSLA:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SAM2:
 	Inherits: ^Defense
@@ -1067,6 +1075,7 @@ SAM2:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 GAP:
 	Inherits: ^BaseBuilding
@@ -1237,3 +1246,4 @@ LTUR:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false

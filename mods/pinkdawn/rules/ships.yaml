@@ -198,6 +198,7 @@ PT2:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 DD2:
 	Inherits: ^Ship
@@ -268,6 +269,7 @@ DD2:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 SS2:
 	Inherits: ^Submarine
@@ -362,3 +364,4 @@ DD3:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false

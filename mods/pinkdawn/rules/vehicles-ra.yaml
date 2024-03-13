@@ -237,6 +237,7 @@ AHRV:
 	RevealOnFire:
 		ArmamentNames: secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 STRK:
 	Inherits: ^Vehicle
@@ -512,6 +513,7 @@ R4WD:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 FTRK:
 	Inherits: ^Vehicle
@@ -601,6 +603,7 @@ FTRK:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 APC2:
 	Inherits: ^TrackedVehicle
@@ -700,6 +703,7 @@ APC2:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 MNLY:
 	Inherits: ^TrackedVehicle
@@ -841,6 +845,7 @@ MNLY:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 2TNK:
 	Inherits: ^TrackedVehicle
@@ -907,6 +912,7 @@ MNLY:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 3TNK:
 	Inherits: ^TrackedVehicle
@@ -973,6 +979,7 @@ MNLY:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 4TNK:
 	Inherits: ^TrackedVehicle
@@ -1060,6 +1067,7 @@ MNLY:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -1174,6 +1182,7 @@ MNLY:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -1236,6 +1245,7 @@ CTNK:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 TTNK:
 	Inherits: ^TrackedVehicle
@@ -1314,6 +1324,7 @@ TTNK:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 V2RL:
 	Inherits: ^Vehicle
@@ -1422,6 +1433,7 @@ V2RL:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
 
 MGG:
 	Inherits: ^Vehicle
@@ -1637,6 +1649,10 @@ APC3:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+    AppearsOnRadar:
+        ValidRelationships: Ally
+    -GpsDot:
 
 3T1B:
     Inherits: 3TNK
