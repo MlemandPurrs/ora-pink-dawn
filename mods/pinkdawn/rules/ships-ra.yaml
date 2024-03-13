@@ -155,6 +155,9 @@ PT:
 	RenderRangeCircle:
 	Selectable:
         DecorationBounds: 1536, 1536
+	RevealOnFire:
+		ArmamentNames: primary, secondary, tertiary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 CA:
 	Inherits: ^Ship
@@ -225,6 +228,9 @@ CA:
     RangeMultiplier@Heroic:
         Modifier: 200
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 DD:
 	Inherits: ^Ship
@@ -307,6 +313,9 @@ DD:
 		RangeCircleType: aa
 	Selectable:
 		DecorationBounds: 1621, 1621
+	RevealOnFire:
+		ArmamentNames: primary, secondary, tertiary, quartenary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SS:
 	Inherits: ^Submarine
@@ -365,6 +374,9 @@ SS:
 	WithSpriteTurret:
 		Turret: secondary
 		RequiresCondition: !underwater
+	RevealOnFire:
+		ArmamentNames: secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MSUB:
 	Inherits: ^Submarine
@@ -416,6 +428,9 @@ MSUB:
     RangeMultiplier@Heroic:
         Modifier: 200
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 NTS:
 	Inherits: ^Submarine
@@ -501,3 +516,6 @@ NTS:
 		Count: 1
         PauseOnCondition: emp-crate-collected
 	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: secondary
+        RevealForRelationships: Ally, Neutral, Enemy

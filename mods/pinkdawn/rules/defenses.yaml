@@ -48,6 +48,9 @@ GTWR:
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 GUN:
 	Inherits: ^Defense
@@ -108,6 +111,9 @@ GUN:
 		ValidPowerStates: Low, Critical
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 ATWR:
 	Inherits: ^Defense
@@ -182,6 +188,9 @@ ATWR:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 OBLI:
 	Inherits: ^Defense
@@ -240,6 +249,9 @@ OBLI:
 		Sequence: active-lights
 		PauseOnCondition: lowpower
 		RequiresCondition: !build-incomplete
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SAM:
 	Inherits: ^Defense
@@ -650,6 +662,9 @@ PBOX:
     Sellable:
         RefundPercent: 100
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 HBOX:
 	Inherits: ^Defense
@@ -834,6 +849,9 @@ AGUN:
         HasMinibib: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 FTWR:
 	Inherits: ^Defense
@@ -885,6 +903,9 @@ FTWR:
         RequiresCondition: !build-incomplete && !emp-affected-structure
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 TSLA:
 	Inherits: ^Defense
@@ -957,6 +978,9 @@ TSLA:
 	GrantConditionOnPowerState@HASPOWER:
 		Condition: haspower
 		ValidPowerStates: Normal
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SAM2:
 	Inherits: ^Defense
@@ -1040,6 +1064,9 @@ SAM2:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 GAP:
 	Inherits: ^BaseBuilding
@@ -1207,3 +1234,6 @@ LTUR:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy

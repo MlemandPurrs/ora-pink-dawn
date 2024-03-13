@@ -1012,7 +1012,7 @@ MachineGunLight:
 
 #   21. Advanced Guard Tower's Missile
 TowerMissileAG:
-	ReloadDelay: 50
+	ReloadDelay: 55
 	Burst: 2
 	BurstDelays: 8
 	Range: 7c0
@@ -1058,7 +1058,7 @@ TowerMissileAG:
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
 TowerMissileAA:
-	ReloadDelay: 50
+	ReloadDelay: 55
 	Burst: 2
 	BurstDelays: 8
 	Range: 7c0

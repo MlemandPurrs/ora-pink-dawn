@@ -39,6 +39,9 @@ E1:
 	RevealsShroud@GAPGenerator:
 		Range: 2c0
         RevealGeneratedShroud: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E2:
 	Inherits: ^Soldier
@@ -88,6 +91,9 @@ E2:
 	RevealsShroud@GAPGenerator:
 		Range: 2c0
         RevealGeneratedShroud: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E3:
 	Inherits: ^Soldier
@@ -126,6 +132,9 @@ E3:
 		ProneOffset: 180,0,-200
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E4:
 	Inherits: ^Soldier
@@ -181,6 +190,9 @@ E4:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E5:
 	Inherits: ^Soldier
@@ -242,6 +254,9 @@ E5:
 		RevokeAll: True
 	Passenger:
 		CustomPipType: yellow
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E6:
 	Inherits: ^Soldier
@@ -451,6 +466,9 @@ E8:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 RMBO:
 	Inherits: ^Soldier
@@ -504,6 +522,9 @@ RMBO:
 		Palette: effect
 		Position: TopLeft
 		ValidRelationships: Ally, Enemy, Neutral
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 TECN:
 	Inherits@1: ^ArmedCivilian
@@ -530,6 +551,9 @@ TECN:
         Cursor: sell-unit
 		Payload: 10
         PlayerExperience: 0
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 VICE:
 	Inherits@1: ^ExistsInWorld
@@ -600,6 +624,9 @@ VICE:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MEDI:
 	Inherits: ^Soldier
@@ -683,6 +710,9 @@ MEDI:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MECH:
 	Inherits: ^Soldier
@@ -761,6 +791,9 @@ MECH:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 TANY:
 	Inherits: ^Soldier
@@ -822,6 +855,9 @@ TANY:
 		Palette: effect
 		Position: TopLeft
 		ValidRelationships: Ally, Enemy, Neutral
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 VOLK:
 	Inherits: ^Soldier
@@ -893,6 +929,9 @@ VOLK:
 		RequiresCondition: !parachute
 		TargetTypes: Cyborg
     -EdibleByLeap:
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SPY:
 	Inherits: ^Soldier
@@ -1138,6 +1177,9 @@ SHOK:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 THF:
 	Inherits: ^Soldier
@@ -1264,6 +1306,9 @@ MEGA:
 	Passenger:
 		CustomPipType: red
 		Voice: Move
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 E9:
 	Inherits: ^Soldier
@@ -1308,6 +1353,9 @@ E9:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 100
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 INF:
 	Inherits: ^Soldier
@@ -1371,6 +1419,9 @@ INF:
 		Notification: BuildingInfiltrated
 		TextNotification: Building infiltrated.
         PlayerExperience: 0
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 JET:
 	Inherits: ^Soldier
@@ -1509,6 +1560,9 @@ JET:
         RequiresCondition: cloakfield-on && !airborne
 	Targetable@SpyDisguise:
         RequiresCondition: !airborne
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SNIP:
 	Inherits: ^Soldier
@@ -1593,3 +1647,6 @@ SNIP:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
 	RenderDetectionCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy

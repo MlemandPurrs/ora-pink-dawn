@@ -350,6 +350,9 @@ JEEP:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 BGGY:
 	Inherits: ^Vehicle
@@ -417,6 +420,9 @@ BGGY:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
 		RequiresCondition: cloak-crate-collected && rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 BIKE:
 	Inherits: ^Vehicle
@@ -485,6 +491,9 @@ BIKE:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 APC:
 	Inherits: ^TrackedVehicle
@@ -579,6 +588,9 @@ APC:
     RevealsShroudMultiplier@heroic:
         Modifier: 150
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MAAG:
 	Inherits: ^TrackedVehicle
@@ -674,6 +686,9 @@ MAAG:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 LTNK:
 	Inherits: ^TrackedVehicle
@@ -744,6 +759,9 @@ LTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MTNK:
 	Inherits: ^TrackedVehicle
@@ -816,6 +834,9 @@ MTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 FTNK:
 	Inherits: ^TrackedVehicle
@@ -887,6 +908,9 @@ FTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 HTNK:
 	Inherits: ^TrackedVehicle
@@ -973,6 +997,9 @@ HTNK:
 		StartIfBelow: 101
 		DamageCooldown: 125
 		RequiresCondition: rank-heroic && !emp-crate-collected
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 STNK:
 	Inherits: ^Vehicle
@@ -1045,6 +1072,9 @@ STNK:
 		EmptyWeapon: UnitExplode
     Targetable@Extra:
 		TargetTypes: Tank
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 ARTY:
 	Inherits: ^TrackedVehicle
@@ -1124,6 +1154,9 @@ ARTY:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MSAM:
 	Inherits: ^TrackedVehicle
@@ -1212,6 +1245,9 @@ MSAM:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -1322,6 +1358,9 @@ MLRS:
 		Weapon: MlrsExplodeNuke
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MHQ:
 	Inherits: ^Vehicle
@@ -1416,6 +1455,9 @@ MHQ:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 WTNK:
 	Inherits: ^TrackedVehicle
@@ -1451,6 +1493,7 @@ WTNK:
 	Turreted:
 		TurnSpeed: 12
 	Armament:
+        Name: primary
 		Weapon: MicroWave
 		FireDelay: 7
 		LocalOffset: 500,0,140
@@ -1513,6 +1556,9 @@ WTNK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 CHTK:
 	Inherits: ^TrackedVehicle
@@ -1578,6 +1624,9 @@ CHTK:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MSG:
 	Inherits: ^Vehicle
@@ -1706,6 +1755,7 @@ T55H:
 	Turreted:
 		TurnSpeed: 12
 	Armament@Primary:
+        Name: primary
 		Weapon: MammothCannon
 		LocalOffset: 821,85,171, 821,-85,171
 		Recoil: 170
@@ -1795,3 +1845,6 @@ T55H:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy

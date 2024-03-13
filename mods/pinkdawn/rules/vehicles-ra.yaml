@@ -234,6 +234,9 @@ AHRV:
 	WithMuzzleOverlay:
     RenderSprites:
         Image: ohrv-full
+	RevealOnFire:
+		ArmamentNames: secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 STRK:
 	Inherits: ^Vehicle
@@ -384,6 +387,7 @@ DTRK:
 	RevealOnDeath:
 		Duration: 50
 		Radius: 2c512
+        RevealForRelationships: Ally, Neutral, Enemy
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -505,6 +509,9 @@ R4WD:
 		Range: 3c768
         RequiresCondition: sniperinside
 	RenderDetectionCircle:
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 FTRK:
 	Inherits: ^Vehicle
@@ -591,6 +598,9 @@ FTRK:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 APC2:
 	Inherits: ^TrackedVehicle
@@ -687,6 +697,9 @@ APC2:
     RevealsShroudMultiplier@heroic:
         Modifier: 150
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MNLY:
 	Inherits: ^TrackedVehicle
@@ -825,6 +838,9 @@ MNLY:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 2TNK:
 	Inherits: ^TrackedVehicle
@@ -888,6 +904,9 @@ MNLY:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 3TNK:
 	Inherits: ^TrackedVehicle
@@ -951,6 +970,9 @@ MNLY:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 4TNK:
 	Inherits: ^TrackedVehicle
@@ -1035,6 +1057,9 @@ MNLY:
 		StartIfBelow: 101
 		DamageCooldown: 125
 		RequiresCondition: rank-heroic && !emp-crate-collected
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -1146,6 +1171,9 @@ MNLY:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 CTNK:
 	Inherits: ^TrackedVehicle
@@ -1205,6 +1233,9 @@ CTNK:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 TTNK:
 	Inherits: ^TrackedVehicle
@@ -1280,6 +1311,9 @@ TTNK:
 	WithColoredOverlay@LOWPOWER:
 		Color: 000000B4
 		RequiresCondition: lowpower
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 V2RL:
 	Inherits: ^Vehicle
@@ -1385,6 +1419,9 @@ V2RL:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 MGG:
 	Inherits: ^Vehicle
@@ -1597,6 +1634,9 @@ APC3:
     RevealsShroudMultiplier@heroic:
         Modifier: 150
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 3T1B:
     Inherits: 3TNK

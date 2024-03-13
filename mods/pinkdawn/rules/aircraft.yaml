@@ -297,6 +297,9 @@ ORCA:
 		Delay: 80
 		Count: 2
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 HELI:
 	Inherits: ^Helicopter
@@ -387,6 +390,9 @@ HELI:
 		Delay: 80
 		Count: 1
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 HEL2:
 	Inherits: ^Helicopter
@@ -508,6 +514,9 @@ HEL2:
 		Delay: 80
 		Count: 3
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary, tertiary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 HIND:
 	Inherits: ^Helicopter
@@ -628,6 +637,9 @@ HIND:
 		Delay: 80
 		Count: 2
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary, tertiary, quartenary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 BADR:
 	Inherits: ^Plane
@@ -1285,6 +1297,9 @@ RH66:
 		Delay: 80
 		Count: 2
         PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SFIG:
 	Inherits: ^Plane

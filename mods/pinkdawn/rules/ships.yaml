@@ -195,6 +195,9 @@ PT2:
 		Condition: owner.is.gdi
 		Factions: gdi
 		ResetOnOwnerChange: True
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 DD2:
 	Inherits: ^Ship
@@ -262,6 +265,9 @@ DD2:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
 
 SS2:
 	Inherits: ^Submarine
@@ -295,6 +301,7 @@ SS2:
 	RevealsShroud:
 		Range: 5c0
 	Armament:
+        Name: primary
 		Weapon: Torpedo
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
@@ -352,3 +359,6 @@ DD3:
 	ReloadArmamentsBar:
 		Armaments: primary
 		Color: FFFF00
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
