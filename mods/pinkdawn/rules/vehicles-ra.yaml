@@ -1206,11 +1206,6 @@ CTNK:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
-#   current issues:
-#   Unit does not move into range when ordered to attack out of range.
-#   Charge up animation begins to occur at moment of attack order issued, 
-#   irrevelant if target was within range or not. Can suppose that is WAI.
-#   Unit needs to pause movement in order to able to attack. (but thats balanced! yay)
 TTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates

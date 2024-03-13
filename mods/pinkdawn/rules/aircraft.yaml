@@ -17,7 +17,6 @@ C17:
 		AlwaysVisibleRelationships: None
 		Type: CenterPosition
 	Cargo:
-		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
@@ -685,7 +684,6 @@ BADR:
 		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
-		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	Explodes:
 		Weapon: UnitExplodeAirBig
@@ -857,6 +855,11 @@ BADR.tran:
 		Condition: within-gap-radius
 	Sellable:
 		RequiresCondition: unit.sellable && !airborne && !loaded
+
+BADG:
+    Inherits: BADR
+	Tooltip:
+		Name: Paradrop Plane
 
 GenericJet:
 	Inherits: ^Jet
@@ -1393,7 +1396,6 @@ GenericCarryall:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
-    # is a support unit....
 	Selectable:
 		Priority: 8
 		PriorityModifiers: Ctrl, Alt

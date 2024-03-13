@@ -164,3 +164,9 @@ f16:
 	idle:
         Facings: 16
 	icon: f16icon
+
+badg:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: badricon

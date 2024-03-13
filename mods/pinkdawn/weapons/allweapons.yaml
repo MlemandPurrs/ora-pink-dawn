@@ -460,13 +460,6 @@ Flamer:
 		Footprint: x
         InvalidTargets: Vehicle, Structure, Wall
 
-    #    Warhead@Incendiary: GrantExternalCondition
-    #    Condition: burning
-    #    Duration: 112
-    #    ValidTargets: Incendiary
-    #    ValidRelationships: Ally, Neutral, Enemy
-    #    Range: 1c128
-
 #   9. FTNK's weapon
 BigFlamer:
 	ReloadDelay: 50
@@ -502,13 +495,6 @@ BigFlamer:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
-
-    #   Warhead@Incendiary: GrantExternalCondition
-    #   Condition: burning
-    #   Duration: 112
-    #   ValidTargets: Incendiary
-    #    ValidRelationships: Ally, Neutral, Enemy
-    #    Range: 1c128
 
 #   10. E5's weapon
 ChemSpray:

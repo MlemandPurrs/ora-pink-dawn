@@ -1067,7 +1067,7 @@ HPAD:
 		Queue: Building.GDI, Building.Nod, Building.Allies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
-		Footprint: xx xx
+		Footprint: =x x=
 		Dimensions: 2,2
 	Health:
 		HP: 40000
@@ -1330,6 +1330,7 @@ MISS:
 	AirstrikePower@AirStrike:
 		OrderName: AirStrike
 		PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.gdi
 		Prerequisites: ~eye, ~global-superweapons
 		Icon: airstrike
 		ChargeInterval: 6750
@@ -1362,6 +1363,10 @@ MISS:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+    GrantConditionOnFaction@GDI:
+        Condition: owner.is.gdi
+        Factions: gdi
+        ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
@@ -1463,22 +1468,6 @@ TMPL:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
     WithColoredOverlay@IDISABLE:
         RequiresCondition: lowpower && !emp-affected-structure
-    #   yeah, great.. but for what purpose
-    #   and why there tho.
-    #   WithIdleOverlay@1:
-	#   Palette: effect
-    #   Sequence: red-light
-	#   Offset: 0,-426,1
-    #   PauseOnCondition: lowpower
-    #   RequiresCondition: !build-incomplete
-    #   WithIdleOverlay@2:
-    #   Palette: effect
-    #   Sequence: red-light
-    #   Offset: -43,0,1
-    #   PauseOnCondition: lowpower
-    #   RequiresCondition: !build-incomplete
-    #   i could tie this into Superweapon becoming ready,
-    #   or during superweapon chargeup, if a trait existed...
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-5
@@ -1777,10 +1766,6 @@ SGEN:
 	Power:
 		Amount: -150
 		RequiresCondition: !build-incomplete
-    #  so, this was causing the bug...
-    #  PowerMultiplier@activated:
-    #  Modifier: 200
-    #  RequiresCondition: cloakingfield-active
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -1806,7 +1791,6 @@ SGEN:
 		EndChargeSpeechNotification: IronCurtainReady
 		EndChargeTextNotification: Cloaking field ready.
 		SupportPowerPaletteOrder: 2
-        #   Prerequisites: !cloakingfield-stop
         AllowMultiple: true
  	SupportPowerChargeBar:
     #   the initial pulse animation
@@ -1814,8 +1798,7 @@ SGEN:
     	RequiresCondition: !build-incomplete
     #   to keep pulsing while active
     WithIdleAnimation@StealthGenerator:
-        #   Interval: 40    # noice
-        Interval: 23 # this should loop purrfectly
+        Interval: 23
         RequiresCondition: cloakingfield-active
     ProvidesPrerequisite@StealthGeneratorOffline:
         Prerequisite: cloakingfield-stop
@@ -1829,7 +1812,7 @@ SGEN:
 		Range: 12c0
         RequiresCondition: cloakingfield-active
 	DetectCloaked@RadialIndicator:
-        DetectionTypes: Nonsense # we do this to get visual indicator
+        DetectionTypes: Nonsense
 		Range: 12c0
         RequiresCondition: cloakingfield-active
 	RenderDetectionCircle@RadialIndicator:
@@ -1925,3 +1908,9 @@ NCOM:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+    WithIdleOverlay@1:
+        Palette: effect
+        Sequence: red-light
+        Offset: 200,400,0
+        PauseOnCondition: lowpower
+        RequiresCondition: !build-incomplete

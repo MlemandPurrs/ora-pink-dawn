@@ -1096,7 +1096,6 @@
 	Inherits: ^Building
     Inherits@LowPowerDamage: ^DamagedOnLowPower
     Inherits@productionboost: ^ProductionBoost
-    #   Inherits@burndamage: ^FlammableStructure
 	Building:
 		RequiresBaseProvider: false
 		BuildSounds: constru2.aud, hvydoor1.aud
@@ -2223,7 +2222,8 @@
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 
-# The Bot does not know how to sell up when he does not have an income. This provides an income, when floating less than 2500$
+# The Bot does not know how to sell up when he does not have an income. 
+# This provides an income, when floating less than 2500$
 ^BotFallbackInsurance:
 	GrantConditionOnPlayerResources@botinsurance:
 		Condition: noinsurance

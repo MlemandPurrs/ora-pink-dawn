@@ -663,15 +663,6 @@ BARR:
 		Prerequisite: infantry.e2
 		Factions: gdi, soviet
         ResetOnOwnerChange: true
-    #   ProvidesPrerequisite@InfantrySoviet:
-    #   Prerequisite: producer.is.soviet
-    #   Factions: soviet
-    #   ResetOnOwnerChange: true
-    #   RequiresCondition: !owner.is.not.soviet
-    #   GrantConditionOnFaction@Others:
-    #   Condition: owner.is.not.soviet
-    #   Factions: gdi, nod, allies, bossnod
-    #   ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -957,6 +948,7 @@ FIX2:
 		Prerequisite: anyafld
 	ParatroopersPower@SovietParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.soviet
 		OrderName: SovietParatroopers
 		Icon: parainfra
 		ChargeInterval: 6750
@@ -989,6 +981,10 @@ FIX2:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+    GrantConditionOnFaction@Soviet2:
+        Condition: owner.is.soviet
+        Factions: soviet
+        ResetOnOwnerChange: true
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	Capturable:

@@ -127,6 +127,11 @@ CRATE:
 		TimeDelay: 7500
 		Sequence: chrono
         Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@paratroopers:
+		Proxy: crate.paratroopers
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: parabombs
 
 WCRATE:
 	Inherits: ^Crate
@@ -523,6 +528,39 @@ crate.chronoshift:
 		Dimensions: 3, 3
 		Footprint: xxx xxx xxx
         SupportPowerPaletteOrder: 2
+		OneShot: true
+        AllowMultiple: true
+
+crate.paratroopers:
+	AlwaysVisible:
+	ParatroopersPower@ParatroopersOneShot:
+		OrderName: CrateParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badg
+		Name: Paratroopers
+		Description: A Paradrop Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1,E3,E1,E3,E1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
 		OneShot: true
         AllowMultiple: true
 

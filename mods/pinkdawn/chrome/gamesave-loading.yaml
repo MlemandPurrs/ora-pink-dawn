@@ -14,6 +14,17 @@ Container@GAMESAVE_LOADING_SCREEN:
 			Y: (WINDOW_BOTTOM - 256) / 2
 			ImageCollection: logos
 			ImageName: gdi-load
+		Image@Allies:
+			X: WINDOW_RIGHT / 2 - 128
+			Y: (WINDOW_BOTTOM - 512) / 2
+			ImageCollection: logospink
+			ImageName: allies-load
+        #   this does not look good...
+        Image@Soviet:
+            X: WINDOW_RIGHT / 2 - 128
+			Y: (WINDOW_BOTTOM + 256) / 2
+			ImageCollection: logospink
+			ImageName: soviet-load
 		Image@EVA:
 			X: WINDOW_RIGHT - 128 - 43
 			Y: 43

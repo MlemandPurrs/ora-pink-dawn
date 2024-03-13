@@ -900,16 +900,6 @@ tmpl:
 		Offset: 0,0
 	icon: tmplicon
 		Offset: 0,0
-	red-light: red-light
-		Length: *
-		Offset: 0,0
-		Tick: 100
-		BlendMode: Additive
-	damaged-red-light: red-light
-		Length: *
-		Offset: 0,0
-		Tick: 100
-		BlendMode: Additive
 
 tmpl.husk:
 	idle: tmpl
@@ -1748,6 +1738,16 @@ ncom:
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
+	red-light: red-light
+		Length: *
+		Offset: 0,0
+		Tick: 100
+		#   BlendMode: Additive
+	damaged-red-light: red-light
+		Length: *
+		Offset: 0,0
+		Tick: 100
+		#   BlendMode: Additive
     icon: ncomicon
 
 ncom.husk:

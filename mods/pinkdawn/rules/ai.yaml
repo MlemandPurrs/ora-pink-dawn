@@ -168,6 +168,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			UseParatroopersfromCrate:
+				OrderName: CrateParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			UseSpyPlane:
 				OrderName: SpyPlane
 				MinimumAttractiveness: 1
@@ -519,7 +534,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 6
         SquadSizeRandomBonus: 6
-        ExcludeFromSquadsTypes: e6, harv, mcv, a10, orca, f18, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, orca, f18, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18
         NavalUnitsTypes: pt2, dd3
@@ -532,7 +547,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e2, e3, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, msam, mhq, a10, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e2, e3, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, msam, mhq, badg, a10, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18
         NavalUnitsTypes: pt2, dd3
@@ -545,7 +560,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e2, e3, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, msam, mhq, orca, f18, a10, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e2, e3, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, msam, mhq, badg, orca, f18, a10, gtwr, atwr, gun, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18
         NavalUnitsTypes: pt2, dd3
@@ -558,7 +573,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 4
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, harv, mcv, heli, f22, pt2, dd2, ss2, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, heli, badg, c17, f22, pt2, dd2, ss2, gtwr, gun, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -571,7 +586,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e3, e4, e5, e6, mega, thf, harv, mcv, bggy, bike, apc, ltnk, ftnk, stnk, arty, pt2, dd2, ss2, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e3, e4, e5, e6, mega, thf, harv, mcv, bggy, bike, apc, ltnk, ftnk, stnk, arty, pt2, dd2, ss2, badg, c17, gtwr, gun, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -584,7 +599,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e3, e4, e5, e6, mega, thf, harv, mcv, bggy, bike, apc, ltnk, ftnk, stnk, arty, heli, f22, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e3, e4, e5, e6, mega, thf, harv, mcv, bggy, bike, apc, ltnk, ftnk, stnk, arty, badg, c17, heli, f22, gtwr, gun, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -597,7 +612,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 4
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, ohrv, mcv2, hel2, f16, pt, dd, ca, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e6, ohrv, mcv2, badg, hel2, f16, pt, dd, ca, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -610,7 +625,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e3, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, arty, mgg, pt, dd, ca, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e3, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -623,7 +638,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e3, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, arty, mgg, hel2, f16, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e3, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, arty, mgg, badg, hel2, f16, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -636,7 +651,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 8
         SquadSizeRandomBonus: 4
-        ExcludeFromSquadsTypes: e6, ahrv, mcv2, smig, badr, badr.bomber, hind, yak, mig, ss, msub, nts, ftwr, tsla, sam2, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e6, ahrv, mcv2, smig, badr, badr.bomber, badg, hind, yak, mig, ss, msub, nts, ftwr, tsla, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, mig
         NavalUnitsTypes: ss, msub, nts
@@ -649,7 +664,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e2, e3, e6, e8, volk, dog, shok, ahrv, mcv2, ftrk, apc2, 3tnk, 4tnk, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, ss, msub, nts, ftwr, tsla, sam2, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e2, e3, e6, e8, volk, dog, shok, ahrv, mcv2, ftrk, apc2, 3tnk, 4tnk, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, badg, ss, msub, nts, ftwr, tsla, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, mig
         NavalUnitsTypes: ss, msub, nts
@@ -662,7 +677,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e2, e3, e6, e8, volk, dog, shok, ahrv, mcv2, ftrk, apc2, 3tnk, 4tnk, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, hind, yak, mig, ftwr, tsla, sam2, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e2, e3, e6, e8, volk, dog, shok, ahrv, mcv2, ftrk, apc2, 3tnk, 4tnk, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, badg, hind, yak, mig, ftwr, tsla, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, mig
         NavalUnitsTypes: ss, msub, nts
@@ -675,7 +690,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 4
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, harv, mcv, sfig, rh66, f22, pt2, dd2, ss2, ltur, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, badg, sfig, rh66, f22, pt2, dd2, ss2, ltur, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: rh66, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -688,7 +703,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e3, e4, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, sfig, pt2, dd2, ss2, ltur, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e3, e4, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, badg, sfig, pt2, dd2, ss2, ltur, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: rh66, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -701,7 +716,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e3, e4, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, sfig, rh66, f22, ltur, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e3, e4, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, badg, sfig, rh66, f22, ltur, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: rh66, f22
         NavalUnitsTypes: pt2, dd2, ss2

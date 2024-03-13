@@ -15,6 +15,12 @@ logos:
 		nod-load: 0, 256, 256, 256
 		gdi-load: 256, 256, 256, 256
 
+logospink:
+	Inherits: ^ChromePink
+	Regions:
+		soviet-load: 0, 256, 256, 256
+		allies-load: 256, 256, 256, 256
+
 #
 # Button
 # ===

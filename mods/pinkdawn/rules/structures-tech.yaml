@@ -361,17 +361,17 @@ APRT:
 	ParatroopersPower@paratroopers:
         PauseOnCondition: lowpower || emp-affected-structure
 		OrderName: Paratroopers
-		Icon: paratroopers
+		Icon: parainfra
 		ChargeInterval: 6750
-		UnitType: c17.paradrop
+		UnitType: badg
 		Name: Paratroopers
-		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
+		Description: A Paradrop Plane drops a squad of infantry\nanywhere on the map.
 		DropItems: E1,E3,E1,E3,E1
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.small
 		DisplayBeacon: true
-		BeaconPoster: paratroopers
+		BeaconPoster: parainfra
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -387,7 +387,7 @@ APRT:
         EndChargeTextNotification: Reinforcements available.
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
-        AllowMultiple: true
+        AllowMultiple: false
 	SupportPowerChargeBar:
     WithBuildingBib:
     ProvidesPrerequisite@buildingname:

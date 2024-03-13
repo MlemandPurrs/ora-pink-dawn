@@ -1514,8 +1514,6 @@ WTNK:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
 
-#   im sorry but this really aint interesting unit to use.
-#   i mean its just a beefed up flametank that somehow performs worser.
 CHTK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -1581,7 +1579,6 @@ CHTK:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
 
-#   todo: make MSG also use-up Charge when deployed. via Ammo mechanic. To make it consistent with SGEN.
 MSG:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
@@ -1658,7 +1655,7 @@ MSG:
 		Range: 6c0
         RequiresCondition: !emp-crate-collected && deployed
 	DetectCloaked@RadialIndicator:
-        DetectionTypes: Nonsense # we do this to get visual indicator
+        DetectionTypes: Nonsense
 		Range: 6c0
         RequiresCondition: deployed
 	RenderDetectionCircle@RadialIndicator:
@@ -1673,29 +1670,6 @@ MSG:
     PowerMultiplier@deployed:
         Modifier: 200
         RequiresCondition: !emp-crate-collected && deployed
-    #  AmmoPool:
-    #  Name: charge
-    #  Armaments: 
-	#	Ammo: 50
-	#	AmmoCondition: ammo
-	#   WithAmmoPipsDecoration:
-	#   Position: BottomLeft
-	#   Margin: 4, 3
-    #   PipCount: 5
-    #   AmmoPools: charge
-    #   FullSequence: pip-blue
-    #   RequiresSelection: false
-    #   it turns out -value no longer works on ReloadAmmoPool
-	#   ReloadAmmoPool@Deployed:
-    #   AmmoPool: charge
-    #   Delay: 25
-	#   Count: -2
-    #   PauseOnCondition: emp-crate-collected || undeployed
-	#   ReloadAmmoPool@Undeployed:
-    #   AmmoPool: charge
-    #   Delay: 25
-    #   Count: 2
-    #   PauseOnCondition: emp-crate-collected || deployed
 	Carryable:
 		-CarriedCondition: oncarryall
 

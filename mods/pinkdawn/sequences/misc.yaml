@@ -380,7 +380,6 @@ resources:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
             SNOW: TEMPERAT
-            TROPIC: TEMPERAT
 		Length: *
 	ti1: rtib1
 	ti2: rtib2
