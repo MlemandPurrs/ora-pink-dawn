@@ -207,7 +207,7 @@ BIO.Husk:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: Biological Laboratory (Destroyed)
+		Name: Research Laboratory (Destroyed)
 	RenderSprites:
 		Image: bio.husk
 

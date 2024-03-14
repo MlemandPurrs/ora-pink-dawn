@@ -1156,14 +1156,38 @@ empb.info:
         Palette: civilian
     -MapEditorData:
 
+bio2.info:
+    Inherits: BIO2
+	Encyclopedia:
+		Description: An independent establishment dedicated to the research of dangerous substance Tiberium, and the mutations it can cause. Found often in the vicinity of hazardous Tiberium fields, the scientists are well equipped with a surplus of hazmat suits, that they can share with whomever decided to claim ownership and sponsor their field research.\nDark rumours are often abound such facilities however, as some had been found conducting experimentation of questionable ethics. Efforts into observing controlled mutation may result in the increasingly frequent appearances of Visceroids around such facilities.
+        Category: Tech Buildings
+		Order: 10
+	RenderSprites:
+		Image: bio2
+        Palette: civilian
+    -MapEditorData:
+
 wind.info:
     Inherits: WIND
 	Encyclopedia:
         Description: This structure is a type of power generation that is employed world-wide, especially in the developing or poor countries such as those located in the continent of Africa and post-Iron Curtain countries of Europe. As it must harness the power of wind to generate some energy (only +30), they can be found spread across the countryside in groups that are at most minimum three placed near together.
         Category: Tech Buildings
-		Order: 8
+		Order: 11
 	RenderSprites:
 		Image: wind
+        Palette: civilian
+    -MapEditorData:
+
+cstl.info:
+    Inherits: CSTL
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: A durable, formidable anti-ship defense, armed with a battery of long-range guns that can fire ammunition specially tooled to be used against ships only.\nThose defenses are even capable of firing on and hitting submarines.
+        Category: Tech Buildings
+		Order: 12
+	RenderSprites:
+		Image: cstl
         Palette: civilian
     -MapEditorData:
 
@@ -1326,17 +1350,4 @@ jet.info:
 	RenderSprites:
 		Image: jet
         Palette: gdi
-    -MapEditorData:
-
-cstl.info:
-    Inherits: CSTL
-    Buildable:
-        Queue: Nothing    
-	Encyclopedia:
-        Description: A durable, formidable anti-ship defense, armed with a battery of long-range guns that can fire ammunition specially tooled to be used against ships only.\nThose defenses are even capable of firing on and hitting submarines.
-        Category: Tech Buildings
-		Order: 10
-	RenderSprites:
-		Image: cstl
-        Palette: civilian
     -MapEditorData:

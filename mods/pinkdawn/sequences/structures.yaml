@@ -1784,3 +1784,38 @@ cstl:
 		Length: *
 		Offset: -1,-1
 	icon: cstlicon
+
+bio2:
+    Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 5
+    build-top:
+		Start: 0
+		Length: 5
+	damaged-build-top:
+		Start: 5
+		Length: 5
+	make: bio2make
+		Length: *
+		Tick: 80
+	dead:
+		Start: 10
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: bio2icon
+		Offset: 0,0
+
+bio2.husk:
+	idle: bio2
+		Start: 10
+		Offset: 0,-2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0

@@ -43,6 +43,10 @@ E1:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E2:
 	Inherits: ^Soldier
@@ -96,6 +100,10 @@ E2:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E3:
 	Inherits: ^Soldier
@@ -138,6 +146,10 @@ E3:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E4:
 	Inherits: ^Soldier
@@ -197,6 +209,10 @@ E4:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E5:
 	Inherits: ^Soldier
@@ -204,6 +220,7 @@ E5:
 	-DamagedByTerrain@TIBERIUM:
 	-GrantConditionOnTerrain@HAZMAT:
 	-GrantConditionOnPrerequisite@HAZMAT:
+    -GrantConditionOnPrerequisite@HAZMAT2:
 	-GrantCondition@HAZMAT:
 	-WithDecoration@HAZMAT:
 	Valued:
@@ -262,6 +279,10 @@ E5:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E6:
 	Inherits: ^Soldier
@@ -289,9 +310,9 @@ E6:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
-        RequiresCondition: ( barracksheal || hospitalheal )
+        RequiresCondition: ( barracksheal || hospitalheal ) && !in-transport
 	-AttackFrontal:
 	Valued:
 		Cost: 500
@@ -475,6 +496,10 @@ E8:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 RMBO:
 	Inherits: ^Soldier
@@ -532,13 +557,17 @@ RMBO:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 TECN:
 	Inherits@1: ^ArmedCivilian
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
-        RequiresCondition: ( barracksheal || hospitalheal )
+        RequiresCondition: ( barracksheal || hospitalheal ) && !in-transport
 	Tooltip:
 		Name: Technician
 	Health:
@@ -562,6 +591,10 @@ TECN:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 VICE:
 	Inherits@1: ^ExistsInWorld
@@ -569,31 +602,41 @@ VICE:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 8
 	Huntable:
+	HiddenUnderFog:
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Visceroid
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 99
+		Prerequisites: ~bio2
+        Queue: Infantry2
+		Description: Mutated abomination that wanders\nand spits liquid Tiberium.\nImpossible to command.\n\nStrong vs all Ground units.
+	Mobile:
+		Voice: Move
+		Speed: 90
+		Locomotor: critter
+		PauseOnCondition: dont-move
 	Health:
 		HP: 15000
 	Armor:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
-	Mobile:
-		Voice: Move
-		Speed: 90
-		Locomotor: critter
-		PauseOnCondition: dont-move
+	AutoTarget:
+		ScanRadius: 5
 	Selectable:
 		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
-	AutoTarget:
-		ScanRadius: 5
-	AttackMove:
-		Voice: Attack
-	HiddenUnderFog:
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Visceroid
 	Armament:
 		Weapon: Chemspray
 		LocalOffset: 384,0,0
@@ -601,10 +644,9 @@ VICE:
 	AttackFrontal:
 		Voice: Attack
         FacingTolerance: 0
-	BodyOrientation:
-		QuantizedFacings: 8
-	WithSpriteBody:
 	WithMuzzleOverlay:
+	AttackMove:
+		Voice: Attack
 	Guard:
 		Voice: Move
 	Guardable:
@@ -622,11 +664,13 @@ VICE:
 		Categories: Critter
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	AttackWander:
+    RejectsOrders:
+        RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
 	GrantConditionOnAttack:
 		Condition: dont-move
 		RevokeDelay: 16
@@ -636,6 +680,10 @@ VICE:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MEDI:
 	Inherits: ^Soldier
@@ -663,7 +711,7 @@ MEDI:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	Tooltip:
 		Name: Medic
 	Valued:
@@ -706,9 +754,9 @@ MEDI:
 	ChangesHealth@SELFHEAL:
 		Step: 500
 		Delay: 100
-		StartIfBelow: 101
+		StartIfBelow: 100
 		DamageCooldown: 125
-		-RequiresCondition:
+		RequiresCondition: !in-transport
     -GrantConditionOnPrerequisite@HOSPITAL:
     -GrantCondition@HOSPITAL:
 	-WithDecoration@REDCROSS:
@@ -746,9 +794,9 @@ MECH:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
-        RequiresCondition: ( barracksheal || hospitalheal )
+        RequiresCondition: ( barracksheal || hospitalheal ) && !in-transport
 	Tooltip:
 		Name: Mechanic
 	Valued:
@@ -862,6 +910,10 @@ TANY:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 VOLK:
 	Inherits: ^Soldier
@@ -937,6 +989,10 @@ VOLK:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 SPY:
 	Inherits: ^Soldier
@@ -1054,9 +1110,9 @@ DOG:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
-        RequiresCondition: ( barracksheal || hospitalheal )
+        RequiresCondition: ( barracksheal || hospitalheal ) && !in-transport
 	Selectable:
 		Bounds: 512, 725, -42, -170
 		DecorationBounds: 512, 725, -42, -170
@@ -1186,6 +1242,10 @@ SHOK:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 THF:
 	Inherits: ^Soldier
@@ -1213,9 +1273,9 @@ THF:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
  	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
-        RequiresCondition: ( barracksheal || hospitalheal )
+        RequiresCondition: ( barracksheal || hospitalheal ) && !in-transport
     -AttackFrontal:
     -Guard
 	Tooltip:
@@ -1316,6 +1376,10 @@ MEGA:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E9:
 	Inherits: ^Soldier
@@ -1364,6 +1428,10 @@ E9:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 INF:
 	Inherits: ^Soldier
@@ -1431,6 +1499,10 @@ INF:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
     AppearsOnRadar:
         ValidRelationships: Ally
     -GpsDot:
@@ -1576,6 +1648,14 @@ JET:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+    ChangesHealth@SELFHEAL:
+        RequiresCondition: ( barracksheal || hospitalheal ) && !rank-heroic
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 SNIP:
 	Inherits: ^Soldier
@@ -1664,3 +1744,7 @@ SNIP:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

@@ -145,6 +145,9 @@ TRAN:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -177,18 +180,22 @@ TRAN:
 		Offset: 597,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTOR1GROUND:
 		Offset: 597,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTOR2AIR:
 		Offset: -597,0,171
 		Sequence: rotor2
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTOR2GROUND:
 		Offset: -597,0,171
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
@@ -301,6 +308,10 @@ ORCA:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HELI:
 	Inherits: ^Helicopter
@@ -395,6 +406,10 @@ HELI:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HEL2:
 	Inherits: ^Helicopter
@@ -493,10 +508,12 @@ HEL2:
 		Offset: 0,0,85
 		Sequence: rotor2
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	Rearmable:
         AmmoPools: primary, secondary
 		RearmActors: hpad, aprt, 3fld
@@ -520,6 +537,10 @@ HEL2:
 		ArmamentNames: primary, secondary, tertiary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HIND:
 	Inherits: ^Helicopter
@@ -618,10 +639,12 @@ HIND:
 		Offset: 0,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary, secondary
@@ -644,6 +667,10 @@ HIND:
 		ArmamentNames: primary, secondary, tertiary, quartenary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 BADR:
 	Inherits: ^Plane
@@ -662,6 +689,8 @@ BADR:
 		MaximumPitch: 36
         AirborneCondition: airborne
 	HitShape:
+		Type: Circle
+			Radius: 736
 	Health:
 		HP: 9000
     Armor:
@@ -736,6 +765,8 @@ BADR.tran:
 	RejectsOrders:
         RequiresCondition: airborne
 	HitShape:
+		Type: Circle
+			Radius: 736
 	Health:
 		HP: 9000
 	Selectable:
@@ -1272,10 +1303,12 @@ RH66:
 		Offset: 0,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	Rearmable:
 		RearmActors: hpad, aprt, 3fld
 	KillsSelf:
@@ -1305,6 +1338,10 @@ RH66:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
     AppearsOnRadar:
         ValidRelationships: Ally
     -GpsDot:
@@ -1432,6 +1469,9 @@ GenericCarryall:
 
 OCAR:
     Inherits: GenericCarryall
+	HitShape:
+		Type: Circle
+			Radius: 512
 	EditorOnlyTooltip:
 		Name: Carryall
 	Tooltip:
@@ -1462,10 +1502,10 @@ OCAR:
             4tnk: heavy
             t55h: heavy
 	SpeedMultiplier@carrying:
-		Modifier: 80
+		Modifier: 75
 		RequiresCondition: carrying && !heavy
 	SpeedMultiplier@carryingheavy:
-        Modifier: 60
+        Modifier: 50
         RequiresCondition: carrying && heavy
 	Sellable:
 		RequiresCondition: unit.sellable && !carrying

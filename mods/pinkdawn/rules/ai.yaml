@@ -421,7 +421,8 @@ Player:
             fapw: 1
             tenf: 1
             weaf: 1
-            hpaf: 1
+            hpaf: 2
+            cspf: 1
 		BuildingFractions:
 			oref: 20
             osil: 3
@@ -437,6 +438,12 @@ Player:
 			gun: 5
 			agun: 3
             gap: 1
+            fpwr: 1
+            fapw: 1
+            tenf: 1
+            weaf: 1
+            hpaf: 1
+            cspf: 1
 	BaseBuilderBotModule@Soviet:
 		RequiresCondition: enable-ai-player && ai.soviet
 		BuildingQueues: Building.Soviet
@@ -943,5 +950,5 @@ Player:
         McvFactoryTypes: weap, afld, warf, ufld
     CaptureManagerBotModule:
         CapturingActorTypes: e6
-        CapturableActorTypes: syrd, v19, oil, hosp, comm
+        CapturableActorTypes: syrd, v19, oil, bio2, hosp, comm, v19.husk, oil.husk, bio2.husk, hosp.husk, comm.husk
         CheckCaptureTargetsForVisibility: true

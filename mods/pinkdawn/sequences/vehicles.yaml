@@ -113,7 +113,11 @@ ltnk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: ltnk-tur
+	turret: ltnk-tur2
+        Start: 0
+		Facings: 32
+		UseClassicFacings: True
+	turret2: ltnk-tur
         Start: 0
 		Facings: 32
 		UseClassicFacings: True

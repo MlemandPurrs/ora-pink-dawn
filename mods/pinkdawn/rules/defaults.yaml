@@ -243,6 +243,15 @@
 		RequiresSelection: true
 		PipCount: 10
 
+^BoinkSound:
+	DeathSounds@Boink:
+		Voice: Boink
+		VolumeMultiplier: 2
+		RequiresCondition: boink-boink
+	GrantConditionOnPrerequisite@Boink:
+		Condition: boink-boink
+		Prerequisites: global-boink
+
 ^GenericSpeedModifier:
 	SpeedMultiplier@Generic:
 		Modifier: 125
@@ -277,9 +286,10 @@
     Inherits@unitsellable: ^SellableOnRepairPad
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
-    Inherits@experience: ^ExperienceMechanic
+    Inherits@experience: ^ExperienceMechanicVehicle
     Inherits@hijackable: ^HijackerMechanic
     Inherits@airliftable: ^CarryallPassenger
+    Inherits@boink: ^BoinkSound
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -301,6 +311,7 @@
 	Passenger:
 		CargoType: Vehicle
         Weight: 5
+        CargoCondition: in-transport
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	HiddenUnderFog:
@@ -647,8 +658,11 @@
 	GrantConditionOnPrerequisite@HAZMAT:
 		Condition: hazmatenabled
 		Prerequisites: global-givehazmat
+	GrantConditionOnPrerequisite@HAZMAT2:
+		Condition: biolab
+		Prerequisites: bio2
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled || rank-heroic && ontiberium
+		RequiresCondition: hazmatenabled || rank-heroic || biolab && ontiberium
 		Condition: hazmatsuits
 	WithDecoration@HAZMAT:
 		Image: pips
@@ -668,9 +682,9 @@
 	ChangesHealth@SELFHEAL:
 		Step: 500
 		Delay: 100
-		StartIfBelow: 101
+		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: ( barracksheal || hospitalheal ) && !rank-heroic
+		RequiresCondition: ( barracksheal || hospitalheal ) && !( rank-heroic || in-transport )
 	Targetable@HEAL:
 		TargetTypes: Heal
 		RequiresCondition: !parachute && damaged
@@ -755,6 +769,7 @@
 	AttackMove:
 	Passenger:
 		CargoType: Infantry
+        CargoCondition: in-transport
 	HiddenUnderFog:
 	ActorLostNotification:
 		TextNotification: Unit lost.
@@ -1896,9 +1911,9 @@
 		Step: 0
 		PercentageStep: 5
 		Delay: 25
-		StartIfBelow: 101
+		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-heroic
+		RequiresCondition: rank-heroic && !in-transport
     GivesExperienceMultiplier@RANK-HEROIC:
         Modifier: 200
         RequiresCondition: rank-heroic
@@ -1932,6 +1947,16 @@
     GrantConditionOnPrerequisite@EXPTOGGLE2:
         Condition: earner-veterancy-on
         Prerequisites: ~global-veterancy
+
+^ExperienceMechanicVehicle:
+    Inherits: ^ExperienceMechanic
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 5
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !in-transport && !oncarryall
 
 ^ExperienceMechanicAircraft:
 	GainsExperience:

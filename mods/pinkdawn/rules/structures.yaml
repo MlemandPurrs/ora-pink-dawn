@@ -1581,7 +1581,7 @@ BIO:
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon to charge.\nUnlocks Chemical Trooper and SSM Launcher.
 	Tooltip:
-		Name: Biological Laboratory
+		Name: Research Laboratory
 	ProvidesPrerequisite@buildingname:
 	Power:
 		Amount: -60

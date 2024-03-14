@@ -28,8 +28,9 @@ VehicleVoice:
 		Action: ackno, affirm1, movout1
 		Attack: ackno, affirm1, yessir1
 		Unload: movout1, affirm1
-
-# in RA is missing: movout1, unit1
+		Boink: boink
+    # in RA is missing: movout1, unit1
+    DisableVariants: Boink
 
 CivilianMaleVoice:
 	Voices:

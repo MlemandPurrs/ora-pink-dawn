@@ -22,6 +22,9 @@ MCV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 608
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
 	Valued:
@@ -91,6 +94,8 @@ MCV:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+    Passenger:
+        -CargoCondition:
 
 HARV:
 	Inherits: ^Vehicle
@@ -116,6 +121,9 @@ HARV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -184,6 +192,7 @@ HARV:
 		Delay: 3
 		StartIfBelow: 51
 		DamageCooldown: 150
+        RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall
 	RenderSprites:
 		Image: harv
 		FactionImages:
@@ -260,8 +269,9 @@ TRUK:
 	SpawnActorOnDeath:
 		Actor: moneycrate
         RequiresCondition: !oncarryall
-	Passenger:
+    Passenger:
 		CustomPipType: pip-blue
+        -CargoCondition:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -354,6 +364,10 @@ JEEP:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 BGGY:
 	Inherits: ^Vehicle
@@ -425,6 +439,10 @@ BGGY:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 BIKE:
 	Inherits: ^Vehicle
@@ -497,6 +515,10 @@ BIKE:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 APC:
 	Inherits: ^TrackedVehicle
@@ -595,6 +617,10 @@ APC:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MAAG:
 	Inherits: ^TrackedVehicle
@@ -694,6 +720,10 @@ MAAG:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 LTNK:
 	Inherits: ^TrackedVehicle
@@ -711,7 +741,7 @@ LTNK:
 		BuildPaletteOrder: 5
 		Prerequisites: afld, ~vehicle.nod
 		Queue: Vehicle
-		Description: Fast, light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+		Description: Fast, light tank.\n\nCannot attack Air units.\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
@@ -739,12 +769,18 @@ LTNK:
 		Weapon: MediumCannon
 		Recoil: 128
 		RecoilRecovery: 26
-		LocalOffset: 768,0,90
+		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
         RequiresCondition: rank-heroic
+	Armament@TERTIARY:
+        Name: tertiary
+		Weapon: LightRocket
+        LocalOffset: 128,110,85
+		FireDelay: 5
+        PauseOnCondition: emp-crate-collected
 	AttackTurreted:
-        Armaments: primary, secondary
+        Armaments: primary, secondary, tertiary
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
 	AttackMove:
@@ -765,9 +801,13 @@ LTNK:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 	RevealOnFire:
-		ArmamentNames: primary, secondary
+		ArmamentNames: primary, secondary, tertiary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MTNK:
 	Inherits: ^TrackedVehicle
@@ -844,6 +884,10 @@ MTNK:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 FTNK:
 	Inherits: ^TrackedVehicle
@@ -919,11 +963,18 @@ FTNK:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -977,7 +1028,7 @@ HTNK:
 		Delay: 25
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !rank-heroic && !emp-crate-collected
+        RequiresCondition: !rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -1002,13 +1053,17 @@ HTNK:
 	ChangesHealth@RANK-HEROIC:
 		Step: 530
 		Delay: 25
-		StartIfBelow: 101
+		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-heroic && !emp-crate-collected
+		RequiresCondition: rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 STNK:
 	Inherits: ^Vehicle
@@ -1085,6 +1140,10 @@ STNK:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
     AppearsOnRadar:
         ValidRelationships: Ally
     -GpsDot:
@@ -1171,6 +1230,10 @@ ARTY:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MSAM:
 	Inherits: ^TrackedVehicle
@@ -1263,6 +1326,10 @@ MSAM:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -1377,6 +1444,10 @@ MLRS:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MHQ:
 	Inherits: ^Vehicle
@@ -1475,6 +1546,12 @@ MHQ:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+    Passenger:
+        -CargoCondition:
 
 WTNK:
 	Inherits: ^TrackedVehicle
@@ -1577,6 +1654,10 @@ WTNK:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 CHTK:
 	Inherits: ^TrackedVehicle
@@ -1646,6 +1727,10 @@ CHTK:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MSG:
 	Inherits: ^Vehicle
@@ -1740,6 +1825,8 @@ MSG:
         RequiresCondition: !emp-crate-collected && deployed
 	Carryable:
 		-CarriedCondition: oncarryall
+    Passenger:
+        -CargoCondition:
 
 T55H:
 	Inherits: ^TrackedVehicle
@@ -1843,7 +1930,7 @@ T55H:
 		Delay: 25
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected
+        RequiresCondition: !rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
@@ -1864,7 +1951,18 @@ T55H:
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
 		RequiresCondition: cloakfield-on
+    -ChangesHealth@RANK-HEROIC:
+	ChangesHealth@RANK-HEROIC:
+		Step: 530
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

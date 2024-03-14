@@ -109,6 +109,20 @@ Player:
 		Enabled: False
 		DisplayOrder: 16
 		Prerequisites: global-veterancy
+	LobbyPrerequisiteCheckbox@UNITREVEAL:
+		ID: unitreveal
+		Label: Reveal on Fire
+		Description: Units and Defenses get shown through fog/shroud in combat
+		Enabled: True
+		DisplayOrder: 17
+		Prerequisites: global-unitreveal
+	LobbyPrerequisiteCheckbox@BOINK:
+		ID: boinksound
+		Label: Boink !
+		Description: All Vehicles emit Renegade's "boink" sound on die
+		Enabled: False
+		DisplayOrder: 18
+		Prerequisites: global-boink
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:

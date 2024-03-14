@@ -331,7 +331,7 @@ World:
 	ScriptTriggers:
 	CellTriggerOverlay:
 	LuaScript:
-		Scripts: transportscript.lua
+		Scripts: transportscript.lua, growthrate.lua
 	TimeLimitManager:
 		TimeLimitDisplayOrder: 2
 		TimeLimitWarnings:
@@ -366,6 +366,17 @@ World:
 		TerrainFlashSequence: idle
 		TerrainFlashPalette: moveflash
 	StartGameNotification:
+	ScriptLobbyDropdown@EcoSpeed:
+		ID: growthrate
+		Label: Resource Growth
+		Values:
+			default: Slow(+1)
+			double: Normal(+2)
+			triple: Fast(+3)
+        # note: default doesnt do anything. 
+		Default: double
+		Description: How much Tiberium Trees seed per blossom
+		DisplayOrder: 6
 
 EditorWorld:
 	Inherits: ^BaseWorld

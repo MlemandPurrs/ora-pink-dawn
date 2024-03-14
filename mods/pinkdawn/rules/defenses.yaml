@@ -52,6 +52,10 @@ GTWR:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 GUN:
 	Inherits: ^Defense
@@ -116,6 +120,10 @@ GUN:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 ATWR:
 	Inherits: ^Defense
@@ -194,6 +202,10 @@ ATWR:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 OBLI:
 	Inherits: ^Defense
@@ -256,6 +268,10 @@ OBLI:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 SAM:
 	Inherits: ^Defense
@@ -670,6 +686,10 @@ PBOX:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HBOX:
 	Inherits: ^Defense
@@ -687,7 +707,7 @@ HBOX:
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Allies
 		Description: Camouflaged static defense with a heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
@@ -794,7 +814,7 @@ AGUN:
 	Buildable:
         BuildDuration: 900
         BuildDurationModifier: 100
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 7
 		Prerequisites: anyhq
 		Queue: Defense.Allies
 		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
@@ -858,6 +878,10 @@ AGUN:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 FTWR:
 	Inherits: ^Defense
@@ -913,6 +937,10 @@ FTWR:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 TSLA:
 	Inherits: ^Defense
@@ -989,6 +1017,10 @@ TSLA:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 SAM2:
 	Inherits: ^Defense
@@ -1076,6 +1108,10 @@ SAM2:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 GAP:
 	Inherits: ^BaseBuilding
@@ -1247,3 +1283,7 @@ LTUR:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

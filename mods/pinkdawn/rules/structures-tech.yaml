@@ -90,6 +90,9 @@ HOSP.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Hospital (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hosp
 
 SYRD:
 	Inherits: ^BaseBuilding
@@ -327,6 +330,9 @@ COMM.Husk:
         LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Array (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: comm
 
 APRT:
 	Inherits: ^TechBuilding
@@ -461,6 +467,9 @@ APRT.Husk:
 		Dimensions: 3,2
 	Tooltip:
 		Name: Airport (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: aprt
 
 EXPB:
 	Inherits: ^TechBuilding
@@ -508,6 +517,9 @@ EXPB.Husk:
 		Name: Expansion Post (Destroyed)
 	RenderSprites:
 		Image: acom.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: expb
 
 OIL:
 	Inherits: ^TechBuilding
@@ -543,6 +555,9 @@ OIL.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Oil Refinery (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: oil
 
 EMPB:
 	Inherits: ^BaseBuilding
@@ -662,6 +677,9 @@ EMPB.Husk:
 		Name: E.M.P. Launcher (Destroyed)
 	RenderSprites:
         Image: empb.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: empb
 
 WIND:
 	Inherits: ^TechBuilding
@@ -756,6 +774,9 @@ ARMY.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Armory (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: army
 
 NPWR:
 	Inherits: ^TechBuilding
@@ -807,6 +828,9 @@ NPWR.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Nuclear Plant (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: npwr
 
 CSTL:
 	Inherits: ^TechBuilding
@@ -909,3 +933,64 @@ CSTL:
         RequiresCondition: owner.is.player
 	MapEditorData:
 		Categories: Tech building
+
+BIO2:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 40000
+	Tooltip:
+		Name: Biological Laboratory
+	TooltipDescription@ally:
+		Description: Provides infantry with Tiberium immunity.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to enable Tiberium immunity for infantry.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: BIO2.Husk
+	ProvidesPrerequisite@buildingname:
+	WithBuildingBib:
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: Infantry2
+	ProductionQueue:
+		Type: Infantry2
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry2
+	RallyPoint:
+	WithProductionDoorOverlay:
+        Sequence: build-top
+
+BIO2.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Biological Laboratory (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: bio2

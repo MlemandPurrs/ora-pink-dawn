@@ -25,6 +25,9 @@ LST:
  	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 576
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -121,11 +124,19 @@ BOAT:
 	Selectable:
 		Bounds: 1792, 1024
 		DecorationBounds: 1792, 1024
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 PT2:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	HitShape:
+		TargetableOffsets: 341,0,0, -341,0,0
+		Type: Capsule
+			Radius: 288
+			PointA: 0, -341
+			PointB: 0, 341
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -199,11 +210,23 @@ PT2:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 DD2:
 	Inherits: ^Ship
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	HitShape:
+		TargetableOffsets: 448,0,0, -448,0,0
+		Type: Capsule
+			Radius: 320
+			PointA: 0, -448
+			PointB: 0, 448
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -270,6 +293,12 @@ DD2:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 SS2:
 	Inherits: ^Submarine
@@ -279,6 +308,12 @@ SS2:
 		InvalidTargets: NoAutoTarget, Structure
 	AutoTargetPriority@ATTACKANYTHING:
 		ValidTargets: Water, Underwater
+	HitShape:
+		TargetableOffsets: 448,0,0, -448,0,0
+		Type: Capsule
+			Radius: 256
+			PointA: 0, -448
+			PointB: 0, 448
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -311,11 +346,19 @@ SS2:
         FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1621, 1621
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic && deployed
 
 DD3:
 	Inherits: ^Ship
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	HitShape:
+		TargetableOffsets: 448,0,0, -448,0,0
+		Type: Capsule
+			Radius: 320
+			PointA: 0, -448
+			PointB: 0, 448
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -365,3 +408,9 @@ DD3:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic

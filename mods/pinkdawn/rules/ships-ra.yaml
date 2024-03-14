@@ -25,6 +25,9 @@ LST2:
  	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 576
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -88,6 +91,12 @@ PT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	HitShape:
+		TargetableOffsets: 341,0,0, -341,0,0
+		Type: Capsule
+			Radius: 288
+			PointA: 0, -341
+			PointB: 0, 341
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -159,11 +168,23 @@ PT:
 		ArmamentNames: primary, secondary, tertiary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 CA:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	HitShape:
+		TargetableOffsets: 576,0,0, -576,0,0
+		Type: Capsule
+			Radius: 341
+			PointA: 0, -576
+			PointB: 0, 576
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -233,11 +254,23 @@ CA:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 DD:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	HitShape:
+		TargetableOffsets: 448,0,0, -448,0,0
+		Type: Capsule
+			Radius: 320
+			PointA: 0, -448
+			PointB: 0, 448
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -319,6 +352,12 @@ DD:
 		ArmamentNames: primary, secondary, tertiary, quartenary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
 
 SS:
 	Inherits: ^Submarine
@@ -328,6 +367,12 @@ SS:
 		InvalidTargets: NoAutoTarget, Structure
 	AutoTargetPriority@ATTACKANYTHING:
 		ValidTargets: Water, Underwater, Ground
+	HitShape:
+		TargetableOffsets: 448,0,0, -448,0,0
+		Type: Capsule
+			Radius: 256
+			PointA: 0, -448
+			PointB: 0, 448
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -381,10 +426,22 @@ SS:
 		ArmamentNames: secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic && deployed
 
 MSUB:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	HitShape:
+		TargetableOffsets: 576,0,0, -576,0,0
+		Type: Capsule
+			Radius: 341
+			PointA: 0, -576
+			PointB: 0, 576
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -436,6 +493,12 @@ MSUB:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic && deployed
 
 NTS:
 	Inherits: ^Submarine
@@ -460,6 +523,12 @@ NTS:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		TargetableOffsets: 576,0,0, -576,0,0
+		Type: Capsule
+			Radius: 341
+			PointA: 0, -576
+			PointB: 0, 576
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -525,3 +594,7 @@ NTS:
 		ArmamentNames: secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
