@@ -29,6 +29,9 @@ fact:
 fact.husk:
 	idle: fact
 		Start: 48
+	dead: fact
+		Start: 48
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -64,6 +67,9 @@ gdifact:
 gdifact.husk:
 	idle: gdifact
 		Start: 48
+	dead: gdifact
+		Start: 48
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -99,6 +105,9 @@ nodfact:
 nodfact.husk:
 	idle: nodfact
 		Start: 48
+	dead: nodfact
+		Start: 48
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -126,6 +135,9 @@ nuke:
 nuke.husk:
 	idle: nuke
 		Start: 8
+	dead: nuke
+		Start: 8
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -141,7 +153,7 @@ nodnuke:
 		Tick: 1000
 	dead: nodnuke
 		Start: 8
-		Tick: 1000
+		Tick: 800
 	make: nodnukemake
 		Length: *
 		Tick: 80
@@ -153,6 +165,9 @@ nodnuke:
 nodnuke.husk:
 	idle: nodnuke
 		Start: 8
+	dead: nodnuke
+		Start: 8
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -180,6 +195,9 @@ nuk2:
 nuk2.husk:
 	idle: nuk2
 		Start: 8
+	dead: nuk2
+		Start: 8
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -207,6 +225,9 @@ nodnuk2:
 nodnuk2.husk:
 	idle: nodnuk2
 		Start: 8
+	dead: nodnuk2
+		Start: 8
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -234,6 +255,9 @@ nuk3:
 nuk3.husk:
 	idle: nuk3
 		Start: 8
+	dead: nuk3
+		Start: 8
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -261,6 +285,9 @@ nodnuk3:
 nodnuk3.husk:
 	idle: nodnuk3
 		Start: 8
+	dead: nodnuk3
+		Start: 8
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -300,6 +327,10 @@ proc.husk:
 	idle: proc
 		Start: 60
 		Offset: 2,4
+	dead: proc
+		Start: 60
+		Tick: 800
+		Offset: 2,4
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -338,6 +369,10 @@ nodproc:
 nodproc.husk:
 	idle: nodproc
 		Start: 60
+		Offset: 2,4
+	dead: nodproc
+		Start: 60
+		Tick: 800
 		Offset: 2,4
 	bib: bib2
 		UseTilesetExtension: true
@@ -379,6 +414,10 @@ silo.husk:
 	idle: silo
 		Start: 10
 		Offset: 0,-1
+	dead: silo
+		Start: 10
+		Offset: 0,-1
+		Tick: 800
 	bib: mbSILO
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -424,6 +463,10 @@ nodsilo.husk:
 	idle: nodsilo
 		Start: 10
 		Offset: 0,-1
+	dead: nodsilo
+		Start: 10
+		Offset: 0,-1
+		Tick: 800
 	bib: mbSILO
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -458,6 +501,9 @@ pyle:
 pyle.husk:
 	idle: pyle
 		Start: 20
+	dead: pyle
+		Start: 20
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -495,6 +541,10 @@ hand:
 hand.husk:
 	idle: hand
 		Start: 2
+		Offset: 0,-8
+	dead: hand
+		Start: 2
+		Tick: 800
 		Offset: 0,-8
 	bib: bib3
 		UseTilesetExtension: true
@@ -542,6 +592,10 @@ afld.husk:
 	idle: afld
 		Start: 32
 		ZOffset: -1023
+	dead: afld
+		Start: 32
+		ZOffset: -1023
+		Tick: 800
 	bib: bib1
 		UseTilesetExtension: true
 		Length: *
@@ -585,6 +639,10 @@ weap.husk:
 	idle: weap
 		Start: 2
 		Offset: 0,-12
+	dead: weap
+		Start: 2
+		Tick: 800
+		Offset: 0,-12
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -625,6 +683,10 @@ fix.husk:
 	idle: fix
 		Start: 14
 		ZOffset: -1c511
+	dead: fix
+		Start: 14
+		ZOffset: -1c511
+		Tick: 800
 	bib: mbFIX
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -669,6 +731,10 @@ nodfix.husk:
 	idle: nodfix
 		Start: 14
 		ZOffset: -1c511
+	dead: nodfix
+		Start: 14
+		ZOffset: -1c511
+		Tick: 800
 	bib: mbFIX
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -714,6 +780,14 @@ hpad.husk:
 		Start: 14
 		Length: 1
 		ZOffset: -1023
+	dead: hpad
+		Start: 14
+		ZOffset: -1023
+		Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
 
 hq:
     Inherits: emp-overlay
@@ -745,6 +819,9 @@ hq:
 hq.husk:
 	idle: hq
 		Start: 32
+	dead: hq
+		Start: 32
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -779,6 +856,9 @@ nodhq:
 nodhq.husk:
 	idle: nodhq
 		Start: 32
+	dead: nodhq
+		Start: 32
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -808,6 +888,9 @@ eye:
 eye.husk:
 	idle: eye
 		Start: 32
+	dead: eye
+		Start: 32
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -837,6 +920,10 @@ miss.husk:
 	idle: miss
 		Start: 2
         Offset: 0,-1
+	dead: miss
+		Start: 2
+		Offset: 0,-1
+        Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -867,6 +954,10 @@ nodmiss.husk:
 	idle: nodmiss
 		Start: 2
         Offset: 0,-1
+	dead: nodmiss
+		Start: 2
+		Offset: 0,-1
+        Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -905,6 +996,9 @@ tmpl.husk:
 	idle: tmpl
 		Start: 10
 		Offset: 0,-12
+	dead: tmpl
+		Start: 10
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -934,6 +1028,9 @@ bio.husk:
 	idle: bio
 		Start: 2
 		Offset: 0,-2
+	dead: bio
+		Start: 2
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -971,6 +1068,9 @@ gtwr:
 gtwr.husk:
 	idle: gtwr
 		Start: 2
+	dead: gtwr
+		Start: 2
+		Tick: 800
 	bib: mbGTWR
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1018,6 +1118,9 @@ gun:
 gun.husk:
 	idle: gun
         Start: 128
+	dead: gun
+		Start: 128
+		Tick: 800
 	bib: mbGUN
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1056,6 +1159,9 @@ atwr.husk:
 	idle: atwr
 		Start: 2
 		Offset: 0,-13
+	dead: atwr
+		Start: 2
+		Tick: 800
 	bib: mbGTWR
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1109,6 +1215,9 @@ obli.husk:
 	idle: obli
 		Start: 8
 		Offset: 0, -12
+	dead: obli
+		Start: 8
+		Tick: 800
 	bib: mbOBLI
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1178,6 +1287,10 @@ sam.husk:
 	idle: sam
 		Start: 128
 		Length: 1
+		Offset: -1,-2
+	dead: sam
+		Start: 128
+		Tick: 800
 		Offset: -1,-2
 
 sbag:
@@ -1388,6 +1501,10 @@ hosp.husk:
 	idle: hosp
 		Start: 8
 		Offset: 0,-2
+	dead: hosp
+		Start: 8
+		Tick: 800
+		Offset: 0,-2
 	bib: mbHOSP
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1398,16 +1515,23 @@ hosp.husk:
 
 syrd:
     Inherits: emp-overlay
-	idle: syrd
-	damaged-idle: syrd
+	idle: 2yrd
+	damaged-idle: 2yrd
 		Start: 1
-	dead:
-		Start: 1
+	dead: 2yrd
+		Start: 2
 		Tick: 800
-	make: syrdmake
+	make: 2yrdmake
 		Length: *
 		Tick: 80
 	icon: syrdicon
+
+syrd.husk:
+    idle: 2yrd
+        Start: 2
+    dead: 2yrd
+        Start: 2
+        Tick: 800
 
 comm:
     Inherits: emp-overlay
@@ -1428,6 +1552,12 @@ comm:
 comm.husk:
 	idle: comm
 		Start: 24
+	dead: comm
+		Start: 24
+		Tick: 800
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
 
 aprt:
     Inherits: emp-overlay
@@ -1469,6 +1599,15 @@ aprt.husk:
 		Length: 1
 		ZOffset: -1023
 		Offset: 0,-4
+    dead: aprt
+        Tick: 800
+        Start: 8
+        ZOffset: -1023
+        Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
 
 acom:
     Inherits: emp-overlay
@@ -1488,6 +1627,9 @@ acom:
 acom.husk:
 	idle: acom
 		Start: 1
+	dead: acom
+		Start: 1
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -1514,6 +1656,9 @@ oil.husk:
 	idle: oil
 		Start: 2
 		Offset: 0,-2
+	dead: oil
+		Start: 2
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *
@@ -1550,6 +1695,17 @@ empb.husk:
 	idle: empbmake
 		Start: 10
         Length: 1
+    dead: empb
+		Start: 13
+        Length: 1
+	bib: mbSILO
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: 0,1
 
 wind:
     Inherits: emp-overlay
@@ -1580,6 +1736,18 @@ wind.husk:
 		Start: 48
         Length: 1
 		Offset: 0,-32
+	dead: wind
+		Start: 48
+        Length: 1
+		Tick: 800
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: -3,-6
 
 army:
     Inherits: emp-overlay
@@ -1592,6 +1760,9 @@ army:
 		Length: 4
 		Tick: 100
 		Offset: 0,-2
+    dead:
+        Start: 8
+        Tick: 800
 	bib: mbHOSP
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1604,6 +1775,9 @@ army.husk:
 	idle: army
 		Start: 8
 		Offset: 0,-2
+    dead: army
+        Start: 8
+        Tick: 800
 	bib: mbHOSP
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1640,6 +1814,9 @@ ltur:
 ltur.husk:
 	idle: ltur
 		Start: 32
+	dead: ltur
+		Start: 32
+		Tick: 800
 	bib: mbGUN
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1678,6 +1855,10 @@ ufld.husk:
 	idle: ufld
 		Start: 2
 		ZOffset: -1023
+	dead: ufld
+		Start: 2
+		ZOffset: -1023
+		Tick: 800
 	bib: bib1
 		UseTilesetExtension: true
 		Length: *
@@ -1719,6 +1900,10 @@ sgen.husk:
 	idle: sgen
 		Start: 6
 		Offset: 0,-10
+	dead: sgen
+		Start: 6
+		Tick: 800
+		Offset: 0,-10
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
@@ -1754,6 +1939,10 @@ ncom.husk:
 	idle: ncom
 		Start: 1
         Length: 1
+	dead: ncom
+		Start: 1
+        Length: 1
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -1815,6 +2004,9 @@ bio2.husk:
 	idle: bio2
 		Start: 10
 		Offset: 0,-2
+	dead: bio2
+		Start: 10
+		Tick: 800
 	bib: bib3
 		UseTilesetExtension: true
 		Length: *

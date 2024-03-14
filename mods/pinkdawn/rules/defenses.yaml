@@ -56,6 +56,11 @@ GTWR:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: GTWR.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 GUN:
 	Inherits: ^Defense
@@ -124,6 +129,11 @@ GUN:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: GUN.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 ATWR:
 	Inherits: ^Defense
@@ -206,6 +216,11 @@ ATWR:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: ATWR.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 OBLI:
 	Inherits: ^Defense
@@ -272,6 +287,81 @@ OBLI:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: OBLI.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+LTUR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetGround
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-BodyOrientation:
+	Selectable:
+		Bounds: 1024, 1024
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Laser Turret
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: vehicleproduction
+		Queue: Defense.Blackhand
+		Description: All-purpose base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
+	Building:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 18
+		InitialFacing: 128
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+		Weapon: TurretLaser
+        LocalOffset: 512,0,189
+        PauseOnCondition: build-incomplete
+	AttackTurreted:
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+	RenderDetectionCircle:
+	Power:
+		Amount: -20
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	ClassicFacingBodyOrientation:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: LTUR.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 SAM:
 	Inherits: ^Defense
@@ -370,6 +460,438 @@ SAM:
 		RevokeDelay: 75
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	SpawnActorOnDeath@HUSK:
+		Actor: SAM.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+SAM2:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@shape: ^2x1Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-RenderDetectionCircle:
+	-ActorPreviewPlaceBuildingPreview:
+	-BodyOrientation:
+    ClassicFacingBodyOrientation:
+	Selectable:
+		Bounds: 2048, 1024
+	HitShape:
+		Type: Rectangle
+			TopLeft: -768,-512
+			BottomRight: 768,512
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: SAM Site
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		Prerequisites: anyhq
+		Queue: Defense.Soviet
+		Description: Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+    RevealsShroudMultiplier@Shooting:
+        Modifier: 200
+        RequiresCondition: is-shooting && !emp-affected-structure
+	GrantConditionOnAttack@ShootingVision:
+		Condition: is-shooting
+		ArmamentNames: primary
+		RevokeDelay: 75
+	Turreted:
+		TurnSpeed: 24
+		InitialFacing: 0
+		RealignDelay: -1
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+        Name: primary
+		Weapon: SAMMissile
+		MuzzleSequence: muzzle
+        PauseOnCondition: !ammo || build-incomplete || lowpower || emp-affected-structure
+	AmmoPool:
+		Armaments: primary
+		Ammo: 6
+		AmmoCondition: ammo
+		ReloadDelay: 15
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 3
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 60
+		Count: 6
+        RequiresCondition: !ammo && !emp-affected-structure
+	AttackTurreted:
+        PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Power:
+		Amount: -30
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	SequencePlaceBuildingPreview:
+		Sequence: place
+		SequenceAlpha: 0.65
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: SAM2.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+FTWR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetGround
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flame Tower
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: vehicleproduction
+		Queue: Defense.Soviet
+		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+	Building:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 512
+		Offset: 0,0,112
+	Armament:
+		Weapon: FireballLauncher
+		LocalOffset: 512,0,0
+		PauseOnCondition: build-incomplete || lowpower
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+	RenderDetectionCircle:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	Power:
+		Amount: -20
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: FTWR.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+TSLA:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1706, 0, -341
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Tesla Coil
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: anyhq
+		Queue: Defense.Soviet
+		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	WithBuildingBib:
+		HasMinibib: true
+	WithTeslaChargeAnimation:
+	Armament:
+		Weapon: TeslaZap
+		LocalOffset: 0,0,896
+        PauseOnCondition: build-incomplete
+	AttackTesla:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: lowpower || build-incomplete
+		ChargeAudio: tslachg2.aud
+		MaxCharges: 3
+		ReloadDelay: 120
+	Power:
+		Amount: -100
+        RequiresCondition: !build-incomplete
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete
+	WithRangeCircle:
+	Targetable@ChargeTargeting:
+		TargetTypes: Charge
+		RequiresCondition: TeslaChargeable && !haspower
+	GrantCondition@Overcharge:
+		Condition: TeslaHasCharge
+		RequiresCondition: TeslaChargeApplied
+	TimedConditionBar@Charged:
+		Condition: TeslaChargeApplied
+		Color: f4f442
+	GrantCondition@ChargeTargeting:
+		Condition: TeslaChargeable
+		RequiresCondition: ( lowpower || TeslaHasCharge )
+	ExternalCondition@Overcharge:
+        Condition: TeslaChargeApplied
+	WithDecoration@Overcharge:
+		Image: poweroff
+		Sequence: offline
+		Position: BottomRight
+		RequiresCondition: TeslaChargeApplied
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+		RequiresCondition: !TeslaHasCharge
+	GrantConditionOnPowerState@HASPOWER:
+		Condition: haspower
+		ValidPowerStates: Normal
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: TSLA.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+GAP:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Gap Generator
+	Buildable:
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 13
+		Queue: Building.Allies
+		Prerequisites: atek
+		Description: Obscures the enemy's view with shroud.\nCan be toggled on/off via deploy command.\nRequires power to operate.
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 2048, 0, -512
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: lowpower || deployed || emp-affected-structure
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	CreatesShroud:
+		Range: 9c0
+		RequiresCondition: !lowpower && !deployed && !emp-affected-structure
+	WithRangeCircle@Normal:
+		Color: 008B8B
+		Width: 1
+		BorderColor: 000000
+		BorderWidth: 3
+		Range: 9c0
+		RequiresCondition: !deployed && !emp-affected-structure
+	GrantConditionOnDeploy:
+		PauseOnCondition: emp-affected-structure
+		DeployedCondition: deployed
+		SkipMakeAnimation: true
+        DeployCursor: powerdown
+        DeployBlockedCursor: powerdown-blocked
+	WithDecoration@offline:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-hold
+		Position: Top
+		Margin: 0, 4
+		RequiresCondition: deployed
+	Power:
+		Amount: -80
+        RequiresCondition: !build-incomplete && !deployed && !emp-affected-structure
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	WithBuildingBib:
+        HasMinibib: true
+	RenderSprites:
+		Image: GAP
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
+	ProximityExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+		ValidRelationships: Enemy, Neutral
+		Range: 9c0
+        RequiresCondition: !deployed && !emp-affected-structure
+    -CaptureManager:
+    -Capturable:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished
+	SpawnActorOnDeath@HUSK:
+		Actor: GAP.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+GAP.Clone:
+    Inherits: GAP
+	Buildable:
+		Queue: Defense.Allies
+	RenderSprites:
+		Image: gap
+    -MapEditorData:
+
+AGUN:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAir
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+    -BodyOrientation:
+    ClassicFacingBodyOrientation:
+    -RenderDetectionCircle:
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1365, 0, -170
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Anti-Air Gun
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: anyhq
+		Queue: Defense.Allies
+		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
+    Building:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+    RevealsShroudMultiplier@Shooting:
+        Modifier: 200
+        RequiresCondition: is-shooting && !emp-affected-structure
+	GrantConditionOnAttack@ShootingVision:
+		Condition: is-shooting
+		ArmamentNames: primary
+		RevokeDelay: 75
+	Turreted:
+		TurnSpeed: 24
+		InitialFacing: 820
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	WithTurretAttackAnimation:
+        Armament: primary
+        Turret: primary
+		Sequence: recoil
+	Armament:
+        Name: primary
+		Weapon: FlakGun
+		LocalOffset: 520,100,450, 520,-150,450
+		MuzzleSequence: muzzle
+        PauseOnCondition: !ammo
+	AmmoPool:
+		Armaments: primary
+		Ammo: 10
+		AmmoCondition: ammo
+		ReloadDelay: 15
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 50
+		Count: 10
+		RequiresCondition: !ammo && !emp-affected-structure
+	AttackTurreted:
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Power:
+		Amount: -45
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	WithBuildingBib:
+        HasMinibib: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: AGUN.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 SBAG:
 	Inherits: ^Wall
@@ -490,6 +1012,31 @@ WOOD:
 		Types: woodfence
 	WithWallSpriteBody:
 		Type: woodfence
+
+FENC:
+	Inherits: ^Wall
+    Inherits@productionboost: ^ProductionBoost
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Wire Fence
+	Buildable:
+        BuildDuration: 75
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+		Prerequisites: infantryproduction
+		Queue: Defense.Soviet
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+	Armor:
+		Type: Light
+	LineBuild:
+		NodeTypes: fenc
+	LineBuildNode:
+		Types: fenc
+	WithWallSpriteBody:
+		Type: fenc
 
 HGAT:
 	Inherits: ^Gate
@@ -690,6 +1237,11 @@ PBOX:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: PBOX.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 HBOX:
 	Inherits: ^Defense
@@ -795,495 +1347,8 @@ HBOX:
 		Condition: is-shooting
 		ArmamentNames: primary
 		RevokeDelay: 75
-
-AGUN:
-	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@AUTOTARGET: ^AutoTargetAir
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-    -BodyOrientation:
-    ClassicFacingBodyOrientation:
-    -RenderDetectionCircle:
-	Selectable:
-		Bounds: 1024, 1024
-		DecorationBounds: 1024, 1365, 0, -170
-	Valued:
-		Cost: 600
-	Tooltip:
-		Name: Anti-Air Gun
-	Buildable:
-        BuildDuration: 900
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 7
-		Prerequisites: anyhq
-		Queue: Defense.Allies
-		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
-    Building:
-	Health:
-		HP: 40000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 3c512
-    RevealsShroudMultiplier@Shooting:
-        Modifier: 200
-        RequiresCondition: is-shooting && !emp-affected-structure
-	GrantConditionOnAttack@ShootingVision:
-		Condition: is-shooting
-		ArmamentNames: primary
-		RevokeDelay: 75
-	Turreted:
-		TurnSpeed: 24
-		InitialFacing: 820
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
-	WithTurretAttackAnimation:
-        Armament: primary
-        Turret: primary
-		Sequence: recoil
-	Armament:
-        Name: primary
-		Weapon: FlakGun
-		LocalOffset: 520,100,450, 520,-150,450
-		MuzzleSequence: muzzle
-        PauseOnCondition: !ammo
-	AmmoPool:
-		Armaments: primary
-		Ammo: 10
-		AmmoCondition: ammo
-		ReloadDelay: 15
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-		PipCount: 5
-		RequiresSelection: true
-	ReloadAmmoPool:
-		Delay: 50
-		Count: 10
-		RequiresCondition: !ammo && !emp-affected-structure
-	AttackTurreted:
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
-	WithMuzzleOverlay:
-	RenderRangeCircle:
-		RangeCircleType: aa
-	Power:
-		Amount: -45
-        RequiresCondition: !build-incomplete && !emp-affected-structure
-	WithBuildingBib:
-        HasMinibib: true
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-FTWR:
-	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@AUTOTARGET: ^AutoTargetGround
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	-QuantizeFacingsFromSequence:
-	BodyOrientation:
-		QuantizedFacings: 8
-	Valued:
-		Cost: 600
-	Tooltip:
-		Name: Flame Tower
-	Buildable:
-        BuildDuration: 900
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 6
-		Prerequisites: vehicleproduction
-		Queue: Defense.Soviet
-		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
-	Building:
-	Health:
-		HP: 40000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 4c512
-	WithBuildingBib:
-		HasMinibib: true
-	Turreted:
-		TurnSpeed: 512
-		Offset: 0,0,112
-	Armament:
-		Weapon: FireballLauncher
-		LocalOffset: 512,0,0
-		PauseOnCondition: build-incomplete || lowpower
-	AttackTurreted:
-		PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
-	DetectCloaked:
-        DetectionTypes: Stealth, AirStealth, Underground, Underwater
-		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
-	RenderDetectionCircle:
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-	Power:
-		Amount: -20
-        RequiresCondition: !build-incomplete && !emp-affected-structure
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-TSLA:
-	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Selectable:
-		Bounds: 1024, 1024
-		DecorationBounds: 1024, 1706, 0, -341
-	Valued:
-		Cost: 1200
-	Tooltip:
-		Name: Tesla Coil
-	Buildable:
-        BuildDuration: 1200
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 8
-		Prerequisites: anyhq
-		Queue: Defense.Soviet
-		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
-	Health:
-		HP: 60000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 8c0
-	WithBuildingBib:
-		HasMinibib: true
-	WithTeslaChargeAnimation:
-	Armament:
-		Weapon: TeslaZap
-		LocalOffset: 0,0,896
-        PauseOnCondition: build-incomplete
-	AttackTesla:
-		RequiresCondition: !build-incomplete
-		PauseOnCondition: lowpower || build-incomplete
-		ChargeAudio: tslachg2.aud
-		MaxCharges: 3
-		ReloadDelay: 120
-	Power:
-		Amount: -100
-        RequiresCondition: !build-incomplete
-	DetectCloaked:
-        DetectionTypes: Stealth, AirStealth, Underground, Underwater
-		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete
-	WithRangeCircle:
-	Targetable@ChargeTargeting:
-		TargetTypes: Charge
-		RequiresCondition: TeslaChargeable && !haspower
-	GrantCondition@Overcharge:
-		Condition: TeslaHasCharge
-		RequiresCondition: TeslaChargeApplied
-	TimedConditionBar@Charged:
-		Condition: TeslaChargeApplied
-		Color: f4f442
-	GrantCondition@ChargeTargeting:
-		Condition: TeslaChargeable
-		RequiresCondition: ( lowpower || TeslaHasCharge )
-	ExternalCondition@Overcharge:
-        Condition: TeslaChargeApplied
-	WithDecoration@Overcharge:
-		Image: poweroff
-		Sequence: offline
-		Position: BottomRight
-		RequiresCondition: TeslaChargeApplied
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-		RequiresCondition: !TeslaHasCharge
-	GrantConditionOnPowerState@HASPOWER:
-		Condition: haspower
-		ValidPowerStates: Normal
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-SAM2:
-	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@AUTOTARGET: ^AutoTargetAir
-	Inherits@shape: ^2x1Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	-RenderDetectionCircle:
-	-ActorPreviewPlaceBuildingPreview:
-	-BodyOrientation:
-    ClassicFacingBodyOrientation:
-	Selectable:
-		Bounds: 2048, 1024
-	HitShape:
-		Type: Rectangle
-			TopLeft: -768,-512
-			BottomRight: 768,512
-	Valued:
-		Cost: 750
-	Tooltip:
-		Name: SAM Site
-	Buildable:
-        BuildDuration: 1200
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 9
-		Prerequisites: anyhq
-		Queue: Defense.Soviet
-		Description: Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-	Health:
-		HP: 40000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 3c512
-    RevealsShroudMultiplier@Shooting:
-        Modifier: 200
-        RequiresCondition: is-shooting && !emp-affected-structure
-	GrantConditionOnAttack@ShootingVision:
-		Condition: is-shooting
-		ArmamentNames: primary
-		RevokeDelay: 75
-	Turreted:
-		TurnSpeed: 24
-		InitialFacing: 0
-		RealignDelay: -1
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
-	Armament:
-        Name: primary
-		Weapon: SAMMissile
-		MuzzleSequence: muzzle
-        PauseOnCondition: !ammo || build-incomplete || lowpower || emp-affected-structure
-	AmmoPool:
-		Armaments: primary
-		Ammo: 6
-		AmmoCondition: ammo
-		ReloadDelay: 15
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-		PipCount: 3
-		RequiresSelection: true
-	ReloadAmmoPool:
-		Delay: 60
-		Count: 6
-        RequiresCondition: !ammo && !emp-affected-structure
-	AttackTurreted:
-        PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
-	WithMuzzleOverlay:
-	RenderRangeCircle:
-		RangeCircleType: aa
-	Power:
-		Amount: -30
-		RequiresCondition: !build-incomplete && !emp-affected-structure
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
-	SequencePlaceBuildingPreview:
-		Sequence: place
-		SequenceAlpha: 0.65
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-GAP:
-	Inherits: ^BaseBuilding
-	Inherits@IDISABLE: ^DisabledOverlay
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	Valued:
-		Cost: 900
-	Tooltip:
-		Name: Gap Generator
-	Buildable:
-        BuildDuration: 1500
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 13
-		Queue: Building.Allies
-		Prerequisites: atek
-		Description: Obscures the enemy's view with shroud.\nCan be toggled on/off via deploy command.\nRequires power to operate.
-	Selectable:
-		Bounds: 1024, 1024
-		DecorationBounds: 1024, 2048, 0, -512
-	SelectionDecorations:
-	WithSpriteBody:
-		PauseOnCondition: lowpower || deployed || emp-affected-structure
-	Health:
-		HP: 60000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 8c0
-	CreatesShroud:
-		Range: 9c0
-		RequiresCondition: !lowpower && !deployed && !emp-affected-structure
-	WithRangeCircle@Normal:
-		Color: 008B8B
-		Width: 1
-		BorderColor: 000000
-		BorderWidth: 3
-		Range: 9c0
-		RequiresCondition: !deployed && !emp-affected-structure
-	GrantConditionOnDeploy:
-		PauseOnCondition: emp-affected-structure
-		DeployedCondition: deployed
-		SkipMakeAnimation: true
-        DeployCursor: powerdown
-        DeployBlockedCursor: powerdown-blocked
-	WithDecoration@offline:
-		RequiresSelection: false
-		Image: pips
-		Sequence: tag-hold
-		Position: Top
-		Margin: 0, 4
-		RequiresCondition: deployed
-	Power:
-		Amount: -80
-        RequiresCondition: !build-incomplete && !deployed && !emp-affected-structure
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	HitShape:
-		Type: Rectangle
-			TopLeft: -512, -512
-			BottomRight: 512, 512
-	WithBuildingBib:
-        HasMinibib: true
-	RenderSprites:
-		Image: GAP
-	ActorPreviewPlaceBuildingPreview:
-		Animated: false
-    WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
-	ProximityExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
-		ValidRelationships: Enemy, Neutral
-		Range: 9c0
-        RequiresCondition: !deployed && !emp-affected-structure
-    -CaptureManager:
-    -Capturable:
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished
-
-GAP.Clone:
-    Inherits: GAP
-	Buildable:
-		Queue: Defense.Allies
-	RenderSprites:
-		Image: gap
-    -MapEditorData:
-
-FENC:
-	Inherits: ^Wall
-    Inherits@productionboost: ^ProductionBoost
-	Valued:
-		Cost: 50
-	CustomSellValue:
-		Value: 0
-	Tooltip:
-		Name: Wire Fence
-	Buildable:
-        BuildDuration: 75
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 1
-		Prerequisites: infantryproduction
-		Queue: Defense.Soviet
-		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
-	Armor:
-		Type: Light
-	LineBuild:
-		NodeTypes: fenc
-	LineBuildNode:
-		Types: fenc
-	WithWallSpriteBody:
-		Type: fenc
-
-LTUR:
-	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@AUTOTARGET: ^AutoTargetGround
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	-BodyOrientation:
-	Selectable:
-		Bounds: 1024, 1024
-	Valued:
-		Cost: 600
-	Tooltip:
-		Name: Laser Turret
-	Buildable:
-        BuildDuration: 900
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 4
-		Prerequisites: vehicleproduction
-		Queue: Defense.Blackhand
-		Description: All-purpose base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
-	Building:
-	Health:
-		HP: 40000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 4c512
-	WithBuildingBib:
-		HasMinibib: true
-	Turreted:
-		TurnSpeed: 18
-		InitialFacing: 128
-		RealignDelay: -1
-		RequiresCondition: !build-incomplete
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
-	Armament:
-		Weapon: TurretLaser
-        LocalOffset: 512,0,189
-        PauseOnCondition: build-incomplete
-	AttackTurreted:
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
-	WithMuzzleOverlay:
-	DetectCloaked:
-        DetectionTypes: Stealth, AirStealth, Underground, Underwater
-		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
-	RenderDetectionCircle:
-	Power:
-		Amount: -20
-		RequiresCondition: !build-incomplete && !emp-affected-structure
-	ClassicFacingBodyOrientation:
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
-    WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: HBOX.Husk
+        OwnerType: InternalName
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled

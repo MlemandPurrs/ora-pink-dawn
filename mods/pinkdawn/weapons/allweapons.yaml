@@ -2884,6 +2884,7 @@ SubMissile:
 	Burst: 2
 	BurstDelays: 50
 	TargetActorCenter: true
+	ValidTargets: Ground, Water, Tree
 	Report: missile7.aud
 	Projectile: Bullet
 		Speed: 162

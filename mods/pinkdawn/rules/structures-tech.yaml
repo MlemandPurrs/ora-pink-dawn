@@ -273,6 +273,25 @@ SYRD:
 		DeploySound: sonpulse.aud
 		Terrain: Water
 		AllowUnderShroud: false
+	SpawnActorOnDeath:
+		Actor: SYRD.Husk
+        OwnerType: InternalName
+
+SYRD.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	Tooltip:
+		Name: Shipyard (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: syrd
+	RenderSprites:
+		Image: syrd.husk
 
 COMM:
 	Inherits: ^TechBuilding

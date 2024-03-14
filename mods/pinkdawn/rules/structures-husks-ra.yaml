@@ -8,8 +8,13 @@ FAC2.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Construction Yard (Destroyed)
+	Health:
+		HP: 45000
 	RenderSprites:
 		Image: fac2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: fac2
 
 POWR.Husk:
 	Inherits: ^BuildingHusk
@@ -21,8 +26,13 @@ POWR.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Power Plant (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
 		Image: powr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: powr
 
 APWR.Husk:
 	Inherits: ^BuildingHusk
@@ -34,8 +44,13 @@ APWR.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Advanced Power Plant (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: apwr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: apwr
 
 OREF.Husk:
 	Inherits: ^BuildingHusk
@@ -47,8 +62,13 @@ OREF.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Refinery (Destroyed)
+	Health:
+		HP: 35000
 	RenderSprites:
 		Image: oref.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: oref
 
 OSIL.Husk:
 	Inherits: ^BuildingHusk
@@ -59,8 +79,13 @@ OSIL.Husk:
 		Dimensions: 1,1
 	Tooltip:
 		Name: Silo (Destroyed)
+	Health:
+		HP: 15000
 	RenderSprites:
 		Image: osil.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: osil
 
 TENT.Husk:
 	Inherits: ^BuildingHusk
@@ -72,8 +97,13 @@ TENT.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Barracks (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: tent.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: tent
 
 BARR.Husk:
 	Inherits: ^BuildingHusk
@@ -85,8 +115,13 @@ BARR.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Barracks (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: barr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: barr
 
 WARF.Husk:
 	Inherits: ^BuildingHusk
@@ -98,8 +133,13 @@ WARF.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: War Factory (Destroyed)
+	Health:
+		HP: 40000
 	RenderSprites:
 		Image: warf.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: warf
 
 FIX2.Husk:
 	Inherits: ^BuildingHusk
@@ -110,8 +150,13 @@ FIX2.Husk:
 		Dimensions: 3,3
 	Tooltip:
 		Name: Service Depot (Destroyed)
+	Health:
+		HP: 35000
 	RenderSprites:
 		Image: fix2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: fix2
 
 2FLD.Husk:
 	Inherits: ^BuildingHusk
@@ -123,8 +168,13 @@ FIX2.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Airfield (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: 2fld.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: 2fld
 
 3FLD.Husk:
 	Inherits: ^BuildingHusk
@@ -136,8 +186,13 @@ FIX2.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Airfield (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: 3fld.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: 3fld
 
 DOME.Husk:
 	Inherits: ^BuildingHusk
@@ -149,8 +204,13 @@ DOME.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Radar Dome (Destroyed)
+	Health:
+		HP: 45000
 	RenderSprites:
 		Image: dome.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: dome
 
 ATEK.Husk:
 	Inherits: ^BuildingHusk
@@ -162,8 +222,13 @@ ATEK.Husk:
         LocalCenterOffset: 0,-256,0
 	Tooltip:
 		Name: Technology Center (Destroyed)
+	Health:
+		HP: 50000
 	RenderSprites:
 		Image: atek.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: atek
 
 STEK.Husk:
 	Inherits: ^BuildingHusk
@@ -175,8 +240,13 @@ STEK.Husk:
         LocalCenterOffset: 0,-256,0
 	Tooltip:
 		Name: Technology Center (Destroyed)
+	Health:
+		HP: 50000
 	RenderSprites:
 		Image: stek.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: stek
 
 FCOM.Husk:
 	Inherits: ^BuildingHusk
@@ -188,8 +258,13 @@ FCOM.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Command Post (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: fcom.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: fcom
 
 CSPH.Husk:
 	Inherits: ^BuildingHusk
@@ -198,11 +273,16 @@ CSPH.Husk:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-		LocalCenterOffset: 0,-512,0
+		LocalCenterOffset: 0,-256,0
 	Tooltip:
 		Name: Chronosphere (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: csph.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: csph
 
 IRON.Husk:
 	Inherits: ^BuildingHusk
@@ -214,8 +294,13 @@ IRON.Husk:
 		LocalCenterOffset: 0,-512,-512
 	Tooltip:
 		Name: Iron Curtain (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: iron.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: iron
 
 MSLO.Husk:
 	Inherits: ^BuildingHusk
@@ -226,8 +311,13 @@ MSLO.Husk:
 		Dimensions: 2,1
 	Tooltip:
 		Name: Missile Silo (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: mslo.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: mslo
 
 PBOX.Husk:
 	Inherits: ^BuildingHusk
@@ -235,17 +325,27 @@ PBOX.Husk:
 		Bounds: 1024, 1024
 	Tooltip:
 		Name: Pillbox (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
 		Image: pbox.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: pbox
 
 HBOX.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Tooltip:
-		Name: Pillbox (Destroyed)
+		Name: Camo Pillbox (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
-		Image: pbox.husk
+		Image: hbox.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hbox
 
 AGUN.Husk:
 	Inherits: ^BuildingHusk
@@ -257,7 +357,14 @@ AGUN.Husk:
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Tooltip:
-		Name: Gun Turret (Destroyed)
+		Name: Anti-Air Gun (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: agun.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: agun
 
 FTWR.Husk:
 	Inherits: ^BuildingHusk
@@ -265,8 +372,13 @@ FTWR.Husk:
 		Bounds: 1024,1024
 	Tooltip:
 		Name: Flame Tower (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
 		Image: ftwr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: ftwr
 
 TSLA.Husk:
 	Inherits: ^BuildingHusk
@@ -274,8 +386,13 @@ TSLA.Husk:
 		Bounds: 1024, 1024
 	Tooltip:
 		Name: Tesla Coil (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: tsla.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: tsla
 
 SAM2.Husk:
 	Inherits: ^BuildingHusk
@@ -286,3 +403,24 @@ SAM2.Husk:
 		Dimensions: 2,1
 	Tooltip:
 		Name: SAM Site (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: sam2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: sam2
+
+GAP.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Tooltip:
+		Name: GAP Generator (Destroyed)
+	Health:
+		HP: 30000
+	RenderSprites:
+		Image: gap.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gap

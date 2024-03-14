@@ -123,6 +123,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 18
 		Prerequisites: global-boink
+	LobbyPrerequisiteCheckbox@HUSKS:
+		ID: husks
+		Label: Husks
+		Description: All Structures leave behind a husk on die
+		Enabled: False
+		DisplayOrder: 19
+		Prerequisites: global-husks
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:

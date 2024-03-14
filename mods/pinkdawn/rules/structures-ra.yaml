@@ -186,6 +186,11 @@ FAC2:
 	GrantConditionOnBotOwner@botinsurance:
 		Condition: bot-insurance-enabler
 		Bots: normalai
+	SpawnActorOnDeath@HUSK:
+		Actor: FAC2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 POWR:
 	Inherits: ^BaseBuilding
@@ -248,6 +253,11 @@ POWR:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: POWR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 APWR:
 	Inherits: ^BaseBuilding
@@ -310,6 +320,11 @@ APWR:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: APWR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 OREF:
 	Inherits: ^BaseBuilding
@@ -420,6 +435,11 @@ OREF:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-3
+	SpawnActorOnDeath@HUSK:
+		Actor: OREF.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 OSIL:
 	Inherits: ^BaseBuilding
@@ -497,6 +517,11 @@ OSIL:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: OSIL.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 TENT:
 	Inherits: ^BaseBuilding
@@ -585,6 +610,11 @@ TENT:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: TENT.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 BARR:
 	Inherits: ^BaseBuilding
@@ -670,6 +700,11 @@ BARR:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: BARR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 WARF:
 	Inherits: ^BaseBuilding
@@ -784,6 +819,11 @@ WARF:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: WARF.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 FIX2:
 	Inherits: ^BaseBuilding
@@ -852,6 +892,11 @@ FIX2:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: FIX2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 2FLD:
 	Inherits: ^BaseBuilding
@@ -990,6 +1035,11 @@ FIX2:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: 2FLD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 3FLD:
 	Inherits: ^BaseBuilding
@@ -1188,6 +1238,11 @@ FIX2:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: 3FLD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 DOME:
 	Inherits: ^BaseBuilding
@@ -1220,7 +1275,7 @@ DOME:
 	WithSpriteBody:
 		PauseOnCondition: lowpower || emp-affected-structure
 	Health:
-		HP: 100000
+		HP: 90000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -1278,6 +1333,11 @@ DOME:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: DOME.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 ATEK:
 	Inherits: ^BaseBuilding
@@ -1385,6 +1445,11 @@ ATEK:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: ATEK.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 gpsactivenoise:
 	Interactable:
@@ -1504,6 +1569,11 @@ STEK:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: STEK.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 FCOM:
 	Inherits: ^BaseBuilding
@@ -1576,6 +1646,11 @@ FCOM:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: FCOM.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 CSPH:
 	Inherits: ^BaseBuilding
@@ -1645,6 +1720,11 @@ CSPH:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-3
+	SpawnActorOnDeath@HUSK:
+		Actor: CSPH.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 IRON:
 	Inherits: ^BaseBuilding
@@ -1716,6 +1796,11 @@ IRON:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-3
+	SpawnActorOnDeath@HUSK:
+		Actor: IRON.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 MSLO:
 	Inherits: ^BaseBuilding
@@ -1803,6 +1888,11 @@ MSLO:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-5
+	SpawnActorOnDeath@HUSK:
+		Actor: MSLO.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 ANYAFLD:
 	AlwaysVisible:

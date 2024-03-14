@@ -26,6 +26,9 @@ fac2:
 fac2.husk:
 	idle: fac2
         Start: 52
+	dead: fac2
+        Start: 52
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -38,12 +41,12 @@ powr:
 	make: powrmake
 		Length: *
         Tick: 80
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 2
         Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
 	icon: powricon
     fake-icon: powficon
 
@@ -51,6 +54,9 @@ powr.husk:
 	idle: powr
         Start: 2
         Length: 1
+    dead: powr
+        Start: 2
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -66,13 +72,13 @@ apwr:
 		Length: *
 		Offset: 0,-10
         Tick: 80
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 2
         Tick: 800
         Offset: 0,-10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
 	icon: apwricon
     fake-icon: apwficon
 
@@ -81,6 +87,10 @@ apwr.husk:
 		Start: 2
 		Length: 1
 		Offset: 0,-10
+    dead: apwr
+        Start: 2
+        Tick: 800
+        Offset: 0,-10
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
@@ -100,6 +110,9 @@ npwr:
 npwr.husk:
 	idle: npwr
 		Start: 1
+	dead: npwr
+        Start: 1
+		Tick: 800
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
@@ -119,14 +132,14 @@ oref:
 	make: orefmake
 		Length: *
         Tick: 80
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-        ZOffset: -1c510
     dead:
         Start: 2
         ZOffset: -1c511
         Tick: 800
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1c510
 	icon: oreficon
     fake-icon: freficon
     
@@ -135,6 +148,10 @@ oref.husk:
 		Start: 2
         Length: 1
 		ZOffset: -1c511
+    dead: oref
+        Start: 2
+        ZOffset: -1c511
+        Tick: 800
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
@@ -157,22 +174,28 @@ osil:
 		Length: *
 		Offset: 0,-1
         Tick: 80
+    dead: osil
+        Start: 9
+        Length: 1
+        Offset: 0,-1
+        Tick: 800
 	bib: mbOSIL
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
-    dead: osil
-        Start: 9
-        Length: 1
-        Tick: 800
 	icon: osilicon
 
 osil.husk:
 	idle: osil
 		Start: 9
 		Length: 1
+    dead: osil
+        Start: 9
+        Length: 1
+        Offset: 0,-1
+        Tick: 800
 	bib: mbOSIL
 		Length: *
 		UseTilesetExtension: true
@@ -224,6 +247,10 @@ tent.husk:
 	idle: tent
 		Start: 20
 		Length: 1
+	dead: tent
+		Start: 20
+		Length: 1
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -247,13 +274,13 @@ barr:
 		Length: *
 		Offset: 0,-6
         Tick: 80
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 20
         Offset: 0,-6
         Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
 	icon: barricon
 
 barr.husk:
@@ -261,6 +288,10 @@ barr.husk:
 		Start: 20
 		Length: 1
 		Offset: 0,-6
+    dead: barr
+        Start: 20
+        Offset: 0,-6
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -282,11 +313,12 @@ warf:
         ZOffset: 0
 	place: warfmake
 		Start: 14
+    dead: warfdead
+        Start: 0
+        Tick: 800
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
-    dead: warfdead
-        Tick: 800
 	icon: warficon
     fake-icon: fwaricon
 
@@ -294,6 +326,9 @@ warf.husk:
 	idle: warfdead
         Start: 0
         Length: 1
+    dead: warfdead
+        Start: 0
+        Tick: 800
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
@@ -321,6 +356,9 @@ fix2:
 		Length: *
 		Offset: 0,1
         Tick: 60
+    dead:
+        Start: 14
+        Tick: 800
 	bib: mbFIX2
 		Length: *
 		ZOffset: -1c511
@@ -329,9 +367,6 @@ fix2:
 		TilesetOverrides:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
-    dead:
-        Start: 14
-        Tick: 800
 	icon: fix2icon
     fake-icon: fixficon
 
@@ -341,6 +376,9 @@ fix2.husk:
 		Length: 1
 		Offset: 0,1
 		ZOffset: -1c511
+    dead: fix2
+        Start: 14
+        Tick: 800
 	bib: mbFIX2
 		Length: *
 		ZOffset: -1c511
@@ -397,6 +435,12 @@ fix2.husk:
         Tick: 800
 		ZOffset: -1023
 		Offset: 0,-4
+    dead: 2fld
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4  
 	bib: bib2
 		Length: *
 		UseTilesetExtension: true
@@ -432,7 +476,7 @@ fix2.husk:
         Length: 1
         Tick: 800
 		ZOffset: -1023
-		Offset: 0,-4        
+		Offset: 0,-4
 	make: 3fldmake
 		Length: *
 		Offset: 0,-4
@@ -445,6 +489,12 @@ fix2.husk:
 
 3fld.husk:
 	idle: 3fld
+        Start: 32
+        Length: 1
+        Tick: 800
+		ZOffset: -1023
+		Offset: 0,-4
+    dead: 3fld
         Start: 32
         Length: 1
         Tick: 800
@@ -468,13 +518,13 @@ dome:
 		Length: *
 		Offset: 0,-4
         Tick: 80
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 2
         Offset: 0,-4
         Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
 	icon: domeicon
     fake-icon: domficon
     
@@ -483,6 +533,10 @@ dome.husk:
 		Start: 2
 		Length: 1
 		Offset: 0,-4
+    dead: dome
+        Start: 2
+        Offset: 0,-4
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -498,12 +552,12 @@ atek:
 	active: atekdoor
 		Length: *
 		Offset: -4,0
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 2
         Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
 	icon: atekicon
     fake-icon: ateficon
 
@@ -511,6 +565,12 @@ atek.husk:
 	idle: atek
         Start: 2
         Length: 1
+    dead: atek
+        Start: 2
+        Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
 
 stek:
     Inherits: emp-overlay
@@ -520,18 +580,24 @@ stek:
 	make: stekmake
 		Length: *
         Tick: 80
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
     dead:
         Start: 2
         Tick: 800
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
 	icon: stekicon
 
 stek.husk:
 	idle: stek
 		Start: 2
 		Length: 1
+    dead: stek
+        Start: 2
+        Tick: 800
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
 
 fcom:
     Inherits: emp-overlay
@@ -554,6 +620,10 @@ fcom.husk:
 	idle: fcom
 		Start: 1
         Length: 1
+	dead: fcom
+		Start: 1
+        Length: 1
+        Tick: 800
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
@@ -569,6 +639,9 @@ pbox:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
+    dead:
+        Start: 2
+        Tick: 800
 	bib: mbPBOX
 		Length: *
         Offset: 0,-2
@@ -577,16 +650,16 @@ pbox:
 			WINTER: TEMPERAT
 			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
-    dead:
-        Start: 2
-        Tick: 800
 	icon: pboxicon
 
 pbox.husk:
 	idle: pbox
         Start: 2
         Length: 1
- 	bib: mbPBOX
+    dead: pbox
+        Start: 2
+        Tick: 800
+    bib: mbPBOX
 		Length: *
         Offset: 0,-2
 		UseTilesetExtension: true
@@ -629,6 +702,9 @@ hbox.husk:
 	idle: hbox
         Start: 3
         Length: 1
+    dead: hbox
+        Start: 3
+        Tick: 800
 
 ftwr:
     Inherits: emp-overlay
@@ -640,16 +716,16 @@ ftwr:
 	make: ftwrmake
 		Length: *
 		Offset: 0,-2
+    dead:
+        Start: 2
+        Offset: 0,-2
+        Tick: 800
 	bib: mbFTWR
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
-    dead:
-        Start: 2
-        Offset: 0,-2
-        Tick: 800
 	muzzle:
 		Combine:
 			flame-n:
@@ -685,6 +761,10 @@ ftwr.husk:
 		Start: 2
 		Length: 1
 		Offset: 0,-2
+    dead: ftwr
+        Start: 2
+        Offset: 0,-2
+        Tick: 800
 	bib: mbFTWR
 		Length: *
 		UseTilesetExtension: true
@@ -713,22 +793,26 @@ tsla:
 		Length: 9
 		Tick: 100
 		Offset: 0,-13
+    dead:
+        Start: 20
+        Offset: 0,-13
+        Tick: 800
 	bib: mbTSLA
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
-    dead:
-        Start: 20
-        Offset: 0,-13
-        Tick: 800
 	icon: tslaicon
 
 tsla.husk:
 	idle: tsla
         Start: 20
         Offset: 0,-13
+    dead: tsla
+        Start: 20
+        Offset: 0,-13
+        Tick: 800
 	bib: mbTSLA
 		Length: *
 		UseTilesetExtension: true
@@ -770,6 +854,11 @@ gap.husk:
         Start: 32
         Length: 1
         Offset: 0,-14
+	dead: gap
+        Start: 32
+        Length: 1
+        Offset: 0,-14
+        Tick: 800
 	bib: mbGAP
 		Length: *
 		UseTilesetExtension: true
@@ -828,6 +917,12 @@ agun.husk:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
+    dead: agun
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+        Tick: 800
 	bib: mbAGUN
 		Length: *
 		UseTilesetExtension: true
@@ -879,6 +974,11 @@ sam2.husk:
 		Start: 67
 		Length: 1
 		Offset: -1,-2
+	dead: sam2
+		Start: 67
+		Length: 1
+		Tick: 800
+		Offset: -1,-2
 	bib: mbSAM2
 		Length: *
 		Offset: 0,1
@@ -919,6 +1019,10 @@ csph.husk:
 	idle: csph
 		Start: 29
 		Length: 1
+    dead: csph
+		Start: 29
+		Length: 1
+        Tick: 800
 	bib: mbPDOX
 		Length: *
 		Offset: 0,-4
@@ -967,6 +1071,11 @@ iron.husk:
 		Start: 11
 		Length: 1
 		Offset: 0,-12
+    dead: iron
+		Start: 11
+		Length: 1
+        Tick: 800
+		Offset: 0,-12
 	bib: mbIRON
 		Length: *
 		Offset: 0,-10
@@ -1003,7 +1112,7 @@ mslo:
 		Offset: 9, -11
 		UseTilesetExtension: false
     dead:
-		Start: 12
+		Start: 29
 		Length: 1
         Tick: 800
 	icon: msloicon
@@ -1019,8 +1128,12 @@ mslo.husk:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 	idle: mslo
-		Start: 12
+		Start: 29
 		Length: 1
+    dead: mslo
+		Start: 29
+		Length: 1
+        Tick: 800
 
 fenc:
 	idle:

@@ -309,8 +309,15 @@ CAMERA.sonar:
         Range: 3c0
         Visible: Always
         UsePlayerColor: true
+    #   no way to assign duration...
+    #   ProximityExternalCondition@ping:
+    #   Condition: minehit
+    #   Range: 3c256
+    #   ValidRelationships: Ally, Neutral, Enemy
 	MapEditorData:
 		Categories: System
+
+
 
 FLARE:
 	Immobile:
@@ -536,7 +543,7 @@ crate.paratroopers:
 	ParatroopersPower@ParatroopersOneShot:
 		OrderName: CrateParatroopers
 		Icon: parainfra
-		ChargeInterval: 6750
+		ChargeInterval: 0
 		UnitType: badg
 		Name: Paratroopers
 		Description: A Paradrop Plane drops a squad of infantry\nanywhere on the map.

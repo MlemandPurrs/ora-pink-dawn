@@ -206,6 +206,11 @@ FACT:
 	GrantConditionOnBotOwner@botinsurance:
 		Condition: bot-insurance-enabler
 		Bots: normalai
+	SpawnActorOnDeath@HUSK:
+		Actor: FACT.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 NUKE:
 	Inherits: ^BaseBuilding
@@ -272,6 +277,11 @@ NUKE:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: NUKE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -338,6 +348,11 @@ NUK2:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: NUK2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 NUK3:
 	Inherits: ^BaseBuilding
@@ -405,6 +420,11 @@ NUK3:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: NUK3.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 PROC:
 	Inherits: ^BaseBuilding
@@ -507,6 +527,11 @@ PROC:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-3
+	SpawnActorOnDeath@HUSK:
+		Actor: PROC.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -584,6 +609,11 @@ SILO:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: SILO.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 PYLE:
 	Inherits: ^BaseBuilding
@@ -675,6 +705,11 @@ PYLE:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: PYLE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -697,7 +732,7 @@ HAND:
 		Queue: Building.Nod, Building.Blackhand
 		Description: Trains Infantry units.
 	Building:
-		Footprint: xx xx ==
+		Footprint: xX xx ==
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
@@ -771,6 +806,11 @@ HAND:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: HAND.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled 
 
 AFLD:
 	Inherits: ^BaseBuilding
@@ -873,6 +913,119 @@ AFLD:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: AFLD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+UFLD:
+	Inherits: ^BaseBuilding
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 4096, 2048
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Subterranean War Factory
+        GenericStancePrefix: false
+        GenericName: War Factory
+        GenericVisibility: Ally, Neutral, Enemy
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: anypower, infantryproduction
+		Queue: Building.Blackhand
+		Description: Produces Vehicle units.
+	Building:
+		Footprint: XXX+ xxx+ ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 5c512
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,1
+        ExitDelay: 5
+	Exit@2:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,2
+        ExitDelay: 5
+	Production:
+		Produces: Vehicle
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	ProductionQueue:
+		Type: Vehicle
+		DisplayOrder: 3
+		Group: Vehicle
+		LowPowerModifier: 150
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+        Sticky: false
+	ProductionBar:
+		ProductionType: Vehicle
+	Power:
+		Amount: -40
+        RequiresCondition: !build-incomplete || emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@bossnod:
+		Prerequisite: vehicle.bossnod
+		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@mcv:
+		Prerequisite: vehicle.mcv
+		Factions: gdi, nod, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@harv:
+		Prerequisite: vehicle.harv
+		Factions: gdi, nod, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@bggy:
+		Prerequisite: vehicle.bggy
+		Factions: nod, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@apc:
+		Prerequisite: vehicle.apc
+		Factions: gdi, nod, allies, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@arty:
+		Prerequisite: vehicle.arty
+		Factions: nod, allies, bossnod
+        ResetOnOwnerChange: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: UFLD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -971,6 +1124,11 @@ WEAP:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: WEAP.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 FIX:
 	Inherits: ^BaseBuilding
@@ -1044,6 +1202,11 @@ FIX:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: FIX.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 HPAD:
 	Inherits: ^BaseBuilding
@@ -1193,6 +1356,11 @@ HPAD:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: HPAD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 HQ:
 	Inherits: ^BaseBuilding
@@ -1226,7 +1394,7 @@ HQ:
 	WithSpriteBody:
 		PauseOnCondition: lowpower || emp-affected-structure
 	Health:
-		HP: 100000
+		HP: 90000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -1285,6 +1453,11 @@ HQ:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: HQ.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -1378,6 +1551,11 @@ MISS:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: MISS.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 TMPL:
 	Inherits: ^BaseBuilding
@@ -1400,7 +1578,7 @@ TMPL:
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Biological Laboratory to charge-up)
 	Building:
-		Footprint: xxx xxx ===
+		Footprint: xXx xxx ===
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Selectable:
@@ -1471,6 +1649,11 @@ TMPL:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-5
+	SpawnActorOnDeath@HUSK:
+		Actor: TMPL.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 EYE:
 	Inherits: ^BaseBuilding
@@ -1556,6 +1739,11 @@ EYE:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-4
+	SpawnActorOnDeath@HUSK:
+		Actor: EYE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 BIO:
 	Inherits: ^BaseBuilding
@@ -1594,241 +1782,11 @@ BIO:
  	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
-
-INFANTRYPRODUCTION:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Infantry Production
-
-VEHICLEPRODUCTION:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Vehicle Production
-
-ANYPOWER:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Any Power Generation
-
-ANYHQ:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: A Radar Structure
-
-ANYTIER3:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Tech Center or Temple of Nod
-
-UFLD:
-	Inherits: ^BaseBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	Selectable:
-		Bounds: 4096, 2048
-	HitShape:
-		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
-		Type: Rectangle
-			TopLeft: -2048, -1024
-			BottomRight: 2048, 1024
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: Subterranean War Factory
-        GenericStancePrefix: false
-        GenericName: War Factory
-        GenericVisibility: Ally, Neutral, Enemy
-	ProvidesPrerequisite:
-		Prerequisite: vehicleproduction
-	Buildable:
-    	BuildDuration: 3300
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 6
-		Prerequisites: anypower, infantryproduction
-		Queue: Building.Blackhand
-		Description: Produces Vehicle units.
-	Building:
-		Footprint: XXX+ xxx+ ====
-		Dimensions: 4,3
-		LocalCenterOffset: 0,-512,0
-	Health:
-		HP: 100000
-	RevealsShroud:
-		Range: 5c512
-	RallyPoint:
-	CommandBarBlacklist:
-		DisableStop: false
-	Exit@1:
-		SpawnOffset: -1024,0,0
-		ExitCell: 3,1
-        ExitDelay: 5
-	Exit@2:
-		SpawnOffset: -1024,0,0
-		ExitCell: 3,2
-        ExitDelay: 5
-	Production:
-		Produces: Vehicle
-        PauseOnCondition: build-incomplete || emp-affected-structure
-	WithBuildingBib:
-	WithProductionDoorOverlay:
-		RequiresCondition: !build-incomplete
-		Sequence: build-top
-	ProductionQueue:
-		Type: Vehicle
-		DisplayOrder: 3
-		Group: Vehicle
-		LowPowerModifier: 150
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-        Sticky: false
-	ProductionBar:
-		ProductionType: Vehicle
-	Power:
-		Amount: -40
-        RequiresCondition: !build-incomplete || emp-affected-structure
-	ProvidesPrerequisite@buildingname:
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: vehicle.bossnod
-		Factions: bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@mcv:
-		Prerequisite: vehicle.mcv
-		Factions: gdi, nod, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@harv:
-		Prerequisite: vehicle.harv
-		Factions: gdi, nod, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bggy:
-		Prerequisite: vehicle.bggy
-		Factions: nod, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@apc:
-		Prerequisite: vehicle.apc
-		Factions: gdi, nod, allies, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@arty:
-		Prerequisite: vehicle.arty
-		Factions: nod, allies, bossnod
-        ResetOnOwnerChange: true
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
-	ActorPreviewPlaceBuildingPreview:
-		Animated: false
-	Capturable:
-		RequiresCondition: !build-incomplete
-		Types: building-player, building-player-4
-
-SGEN:
-	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x2Shape
-	Inherits@IDISABLE: ^DisabledOverlay
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1536, -1024
-			BottomRight: 1536, 1024
-	SelectionDecorations:
-	Selectable:
-		Bounds: 3072, 2048
-		DecorationBounds: 3072, 2148, 0, -320
-	Building:
-		Footprint: XXx XXx
-		Dimensions: 3,2
-		LocalCenterOffset: 0,0,0
-	Health:
-		HP: 60000
-	Armor:
-		Type: Heavy
-	Valued:
-		Cost: 1600
-	Buildable:
-    	BuildDuration: 2200
-        BuildDurationModifier: 100
-        BuildPaletteOrder: 16
-		BuildLimit: 1
-		Prerequisites: miss, ~global-superweapons
-		Queue: Building.Blackhand
-		Description: Maximum one can be built.\n\nEnables the usage of 'Stealth Field'\nto activate cloaking when ready.
-	Tooltip:
-		Name: Stealth Generator
-	ProvidesPrerequisite@buildingname:
-	Power:
-		Amount: -150
-		RequiresCondition: !build-incomplete
-	RevealsShroud:
-		Range: 3c0
-	WithBuildingBib:
-    #  made it not sellable while cloaking to avoid persistency glitch
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure && !cloakingfield-active
-	GrantPrerequisiteChargeDrainPower@StealthGenerator:
-		PauseOnCondition: lowpower
-        Prerequisite: cloakingfield-active
-		OrderName: CloakingField
-		DischargeModifier: 300
-		ActiveText: ACTIVE
-		AvailableText: READY
-		ChargeInterval: 4500 #  6-minutes cloaking was insane, reduced to 3min
-		Icon: cloakfield
-		Name: Stealth Field
-		Description: Activate to render everything invisible\nwithin a radius of 12-cells.\nDoes not cloak moving, or flying units.\n\nCan be toggled active once charged.
-        LaunchSound: cloak6.aud
-		InsufficientPowerSpeechNotification: InsufficientPower
-		InsufficientPowerTextNotification: Insufficient power.
-		BeginChargeSpeechNotification: IronCurtainCharging
-		BeginChargeTextNotification: Cloaking field charging.
-		EndChargeSpeechNotification: IronCurtainReady
-		EndChargeTextNotification: Cloaking field ready.
-		SupportPowerPaletteOrder: 2
-        AllowMultiple: true
- 	SupportPowerChargeBar:
-    #   the initial pulse animation
-    WithSupportPowerActivationAnimation:
-    	RequiresCondition: !build-incomplete
-    #   to keep pulsing while active
-    WithIdleAnimation@StealthGenerator:
-        Interval: 23
-        RequiresCondition: cloakingfield-active
-    ProvidesPrerequisite@StealthGeneratorOffline:
-        Prerequisite: cloakingfield-stop
-        RequiresCondition: lowpower
-	GrantConditionOnPrerequisite@StealthGenerator:
-		Condition: cloakingfield-active
-		Prerequisites: cloakingfield-active, !cloakingfield-stop
-	ProximityExternalCondition@StealthGenerator:
-		Condition: cloakfield-on
-        ValidRelationships: Ally
-		Range: 12c0
-        RequiresCondition: cloakingfield-active
-	DetectCloaked@RadialIndicator:
-        DetectionTypes: Nonsense
-		Range: 12c0
-        RequiresCondition: cloakingfield-active
-	RenderDetectionCircle@RadialIndicator:
-        TrailCount: 2
-        Visible: Always
-        UpdateLineTick: 6
-        BorderWidth: 0
-        Color: 8b008b
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	Capturable:
-		RequiresCondition: !build-incomplete
-		Types: building-player, building-player-4
-    -ExternalCondition@CloakingField:
-    -Cloak@CloakingField:
-    -GrantConditionOnDamageState@UNCLOAK:
+	SpawnActorOnDeath@HUSK:
+		Actor: BIO.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
 
 NCOM:
 	Inherits: ^BaseBuilding
@@ -1914,3 +1872,145 @@ NCOM:
         Offset: 200,400,0
         PauseOnCondition: lowpower
         RequiresCondition: !build-incomplete
+	SpawnActorOnDeath@HUSK:
+		Actor: NCOM.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+SGEN:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 1024
+	SelectionDecorations:
+	Selectable:
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2148, 0, -320
+	Building:
+		Footprint: XXx XXx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,0,0
+	Health:
+		HP: 80000
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 1600
+	Buildable:
+    	BuildDuration: 2200
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: miss, ~global-superweapons
+		Queue: Building.Blackhand
+		Description: Maximum one can be built.\n\nEnables the usage of 'Stealth Field'\nto activate cloaking when ready.
+	Tooltip:
+		Name: Stealth Generator
+	ProvidesPrerequisite@buildingname:
+	Power:
+		Amount: -150
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+    #  made it not sellable while cloaking to avoid persistency glitch
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure && !cloakingfield-active
+	GrantPrerequisiteChargeDrainPower@StealthGenerator:
+		PauseOnCondition: lowpower
+        Prerequisite: cloakingfield-active
+		OrderName: CloakingField
+		DischargeModifier: 300
+		ActiveText: ACTIVE
+		AvailableText: READY
+		ChargeInterval: 4500 #  6-minutes cloaking was insane, reduced to 3min
+		Icon: cloakfield
+		Name: Stealth Field
+		Description: Activate to render everything invisible\nwithin a radius of 12-cells.\nDoes not cloak moving, or flying units.\n\nCan be toggled active once charged.
+        LaunchSound: cloak6.aud
+		InsufficientPowerSpeechNotification: InsufficientPower
+		InsufficientPowerTextNotification: Insufficient power.
+		BeginChargeSpeechNotification: IronCurtainCharging
+		BeginChargeTextNotification: Cloaking field charging.
+		EndChargeSpeechNotification: IronCurtainReady
+		EndChargeTextNotification: Cloaking field ready.
+		SupportPowerPaletteOrder: 2
+        AllowMultiple: true
+ 	SupportPowerChargeBar:
+    #   the initial pulse animation
+    WithSupportPowerActivationAnimation:
+    	RequiresCondition: !build-incomplete
+    #   to keep pulsing while active
+    WithIdleAnimation@StealthGenerator:
+        Interval: 23
+        RequiresCondition: cloakingfield-active
+    ProvidesPrerequisite@StealthGeneratorOffline:
+        Prerequisite: cloakingfield-stop
+        RequiresCondition: lowpower
+	GrantConditionOnPrerequisite@StealthGenerator:
+		Condition: cloakingfield-active
+		Prerequisites: cloakingfield-active, !cloakingfield-stop
+	ProximityExternalCondition@StealthGenerator:
+		Condition: cloakfield-on
+        ValidRelationships: Ally
+		Range: 12c0
+        RequiresCondition: cloakingfield-active
+	DetectCloaked@RadialIndicator:
+        DetectionTypes: Nonsense
+		Range: 12c0
+        RequiresCondition: cloakingfield-active
+	RenderDetectionCircle@RadialIndicator:
+        TrailCount: 2
+        Visible: Always
+        UpdateLineTick: 6
+        BorderWidth: 0
+        Color: 8b008b
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-4
+    -ExternalCondition@CloakingField:
+    -Cloak@CloakingField:
+    -GrantConditionOnDamageState@UNCLOAK:
+	SpawnActorOnDeath@HUSK:
+		Actor: SGEN.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled
+
+INFANTRYPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Infantry Production
+
+VEHICLEPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Vehicle Production
+
+ANYPOWER:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Any Power Generation
+
+ANYHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: A Radar Structure
+
+ANYTIER3:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Tech Center or Temple of Nod

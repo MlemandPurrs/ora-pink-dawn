@@ -1129,6 +1129,10 @@
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled
+    GrantConditionOnPrerequisite@HUSKS:
+        Condition: husks-enabled
+        Prerequisites: ~global-husks
 	GivesBuildableArea:
 		AreaTypes: building
 	SpawnActorsOnSell:
@@ -1303,6 +1307,8 @@
 	MapEditorData:
 		Categories: Tech building
 	AppearsOnMapPreview:
+	Targetable:
+		TargetTypes: Ground, C4, Structure, NoAutoTarget
 
 ^TechBuildingHusk:
 	Inherits@1: ^SpriteActor
@@ -1321,9 +1327,13 @@
 	FrozenUnderFog:
 	Targetable:
 		RequiresForceFire: true
-		TargetTypes: NonSensical
+		TargetTypes: Ground, Husk, NoAutoTarget
 	Health:
 		HP: 20000
+    Armor:
+        Type: Concrete
+    DamageMultiplier@IsInvulnerable:
+        Modifier: 0
 	MapEditorData:
 		Categories: Husk
 	ScriptTriggers:
@@ -2214,6 +2224,15 @@
 
 ^BuildingHusk:
 	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+    Inherits@restorable: ^RestorableBuilding
+	Capturable:
+		Types: building-restore
+		ValidRelationships: Enemy, Neutral, Ally
+        RequiresCondition: husks-enabled
+    GrantConditionOnPrerequisite@HUSKS:
+        Condition: husks-enabled
+        Prerequisites: ~global-husks
 	Interactable:
 	AppearsOnRadar:
 	Building:
@@ -2221,13 +2240,33 @@
 		Footprint: x
 	WithSpriteBody:
 	Tooltip:
-		GenericName: Civilian Building (Destroyed)
+		GenericName: Building (Destroyed)
 		GenericStancePrefix: false
 		ShowOwnerRow: false
 	FrozenUnderFog:
-	ScriptTriggers:
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: Ground, Husk, NoAutoTarget
+	Health:
+		HP: 20000
+    Armor:
+        Type: Concrete
+    DamageMultiplier@IsVulnerable:
+        Modifier: 200
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+    ChangesHealth@Burns:
+        Step: -250
+        Delay: 16
+        StartIfBelow: 101
 	MapEditorData:
 		Categories: Husk
+	ScriptTriggers:
 
 ^AffectedByCloakingField:
     ExternalCondition@CloakingField:
