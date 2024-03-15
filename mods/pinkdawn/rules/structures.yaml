@@ -36,7 +36,7 @@ FACT:
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
-		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure
+		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure || cant-undeploy
 		IntoActor: mcv
 		Offset: 1,1
 		Facing: 432
@@ -54,6 +54,9 @@ FACT:
 		RequiresForceMove: true
 	TransformsIntoTransforms:
 		RequiresCondition: factundeploy && build-incomplete
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy

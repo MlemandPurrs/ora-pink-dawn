@@ -55,6 +55,7 @@ MCV:
 	RevealsShroud:
 		Range: 3c512
 	Transforms:
+        PauseOnCondition: cant-undeploy
 		IntoActor: fact
 		Offset: -1,-1
 		Facing: 432
@@ -62,6 +63,9 @@ MCV:
 		NoTransformNotification: BuildingCannotPlaceAudio
 		NoTransformTextNotification: Cannot deploy here.
 		Voice: Unload
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -214,7 +218,7 @@ HARV:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 
-TRUK:
+2TRK:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Speed: ^AcceptsSpeedCrate
@@ -245,7 +249,7 @@ TRUK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
 		Queue: Vehicle
-		Prerequisites: anyproc
+		Prerequisites: anyproc, ~vehicle.mcv
 		Description: Transports 1000 credits to\nother allied Construction Yard.\n\nUnarmed.
 	Valued:
 		Cost: 1000
@@ -289,10 +293,7 @@ TRUK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	RenderSprites:
-		Image: truk
-		FactionImages:
-			allies: strk 
-            soviet: strk
+		Image: 2trk
 
 JEEP:
 	Inherits: ^Vehicle

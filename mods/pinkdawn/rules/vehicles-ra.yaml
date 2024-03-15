@@ -55,6 +55,7 @@ MCV2:
 	RevealsShroud:
 		Range: 3c512
 	Transforms:
+        PauseOnCondition: cant-undeploy
 		IntoActor: fac2
 		Offset: -1,-1
 		Facing: 384
@@ -62,6 +63,9 @@ MCV2:
 		NoTransformNotification: BuildingCannotPlaceAudio
 		NoTransformTextNotification: Cannot deploy here.
 		Voice: Unload
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -252,7 +256,7 @@ AHRV:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
-STRK:
+TRUK:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Speed: ^AcceptsSpeedCrate
@@ -282,9 +286,9 @@ STRK:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
-		Prerequisites: ~disabled
 		Queue: Vehicle
-		Description: Transports 1000 credits to\nother allied players.\n\nUnarmed.
+		Prerequisites: anyproc, ~vehicle.mcv2
+		Description: Transports 1000 credits to\nother allied Construction Yard.\n\nUnarmed.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -301,15 +305,15 @@ STRK:
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
-        Cursor: enter
+        Cursor: sell-unit
 		Payload: 1000
-		Type: MoneyTransfer
 		PlayerExperience: 0
 	SpawnActorOnDeath:
 		Actor: moneycrate
         RequiresCondition: !oncarryall
-	Passenger:
+    Passenger:
 		CustomPipType: pip-blue
+        -CargoCondition:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -326,8 +330,8 @@ STRK:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-    Passenger:
-        -CargoCondition:
+	RenderSprites:
+		Image: truk
 
 DTRK:
 	Inherits: ^Vehicle

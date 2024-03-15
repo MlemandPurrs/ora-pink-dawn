@@ -1,0 +1,703 @@
+MCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: MCV (Destroyed)
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: mcv
+	RenderSprites:
+		Image: mcv.husk
+
+HARV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Harvester (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: harv
+	RenderSprites:
+		Image: harv.husk
+
+2TRK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Supply Truck (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: 2trk
+	RenderSprites:
+		Image: 2trk.husk
+
+JEEP.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Humvee (Destroyed)
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: jeep
+	RenderSprites:
+		Image: jeep.husk
+
+BGGY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Buggy (Destroyed)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: bggy
+	RenderSprites:
+		Image: bggy.husk
+
+BIKE.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Recon Bike (Destroyed)
+	Health:
+		HP: 3750
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: bike
+	RenderSprites:
+		Image: bike.husk
+
+APC.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: APC (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Medium
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: apc
+	RenderSprites:
+		Image: apc.husk
+
+MAAG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile AA (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: maag
+	RenderSprites:
+		Image: maag.husk
+
+LTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Light Tank (Destroyed)
+	Health:
+		HP: 15000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ltnk
+	RenderSprites:
+		Image: ltnk.husk
+
+MTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Main Battle Tank (Destroyed)
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mtnk
+	RenderSprites:
+		Image: mtnk.husk
+
+HTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mammoth Tank (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: htnk
+	RenderSprites:
+		Image: htnk.husk
+
+FTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Flame Tank (Destroyed)
+	Health:
+		HP: 17500
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ftnk
+	RenderSprites:
+		Image: ftnk.husk
+
+STNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Stealth Tank (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: stnk
+	RenderSprites:
+		Image: stnk.husk
+
+MSAM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: MLRS (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: msam
+	RenderSprites:
+		Image: msam.husk
+
+MLRS.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: SSM Launcher (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mlrs
+	RenderSprites:
+		Image: mlrs.husk
+
+ARTY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Artillery (Destroyed)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: arty
+	RenderSprites:
+		Image: arty.husk
+
+MHQ.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Jammer (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mhq
+	RenderSprites:
+		Image: mhq.husk
+
+CHTK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chemical Tank (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: chtk
+	RenderSprites:
+		Image: chtk.husk
+
+MSG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Stealth Generator (Destroyed)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: msg
+	RenderSprites:
+		Image: msg.husk
+
+T55H.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Scorpion Tank (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: t55h
+	RenderSprites:
+		Image: t55h.husk
+
+WTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Microwave Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: wtnk
+	RenderSprites:
+		Image: wtnk.husk
+ 
+MCV2.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: MCV (Destroyed)
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: mcv2
+	RenderSprites:
+		Image: mcv2.husk
+
+OHRV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Harvester (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: ohrv
+	RenderSprites:
+		Image: ohrv.husk
+
+AHRV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Armed Harvester (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: ahrv
+	RenderSprites:
+		Image: ahrv.husk
+
+TRUK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Supply Truck (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: truk
+	RenderSprites:
+		Image: truk.husk
+
+DTRK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Demolition Truck (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: dtrk
+	RenderSprites:
+		Image: dtrk.husk
+
+R4WD.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Ranger (Destroyed)
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: r4wd
+	RenderSprites:
+		Image: r4wd.husk
+
+FTRK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Flak (Destroyed)
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: ftrk
+	RenderSprites:
+		Image: ftrk.husk
+
+APC2.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy APC (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: apc2
+	RenderSprites:
+		Image: apc2.husk
+
+APC3.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Phase Vehicle (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: apc3
+	RenderSprites:
+		Image: apc3.husk
+
+MNLY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Minelayer (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mnly
+	RenderSprites:
+		Image: mnly.husk
+
+1TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Light Tank (Destroyed)
+	Health:
+		HP: 15000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 1tnk
+	RenderSprites:
+		Image: 1tnk.husk
+
+2TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Medium Tank (Destroyed)
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 2tnk
+	RenderSprites:
+		Image: 2tnk.husk
+
+3TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 3tnk
+	RenderSprites:
+		Image: 3tnk.husk
+
+4TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mammoth Tank (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: 4tnk
+	RenderSprites:
+		Image: 4tnk.husk
+
+5TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Behemoth Tank (Destroyed)
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: 5tnk
+	RenderSprites:
+		Image: 5tnk.husk
+
+CTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chrono Tank (Destroyed)
+	Health:
+		HP: 17500
+	Armor:
+		Type: Medium
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ctnk
+	RenderSprites:
+		Image: ctnk.husk
+
+TTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tesla Tank (Destroyed)
+	Health:
+		HP: 12500
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ttnk
+	RenderSprites:
+		Image: ttnk.husk
+
+V2RL.Husk:
+    Inherits: ^Husk
+	Tooltip:
+		Name: V2 Launcher (Destroyed)
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: v2rl
+	RenderSprites:
+		Image: v2rl.husk
+
+MGG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile GAP Generator (Destroyed)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mgg
+	RenderSprites:
+		Image: mgg.husk
+
+3T1B.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 3t1b
+	RenderSprites:
+		Image: 3t1b.husk

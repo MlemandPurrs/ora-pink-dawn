@@ -611,8 +611,8 @@ harv.nod.info:
 		Image: harv
         Palette: nod
 
-truk.info:
-    Inherits: TRUK
+2trk.info:
+    Inherits: 2TRK
     Buildable:
         Queue: Nothing
 	Encyclopedia:
@@ -620,16 +620,16 @@ truk.info:
         Category: GDI Vehicles
 		Order: 17
 	RenderSprites:
-		Image: truk
+		Image: 2trk
         Palette: gdi
     -MapEditorData:
 
-truk.nod.info:
-    Inherits: truk.info
+2trk.nod.info:
+    Inherits: 2trk.info
 	Encyclopedia:
         Category: Nod Vehicles
 	RenderSprites:
-		Image: truk
+		Image: 2trk
         Palette: nod
 
 jeep.info:

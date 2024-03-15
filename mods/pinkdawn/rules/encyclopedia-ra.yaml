@@ -702,8 +702,8 @@ ahrv.info:
         Palette: nod
     -MapEditorData:
 
-truk.allies.info:
-    Inherits: truk.info
+truk.info:
+    Inherits: TRUK
     Buildable:
         Queue: Nothing
 	Encyclopedia:
@@ -711,15 +711,16 @@ truk.allies.info:
         Category: Allies Vehicles
 		Order: 17
 	RenderSprites:
-		Image: strk
+		Image: truk
         Palette: allies
+    -MapEditorData:
 
 truk.soviet.info:
     Inherits: truk.info
 	Encyclopedia:
         Category: Soviet Vehicles
 	RenderSprites:
-		Image: strk
+		Image: truk
         Palette: soviet
 
 dtrk.info:

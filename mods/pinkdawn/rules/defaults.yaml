@@ -1573,29 +1573,32 @@
 		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
 	Targetable:
 		RequiresForceFire: true
-		TargetTypes: Ground, Husk
+		TargetTypes: Ground, Husk, NoAutoTarget
 	CaptureManager:
+	CaptureNotification:
+		Notification: UnitReady
 	Capturable:
-		Types: husk
+		Types: building-restore
 		ValidRelationships: Enemy, Neutral, Ally
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	Tooltip:
 		GenericName: Destroyed Vehicle
-	WithColoredOverlay@IDISABLE:
-		Color: 000000B4
 	ScriptTriggers:
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	WithIdleOverlay@Burns:
 		Image: fire
-		Sequence: 1
+		Sequence: 4
+        Palette: effect
 		IsDecoration: True
 	ChangesHealth:
-		Step: -200
+		Step: -250
 		StartIfBelow: 101
-		Delay: 6
+		Delay: 11
+	MapEditorData:
+		Categories: Vehicle Husk
 
 ^HelicopterHusk:
 	Inherits: ^CommonHuskDefaults

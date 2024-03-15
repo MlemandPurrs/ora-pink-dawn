@@ -99,6 +99,7 @@ Rules:
     pinkdawn|rules/structures-fake.yaml
     pinkdawn|rules/structures-husks-ra.yaml
 	pinkdawn|rules/vehicles-ra.yaml
+	pinkdawn|rules/vehicles-husks.yaml
     pinkdawn|rules/ships-ra.yaml
     pinkdawn|rules/giantants.yaml
 

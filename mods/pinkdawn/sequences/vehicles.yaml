@@ -11,6 +11,12 @@ nodmcv:
 		UseClassicFacings: True
 	icon: nodmcvicon
 
+mcv.husk:
+	idle: mcv
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 harv:
     Inherits: emp-overlay
 	idle:
@@ -32,12 +38,24 @@ nodharv:
     Defaults: harv
     icon: nodharvicon
 
-truk:
+harv.husk:
+	idle: harv
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+2trk:
     Inherits: emp-overlay
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: trukicon
+	icon: 2trkicon
+
+2trk.husk:
+	idle: 2trk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 jeep:
     Inherits: emp-overlay
@@ -53,6 +71,17 @@ jeep:
 		Facings: 8
 	icon: jeepicon
 
+jeep.husk:
+	idle: jeep
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: jeep
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 bggy:
     Inherits: emp-overlay
 	idle:
@@ -67,12 +96,29 @@ bggy:
 		Facings: 8
 	icon: bggyicon
 
+bggy.husk:
+	idle: bggy
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: bggy
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 bike:
     Inherits: emp-overlay
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 	icon: bikeicon
+
+bike.husk:
+	idle: bike
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 apc:
     Inherits: emp-overlay
@@ -88,6 +134,12 @@ apc:
 	unload:
 		Start: 32
 	icon: apcicon
+
+apc.husk:
+	idle: apc
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 maag:
     Inherits: emp-overlay
@@ -108,6 +160,17 @@ maag:
 		Facings: 8
 	icon: maagicon
 
+maag.husk:
+	idle: apc
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: apctur
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 ltnk:
     Inherits: emp-overlay
 	idle:
@@ -125,6 +188,17 @@ ltnk:
 		Length: 2
 		Facings: 16
 	icon: ltnkicon
+
+ltnk.husk:
+	idle: ltnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: ltnk-tur2
+		Start: 0
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 mtnk:
     Inherits: emp-overlay
@@ -146,6 +220,17 @@ mtnk:
 		Length: 6
 		Facings: 8
 	icon: mtnkicon
+
+mtnk.husk:
+	idle: mtnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: mtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 ftnk:
     Inherits: emp-overlay
@@ -190,6 +275,12 @@ ftnk:
 		Length: 12
 	icon: ftnkicon
 
+ftnk.husk:
+	idle: ftnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 htnk:
     Inherits: emp-overlay
 	idle:
@@ -204,6 +295,17 @@ htnk:
 		Facings: 16
 	icon: htnkicon
 
+htnk.husk:
+	idle: htnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: htnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 stnk:
     Inherits: emp-overlay
 	idle:
@@ -215,6 +317,17 @@ stnk:
 		UseClassicFacings: True
 	icon: stnkicon
 
+stnk.husk:
+	idle: stnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: stnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 arty:
     Inherits: emp-overlay
 	idle:
@@ -223,6 +336,12 @@ arty:
 	muzzle: gunfire2
 		Length: *
 	icon: artyicon
+
+arty.husk:
+	idle: arty
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 msam:
     Inherits: emp-overlay
@@ -243,6 +362,17 @@ msam:
 		UseClassicFacings: True
 	icon: msamicon
 
+msam.husk:
+	idle: msam
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: msam
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 mlrs:
     Inherits: emp-overlay
 	idle:
@@ -262,6 +392,17 @@ mlrs:
 		UseClassicFacings: True
 	icon: mlrsicon
 
+mlrs.husk:
+	idle: mlrs
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: mlrs
+		Start: 96
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 mhq:
     Inherits: emp-overlay
 	idle:
@@ -279,6 +420,17 @@ mhq:
 		Facings: 8
 	icon: mhqicon
 
+mhq.husk:
+	idle: mhq
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: bggy
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 wtnk:
     Inherits: emp-overlay
 	idle:
@@ -295,6 +447,17 @@ wtnk:
 		UseTilesetCode: false
 		ZOffset: 512
 	icon: wtnkicon
+
+wtnk.husk:
+	idle: wtnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: wtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 chtk:
     Inherits: emp-overlay
@@ -339,6 +502,12 @@ chtk:
 		Length: 12
 	icon: chtkicon
 
+chtk.husk:
+	idle: chtk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 msg:
     Inherits: emp-overlay
 	idle: msg
@@ -353,6 +522,12 @@ msg:
 		Length: 14
 		Tick: 120
 	icon: msgicon
+
+msg.husk:
+	idle: msg
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
 
 t55h:
     Inherits: emp-overlay
@@ -370,3 +545,14 @@ t55h:
 		Length: 10
 		Tick: 360
 	icon: t55hicon
+
+t55h.husk:
+	idle: t55h
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: t55h
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
