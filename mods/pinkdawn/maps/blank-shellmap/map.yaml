@@ -24,6 +24,6 @@ Rules:
 		-CrateSpawner:
         -StartGameNotification:
 		MusicPlaylist:
-			BackgroundMusic: map1
+			BackgroundMusic: valkyrie
 			AllowMuteBackgroundMusic: true
 			DisableWorldSounds: true

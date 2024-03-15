@@ -312,6 +312,13 @@ ORCA:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
 
 HELI:
 	Inherits: ^Helicopter
@@ -410,6 +417,13 @@ HELI:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
 
 HEL2:
 	Inherits: ^Helicopter
@@ -541,6 +555,13 @@ HEL2:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
 
 HIND:
 	Inherits: ^Helicopter
@@ -671,6 +692,13 @@ HIND:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary, tertiary, quartenary
+        RevokeDelay: 25
 
 BADR:
 	Inherits: ^Plane
@@ -1345,6 +1373,13 @@ RH66:
     AppearsOnRadar:
         ValidRelationships: Ally
     -GpsDot:
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
 
 SFIG:
 	Inherits: ^Plane
