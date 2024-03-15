@@ -1825,23 +1825,3 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-	Template@256:
-		Id: 256
-		Images: sh46.win
-		Size: 2,2
-		Categories: Beach
-		Tiles:
-			0: Water
-			1: River
-			2: River
-			3: Clear
-	Template@257:
-		Id: 257
-		Images: sh48.win
-		Size: 2,2
-		Categories: Beach
-		Tiles:
-			0: Water
-			1: Water
-			2: Clear
-			3: River
