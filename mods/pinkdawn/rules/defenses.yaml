@@ -58,7 +58,7 @@ GTWR:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: GTWR.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -131,7 +131,7 @@ GUN:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: GUN.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -218,7 +218,7 @@ ATWR:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: ATWR.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -289,7 +289,7 @@ OBLI:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: OBLI.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -359,7 +359,7 @@ LTUR:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: LTUR.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -462,7 +462,7 @@ SAM:
         RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
 	SpawnActorOnDeath@HUSK:
 		Actor: SAM.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -558,7 +558,7 @@ SAM2:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: SAM2.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -622,7 +622,7 @@ FTWR:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: FTWR.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -707,7 +707,7 @@ TSLA:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: TSLA.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -789,7 +789,7 @@ GAP:
         RequiresCondition: !build-incomplete && !being-demolished
 	SpawnActorOnDeath@HUSK:
 		Actor: GAP.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -889,7 +889,7 @@ AGUN:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: AGUN.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -1239,7 +1239,7 @@ PBOX:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: PBOX.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
@@ -1349,6 +1349,6 @@ HBOX:
 		RevokeDelay: 75
 	SpawnActorOnDeath@HUSK:
 		Actor: HBOX.Husk
-        OwnerType: InternalName
+        OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished

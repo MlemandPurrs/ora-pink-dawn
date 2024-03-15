@@ -119,14 +119,14 @@ Player:
 	LobbyPrerequisiteCheckbox@BOINK:
 		ID: boinksound
 		Label: Boink !
-		Description: All Vehicles emit Renegade's "boink" sound on die
+		Description: All Vehicles emit a funny sound on destruction
 		Enabled: False
 		DisplayOrder: 18
 		Prerequisites: global-boink
 	LobbyPrerequisiteCheckbox@HUSKS:
 		ID: husks
 		Label: Husks
-		Description: All Structures leave behind a husk on die
+		Description: All base buildings leave behind a restorable husk
 		Enabled: False
 		DisplayOrder: 19
 		Prerequisites: global-husks
