@@ -390,7 +390,7 @@ VehicleBazooka:
             Aluminium: 75
             Steel: 100
         DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
-    -Warhead@4EffAir: CreateEffect
+    -Warhead@4EffAir:
 
 #   7. Recon Bike's Rockets
 BikeRockets:
