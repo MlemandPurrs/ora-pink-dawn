@@ -39,7 +39,7 @@ LST2:
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
 		Queue: Navy
-		Prerequisites: syrd, ~navy.lst2
+		Prerequisites: syrd
 		Description: Transports ground units across water.\n\nUnarmed.
 	Health:
 		HP: 30000
@@ -60,7 +60,7 @@ LST2:
 		OpenTerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
 	Cargo:
 		Types: Infantry, Vehicle, Vehicle2
-		MaxWeight: 5
+		MaxWeight: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
         LoadedCondition: loaded

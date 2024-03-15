@@ -529,7 +529,7 @@ crate.chronoshift:
 		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ChronosphereReady
 		EndChargeTextNotification: Chronosphere ready.
-		Duration: -1
+		Duration: 2250
 		KillCargo: true
 		DisplayRadarPing: True
 		Dimensions: 3, 3

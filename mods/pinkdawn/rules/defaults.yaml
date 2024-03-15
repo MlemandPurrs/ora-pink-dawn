@@ -2246,7 +2246,8 @@
 	FrozenUnderFog:
 	Targetable:
 		RequiresForceFire: true
-		TargetTypes: Ground, Husk, NoAutoTarget
+		TargetTypes: Ground, C4, Husk, NoAutoTarget
+    Demolishable:
 	Health:
 		HP: 20000
     Armor:
@@ -2261,9 +2262,27 @@
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
     ChangesHealth@Burns:
-        Step: -250
-        Delay: 16
+        Step: -500
+        Delay: 11
         StartIfBelow: 101
+        RequiresCondition: husks-enabled
+	WithDamageOverlay@Burns:
+		Image: burn-s
+        Palette: effect
+		MinimumDamageState: Light
+		MaximumDamageState: Medium
+	WithDamageOverlay@Burns2:
+		Image: burn-m
+        Palette: effect
+		MinimumDamageState: Medium
+		MaximumDamageState: Heavy
+	WithDamageOverlay@Burns3:
+		Image: burn-l
+        Palette: effect
+		MinimumDamageState: Heavy
+		MaximumDamageState: Dead
+	SoundOnDamageTransition:
+		DestroyedSounds: crmble2.aud, xplos.aud
 	MapEditorData:
 		Categories: Husk
 	ScriptTriggers:

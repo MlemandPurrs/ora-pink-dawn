@@ -775,7 +775,7 @@ LTNK:
         RequiresCondition: rank-heroic
 	Armament@TERTIARY:
         Name: tertiary
-		Weapon: LightRocket
+		Weapon: VehicleBazooka
         LocalOffset: 128,110,85
 		FireDelay: 5
         PauseOnCondition: emp-crate-collected
@@ -850,7 +850,7 @@ MTNK:
         PauseOnCondition: emp-crate-collected
 	Armament@SECONDARY:
         Name: secondary
-		Weapon: M16
+		Weapon: VehicleM16
 		LocalOffset: 85,128,85
 		MuzzleSequence: muzzle2
         PauseOnCondition: emp-crate-collected
@@ -1506,7 +1506,7 @@ MHQ:
 		TurnSpeed: 12
 		Offset: 246,-60,112
 	Armament:
-		Weapon: M16
+		Weapon: VehicleM16
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		PauseOnCondition: emp-crate-collected

@@ -191,6 +191,7 @@ osil.husk:
 	idle: osil
 		Start: 9
 		Length: 1
+		Offset: 0,-1
     dead: osil
         Start: 9
         Length: 1

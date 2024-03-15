@@ -37,7 +37,7 @@ LST:
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
 		Queue: Navy
-		Prerequisites: syrd, ~navy.lst
+		Prerequisites: ~disabled
 		Description: Transports ground units across water.\n\nUnarmed.
 	Mobile:
 		Locomotor: hovercraft
@@ -371,7 +371,7 @@ DD3:
         BuildPaletteOrder: 2
 		Queue: Navy
 		Prerequisites: syrd, miss, ~navy.gdi
-		Description: Battleship armed with a railgun.\nThe armament damages in a line.\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
+		Description: Battleship armed with a railgun.\nThe armament damages in a line.\n\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
 	Health:
 		HP: 50000
 	Armor:

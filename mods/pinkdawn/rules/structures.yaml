@@ -210,7 +210,7 @@ FACT:
 		Actor: FACT.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 NUKE:
 	Inherits: ^BaseBuilding
@@ -281,7 +281,7 @@ NUKE:
 		Actor: NUKE.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -352,7 +352,7 @@ NUK2:
 		Actor: NUK2.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 NUK3:
 	Inherits: ^BaseBuilding
@@ -424,7 +424,7 @@ NUK3:
 		Actor: NUK3.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 PROC:
 	Inherits: ^BaseBuilding
@@ -531,7 +531,7 @@ PROC:
 		Actor: PROC.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -613,7 +613,7 @@ SILO:
 		Actor: SILO.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 PYLE:
 	Inherits: ^BaseBuilding
@@ -709,7 +709,7 @@ PYLE:
 		Actor: PYLE.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -810,7 +810,7 @@ HAND:
 		Actor: HAND.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled 
+        RequiresCondition: husks-enabled && !being-demolished
 
 AFLD:
 	Inherits: ^BaseBuilding
@@ -917,7 +917,7 @@ AFLD:
 		Actor: AFLD.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 UFLD:
 	Inherits: ^BaseBuilding
@@ -1025,7 +1025,7 @@ UFLD:
 		Actor: UFLD.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -1128,7 +1128,7 @@ WEAP:
 		Actor: WEAP.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 FIX:
 	Inherits: ^BaseBuilding
@@ -1206,7 +1206,7 @@ FIX:
 		Actor: FIX.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 HPAD:
 	Inherits: ^BaseBuilding
@@ -1360,7 +1360,7 @@ HPAD:
 		Actor: HPAD.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 HQ:
 	Inherits: ^BaseBuilding
@@ -1457,7 +1457,7 @@ HQ:
 		Actor: HQ.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -1555,7 +1555,7 @@ MISS:
 		Actor: MISS.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 TMPL:
 	Inherits: ^BaseBuilding
@@ -1653,7 +1653,7 @@ TMPL:
 		Actor: TMPL.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 EYE:
 	Inherits: ^BaseBuilding
@@ -1743,7 +1743,7 @@ EYE:
 		Actor: EYE.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 BIO:
 	Inherits: ^BaseBuilding
@@ -1786,7 +1786,7 @@ BIO:
 		Actor: BIO.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 NCOM:
 	Inherits: ^BaseBuilding
@@ -1876,7 +1876,7 @@ NCOM:
 		Actor: NCOM.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 SGEN:
 	Inherits: ^BaseBuilding
@@ -1983,7 +1983,7 @@ SGEN:
 		Actor: SGEN.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 INFANTRYPRODUCTION:
 	AlwaysVisible:

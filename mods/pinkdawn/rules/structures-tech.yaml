@@ -586,8 +586,6 @@ EMPB:
 	-SpawnActorsOnSell:
 	-Sellable:
 	-WithSpriteBody:
-    Demolishable:
-        -Condition: being-demolished
 	OwnerLostAction:
 		Action: ChangeOwner
     CaptureManager:

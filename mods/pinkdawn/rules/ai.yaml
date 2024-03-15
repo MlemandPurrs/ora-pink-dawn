@@ -548,7 +548,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, weap, hpad, fix, hq, eye, miss, gtwr, atwr, gun, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirGDI:
 		RequiresCondition: enable-ai-player && ai.gdi
 		RushInterval: 400
@@ -561,7 +561,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, proc, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Airplane
+        IgnoredEnemyTargetTypes: Husk, Airplane
 	SquadManagerBotModule@SeaGDI:
 		RequiresCondition: enable-ai-player && ai.gdi
 		RushInterval: 400
@@ -574,7 +574,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@LandNod:
 		RequiresCondition: enable-ai-player && ai.nod
 		RushInterval: 400
@@ -587,7 +587,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, proc, silo, hand, afld, hpad, fix, hq, tmpl, bio, gtwr, gun, obli, sam, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirNod:
 		RequiresCondition: enable-ai-player && ai.nod
 		RushInterval: 400
@@ -600,7 +600,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, proc, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Airplane
+        IgnoredEnemyTargetTypes: Husk, Airplane
 	SquadManagerBotModule@SeaNod:
 		RequiresCondition: enable-ai-player && ai.nod
 		RushInterval: 400
@@ -613,7 +613,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@LandAllies:
 		RequiresCondition: enable-ai-player && ai.allies
 		RushInterval: 400
@@ -626,7 +626,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, powr, apwr, oref, osil, tent, warf, hpad, fix2, dome, atek, mslo, pbox, hbox, gun, agun, mcv2, ohrv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirAllies:
 		RequiresCondition: enable-ai-player && ai.allies
 		RushInterval: 400
@@ -639,7 +639,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, oref, mcv2, ohrv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Airplane
+        IgnoredEnemyTargetTypes: Husk, Airplane
 	SquadManagerBotModule@SeaAllies:
 		RequiresCondition: enable-ai-player && ai.allies
 		RushInterval: 400
@@ -652,7 +652,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@LandSoviet:
 		RequiresCondition: enable-ai-player && ai.soviet
 		RushInterval: 400
@@ -665,7 +665,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, powr, apwr, oref, osil, barr, warf, 3fld, fix2, dome, stek, fcom, mslo, ftwr, tsla, sam2, mcv2, ahrv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirSoviet:
 		RequiresCondition: enable-ai-player && ai.soviet
 		RushInterval: 400
@@ -678,7 +678,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, oref, mcv2, ahrv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Airplane
+        IgnoredEnemyTargetTypes: Husk, Airplane
 	SquadManagerBotModule@SeaSoviet:
 		RequiresCondition: enable-ai-player && ai.soviet
 		RushInterval: 400
@@ -691,7 +691,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@LandBlackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
 		RushInterval: 400
@@ -704,7 +704,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, proc, silo, hand, ufld, 3fld, fix, hq, miss, ncom, ltur, obli, sam, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirBlackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
 		RushInterval: 400
@@ -717,7 +717,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, proc, mcv, harv
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Airplane
+        IgnoredEnemyTargetTypes: Husk, Airplane
 	SquadManagerBotModule@SeaBlackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
 		RushInterval: 400
@@ -730,7 +730,7 @@ Player:
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Helicopter, Airplane
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
  	UnitBuilderBotModule@GDI:
 		RequiresCondition: enable-ai-player && ai.gdi
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy   
@@ -950,5 +950,38 @@ Player:
         McvFactoryTypes: weap, afld, warf, ufld
     CaptureManagerBotModule:
         CapturingActorTypes: e6
-        CapturableActorTypes: syrd, v19, oil, bio2, hosp, comm, v19.husk, oil.husk, bio2.husk, hosp.husk, comm.husk
+        CapturableActorTypes: syrd, v19, oil, bio2, hosp, comm, syrd.husk, v19.husk, oil.husk, bio2.husk, hosp.husk, comm.husk
         CheckCaptureTargetsForVisibility: true
+    GrantConditionOnPrerequisite@HUSKS:
+        Condition: husks-enabled
+        Prerequisites: ~global-husks
+    CaptureManagerBotModule@restorebaseGDI:
+        CapturingActorTypes: e6
+        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, pyle.husk, weap.husk, hpad.husk, fix.husk, hq.husk, eye.husk, miss.husk 
+        CheckCaptureTargetsForVisibility: true
+        MaximumCaptureTargetOptions: 1
+        RequiresCondition: husks-enabled && ai.gdi
+    CaptureManagerBotModule@restorebaseNod:
+        CapturingActorTypes: e6
+        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, hand.husk, afld.husk, hpad.husk, fix.husk, hq.husk, tmpl.husk, bio.husk 
+        CheckCaptureTargetsForVisibility: true
+        MaximumCaptureTargetOptions: 1
+        RequiresCondition: husks-enabled && ai.nod
+    CaptureManagerBotModule@restorebaseAllies:
+        CapturingActorTypes: e6
+        CapturableActorTypes: fac2.husk, powr.husk, apwr.husk, oref.husk, tent.husk, warf.husk, hpad.husk, fix2.husk, dome.husk, atek.husk
+        CheckCaptureTargetsForVisibility: true
+        MaximumCaptureTargetOptions: 1
+        RequiresCondition: husks-enabled && ai.allies
+    CaptureManagerBotModule@restorebaseSoviet:
+        CapturingActorTypes: e6
+        CapturableActorTypes: fac2.husk, powr.husk, apwr.husk, oref.husk, barr.husk, warf.husk, 3fld.husk, fix2.husk, dome.husk, stek.husk, fcom.husk, iron.husk
+        CheckCaptureTargetsForVisibility: true
+        MaximumCaptureTargetOptions: 1
+        RequiresCondition: husks-enabled && ai.soviet
+    CaptureManagerBotModule@restorebaseBlackhand:
+        CapturingActorTypes: e6
+        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, hand.husk, ufld.husk, 3fld.husk, fix.husk, hq.husk, miss.husk, ncom.husk 
+        CheckCaptureTargetsForVisibility: true
+        MaximumCaptureTargetOptions: 1
+        RequiresCondition: husks-enabled && ai.bossnod

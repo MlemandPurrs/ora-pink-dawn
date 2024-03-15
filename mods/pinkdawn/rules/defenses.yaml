@@ -60,7 +60,7 @@ GTWR:
 		Actor: GTWR.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 GUN:
 	Inherits: ^Defense
@@ -133,7 +133,7 @@ GUN:
 		Actor: GUN.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 ATWR:
 	Inherits: ^Defense
@@ -220,7 +220,7 @@ ATWR:
 		Actor: ATWR.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 OBLI:
 	Inherits: ^Defense
@@ -291,7 +291,7 @@ OBLI:
 		Actor: OBLI.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 LTUR:
 	Inherits: ^Defense
@@ -361,7 +361,7 @@ LTUR:
 		Actor: LTUR.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 SAM:
 	Inherits: ^Defense
@@ -464,7 +464,7 @@ SAM:
 		Actor: SAM.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 SAM2:
 	Inherits: ^Defense
@@ -560,7 +560,7 @@ SAM2:
 		Actor: SAM2.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 FTWR:
 	Inherits: ^Defense
@@ -624,7 +624,7 @@ FTWR:
 		Actor: FTWR.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 TSLA:
 	Inherits: ^Defense
@@ -709,7 +709,7 @@ TSLA:
 		Actor: TSLA.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 GAP:
 	Inherits: ^BaseBuilding
@@ -791,7 +791,7 @@ GAP:
 		Actor: GAP.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 GAP.Clone:
     Inherits: GAP
@@ -891,7 +891,7 @@ AGUN:
 		Actor: AGUN.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 SBAG:
 	Inherits: ^Wall
@@ -1158,7 +1158,7 @@ PBOX:
 		BuildPaletteOrder: 4
 		Prerequisites: infantryproduction
 		Queue: Defense.Allies
-		Description: Static defense with a heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:
 		HP: 40000
@@ -1241,7 +1241,7 @@ PBOX:
 		Actor: PBOX.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished
 
 HBOX:
 	Inherits: ^Defense
@@ -1262,7 +1262,7 @@ HBOX:
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
 		Queue: Defense.Allies
-		Description: Camouflaged static defense with a heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Camouflaged static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:
 		HP: 40000
@@ -1351,4 +1351,4 @@ HBOX:
 		Actor: HBOX.Husk
         OwnerType: InternalName
         EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled
+        RequiresCondition: husks-enabled && !being-demolished

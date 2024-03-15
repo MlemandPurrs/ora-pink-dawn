@@ -77,7 +77,6 @@
 #   76. ASMine
 #   77. CoastalGun
 #   78. Railgun
-#   79. LightRocket
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -320,6 +319,10 @@ M16:
 		Inaccuracy: 171
 		ValidTargets: Ship, WaterStructure
 
+VehicleM16:
+    Inherits: M16
+	Range: 3c512
+
 #   6. Rocket Soldier's Bazooka
 Bazooka:
 	ReloadDelay: 60
@@ -340,7 +343,7 @@ Bazooka:
 	Warhead@1Dam: SpreadDamage
 		Spread: 320
 		Damage: 3000
-		ValidTargets: Ground, Helicopter
+		ValidTargets: Ground, Water, Helicopter
 		Versus:
             None: 25
             Light: 75
@@ -369,6 +372,25 @@ Bazooka:
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
+VehicleBazooka:
+    Inherits: Bazooka
+    ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Spread: 320
+		Damage: 3000
+		ValidTargets: Ground, Water
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+    -Warhead@4EffAir: CreateEffect
 
 #   7. Recon Bike's Rockets
 BikeRockets:
@@ -3524,48 +3546,3 @@ Railgun:
         InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 		ValidRelationships: Ally, Neutral, Enemy
-
-#   79. Light Tank's rocket pod
-LightRocket:
-	ReloadDelay: 60
-	Range: 4c512
-	MinRange: 0c512
-	Report: bazook1.aud
-    ValidTargets: Ground, Water
-	Projectile: Missile
-		Arm: 0
-		Blockable: true
-		Inaccuracy: 128
-		Image: DRAGON
-		Shadow: true
-		HorizontalRateOfTurn: 60
-		TrailImage: smokey
-		Speed: 298
-        RangeLimit: 6c204
-	Warhead@1Dam: SpreadDamage
-		Spread: 320
-		Damage: 3000
-		ValidTargets: Ground
-		Versus:
-            None: 25
-            Light: 75
-            Medium: 75
-            Heavy: 100
-            Concrete: 50
-            Wood: 75
-            Aluminium: 75
-            Steel: 100
-        DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
-	Warhead@3Eff: CreateEffect
-		Explosions: small_frag
-		ImpactSounds: xplos.aud
-		ImpactActors: false
-		ValidTargets: Ground, Water
-	Warhead@5EffWater: CreateEffect
-		Explosions: sml_splash
-		ImpactSounds: ssplash3.aud
-		ValidTargets: Water, Underwater
-        InvalidTargets: Ground, Bridge, Ship, WaterStructure
