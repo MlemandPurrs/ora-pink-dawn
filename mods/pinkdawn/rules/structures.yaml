@@ -179,7 +179,7 @@ FACT:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anytier3, anyfix
+		Prerequisites: anytier3, anyfix, ~techlevel.6
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
@@ -304,7 +304,7 @@ NUK2:
 		BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
@@ -376,7 +376,7 @@ NUK3:
 		BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.7
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides even more power,\nabove triple the standard amount.
 	Building:
@@ -557,7 +557,7 @@ SILO:
 		BuildDuration: 300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: proc
+		Prerequisites: proc, ~techlevel.2
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Stores processed Tiberium.
 	Building:
@@ -835,7 +835,7 @@ AFLD:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: anypower, infantryproduction, ~techlevel.2
 		Queue: Building.Nod
 		Description: Provides a dropzone\nfor vehicle reinforcements.
 	Building:
@@ -945,7 +945,7 @@ UFLD:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: anypower, infantryproduction, ~techlevel.2
 		Queue: Building.Blackhand
 		Description: Produces Vehicle units.
 	Building:
@@ -1049,7 +1049,7 @@ WEAP:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: anypower, infantryproduction, ~techlevel.2
 		Queue: Building.GDI
 		Description: Produces Vehicle units.
 	Building:
@@ -1148,7 +1148,7 @@ FIX:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.3
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
@@ -1229,7 +1229,7 @@ HPAD:
 		BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.5
 		Queue: Building.GDI, Building.Nod, Building.Allies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -1384,7 +1384,7 @@ HQ:
     	BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyproc, vehicleproduction
+		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
 		Queue: Building.GDI, Building.Nod, Building.Blackhand
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:
@@ -1480,7 +1480,7 @@ MISS:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.GDI, Building.Blackhand
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
 	Valued:
@@ -1577,7 +1577,7 @@ TMPL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Biological Laboratory to charge-up)
 	Building:
@@ -1677,7 +1677,7 @@ EYE:
         BuildDuration: 3000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
-		Prerequisites: miss
+		Prerequisites: miss, ~techlevel.7
 		Queue: Building.GDI
 		BuildLimit: 1
 		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
@@ -1768,7 +1768,7 @@ BIO:
         BuildDurationModifier: 100
         BuildPaletteOrder: 15
 		BuildLimit: 1
-		Prerequisites: tmpl
+		Prerequisites: tmpl, ~techlevel.7
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon to charge.\nUnlocks Chemical Trooper and SSM Launcher.
 	Tooltip:
@@ -1805,7 +1805,7 @@ NCOM:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		BuildLimit: 1
-		Prerequisites: miss
+		Prerequisites: miss, ~techlevel.7
 		Queue: Building.Blackhand
 		Description: Maximum one can be built.\n\nUnlocks Infiltrator and Scorpion Tank.\n\nProvides 'Stealth Airstrike' super-weapon.
 	Building:
@@ -1910,7 +1910,7 @@ SGEN:
         BuildDurationModifier: 100
         BuildPaletteOrder: 16
 		BuildLimit: 1
-		Prerequisites: miss, ~global-superweapons
+		Prerequisites: miss, ~global-superweapons, ~techlevel.7
 		Queue: Building.Blackhand
 		Description: Maximum one can be built.\n\nEnables the usage of 'Stealth Field'\nto activate cloaking when ready.
 	Tooltip:

@@ -331,7 +331,7 @@ World:
 	ScriptTriggers:
 	CellTriggerOverlay:
 	LuaScript:
-		Scripts: transportscript.lua, growthrate.lua
+		Scripts: transportscript.lua, growthrate.lua, dynamictech.lua
 	TimeLimitManager:
 		TimeLimitDisplayOrder: 2
 		TimeLimitWarnings:
@@ -377,6 +377,15 @@ World:
 		Default: double
 		Description: How much Tiberium Trees seed per blossom
 		DisplayOrder: 6
+	ScriptLobbyDropdown@DynamicTechlevel:
+		ID: dynamictechlevel
+		Label: Dynamic Techlevel
+		Values:
+			enabled: Enabled
+			disabled: Disabled
+		Default: disabled
+        Description: Tech level will dynamically progress ingame. REQUIRES VETERANCY TICKED ON TO WORK.
+		DisplayOrder: 7
 
 EditorWorld:
 	Inherits: ^BaseWorld

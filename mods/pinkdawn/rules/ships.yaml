@@ -148,7 +148,7 @@ PT2:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.lst
+		Prerequisites: syrd, ~navy.lst, ~techlevel.2
 		Description: Fast, multi-role attack ship.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs fast units, Submarines.
 	Health:
 		HP: 30000
@@ -238,7 +238,7 @@ DD2:
         BuildDurationModifier: 100
         BuildPaletteOrder: 2
 		Queue: Navy
-		Prerequisites: syrd, anyhq, ~navy.nod
+		Prerequisites: syrd, anyhq, ~navy.nod, ~techlevel.2
 		Description: Ground attack ship.\n\nCarries and lays one Sea Mine.\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
 	Health:
 		HP: 50000
@@ -325,7 +325,7 @@ SS2:
         BuildDurationModifier: 100
         BuildPaletteOrder: 3
 		Queue: Navy
-		Prerequisites: syrd, anyhq, ~navy.nod
+		Prerequisites: syrd, anyhq, ~navy.nod, ~techlevel.3
 		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nCan only attack Naval units.
 	Health:
 		HP: 25000
@@ -370,7 +370,7 @@ DD3:
         BuildDurationModifier: 100
         BuildPaletteOrder: 2
 		Queue: Navy
-		Prerequisites: syrd, miss, ~navy.gdi
+		Prerequisites: syrd, miss, ~navy.gdi, ~techlevel.6
 		Description: Battleship armed with a railgun.\nThe armament damages in a line.\n\nStrong vs Naval units, Vehicles.\nWeak vs Aircraft, Submarines.
 	Health:
 		HP: 50000

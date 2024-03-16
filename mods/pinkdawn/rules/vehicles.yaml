@@ -38,7 +38,7 @@ MCV:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, anyfix, ~vehicle.mcv
+        Prerequisites: anyhq, anyfix, ~vehicle.mcv, ~techlevel.3
 		Queue: Vehicle
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
@@ -249,7 +249,7 @@ HARV:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
 		Queue: Vehicle
-		Prerequisites: anyproc, ~vehicle.mcv
+		Prerequisites: anyproc, ~vehicle.mcv, ~techlevel.3
 		Description: Transports 1000 credits to\nother allied Construction Yard.\n\nUnarmed.
 	Valued:
 		Cost: 1000
@@ -309,7 +309,7 @@ JEEP:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: vehicleproduction, ~vehicle.gdi
+		Prerequisites: vehicleproduction, ~vehicle.gdi, ~techlevel.2
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -384,7 +384,7 @@ BGGY:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: vehicleproduction, ~vehicle.bggy
+		Prerequisites: vehicleproduction, ~vehicle.bggy, ~techlevel.2
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -459,7 +459,7 @@ BIKE:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anyhq, ~vehicle.bggy
+		Prerequisites: anyhq, ~vehicle.bggy, ~techlevel.5
 		Queue: Vehicle
 		Description: Fast scout vehicle with rockets.\nCan detect cloaked units and mines.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
@@ -539,7 +539,7 @@ APC:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction, ~vehicle.apc
+		Prerequisites: infantryproduction, ~vehicle.apc, ~techlevel.4
 		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -640,7 +640,7 @@ MAAG:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.gdi
+		Prerequisites: anyhq, ~vehicle.gdi, ~techlevel.5
 		Queue: Vehicle
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -740,7 +740,7 @@ LTNK:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: afld, ~vehicle.nod
+		Prerequisites: afld, ~vehicle.nod, ~techlevel.3
 		Queue: Vehicle
 		Description: Fast, light tank.\n\nCannot attack Air units.\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -824,7 +824,7 @@ MTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: anyfix, ~vehicle.gdi
+		Prerequisites: anyfix, ~vehicle.gdi, ~techlevel.4
 		Queue: Vehicle
 		Description: General-Purpose GDI Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -902,7 +902,7 @@ FTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix, ~vehicle.nod
+		Prerequisites: anyfix, ~vehicle.nod, ~techlevel.4
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -986,7 +986,7 @@ HTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss, ~vehicle.gdi
+		Prerequisites: miss, ~vehicle.gdi, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored GDI Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
@@ -1082,7 +1082,7 @@ STNK:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: tmpl, ~vehicle.nod
+		Prerequisites: tmpl, ~vehicle.nod, ~techlevel.7
 		Queue: Vehicle
 		Description: Medium-range missile tank.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
@@ -1163,7 +1163,7 @@ ARTY:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq, ~vehicle.arty
+		Prerequisites: anyhq, ~vehicle.arty, ~techlevel.5
 		Queue: Vehicle
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
@@ -1253,7 +1253,7 @@ MSAM:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: eye, ~vehicle.gdi
+		Prerequisites: eye, ~vehicle.gdi, ~techlevel.7
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
 	Mobile:
@@ -1349,7 +1349,7 @@ MLRS:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: bio, ~vehicle.nod
+		Prerequisites: bio, ~vehicle.nod, ~techlevel.7
 		Queue: Vehicle
 		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
 	Mobile:
@@ -1500,7 +1500,7 @@ MHQ:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: eye, ~vehicle.gdi
+		Prerequisites: eye, ~vehicle.gdi, ~techlevel.7
 		Queue: Vehicle
 		Description: Can detect cloaked units and mines.\nJams enemy communications.\n\nStrong vs Infantry.
 	Turreted:
@@ -1570,7 +1570,7 @@ WTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss, ~vehicle.bossnod
+		Prerequisites: miss, ~vehicle.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
 	Mobile:
@@ -1769,7 +1769,7 @@ MSG:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: sgen, ~vehicle.bossnod
+		Prerequisites: sgen, ~vehicle.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Cloaks all units nearby when deployed.\nThe units need to remain stationary,\nand out of combat to be cloaked.\n\nUnarmed.
 	Health:
@@ -1844,7 +1844,7 @@ T55H:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: ncom, ~vehicle.bossnod
+		Prerequisites: ncom, ~vehicle.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Maximum one can be built.\n\nExperimental modified tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nScorpion tail shoots Laser.\nStrong vs Everything.
 	Mobile:

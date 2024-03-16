@@ -167,7 +167,7 @@ FAC2:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anytier3, fix2
+		Prerequisites: anytier3, fix2, ~techlevel.6
 		Queue: Building.Allies, Building.Soviet
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
@@ -281,7 +281,7 @@ APWR:
 		BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Building.Allies, Building.Soviet
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
@@ -464,7 +464,7 @@ OSIL:
 		BuildDuration: 300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: oref
+		Prerequisites: oref, ~techlevel.2
 		Queue: Building.Allies, Building.Soviet
 		Description: Stores processed Ore and Gems.
 	Building:
@@ -725,7 +725,7 @@ WARF:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: anypower, infantryproduction, ~techlevel.2
 		Queue: Building.Allies, Building.Soviet
 		Description: Produces vehicles
 	Building:
@@ -846,7 +846,7 @@ FIX2:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.3
 		Queue: Building.Allies, Building.Soviet
 		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
@@ -1062,7 +1062,7 @@ FIX2:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.5
 		Queue: Building.Soviet, Building.Blackhand
 		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
@@ -1268,7 +1268,7 @@ DOME:
     	BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyproc, vehicleproduction
+		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
 		Queue: Building.Allies, Building.Soviet
 		Description: Provides Radar and 'Spy Plane' support-power.\nRequires power to operate.\n\n'Spy Plane' is only available for Soviet player.
 	Building:
@@ -1364,7 +1364,7 @@ ATEK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.Allies
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nLaunches a sattelite that reveals map terrain\nand periodically provides tactical information.
 	Health:
@@ -1535,7 +1535,7 @@ STEK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.Soviet
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
 	Valued:
@@ -1592,7 +1592,7 @@ FCOM:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		BuildLimit: 1
-		Prerequisites: stek
+		Prerequisites: stek, ~techlevel.7
 		Queue: Building.Soviet
 		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank,\nNuclear Tactical Submarine,\nand MiG Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
 	Building:
@@ -1678,7 +1678,7 @@ CSPH:
         BuildDurationModifier: 100
         BuildPaletteOrder: 15
 		BuildLimit: 1
-		Prerequisites: atek, ~global-superweapons
+		Prerequisites: atek, ~global-superweapons, ~techlevel.7
 		Queue: Building.Allies
 		Description: Maximum one can be built.\n\nEnables the usage of 'Chronosphere' super-weapon.
 	Tooltip:
@@ -1753,7 +1753,7 @@ IRON:
         BuildDurationModifier: 100
         BuildPaletteOrder: 16
 		BuildLimit: 1
-		Prerequisites: stek, ~global-superweapons
+		Prerequisites: stek, ~global-superweapons, ~techlevel.7
 		Queue: Building.Soviet
 		Description: Maximum one can be built.\n\nEnables the usage of 'Iron Curtain' super-weapon.
 	Tooltip:
@@ -1827,7 +1827,7 @@ MSLO:
         BuildDurationModifier: 100
         BuildPaletteOrder: 17
 		BuildLimit: 1
-		Prerequisites: anytier3, ~global-superweapons
+		Prerequisites: anytier3, ~global-superweapons, ~techlevel.7
 		Queue: Building.Allies, Building.Soviet, Building.Blackhand
 		Description: Maximum one can be built.\n\nEnables the usage of 'Atomic Bomb' super-weapon.
 	Tooltip:

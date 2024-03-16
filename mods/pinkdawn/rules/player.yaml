@@ -146,3 +146,23 @@ Player:
 		Image: veteranoverlay
 		Sequence: veteran
 	GpsWatcher:
+	ExternalCondition@NODYNAMICTECH:
+        Condition: no-dynamic-tech
+    ProvidesPrerequisite@TECHII:
+        Prerequisite: techlevel.2
+        RequiresCondition: no-dynamic-tech
+	ProvidesPrerequisite@TECHIII:
+        Prerequisite: techlevel.3
+        RequiresCondition: no-dynamic-tech
+	ProvidesPrerequisite@TECHIV:
+        Prerequisite: techlevel.4
+        RequiresCondition: no-dynamic-tech
+	ProvidesPrerequisite@TECHV:
+        Prerequisite: techlevel.5
+        RequiresCondition: no-dynamic-tech
+	ProvidesPrerequisite@TECHVI:
+        Prerequisite: techlevel.6
+        RequiresCondition: no-dynamic-tech
+	ProvidesPrerequisite@TECHVII:
+        Prerequisite: techlevel.7
+        RequiresCondition: no-dynamic-tech

@@ -38,7 +38,7 @@ MCV2:
         BuildDuration: 3900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, anyfix, ~vehicle.mcv2
+        Prerequisites: anyhq, anyfix, ~vehicle.mcv2, ~techlevel.3
 		Queue: Vehicle
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
@@ -369,7 +369,7 @@ DTRK:
     	BuildDuration: 3500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 18
-		Prerequisites: anytechra, ~vehicle.dtrk
+		Prerequisites: anytechra, ~vehicle.dtrk, ~techlevel.6
 		Queue: Vehicle
 		Description: Transports atomic demolition charge.\n\nCan be deployed for instant detonation.
 	Health:
@@ -446,7 +446,7 @@ R4WD:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: warf, ~vehicle.allies
+		Prerequisites: warf, ~vehicle.allies, ~techlevel.2
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nCan carry one Infantry.\nCannot attack without passenger.\nComes with a initial passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -554,7 +554,7 @@ FTRK:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: warf, ~vehicle.soviet
+		Prerequisites: warf, ~vehicle.soviet, ~techlevel.2
 		Queue: Vehicle
 		Description: Mobile anti-air unit.\n\nCan attack Aircraft.\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -652,7 +652,7 @@ APC2:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: infantryproduction, ~vehicle.apc2
+		Prerequisites: infantryproduction, ~vehicle.apc2, ~techlevel.4
 		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -754,7 +754,7 @@ MNLY:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: anyfix, ~vehicle.soviet
+		Prerequisites: anyfix, ~vehicle.soviet, ~techlevel.5
         Queue: Vehicle
 		Description: Carries and lays anti-tank land mines.\nCan detect mines.\nSpecial: Minelayer\nCan lay up to eight land mines before\nneeding to resupply at a Service Depot.\n\nUnarmed.
 	Health:
@@ -825,7 +825,7 @@ MNLY:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: warf, ~vehicle.allies
+		Prerequisites: warf, ~vehicle.allies, ~techlevel.3
 		Queue: Vehicle
 		Description: Fast, amphibian light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -898,7 +898,7 @@ MNLY:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix, ~vehicle.allies
+		Prerequisites: anyfix, ~vehicle.allies, ~techlevel.4
 		Queue: Vehicle
 		Description: General-purpose Allies Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -969,7 +969,7 @@ MNLY:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: anyfix, ~vehicle.soviet
+		Prerequisites: anyfix, ~vehicle.soviet, ~techlevel.4
 		Queue: Vehicle
 		Description: Dual-barreled Soviet Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -1043,7 +1043,7 @@ MNLY:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3, ~vehicle.soviet
+		Prerequisites: anytier3, ~vehicle.soviet, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
@@ -1139,7 +1139,7 @@ MNLY:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
 		BuildLimit: 1
-		Prerequisites: anyhq, fcom, ~vehicle.soviet
+		Prerequisites: anyhq, fcom, ~vehicle.soviet, ~techlevel.7
 		Queue: Vehicle
 		Description: Maximum one can be built.\n\nExtra large and slow tank.\nCan detect cloaked units and mines.\n\nSpecial: Robotic\nWireless communications powered.\nRequires a Radar Dome to operate.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nStrong vs Everything.
 	Mobile:
@@ -1257,7 +1257,7 @@ CTNK:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: atek, ~vehicle.allies
+		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
 		Queue: Vehicle
 		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
 	SelectionDecorations:
@@ -1324,7 +1324,7 @@ TTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: stek, ~vehicle.soviet
+		Prerequisites: stek, ~vehicle.soviet, ~techlevel.6
         Queue: Vehicle
 		Description: Tank with mounted tesla coil.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
 	Health:
@@ -1401,7 +1401,7 @@ V2RL:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.soviet
+		Prerequisites: anyhq, ~vehicle.soviet, ~techlevel.5
 		Queue: Vehicle
 		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks, Aircraft.
 	Valued:
@@ -1543,7 +1543,7 @@ MGG:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: atek, ~vehicle.allies
+		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
 		Queue: Vehicle
 		Description: Regenerates the shroud nearby, obscuring the area.\nCan be toggled on/off via deploy command.\n\nUnarmed.
 	Health:
@@ -1628,7 +1628,7 @@ APC3:
         BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: atek, ~vehicle.allies
+		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
 		Queue: Vehicle
 		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Mobile:
@@ -1738,7 +1738,7 @@ APC3:
     Inherits: 3TNK
     Buildable:
 		BuildPaletteOrder: 5
-		Prerequisites: anyfix, ~vehicle.bossnod
+		Prerequisites: anyfix, ~vehicle.bossnod, ~techlevel.4
 		Queue: Vehicle
 		Description: Heavily-armored Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Armament:

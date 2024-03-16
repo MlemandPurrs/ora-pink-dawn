@@ -7,7 +7,7 @@ fact.info:
         Category: GDI Buildings
 		Order: 0
 	RenderSprites:
-		Image: fact
+		Image: gdifact
         Palette: gdi
     -MapEditorData:
 
@@ -16,7 +16,7 @@ fact.nod.info:
 	Encyclopedia:
         Category: Nod Buildings
 	RenderSprites:
-		Image: fact
+		Image: nodfact
         Palette: nod
 
 nuke.info:

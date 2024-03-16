@@ -61,7 +61,7 @@ E2:
     	BuildDuration: 150
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: anyhq, ~infantry.e2
+		Prerequisites: anyhq, ~infantry.e2, ~techlevel.3
 		Queue: Infantry
 		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow-moving targets.
 	Mobile:
@@ -118,7 +118,7 @@ E3:
     	BuildDuration: 450
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.2
 		Queue: Infantry
 		Description: Anti-tank infantry.\n\nCan attack Aircraft.\nStrong vs Tanks, Aircraft.\nWeak vs Infantry.
 	Mobile:
@@ -164,7 +164,7 @@ E4:
     	BuildDuration: 300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: anyhq, ~infantry.e4
+		Prerequisites: anyhq, ~infantry.e4, ~techlevel.3
 		Queue: Infantry
 		Description: Anti-infantry unit.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -233,7 +233,7 @@ E5:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: bio, ~infantry.nod
+		Prerequisites: bio, ~infantry.nod, ~techlevel.7
 		Queue: Infantry
 		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
@@ -324,7 +324,7 @@ E6:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: anyproc
+		Prerequisites: anyproc, ~techlevel.3
 		Queue: Infantry
 		Description: Captures enemy and tech structures.\nCan repair destroyed bridges.\n\nUnarmed.
 	Mobile:
@@ -460,7 +460,7 @@ E8:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: stek, ~infantry.soviet
+		Prerequisites: stek, ~infantry.soviet, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable fire launcher.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Structures.\nWeak vs Tanks.
 	Mobile:
@@ -517,7 +517,7 @@ RMBO:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: miss, ~infantry.rmbo
+		Prerequisites: miss, ~infantry.rmbo, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -722,7 +722,7 @@ MEDI:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: anyhq, ~infantry.allies
+		Prerequisites: anyhq, ~infantry.allies, ~techlevel.3
 		Queue: Infantry
 		Description: Field medic infantry.\n\nSpecial: Regeneration\nSelf-heals slowly out of combat.\n\nHeals nearby Infantry units.
 	Mobile:
@@ -807,7 +807,7 @@ MECH:
 		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyfix, ~infantry.allies
+		Prerequisites: anyfix, ~infantry.allies, ~techlevel.5
 		Queue: Infantry
 		Description: Field mechanic infantry.\n\nRepairs nearby Vehicle units.
 	Mobile:
@@ -862,7 +862,7 @@ TANY:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: atek, ~infantry.allies
+		Prerequisites: atek, ~infantry.allies, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite gunslinger mercenary.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles, Aircraft.
@@ -931,7 +931,7 @@ VOLK:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: fcom, ~infantry.soviet
+		Prerequisites: fcom, ~infantry.soviet, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite cyborg prototype.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -1005,7 +1005,7 @@ SPY:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq, ~infantry.allies
+		Prerequisites: anyhq, ~infantry.allies, ~techlevel.4
 		Queue: Infantry
 		Description: Agent of the intelligence service.\nCan infiltrate to cut enemy power.\n\nSpecial: Disguise\nCan disguise to appear like enemy\nInfantry to fool opponents.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -1129,7 +1129,7 @@ DOG:
     	BuildDuration: 300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq, ~infantry.soviet
+		Prerequisites: anyhq, ~infantry.soviet, ~techlevel.4
 		Queue: Infantry
 		Description: Canine with combat training.\nCan detect cloaked units and mines.\n\nSpecial: Devouring\nGains health while eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
 	RevealsShroud:
@@ -1201,7 +1201,7 @@ SHOK:
 		BuildDuration: 700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: stek, ~infantry.soviet
+		Prerequisites: stek, ~infantry.soviet, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable tesla coil.\n\nSpecial: Recharging\nCan charge powerless tesla coils.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Mobile:
@@ -1288,7 +1288,7 @@ THF:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyfix, ~infantry.nod
+		Prerequisites: anyfix, ~infantry.nod, ~techlevel.5
 		Queue: Infantry
 		Description: Steals credits of enemies.\nHijacks enemy vehicles.\n\nUnarmed.
 	Mobile:
@@ -1329,7 +1329,7 @@ MEGA:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: tmpl, ~infantry.nod
+		Prerequisites: tmpl, ~infantry.nod, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper mercenary.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -1394,7 +1394,7 @@ E9:
 		BuildDuration: 700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss, ~infantry.gdi
+		Prerequisites: miss, ~infantry.gdi, ~techlevel.6
 		Queue: Infantry
 		Description: Slow artillery infantry.\n\nStrong vs Buildings, slow-moving targets.
 	Mobile:
@@ -1446,7 +1446,7 @@ INF:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: ncom, ~infantry.bossnod
+		Prerequisites: ncom, ~infantry.bossnod, ~techlevel.7
 		Queue: Infantry
 		Description: Specialist recon soldier.\nCan infiltrate to cut enemy power.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -1534,7 +1534,7 @@ JET:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 90
-		Prerequisites: eye, ~infantry.gdi
+		Prerequisites: eye, ~infantry.gdi, ~techlevel.7
 		Queue: Infantry
 		Description: Flying reconnaisance infantry.\nCan detect cloaked units and mines.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Health:
@@ -1676,7 +1676,7 @@ SNIP:
         BuildDuration: 950
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: atek, ~infantry.allies
+		Prerequisites: atek, ~infantry.allies, ~techlevel.6
 		Queue: Infantry
 		Description: Sharpshooter infantry.\nCan detect cloaked units and mines.\nUses Sniper rifle when in a Pillbox,\nor when inside a Ranger jeep.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:

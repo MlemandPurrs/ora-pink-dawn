@@ -672,3 +672,59 @@ MINW:
 	GrantExternalConditionToCrusher:
 		OnCrushCondition: minehit
 		OnCrushDuration: 50
+
+techlevel.2:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.3:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.4:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.5:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.6:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.7:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.all:
+	AlwaysVisible:
+	Interactable:
+    ProvidesPrerequisite@name:
+	ProvidesPrerequisite@TECHII:
+        Prerequisite: techlevel.2
+	ProvidesPrerequisite@TECHIII:
+        Prerequisite: techlevel.3
+	ProvidesPrerequisite@TECHIV:
+        Prerequisite: techlevel.4
+	ProvidesPrerequisite@TECHV:
+        Prerequisite: techlevel.5
+	ProvidesPrerequisite@TECHVI:
+        Prerequisite: techlevel.6
+	ProvidesPrerequisite@TECHVII:
+        Prerequisite: techlevel.7
+
+#  Overview of each tech level:
+#  Level 1: NUKE/POWR, PYLE/HAND/TENT/BARR, PROC/OREF, E1, LST2, FPWR/TENF/FREF
+#  Level 2: WEAP/AFLD/UFLD/WARF, SILO/OSIL, SBAG/WIRE/FENC, E3, JEEP/BGGY/R4WD/FTRK, PT/PT2, WEAF
+#  Level 3: FIX/FIX2, HQ/DOME, GTWR/PBOX, E2, E4, MEDI, E6, LTNK/1TNK, TRUK/2TRK, SS/SS2, FIXF, DOMF, MCV/MCV2
+#  Level 4: CYCL, APC/APC2, GUN/LTUR/FTWR, MTNK/FTNK/2TNK/3TNK, SPY/DOG, DD/DD2
+#  Level 5: NUK2/APWR, HPAD/3FLD, TSLA, HBOX, MECH/THF, BIKE/MAAG/MNLY, ARTY/V2RL, TRAN, YAK, FAPW, HPAF
+#  Level 6: MISS/TMPL/ATEK/STEK, AGT/OBLI, SAM/SAM2/AGUN, BRIK, VGAT, E9/SNIP, HTNK/4TNK, TTNK, ORCA/HELI/HEL2/HIND, MIG, CA/DD3, ATEF
+#  Level 7: EYE/BIO/FCOM/NCOM, GAP, E5, JET, INF, MSAM/MLRS, STNK, WTNK, CTNK, 5TNK, MGG, OCAR, NMIG, NTS, CSPF

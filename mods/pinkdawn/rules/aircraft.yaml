@@ -246,7 +246,7 @@ ORCA:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: hpad, anyhq, ~aircraft.gdi
+		Prerequisites: hpad, anyhq, ~aircraft.gdi, ~techlevel.6
 		Queue: Aircraft
 		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -337,7 +337,7 @@ HELI:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.nod
+		Prerequisites: hpad, anyhq, ~aircraft.nod, ~techlevel.6
 		Queue: Aircraft
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -442,7 +442,7 @@ HEL2:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.allies
+		Prerequisites: hpad, anyhq, ~aircraft.allies, ~techlevel.6
 		Queue: Aircraft
 		Description: Helicopter Gunship with rockets.\nCan detect cloaked units,\nmines and submarines.\n\nCan attack Aircraft, Submarines.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
@@ -580,7 +580,7 @@ HIND:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: 3fld, anyhq, ~aircraft.soviet
+		Prerequisites: 3fld, anyhq, ~aircraft.soviet, ~techlevel.6
 		Queue: Aircraft
 		Description: Dual armed, slow helicopter gunship.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -816,7 +816,7 @@ BADR.tran:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
 		BuildLimit: 1
-		Prerequisites: ~anyafld, stek, ~aircraft.soviet
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~techlevel.6
 		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop Transport\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
     Armor:
 		Type: Aluminium
@@ -993,7 +993,7 @@ F18:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, ~aircraft.gdi
+		Prerequisites: ~anyafld, ~aircraft.gdi, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
     RenderSprites:
         Image: f18
@@ -1012,7 +1012,7 @@ F22:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, anytier3, ~aircraft.f22
+		Prerequisites: ~anyafld, anytier3, ~aircraft.f22, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
     RenderSprites:
         Image: f22
@@ -1031,7 +1031,7 @@ F16:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, atek, ~aircraft.allies
+		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
     RenderSprites:
         Image: f16
@@ -1050,7 +1050,7 @@ MIG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, stek, ~aircraft.soviet
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
     RenderSprites:
         Image: mig
@@ -1076,7 +1076,7 @@ YAK:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.soviet
+		Prerequisites: 3fld, ~aircraft.soviet, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1179,7 +1179,7 @@ NMIG:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 8
 		BuildLimit: 1
-		Prerequisites: ~anyafld, fcom, ~aircraft.soviet
+		Prerequisites: ~anyafld, fcom, ~aircraft.soviet, ~techlevel.7
 		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
 	Armament:
 		Weapon: ParaNuke
@@ -1258,7 +1258,7 @@ RH66:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.bossnod
+		Prerequisites: hpad, anyhq, ~aircraft.bossnod, ~techlevel.6
 		Queue: Aircraft
 		Description: Light helicopter with rockets.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -1497,7 +1497,7 @@ OCAR:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: fix, ~aircraft.gdi
+		Prerequisites: fix, ~aircraft.gdi, ~techlevel.7
 		Queue: Aircraft
 		Description: VTOL aircraft capable\nof airlifting vehicles.\n\nUnarmed.
 	Aircraft:

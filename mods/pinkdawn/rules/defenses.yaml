@@ -12,7 +12,7 @@ GTWR:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.3
 		Queue: Defense.GDI, Defense.Nod
 		Description: Basic defensive structure.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
@@ -77,7 +77,7 @@ GUN:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.GDI, Defense.Nod, Defense.Allies
 		Description: Anti-Tank base defense.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Building:
@@ -149,7 +149,7 @@ ATWR:
 		BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss
+		Prerequisites: miss, ~techlevel.6
 		Queue: Defense.GDI
 		Description: All-purpose defensive structure.\nRequires power to operate.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
 	Selectable:
@@ -235,7 +235,7 @@ OBLI:
 		BuildDuration: 2700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.6
 		Queue: Defense.Nod, Defense.Blackhand
 		Description: Advanced base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Selectable:
@@ -309,7 +309,7 @@ LTUR:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.Blackhand
 		Description: All-purpose base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Building:
@@ -389,7 +389,7 @@ SAM:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.6
 		Queue: Defense.Nod, Defense.Blackhand
 		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
@@ -490,7 +490,7 @@ SAM2:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.6
 		Queue: Defense.Soviet
 		Description: Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
@@ -578,7 +578,7 @@ FTWR:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.Soviet
 		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Building:
@@ -641,7 +641,7 @@ TSLA:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Defense.Soviet
 		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
 	Health:
@@ -724,7 +724,7 @@ GAP:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		Queue: Building.Allies
-		Prerequisites: atek
+		Prerequisites: atek, ~techlevel.7
 		Description: Obscures the enemy's view with shroud.\nCan be toggled on/off via deploy command.\nRequires power to operate.
 	Selectable:
 		Bounds: 1024, 1024
@@ -820,7 +820,7 @@ AGUN:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.6
 		Queue: Defense.Allies
 		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
     Building:
@@ -906,7 +906,7 @@ SBAG:
         BuildDuration: 75
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Queue: Defense.GDI, Defense.Allies
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -931,7 +931,7 @@ BARB:
         BuildDuration: 75
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Queue: Defense.Nod, Defense.Blackhand
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -956,7 +956,7 @@ CYCL:
         BuildDuration: 125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		Description: Stops infantry and light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
 	Armor:
@@ -982,7 +982,7 @@ BRIK:
         BuildDuration: 175
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.6
 		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
 		Description: Stops infantry and vehicles.\nBlocks projectiles.
 	Health:
@@ -1026,7 +1026,7 @@ FENC:
         BuildDuration: 75
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Queue: Defense.Soviet
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -1054,7 +1054,7 @@ HGAT:
         BuildDuration: 175
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.6
 		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.Blackhand
 		Description: Places a gate that blocks enemy access into your base.\n\nYou can rotate using Rotate Building hotkey (default: V)
 	Valued:
@@ -1156,7 +1156,7 @@ PBOX:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.3
 		Queue: Defense.Allies
 		Description: Static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
@@ -1260,7 +1260,7 @@ HBOX:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Defense.Allies
 		Description: Camouflaged static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:

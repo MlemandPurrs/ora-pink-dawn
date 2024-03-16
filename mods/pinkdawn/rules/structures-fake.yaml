@@ -21,7 +21,7 @@ FACF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 210
-		Prerequisites: atek
+		Prerequisites: atek, ~techlevel.6
 		Description: Looks like a Construction Yard.
 		Icon: fake-icon
 	Health:
@@ -60,7 +60,7 @@ FPWR:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 200
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Description: Looks like a Power Plant.
 		Icon: fake-icon
 	Health:
@@ -106,7 +106,7 @@ FAPW:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 203
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Description: Looks like an Advanced Power Plant.
 		Icon: fake-icon
 	Health:
@@ -152,7 +152,7 @@ TENF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 201
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Description: Looks like an Allies Barracks.
 		Icon: fake-icon
 	Health:
@@ -200,7 +200,7 @@ FREF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 202
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~techlevel.2
 		Description: Looks like an Ore Refinery.
 		Icon: fake-icon
 	Health:
@@ -248,7 +248,7 @@ WEAF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 204
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: anypower, infantryproduction, ~techlevel.2
 		Description: Looks like a War Factory.
 		Icon: fake-icon
 	Health:
@@ -293,7 +293,7 @@ FIXF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 208
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.2
 		Description: Looks like a Service Depot.
 		Icon: fake-icon
 	Tooltip:
@@ -335,7 +335,7 @@ HPAF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 207
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.5
 		Description: Looks like a Helipad.
 		Icon: fake-icon
 	Health:
@@ -373,7 +373,7 @@ DOMF:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 205
-		Prerequisites: anypower, vehicleproduction
+		Prerequisites: anypower, vehicleproduction, ~techlevel.3
 		Description: Looks like a Radar Dome.
 		Icon: fake-icon
 	Health:
@@ -416,7 +416,7 @@ ATEF:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 209
         BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Description: Maximum one can be built.\nLooks like an Allies Technology Center.
 		Icon: fake-icon
 	Health:
@@ -452,7 +452,7 @@ CSPF:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 211
         BuildLimit: 1
-		Prerequisites: atek
+		Prerequisites: atek, ~techlevel.7
 		Description: Maximum one can be built.\nLooks like a Chronosphere.
 		Icon: fake-icon
 	Health:
@@ -489,7 +489,7 @@ MSLF:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 212
         BuildLimit: 1
-		Prerequisites: atek
+		Prerequisites: atek, ~techlevel.7
 		Description: Maximum one can be built.\nLooks like a Missile Silo.
 		Icon: fake-icon
 	Health:

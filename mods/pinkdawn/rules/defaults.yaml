@@ -3,7 +3,7 @@
 	UpdatesPlayerStatistics:
 	CombatDebugOverlay:
 	GivesExperience:
-		PlayerExperienceModifier: 1
+		PlayerExperienceModifier: 20
     GivesExperienceMultiplier@EXPTOGGLE:
         Modifier: 0
         RequiresCondition: !giver-veterancy-on

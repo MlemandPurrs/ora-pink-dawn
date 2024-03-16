@@ -108,7 +108,7 @@ PT:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd, ~navy.allies
+		Prerequisites: syrd, ~navy.allies, ~techlevel.2
 		Description: Fast, scout and support ship.\n\nCan attack Submarines.\nStrong vs Naval units, Infantry.\nWeak vs Vehicles, Defenses.
 	Health:
 		HP: 30000
@@ -196,7 +196,7 @@ CA:
         BuildDurationModifier: 100
         BuildPaletteOrder: 3
 		Queue: Navy
-		Prerequisites: syrd, anytier3, ~navy.allies
+		Prerequisites: syrd, anytier3, ~navy.allies, ~techlevel.6
 		Description: Slow, long-ranged artillery ship.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units, Tanks.
 	Health:
 		HP: 70000
@@ -282,7 +282,7 @@ DD:
         BuildDurationModifier: 100
         BuildPaletteOrder: 2
 		Queue: Navy
-		Prerequisites: syrd, anyhq, ~navy.allies
+		Prerequisites: syrd, anyhq, ~navy.allies, ~techlevel.4
 		Description: Multi-role fire-support ship.\n\nCan attack Aircraft and Submarines.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Health:
 		HP: 50000
@@ -384,7 +384,7 @@ SS:
         BuildDurationModifier: 100
         BuildPaletteOrder: 4
 		Queue: Navy
-		Prerequisites: syrd, anyhq, ~navy.soviet
+		Prerequisites: syrd, anyhq, ~navy.soviet, ~techlevel.3
 		Description: Submerger anti-ship unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\nCan attack ground and naval units.
 	Health:
 		HP: 25000
@@ -453,7 +453,7 @@ MSUB:
         BuildDurationModifier: 100
         BuildPaletteOrder: 5
 		Queue: Navy
-		Prerequisites: syrd, stek, ~navy.soviet
+		Prerequisites: syrd, stek, ~navy.soviet, ~techlevel.6
 		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.
 	Health:
 		HP: 30000
@@ -544,7 +544,7 @@ NTS:
         BuildPaletteOrder: 6
 		BuildLimit: 1
 		Queue: Navy
-		Prerequisites: syrd, fcom, ~navy.soviet
+		Prerequisites: syrd, fcom, ~navy.soviet, ~techlevel.7
 		Description: Maximum one can be built.\n\nSubmerger nuclear-armed unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nLaunches nuclear torpedo against Ships.\nFires nuclear missile against Ground targets.
 	Health:
 		HP: 40000
