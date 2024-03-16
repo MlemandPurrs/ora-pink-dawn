@@ -206,6 +206,11 @@ HeliExplode:
         ImpactActors: false
 		ImpactSounds: xplos.aud
 
+HeliCrash:
+	Inherits: ^DamagingExplosion
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
 ChemTankExplode:
 	Inherits: ^DamagingExplosion
 	Warhead@1Dam: SpreadDamage

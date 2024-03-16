@@ -355,6 +355,9 @@
 		RequiresCondition: parachute
         Palette: effect
         IsPlayerPalette: false
+    Targetable@Parachute:
+        TargetTypes: Parachute
+        RequiresCondition: parachute
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -766,6 +769,7 @@
 			TiberiumDeath: 6
 			ElectricityDeath: 7
 		CrushedSequence: die-crushed
+        RequiresCondition: !parachute
 	AttackMove:
 	Passenger:
 		CargoType: Infantry
@@ -797,6 +801,11 @@
 	HitShape:
 		Type: Circle
 			Radius: 128
+        RequiresCondition: !parachute
+	HitShape@parachute:
+		Type: Circle
+			Radius: 256
+        RequiresCondition: parachute
 	MapEditorData:
 		Categories: Infantry
 	Parachutable:
@@ -817,6 +826,9 @@
 		RequiresCondition: parachute
         Palette: effect
         IsPlayerPalette: false
+    Targetable@Parachute:
+        TargetTypes: Parachute
+        RequiresCondition: parachute
 	GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
 		WarnCrushCondition: crush-attempt-slow
 		WarnCrushDuration: 50
@@ -1614,7 +1626,8 @@
 		Explosion: HeliCrash
 	Tooltip:
 		GenericName: Destroyed Helicopter
-	-MapEditorData:
+	MapEditorData:
+		Categories: Aircraft Husk
 
 ^Bridge:
 	Inherits@shape: ^1x1Shape

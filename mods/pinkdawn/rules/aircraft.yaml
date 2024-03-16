@@ -1490,7 +1490,7 @@ GenericCarryall:
 	Health:
 		HP: 15000
 	Armor:
-		Type: Aircraft
+		Type: Medium
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition

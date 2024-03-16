@@ -1,0 +1,254 @@
+
+#   for helicopters there are 2 husks, 
+#   one is for when falling down,
+#   one is on the ground capturable,
+TRAN.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Transport Helicopter (Falling)
+	Health:
+		HP: 4500
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 150
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	WithIdleOverlay@ROTOR1:
+		Offset: 597,0,85
+		Sequence: rotor
+	WithIdleOverlay@ROTOR2:
+		Offset: -597,0,171
+		Sequence: rotor2
+	RenderSprites:
+		Image: tran
+
+TRAN.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Transport Helicopter (Destroyed)
+	Health:
+		HP: 4500
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: tran
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: tran
+
+ORCA.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Orca (Falling)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 200
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: orca
+
+ORCA.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Orca (Destroyed)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: orca
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: orca
+
+HELI.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Apache (Falling)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 200
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: heli
+
+HELI.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Apache (Destroyed)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: heli
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: heli
+
+HEL2.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Longbow (Falling)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 200
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: hel2
+
+HEL2.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Longbow (Destroyed)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: hel2
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: hel2
+
+HIND.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Hind (Falling)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Heavy
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 150
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: hind
+
+HIND.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Hind (Destroyed)
+	Health:
+		HP: 10000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: hind
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: hind
+
+RH66.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Comanche (Falling)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 200
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: rh66
+
+RH66.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Comanche (Destroyed)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: rh66
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: rh66
+
+OCAR.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Carryall (Falling)
+	Health:
+		HP: 6250
+	Armor:
+		Type: Medium
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 200
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: ocar
+
+OCAR.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Carryall (Destroyed)
+	Health:
+		HP: 7500
+	Armor:
+		Type: Medium
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ocar
+	MapEditorData:
+		Categories: Aircraft Husk
+	RenderSprites:
+		Image: ocar

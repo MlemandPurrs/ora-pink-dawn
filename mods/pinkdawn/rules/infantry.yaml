@@ -1518,6 +1518,12 @@ JET:
     -Parachutable:
     -WithParachute:
     -EdibleByLeap:
+    -Targetable@Parachute:
+    -HitShape@parachute:
+	HitShape:
+		Type: Circle
+			Radius: 256
+        -RequiresCondition: !parachute
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1713,7 +1719,7 @@ SNIP:
 			TiberiumDeath: 6
 			ElectricityDeath: 7
 		CrushedSequence: die-crushed
-        RequiresCondition: !at-tropic
+        RequiresCondition: !at-tropic && !parachute
 	WithDeathAnimation@tropical:
 		DeathTypes:
 			DefaultDeath: 1
@@ -1726,7 +1732,7 @@ SNIP:
 			ElectricityDeath: 7
 		CrushedSequence: die-crushed
         DeathSequencePalette: player-tropic
-        RequiresCondition: at-tropic
+        RequiresCondition: at-tropic && !parachute
     -RevealsShroudMultiplier@GAPGenerator:
     -ExternalCondition@GAPGenerator:
 	RevealsShroud:

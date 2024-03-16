@@ -1,5 +1,8 @@
 MCV.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 608
 	Tooltip:
 		Name: MCV (Destroyed)
 	Health:
@@ -16,6 +19,9 @@ MCV.Husk:
 
 HARV.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Harvester (Destroyed)
 	Health:
@@ -170,6 +176,9 @@ MTNK.Husk:
 
 HTNK.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Mammoth Tank (Destroyed)
 	Health:
@@ -360,6 +369,9 @@ WTNK.Husk:
  
 MCV2.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 608
 	Tooltip:
 		Name: MCV (Destroyed)
 	Health:
@@ -376,6 +388,9 @@ MCV2.Husk:
 
 OHRV.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Harvester (Destroyed)
 	Health:
@@ -392,6 +407,9 @@ OHRV.Husk:
 
 AHRV.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Armed Harvester (Destroyed)
 	Health:
@@ -584,6 +602,9 @@ MNLY.Husk:
 
 4TNK.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Mammoth Tank (Destroyed)
 	Health:
@@ -602,6 +623,9 @@ MNLY.Husk:
 
 5TNK.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Behemoth Tank (Destroyed)
 	Health:
@@ -668,6 +692,9 @@ V2RL.Husk:
 
 MGG.Husk:
 	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Tooltip:
 		Name: Mobile GAP Generator (Destroyed)
 	Health:
