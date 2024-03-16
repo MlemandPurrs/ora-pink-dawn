@@ -1629,6 +1629,25 @@
 	MapEditorData:
 		Categories: Aircraft Husk
 
+^AirplaneHusk:
+	Inherits: ^CommonHuskDefaults
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	Aircraft:
+		CanHover: False
+		VTOL: False
+		CanSlide: False
+	FallsToEarth:
+		Moves: True
+		Velocity: 86
+		Explosion: HeliCrash
+        MaximumSpinSpeed: 0
+	Tooltip:
+		GenericName: Destroyed Plane
+	MapEditorData:
+		Categories: Aircraft Husk
+
 ^Bridge:
 	Inherits@shape: ^1x1Shape
 	AlwaysVisible:

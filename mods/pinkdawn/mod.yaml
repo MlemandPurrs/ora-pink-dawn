@@ -86,6 +86,7 @@ Rules:
 	pinkdawn|rules/infantry.yaml
 	pinkdawn|rules/vehicles.yaml
 	pinkdawn|rules/aircraft.yaml
+	pinkdawn|rules/aircraft-husks.yaml
 	pinkdawn|rules/trees.yaml
 	pinkdawn|rules/civilian.yaml
 	pinkdawn|rules/civilian-desert.yaml

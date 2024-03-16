@@ -730,17 +730,8 @@ BADR:
 		RequiresCondition: !airborne
 		TargetTypes: Ground
     Huntable:
-	LeavesTrails@0:
-		Offsets: -432,560,0
-		MovingInterval: 2
-		Image: smokey
-		StationaryInterval: 2
-		SpawnAtLastPosition: False
-		TrailWhileStationary: True
-		Type: CenterPosition
-		RequiresCondition: enable-smoke
-	LeavesTrails@1:
-		Offsets: -432,-560,0
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
 		MovingInterval: 2
 		Image: smokey
 		StationaryInterval: 2
@@ -880,17 +871,8 @@ BADR.tran:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: sniperinside
-	LeavesTrails@0:
-		Offsets: -432,560,0
-		MovingInterval: 2
-		Image: smokey
-		StationaryInterval: 2
-		SpawnAtLastPosition: False
-		TrailWhileStationary: True
-		Type: CenterPosition
-		RequiresCondition: enable-smoke
-	LeavesTrails@1:
-		Offsets: -432,-560,0
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
 		MovingInterval: 2
 		Image: smokey
 		StationaryInterval: 2

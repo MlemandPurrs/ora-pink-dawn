@@ -92,6 +92,9 @@ HELI.Husk:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor
 	RenderSprites:
 		Image: heli
 
@@ -124,11 +127,14 @@ HEL2.Husk:
 	Aircraft:
 		TurnSpeed: 14
 		Speed: 200
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor2
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
 	RenderSprites:
-		Image: hel2
+		Image: heli
 
 HEL2.Husk2:
     Inherits: ^Husk
@@ -146,7 +152,7 @@ HEL2.Husk2:
 	MapEditorData:
 		Categories: Aircraft Husk
 	RenderSprites:
-		Image: hel2
+		Image: heli
 
 HIND.Husk:
 	Inherits: ^HelicopterHusk
@@ -159,6 +165,9 @@ HIND.Husk:
 	Aircraft:
 		TurnSpeed: 14
 		Speed: 150
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
@@ -192,8 +201,11 @@ RH66.Husk:
 	Armor:
 		Type: Light
 	Aircraft:
-		TurnSpeed: 14
-		Speed: 200
+		TurnSpeed: 12
+        Speed: 200
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor2
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
@@ -252,3 +264,277 @@ OCAR.Husk2:
 		Categories: Aircraft Husk
 	RenderSprites:
 		Image: ocar
+
+F18.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Hornet (Falling)
+	Health:
+		HP: 5000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: f18
+
+F22.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Raptor (Falling)
+	Health:
+		HP: 5000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: f22
+
+F16.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Falcon (Falling)
+	Health:
+		HP: 5000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: f16
+
+MIG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: MiG (Falling)
+	Health:
+		HP: 5000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: mig
+
+YAK.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Yak (Falling)
+	Health:
+		HP: 3000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 250
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: mig
+
+NMIG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Nuclear Bomber (Falling)
+	Health:
+		HP: 5000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: nmig
+
+SMIG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Spy Plane (Falling)
+	Health:
+		HP: 1750
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -1043,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: smig
+
+A10.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: A-10 Warthog (Falling)
+	Health:
+		HP: 4500
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: a10
+
+SFIG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Stealth Bomber (Falling)
+	Health:
+		HP: 4500
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: sfig
+
+C17.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Cargo Plane (Falling)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 400
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: c17
+
+BADR.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Badger (Falling)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: badr
+
+BADG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Paradrop Plane (Falling)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: badg
