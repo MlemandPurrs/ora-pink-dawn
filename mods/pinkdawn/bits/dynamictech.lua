@@ -26,18 +26,17 @@ PlayerCount = 16
 Players = { }
 
 WorldLoaded = function()
-	if Map.LobbyOption("dynamictechlevel") == "enabled" then
-		for i=0, PlayerCount-1 do
-			local player = Player.GetPlayer("Multi" .. i)
-			if player then
-				print("Added player Multi" .. i)
-				table.insert(Players, player)
-			else
-				print("Player Multi" .. i .. " not valid. Skipping.")
-			end
+	for i=0, PlayerCount-1 do
+		local player = Player.GetPlayer("Multi" .. i)
+		if player then
+			print("Added player Multi" .. i)
+			table.insert(Players, player)
+		else
+			print("Player Multi" .. i .. " not valid. Skipping.")
 		end
-	elseif Map.LobbyOption("dynamictechlevel") == "disabled" then
-		for _,player in pairs(Players)
+	end
+	if Map.LobbyOption("dynamictechlevel") == "disabled" then
+		for i,player in pairs(Players)
 			do
 				player.GrantCondition("no-dynamic-tech")
 

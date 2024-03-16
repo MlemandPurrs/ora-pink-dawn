@@ -151,18 +151,18 @@ Player:
     ProvidesPrerequisite@TECHII:
         Prerequisite: techlevel.2
         RequiresCondition: no-dynamic-tech
-	ProvidesPrerequisite@TECHIII:
+    ProvidesPrerequisite@TECHIII:
         Prerequisite: techlevel.3
         RequiresCondition: no-dynamic-tech
-	ProvidesPrerequisite@TECHIV:
+    ProvidesPrerequisite@TECHIV:
         Prerequisite: techlevel.4
         RequiresCondition: no-dynamic-tech
-	ProvidesPrerequisite@TECHV:
+    ProvidesPrerequisite@TECHV:
         Prerequisite: techlevel.5
         RequiresCondition: no-dynamic-tech
-	ProvidesPrerequisite@TECHVI:
+    ProvidesPrerequisite@TECHVI:
         Prerequisite: techlevel.6
         RequiresCondition: no-dynamic-tech
-	ProvidesPrerequisite@TECHVII:
+    ProvidesPrerequisite@TECHVII:
         Prerequisite: techlevel.7
         RequiresCondition: no-dynamic-tech

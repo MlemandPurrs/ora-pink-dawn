@@ -331,6 +331,7 @@ Player:
 			hq: 1
 			eye: 1
 			miss: 1
+            atwr: 10
 		BuildingFractions:
 			proc: 20
             silo: 3
@@ -373,6 +374,7 @@ Player:
 			hq: 1
 			tmpl: 1
             bio: 1
+            obli: 10
 		BuildingFractions:
 			proc: 20
             silo: 3
@@ -475,6 +477,7 @@ Player:
             fcom: 1
             iron: 1
             mslo: 1
+            tsla: 10
 		BuildingFractions:
 			oref: 20
             osil: 3
@@ -520,6 +523,7 @@ Player:
 			miss: 1
             ncom: 1
             mslo: 1
+            obli: 10
 		BuildingFractions:
 			proc: 20
             silo: 3
