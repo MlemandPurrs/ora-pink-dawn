@@ -506,8 +506,13 @@ paradirection:
 		y: 5
 		Offset: -15, -15, 0
 
-ssmmsl:
-	idle: ssmmsl
+hjm:
+	idle: hjm
+		Facings: 32
+		ZOffset: 1023
+
+hjmb:
+	idle: hjmb
 		Facings: 32
 		ZOffset: 1023
 

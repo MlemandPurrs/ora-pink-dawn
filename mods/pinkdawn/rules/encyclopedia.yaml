@@ -801,13 +801,16 @@ mlrs.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The SSM Launcher is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.\n\nHeroic rank:\nShoots nuclear warhead equipped missiles. Extreme care is advised however, as the unit will detonate nuclear when destroyed.
+        Description: The SSM Launcher is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.\n\nHeroic rank:\nShoots chemical missiles that can turn enemy infantry to Visceroids.
         Category: Nod Vehicles
 		Order: 15
 	WithSpriteTurret:
 		-RequiresCondition:
     -WithSpriteTurret@OneMissile:
     -WithSpriteTurret@NoMissiles:
+	-WithSpriteTurret@Heroic:
+	-WithSpriteTurret@HeroicOneMissile:
+	-WithSpriteTurret@HeroicNoMissiles:
 	RenderSprites:
 		Image: mlrs
         Palette: nodunits
@@ -1091,7 +1094,7 @@ hosp.info:
 army.info:
     Inherits: ARMY
 	Encyclopedia:
-		Description: This facility is well-stocked with arms and ammunition to be used by experienced soldiers. Wherever such a facility can be located, commanders may endeavour to secure it's usage for their own forces.\nCapturing this structure with an Engineer will enable to train Infantry units at Veteran rank.
+		Description: This facility is well-stocked with arms and ammunition to be used by experienced soldiers. Wherever such a facility can be located, commanders may endeavour to secure it's usage for their own forces.\nCapturing this structure with an Engineer will enable all Vehicles to slowly self-repair while out of combat.
         Category: Tech Buildings
 		Order: 3
 	RenderSprites:

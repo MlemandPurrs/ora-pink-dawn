@@ -1003,7 +1003,7 @@ FIX2:
 		UnitType: badr
 		Name: Paratroopers
 		Description: A Badger drops a squad of infantry\nanywhere on the map.
-		DropItems: E1,E3,E1,E3,E1
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.small
@@ -1206,7 +1206,7 @@ FIX2:
 		UnitType: badr
 		Name: Paratroopers
 		Description: A Badger drops a squad of infantry\nanywhere on the map.
-		DropItems: E1,E3,E1,E3,E1
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.small

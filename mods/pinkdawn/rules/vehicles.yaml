@@ -22,6 +22,14 @@ MCV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall )
 	HitShape:
 		Type: Circle
 			Radius: 608
@@ -99,7 +107,6 @@ MCV:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
     Passenger:
-        -CargoCondition:
 
 HARV:
 	Inherits: ^Vehicle
@@ -125,6 +132,10 @@ HARV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+    -ChangesHealth@SELFREPAIR:
+    -WithDecoration@SELFREPAIR:
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -196,7 +207,13 @@ HARV:
 		Delay: 3
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall
+        RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall && !parachute && !in-transport && !armoryrepair
+	ChangesHealth@2:
+		Step: 100
+		Delay: 3
+		StartIfBelow: 100
+		DamageCooldown: 150
+		RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall && !parachute && !in-transport && armoryrepair
 	RenderSprites:
 		Image: harv
 		FactionImages:
@@ -244,6 +261,14 @@ HARV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected )
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
@@ -275,7 +300,6 @@ HARV:
         RequiresCondition: !oncarryall
     Passenger:
 		CustomPipType: pip-blue
-        -CargoCondition:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -1052,11 +1076,12 @@ HTNK:
 		RequiresCondition: cloakfield-on
     -ChangesHealth@RANK-HEROIC:
 	ChangesHealth@RANK-HEROIC:
-		Step: 530
+		Step: 500
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
+		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && !in-transport && !oncarryall
+    -ChangesHealth@SELFREPAIR:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -1375,7 +1400,7 @@ MLRS:
         RequiresCondition: !rank-heroic
     Armament@SECONDARY:
         Name: secondary
-		Weapon: HonestJohnNuke
+		Weapon: HonestJohnChem
         Recoil: 0
 		LocalOffset: 0,-171,0, 0,171,0
         PauseOnCondition: !ammo || emp-crate-collected
@@ -1402,13 +1427,22 @@ MLRS:
 		RevokeDelay: 51
 		RevokeAll: false
 	WithSpriteTurret:
-		RequiresCondition: ammo > 1
+		RequiresCondition: ammo > 1 && !rank-heroic
 	WithSpriteTurret@OneMissile:
-		RequiresCondition: ammo == 1
+		RequiresCondition: ammo == 1 && !rank-heroic
 		Sequence: turret1
 	WithSpriteTurret@NoMissiles:
-		RequiresCondition: !ammo
+		RequiresCondition: !ammo && !rank-heroic
 		Sequence: turret0
+	WithSpriteTurret@Heroic:
+		RequiresCondition: ammo > 1 && rank-heroic
+        Sequence: turret4
+	WithSpriteTurret@HeroicOneMissile:
+		RequiresCondition: ammo == 1 && rank-heroic
+		Sequence: turret3
+	WithSpriteTurret@HeroicNoMissiles:
+		RequiresCondition: !ammo && rank-heroic
+		Sequence: turret2
 	AutoTarget:
 		InitialStanceAI: Defend
 	RenderRangeCircle:
@@ -1438,7 +1472,7 @@ MLRS:
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: !rank-heroic
 	Explodes@2:
-		Weapon: MlrsExplodeNuke
+		Weapon: MlrsExplodeChem
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: rank-heroic
 	RevealOnFire:
@@ -1474,6 +1508,14 @@ MHQ:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:    
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected )
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1551,8 +1593,6 @@ MHQ:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
-    Passenger:
-        -CargoCondition:
 
 WTNK:
 	Inherits: ^TrackedVehicle
@@ -1759,6 +1799,14 @@ MSG:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected )
 	Selectable:
 		DecorationBounds: 1450, 1450, 0, -128
 	Valued:
@@ -1824,10 +1872,6 @@ MSG:
     PowerMultiplier@deployed:
         Modifier: 200
         RequiresCondition: !emp-crate-collected && deployed
-	Carryable:
-		-CarriedCondition: oncarryall
-    Passenger:
-        -CargoCondition:
 
 T55H:
 	Inherits: ^TrackedVehicle

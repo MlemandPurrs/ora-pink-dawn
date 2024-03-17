@@ -22,6 +22,14 @@ MCV2:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall )
 	HitShape:
 		Type: Circle
 			Radius: 608
@@ -93,8 +101,6 @@ MCV2:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-    Passenger:
-        -CargoCondition:
 
 OHRV:
 	Inherits: ^Vehicle
@@ -120,6 +126,10 @@ OHRV:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+    -ChangesHealth@SELFREPAIR:
+    -WithDecoration@SELFREPAIR:
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -191,7 +201,13 @@ OHRV:
 		Delay: 3
 		StartIfBelow: 51
 		DamageCooldown: 150
-        RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall
+        RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall && !parachute && !in-transport && !armoryrepair
+	ChangesHealth@2:
+		Step: 100
+		Delay: 3
+		StartIfBelow: 100
+		DamageCooldown: 150
+		RequiresCondition: !emp-crate-collected && !in-transport && !oncarryall && !parachute && !in-transport && armoryrepair
     -WithFacingSpriteBody:
 	WithHarvesterSpriteBody:
 		ImageByFullness: ohrv-empty, ohrv-half, ohrv-full
@@ -282,6 +298,14 @@ TRUK:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected )
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
@@ -313,7 +337,6 @@ TRUK:
         RequiresCondition: !oncarryall
     Passenger:
 		CustomPipType: pip-blue
-        -CargoCondition:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -358,6 +381,14 @@ DTRK:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected)
 	Valued:
 		Cost: 2100
 	Tooltip:
@@ -424,8 +455,6 @@ DTRK:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-    Passenger:
-        -CargoCondition:
 
 R4WD:
 	Inherits: ^Vehicle
@@ -1107,11 +1136,12 @@ MNLY:
 		RequiresCondition: cloakfield-on
     -ChangesHealth@RANK-HEROIC:
 	ChangesHealth@RANK-HEROIC:
-		Step: 530
+		Step: 500
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
+		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && !in-transport && !oncarryall
+    -ChangesHealth@SELFREPAIR:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -1226,11 +1256,12 @@ MNLY:
     -WithDecoration@CARRYALL:
     -ChangesHealth@RANK-HEROIC:
 	ChangesHealth@RANK-HEROIC:
-		Step: 530
+		Step: 500
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-heroic && !emp-crate-collected && wireless && !in-transport
+		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && wireless && !in-transport
+    -ChangesHealth@SELFREPAIR:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
@@ -1432,7 +1463,7 @@ V2RL:
         RequiresCondition: !rank-heroic
 	Armament@SECONDARY:
         Name: secondary
-		Weapon: V2MissileChem
+		Weapon: V2MissileNuke
         FireDelay: 6
 		PauseOnCondition: !ammo || emp-crate-collected
         RequiresCondition: rank-heroic
@@ -1473,7 +1504,7 @@ V2RL:
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: !rank-heroic
 	Explodes@2:
-		Weapon: V2RLExplodeChem
+		Weapon: V2RLExplodeNuke
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: rank-heroic
 	Selectable:
@@ -1532,6 +1563,14 @@ MGG:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || emp-crate-collected )
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -1608,8 +1647,6 @@ MGG:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-    Passenger:
-        -CargoCondition:
 
 APC3:
 	Inherits: ^TrackedVehicle

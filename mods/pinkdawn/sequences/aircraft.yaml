@@ -93,9 +93,9 @@ yak:
 	Inherits: emp-overlay
 	idle:
 		Facings: 16
-	muzzle: minigun
+	muzzle: minigun16
 		Length: 6
-		Facings: 8
+		Facings: 16
 	icon: yakicon
 
 mig:

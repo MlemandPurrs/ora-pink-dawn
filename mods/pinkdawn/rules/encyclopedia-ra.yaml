@@ -870,12 +870,13 @@ v2rl.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The V2 Launcher can destroy most buildings with just two rockets. Factor in its incredible range, and it is easy to see why the Allies fear this weapons platform. Its drawbacks are its light armor, long reload time, and inability to hit fast-moving targets.
+        Description: The V2 Launcher can destroy most buildings with just two rockets. Factor in its incredible range, and it is easy to see why the Allies fear this weapons platform. Its drawbacks are its light armor, long reload time, and inability to hit fast-moving targets.\n\nHeroic rank:\nShoots nuclear warhead equipped missile. Extreme care is advised however, as the unit will detonate nuclear when destroyed.
         Category: Soviet Vehicles
 		Order: 9
     WithFacingSpriteBody:
         -RequiresCondition:
     -WithFacingSpriteBody@EMPTY:
+    -WithFacingSpriteBody@HEROIC:
     RenderSprites:
 		Image: v2rl
         Palette: soviet
@@ -1246,4 +1247,15 @@ snip.info:
 	RenderSprites:
 		Image: snip
         Palette: allies
+    -MapEditorData:
+
+acad.info:
+    Inherits: ACAD
+	Encyclopedia:
+		Description: A renowned educational establishment that can get repurposed to serve as a training facility during times of war.\nCapturing this structure with an Engineer will enable to train all units at Veteran rank.\n\nDEV NOTE: THIS STRUCTURE WORKS ONLY WITH VETERANCY TURNED ON
+        Category: Tech Buildings
+		Order: 21
+	RenderSprites:
+		Image: acad
+        Palette: civilian
     -MapEditorData:

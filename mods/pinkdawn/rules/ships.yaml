@@ -25,6 +25,8 @@ LST:
  	-WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
 	HitShape:
 		Type: Circle
 			Radius: 576

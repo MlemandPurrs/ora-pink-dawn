@@ -391,7 +391,7 @@ APRT:
 		UnitType: badg
 		Name: Paratroopers
 		Description: A Paradrop Plane drops a squad of infantry\nanywhere on the map.
-		DropItems: E1,E3,E1,E3,E1
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.small
@@ -771,10 +771,10 @@ ARMY:
 	Tooltip:
 		Name: Armory
 	TooltipDescription@ally:
-		Description: Provides veterancy for trained Infantry.
+		Description: Provides vehicles with self-repair.
 		ValidRelationships: Ally
 	TooltipDescription@other:
-		Description: Capture to train ranked Infantry.
+		Description: Capture to enable self-repairing for vehicles.
 		ValidRelationships: Neutral, Enemy
 	SpawnActorOnDeath:
 		Actor: ARMY.Husk
@@ -1013,3 +1013,46 @@ BIO2.Husk:
 	TransformOnCapture:
 		ForceHealthPercentage: 35
 		IntoActor: bio2
+
+ACAD:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 40000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 3c0
+	Tooltip:
+		Name: Academy
+	TooltipDescription@ally:
+		Description: Provides all new units with Veterancy.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to enable Veterancy training.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: ACAD.Husk
+        OwnerType: InternalName
+	WithBuildingBib:
+		HasMinibib: true
+	ProvidesPrerequisite@buildingname:
+
+ACAD.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Academy (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: acad

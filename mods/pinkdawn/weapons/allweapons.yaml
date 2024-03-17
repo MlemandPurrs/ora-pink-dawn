@@ -1253,7 +1253,7 @@ HonestJohn:
 		Blockable: false
 		Shadow: true
 		Inaccuracy: 0c511
-		Image: ssmmsl
+		Image: hjm
 		TrailImage: smokey
 		TrailDelay: 3
 		Speed: 200
@@ -1289,43 +1289,36 @@ HonestJohn:
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
 
-HonestJohnNuke:
+HonestJohnChem:
     Inherits: HonestJohn
+	Projectile: Bullet
+		Blockable: false
+		Shadow: true
+		Inaccuracy: 0c511
+		Image: hjmb
+		TrailImage: smokey
+		TrailDelay: 3
+		Speed: 200
+		LaunchAngle: 37
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Range: 1c0, 2c512, 3c768
-        Falloff: 900, 600, 300
-        AffectsParent: True
-		Damage: 15000
+		Spread: 512
+		Damage: 30000
+		ValidTargets: Ground, Water, Tree
 		Versus:
             None: 87
-            Light: 100
-            Medium: 68
+            Light: 75
+            Medium: 56
             Heavy: 25
-            Concrete: 50
-            Wood: 100
+            Concrete: 100
+            Wood: 75
             Aluminium: 56
             Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
 	Warhead@3Eff: CreateEffect
-		Explosions: mini_nuke_explosion
-		ImpactSounds: nukexplo.aud
-		ImpactActors: false
-	Warhead@5EffWater: CreateEffect
-		Explosions: big_splash
-		ImpactSounds: ssplash1.aud
-		ValidTargets: Water, Underwater
-        InvalidTargets: Ground, Bridge, Ship, WaterStructure
-	Warhead@6Eff_areanuke: CreateEffect
-		ImpactSounds: xplobig4.aud
-		Delay: 3
-		ImpactActors: false
-	Warhead@13Shake: ShakeScreen
-		Duration: 20
-		Intensity: 5
-		Multiplier: 1,1
-	Warhead@14FlashEffect: FlashPaletteEffect
-		Duration: 20
+		Explosions: big_chem
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+    -Warhead@Flames:
 
 #   26. Mobile Anti-Air Gun
 APCGunAG:
@@ -1696,7 +1689,7 @@ V2Missile:
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
 
-V2MissileChem:
+V2MissileNuke:
     Inherits: V2Missile
 	Projectile: Bullet
 		Speed: 162
@@ -1709,24 +1702,40 @@ V2MissileChem:
 		Shadow: True
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Tree
+		Spread: 1c0
+		Range: 1c0, 2c512, 3c768
+        Falloff: 900, 600, 300
+        AffectsParent: True
+		Damage: 12000
 		Versus:
             None: 87
-            Light: 75
-            Medium: 56
+            Light: 100
+            Medium: 68
             Heavy: 25
-            Concrete: 100
-            Wood: 75
+            Concrete: 50
+            Wood: 100
             Aluminium: 56
             Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@3Eff: CreateEffect
-		Explosions: big_chem
-		ImpactSounds: xplos.aud, firebl3.aud
-		ValidTargets: Ground, Air, Ship, Tree
+		Explosions: mini_nuke_explosion
+		ImpactSounds: nukexplo.aud
+		ImpactActors: false
+	Warhead@5EffWater: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@6Eff_areanuke: CreateEffect
+		ImpactSounds: xplobig4.aud
+		Delay: 3
+		ImpactActors: false
+	Warhead@13Shake: ShakeScreen
+		Duration: 20
+		Intensity: 5
+		Multiplier: 1,1
+	Warhead@14FlashEffect: FlashPaletteEffect
+		Duration: 20
 
 #   33. Chrono Tank's rockets
 APTusk:

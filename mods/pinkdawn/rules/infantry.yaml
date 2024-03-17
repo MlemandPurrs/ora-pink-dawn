@@ -48,6 +48,21 @@ E1:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+E1R1:
+	Inherits: E1
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: e1
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: E1
+    -MapEditorData:
+
 E2:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -150,6 +165,21 @@ E3:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+
+E3R1:
+	Inherits: E3
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: e3
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: E3
+    -MapEditorData:
 
 E4:
 	Inherits: ^Soldier

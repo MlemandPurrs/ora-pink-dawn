@@ -2011,3 +2011,35 @@ bio2.husk:
 		UseTilesetExtension: true
 		Length: *
 		Offset: 0,0
+
+acad:
+    Inherits: emp-overlay
+	idle:
+		Start: 0
+		Offset: 0,-2
+	damaged-idle:
+		Start: 1
+		Offset: 0,-2
+	bib: mbHOSP
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: 0,1
+
+acad.husk:
+	idle: acad
+		Start: 2
+		Offset: 0,-2
+    dead: acad
+        Start: 2
+        Tick: 800
+        Offset: 0,-2
+	bib: mbHOSP
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: 0,1

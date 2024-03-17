@@ -287,8 +287,10 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanicVehicle
+    Inherits@academy: ^AffectedByAcademy
     Inherits@hijackable: ^HijackerMechanic
     Inherits@airliftable: ^CarryallPassenger
+    Inherits@repairing: ^VehicleRepairing
     Inherits@boink: ^BoinkSound
 	Huntable:
 	OwnerLostAction:
@@ -402,6 +404,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanicAircraft
+    Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
@@ -556,6 +559,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanicAircraft
+    Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
 	OwnerLostAction:
 		Action: Kill
@@ -687,7 +691,7 @@
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: ( barracksheal || hospitalheal ) && !( rank-heroic || in-transport )
+		RequiresCondition: ( barracksheal || hospitalheal ) && !( rank-heroic || in-transport || parachute)
 	Targetable@HEAL:
 		TargetTypes: Heal
 		RequiresCondition: !parachute && damaged
@@ -706,7 +710,7 @@
 		Position: TopRight
 		Margin: 5, 6
 		RequiresCondition: hospitalheal
-		BlinkInterval: 32
+		BlinkInterval: 31
 		BlinkPattern: On, Off
 	ExternalCondition@BARRACKS:
 		Condition: barracks
@@ -852,7 +856,7 @@
 	Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
-    Inherits@armory: ^AffectedByArmory
+    Inherits@academy: ^AffectedByAcademy
 	MustBeDestroyed:
 	Tooltip:
 		GenericName: Soldier
@@ -953,6 +957,7 @@
     Inherits@productionboost: ^ProductionBoost
     Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
 	Huntable:
 	OwnerLostAction:
@@ -1954,7 +1959,7 @@
 		Modifier: 90
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
-		PercentageStep: 5
+		PercentageStep: 4
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
@@ -2050,7 +2055,7 @@
 		Modifier: 90
 	ChangesHealth@RANK-HEROIC:
 		Step: 0
-		PercentageStep: 5
+		PercentageStep: 4
 		Delay: 25
 		StartIfBelow: 101
 		DamageCooldown: 125
@@ -2150,12 +2155,12 @@
         Condition: earner-veterancy-on
         Prerequisites: ~global-veterancy
 
-^AffectedByArmory:
+^AffectedByAcademy:
     ProducibleWithLevel:
-        Prerequisites: army, ~global-veterancy
+        Prerequisites: acad, ~global-veterancy
 	WithProductionIconOverlay:
 		Types: Veterancy
-		Prerequisites: army, ~global-veterancy
+		Prerequisites: acad, ~global-veterancy
 
 ^Mine:
 	Inherits: ^SpriteActor
@@ -2370,3 +2375,26 @@
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Water, Underwater
 		InvalidTargets: NoAutoTarget
+
+^VehicleRepairing:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( rank-heroic || in-transport || parachute || oncarryall || emp-crate-collected )
+	GrantConditionOnPrerequisite@ARMORY:
+		Condition: armory
+		Prerequisites: army
+	GrantCondition@ARMORY:
+		RequiresCondition: armory && damaged
+		Condition: armoryrepair
+	WithDecoration@SELFREPAIR:
+		Image: select
+        Palette: chrome
+		Sequence: repair-small
+		Position: TopRight
+		Margin: 5, 6
+		RequiresCondition: armoryrepair
+		BlinkInterval: 31
+		BlinkPattern: On, Off

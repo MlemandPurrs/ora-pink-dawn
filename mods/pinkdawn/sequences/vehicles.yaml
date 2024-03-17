@@ -390,6 +390,20 @@ mlrs:
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
+
+	turret4: mlrb
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret3: mlrb
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+	turret2: mlrb
+		Start: 96
+		Facings: 32
+		UseClassicFacings: True
+
 	icon: mlrsicon
 
 mlrs.husk:

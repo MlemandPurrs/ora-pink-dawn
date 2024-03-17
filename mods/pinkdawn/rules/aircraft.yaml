@@ -145,6 +145,8 @@ TRAN:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -912,6 +914,19 @@ BADR.tran:
 		Condition: within-gap-radius
 	Sellable:
 		RequiresCondition: unit.sellable && !airborne && !loaded
+	ChangesHealth@planecrash:
+		Step: 0
+		PercentageStep: -7
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 0
+		RequiresCondition: !hasairfield
+	GrantConditionOnPrerequisite@planecrash:
+		Prerequisites: anyafld
+		Condition: hasairfield
+	SpawnActorOnDeath:
+		Actor: BADR.Husk
+        RequiresCondition: airborne && !hasairfield
 
 BADG:
     Inherits: BADR
@@ -976,6 +991,16 @@ GenericJet:
 	Explodes@Air:
 		Weapon: UnitExplodeAirBig
 		RequiresCondition: airborne
+	ChangesHealth@planecrash:
+		Step: 0
+		PercentageStep: -7
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 0
+		RequiresCondition: !hasairfield
+	GrantConditionOnPrerequisite@planecrash:
+		Prerequisites: anyafld
+		Condition: hasairfield
     RenderSprites:
         Image: dummy
 
@@ -995,6 +1020,9 @@ F18:
 		BuildPaletteOrder: 5
 		Prerequisites: ~anyafld, ~aircraft.gdi, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
+	SpawnActorOnDeath:
+		Actor: F18.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: f18
 
@@ -1014,6 +1042,9 @@ F22:
 		BuildPaletteOrder: 5
 		Prerequisites: ~anyafld, anytier3, ~aircraft.f22, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
+	SpawnActorOnDeath:
+		Actor: F22.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: f22
 
@@ -1033,6 +1064,9 @@ F16:
 		BuildPaletteOrder: 6
 		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+	SpawnActorOnDeath:
+		Actor: F16.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: f16
 
@@ -1052,6 +1086,9 @@ MIG:
 		BuildPaletteOrder: 6
 		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+	SpawnActorOnDeath:
+		Actor: MIG.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: mig
 
@@ -1098,7 +1135,7 @@ YAK:
 	#   LocalOffset: 0,-213,-43, 0,213,-43
     #   PauseOnCondition: !ammo2
     #   RequiresCondition: rank-heroic
-	AttackAircraft:
+    AttackAircraft:
         #   Armaments: primary, secondary
 		Armaments: primary, secondary
 	AmmoPool@1:
@@ -1132,6 +1169,7 @@ YAK:
     #   AmmoPools: secondary
 	#   RequiresSelection: true
     #   RequiresCondition: rank-heroic
+	WithMuzzleOverlay:
 	Rearmable:
         #   AmmoPools: primary, secondary
         AmmoPools: primary
@@ -1143,6 +1181,9 @@ YAK:
 		SpawnAtLastPosition: False
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
+	SpawnActorOnDeath:
+		Actor: YAK.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: yak
 
@@ -1168,6 +1209,10 @@ NMIG:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+    Aircraft:
+        Speed: 250
 	Valued:
 		Cost: 1800
 	Tooltip:
@@ -1198,6 +1243,9 @@ NMIG:
 		SpawnAtLastPosition: False
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
+	SpawnActorOnDeath:
+		Actor: NMIG.Husk
+        RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: nmig
 
@@ -1452,6 +1500,8 @@ GenericCarryall:
     -WithDecoration@RANK-HEROIC:    
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
 	Valued:
 		Cost: 1500
 	Tooltip:

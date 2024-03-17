@@ -319,72 +319,7 @@ V2rlExplode:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
-V2rlExplodeChem:
-	Inherits: ^DamagingExplosion
-	Warhead@1Dam: SpreadDamage
-        Spread: 341
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Tree
-		Versus:
-            None: 87
-            Light: 75
-            Medium: 56
-            Heavy: 25
-            Concrete: 100
-            Wood: 75
-            Aluminium: 56
-            Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
-	Warhead@2Eff: CreateEffect
-		Explosions: big_chem
-		ImpactSounds: xplos.aud, firebl3.aud
-		ValidTargets: Ground, Air, Ship, Tree
-	Warhead@3Smu: LeaveSmudge
-		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
-	Warhead@4EffWater: CreateEffect
-		Explosions: med_splash
-		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
-
-MlrsExplode:
-	Inherits: ^DamagingExplosion
-	Warhead@1Dam: SpreadDamage
-		Spread: 512
-		Damage: 15000
-		ValidTargets: Ground, Water, Tree
-		Versus:
-            None: 87
-            Light: 100
-            Medium: 68
-            Heavy: 25
-            Concrete: 50
-            Wood: 100
-            Aluminium: 56
-            Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
-	Warhead@2Eff: CreateEffect
-		Explosions: big_napalm
-		ImpactSounds: firebl3.aud
-		ValidTargets: Ground, Air, Ship, Tree
-	Warhead@3Smu: LeaveSmudge
-		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
-	Warhead@4EffWater: CreateEffect
-		Explosions: sml_splash
-		ImpactSounds: ssplash3.aud
-		ValidTargets: Water
-		InvalidTargets: Ground
- 	Warhead@Flames: FireCluster
-		Weapon: BurnFx
-		RandomClusterCount: 3
-		Dimensions: 3,3
-		Footprint: xxx xxx xxx
-        InvalidTargets: Vehicle, Structure, Wall
-
-MlrsExplodeNuke:
+V2rlExplodeNuke:
 	Inherits: ^DamagingExplosion
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
@@ -430,3 +365,68 @@ MlrsExplodeNuke:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
+
+MlrsExplode:
+	Inherits: ^DamagingExplosion
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 15000
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Eff: CreateEffect
+		Explosions: big_napalm
+		ImpactSounds: firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
+	Warhead@4EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground
+ 	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+MlrsExplodeChem:
+	Inherits: ^DamagingExplosion
+	Warhead@1Dam: SpreadDamage
+        Spread: 512
+		Damage: 25000
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree
+	Warhead@4EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Ground

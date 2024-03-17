@@ -373,7 +373,7 @@ YAK.Husk:
 		Range: 2c0
 		Type: GroundPosition
 	RenderSprites:
-		Image: mig
+		Image: yak
 
 NMIG.Husk:
 	Inherits: ^AirplaneHusk
@@ -384,7 +384,7 @@ NMIG.Husk:
 	Aircraft:
 		CruiseAltitude: 2560
 		TurnSpeed: 12
-		Speed: 300
+		Speed: 250
 	LeavesTrails:
 		Offsets: -432,560,0, -432,-560,0
 		MovingInterval: 2
