@@ -428,7 +428,7 @@
         TakeOffOnCreation: true
 		TakeOffOnResupply: true
 		VTOL: true
-		LandableTerrainTypes: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium
+		LandableTerrainTypes: Clear, Rough, Road, Beach, Shallow, Tiberium, BlueTiberium, RedTiberium
 		Crushes: mine, crate, infantry
 		CanSlide: True
 	HiddenUnderFog:
@@ -1587,7 +1587,7 @@
 ^Husk:
 	Inherits: ^CommonHuskDefaults
 	Husk:
-		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
+		AllowedTerrain: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium
 	Targetable:
 		RequiresForceFire: true
 		TargetTypes: Ground, Husk, NoAutoTarget
@@ -1688,7 +1688,7 @@
 		GenericName: Crate
 		ShowOwnerRow: false
 	Crate:
-		TerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
+		TerrainTypes: Clear, Rough, Road, Beach, Water, Tiberium, BlueTiberium, RedTiberium
 	RenderSprites:
 		Palette: effect
 		Image: scrate

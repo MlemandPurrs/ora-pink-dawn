@@ -22,7 +22,7 @@
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
-			Rough: 80
+			Rough: 90
 			Road: 100
 			Bridge: 100
 			Tiberium: 80
@@ -33,13 +33,14 @@
 				PathingCost: 300
 			Beach: 80
 			Shallow: 80
+            Ruin: 80
     Locomotor@FOOT-IMMUNE:
 		Name: foot-immune
 		Crushes: crate, mine
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
-			Rough: 80
+			Rough: 90
 			Road: 100
 			Bridge: 100
 			Tiberium: 80
@@ -47,12 +48,13 @@
             RedTiberium: 80
 			Beach: 80
 			Shallow: 80
+            Ruin: 80
 	Locomotor@WHEELED-NON-CRUSHER:
 		Name: wheeled-non-crusher
 		Crushes: crate, mine
 		TerrainSpeeds:
 			Clear: 80
-			Rough: 60
+			Rough: 80
 			Road: 100
 			Bridge: 100
 			Tiberium: 70
@@ -65,7 +67,7 @@
 		Crushes: crate, mine, infantry, wall
 		TerrainSpeeds:
 			Clear: 80
-			Rough: 60
+			Rough: 80
 			Road: 100
 			Bridge: 100
 			Tiberium: 70
@@ -78,7 +80,7 @@
 		Crushes: crate, mine, wall
 		TerrainSpeeds:
 			Clear: 80
-			Rough: 70
+			Rough: 80
 			Road: 100
 			Bridge: 100
 			Tiberium: 70
@@ -91,7 +93,7 @@
 		Crushes: crate, mine, infantry, wall
 		TerrainSpeeds:
 			Clear: 80
-			Rough: 70
+			Rough: 80
 			Road: 100
 			Bridge: 100
 			Tiberium: 70
@@ -110,7 +112,6 @@
 		Crushes: crate, mine
 		TerrainSpeeds:
 			Beach: 100
-			River: 100
 			Water: 100
 			Shallow: 80
 	Locomotor@CRITTER:
@@ -118,7 +119,7 @@
 		Crushes: mine
 		TerrainSpeeds:
 			Clear: 90
-			Rough: 80
+			Rough: 90
 			Road: 100
 			Bridge: 100
 			Tiberium: 70
@@ -135,7 +136,7 @@
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
-			Rough: 80
+			Rough: 90
 			Road: 100
 			Bridge: 100
 			Tiberium: 80
@@ -146,13 +147,14 @@
 				PathingCost: 300
 			Beach: 80
 			Shallow: 80
+            Ruin: 80
             Water: 50
 	Locomotor@TRACKED-AMPHIBIAN:
 		Name: tracked-amphibian
 		Crushes: crate, mine, infantry, wall
 		TerrainSpeeds:
 			Clear: 80
-			Rough: 70
+			Rough: 80
 			Road: 100
 			Bridge: 100
 			Tiberium: 70

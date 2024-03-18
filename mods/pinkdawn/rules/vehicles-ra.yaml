@@ -802,7 +802,7 @@ MNLY:
 	Minelayer:
 		Mine: MINV
 		TileUnknownName: build-valid
-		TerrainTypes: Clear, Road, Beach, Tiberium, BlueTiberium, RedTiberium, Bridge
+		TerrainTypes: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium, Bridge, Shallow
 	MineImmune:
 	AmmoPool:
         Armaments: 
