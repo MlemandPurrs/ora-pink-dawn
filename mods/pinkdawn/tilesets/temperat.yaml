@@ -31,6 +31,11 @@ Terrain:
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 587474
+	TerrainType@Ramp:
+		Type: Ramp
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 587474
 	TerrainType@Bridge:
 		Type: Bridge
 		TargetTypes: Ground, Bridge
@@ -1593,14 +1598,14 @@ Templates:
 		Id: 161
 		Images: ford1.tem
 		Size: 3,3
-		Categories: River
+		Categories: River, Bridge
 		Tiles:
 			0: Rough
 			1: River
 			2: Rough
-			3: Road
+			3: Ramp
 			4: Shallow
-			5: Road
+			5: Ramp
 			6: Rough
 			7: River
 			8: River
@@ -1608,7 +1613,7 @@ Templates:
 		Id: 162
 		Images: ford2.tem
 		Size: 3,3
-		Categories: River
+		Categories: River, Bridge
 		Tiles:
 			0: River
 			1: Shallow
@@ -1617,7 +1622,7 @@ Templates:
 			4: Shallow
 			5: River
 			6: Rough
-			7: Road
+			7: Ramp
 			8: Rough
 	Template@163:
 		Id: 163
@@ -1652,8 +1657,8 @@ Templates:
 		Size: 4,4
 		Categories: Bridge
 		Tiles:
-			2: Road
-			3: Road
+			2: Ramp
+			3: Ramp
 			4: River
 			5: Wall
 			6: Bridge
@@ -1662,9 +1667,9 @@ Templates:
 			9: Bridge
 			10: Wall
 			11: River
-			12: Road
-			13: Road
-			14: Road
+			12: Ramp
+			13: Ramp
+			14: Rough
 			15: River
 	Template@166:
 		Id: 166
@@ -1672,8 +1677,8 @@ Templates:
 		Size: 4,4
 		Categories: Bridge
 		Tiles:
-			2: Road
-			3: Road
+			2: Ramp
+			3: Ramp
 			4: River
 			5: Wall
 			6: Wall
@@ -1682,9 +1687,9 @@ Templates:
 			9: River
 			10: River
 			11: River
-			12: Road
-			13: Road
-			14: Road
+			12: Ramp
+			13: Ramp
+			14: Rough
 			15: River
 	Template@167:
 		Id: 167
@@ -1692,10 +1697,10 @@ Templates:
 		Size: 5,5
 		Categories: Bridge
 		Tiles:
-			0: Road
-			1: Road
-			2: Clear
-			4: Clear
+			0: Ramp
+			1: Ramp
+			2: Rough
+			4: River
 			5: Wall
 			6: Bridge
 			7: Wall
@@ -1707,10 +1712,10 @@ Templates:
 			13: Wall
 			14: Clear
 			15: River
-			16: Clear
-			17: Clear
-			18: Road
-			19: Road
+			16: Rock
+			17: Ramp
+			18: Ramp
+			19: Ramp
 			23: Road
 			24: Road
 	Template@168:
@@ -1719,10 +1724,10 @@ Templates:
 		Size: 5,5
 		Categories: Bridge
 		Tiles:
-			0: Road
-			1: Road
-			2: Clear
-			4: Clear
+			0: Ramp
+			1: Ramp
+			2: Rough
+			4: River
 			5: Wall
 			6: Wall
 			7: River
@@ -1734,10 +1739,10 @@ Templates:
 			13: River
 			14: Clear
 			15: River
-			16: Clear
-			17: Clear
-			18: Road
-			19: Road
+			16: Rock
+			17: Ramp
+			18: Ramp
+			19: Ramp
 			23: Road
 			24: Road
 	Template@186:
@@ -1835,3 +1840,137 @@ Templates:
 			5: Ruin
 			6: Tree
 			7: Rough
+	Template@193:
+		Id: 193
+		Images: ford1w.tem
+		Size: 3,3
+		Categories: River, Bridge
+		Tiles:
+			0: Rough
+			1: River
+			2: Rough
+			3: Ramp
+			4: Shallow
+			5: Ramp
+			6: Rough
+			7: Shallow
+			8: Shallow
+	Template@194:
+		Id: 194
+		Images: ford2w.tem
+		Size: 3,3
+		Categories: River, Bridge
+		Tiles:
+			0: River
+			1: Shallow
+			2: Shallow
+			3: River
+			4: Shallow
+			5: Shallow
+			6: Rough
+			7: Ramp
+			8: Rough
+	Template@380:
+		Id: 380
+		Images: bridgew1.tem
+		Size: 5,4
+		Categories: Bridge
+		Tiles:
+            2: Rough
+            3: Ramp
+            4: Ramp
+            5: Rock
+            6: Wall
+            7: Bridge
+            8: Bridge
+            9: Wall
+            10: Wall
+            11: Bridge
+            12: Bridge
+            13: Wall
+            14: Rock
+            15: Ramp
+            16: Ramp
+            17: Wall
+            18: Rock
+            19: River
+	Template@381:
+		Id: 381
+		Images: bridgew1d.tem
+		Size: 5,4
+		Categories: Bridge
+		Tiles:
+            2: Rough
+            3: Ramp
+            4: Ramp
+            5: Rock
+            6: Wall
+            7: Rock
+            8: Rock
+            9: Wall
+            10: River
+            11: River
+            12: River
+            13: River
+            14: Rock
+            15: Ramp
+            16: Ramp
+            17: Wall
+            18: Rock
+            19: River
+	Template@382:
+		Id: 382
+		Images: bridgew2.tem
+		Size: 5,5
+		Categories: Bridge
+		Tiles:
+            0: Ramp
+            1: Ramp
+            2: Rough
+            3: Rough
+            4: River
+            5: Wall
+            6: Bridge
+            7: Bridge
+            8: Wall
+            9: River
+            10: River
+            11: Wall
+            12: Bridge
+            13: Bridge
+            14: Wall
+            15: River
+            16: Rock
+            17: Rough
+            18: Ramp
+            19: Ramp
+            23: Road
+            24: Road
+	Template@383:
+		Id: 383
+		Images: bridgew2d.tem
+		Size: 5,5
+		Categories: Bridge
+		Tiles:
+            0: Ramp
+            1: Ramp
+            2: Rough
+            3: Rough
+            4: River
+            5: Wall
+            6: Rock
+            7: Rock
+            8: Wall
+            9: River
+            10: River
+            11: Wall
+            12: Rock
+            13: Rock
+            14: Wall
+            15: River
+            16: Rock
+            17: Rough
+            18: Ramp
+            19: Ramp
+            23: Road
+            24: Road

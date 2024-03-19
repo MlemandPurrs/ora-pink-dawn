@@ -1582,7 +1582,7 @@ JET:
 		IdealSeparation: 0c384
 		InitialFacing: 92
 		Speed: 70
-		LandableTerrainTypes: Clear, Rough, Road, Beach, Tiberium, BlueTiberium, RedTiberium
+		LandableTerrainTypes: Clear, Rough, Road, Ramp, Beach, Tiberium, BlueTiberium, RedTiberium
 		Crushes: mine, crate
         AirborneCondition: airborne
 		CruisingCondition: cruising

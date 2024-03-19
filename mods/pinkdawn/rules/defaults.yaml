@@ -428,7 +428,7 @@
         TakeOffOnCreation: true
 		TakeOffOnResupply: true
 		VTOL: true
-		LandableTerrainTypes: Clear, Rough, Road, Beach, Shallow, Tiberium, BlueTiberium, RedTiberium
+		LandableTerrainTypes: Clear, Rough, Road, Ramp, Beach, Shallow, Tiberium, BlueTiberium, RedTiberium
 		Crushes: mine, crate, infantry
 		CanSlide: True
 	HiddenUnderFog:
@@ -1688,7 +1688,7 @@
 		GenericName: Crate
 		ShowOwnerRow: false
 	Crate:
-		TerrainTypes: Clear, Rough, Road, Beach, Water, Tiberium, BlueTiberium, RedTiberium
+		TerrainTypes: Clear, Rough, Road, Ramp, Beach, Water, Tiberium, BlueTiberium, RedTiberium
 	RenderSprites:
 		Palette: effect
 		Image: scrate

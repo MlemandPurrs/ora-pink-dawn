@@ -34,6 +34,7 @@
 			Beach: 80
 			Shallow: 80
             Ruin: 80
+            Ramp: 100
     Locomotor@FOOT-IMMUNE:
 		Name: foot-immune
 		Crushes: crate, mine
@@ -49,6 +50,7 @@
 			Beach: 80
 			Shallow: 80
             Ruin: 80
+            Ramp: 100
 	Locomotor@WHEELED-NON-CRUSHER:
 		Name: wheeled-non-crusher
 		Crushes: crate, mine
@@ -62,6 +64,7 @@
             RedTiberium: 70
 			Beach: 60
 			Shallow: 60
+            Ramp: 100
 	Locomotor@WHEELED-CRUSHER:
 		Name: wheeled-crusher
 		Crushes: crate, mine, infantry, wall
@@ -75,6 +78,7 @@
             RedTiberium: 70
 			Beach: 60
 			Shallow: 60
+            Ramp: 100
 	Locomotor@TRACKED-NON-CRUSHER:
 		Name: tracked-non-crusher
 		Crushes: crate, mine, wall
@@ -88,6 +92,7 @@
             RedTiberium: 70
 			Beach: 70
 			Shallow: 70
+            Ramp: 100
 	Locomotor@TRACKED-CRUSHER:
 		Name: tracked-crusher
 		Crushes: crate, mine, infantry, wall
@@ -101,6 +106,7 @@
             RedTiberium: 70
 			Beach: 70
 			Shallow: 70
+            Ramp: 100
 	Locomotor@NAVAL:
 		Name: naval
 		Crushes: crate, mine
@@ -127,6 +133,7 @@
             RedTiberium: 70
 			Beach: 80
 			Shallow: 80
+            Ramp: 100
 	Locomotor@IMMOBILE:
 		Name: immobile
         TerrainSpeeds:
@@ -149,6 +156,7 @@
 			Shallow: 80
             Ruin: 80
             Water: 50
+            Ramp: 100
 	Locomotor@TRACKED-AMPHIBIAN:
 		Name: tracked-amphibian
 		Crushes: crate, mine, infantry, wall
@@ -163,6 +171,7 @@
 			Beach: 70
 			Shallow: 70
             Water: 50
+            Ramp: 100
     Faction@0:
 		Name: Neutral
 		InternalName: Neutral
@@ -230,7 +239,7 @@ World:
 	ScreenShaker:
 	BuildingInfluence:
 	LegacyBridgeLayer:
-		Bridges: bridge1, bridge2, bridge3, bridge4
+		Bridges: bridge1, bridge2, bridge3, bridge4, bridgew1, bridgew2, bridgedw1, bridgedw2
 	ProductionQueueFromSelection:
 		ProductionTabsWidget: PRODUCTION_TABS
 	SmudgeLayer@SCORCH:

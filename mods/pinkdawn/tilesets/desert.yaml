@@ -31,6 +31,11 @@ Terrain:
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A87B53
+	TerrainType@Ramp:
+		Type: Ramp
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A87B53
 	TerrainType@Bridge:
 		Type: Bridge
 		TargetTypes: Ground
@@ -1617,7 +1622,7 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			3: Rough
-			4: Road
+			4: Ramp
 			6: Clear
 			7: Rock
 			8: Wall
@@ -1631,13 +1636,13 @@ Templates:
 			16: Rock
 			17: Rock
 			18: Rock
-			19: Road
-			20: Clear
+			19: Ramp
+			20: Rough
 			21: Rock
 			22: River
 			23: River
 			24: Road
-			25: Rough
+			25: Road
 	Template@170:
 		Id: 170
 		Images: bridge3d.des
@@ -1645,7 +1650,7 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			3: Clear
-			4: Road
+			4: Ramp
 			6: Clear
 			7: Rock
 			8: Rock
@@ -1659,31 +1664,31 @@ Templates:
 			16: Rock
 			17: Rock
 			18: Rock
-			19: Road
-			20: Clear
+			19: Ramp
+			20: Rough
 			21: River
 			22: River
 			23: River
 			24: Road
-			25: Clear
+			25: Road
 	Template@171:
 		Id: 171
 		Images: bridge4.des
 		Size: 6,4
 		Categories: Bridge
 		Tiles:
-			1: Road
-			2: Clear
+			1: Ramp
+			2: Ramp
 			3: Tree
 			4: Rock
-			5: Clear
+			5: Rough
 			6: Clear
 			7: Wall
 			8: Bridge
 			9: Wall
-			10: River
+			10: Rock
 			11: River
-			12: Rock
+			12: Tree
 			13: River
 			14: Wall
 			15: Bridge
@@ -1692,26 +1697,26 @@ Templates:
 			18: River
 			19: River
 			20: Rock
-			21: Clear
-			22: Road
+			21: Ramp
+			22: Ramp
 	Template@172:
 		Id: 172
 		Images: bridge4d.des
 		Size: 6,4
 		Categories: Bridge
 		Tiles:
-			1: Road
-			2: Clear
+			1: Ramp
+			2: Ramp
 			3: Tree
 			4: Rock
-			5: Clear
+			5: Rough
 			6: Clear
 			7: Wall
 			8: Wall
 			9: River
-			10: River
+			10: Rock
 			11: River
-			12: Rock
+			12: Tree
 			13: River
 			14: River
 			15: River
@@ -1720,8 +1725,8 @@ Templates:
 			18: River
 			19: River
 			20: Rock
-			21: Clear
-			22: Road
+			21: Ramp
+			22: Ramp
 	Template@173:
 		Id: 173
 		Images: sh24.des
@@ -2204,3 +2209,119 @@ Templates:
 		Tiles:
 			0: Cliff
 			1: Cliff
+	Template@384:
+		Id: 384
+		Images: bridgedw1.des
+		Size: 6,4
+		Categories: Bridge
+		Tiles:
+            0: Tree
+            1: Rock
+            2: Wall
+            3: Ramp
+            4: Ramp
+            6: River
+            7: Wall
+            8: Bridge
+            9: Bridge
+            10: Wall
+            11: Rough
+            12: Wall
+            13: Bridge
+            14: Bridge
+            15: Wall
+            16: River
+            17: Rock
+            18: Ramp
+            19: Ramp
+            20: Wall
+            21: Rock
+            22: River
+            23: River
+	Template@385:
+		Id: 385
+		Images: bridgedw1d.des
+		Size: 6,4
+		Categories: Bridge
+        Tiles:
+            0: Tree
+            1: Rock
+            2: Wall
+            3: Ramp
+            4: Ramp
+            6: River
+            7: Wall
+            8: Rock
+            9: Rock
+            10: Wall
+            11: Rough
+            12: Wall
+            13: Rock
+            14: Rock
+            15: Wall
+            16: River
+            17: Rock
+            18: Ramp
+            19: Ramp
+            20: Wall
+            21: Rock
+            22: River
+            23: River
+	Template@386:
+		Id: 386
+		Images: bridgedw2.des
+		Size: 6,4
+		Categories: Bridge
+		Tiles:
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Rock
+            5: Rock
+            6: Tree
+            7: Wall
+            8: Bridge
+            9: Bridge
+            10: Wall
+            11: River
+            12: Tree
+            13: River
+            14: Wall
+            15: Bridge
+            16: Bridge
+            17: Wall
+            18: River
+            19: River
+            20: Tree
+            21: Wall
+            22: Ramp
+            23: Ramp
+	Template@387:
+		Id: 387
+		Images: bridgedw2d.des
+		Size: 6,4
+		Categories: Bridge
+		Tiles:
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Rock
+            5: Rock
+            6: Tree
+            7: Wall
+            8: Rock
+            9: Rock
+            10: Wall
+            11: River
+            12: Tree
+            13: River
+            14: Wall
+            15: Rock
+            16: Rock
+            17: Wall
+            18: River
+            19: River
+            20: Tree
+            21: Wall
+            22: Ramp
+            23: Ramp
