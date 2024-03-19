@@ -1033,7 +1033,7 @@
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
-		PauseOnCondition: cloak-force-disabled || minehit || emp-crate-collected
+		PauseOnCondition: cloak-force-disabled || minehit || emp-crate-collected || crossing-ford
 		RequiresCondition: !deployed
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1052,7 +1052,7 @@
 		RequiresCondition: underwater
 	SpeedMultiplier@OnSurface:
 		Modifier: 120
-		RequiresCondition: deployed && !heavily-damaged
+		RequiresCondition: deployed && !( heavily-damaged || crossing-ford )
 	Targetable@AIHelper:
 		TargetTypes: SonarTarget
 		RequiresCondition: underwater
@@ -1060,6 +1060,9 @@
         RequiresCondition: within-gap-radius || !underwater
 	ExternalCondition@MINEHIT:
 		Condition: minehit
+	GrantConditionOnTerrain@CROSSINGFORD:
+		Condition: crossing-ford
+		TerrainTypes: Shallow
 
 ^DamagedOnLowPower:
 	GrantConditionOnDamageState@LOWPOWERDMG:

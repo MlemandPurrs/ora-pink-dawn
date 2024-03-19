@@ -2325,3 +2325,93 @@ Templates:
             21: Wall
             22: Ramp
             23: Ramp
+	Template@600:
+		Id: 600
+		Images: f01.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Rough
+			1: Ramp
+			2: Rough
+			3: Beach
+			4: Shallow
+			5: Beach
+			6: Shallow
+			7: Shallow
+			8: Shallow
+	Template@601:
+		Id: 601
+		Images: f02.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Shallow
+			1: Shallow
+			2: Shallow
+			3: Shallow
+			4: Shallow
+			5: Shallow
+			6: Shallow
+			7: Shallow
+			8: Shallow
+	Template@602:
+		Id: 602
+		Images: f03.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Shallow
+			1: Shallow
+			2: Shallow
+			3: Beach
+			4: Shallow
+			5: Beach
+			6: Rough
+			7: Ramp
+			8: Rough
+	Template@603:
+		Id: 603
+		Images: f04.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Rough
+			1: Beach
+			2: Shallow
+			3: Ramp
+			4: Shallow
+			5: Shallow
+			6: Rough
+			7: Beach
+			8: Shallow
+	Template@604:
+		Id: 604
+		Images: f05.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Shallow
+			1: Shallow
+			2: Shallow
+			3: Shallow
+			4: Shallow
+			5: Shallow
+			6: Shallow
+			7: Shallow
+			8: Shallow
+	Template@605:
+		Id: 605
+		Images: f06.des
+		Size: 3,3
+		Categories: Bridge
+		Tiles:
+			0: Shallow
+			1: Beach
+			2: Rough
+			3: Shallow
+			4: Shallow
+			5: Ramp
+			6: Shallow
+			7: Beach
+			8: Rough
