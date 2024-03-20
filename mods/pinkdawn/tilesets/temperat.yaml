@@ -1,7 +1,7 @@
 General:
 	Name: Temperate
 	Id: TEMPERAT
-	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Beach, River, Bridge
+	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
 	HeightDebugColors: AA0000
 
 Terrain:
@@ -1870,6 +1870,418 @@ Templates:
 			6: Rough
 			7: Ramp
 			8: Rough
+	Template@300:
+		Id: 300
+		Images: wc01.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@301:
+		Id: 301
+		Images: wc02.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Rough
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@302:
+		Id: 302
+		Images: wc03.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@303:
+		Id: 303
+		Images: wc04.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@304:
+		Id: 304
+		Images: wc05.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@305:
+		Id: 305
+		Images: wc06.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Rough
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+	Template@306:
+		Id: 306
+		Images: wc07.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@307:
+		Id: 307
+		Images: wc08.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@308:
+		Id: 308
+		Images: wc09.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: River
+			4: Cliff
+			5: Cliff
+	Template@309:
+		Id: 309
+		Images: wc10.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@310:
+		Id: 310
+		Images: wc11.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@311:
+		Id: 311
+		Images: wc12.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@312:
+		Id: 312
+		Images: wc13.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Rough
+			3: Cliff
+			4: Cliff
+			5: Clear
+	Template@313:
+		Id: 313
+		Images: wc14.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Beach
+			2: Beach
+	Template@314:
+		Id: 314
+		Images: wc15.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@315:
+		Id: 315
+		Images: wc16.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Water
+			2: Cliff
+			3: Cliff
+			5: Cliff
+	Template@316:
+		Id: 316
+		Images: wc17.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@317:
+		Id: 317
+		Images: wc18.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@318:
+		Id: 318
+		Images: wc19.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@319:
+		Id: 319
+		Images: wc20.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			1: River
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Rough
+	Template@320:
+		Id: 320
+		Images: wc21.tem
+		Size: 1,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@321:
+		Id: 321
+		Images: wc22.tem
+		Size: 2,1
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@322:
+		Id: 322
+		Images: wc23.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: River
+			3: Cliff
+			4: Cliff
+			5: Water
+	Template@323:
+		Id: 323
+		Images: wc24.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@324:
+		Id: 324
+		Images: wc25.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@325:
+		Id: 325
+		Images: wc26.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@326:
+		Id: 326
+		Images: wc27.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Water
+			3: Clear
+			4: Cliff
+			5: Cliff
+	Template@327:
+		Id: 327
+		Images: wc28.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+	Template@328:
+		Id: 328
+		Images: wc29.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@329:
+		Id: 329
+		Images: wc30.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@330:
+		Id: 330
+		Images: wc31.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: River
+			2: Cliff
+			3: Cliff
+	Template@331:
+		Id: 331
+		Images: wc32.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Water
+	Template@332:
+		Id: 332
+		Images: wc33.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@333:
+		Id: 333
+		Images: wc34.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@334:
+		Id: 334
+		Images: wc35.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@335:
+		Id: 335
+		Images: wc36.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@336:
+		Id: 336
+		Images: wc37.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@337:
+		Id: 337
+		Images: wc38.tem
+		Size: 2,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@346:
+		Id: 346
+		Images: falls1a.tem
+		Size: 3,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Water
+			1: Cliff
+			2: Cliff
+			3: Water
+			4: River
+			5: River
+			6: Water
+			7: Cliff
+			8: Cliff
+	Template@347:
+		Id: 347
+		Images: falls2a.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: River
+			4: River
+			5: River
 	Template@380:
 		Id: 380
 		Images: bridgew1.tem
