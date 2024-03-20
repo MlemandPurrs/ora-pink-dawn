@@ -236,7 +236,7 @@ Templates:
 		Id: 8
 		Images: sh11.win
 		Size: 3,3
-		Categories: Beach
+		Categories: Beach, River
 		Tiles:
 			0: Clear
 			1: River
@@ -751,7 +751,7 @@ Templates:
 		Id: 75
 		Images: sh16.win
 		Size: 3,2
-		Categories: Beach
+		Categories: Beach, River
 		Tiles:
 			0: Beach
 			1: River
@@ -1893,6 +1893,62 @@ Templates:
 			6: Rough
 			7: Ramp
 			8: Rough
+	Template@229:
+		Id: 229
+		Images: rv14.win
+		Size: 1,2
+		Categories: River
+		Tiles:
+			0: Rock
+			1: River
+	Template@230:
+		Id: 230
+		Images: rv15.win
+		Size: 2,1
+		Categories: River
+		Tiles:
+			0: Rock
+			1: River
+	Template@231:
+		Id: 231
+		Images: rc01.win
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@232:
+		Id: 232
+		Images: rc02.win
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@233:
+		Id: 233
+		Images: rc03.win
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@234:
+		Id: 234
+		Images: rc04.win
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
 	Template@300:
 		Id: 300
 		Images: wc01.win
@@ -2278,11 +2334,43 @@ Templates:
 			1: Cliff
 			2: Cliff
 			3: Cliff
+	Template@338:
+		Id: 338
+		Images: cliffsw1.win
+		Size: 1,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@339:
+		Id: 339
+		Images: cliffsw4.win
+		Size: 1,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@340:
+		Id: 340
+		Images: cliffsw3.win
+		Size: 2,1
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@341:
+		Id: 341
+		Images: cliffsw2.win
+		Size: 2,1
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
 	Template@346:
 		Id: 346
 		Images: falls1a.win
 		Size: 3,3
-		Categories: Water Cliffs
+		Categories: Water Cliffs, River
 		Tiles:
 			0: Water
 			1: Cliff
@@ -2297,7 +2385,7 @@ Templates:
 		Id: 347
 		Images: falls2a.win
 		Size: 3,2
-		Categories: Water Cliffs
+		Categories: Water Cliffs, River
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2409,6 +2497,36 @@ Templates:
             19: Ramp
             23: Road
             24: Road
+	Template@441:
+		Id: 441
+		Images: sh38.win
+		Size: 3,3
+		Categories: Beach, River
+		Tiles:
+			0: Water
+			1: Water
+			2: Beach
+			3: Water
+			4: Water
+			5: River
+			6: Water
+			7: Beach
+			8: River
+	Template@442:
+		Id: 442
+		Images: sh39.win
+		Size: 3,3
+		Categories: Beach, River
+		Tiles:
+			0: River
+			1: Beach
+			2: Water
+			3: River
+			4: River
+			5: Water
+			6: Clear
+			7: Beach
+			8: Water
 	Template@600:
 		Id: 600
 		Images: f01.win
