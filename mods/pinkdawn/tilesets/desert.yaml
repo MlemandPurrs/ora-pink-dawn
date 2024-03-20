@@ -614,7 +614,7 @@ Templates:
 			0: Tree
 	Template@60:
 		Id: 60
-		Images: br4.des
+		Images: p03.des
 		Size: 1,1
 		Categories: Debris
 		Tiles:
@@ -701,18 +701,18 @@ Templates:
 			0: Ruin
 	Template@69:
 		Id: 69
-		Images: p03.des
+		Images: p11.des
 		Size: 1,1
 		Categories: Debris
 		Tiles:
-			0: Ruin
+			0: Rock
 	Template@70:
 		Id: 70
-		Images: p04.des
+		Images: p12.des
 		Size: 1,1
 		Categories: Debris
 		Tiles:
-			0: Wall
+			0: Rock
 	Template@71:
 		Id: 71
 		Images: p05.des
@@ -820,6 +820,13 @@ Templates:
 	Template@87:
 		Id: 87
 		Images: b6.des
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@88:
+		Id: 88
+		Images: p04.des
 		Size: 1,1
 		Categories: Debris
 		Tiles:
