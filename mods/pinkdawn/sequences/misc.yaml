@@ -763,3 +763,24 @@ cb2:
 	idle: cb2
 		Length: *
 		ZOffset: 1023
+
+# Ice floes
+ice01:
+	idle:
+		Length: *
+
+ice02:
+	idle:
+		Length: *
+
+ice03:
+	idle: ice03
+		Length: *
+
+ice04:
+	idle: ice04
+		Length: *
+
+ice05:
+	idle: ice05
+		Length: *

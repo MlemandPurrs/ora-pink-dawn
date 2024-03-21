@@ -1633,7 +1633,7 @@ Templates:
 		Id: 161
 		Images: ford1.des
 		Size: 3,3
-		Categories: River
+		Categories: River, Bridge
 		Tiles:
 			0: Rock
 			1: River
@@ -1648,7 +1648,7 @@ Templates:
 		Id: 162
 		Images: ford2.des
 		Size: 3,3
-		Categories: River
+		Categories: River, Bridge
 		Tiles:
 			0: Rough
 			1: Ramp
@@ -1894,6 +1894,44 @@ Templates:
 			6: Rough
 			7: River
 			8: Tree
+	Template@182:
+		Id: 182
+		Images: shs1.des
+		Size: 1,1
+		Categories: Beach
+		Tiles:
+			0: Beach
+	Template@183:
+		Id: 183
+		Images: shs2.des
+		Size: 1,1
+		Categories: Beach
+		Tiles:
+			0: Beach
+	Template@184:
+		Id: 184
+		Images: shs3.des
+		Size: 1,1
+		Categories: Beach
+		Tiles:
+			0: Beach
+	Template@185:
+		Id: 185
+		Images: shs4.des
+		Size: 1,1
+		Categories: Beach
+		Tiles:
+			0: Beach
+	Template@186:
+		Id: 186
+		Images: shwh.des
+		Size: 2,2
+		Categories: Beach
+		Tiles:
+			0: Beach
+            1: Beach
+            2: Beach
+            3: Beach
 	Template@188:
 		Id: 188
 		Images: sh36.des
@@ -3041,3 +3079,17 @@ Templates:
 			6: Shallow
 			7: Beach
 			8: Rough
+	Template@461:
+		Id: 461
+		Images: d44.des
+		Size: 1,1
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@462:
+		Id: 462
+		Images: d45.des
+		Size: 1,1
+		Categories: Road
+		Tiles:
+			0: Road

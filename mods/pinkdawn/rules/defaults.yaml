@@ -1552,8 +1552,6 @@
 	Tooltip:
 		Name: Rock
 		ShowOwnerRow: false
-	RenderSprites:
-		Palette: staticterrain
 	WithSpriteBody:
 	Building:
 		Footprint: __ x_
@@ -1571,6 +1569,31 @@
 		ValidOwnerNames: Neutral
 	RenderSprites:
 		Palette: staticdesert
+
+^Ice:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	Tooltip:
+		Name: Ice Floe
+		ShowOwnerRow: false
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+        TerrainTypes: Water
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	AppearsOnMapPreview:
+		Terrain: Rock
+	HiddenUnderShroud:
+	MapEditorData:
+		RequireTilesets: SNOW, WINTER
+		Categories: Decoration
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	RenderSprites:
+		Palette: staticterrain
 
 ^CommonHuskDefaults:
 	Inherits@1: ^ClassicFacingSpriteActor

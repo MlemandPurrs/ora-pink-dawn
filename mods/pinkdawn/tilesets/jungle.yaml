@@ -1809,6 +1809,63 @@ Templates:
 		Tiles:
 			0: Cliff
 			1: Cliff
+	Template@243:
+		Id: 243
+		Images: sh43.jun
+		Size: 3,3
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Beach
+			7: Water
+			8: Water
+	Template@245:
+		Id: 245
+		Images: sh45.jun
+		Size: 3,3
+		Categories: Beach
+		Tiles:
+			0: Water
+			1: Beach
+			2: Water
+			3: Water
+			4: Beach
+			5: Beach
+			6: Water
+			7: Beach
+			8: Rough
+	Template@247:
+		Id: 247
+		Images: sh47.jun
+		Size: 3,3
+		Categories: Beach
+		Tiles:
+			0: Water
+			3: Beach
+			4: Water
+			6: Beach
+			7: Beach
+			8: Water
+	Template@249:
+		Id: 249
+		Images: sh49.jun
+		Size: 3,3
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Water
+			2: Water
+			3: Rock
+			4: Rock
+			5: Water
+			6: Water
+			7: Rock
+			8: Rock
 	Template@256:
 		Id: 256
 		Images: sh46.jun
@@ -1842,6 +1899,38 @@ Templates:
 			5: Ruin
 			6: Tree
 			7: Rough
+	Template@259:
+		Id: 258
+		Images: sh28.jun
+		Size: 1,2
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Beach
+	Template@260:
+		Id: 259
+		Images: sh29.jun
+		Size: 1,2
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Clear
+	Template@261:
+		Id: 260
+		Images: sh30.jun
+		Size: 2,1
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Clear
+	Template@262:
+		Id: 261
+		Images: sh31.jun
+		Size: 2,1
+		Categories: Beach
+		Tiles:
+			0: Clear
+			1: Beach
 	Template@193:
 		Id: 193
 		Images: ford1w.jun
@@ -2596,3 +2685,17 @@ Templates:
 			6: Shallow
 			7: Beach
 			8: Rough
+	Template@461:
+		Id: 461
+		Images: d44.jun
+		Size: 1,1
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@462:
+		Id: 462
+		Images: d45.jun
+		Size: 1,1
+		Categories: Road
+		Tiles:
+			0: Road
