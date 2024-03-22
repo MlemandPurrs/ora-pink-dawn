@@ -162,6 +162,21 @@ Templates:
 		Categories: Terrain
 		Tiles:
 			0: Water
+	Template@5:
+		Id: 5
+		Images: sh3.des
+		Size: 1,1
+		Categories: Beach
+		Tiles:
+			0: Rock
+	Template@6:
+		Id: 6
+		Images: sh4.des
+		Size: 2,1
+		Categories: Beach
+		Tiles:
+			0: Rock
+			1: Rock
 	Template@13:
 		Id: 13
 		Images: s01.des

@@ -1960,6 +1960,87 @@ Templates:
 			6: Rough
 			7: Ramp
 			8: Rough
+	Template@216:
+		Id: 216
+		Images: rf01.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@217:
+		Id: 217
+		Images: rf02.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@218:
+		Id: 218
+		Images: rf03.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@219:
+		Id: 219
+		Images: rf04.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@220:
+		Id: 220
+		Images: rf05.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@221:
+		Id: 221
+		Images: rf06.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@222:
+		Id: 222
+		Images: rf07.sno
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	Template@223:
+		Id: 223
+		Images: rf08.sno
+		Size: 1,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@224:
+		Id: 224
+		Images: rf09.sno
+		Size: 1,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@225:
+		Id: 225
+		Images: rf10.sno
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rough
+			1: Rough
+	Template@226:
+		Id: 226
+		Images: rf11.sno
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
 	Template@229:
 		Id: 229
 		Images: rv14.sno
