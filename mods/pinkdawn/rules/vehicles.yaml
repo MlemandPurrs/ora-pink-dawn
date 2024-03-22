@@ -1612,7 +1612,7 @@ WTNK:
 		BuildPaletteOrder: 6
 		Prerequisites: miss, ~vehicle.bossnod, ~techlevel.7
 		Queue: Vehicle
-		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
+		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo full.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
@@ -1635,6 +1635,7 @@ WTNK:
 		MuzzleSequence: muzzle
 		PauseOnCondition: emp-crate-collected || !ammo
 	Armament@Sound:
+        Name: secondary
 		Weapon: MicroWaveSound
 		PauseOnCondition: emp-crate-collected || !ammo
     Armament@AIHelper:
@@ -1656,26 +1657,27 @@ WTNK:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionRelationships: Neutral, Enemy
-        RequiresCondition: ammo && !oncarryall
+        RequiresCondition: ( ammo == 3 ) && !oncarryall
 	WithRangeCircle@JAMMER:
 		Type: jammer
 		Range: 3c0
 		Color: 0000FF80
-        RequiresCondition: ammo && !oncarryall
+        RequiresCondition: ( ammo == 3 ) && !oncarryall
  	AmmoPool:
         Name: primary
         Armaments: primary
-		Ammo: 1
+		Ammo: 3
+        InitialAmmo: 1
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
-        PipCount: 1
+        PipCount: 3
         AmmoPools: primary
         FullSequence: pip-yellow
 		RequiresSelection: false
 	ReloadAmmoPool:
-		Delay: 91
+		Delay: 132
 		Count: 1
         PauseOnCondition: emp-crate-collected
     ExternalCondition@CloakingField:
