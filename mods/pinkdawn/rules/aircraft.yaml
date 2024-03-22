@@ -426,6 +426,12 @@ HELI:
         Condition: heli-shoots
         ArmamentNames: primary, secondary
         RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
 
 HEL2:
 	Inherits: ^Helicopter
@@ -564,6 +570,12 @@ HEL2:
         Condition: heli-shoots
         ArmamentNames: primary, secondary
         RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
 
 HIND:
 	Inherits: ^Helicopter
@@ -701,6 +713,12 @@ HIND:
         Condition: heli-shoots
         ArmamentNames: primary, secondary, tertiary, quartenary
         RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
 
 BADR:
 	Inherits: ^Plane
@@ -1410,6 +1428,12 @@ RH66:
         Condition: heli-shoots
         ArmamentNames: primary, secondary
         RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
 
 SFIG:
 	Inherits: ^Plane
