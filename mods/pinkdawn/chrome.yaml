@@ -755,10 +755,22 @@ checkmark-mute-highlighted:
 flags:
 	Inherits: ^Chrome
 	Regions:
-		nod: 811, 385, 32, 16
 		gdi: 811, 402, 32, 16
-		soviet: 844, 402, 32, 16
+		gdia: 877, 402, 32, 16
+		gdib: 943, 402, 32, 16
+		gdic: 877, 436, 32, 16
+		nod: 811, 385, 32, 16
+		noda: 877, 385, 32, 16
+		nodb: 943, 385, 32, 16
+		nodc: 877, 419, 32, 16
 		allies: 844, 385, 32, 16
+		alliesa: 910, 385, 32, 16
+		alliesb: 976, 385, 32, 16
+		alliesc: 910, 419, 32, 16
+		soviet: 844, 402, 32, 16
+		sovieta: 910, 402, 32, 16
+		sovietb: 976, 402, 32, 16
+		sovietc: 910, 436, 32, 16
 		neutral: 811, 419, 32, 16
 		Random: 811, 419, 32, 16
         Random2: 844, 419, 32, 16

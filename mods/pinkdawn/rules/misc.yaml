@@ -673,6 +673,24 @@ MINW:
 		OnCrushCondition: minehit
 		OnCrushDuration: 50
 
+dummy.qtnk:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (dummy to workaround QTNK)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 1c0
+		Type: CenterPosition
+	KillsSelf:
+		Delay: 144
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+
 techlevel.2:
 	AlwaysVisible:
 	Interactable:

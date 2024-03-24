@@ -1,6 +1,22 @@
 # General dumping-ground for UI element sizes, etc.
 
 Metrics:
+	FactionSuffix-gdi: gdi
+	FactionSuffix-gdia: gdi
+	FactionSuffix-gdib: gdi
+	FactionSuffix-gdic: gdi
+	FactionSuffix-nod: nod
+	FactionSuffix-noda: nod
+	FactionSuffix-nodb: nod
+	FactionSuffix-nodc: nod
+	FactionSuffix-allies: allies
+	FactionSuffix-alliesa: allies
+    FactionSuffix-alliesb: allies
+	FactionSuffix-alliesc: allies
+	FactionSuffix-soviet: soviet
+	FactionSuffix-sovieta: soviet
+	FactionSuffix-sovietb: soviet
+	FactionSuffix-sovietc: soviet
 	FactionSuffix-neutral: gdi
 	ButtonDepth: 0
 	ButtonFont: Bold

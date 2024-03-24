@@ -185,11 +185,41 @@
 	Faction@gdi:
 		Name: GDI
 		InternalName: gdi
-		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.
+		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+	Faction@gdia:
+		Name: Air Force
+		InternalName: gdia
+		Description: GDI: Airforce\n\nFaction Variations:\n    - Can build Airfields instead of Helipads\n\nSpecial Abilities:\n    - Paratroopers\n    - Radar Scan\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+        Selectable: false
+	Faction@gdib:
+		Name: Armor
+		InternalName: gdib
+		Description: Work in progress. Not yet implemented.
+        Selectable: false
+	Faction@gdic:
+		Name: Special Forces
+		InternalName: gdic
+		Description: Work in progress. Not yet implemented.
+        Selectable: false
 	Faction@nod:
 		Name: Nod
 		InternalName: nod
-		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.
+		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Missile
+	Faction@noda:
+		Name: Bio Command
+		InternalName: noda
+		Description: Nod: Bio Command\n\nFaction Variations:\n    - Flame Tanks are replaced by Chem Tanks\n\nSpecial Units:\n    - Chem Mortar\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Missile
+        Selectable: false
+	Faction@nodb:
+		Name: Assault
+		InternalName: nodb
+		Description: Nod: Direct Assault\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Missile
+        Selectable: false
+	Faction@nodc:
+		Name: Stealth
+		InternalName: nodc
+		Description: Nod. Not yet implemented.
+        Selectable: false
 	Faction@Random3:
 		Name: Random Any
 		InternalName: Random3
@@ -198,11 +228,41 @@
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
-		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.
+		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Missile
+	Faction@alliesa:
+		Name: Secret Service
+		InternalName: alliesa
+		Description: Allies: Secret Service\n\nFaction Variations:\n    - Improved Spy\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Missile\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
+        Selectable: false
+	Faction@alliesb:
+		Name: Mechanised Assault
+		InternalName: alliesb
+		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Missile\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
+        Selectable: false
+	Faction@alliesc:
+		Name: Static Defense
+		InternalName: alliesc
+		Description: Allies: Static Defense\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Missile\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank
+        Selectable: false
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
-		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.
+		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.\n\nFaction Variations:\n    - None\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Missile
+	Faction@sovieta:
+		Name: Shock Division
+		InternalName: sovieta
+		Description: Soviet: Shock Division\n\nFaction Variations:\n    - Improved Tesla technology\n    - Can paradrop Shock Troopers\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Missile\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs\n    - Cannot use Flame technology
+        Selectable: false
+	Faction@sovietb:
+		Name: Armor Division
+		InternalName: sovietb
+		Description: Soviet: Armor Division\n\nFaction Variations:\n    - Frogfoot Plane replaces Yak Plane\n    - Can paradrop Heavy Tanks\n\nSpecial unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratanks\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Missile\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
+        Selectable: false
+	Faction@sovietc:
+		Name: Napalm Division
+		InternalName: sovietc
+		Description: Soviet: Napalm Division\nFaction Variations:\n    - Flame Mammoth replaces Mammoth Tank.\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Missile\n\nLimitations:\n    - Cannot use Tesla Technology
+        Selectable: false
 	Faction@RandomRA:
 		Name: Random RA
 		InternalName: Random2
@@ -211,7 +271,7 @@
 	Faction@blackhand:
 		Name: Blackhand
 		InternalName: bossnod
-		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.
+		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Full\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Missile
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:
@@ -313,12 +373,12 @@ World:
 	StartingUnits@mcvonlytd:
 		Class: none
 		ClassName: MCV Only
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
 		BaseActor: mcv
 	StartingUnits@mcvonlyra:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, soviet
+		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
 		BaseActor: mcv2
 	SpawnStartingUnits:
         DropdownLocked: true
@@ -342,7 +402,7 @@ World:
 	ScriptTriggers:
 	CellTriggerOverlay:
 	LuaScript:
-		Scripts: transportscript.lua, growthrate.lua, dynamictech.lua
+		Scripts: combinedscripts.lua
 	TimeLimitManager:
 		TimeLimitDisplayOrder: 2
 		TimeLimitWarnings:
@@ -364,10 +424,22 @@ World:
         FactionPreviewActors:
             random: fact.colorpicker
             gdi: htnk.colorpicker
+            gdia: htnk.colorpicker
+            gdib: htnk.colorpicker
+            gdic: htnk.colorpicker
             nod: htnk.colorpicker
+            noda: htnk.colorpicker
+            nodb: htnk.colorpicker
+            nodc: htnk.colorpicker
             random3: csph.colorpicker
             allies: 4tnk.colorpicker
+            alliesa: 4tnk.colorpicker
+            alliesb: 4tnk.colorpicker
+            alliesc: 4tnk.colorpicker
             soviet: 4tnk.colorpicker
+            sovieta: 4tnk.colorpicker
+            sovietb: 4tnk.colorpicker
+            sovietc: 4tnk.colorpicker
             random2: fac2.colorpicker
             bossnod: t55h.colorpicker
 		PresetHues: 0, 0.125, 0.185, 0.4, 0.54, 0.66, 0.79, 0.875, 0, 0.14, 0.23, 0.43, 0.54, 0.625, 0.77, 0.85

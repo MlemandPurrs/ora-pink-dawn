@@ -77,7 +77,7 @@ GUN:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: vehicleproduction, ~techlevel.4
+		Prerequisites: vehicleproduction, ~!building.gun2, ~techlevel.4
 		Queue: Defense.GDI, Defense.Nod, Defense.Allies
 		Description: Anti-Tank base defense.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Building:
@@ -134,6 +134,18 @@ GUN:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+GUN2:
+    Inherits: GUN
+	Tooltip:
+		Name: Heavy Turret
+	Buildable:
+		Prerequisites: vehicleproduction, ~building.gun2, ~techlevel.4
+		Queue: Defense.Allies
+	Armament:
+		Weapon: TurretGun2
+    RenderSprites:
+        Image: gun2
 
 ATWR:
 	Inherits: ^Defense
@@ -578,7 +590,7 @@ FTWR:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: vehicleproduction, ~techlevel.4
+		Prerequisites: vehicleproduction, ~building.ftwr, ~techlevel.4
 		Queue: Defense.Soviet
 		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Building:
@@ -641,7 +653,7 @@ TSLA:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq, ~techlevel.5
+		Prerequisites: anyhq, ~building.tsla, ~techlevel.5
 		Queue: Defense.Soviet
 		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
 	Health:
@@ -666,6 +678,13 @@ TSLA:
 	Power:
 		Amount: -100
         RequiresCondition: !build-incomplete
+    PowerMultiplier@sovieta:
+        Modifier: 80
+        RequiresCondition: owner.is.sovieta
+	GrantConditionOnFaction@sovieta:
+		Condition: owner.is.sovieta
+		Factions: sovieta
+		ResetOnOwnerChange: True
 	DetectCloaked:
         DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 3c768
@@ -724,7 +743,7 @@ GAP:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		Queue: Building.Allies
-		Prerequisites: atek, ~techlevel.7
+		Prerequisites: atek, ~building.gap, ~techlevel.7
 		Description: Obscures the enemy's view with shroud.\nCan be toggled on/off via deploy command.\nRequires power to operate.
 	Selectable:
 		Bounds: 1024, 1024
@@ -999,6 +1018,13 @@ BRIK:
 	Replaceable:
 		Types: Gate
 	-Crushable:
+    DamageMultiplier:
+        Modifier: 50
+        RequiresCondition: owner.is.allies3
+	GrantConditionOnFaction@Allies3:
+		Condition: owner.is.allies3
+		Factions: allies3
+		ResetOnOwnerChange: False
 
 WOOD:
 	Inherits: ^Wall
@@ -1081,9 +1107,21 @@ HGAT:
 		Image: hgat
 		FactionImages:
 			gdi: hgat-gdi
+            gdia: hgat-gdi
+            gdib: hgat-gdi
+            gdic: hgat-gdi
 			nod: hgat-nod
-            soviet: hgat-soviet
+            noda: hgat-nod
+            nodb: hgat-nod
+            nodc: hgat-nod
             allies: hgat-allies
+            alliesa: hgat-allies
+            alliesb: hgat-allies
+            alliesc: hgat-allies
+            soviet: hgat-soviet
+            sovieta: hgat-soviet
+            sovietb: hgat-soviet
+            sovietc: hgat-soviet
             bossnod: hgat-nod
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1093,6 +1131,13 @@ HGAT:
         Facings: 128
 	Replacement:
 		ReplaceableTypes: Gate
+    DamageMultiplier:
+        Modifier: 50
+        RequiresCondition: owner.is.allies3
+	GrantConditionOnFaction@Allies3:
+		Condition: owner.is.allies3
+		Factions: allies3
+		ResetOnOwnerChange: False
 
 VGAT:
 	Inherits: ^Gate
@@ -1138,6 +1183,13 @@ VGAT:
 		ValidPowerStates: Low, Critical
 	Replacement:
 		ReplaceableTypes: Gate
+    DamageMultiplier:
+        Modifier: 50
+        RequiresCondition: owner.is.allies3
+	GrantConditionOnFaction@Allies3:
+		Condition: owner.is.allies3
+		Factions: allies3
+		ResetOnOwnerChange: False
 
 PBOX:
 	Inherits: ^Defense

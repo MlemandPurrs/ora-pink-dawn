@@ -1131,7 +1131,7 @@ YAK:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.soviet, ~techlevel.5
+		Prerequisites: 3fld, ~aircraft.soviet, ~!aircraft.frog, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1205,6 +1205,95 @@ YAK:
     RenderSprites:
         Image: yak
 
+FROG:
+    Inherits: GenericJet
+    Aircraft:
+        Speed: 300
+    Valued:
+		Cost: 800
+	Health:
+		HP: 6000
+	Selectable:
+		DecorationBounds: 1030, 1028, 0, 2
+	Tooltip:
+		Name: Frogfoot Attack Plane
+        GenericStancePrefix: false
+        GenericName: Frogfoot
+        GenericVisibility: Ally, Neutral, Enemy        
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		Prerequisites: 3fld, ~aircraft.frog, ~techlevel.5
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
+    -Armament:
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: ChainGun.Yak.Left
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun.Yak.Right
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+		FireDelay: 1
+		PauseOnCondition: !ammo    
+	Armament@TERTIARY:
+        Name: tertiary
+        Weapon: Napalm
+        LocalOffset: 0,-213,-43, 0,213,-43
+        PauseOnCondition: !ammo2
+    AttackAircraft:
+		Armaments: primary, secondary, tertiary
+	AmmoPool@1:
+        Name: primary
+        Armaments: primary, secondary
+		Ammo: 16
+		ReloadDelay: 60
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 2
+        FullSequence: pip-green
+        AmmoPools: primary
+		RequiresSelection: true
+	AmmoPool@2:
+        Name: secondary
+        Armaments: tertiary
+        InitialAmmo: 0
+        Ammo: 3
+        ReloadCount: 3
+        ReloadDelay: 120
+        AmmoCondition: ammo2 
+    WithAmmoPipsDecoration@2:
+        Position: BottomLeft
+        Margin: 4, 6
+        PipCount: 1
+        FullSequence: pip-red
+        AmmoPools: secondary
+        RequiresSelection: true
+	WithMuzzleOverlay:
+	Rearmable:
+        AmmoPools: primary, secondary
+		RearmActors: aprt, 2fld, 3fld
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	SpawnActorOnDeath:
+		Actor: FROG.Husk
+        RequiresCondition: airborne && !hasairfield
+    RenderSprites:
+        Image: frog
+
 NMIG:
     Inherits: GenericJet
     -GainsExperience:
@@ -1242,7 +1331,7 @@ NMIG:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 8
 		BuildLimit: 1
-		Prerequisites: ~anyafld, fcom, ~aircraft.soviet, ~techlevel.7
+		Prerequisites: ~anyafld, fcom, ~aircraft.nmig, ~techlevel.7
 		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
 	Armament:
 		Weapon: ParaNuke

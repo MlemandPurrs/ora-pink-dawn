@@ -375,6 +375,28 @@ YAK.Husk:
 	RenderSprites:
 		Image: yak
 
+FROG.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Frogfoot (Falling)
+	Health:
+		HP: 3000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: frog
+
 NMIG.Husk:
 	Inherits: ^AirplaneHusk
 	Tooltip:

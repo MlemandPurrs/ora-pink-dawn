@@ -184,11 +184,12 @@ beacon:
     empmbcon: empmbcon
         Offset: 0,-42
 	pbmbbcon: pbmbbcon
-		Length: *
 		Offset: 0,-42
     parainfra: pinfrabcon
 		Offset: 0,-42
     spypbcon: spypbcon
+		Offset: 0,-42
+    paratank: ptnkbcon
 		Offset: 0,-42
 
 select:
@@ -366,6 +367,8 @@ icon:
     cloakfield: cfldicon
     airstrike2: sfigicon
     sonar: sonricon
+    parainfra2: pshkicon
+    paratanks: ptnkicon
 
 moveflsh:
 	idle:

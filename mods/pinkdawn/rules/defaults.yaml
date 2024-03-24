@@ -360,6 +360,15 @@
     Targetable@Parachute:
         TargetTypes: Parachute
         RequiresCondition: parachute
+	TimedConditionBar@THUMPSNARE:
+		Condition: thumpsnare
+		Color: 8C5600
+	SpeedMultiplier@THUMPSNARE:
+		Modifier: 70
+		RequiresCondition: thumpsnare
+	ExternalCondition@THUMPSNARE:
+		Condition: thumpsnare
+        TotalCap: 1
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -1231,7 +1240,7 @@
 	FrozenUnderFog:
 	ScriptTriggers:
 	MapEditorData:
-		Categories: Husk
+		Categories: Civilian Husk
 	RenderSprites:
 		Palette: terrain
 

@@ -11,7 +11,7 @@ Packages:
 	~^SupportDir|Content/cnc
 	~^SupportDir|Content/cnc/movies
 	^EngineDir
-	$pinkdawn: pinkdawn    
+	$pinkdawn: pinkdawn
 	^EngineDir|mods/common: common
 	~speech.mix
 	~conquer.mix

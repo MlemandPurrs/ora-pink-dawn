@@ -81,6 +81,9 @@ MCV:
 		Image: mcv
 		FactionImages:
 			nod: nodmcv
+			noda: nodmcv
+			nodb: nodmcv
+			nodc: nodmcv
             bossnod: nodmcv
 	ProductionCostMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
@@ -218,6 +221,9 @@ HARV:
 		Image: harv
 		FactionImages:
 			nod: nodharv
+			noda: nodharv
+			nodb: nodharv
+			nodc: nodharv
             bossnod: nodharv
 	GpsDot:
 		String: Harvester

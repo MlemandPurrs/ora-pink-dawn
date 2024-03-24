@@ -490,7 +490,7 @@ E8:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: stek, ~infantry.soviet, ~techlevel.6
+		Prerequisites: stek, ~infantry.e8, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable fire launcher.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Structures.\nWeak vs Tanks.
 	Mobile:
@@ -1231,7 +1231,7 @@ SHOK:
 		BuildDuration: 700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: stek, ~infantry.soviet, ~techlevel.6
+		Prerequisites: stek, ~infantry.shok, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable tesla coil.\n\nSpecial: Recharging\nCan charge powerless tesla coils.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Mobile:
@@ -1276,6 +1276,21 @@ SHOK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+
+SHOKR1:
+	Inherits: SHOK
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: shok
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: SHOK
+    -MapEditorData:
 
 THF:
 	Inherits: ^Soldier

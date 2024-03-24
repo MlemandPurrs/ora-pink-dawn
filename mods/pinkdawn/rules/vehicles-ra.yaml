@@ -854,7 +854,7 @@ MNLY:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: warf, ~vehicle.allies, ~techlevel.3
+		Prerequisites: warf, ~vehicle.allies, ~!vehicle.tnkd, ~techlevel.3
 		Queue: Vehicle
 		Description: Fast, amphibian light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -1055,6 +1055,21 @@ MNLY:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+3TNKR1:
+	Inherits: 3TNK
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: 3TNK
+    -MapEditorData:
+
 4TNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -1072,7 +1087,7 @@ MNLY:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3, ~vehicle.soviet, ~techlevel.6
+		Prerequisites: anytier3, ~vehicle.soviet, ~!vehicle.4tnf, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
@@ -1288,7 +1303,7 @@ CTNK:
     	BuildDuration: 3300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
-		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
+		Prerequisites: atek, ~vehicle.ctnk, ~techlevel.7
 		Queue: Vehicle
 		Description: Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
 	SelectionDecorations:
@@ -1355,7 +1370,7 @@ TTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: stek, ~vehicle.soviet, ~techlevel.6
+		Prerequisites: stek, ~vehicle.ttnk, ~techlevel.6
         Queue: Vehicle
 		Description: Tank with mounted tesla coil.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Infantry, Vehicles.\nWeak vs Tanks, Aircraft.
 	Health:
@@ -1408,7 +1423,11 @@ TTNK:
 		RequiresCondition: cloakfield-on
 	Power:
 		Amount: -20
-        RequiresCondition: !emp-crate-collected
+        RequiresCondition: !emp-crate-collected && !owner.is.russia
+	GrantConditionOnFaction@sovieta:
+		Condition: owner.is.russia
+		Factions: sovieta
+		ResetOnOwnerChange: True
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -1582,7 +1601,7 @@ MGG:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
+		Prerequisites: atek, ~vehicle.allies, ~vehicle.mgg, ~techlevel.7
 		Queue: Vehicle
 		Description: Regenerates the shroud nearby, obscuring the area.\nCan be toggled on/off via deploy command.\n\nUnarmed.
 	Health:
@@ -1665,7 +1684,7 @@ APC3:
         BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: atek, ~vehicle.allies, ~techlevel.7
+		Prerequisites: atek, ~vehicle.apc3, ~techlevel.7
 		Queue: Vehicle
 		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Mobile:
@@ -1783,3 +1802,247 @@ APC3:
         LocalOffset: 768,0,90
     RenderSprites:
         Image: 3t1b
+
+TNKD:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Tank Destroyer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 5
+		Prerequisites: anyfix, anyhq, ~vehicle.tnkd, ~techlevel.5
+		Queue: Vehicle
+		Description: Durable anti-armor tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 70
+        PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: TurretGun
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
+4TNF:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Flame Mammoth
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: anytier3, ~vehicle.4tnf, ~techlevel.6
+		Queue: Vehicle
+		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament@PRIMARY:
+		Weapon: MammothFlamer
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothTusk
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100, 100
+		Recoil: 10
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	ChangesHealth:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 51
+		DamageCooldown: 150
+        RequiresCondition: !rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+    -ChangesHealth@RANK-HEROIC:
+	ChangesHealth@RANK-HEROIC:
+		Step: 500
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && !in-transport && !oncarryall
+    -ChangesHealth@SELFREPAIR:
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
+QTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected || deployed)
+	Selectable:
+		DecorationBounds: 1877, 1621, 0, -170
+	Valued:
+		Cost: 1800
+	Buildable:
+        BuildDuration: 2700
+        BuildDurationModifier: 100
+        Queue: Vehicle
+        BuildPaletteOrder: 15
+		Prerequisites: stek, ~vehicle.qtnk, ~techlevel.6
+		Description: Deals seismic damage to structures when deployed.\n\nSpecial: Seismic Thump\nVehicles get slowed down, Infantry is forced to ground.\nStrong vs Buildings\nWeak vs everything Else
+	Tooltip:
+		Name: M.A.D. Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	Mobile:
+        Locomotor: tracked-crusher
+		Speed: 50
+        PauseOnCondition: emp-crate-collected || boarding
+		RequiresCondition: !deployed
+	RevealsShroud:
+		Range: 3c512
+	MadTank:
+        ThumpInterval: 12
+        DriverActor: dummy.qtnk
+        DeployedCondition: deployed
+	WithRangeCircle:
+		Color: FFFF0080
+		Range: 7c0
+    #   its mutually assured destruction vehicle,
+    #   got to ensure the tank actually perishes.
+	RevealOnDeath:
+		Duration: 50
+		Radius: 2c512
+        RevealForRelationships: Ally, Neutral, Enemy
+	ToggleConditionOnOrder@InvulnerabilityDisable:
+		Condition: invulnerability-crate-collected
+		OrderName: deploy
+		RequiresCondition: invulnerability-crate-collected && !deployed
+    WithColoredOverlay@Invulnerability:
+        RequiresCondition: invulnerability-crate-collected && !deployed
+	DamageMultiplier@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected && !deployed
+	Chronoshiftable:
+		RequiresCondition: !deployed
+    Targetable@Extra2:
+		TargetTypes: MADTank
+	Passenger:
+        CargoType: Vehicle2
+		CustomPipType: pip-red

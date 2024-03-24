@@ -2043,3 +2043,52 @@ acad.husk:
             TROPIC: TEMPERAT
 		Length: *
 		Offset: 0,1
+
+gun2:
+    Inherits: emp-overlay
+	idle: blank1 # Empty first frame. We need WithSpriteBody for the make anim, and WSB needs at least a placeholder default sequence to work
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+	recoil:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	damaged-turret:
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+	damaged-recoil:
+		Start: 96
+		Facings: 32
+		UseClassicFacings: True
+	make: gun2make
+		Length: *
+		Tick: 80
+	dead: gun2
+		Start: 128
+		Tick: 800
+	muzzle: gunfire2
+		Length: *
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: -1,-1
+	icon: gun2icon
+
+gun2.husk:
+	idle: gun2
+        Start: 128
+	dead: gun2
+		Start: 128
+		Tick: 800
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+		Offset: -1,-1

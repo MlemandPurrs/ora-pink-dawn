@@ -63,7 +63,7 @@ FACT:
 	ProductionQueue@GDIBuilding:
 		Type: Building.GDI
 		DisplayOrder: 0
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
 		Group: Building
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -78,7 +78,7 @@ FACT:
 	ProductionQueue@NodBuilding:
 		Type: Building.Nod
 		DisplayOrder: 0
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
 		Group: Building
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -108,7 +108,7 @@ FACT:
 	ProductionQueue@GDIDefense:
 		Type: Defense.GDI
 		DisplayOrder: 1
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
 		Group: Defense
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -123,7 +123,7 @@ FACT:
 	ProductionQueue@NodDefense:
 		Type: Defense.Nod
 		DisplayOrder: 1
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
 		Group: Defense
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -192,7 +192,13 @@ FACT:
 		Image: fact
 		FactionImages:
             gdi: gdifact
+            gdia: gdifact
+            gdib: gdifact
+            gdic: gdifact
 			nod: nodfact
+			noda: nodfact
+			nodb: nodfact
+			nodc: nodfact
             bossnod: nodfact
     AcceptsDeliveredCash:
 	ActorPreviewPlaceBuildingPreview:
@@ -253,6 +259,9 @@ NUKE:
 		Image: nuke
 		FactionImages:
 			nod: nodnuke
+            noda: nodnuke
+            nodb: nodnuke
+            nodc: nodnuke
             bossnod: nodnuke
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -324,6 +333,9 @@ NUK2:
 		Image: nuk2
 		FactionImages:
 			nod: nodnuk2
+            noda: nodnuk2
+            nodb: nodnuk2
+            nodc: nodnuk2
             bossnod: nodnuk2
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -396,6 +408,9 @@ NUK3:
 		Image: nuk3
 		FactionImages:
 			nod: nodnuk3
+            noda: nodnuk3
+            nodb: nodnuk3
+            nodc: nodnuk3
             bossnod: nodnuk3
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -509,6 +524,9 @@ PROC:
 		Image: proc
 		FactionImages:
 			nod: nodproc
+			noda: nodproc
+			nodb: nodproc
+			nodc: nodproc
             bossnod: nodproc
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
@@ -585,6 +603,9 @@ SILO:
 		Image: silo
 		FactionImages:
 			nod: nodsilo
+			noda: nodsilo
+			nodb: nodsilo
+			nodc: nodsilo
             bossnod: nodsilo
 	CashTrickler:
 		Interval: 300
@@ -689,15 +710,15 @@ PYLE:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: infantry.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, soviet
+		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
@@ -787,15 +808,15 @@ HAND:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@nod:
 		Prerequisite: infantry.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e4:
 		Prerequisite: infantry.e4
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: infantry.bossnod
@@ -887,27 +908,27 @@ AFLD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@nod:
 		Prerequisite: vehicle.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bggy:
 		Prerequisite: vehicle.bggy
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, nod, allies, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@arty:
 		Prerequisite: vehicle.arty
-		Factions: nod, allies, bossnod
+		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -999,23 +1020,23 @@ UFLD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bggy:
 		Prerequisite: vehicle.bggy
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, nod, allies, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@arty:
 		Prerequisite: vehicle.arty
-		Factions: nod, allies, bossnod
+		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1104,19 +1125,19 @@ WEAP:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: vehicle.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, nod, allies, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -1199,6 +1220,9 @@ FIX:
 		Image: fix
 		FactionImages:
 			nod: nodfix
+            noda: nodfix
+            nodb: nodfix
+            nodc: nodfix
             bossnod: nodfix
 	ProvidesPrerequisite:
 		Prerequisite: anyfix
@@ -1276,19 +1300,19 @@ HPAD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: aircraft.bossnod
@@ -1322,19 +1346,19 @@ HPAD:
 		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allies.player
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Blackhand:
 		Condition: bossnod.player
@@ -1415,6 +1439,9 @@ HQ:
 		Image: hq
 		FactionImages:
 			nod: nodhq
+            noda: nodhq
+            nodb: nodhq
+            nodc: nodhq
             bossnod: nodhq
 	SpawnActorPower@RadarScan:
 		PauseOnCondition: lowpower || jammed || emp-affected-structure
@@ -1541,7 +1568,7 @@ MISS:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@GDI:
         Condition: owner.is.gdi
-        Factions: gdi
+        Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1

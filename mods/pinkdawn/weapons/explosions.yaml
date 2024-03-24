@@ -430,3 +430,22 @@ MlrsExplodeChem:
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
+
+MADTankDetonate:
+	InvalidTargets: MADTank
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 7c0
+		Damage: 20
+		InvalidTargets: MADTank
+		Versus:
+            None: 50
+			Light: 50
+			Heavy: 50
+        DamageTypes: Prone50Percent, TriggerProne
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		Size: 7,6
+	Warhead@3Eff: CreateEffect
+		Explosions: big_frag
+		ImpactSounds: mineblo1.aud
+		ImpactActors: false

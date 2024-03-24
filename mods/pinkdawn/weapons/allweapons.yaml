@@ -77,6 +77,9 @@
 #   76. ASMine
 #   77. CoastalGun
 #   78. Railgun
+#   79. AntiTankGun
+#   80. MADTankThump
+#   81. MammothFlamer
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -779,6 +782,11 @@ TurretGun:
 		ImpactSounds: xplos.aud
 		ValidTargets: Ship, WaterStructure, Submarine
         ImpactActors: true
+
+TurretGun2:
+    Inherits: TurretGun
+	Burst: 2
+	BurstDelays: 8
 
 #   16. Mammoth Tank's rocket pods
 MammothTusk:
@@ -3565,3 +3573,114 @@ Railgun:
         InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 		ValidRelationships: Ally, Neutral, Enemy
+
+#   79. Tank Destroyer's weapon
+AntiTankGun:
+	ReloadDelay: 50
+    Range: 5c768
+    Report: tnkdfire.aud
+    ValidTargets: Ground, Water, Underwater
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+		Inaccuracy: 128
+		InaccuracyType: PerCellIncrement
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4000
+        ValidTargets: Ground, Tree, Wall, Submarine
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ground, Tree
+        ImpactActors: false
+		InvalidTargets: Water, Underwater
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ValidTargets: Ship, WaterStructure, Submarine
+        ImpactActors: true
+
+#   80. M.A.D. Tank's seismic damage. (note: there is also explosion part of this)
+MADTankThump:
+	InvalidTargets: MADTank
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 7c0
+		Damage: 1
+        Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne
+        ValidTargets: Structure, Wall, Mine
+	Warhead@Shake: ShakeScreen
+		Duration: 10
+		Intensity: 3
+		Multiplier: 1,0
+	Warhead@3: GrantExternalCondition
+		Range: 7c0
+		Duration: 24
+		Condition: thumpsnare
+        InvalidTargets: MADTank
+		ValidTargets: Vehicle
+
+#   81. Flame Mammoth's fireball spitting weapon
+MammothFlamer:
+	ReloadDelay: 80
+    Range: 5c256
+	Report: flamer2.aud    
+	Burst: 2
+	BurstDelays: 10
+	ValidTargets: Ground, Water, Tree
+    InvalidTargets: Wall, FireImmune
+	Projectile: Bullet
+		Speed: 240
+		TrailImage: fb2
+		Image: FB1
+        Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 8000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, FireImmune
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: med_napalm
+		ImpactSounds: firebl3.aud
+		ImpactActors: false

@@ -170,3 +170,12 @@ badg:
 	idle:
 		Facings: 16
 	icon: badricon
+
+frog:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	muzzle: minigun16
+		Length: 6
+		Facings: 16
+	icon: frogicon

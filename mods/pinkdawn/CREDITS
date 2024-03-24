@@ -6,7 +6,7 @@ was previously known as 'C&C All'.
 Credits:
 	* MlemandPurrs (the madmiau responsible for this mod)
 	* Inq (Nod structures, new GDI tank turret, edited Nod cameos, 
-E.M.P. Missile battery, Shipyard, Airfield with Helipad edit, Flame Trooper icon,
+E.M.P. Missile battery, Airfield with Helipad edit, Flame Trooper icon,
 E7 swimming frames, RH66 Comanche, Laser Turret, Infiltrator, Stealth Generator,
 Stealthfield cameo icon, Mobile Stealth Generator, Microwave Tank, Nod FCOM,
 IFV turret graphics used for the Nod ships, Jetpack Trooper, Sniper, etc.)
@@ -14,15 +14,15 @@ IFV turret graphics used for the Nod ships, Jetpack Trooper, Sniper, etc.)
 	* Pinkthoth (for helped me discover Tacotron, Civilian Airfield sprite,
 Behemoth Tank, Mobile Flak sprites, Academy sprite)
 	* AchromicWhite (Light Tank's new turret, MLRS new chassis, 
-Flame Trooper sprite based on RPG Trooper, RA beta Ships)
-	* Nyerguds (for generating TD's .ini files, and much more...)
+Flame Trooper sprite based on RPG Trooper, Frogfoot sprite)
+	* Nyerguds (for generating TD's .ini files, beta Tesla Tank, and much more...)
 	* Sgtmyers88 (Bio Lab cameo from Tiberian Dawn Redux, idea of Radar Scan)
 	* Mussuy (Stealth Tank with turret sprite)
 	* Kilkakon (Technology Center build-up anim, Bio sprite with actual Bio logo)
 	* Marn or raminator (Cannon muzzle, 32 facings Flamespray, 16 facings Minigun)
 	* ROB or tchokky or sadukar09 (Supply Truck cameo)
 	* NoozeArts (Comms Array, Windmill Plant, Hi-Tech Power Plant sprites,
-Mobile Flak icon)
+Mobile Flak icon, Tank Destroyer sprite)
 	* Reaperrr (for Tiberian Dawn Xtended, OpenRA shp fixes)
 	* raminator (Caribbean tileset, Chem Tank icon)
 	* MustaphaTR (tech Oil Refinery original sprite, the strafing Yak weaponry,
@@ -36,7 +36,7 @@ for creating TD naval modmaps, Best Map Evur <3, Coastal Defense turret)
 	* FF-Design (Mobile Flak unit based on their concept)
 	* JaH (Nuclear bomber based on their hybrid MiG sprite)
 	* Flamewh33l (Volkov cameo)
-	* Allen262 (Tactical Submarine sprite)
+	* Allen262 (Tactical Submarine sprite, RA beta Ships)
 	* SirCake (RA Light Tank swimming mode sprite, Paradrop plane
 	script, ideas used from UoE mod maps)
 	* C0mrade (resized down RA Infantry used for edit source)

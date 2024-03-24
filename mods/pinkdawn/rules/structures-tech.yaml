@@ -210,19 +210,19 @@ SYRD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: navy.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: navy.nod
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: navy.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: navy.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: navy.bossnod
@@ -230,11 +230,15 @@ SYRD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@lst:
 		Prerequisite: navy.lst
-		Factions: gdi, nod, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@lst2:
 		Prerequisite: navy.lst2
-		Factions: allies, soviet
+		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nts:
+		Prerequisite: navy.nts
+		Factions: soviet
         ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
@@ -383,7 +387,7 @@ APRT:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	ParatroopersPower@paratroopers:
+	ParatroopersPower@Paratroopers:
         PauseOnCondition: lowpower || emp-affected-structure
 		OrderName: Paratroopers
 		Icon: parainfra
@@ -454,19 +458,19 @@ APRT:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: aircraft.bossnod
@@ -474,7 +478,7 @@ APRT:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@f22:
 		Prerequisite: aircraft.f22
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 
 APRT.Husk:

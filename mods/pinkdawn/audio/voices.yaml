@@ -2,9 +2,21 @@ GenericVoice:
 	Variants:
         neutral: .v01, .v03
 		nod: .v01, .v03
+		noda: .v01, .v03
+		nodb: .v01, .v03
+		nodc: .v01, .v03
 		gdi: .v01, .v03
+		gdia: .v01, .v03
+		gdib: .v01, .v03
+		gdic: .v01, .v03
 		allies: .a01,.a03
+		alliesa: .a01,.a03
+		alliesb: .a01,.a03
+		alliesc: .a01,.a03
 		soviet: .r01,.r03
+		sovieta: .r01,.r03
+		sovietb: .r01,.r03
+		sovietc: .r01,.r03
 		bossnod: .v01, .v03
 	Voices:
 		Select: ackno, await1, ready, report1, yessir1
@@ -19,9 +31,21 @@ GenericVoice:
 VehicleVoice:
 	Variants:
 		nod: .v00, .v02
+		noda: .v00, .v02
+		nodb: .v00, .v02
+		nodc: .v00, .v02
 		gdi: .v00, .v02
+		gdia: .v00, .v02
+		gdib: .v00, .v02
+		gdic: .v00, .v02
 		allies: .a00,.a02
+		alliesa: .a00,.a02
+		alliesb: .a00,.a02
+		alliesc: .a00,.a02
 		soviet: .r00,.r02
+		sovieta: .r00,.r02
+		sovietb: .r00,.r02
+		sovietc: .r00,.r02
 		bossnod: .v00, .v02
 	Voices:
 		Select: vehic1, yessir1, await1, unit1, report1

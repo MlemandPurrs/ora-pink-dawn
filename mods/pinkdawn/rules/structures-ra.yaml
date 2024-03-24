@@ -68,7 +68,7 @@ FAC2:
 	ProductionQueue@AlliesBuilding:
 		Type: Building.Allies
 		DisplayOrder: 0
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
 		Group: Building
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -83,7 +83,7 @@ FAC2:
 	ProductionQueue@SovietBuilding:
 		Type: Building.Soviet
 		DisplayOrder: 0
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
 		Group: Building
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -98,7 +98,7 @@ FAC2:
 	ProductionQueue@AlliesDefense:
 		Type: Defense.Allies
 		DisplayOrder: 1
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
 		Group: Defense
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -113,7 +113,7 @@ FAC2:
 	ProductionQueue@SovietDefense:
 		Type: Defense.Soviet
 		DisplayOrder: 1
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
 		Group: Defense
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -128,7 +128,7 @@ FAC2:
 	ProductionQueue@AlliesFake:
 		Type: Defense.Allies2
 		DisplayOrder: 2
-		Factions: allies
+		Factions: allies, alliesc
 		Group: Defense
 		LowPowerModifier: 150
 		ReadyAudio: ConstructionComplete
@@ -163,6 +163,22 @@ FAC2:
 		Amount: 30
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gap:
+		Prerequisite: building.gap
+		Factions: allies, alliesa
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@tsla:
+		Prerequisite: building.tsla
+		Factions: soviet, sovieta, sovietb
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ftwr:
+		Prerequisite: building.ftwr
+		Factions: soviet, sovietb, sovietc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@gun2:
+		Prerequisite: building.gun2
+		Factions: alliesc
+        ResetOnOwnerChange: true
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
@@ -393,11 +409,11 @@ OREF:
         RequiresCondition: !build-incomplete && owner.is.soviet
 	GrantConditionOnFaction@Soviet:
 		Condition: owner.is.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: owner.is.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
 		ResetOnOwnerChange: True
 	WithBuildingBib:
 	Power:
@@ -597,7 +613,7 @@ TENT:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
 		Prerequisite: infantry.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -690,11 +706,19 @@ BARR:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@soviet:
 		Prerequisite: infantry.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, soviet
+		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@e8:
+		Prerequisite: infantry.e8
+		Factions: soviet, sovietb, sovietc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@shok:
+		Prerequisite: infantry.shok
+		Factions: soviet, sovieta
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -779,39 +803,67 @@ WARF:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
 		Prerequisite: vehicle.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: vehicle.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv2:
 		Prerequisite: vehicle.mcv2
-		Factions: allies, soviet
+		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@ohrv:
 		Prerequisite: vehicle.ohrv
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@ahrv:
 		Prerequisite: vehicle.ahrv
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, nod, allies, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc2:
 		Prerequisite: vehicle.apc2
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@arty:
 		Prerequisite: vehicle.arty
-		Factions: nod, allies, bossnod
+		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@dtrk:
 		Prerequisite: vehicle.dtrk
-		Factions: allies, soviet
+		Factions: allies, alliesa, alliesb, alliesc, soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@tnkd:
+		Prerequisite: vehicle.tnkd
+		Factions: alliesb
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@mgg:
+		Prerequisite: vehicle.mgg
+		Factions: allies, alliesc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ctnk:
+		Prerequisite: vehicle.ctnk
+		Factions: allies, alliesb
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@apc3:
+		Prerequisite: vehicle.apc3
+		Factions: allies, alliesa
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ttnk:
+		Prerequisite: vehicle.ttnk
+		Factions: soviet, sovieta
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@qtnk:
+		Prerequisite: vehicle.qtnk
+		Factions: sovietb
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@4tnf:
+		Prerequisite: vehicle.4tnf
+		Factions: sovietc
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -966,23 +1018,35 @@ FIX2:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: aircraft.bossnod
 		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@f22:
+		Prerequisite: aircraft.f22
+		Factions: nod, noda, nodb, nodc, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nmig:
+		Prerequisite: aircraft.nmig
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@frog:
+		Prerequisite: aircraft.frog
+		Factions: sovietb
         ResetOnOwnerChange: true
     WithBuildingBib:
 	ProximityExternalCondition:
@@ -1025,14 +1089,84 @@ FIX2:
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
         AllowMultiple: false
+	ParatroopersPower@ShockParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovieta
+		OrderName: ShockParatroopers
+		Icon: parainfra2
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Stormtroopers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: SHOKR1,E1R1,SHOKR1,E1R1,SHOKR1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	ParatroopersPower@Paratanks:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovietb
+		OrderName: Paratanks
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratanks
+		Description: A Badger drops a pair of Heavy Tanks\nanywhere on the map.
+		DropItems: 3TNKR1, 3TNKR1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet
+        Factions: soviet, sovietb, sovietc
         ResetOnOwnerChange: true
+    GrantConditionOnFaction@Soviet3:
+        Condition: owner.is.sovieta
+        Factions: sovieta
+        ResetOnOwnerChange: true	
+    GrantConditionOnFaction@Soviet4:
+        Condition: owner.is.sovietb
+        Factions: sovietb
+        ResetOnOwnerChange: true	
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	Capturable:
@@ -1109,19 +1243,19 @@ FIX2:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: aircraft.bossnod
@@ -1129,7 +1263,15 @@ FIX2:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@f22:
 		Prerequisite: aircraft.f22
-		Factions: nod, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nmig:
+		Prerequisite: aircraft.nmig
+		Factions: soviet
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@frog:
+		Prerequisite: aircraft.frog
+		Factions: sovietb
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1159,19 +1301,19 @@ FIX2:
 		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
-		Factions: gdi
+		Factions: gdi, gdia, gdib, gdic
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
-		Factions: nod
+		Factions: nod, noda, nodb, nodc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allies.player
-		Factions: allies
+		Factions: allies, alliesa, alliesb, alliesc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
-		Factions: soviet
+		Factions: soviet, sovieta, sovietb, sovietc
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Blackhand:
 		Condition: bossnod.player
@@ -1197,7 +1339,7 @@ FIX2:
 		Prerequisite: anyafld
 	ProvidesPrerequisite@2:
 		Prerequisite: hpad
-	ParatroopersPower@paratroopersra:
+	ParatroopersPower@SovietParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.soviet
 		OrderName: SovietParatroopers
@@ -1228,15 +1370,85 @@ FIX2:
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
         AllowMultiple: false
+	ParatroopersPower@ShockParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovieta
+		OrderName: ShockParatroopers
+		Icon: parainfra2
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Stormtroopers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: SHOKR1,E1R1,SHOKR1,E1R1,SHOKR1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	ParatroopersPower@Paratanks:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovietb
+		OrderName: Paratanks
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratanks
+		Description: A Badger drops a pair of Heavy Tanks\nanywhere on the map.
+		DropItems: 3TNKR1, 3TNKR1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet
+        Factions: soviet, sovietb, sovietc
         ResetOnOwnerChange: true
-	ActorPreviewPlaceBuildingPreview:
+    GrantConditionOnFaction@Soviet3:
+        Condition: owner.is.sovieta
+        Factions: sovieta
+        ResetOnOwnerChange: true	
+    GrantConditionOnFaction@Soviet4:
+        Condition: owner.is.sovietb
+        Factions: sovietb
+        ResetOnOwnerChange: true	
+    ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	Capturable:
 		RequiresCondition: !build-incomplete
@@ -1328,7 +1540,7 @@ DOME:
 	SupportPowerChargeBar:
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
-        Factions: soviet
+        Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@WIRELESS:
 		Prerequisite: activeradar
@@ -1389,7 +1601,7 @@ ATEK:
 		Prerequisite: anytier3
 	ProvidesPrerequisite@2:
 		Prerequisite: anytechra
-        Factions: allies, soviet
+        Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1563,7 +1775,7 @@ STEK:
 		Prerequisite: anytier3
 	ProvidesPrerequisite@2:
 		Prerequisite: anytechra
-        Factions: allies, soviet
+        Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1643,7 +1855,7 @@ FCOM:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
-        Factions: soviet
+        Factions: soviet, sovietc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
 	Capturable:
@@ -1697,8 +1909,9 @@ CSPH:
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ChronoshiftPower@Chronoshift:
-		OrderName: Chronoshift
 		PauseOnCondition: lowpower
+        RequiresCondition: !owner.is.germany
+		OrderName: Chronoshift
 		Icon: chrono
 		ChargeInterval: 10500
 		Name: Chronoshift
@@ -1717,7 +1930,32 @@ CSPH:
 		Dimensions: 3, 3
 		Footprint: xxx xxx xxx
         SupportPowerPaletteOrder: 2
+	ChronoshiftPower@Chronoshift2:
+		PauseOnCondition: lowpower
+        RequiresCondition: owner.is.germany
+		OrderName: Chronoshift2
+		Icon: chrono
+		ChargeInterval: 7500
+		Name: Chronoshift
+		Description: Teleports a group of units\nacross the map for 1.5 minutes.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+		InsufficientPowerTextNotification: Insufficient power.
+		BeginChargeSpeechNotification: ChronosphereCharging
+		BeginChargeTextNotification: Chronosphere charging.
+		EndChargeSpeechNotification: ChronosphereReady
+		EndChargeTextNotification: Chronosphere ready.
+		Duration: 2250
+		KillCargo: true
+		DisplayRadarPing: True
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+        SupportPowerPaletteOrder: 2
  	SupportPowerChargeBar:
+    GrantConditionOnFaction@Allies2:
+        Condition: owner.is.germany
+        Factions: allies2
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	Capturable:
