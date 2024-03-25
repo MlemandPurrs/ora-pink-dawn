@@ -29,7 +29,7 @@ MCV2:
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall )
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall )
 	HitShape:
 		Type: Circle
 			Radius: 608
@@ -130,6 +130,8 @@ OHRV:
     -WithProductionIconOverlay:
     -ChangesHealth@SELFREPAIR:
     -WithDecoration@SELFREPAIR:
+    -ExternalCondition@UNITSOURCE:
+    -GrantCondition@UNITSOURCE:
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -305,7 +307,7 @@ TRUK:
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected )
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall || emp-crate-collected )
 	Buildable:
 		BuildDuration: 900
         BuildDurationModifier: 100
@@ -388,7 +390,7 @@ DTRK:
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected)
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall || emp-crate-collected)
 	Valued:
 		Cost: 2100
 	Tooltip:
@@ -1155,7 +1157,7 @@ MNLY:
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && !in-transport && !oncarryall
+		RequiresCondition: ( rank-heroic || armoryrepair || mechanicrepair ) && !emp-crate-collected && !in-transport && !oncarryall
     -ChangesHealth@SELFREPAIR:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
@@ -1275,7 +1277,7 @@ MNLY:
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && wireless && !in-transport
+		RequiresCondition: ( rank-heroic || armoryrepair || mechanicrepair ) && !emp-crate-collected && wireless && !in-transport
     -ChangesHealth@SELFREPAIR:
 	Explodes:
 		Weapon: UnitExplode
@@ -1589,7 +1591,7 @@ MGG:
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( in-transport || parachute || emp-crate-collected )
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || emp-crate-collected )
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -1689,7 +1691,7 @@ APC3:
 		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Mobile:
         Locomotor: tracked-crusher
-		TurnSpeed: 18
+		TurnSpeed: 12
 		Speed: 90
 		PauseOnCondition: notmobile || emp-crate-collected || boarding
 	Health:
@@ -1716,7 +1718,7 @@ APC3:
 		PauseOnCondition: reload-ground || emp-crate-collected
 		ReloadingCondition: reload-air
 	Turreted:
-		TurnSpeed: 18
+		TurnSpeed: 12
 	AttackTurreted:
         Armaments: primary, secondary
         Voice: Attack
@@ -1837,6 +1839,7 @@ TNKD:
 		MuzzleSequence: muzzle
 		PauseOnCondition: emp-crate-collected
 	AttackFrontal:
+        FacingTolerance: 0
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
 	AttackMove:
@@ -1947,7 +1950,7 @@ TNKD:
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: (rank-heroic || armoryrepair) && !emp-crate-collected && !in-transport && !oncarryall
+		RequiresCondition: ( rank-heroic || armoryrepair || mechanicrepair ) && !emp-crate-collected && !in-transport && !oncarryall
     -ChangesHealth@SELFREPAIR:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
@@ -1986,27 +1989,30 @@ QTNK:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+	HitShape:
+		Type: Circle
+			Radius: 512
 	ChangesHealth@SELFREPAIR:
 		Step: 500
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( in-transport || parachute || oncarryall || emp-crate-collected || deployed)
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall || emp-crate-collected || deployed)
 	Selectable:
-		DecorationBounds: 1877, 1621, 0, -170
+		DecorationBounds: 1450, 1450, 0, -128
 	Valued:
 		Cost: 1800
+	Tooltip:
+		Name: M.A.D. Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
         BuildDuration: 2700
         BuildDurationModifier: 100
         Queue: Vehicle
         BuildPaletteOrder: 15
 		Prerequisites: stek, ~vehicle.qtnk, ~techlevel.6
-		Description: Deals seismic damage to structures when deployed.\n\nSpecial: Seismic Thump\nVehicles get slowed down, Infantry is forced to ground.\nStrong vs Buildings\nWeak vs everything Else
-	Tooltip:
-		Name: M.A.D. Tank
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
+		Description: Deals seismic damage\nto structures when deployed.\n\nSpecial: Seismic Thump\nVehicles get slowed down,\nInfantry is forced to ground.\nStrong vs Buildings\nWeak vs everything Else
 	Health:
 		HP: 45000
 	Armor:
@@ -2014,6 +2020,7 @@ QTNK:
 	Mobile:
         Locomotor: tracked-crusher
 		Speed: 50
+		TurnSpeed: 12
         PauseOnCondition: emp-crate-collected || boarding
 		RequiresCondition: !deployed
 	RevealsShroud:

@@ -80,6 +80,7 @@
 #   79. AntiTankGun
 #   80. MADTankThump
 #   81. MammothFlamer
+#   82. RPGLauncher
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1136,6 +1137,57 @@ TowerMissileAA:
 		ImpactSounds: xplos.aud
 		ImpactActors: true
 		ValidTargets: Air, Helicopter, Airplane
+
+TowerMissileAGEMP:
+    Inherits: TowerMissileAG
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: DARKMIS
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 426
+		RangeLimit: 8c409
+	Warhead@7: GrantExternalCondition
+		Range: 0c384
+		Duration: 25
+		Condition: emp-crate-collected
+		ValidTargets: EMPApplicable
+        InvalidTargets: Invulnerable
+	Warhead@8: GrantExternalCondition
+		Range: 0c512
+		Duration: 25
+		Condition: emp-affected-structure
+		ValidTargets: EMPApplicableBuilding
+        InvalidTargets: Invulnerable
+
+TowerMissileAAEMP:
+    Inherits: TowerMissileAA
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 0
+		Image: DARKMIS
+		Shadow: true
+		HorizontalRateOfTurn: 80
+		TrailImage: smokey
+		Speed: 426
+		RangeLimit: 9c614
+        Acceleration: 8
+	Warhead@7: GrantExternalCondition
+		Range: 0c384
+		Duration: 25
+		Condition: emp-crate-collected
+		ValidTargets: EMPApplicable
+        InvalidTargets: Invulnerable
+	Warhead@8: GrantExternalCondition
+		Range: 0c512
+		Duration: 25
+		Condition: emp-affected-structure
+		ValidTargets: EMPApplicableBuilding
+        InvalidTargets: Invulnerable
 
 #   22. Napalm Bomb used by Airstrikes
 Napalm:
@@ -3637,6 +3689,7 @@ MADTankThump:
             Steel: 100
         DamageTypes: Prone50Percent, TriggerProne
         ValidTargets: Structure, Wall, Mine
+        ValidRelationships: Enemy, Ally, Neutral
 	Warhead@Shake: ShakeScreen
 		Duration: 10
 		Intensity: 3
@@ -3647,6 +3700,7 @@ MADTankThump:
 		Condition: thumpsnare
         InvalidTargets: MADTank
 		ValidTargets: Vehicle
+        ValidRelationships: Enemy, Ally, Neutral
 
 #   81. Flame Mammoth's fireball spitting weapon
 MammothFlamer:
@@ -3684,3 +3738,53 @@ MammothFlamer:
 		Explosions: med_napalm
 		ImpactSounds: firebl3.aud
 		ImpactActors: false
+
+#   82. RPG Launcher
+RPGLauncher:
+	ReloadDelay: 65
+	Range: 7c0
+	MinRange: 1c384
+	Burst: 3
+	BurstDelays: 7
+	Report: grenlnch.aud
+	ValidTargets: Ground, Water
+	TargetActorCenter: true
+	Projectile: Bullet
+		Blockable: false
+		Image: BOMB
+		Shadow: true
+		TrailImage: smokey
+		Inaccuracy: 853
+		LaunchAngle: 62
+		Speed: 298
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 5000
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: med_frag
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@5EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
+RPGLauncher2:
+    Inherits: RPGLauncher
+    Burst: 6

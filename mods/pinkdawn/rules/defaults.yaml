@@ -301,7 +301,7 @@
 	Selectable:
 		Bounds: 1024, 1024
 	Targetable:
-		TargetTypes: Ground, Vehicle
+		TargetTypes: Ground, DetonateAttack2, Vehicle
 	Targetable@REPAIR:
 		RequiresCondition: damaged
 		TargetTypes: Repair
@@ -369,6 +369,8 @@
 	ExternalCondition@THUMPSNARE:
 		Condition: thumpsnare
         TotalCap: 1
+    # this used by Fanatic
+	EdibleByLeap:
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -762,7 +764,7 @@
 		Bounds: 768, 768, 0, -256
 		DecorationBounds: 512, 725, 0, -256
 	Targetable:
-		TargetTypes: Ground, Infantry
+		TargetTypes: Ground, DetonateAttack2, Infantry
         RequiresCondition: !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand
@@ -1098,7 +1100,7 @@
 	OwnerLostAction:
 		Action: Kill
 	Targetable:
-		TargetTypes: Ground, C4, Structure
+		TargetTypes: Ground, C4, DetonateAttack, Structure
 	Armor:
 		Type: Medium
 	Health:
@@ -1203,7 +1205,7 @@
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	Targetable:
-		TargetTypes: Ground, C4, Structure, Defense
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
 	MapEditorData:
 		Categories: Defense
 	-CommandBarBlacklist:
@@ -1438,7 +1440,7 @@
 		AreaTypes: building
 		Adjacent: 3
 	Targetable:
-		TargetTypes: Ground, Wall
+		TargetTypes: Ground, DetonateAttack, Wall, NoAutoTarget
 	Crushable:
 		CrushClasses: wall
 		CrushSound: sandbag2.aud
@@ -1486,7 +1488,7 @@
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Tree
+		TargetTypes: Tree, NoAutoTarget
 	WithDamageOverlay@SmallBurn:
 		DamageTypes: Incendiary
 		Image: burn-s
@@ -2417,7 +2419,7 @@
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: armoryrepair && !( rank-heroic || in-transport || parachute || oncarryall || emp-crate-collected )
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( rank-heroic || in-transport || parachute || oncarryall || emp-crate-collected )
 	GrantConditionOnPrerequisite@ARMORY:
 		Condition: armory
 		Prerequisites: army
@@ -2433,3 +2435,8 @@
 		RequiresCondition: armoryrepair
 		BlinkInterval: 31
 		BlinkPattern: On, Off
+	ExternalCondition@UNITSOURCE:
+		Condition: fieldmechanic
+	GrantCondition@UNITSOURCE:
+		RequiresCondition: fieldmechanic && damaged
+		Condition: mechanicrepair

@@ -363,6 +363,24 @@ NCOM.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: ncom
 
+H2SP.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Hospital (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: hosp.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: h2sp
+
 SGEN.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

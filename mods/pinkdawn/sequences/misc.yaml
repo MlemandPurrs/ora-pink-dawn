@@ -99,7 +99,17 @@ missile:
 		Facings: 32
 		ZOffset: 1023
 
+darkmis:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
 patriot:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+darkpat:
 	idle:
 		Facings: 32
 		ZOffset: 1023
@@ -176,7 +186,7 @@ beacon:
 		Offset: 0,-42
 	atomic: atombcon
 		Offset: 0,-42
-	paratroopers: pinfbcon
+	parainf: pinfbcon
 		Offset: 0,-42
 	clock: beaconclock
 		Length: *
@@ -189,7 +199,9 @@ beacon:
 		Offset: 0,-42
     spypbcon: spypbcon
 		Offset: 0,-42
-    paratank: ptnkbcon
+    paratanks: ptnkbcon
+		Offset: 0,-42
+	uavbcon: uavbcon
 		Offset: 0,-42
 
 select:
@@ -355,7 +367,7 @@ icon:
 	ioncannon: ionicon
 	abomb: atomicon
 	radarscan: scanicon
-    paratroopers: pinficon
+    parainf: pinficon
     empmissile: empmicon
  	parabombs: pbmbicon
     parainfra: pinfraicon
@@ -369,6 +381,8 @@ icon:
     sonar: sonricon
     parainfra2: pshkicon
     paratanks: ptnkicon
+    dbomb: 2tomicon
+    reconuav: uavicon
 
 moveflsh:
 	idle:

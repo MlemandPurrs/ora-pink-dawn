@@ -177,6 +177,9 @@ apc2.husk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
+	idle-water: 1tnk-water
+		Facings: 32
+		UseClassicFacings: True
 	turret:
 		Start: 32
 		Facings: 32
@@ -185,9 +188,6 @@ apc2.husk:
 		Length: 2
 		Facings: 16
 	icon: 1tnkicon
-	idle-water: 1tnk-water
-		Facings: 32
-		UseClassicFacings: True
 
 1tnk.husk:
 	idle: 1tnk

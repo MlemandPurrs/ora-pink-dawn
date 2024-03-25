@@ -302,3 +302,52 @@ Cursors:
 		harvest-minimap:
 			Start: 422
 			Length: 8
+    mousextra.shp: cursor
+		enter-blue:
+			Start: 0
+			Length: 3
+		enter-blue-blocked:
+			Start: 6
+			Length: 1
+		enter-blue-minimap:
+			Start: 3
+			Length: 3
+		enter-blue-blocked-minimap:
+			Start: 7
+			Length: 1
+		enter-blue-power:
+			Start: 8
+			Length: 3
+		enter-blue-power-blocked:
+			Start: 6
+			Length: 1
+		enter-blue-power-minimap:
+			Start: 3
+			Length: 3
+		enter-blue-power-blocked-minimap:
+			Start: 7
+			Length: 1
+		enter-blue-money:
+			Start: 11
+			Length: 3
+		enter-blue-money-blocked:
+			Start: 6
+			Length: 1
+		enter-blue-money-minimap:
+			Start: 3
+			Length: 3
+		enter-blue-money-blocked-minimap:
+			Start: 7
+			Length: 1
+		enter-blue-timer:
+			Start: 14
+			Length: 3
+		enter-blue-timer-blocked:
+			Start: 6
+			Length: 1
+		enter-blue-timer-minimap:
+			Start: 3
+			Length: 3
+		enter-blue-timer-blocked-minimap:
+			Start: 7
+			Length: 1

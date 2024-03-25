@@ -179,3 +179,30 @@ frog:
 		Length: 6
 		Facings: 16
 	icon: frogicon
+
+mh60:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	rotor: yrotorlg
+		Length: 4
+	slow-rotor: yrotorlg
+		Start: 4
+		Length: 8
+	muzzle: minigun16
+		Length: 6
+		Facings: 16
+	icon: mh60icon
+
+uav:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+	icon: uavicon
+
+c130:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: c17icon

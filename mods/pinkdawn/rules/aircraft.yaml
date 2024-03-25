@@ -37,6 +37,7 @@ C17.Paradrop:
     Inherits: C17
     -DamageMultiplier@INVULNERABLE:
 	Aircraft:
+		CruiseAltitude: 3072
 		Speed: 300
         AirborneCondition: airborne
 	HitShape:
@@ -66,7 +67,7 @@ C17.Paradrop:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
     RenderSprites:
-        Image: c17
+        Image: c130
 
 A10:
 	Inherits: ^Plane
@@ -1147,14 +1148,7 @@ YAK:
 		MuzzleSequence: muzzle
 		FireDelay: 1
 		PauseOnCondition: !ammo    
-	#   Armament@TERTIARY:
-	#   Name: tertiary
-	#   Weapon: Napalm
-	#   LocalOffset: 0,-213,-43, 0,213,-43
-    #   PauseOnCondition: !ammo2
-    #   RequiresCondition: rank-heroic
     AttackAircraft:
-        #   Armaments: primary, secondary
 		Armaments: primary, secondary
 	AmmoPool@1:
         Name: primary
@@ -1169,27 +1163,8 @@ YAK:
         FullSequence: pip-green
         AmmoPools: primary
 		RequiresSelection: true
-	#   AmmoPool@2:
-    #   Name: secondary
-    #   Armaments: tertiary
-    #   InitialAmmo: 0
-    #   Ammo: 3
-    #   ReloadCount: 3
-    #   ReloadDelay: 120
-	#   AmmoCondition: ammo2
-    #   hmm.... 
-    #   RequiresCondition: rank-heroic
-	#   WithAmmoPipsDecoration@2:
-    #   Position: BottomLeft
-	#   Margin: 4, 6
-	#   PipCount: 1
-    #   FullSequence: pip-red
-    #   AmmoPools: secondary
-	#   RequiresSelection: true
-    #   RequiresCondition: rank-heroic
 	WithMuzzleOverlay:
 	Rearmable:
-        #   AmmoPools: primary, secondary
         AmmoPools: primary
 		RearmActors: aprt, 2fld, 3fld
 	LeavesTrails:
@@ -1265,10 +1240,9 @@ FROG:
 	AmmoPool@2:
         Name: secondary
         Armaments: tertiary
-        InitialAmmo: 0
         Ammo: 3
         ReloadCount: 3
-        ReloadDelay: 120
+        ReloadDelay: 90
         AmmoCondition: ammo2 
     WithAmmoPipsDecoration@2:
         Position: BottomLeft
@@ -1693,3 +1667,247 @@ OCAR:
 		MoveSequence: move
     RenderSprites:
         Image: ocar
+
+MH60:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Blackhawk
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		Prerequisites: hpad, hosp, ~aircraft.mh60, ~techlevel.7
+		Queue: Aircraft
+		Description:  Helicopter Gunship with Chainguns.\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 200
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 17500
+	Armor:
+		Type: Medium
+	AppearsOnRadar:
+		ValidRelationships: Ally
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: HeliGunAG
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliGunAA
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	AmmoPool:
+		Name: primary
+		Armaments: primary, secondary
+		Ammo: 10
+		ReloadDelay: 40
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 5
+		FullSequence: pip-yellow
+		AmmoPools: primary
+		RequiresSelection: true
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		InitialStanceAI: HoldFire
+		ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	Rearmable:
+		RearmActors: hpad, aprt, 3fld
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        ResetOnFire: true
+		Delay: 80
+		Count: 1
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
+	ProximityExternalCondition@FIELDMECHANIC:
+		Condition: fieldmechanic
+		ValidRelationships: Ally
+		Range: 1c826
+		RequiresCondition: !airborne && !emp-crate-collected
+	WithRangeCircle@FIELDMECHANIC:
+		Range: 1c826
+		RequiresCondition: !airborne && !emp-crate-collected
+
+UAV:
+	Inherits: ^Plane
+	-ActorLostNotification:
+	Interactable:
+	HitShape:
+	Health:
+		HP: 3500
+	Armor:
+		Type: Aluminium
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+    Huntable:
+	Tooltip:
+		Name: Recon Drone
+	Valued:
+		Cost: 800
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 250
+		Repulsable: False
+		AirborneCondition: airborne
+	AttackBomber:
+		FacingTolerance: 8
+	LeavesTrails:
+		Offsets: -1043,0,0
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Explodes:
+		Weapon: UnitExplodeAirBig
+		EmptyWeapon: UnitExplodeAirBig
+	RevealsShroud:
+		Range: 15c768
+		Type: CenterPosition
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 7c536
+	RenderDetectionCircle:
+        TrailCount: 2
+        Visible: Always
+        UpdateLineTick: 6
+        BorderWidth: 0
+	RenderDetectionCircle:
+	-MapEditorData:
+
+A10B:
+    Inherits: GenericJet
+	Tooltip:
+		Name: A-10 Warthog
+        GenericStancePrefix: false
+        GenericName: A-10 Warthog
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 6
+		Prerequisites: ~anyafld, eye, ~aircraft.a10b, ~techlevel.7
+		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+     -Armament:
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: ChainGun.Yak.Left
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun.Yak.Right
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+		FireDelay: 1
+		PauseOnCondition: !ammo    
+	Armament@TERTIARY:
+        Name: tertiary
+        Weapon: Napalm
+        LocalOffset: 0,-213,-43, 0,213,-43
+        PauseOnCondition: !ammo2
+    AttackAircraft:
+		Armaments: primary, secondary, tertiary
+	AmmoPool@1:
+        Name: primary
+        Armaments: primary, secondary
+		Ammo: 16
+		ReloadDelay: 60
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 2
+        FullSequence: pip-green
+        AmmoPools: primary
+		RequiresSelection: true
+	AmmoPool@2:
+        Name: secondary
+        Armaments: tertiary
+        Ammo: 3
+        ReloadCount: 3
+        ReloadDelay: 90
+        AmmoCondition: ammo2 
+    WithAmmoPipsDecoration@2:
+        Position: BottomLeft
+        Margin: 4, 6
+        PipCount: 1
+        FullSequence: pip-red
+        AmmoPools: secondary
+        RequiresSelection: true
+	WithMuzzleOverlay:
+	Rearmable:
+        AmmoPools: primary, secondary
+		RearmActors: aprt, 2fld, 3fld
+	SpawnActorOnDeath:
+		Actor: A10.Husk
+        RequiresCondition: airborne && !hasairfield
+    RenderSprites:
+        Image: a10

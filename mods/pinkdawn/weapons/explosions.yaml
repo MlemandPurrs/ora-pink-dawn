@@ -211,7 +211,7 @@ HeliCrash:
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 
-ChemTankExplode:
+ChemtankExplode:
 	Inherits: ^DamagingExplosion
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
@@ -442,6 +442,7 @@ MADTankDetonate:
 			Light: 50
 			Heavy: 50
         DamageTypes: Prone50Percent, TriggerProne
+        ValidRelationships: Enemy, Ally, Neutral
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		Size: 7,6
@@ -449,3 +450,35 @@ MADTankDetonate:
 		Explosions: big_frag
 		ImpactSounds: mineblo1.aud
 		ImpactActors: false
+
+#   for crate bad surprise
+FanaticExplode:
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, Flamer
+	Warhead@1Dam: SpreadDamage
+		Spread: 170
+		Damage: 2500
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		AffectsParent: true
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, Flamer
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: flamer2.aud
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Scorch
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx

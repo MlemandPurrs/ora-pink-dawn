@@ -175,6 +175,14 @@ FACT:
 		Amount: 30
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@3fld:
+		Prerequisite: building.3fld
+		Factions: gdia, soviet, sovieta, sovietb, sovietc, bossnod
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@hosp:
+        Prerequisite: building.hosp
+        Factions: gdic
+        ResetOnOwnerChange: true
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
@@ -254,6 +262,13 @@ NUKE:
 	Power:
 		Amount: 100
         RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
+    PowerMultiplier@gdib:
+        Modifier: 150
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuke
@@ -270,12 +285,12 @@ NUKE:
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
+		Types: SpyInfiltrate, SpyInfiltrate2
         Duration: 750
         InfiltratedNotification: BuildingInfiltrated
 		InfiltratedTextNotification: Building Infiltrated.
 	Targetable@Infiltration:
-        TargetTypes: SpyInfiltrate
+        TargetTypes: SpyInfiltrate, SpyInfiltrate2
 	WithDecoration@PowerOutage:
 		Image: nopower
 		Palette: chrome
@@ -328,6 +343,13 @@ NUK2:
 	Power:
 		Amount: 200
         RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
+    PowerMultiplier@gdib:
+        Modifier: 150
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk2
@@ -344,12 +366,12 @@ NUK2:
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
+		Types: SpyInfiltrate, SpyInfiltrate2
         Duration: 750
         InfiltratedNotification: BuildingInfiltrated
 		InfiltratedTextNotification: Building Infiltrated.
 	Targetable@Infiltration:
-        TargetTypes: SpyInfiltrate
+        TargetTypes: SpyInfiltrate, SpyInfiltrate2
 	WithDecoration@PowerOutage:
 		Image: nopower
 		Palette: chrome
@@ -403,6 +425,13 @@ NUK3:
 	Power:
 		Amount: 350
         RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
+    PowerMultiplier@gdib:
+        Modifier: 150
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk3
@@ -419,12 +448,12 @@ NUK3:
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
+		Types: SpyInfiltrate, SpyInfiltrate2
         Duration: 750
         InfiltratedNotification: BuildingInfiltrated
 		InfiltratedTextNotification: Building Infiltrated.
 	Targetable@Infiltration:
-        TargetTypes: SpyInfiltrate
+        TargetTypes: SpyInfiltrate, SpyInfiltrate2
 	WithDecoration@PowerOutage:
 		Image: nopower
 		Palette: chrome
@@ -542,7 +571,7 @@ PROC:
     ResourceValueMultiplier@AIBoost:
         Modifier: 120
         RequiresCondition: ai-income-boost
-	GrantConditionOnBotOwner@AIBoost:
+    GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai
 	Capturable:
@@ -812,7 +841,7 @@ HAND:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e4:
 		Prerequisite: infantry.e4
-		Factions: nod, noda, nodb, nodc, bossnod
+		Factions: nod, nodb, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
@@ -821,6 +850,14 @@ HAND:
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: infantry.bossnod
 		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@e9c:
+		Prerequisite: infantry.e9c
+		Factions: noda
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@terr:
+		Prerequisite: infantry.terr
+		Factions: nodc
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 2048
@@ -924,11 +961,27 @@ AFLD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
+		Factions: gdi, gdia, gdib, gdic, nod, noda, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@arty:
 		Prerequisite: vehicle.arty
 		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@btr:
+		Prerequisite: vehicle.btr
+		Factions: nodb
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@chtk:
+		Prerequisite: vehicle.chtk
+		Factions: noda
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@ftnk:
+		Prerequisite: vehicle.ftnk
+		Factions: nod, nodb, nodc, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@stnk:
+		Prerequisite: vehicle.stnk
+		Factions: nod, nodb, nodc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1137,7 +1190,19 @@ WEAP:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@apc:
 		Prerequisite: vehicle.apc
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
+		Factions: gdi, gdia, gdib, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@htnk:
+        Prerequisite: vehicle.htnk
+        Factions: gdi, gdib, gdic
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@mrpg:
+        Prerequisite: vehicle.mrpg
+        Factions: gdib
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@aav:
+        Prerequisite: vehicle.aav
+        Factions: gdic
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -1253,7 +1318,7 @@ HPAD:
 		BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: vehicleproduction, ~techlevel.5
+		Prerequisites: vehicleproduction, ~!building.3fld, ~techlevel.5
 		Queue: Building.GDI, Building.Nod, Building.Allies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -1317,6 +1382,10 @@ HPAD:
 	ProvidesPrerequisite@bossnod:
 		Prerequisite: aircraft.bossnod
 		Factions: bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@mh60:
+		Prerequisite: aircraft.mh60
+		Factions: gdic
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1404,6 +1473,10 @@ HQ:
 		Name: Communications Center
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
+    GrantConditionOnFaction@gdia:
+        Condition: owner.is.gdia
+        Factions: gdia
+        ResetOnOwnerChange: true
 	Buildable:
     	BuildDuration: 1500
         BuildDurationModifier: 100
@@ -1445,6 +1518,7 @@ HQ:
             bossnod: nodhq
 	SpawnActorPower@RadarScan:
 		PauseOnCondition: lowpower || jammed || emp-affected-structure
+        RequiresCondition: !owner.is.gdia
 		OrderName: RadarScan
 		Actor: camera.scan
 		LifeTime: 300
@@ -1463,6 +1537,29 @@ HQ:
 		EffectSequence: scanping
 		EffectPalette: effect
 		DeploySound: reveal1.aud
+	AirstrikePower@ReconDrone:
+        PauseOnCondition: lowpower || jammed || emp-affected-structure
+        RequiresCondition: owner.is.gdia
+		OrderName: ReconDrone
+		Prerequisites: anyafld
+		Icon: reconuav
+		ChargeInterval: 4500
+		Name: Recon Drone  
+		Description: Reveals a strip of the map.\nDetects cloaked units in sight.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ReconDroneAvailable
+		SelectTargetTextNotification: Select target.
+		EndChargeTextNotification: Recon Drone available.
+		UnitType: uav
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: uavbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 5
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	ExternalCondition@JAMMED:
@@ -1488,6 +1585,12 @@ HQ:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+	InfiltrateForExploration:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -1568,7 +1671,7 @@ MISS:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@GDI:
         Condition: owner.is.gdi
-        Factions: gdi, gdia, gdib, gdic
+        Factions: gdi, gdib, gdic
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1586,6 +1689,12 @@ MISS:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 
 TMPL:
 	Inherits: ^BaseBuilding
@@ -1623,7 +1732,7 @@ TMPL:
 	NukePower@NuclearStrike:
 		OrderName: NukeMissile
 		PauseOnCondition: lowpower || emp-affected-structure || !bio-available
-		Prerequisites: ~global-superweapons
+		Prerequisites: ~!owner.is.noda, ~global-superweapons
 		Icon: abomb
 		Cursor: nuke
 		ChargeInterval: 13500
@@ -1654,6 +1763,40 @@ TMPL:
 		ClockSequence: clock
 		CircleSequence: circles
 		SupportPowerPaletteOrder: 1
+	NukePower@DirtyNuclearStrike:
+		OrderName: DirtyNukeMissile
+		PauseOnCondition: lowpower || emp-affected-structure || !bio-available
+		Prerequisites: ~owner.is.noda, ~global-superweapons
+		Icon: dbomb
+		Cursor: nuke
+		ChargeInterval: 13500
+		Name: Dirty Nuclear Strike
+		Description: Launch a tactical nuclear warhead,\nenhanced with Tiberium.\nApplies heavy damage over a large area.\nIt may mutate Infantry, seeds Tiberium.
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+        EndChargeTextNotification: Nuclear weapon available.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+        InsufficientPowerTextNotification: Insufficient power.
+		LaunchSpeechNotification: NuclearWeaponLaunched
+        LaunchTextNotification: Nuclear weapon launched.
+		IncomingSpeechNotification: NuclearWarheadApproaching
+        IncomingTextNotification: Nuclear warhead approaching.
+		MissileWeapon: atomicdirty
+        MissileImage: atomic
+		MissileDelay: 11
+		SpawnOffset: 3c0,0,-1c512
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		BeaconPoster: atomic
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraRange: 10c0
+        CameraRemoveDelay: 50
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		SupportPowerPaletteOrder: 1
     GrantConditionOnPrerequisite@BioCheck:
         Condition: bio-available
         Prerequisites: bio
@@ -1668,6 +1811,10 @@ TMPL:
 		RequiresCondition: !build-incomplete && !emp-affected-structure
 	WithBuildingBib:
 	ProvidesPrerequisite@buildingname:
+    ProvidesPrerequisite@noda:
+        Prerequisite: owner.is.noda
+        Factions: noda
+        ResetOnOwnerChange: True
 	ProvidesPrerequisite:
 		Prerequisite: anytier3
 	SpawnActorsOnSell:
@@ -1684,6 +1831,12 @@ TMPL:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 
 EYE:
 	Inherits: ^BaseBuilding
@@ -1774,6 +1927,12 @@ EYE:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 
 BIO:
 	Inherits: ^BaseBuilding
@@ -1907,6 +2066,12 @@ NCOM:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 
 SGEN:
 	Inherits: ^BaseBuilding
@@ -2044,3 +2209,51 @@ ANYTIER3:
 	Interactable:
 	Tooltip:
 		Name: Tech Center or Temple of Nod
+
+H2SP:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	SelectionDecorations:
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Valued:
+		Cost: 1000
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 15
+		BuildLimit: 1
+		Prerequisites: miss, ~building.hosp, ~techlevel.7
+		Queue: Building.GDI
+		Description: Maximum one can be built.\n\nEnables Infantry to self-heal.\nUnlocks Ambulance and Blackhawk for production.
+	Tooltip:
+		Name: GDI Hospital
+	ProvidesPrerequisite@buildingname:
+    ProvidesPrerequisite@ISCOPY:
+        Prerequisite: hosp
+        RequiresCondition: !emp-affected-structure
+	Power:
+		Amount: -40
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+ 	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: H2SP.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+    RenderSprites:
+        Image: hosp

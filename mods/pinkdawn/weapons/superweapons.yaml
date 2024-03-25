@@ -48,6 +48,15 @@ Atomic:
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
 
+AtomicDirty:
+    Inherits: Atomic
+	Warhead@1Dam_impact: SpreadDamage
+        DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath, Incendiary
+    Warhead@4Res_areanuke: CreateResource
+        AddsResourceType: Tiberium
+        Size: 2
+        Delay: 3
+
 IonCannon:
 	ValidTargets: Ground, Water, Airplane, Helicopter, Tree
 	Warhead@1Dam_impact: SpreadDamage

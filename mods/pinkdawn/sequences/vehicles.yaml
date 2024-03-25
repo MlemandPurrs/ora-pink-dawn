@@ -390,7 +390,6 @@ mlrs:
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-
 	turret4: mlrb
 		Start: 32
 		Facings: 32
@@ -403,7 +402,6 @@ mlrs:
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-
 	icon: mlrsicon
 
 mlrs.husk:
@@ -567,6 +565,77 @@ t55h.husk:
 		ZOffset: -512
 	turret: t55h
 		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+btr:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	close:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 32
+	turret:
+        Start: 38
+		Facings: 32
+		UseClassicFacings: True
+	icon: btricon
+
+btr.husk:
+	idle: btr
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: btr
+		Start: 38
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+aav:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	idle-water: aav-water
+		Facings: 32
+		UseClassicFacings: True
+	turret: btr
+        Start: 38
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: aavicon
+
+aav.husk:
+	idle: aav
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: aav
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+mrpg:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: mrpgicon
+
+mrpg.husk:
+	idle: mrpg
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512

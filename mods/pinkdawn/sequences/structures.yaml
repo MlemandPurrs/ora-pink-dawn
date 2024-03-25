@@ -1488,6 +1488,10 @@ hosp:
 		Length: *
 		Tick: 80
 		Offset: 0,-2
+	dead: hosp
+		Start: 8
+		Tick: 800
+		Offset: 0,-2
 	bib: mbHOSP
 		UseTilesetExtension: true
 		TilesetOverrides:

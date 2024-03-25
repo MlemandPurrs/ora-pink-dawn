@@ -136,3 +136,11 @@ dd3:
 	muzzle: gunfire2
 		Length: *
 	icon: dd3icon
+
+ca2:
+    Inherits: emp-overlay
+	idle: ca
+		Facings: 16
+	turret: boattur2
+		Facings: 32
+	icon: ca2icon

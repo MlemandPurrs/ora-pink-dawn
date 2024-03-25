@@ -60,6 +60,7 @@ CivilianMaleVoice:
 	Voices:
 		Select: guyyeah1
 		Action: guyokay1
+        Attack: guyokay1
 		Die: nuyell1, nuyell3, nuyell4, nuyell5, nuyell6
 		Burned: yell1
 		Zapped: nuyell3
@@ -69,6 +70,7 @@ CivilianFemaleVoice:
 	Voices:
 		Select: girlyeah
 		Action: girlokay
+        Attack: girlokay
 		Die: nuyell1, nuyell3, nuyell4, nuyell5, nuyell6
 		Burned: yell1
 		Zapped: nuyell3

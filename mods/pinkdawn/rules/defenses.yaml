@@ -144,6 +144,7 @@ GUN2:
 		Queue: Defense.Allies
 	Armament:
 		Weapon: TurretGun2
+		LocalOffset: 512,85,112, 512,-85,112
     RenderSprites:
         Image: gun2
 
@@ -197,6 +198,7 @@ ATWR:
 		LocalYaw: -100,100
 		PauseOnCondition: build-incomplete || reload-air || lowpower
         ReloadingCondition: reload-ground
+        RequiresCondition: !owner.is.gdib
 	Armament@SECONDARY:
         Name: secondary
 		Weapon: TowerMissileAA
@@ -204,7 +206,29 @@ ATWR:
 		LocalYaw: -100,100
 		PauseOnCondition: build-incomplete || reload-ground || lowpower
         ReloadingCondition: reload-air
+        RequiresCondition: !owner.is.gdib
+	Armament@TERTIARY:
+        Name: tertiary
+		Weapon: TowerMissileAGEMP
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+		PauseOnCondition: build-incomplete || reload-air || lowpower
+        ReloadingCondition: reload-ground
+        RequiresCondition: owner.is.gdib
+	Armament@QUARTENARY:
+        Name: quartenary
+		Weapon: TowerMissileAAEMP
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+		PauseOnCondition: build-incomplete || reload-ground || lowpower
+        ReloadingCondition: reload-air
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
     AttackTurreted:
+        Armaments: primary, secondary, tertiary, quartenary
         PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
 	BodyOrientation:
 		QuantizedFacings: 8

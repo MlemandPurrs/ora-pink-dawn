@@ -50,3 +50,10 @@ TargeterforWTNK:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
         ValidTargets: Ground, Water, Tree
+
+DemoManTargeting:
+	ValidTargets: Infantry, Vehicle, Creep
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack2
