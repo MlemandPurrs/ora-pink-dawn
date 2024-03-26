@@ -81,6 +81,7 @@
 #   80. MADTankThump
 #   81. MammothFlamer
 #   82. RPGLauncher
+#   83. APMine
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -2341,8 +2342,8 @@ Maverick:
 	Range: 9c0
 	MinRange: 3c0
 	Report: missile7.aud
-	Burst: 2
-	BurstDelays: 7
+	Burst: 4
+	BurstDelays: 4, 8, 4
 	ValidTargets: Ground, Water, Underwater
 	Projectile: Missile
     	Arm: 0
@@ -3788,3 +3789,30 @@ RPGLauncher:
 RPGLauncher2:
     Inherits: RPGLauncher
     Burst: 6
+
+#   83. Anti-Personnel Land Mine
+APMine:
+	ValidTargets: Infantry, Creep
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 5000
+		AffectsParent: true
+		ValidTargets: Ground
+		InvalidTargets: Mine
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: med_napalm
+		ImpactSounds: mineblo1.aud
+		ImpactActors: false
+	Warhead@Smu: LeaveSmudge
+		SmudgeType: Scorch
+        InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep

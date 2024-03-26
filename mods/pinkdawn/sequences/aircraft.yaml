@@ -183,7 +183,7 @@ frog:
 mh60:
     Inherits: emp-overlay
 	idle:
-		Facings: 16
+		Facings: 32
 	rotor: yrotorlg
 		Length: 4
 	slow-rotor: yrotorlg

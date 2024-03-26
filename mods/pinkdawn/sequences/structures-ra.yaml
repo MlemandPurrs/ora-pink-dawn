@@ -649,7 +649,6 @@ pbox:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 	icon: pboxicon
 
@@ -666,7 +665,6 @@ pbox.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 
 hbox:
@@ -674,7 +672,6 @@ hbox:
 	Defaults:
 		UseTilesetExtension: true
         TilesetOverrides:
-            JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 	idle:
@@ -697,7 +694,6 @@ hbox.husk:
 	Defaults:
 		UseTilesetExtension: true
         TilesetOverrides:
-            JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 	idle: hbox
@@ -846,7 +842,6 @@ gap:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 	icon: gapicon
 
@@ -865,7 +860,6 @@ gap.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 
 agun:
@@ -908,7 +902,6 @@ agun:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 	icon: agunicon
 
@@ -929,7 +922,6 @@ agun.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 
 sam2:
@@ -1011,7 +1003,6 @@ csph:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 	icon: csphicon
     fake-icon: cspficon
@@ -1030,7 +1021,6 @@ csph.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 
 iron:
@@ -1063,7 +1053,6 @@ iron:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 	icon: ironicon
 
@@ -1083,7 +1072,6 @@ iron.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
             TROPIC: TEMPERAT
 
 mslo:
@@ -1091,7 +1079,6 @@ mslo:
 	Defaults:
 		UseTilesetExtension: true
  		TilesetOverrides:
-            JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 	idle:
@@ -1125,7 +1112,6 @@ mslo.husk:
 	Defaults:
 		UseTilesetExtension: true
  		TilesetOverrides:
-            JUNGLE: TEMPERAT
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 	idle: mslo

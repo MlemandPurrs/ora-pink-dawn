@@ -249,7 +249,7 @@ ORCA:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: hpad, anyhq, ~aircraft.gdi, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.gdi, ~!aircraft.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -340,7 +340,7 @@ HELI:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.nod, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.nod, ~!aircraft.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -451,7 +451,7 @@ HEL2:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.allies, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.allies, ~!aircraft.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: Helicopter Gunship with rockets.\nCan detect cloaked units,\nmines and submarines.\n\nCan attack Aircraft, Submarines.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
@@ -595,7 +595,7 @@ HIND:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: 3fld, anyhq, ~aircraft.soviet, ~techlevel.6
+		Prerequisites: 3fld, anyhq, ~aircraft.soviet, ~!aircraft.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: Dual armed, slow helicopter gunship.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -961,7 +961,7 @@ GenericJet:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 10000
+		HP: 11000
 	RevealsShroud:
 		Range: 3c768
 		Type: GroundPosition
@@ -987,7 +987,7 @@ GenericJet:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	AmmoPool:
-		Ammo: 6
+		Ammo: 8
 		AmmoCondition: ammo
 	Selectable:
 		Bounds: 1536, 1194, 0, 85
@@ -999,7 +999,7 @@ GenericJet:
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
-        PipCount: 3
+        PipCount: 4
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
@@ -1037,7 +1037,7 @@ F18:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, ~aircraft.gdi, ~techlevel.6
+		Prerequisites: ~anyafld, ~aircraft.gdi, ~!aircraft.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
 	SpawnActorOnDeath:
 		Actor: F18.Husk
@@ -1059,7 +1059,7 @@ F22:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, anytier3, ~aircraft.f22, ~techlevel.6
+		Prerequisites: ~anyafld, anytier3, ~aircraft.f22, ~!aircraft.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
 	SpawnActorOnDeath:
 		Actor: F22.Husk
@@ -1081,7 +1081,7 @@ F16:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~techlevel.6
+		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~!aircraft.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
 	SpawnActorOnDeath:
 		Actor: F16.Husk
@@ -1103,7 +1103,7 @@ MIG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~techlevel.6
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~!aircraft.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
 	SpawnActorOnDeath:
 		Actor: MIG.Husk
@@ -1132,7 +1132,7 @@ YAK:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.soviet, ~!aircraft.frog, ~techlevel.5
+		Prerequisites: 3fld, ~aircraft.soviet, ~!aircraft.frog, ~!aircraft.nodc, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1180,6 +1180,7 @@ YAK:
     RenderSprites:
         Image: yak
 
+# is faster, more health, double ammo, quicker reload
 FROG:
     Inherits: GenericJet
     Aircraft:
@@ -1187,7 +1188,7 @@ FROG:
     Valued:
 		Cost: 800
 	Health:
-		HP: 6000
+		HP: 9000
 	Selectable:
 		DecorationBounds: 1030, 1028, 0, 2
 	Tooltip:
@@ -1201,7 +1202,7 @@ FROG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.frog, ~techlevel.5
+		Prerequisites: 3fld, ~aircraft.frog, ~!aircraft.nodc, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1217,43 +1218,24 @@ FROG:
 		MuzzleSequence: muzzle
 		FireDelay: 1
 		PauseOnCondition: !ammo    
-	Armament@TERTIARY:
-        Name: tertiary
-        Weapon: Napalm
-        LocalOffset: 0,-213,-43, 0,213,-43
-        PauseOnCondition: !ammo2
     AttackAircraft:
 		Armaments: primary, secondary, tertiary
 	AmmoPool@1:
         Name: primary
         Armaments: primary, secondary
-		Ammo: 16
-		ReloadDelay: 60
+		Ammo: 32
+		ReloadDelay: 40
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
-		PipCount: 2
+		PipCount: 4
         FullSequence: pip-green
         AmmoPools: primary
 		RequiresSelection: true
-	AmmoPool@2:
-        Name: secondary
-        Armaments: tertiary
-        Ammo: 3
-        ReloadCount: 3
-        ReloadDelay: 90
-        AmmoCondition: ammo2 
-    WithAmmoPipsDecoration@2:
-        Position: BottomLeft
-        Margin: 4, 6
-        PipCount: 1
-        FullSequence: pip-red
-        AmmoPools: secondary
-        RequiresSelection: true
 	WithMuzzleOverlay:
 	Rearmable:
-        AmmoPools: primary, secondary
+        AmmoPools: primary
 		RearmActors: aprt, 2fld, 3fld
 	LeavesTrails:
 		Offsets: -853,0,0
@@ -1298,6 +1280,9 @@ NMIG:
 		Cost: 1800
 	Tooltip:
 		Name: MiG Nuclear Bomber
+        GenericStancePrefix: false
+        GenericName: Nuclear Bomber
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
         BuildDuration: 2700
         BuildDurationModifier: 100
@@ -1305,7 +1290,7 @@ NMIG:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 8
 		BuildLimit: 1
-		Prerequisites: ~anyafld, fcom, ~aircraft.nmig, ~techlevel.7
+		Prerequisites: ~anyafld, fcom, ~aircraft.nmig, ~!aircraft.nodc, ~techlevel.7
 		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
 	Armament:
 		Weapon: ParaNuke
@@ -1387,7 +1372,7 @@ RH66:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.bossnod, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.bossnod, ~!aircraft.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: Light helicopter with rockets.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -1685,9 +1670,9 @@ MH60:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, hosp, ~aircraft.mh60, ~techlevel.7
+		Prerequisites: hpad, anyfix, ~aircraft.mh60, ~techlevel.7
 		Queue: Aircraft
-		Description:  Helicopter Gunship with Chainguns.\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description:  Helicopter Gunship with Chainguns.\n\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200

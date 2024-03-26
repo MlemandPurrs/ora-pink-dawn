@@ -183,6 +183,14 @@ FAC2:
 		Prerequisite: building.gun2
 		Factions: alliesc
         ResetOnOwnerChange: true
+    ProvidesPrerequisite@atek:
+        Prerequisite: discount.atek
+        Factions: alliesa
+        ResetOnOwnerChange: true
+    ProvidesPrerequisite@mslo:
+        Prerequisite: discount.mslo
+        Factions: sovietc
+        ResetOnOwnerChange: true
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
@@ -478,6 +486,18 @@ OREF:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
+OREF.Clone:
+    Inherits: OREF
+	Buildable:
+		BuildPaletteOrder: 0
+		Queue: Defense.Allies, Defense.Soviet
+		Prerequisites: fac2, ~techlevel.2
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: oref
+	RenderSprites:
+		Image: oref
+    -MapEditorData:
+
 OSIL:
 	Inherits: ^BaseBuilding
 	Inherits@RESOURCES: ^StoresResources
@@ -559,6 +579,17 @@ OSIL:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+OSIL.Clone:
+    Inherits: OSIL
+	Buildable:
+		BuildPaletteOrder: 4
+		Queue: Defense.Allies, Defense.Soviet
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: osil
+	RenderSprites:
+		Image: osil
+    -MapEditorData:
 
 TENT:
 	Inherits: ^BaseBuilding
@@ -1078,6 +1109,10 @@ FIX2:
 		Prerequisite: aircraft.mh60
 		Factions: gdic
         ResetOnOwnerChange: true
+	ProvidesPrerequisite@nodc:
+		Prerequisite: aircraft.nodc
+		Factions: nodc
+        ResetOnOwnerChange: true
     WithBuildingBib:
 	ProximityExternalCondition:
 		Condition: unit.sellable
@@ -1345,6 +1380,10 @@ FIX2:
 	ProvidesPrerequisite@mh60:
 		Prerequisite: aircraft.mh60
 		Factions: gdic
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nodc:
+		Prerequisite: aircraft.nodc
+		Factions: nodc
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1673,6 +1712,12 @@ ATEK:
 	Inherits@shape: ^2x2Shape
 	Inherits@IDISABLE: ^DisabledOverlay
     Inherits@EMPMechanic: ^EMPApplicableStructure
+    ProductionCostMultiplier@alliesa:
+        Multiplier: 75
+        Prerequisites: discount.atek
+    ProductionTimeMultiplier@alliesa:
+        Multiplier: 80
+        Prerequisites: discount.atek
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -2079,7 +2124,7 @@ CSPH:
 		Footprint: xxx xxx xxx
         SupportPowerPaletteOrder: 2
  	SupportPowerChargeBar:
-    GrantConditionOnFaction@Allies2:
+    GrantConditionOnFaction@alliesb:
         Condition: owner.is.alliesb
         Factions: alliesb
 	MustBeDestroyed:
@@ -2186,6 +2231,12 @@ MSLO:
 	Inherits@shape: ^2x1Shape
 	Inherits@IDISABLE: ^DisabledOverlay
     Inherits@EMPMechanic: ^EMPApplicableStructure
+    ProductionCostMultiplier@sovietc:
+        Multiplier: 80
+        Prerequisites: discount.mslo
+    ProductionTimeMultiplier@sovietc:
+        Multiplier: 80
+        Prerequisites: discount.mslo
 	SelectionDecorations:
 	Selectable:
 		Bounds: 2048, 1024, 0, 0

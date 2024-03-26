@@ -607,8 +607,8 @@ aav:
 	idle-water: aav-water
 		Facings: 32
 		UseClassicFacings: True
-	turret: btr
-        Start: 38
+	turret: aav
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: minigun

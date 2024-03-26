@@ -141,6 +141,19 @@ HARV:
     -WithDecoration@SELFREPAIR:
     -ExternalCondition@UNITSOURCE:
     -GrantCondition@UNITSOURCE:
+    ProductionCostMultiplier@noda:
+        Multiplier: 84
+        Prerequisites: vehicle.chtk
+    ProductionTimeMultiplier@noda:
+        Multiplier: 80
+        Prerequisites: vehicle.chtk
+	DamageMultiplier@noda:
+		RequiresCondition: owner.is.noda
+		Modifier: 90
+    GrantConditionOnFaction@noda:
+		Condition: owner.is.noda
+		Factions: noda
+		ResetOnOwnerChange: True
 	HitShape:
 		Type: Circle
 			Radius: 512
@@ -672,7 +685,7 @@ MAAG:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.gdi, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.gdi, ~!vehicle.aav, ~techlevel.5
 		Queue: Vehicle
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -792,7 +805,7 @@ BTR:
 		Range: 5c128
 	Armament:
 		Weapon: MachineGun
-		LocalOffset: 171,0,85
+		LocalOffset: 213,0,340
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
 	Turreted:
@@ -2160,6 +2173,7 @@ AAV:
 		Range: 5c128
 	Turreted:
 		TurnSpeed: 12
+        Offset: 100,100,68
 	Armament:
 		Weapon: MachineGun
 		LocalOffset: 85,0,171

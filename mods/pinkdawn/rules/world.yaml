@@ -18,7 +18,7 @@
 		OverrideFullFog: full
     Locomotor@FOOT:
 		Name: foot
-		Crushes: crate, mine
+		Crushes: crate, mine, mine2
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
@@ -37,7 +37,7 @@
             Ramp: 100
     Locomotor@FOOT-IMMUNE:
 		Name: foot-immune
-		Crushes: crate, mine
+		Crushes: crate, mine, mine2
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
@@ -122,7 +122,7 @@
 			Shallow: 80
 	Locomotor@CRITTER:
 		Name: critter
-		Crushes: mine
+		Crushes: mine, mine2
 		TerrainSpeeds:
 			Clear: 90
 			Rough: 90
@@ -139,7 +139,7 @@
         TerrainSpeeds:
     Locomotor@FOOT-AMPHIBIAN:
 		Name: foot-amphibian
-		Crushes: crate, mine
+		Crushes: crate, mine, mine2
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
@@ -192,14 +192,14 @@
 		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nSpecial Unit:\n    - A-10 Bomber\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
         Selectable: true
 	Faction@gdib:
-		Name: Tech Specialist
+		Name: Tech Division
 		InternalName: gdib
-		Description: GDI: Tech Specialist\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build MLRS
+		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build MLRS
         Selectable: true
 	Faction@gdic:
-		Name: Special Forces
+		Name: Special Ops
 		InternalName: gdic
-		Description: GDI: Special Forces\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nSpecial Unit:\n    - Blackhawk\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+		Description: GDI: Special Operations\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nSpecial Unit:\n    - Blackhawk\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA
         Selectable: true
 	Faction@nod:
 		Name: Nod
@@ -208,17 +208,17 @@
 	Faction@noda:
 		Name: Bio Command
 		InternalName: noda
-		Description: Nod: Bio Command\n\nFaction Variations:\n    - Flame Tanks are replaced by Chem Tanks\n\nSpecial Unit:\n    - Chem Mortar\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Dirty Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build Stealth Tanks
+		Description: Nod: Bio Command\n\nFaction Variations:\n    - Chem Tanks replace Flame Tanks\n    - Harvesters cheaper and more durable\n\nSpecial Unit:\n    - Chem Mortar\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Dirty Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build Stealth Tanks\n    - Cannot train Thief
         Selectable: true
 	Faction@nodb:
 		Name: Raider Force
 		InternalName: nodb
-		Description: Nod: Raider Force\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike
+		Description: Nod: Raider Force\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Stealth Tank\n    - Cannot train Chem Trooper
         Selectable: true
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\n\nFaction Variations:\n    - \n\nSpecial Unit:\n    - Fanatic\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers
+		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nSpecial Unit:\n    - Fanatic\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
         Selectable: true
 	Faction@Random3:
 		Name: Random Any
@@ -232,7 +232,7 @@
 	Faction@alliesa:
 		Name: Secret Service
 		InternalName: alliesa
-		Description: Allies: Secret Service\n\nFaction Variations:\n    - Spy are improved, can do more\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
+		Description: Allies: Secret Service\n\nFaction Variations:\n    - Spy are improved, can do more\n    - Tech Center is cheaper to build\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesb:
 		Name: Mecha. Assault
@@ -240,9 +240,9 @@
 		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesc:
-		Name: Static Defense
+		Name: Defense Corps
 		InternalName: alliesc
-		Description: Allies: Static Defense\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
+		Description: Allies: Defense Corps\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
         Selectable: true
 	Faction@soviet:
 		Name: Soviet
@@ -251,17 +251,17 @@
 	Faction@sovieta:
 		Name: Shock Division
 		InternalName: sovieta
-		Description: Soviet: Shock Division\n\nFaction Variations:\n    - Improved Tesla technology\n    - Can paradrop Shock Troopers\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs\n    - Cannot use Flame technology
+		Description: Soviet: Shock Division\n\nFaction Variations:\n    - Tesla tech uses less power\n    - Can paradrop Shock Troopers\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs\n    - Cannot use Flame technology
         Selectable: true
 	Faction@sovietb:
-		Name: Armor Division
+		Name: Heavy Armor
 		InternalName: sovietb
-		Description: Soviet: Armor Division\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can paradrop Heavy Tanks\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratanks\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
+		Description: Soviet: Heavy Armor\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can paradrop Heavy Tanks\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratanks\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
         Selectable: true
 	Faction@sovietc:
-		Name: Napalm Division
+		Name: Rocket Comm.
 		InternalName: sovietc
-		Description: Soviet: Napalm Division\nFaction Variations:\n    - Mammoth shoots Fireballs\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Tesla Technology
+		Description: Soviet: Rocket Command\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Missile Silo cheaper to build\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
         Selectable: true
 	Faction@RandomRA:
 		Name: Random RA

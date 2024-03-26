@@ -263,7 +263,7 @@ E5:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: bio, ~infantry.nod, ~techlevel.7
+		Prerequisites: bio, ~infantry.e5, ~techlevel.7
 		Queue: Infantry
 		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
@@ -1029,12 +1029,6 @@ SPY:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
-    ProductionCostMultiplier@alliesa:
-        Multiplier: 150
-        Prerequisites: infantry.spyupg
-    ProductionTimeMultiplier@alliesa:
-        Multiplier: 130
-        Prerequisites: infantry.spyupg
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1361,7 +1355,7 @@ THF:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyfix, ~infantry.nod, ~techlevel.5
+		Prerequisites: anyfix, ~infantry.thf, ~techlevel.5
 		Queue: Infantry
 		Description: Steals credits of enemies.\nHijacks enemy vehicles.\n\nUnarmed.
 	Mobile:
@@ -1386,6 +1380,32 @@ THF:
 	WithInfantryBody:
 		IdleSequences: idle
 		StandSequences: stand
+	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 240
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Dock, Demolish, Move
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakSound: appear1.aud
+		PauseOnCondition: cloak-force-disabled
+        RequiresCondition: owner.is.nodc
+	GrantConditionOnFaction@nodc:
+		Condition: owner.is.nodc
+		Factions: nodc
+		ResetOnOwnerChange: False
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+        InitialDelay: 90
+		CloakDelay: 90
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+        UncloakSound: cloak5.aud
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloakfield-on && !owner.is.nodc
 
 MEGA:
 	Inherits: ^Soldier
@@ -1893,9 +1913,9 @@ TERR:
 		BuildPaletteOrder: 3
 		Prerequisites: anyhq, ~infantry.terr, ~techlevel.3
 		Queue: Infantry
-		Description: Suicide-bomber infantry.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+		Description: Suicide-bomber infantry.\n\nCannot attack Buildings.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Mobile:
-		Speed: 60
+		Speed: 50
 	Health:
 		HP: 5000
 	AutoTarget:
@@ -1906,6 +1926,7 @@ TERR:
         ReloadingCondition: attack-cooldown
 	-AttackFrontal:
 	AttackLeap:
+        Speed: 320
 		Voice: Attack
 		PauseOnCondition: attacking || attack-cooldown
 	AttackMove:
@@ -1925,7 +1946,7 @@ TERR:
 	GrantConditionWhileAiming:
 		Condition: run
 	SpeedMultiplier:
-		Modifier: 150
+		Modifier: 125
 		RequiresCondition: run	
 	Explodes:
 		Weapon: FanaticExplode

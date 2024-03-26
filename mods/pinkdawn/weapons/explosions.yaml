@@ -451,14 +451,14 @@ MADTankDetonate:
 		ImpactSounds: mineblo1.aud
 		ImpactActors: false
 
-#   for crate bad surprise
+#   terrorist goes boom
 FanaticExplode:
 	ValidTargets: Ground, Water, Tree
 	InvalidTargets: Wall, Flamer
 	Warhead@1Dam: SpreadDamage
 		Spread: 170
-		Damage: 2500
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Damage: 1250
+		Falloff: 500, 368, 135, 50, 18, 7, 0
 		AffectsParent: true
 		ValidTargets: Ground, Water, Tree
 		InvalidTargets: Wall, Flamer
@@ -466,7 +466,7 @@ FanaticExplode:
             None: 87
             Light: 100
             Medium: 68
-            Heavy: 25
+            Heavy: 45
             Concrete: 50
             Wood: 100
             Aluminium: 68

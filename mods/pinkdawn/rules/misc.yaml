@@ -645,16 +645,30 @@ csph.colorpicker:
 
 MINV:
 	Inherits: ^Mine
+	Tooltip:
+		Name: Anti-Vehicle Mine
 	RenderSprites:
 		Image: minv
 	Explodes:
 		Weapon: ATMine
 
+MINP:
+	Inherits: ^Mine
+	Mine:
+		CrushClasses: mine
+		DetonateClasses: mine2
+	Tooltip:
+		Name: Anti-Personnel Mine
+	RenderSprites:
+		Image: minp
+	Explodes:
+		Weapon: APMine
+
 MINW:
 	Inherits: ^Mine
     -Cloak:
 	Tooltip:
-		Name: Sea Mine
+		Name: Nautical Mine
 	RenderSprites:
 		Image: minw
 	Cloak:
@@ -672,6 +686,57 @@ MINW:
 	GrantExternalConditionToCrusher:
 		OnCrushCondition: minehit
 		OnCrushDuration: 50
+
+# buildable Land Mine
+MINB:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Valued:
+		Cost: 200
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 1
+	Buildable:
+		BuildDuration: 400
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 1
+		Prerequisites: infantryproduction, ~techlevel.3
+		Queue: Defense.Soviet
+		Description: Can be placed only adjacent to a structure.\nDetonates vs Infantry.
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Health:
+		HP: 1
+	HiddenUnderFog:
+	Tooltip:
+		Name: Anti-Personnel Mine
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	HitShape:
+	Interactable:
+		Bounds: 1024 , 1024
+		DecorationBounds: 1024 , 1024
+	SelectionDecorations:
+	RejectsOrders:
+	WithSpriteBody:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		TerrainTypes: Clear,Road
+		RequiresBaseProvider: False
+		BuildSounds: 
+		UndeploySounds: 
+	KillsSelf:
+		Delay: 1
+		RemoveInstead: false
+    SpawnActorOnDeath:
+        Actor: minp
+        EffectiveOwnerFromOwner: true
+	ActorPreviewPlaceBuildingPreview:
+		PreviewAlpha: 0.65
+    RenderSprites:
+        Image: minp
 
 dummy.qtnk:
 	Interactable:

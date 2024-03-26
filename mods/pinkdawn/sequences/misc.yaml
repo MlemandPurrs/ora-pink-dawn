@@ -684,6 +684,11 @@ minv:
 	idle:
 		ZOffset: -512
 
+minp:
+	idle:
+		ZOffset: -512
+    icon: jminicon
+
 minw:
 	idle:
 		Length: *
@@ -801,3 +806,8 @@ ice04:
 ice05:
 	idle: ice05
 		Length: *
+
+dummyb:
+	idle: blank1
+        Length: *
+    icon: jminicon

@@ -583,6 +583,24 @@ PROC:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
+PROC.Clone:
+    Inherits: PROC
+	Buildable:
+		BuildPaletteOrder: 0
+		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
+		Prerequisites: fact, ~techlevel.2
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: proc
+	RenderSprites:
+		Image: proc
+		FactionImages:
+			nod: nodproc
+			noda: nodproc
+			nodb: nodproc
+			nodc: nodproc
+            bossnod: nodproc
+    -MapEditorData:
+
 SILO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x1Shape
@@ -667,6 +685,23 @@ SILO:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+SILO.Clone:
+    Inherits: SILO
+	Buildable:
+		BuildPaletteOrder: 4
+		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: silo
+	RenderSprites:
+		Image: silo
+		FactionImages:
+			nod: nodsilo
+			noda: nodsilo
+			nodb: nodsilo
+			nodc: nodsilo
+            bossnod: nodsilo
+    -MapEditorData:
 
 PYLE:
 	Inherits: ^BaseBuilding
@@ -851,9 +886,17 @@ HAND:
 		Prerequisite: infantry.bossnod
 		Factions: bossnod
         ResetOnOwnerChange: true
+	ProvidesPrerequisite@thf:
+		Prerequisite: infantry.thf
+		Factions: nod, nodb, nodc
+        ResetOnOwnerChange: true
 	ProvidesPrerequisite@e9c:
 		Prerequisite: infantry.e9c
 		Factions: noda
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@e5:
+		Prerequisite: infantry.e5
+		Factions: nod, noda, nodc
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@terr:
 		Prerequisite: infantry.terr
@@ -981,7 +1024,7 @@ AFLD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@stnk:
 		Prerequisite: vehicle.stnk
-		Factions: nod, nodb, nodc, bossnod
+		Factions: nod, nodc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1386,6 +1429,10 @@ HPAD:
 	ProvidesPrerequisite@mh60:
 		Prerequisite: aircraft.mh60
 		Factions: gdic
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nodc:
+		Prerequisite: aircraft.nodc
+		Factions: nodc
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
