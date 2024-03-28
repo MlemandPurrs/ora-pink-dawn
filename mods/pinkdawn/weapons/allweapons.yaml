@@ -3848,7 +3848,7 @@ ChemBomb:
 		Delay: 5
     Warhead@4Res: CreateResource
         AddsResourceType: Tiberium
-        Size: 1
+        Size: 1,0
         Delay: 3
 
 #   85. Ballistic Sub's rockets

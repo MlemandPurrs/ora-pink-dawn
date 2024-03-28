@@ -54,7 +54,7 @@ AtomicDirty:
         DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath, Incendiary
     Warhead@4Res_areanuke: CreateResource
         AddsResourceType: Tiberium
-        Size: 2
+        Size: 1
         Delay: 3
 
 IonCannon:

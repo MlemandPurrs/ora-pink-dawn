@@ -723,8 +723,12 @@ CARR.Deployed:
     -ProvidesPrerequisite@productionboost:
     -ActorPreviewPlaceBuildingPreview:
     -ExternalCondition@AIRCRAFTREPAIR:
+    -WithDeathAnimation:
+    -GrantConditionOnPrerequisite@HUSKS:
 	RepairsUnits:
 		-RequiresCondition:
+	WithDecoration@AIRCRAFTREPAIR:
+		RequiresCondition: repair.docked
 	GpsDot:
 		String: Ship
 	Explodes:

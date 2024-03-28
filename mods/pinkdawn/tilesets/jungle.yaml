@@ -2780,3 +2780,21 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Road
+	Template@400:
+		Id: 400
+		Images: hill01.jun
+		Size: 4,3
+		Categories: Debris
+		Tiles:
+			0: Rough
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rough
+			7: Rough
+			8: Rock
+			9: Rock
+			10: Rough
+			11: Clear

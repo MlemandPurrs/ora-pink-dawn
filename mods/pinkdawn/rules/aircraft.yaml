@@ -322,6 +322,12 @@ ORCA:
         Condition: heli-shoots
         ArmamentNames: primary, secondary
         RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
 
 HELI:
 	Inherits: ^Helicopter

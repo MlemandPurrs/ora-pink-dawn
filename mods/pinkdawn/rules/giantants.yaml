@@ -76,7 +76,7 @@ BaseAnt:
 	Tooltip:
 		Name: Giant Ant
 	Buildable:
-		Queue: Infantry.GDI, Infantry.Nod, Infantry.Allies, Infantry.Soviet
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 1954
     	BuildDuration: 450

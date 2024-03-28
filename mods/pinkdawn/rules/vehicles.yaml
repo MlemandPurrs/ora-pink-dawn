@@ -1627,7 +1627,7 @@ STNK:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: tmpl, ~vehicle.nod, ~!player.noda, ~!player.nodb, ~techlevel.7
+		Prerequisites: tmpl, ~vehicle.nod, ~!player.noda, ~!player.nodb, ~!player.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Medium-range missile tank.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
@@ -2230,7 +2230,7 @@ MSG:
 	Buildable:
         BuildDuration: 1350
         BuildDurationModifier: 100
-		BuildPaletteOrder: 13
+		BuildPaletteOrder: 16
 		Prerequisites: sgen, ~vehicle.nod, ~player.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Cloaks all units nearby when deployed.\nThe units need to remain stationary,\nand out of combat to be cloaked.\n\nUnarmed.
