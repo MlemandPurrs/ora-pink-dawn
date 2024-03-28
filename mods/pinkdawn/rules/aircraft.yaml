@@ -249,7 +249,7 @@ ORCA:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: hpad, anyhq, ~aircraft.gdi, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.gdi, ~!player.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -298,7 +298,7 @@ ORCA:
 	WithMoveAnimation:
 		MoveSequence: move
 	Rearmable:
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
@@ -340,7 +340,7 @@ HELI:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.nod, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.nod, ~!player.nodc, ~!player.bossnod, ~techlevel.6
 		Queue: Aircraft
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -404,7 +404,7 @@ HELI:
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
@@ -451,7 +451,7 @@ HEL2:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.allies, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.allies, ~!player.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: Helicopter Gunship with rockets.\nCan detect cloaked units,\nmines and submarines.\n\nCan attack Aircraft, Submarines.\nStrong vs Tanks.\nWeak vs Infantry.
         Icon: alticon
@@ -539,7 +539,7 @@ HEL2:
         PauseOnCondition: emp-crate-collected
 	Rearmable:
         AmmoPools: primary, secondary
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
     RenderSprites:
@@ -595,7 +595,7 @@ HIND:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: 3fld, anyhq, ~aircraft.soviet, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: 3fld, anyhq, ~aircraft.soviet, ~!player.nodc, ~techlevel.6
 		Queue: Aircraft
 		Description: Dual armed, slow helicopter gunship.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -684,7 +684,7 @@ HIND:
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary, secondary
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
@@ -837,7 +837,7 @@ BADR.tran:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
 		BuildLimit: 1
-		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~techlevel.6
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~!player.nodc, ~techlevel.6
 		Description: Maximum one can be built.\n\nCargo lifter plane.\n\nSpecial: Paradrop Transport\nTransports any two Vehicle\nor up to ten Infantry units.\nDeploys those with a parachute.\n(use Force Attack to target)\nLand on Airfield to load troops.\n\nUnarmed.
     Armor:
 		Type: Aluminium
@@ -912,7 +912,7 @@ BADR.tran:
 	RenderSprites:
 		Image: badr
 	Rearmable:
-		RearmActors: aprt, 2fld, 3fld
+		RearmActors: aprt, 2fld, 3fld, carr.deployed
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -993,9 +993,9 @@ GenericJet:
 		Bounds: 1536, 1194, 0, 85
 		DecorationBounds: 1706, 1237, 0, 42
 	Repairable:
-		RepairActors: fix, fix2, 2fld, 3fld
+		RepairActors: fix, fix2, 2fld, 3fld, carr.deployed
 	Rearmable:
-		RearmActors: aprt, 2fld, 3fld
+		RearmActors: aprt, 2fld, 3fld, carr.deployed
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
@@ -1037,7 +1037,7 @@ F18:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, ~aircraft.gdi, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: ~anyafld, miss, ~aircraft.gdi, ~!player.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
 	SpawnActorOnDeath:
 		Actor: F18.Husk
@@ -1059,7 +1059,7 @@ F22:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: ~anyafld, anytier3, ~aircraft.f22, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: ~anyafld, anytier3, ~aircraft.nod, ~!player.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry, Aircraft.
 	SpawnActorOnDeath:
 		Actor: F22.Husk
@@ -1081,7 +1081,7 @@ F16:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: ~anyafld, atek, ~aircraft.allies, ~!player.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
 	SpawnActorOnDeath:
 		Actor: F16.Husk
@@ -1103,7 +1103,7 @@ MIG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: ~anyafld, stek, ~aircraft.soviet, ~!player.nodc, ~techlevel.6
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
 	SpawnActorOnDeath:
 		Actor: MIG.Husk
@@ -1132,7 +1132,7 @@ YAK:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.soviet, ~!aircraft.frog, ~!aircraft.nodc, ~techlevel.5
+		Prerequisites: 3fld, ~aircraft.soviet, ~!player.sovietb, ~!player.nodc, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1166,7 +1166,7 @@ YAK:
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary
-		RearmActors: aprt, 2fld, 3fld
+		RearmActors: aprt, 2fld, 3fld, carr.deployed
 	LeavesTrails:
 		Offsets: -853,0,0
 		MovingInterval: 2
@@ -1202,7 +1202,7 @@ FROG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: 3fld, ~aircraft.frog, ~!aircraft.nodc, ~techlevel.5
+		Prerequisites: 3fld, ~aircraft.soviet, ~player.sovietb, ~techlevel.5
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
     -Armament:
 	Armament@PRIMARY:
@@ -1236,7 +1236,7 @@ FROG:
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary
-		RearmActors: aprt, 2fld, 3fld
+		RearmActors: aprt, 2fld, 3fld, carr.deployed
 	LeavesTrails:
 		Offsets: -853,0,0
 		MovingInterval: 2
@@ -1290,7 +1290,7 @@ NMIG:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 8
 		BuildLimit: 1
-		Prerequisites: ~anyafld, fcom, ~aircraft.nmig, ~!aircraft.nodc, ~techlevel.7
+		Prerequisites: ~anyafld, fcom, ~aircraft.soviet, ~!player.sovieta, ~!player.sovietb, ~!player.sovietc, ~!player.nodc, ~techlevel.7
 		Description: Maximum one can be built.\n\nMiG plane modified to carry\none Nuclear para-bomb.\n\nStrong vs Everything.
 	Armament:
 		Weapon: ParaNuke
@@ -1372,7 +1372,7 @@ RH66:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq, ~aircraft.bossnod, ~!aircraft.nodc, ~techlevel.6
+		Prerequisites: hpad, anyhq, ~aircraft.nod, ~player.bossnod, ~techlevel.6
 		Queue: Aircraft
 		Description: Light helicopter with rockets.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Tanks.\nWeak vs Infantry.
 	Aircraft:
@@ -1434,7 +1434,7 @@ RH66:
 		RequiresCondition: !airborne
         PauseOnCondition: emp-crate-collected
 	Rearmable:
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	Cloak:
@@ -1619,7 +1619,7 @@ OCAR:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: fix, ~aircraft.gdi, ~techlevel.7
+		Prerequisites: fix, ~aircraft.gdi, ~!player.nodc, ~techlevel.7
 		Queue: Aircraft
 		Description: VTOL aircraft capable\nof airlifting vehicles.\n\nUnarmed.
 	Aircraft:
@@ -1640,6 +1640,8 @@ OCAR:
             mcv2: heavy
             4tnk: heavy
             t55h: heavy
+            qtnk: heavy
+            4tnf: heavy
 	SpeedMultiplier@carrying:
 		Modifier: 75
 		RequiresCondition: carrying && !heavy
@@ -1670,9 +1672,9 @@ MH60:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyfix, ~aircraft.mh60, ~techlevel.7
+		Prerequisites: hpad, anyfix, ~aircraft.gdi, ~player.gdic, ~techlevel.7
 		Queue: Aircraft
-		Description:  Helicopter Gunship with Chainguns.\n\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description: Helicopter Gunship with Chainguns.\n\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200
@@ -1736,7 +1738,7 @@ MH60:
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
-		RearmActors: hpad, aprt, 3fld
+		RearmActors: hpad, aprt, 3fld, carr.deployed
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
 	ReloadAmmoPool@HEROIC:
@@ -1837,8 +1839,9 @@ A10B:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: ~anyafld, eye, ~aircraft.a10b, ~techlevel.7
+		Prerequisites: ~anyafld, eye, ~aircraft.gdi, ~player.gdia, ~techlevel.7
 		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+        Icon: alticon
      -Armament:
 	Armament@PRIMARY:
         Name: primary
@@ -1890,7 +1893,7 @@ A10B:
 	WithMuzzleOverlay:
 	Rearmable:
         AmmoPools: primary, secondary
-		RearmActors: aprt, 2fld, 3fld
+		RearmActors: aprt, 2fld, 3fld, carr.deployed
 	SpawnActorOnDeath:
 		Actor: A10.Husk
         RequiresCondition: airborne && !hasairfield

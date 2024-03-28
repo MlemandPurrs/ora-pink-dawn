@@ -194,7 +194,7 @@ E4:
     	BuildDuration: 300
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: anyhq, ~infantry.e4, ~techlevel.3
+		Prerequisites: anyhq, ~infantry.nod, ~!player.noda, ~!player.nodc, ~techlevel.3
 		Queue: Infantry
 		Description: Anti-infantry unit.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -263,7 +263,7 @@ E5:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: bio, ~infantry.e5, ~techlevel.7
+		Prerequisites: bio, ~infantry.nod, ~!player.nodb, ~techlevel.7
 		Queue: Infantry
 		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
@@ -490,7 +490,7 @@ E8:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: stek, ~infantry.e8, ~techlevel.6
+		Prerequisites: stek, ~infantry.soviet, ~!player.sovieta, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable fire launcher.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Structures.\nWeak vs Tanks.
 	Mobile:
@@ -1253,7 +1253,7 @@ SHOK:
 		BuildDuration: 700
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: stek, ~infantry.shok, ~techlevel.6
+		Prerequisites: stek, ~infantry.soviet, ~!player.sovietb, ~!player.sovietc, ~techlevel.6
 		Queue: Infantry
 		Description: Infantry with portable tesla coil.\n\nSpecial: Recharging\nCan charge powerless tesla coils.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Mobile:
@@ -1355,7 +1355,7 @@ THF:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyfix, ~infantry.thf, ~techlevel.5
+		Prerequisites: anyfix, ~infantry.nod, ~!player.noda, ~!player.bossnod, ~techlevel.5
 		Queue: Infantry
 		Description: Steals credits of enemies.\nHijacks enemy vehicles.\n\nUnarmed.
 	Mobile:
@@ -1368,7 +1368,9 @@ THF:
 	CaptureManager:
 	Captures:
 		CaptureTypes: hijackable
-		PlayerExperience: 10
+		PlayerExperience: 0
+        EnterCursor: enter-blue
+        EnterBlockedCursor: enter-blue-blocked
 	Infiltrates:
 		Types: ThiefInfiltrate
 		Notification: BuildingInfiltrated
@@ -1423,7 +1425,7 @@ MEGA:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: tmpl, ~infantry.nod, ~techlevel.7
+		Prerequisites: tmpl, ~infantry.nod, ~!player.bossnod, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper mercenary.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -1538,7 +1540,7 @@ E9C:
 	Tooltip:
 		Name: Chemical Mortar
 	Buildable:
-		Prerequisites: bio, ~infantry.e9c, ~techlevel.6
+		Prerequisites: bio, ~infantry.nod, ~player.noda, ~techlevel.6
 		Description: Slow artillery infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs Buildings, slow-moving targets.
 	Mobile:
 		Locomotor: foot-immune
@@ -1560,7 +1562,7 @@ INF:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: ncom, ~infantry.bossnod, ~techlevel.7
+		Prerequisites: ncom, ~infantry.nod, ~player.bossnod, ~techlevel.7
 		Queue: Infantry
 		Description: Specialist recon soldier.\nCan infiltrate to cut enemy power.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -1911,7 +1913,7 @@ TERR:
     	BuildDuration: 350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: anyhq, ~infantry.terr, ~techlevel.3
+		Prerequisites: anyhq, ~infantry.nod, ~player.nodc, ~techlevel.3
 		Queue: Infantry
 		Description: Suicide-bomber infantry.\n\nCannot attack Buildings.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Mobile:

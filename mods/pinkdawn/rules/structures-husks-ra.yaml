@@ -424,3 +424,22 @@ GAP.Husk:
 	TransformOnCapture:
 		ForceHealthPercentage: 35
 		IntoActor: gap
+
+HTUR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 1024
+	Turreted:
+		TurnSpeed: 8
+        InitialFacing: 0
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Tooltip:
+		Name: Grand Turret (Destroyed)
+	Health:
+		HP: 30000
+	RenderSprites:
+		Image: htur.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: htur

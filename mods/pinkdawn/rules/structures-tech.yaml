@@ -224,10 +224,6 @@ SYRD:
 		Prerequisite: navy.soviet
 		Factions: soviet, sovieta, sovietb, sovietc
         ResetOnOwnerChange: true
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: navy.bossnod
-		Factions: bossnod
-        ResetOnOwnerChange: true
 	ProvidesPrerequisite@lst:
 		Prerequisite: navy.lst
 		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
@@ -235,10 +231,6 @@ SYRD:
 	ProvidesPrerequisite@lst2:
 		Prerequisite: navy.lst2
 		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@nts:
-		Prerequisite: navy.nts
-		Factions: soviet
         ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
@@ -462,7 +454,7 @@ APRT:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod, noda, nodb, nodc
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
@@ -471,14 +463,6 @@ APRT:
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
 		Factions: soviet, sovieta, sovietb, sovietc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: aircraft.bossnod
-		Factions: bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@f22:
-		Prerequisite: aircraft.f22
-		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 
 APRT.Husk:

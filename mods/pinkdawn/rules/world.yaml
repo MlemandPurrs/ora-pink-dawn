@@ -189,7 +189,7 @@
 	Faction@gdia:
 		Name: Air Force
 		InternalName: gdia
-		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nSpecial Unit:\n    - A-10 Bomber\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
+		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nSpecial Units:\n    - A-10 Bomber\n    - Carrier\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
         Selectable: true
 	Faction@gdib:
 		Name: Tech Division
@@ -218,8 +218,12 @@
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nSpecial Unit:\n    - Fanatic\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
+		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nSpecial Units:\n    - Fanatic\n    - Toxin Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
         Selectable: true
+	Faction@bossnod:
+		Name: Black Hand
+		InternalName: bossnod
+		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Full\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike
 	Faction@Random3:
 		Name: Random Any
 		InternalName: Random3
@@ -242,7 +246,7 @@
 	Faction@alliesc:
 		Name: Defense Corps
 		InternalName: alliesc
-		Description: Allies: Defense Corps\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
+		Description: Allies: Defense Corps\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Unit:\n    - Grand Turret\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
         Selectable: true
 	Faction@soviet:
 		Name: Soviet
@@ -256,7 +260,7 @@
 	Faction@sovietb:
 		Name: Heavy Armor
 		InternalName: sovietb
-		Description: Soviet: Heavy Armor\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can paradrop Heavy Tanks\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratanks\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
+		Description: Soviet: Heavy Armor\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can air drop Heavy Tanks\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Air Drop\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
         Selectable: true
 	Faction@sovietc:
 		Name: Rocket Comm.
@@ -268,10 +272,6 @@
 		InternalName: Random2
 		RandomFactionMembers: allies, soviet
 		Description: Random RA Faction\nAllies or Soviet will be chosen at random when the game starts.
-	Faction@blackhand:
-		Name: Blackhand
-		InternalName: bossnod
-		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Full\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:

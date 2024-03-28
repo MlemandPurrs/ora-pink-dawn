@@ -144,3 +144,33 @@ ca2:
 	turret: boattur2
 		Facings: 32
 	icon: ca2icon
+
+bsub:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: bsubicon
+
+sb:
+    Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: sbicon
+
+carr:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+	icon: carricon
+
+carr.deployed:
+    Inherits: emp-overlay
+	idle: carr
+		Start: 24
+		Length: 1
+		ZOffset: -1023
+	active: carr
+		Start: 24
+		Length: 1
+		ZOffset: -1023
+	icon: carricon

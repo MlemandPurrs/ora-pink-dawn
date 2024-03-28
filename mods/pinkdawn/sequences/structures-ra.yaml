@@ -1126,3 +1126,42 @@ fenc:
 	idle:
 		Length: 16
 	icon: fencicon
+
+htur:
+    Inherits: emp-overlay
+	idle: blank1 # Empty first frame.
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-5
+	damaged-turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-5
+	make: hturmake
+		Length: *
+		Tick: 80
+		Offset: 0,-5
+	dead: htur
+		Start: 32
+		Tick: 800
+		Offset: 0,-5
+	muzzle: gunfire2
+		Length: *
+	bib: mbSAM2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+		Length: *
+	icon: hturicon
+
+htur.husk:
+	idle: htur
+        Start: 32
+		Offset: 0,-5
+	dead: htur
+		Start: 32
+		Tick: 800
+		Offset: 0,-5

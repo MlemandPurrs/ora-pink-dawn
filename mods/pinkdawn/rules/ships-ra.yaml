@@ -548,7 +548,7 @@ NTS:
         BuildPaletteOrder: 6
 		BuildLimit: 1
 		Queue: Navy
-		Prerequisites: syrd, fcom, ~navy.nts, ~techlevel.7
+		Prerequisites: syrd, fcom, ~navy.soviet, ~!player.sovieta, ~!player.sovietb, ~!player.sovietc, ~techlevel.7
 		Description: Maximum one can be built.\n\nSubmerger nuclear-armed unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nLaunches nuclear torpedo against Ships.\nFires nuclear missile against Ground targets.
 	Health:
 		HP: 40000

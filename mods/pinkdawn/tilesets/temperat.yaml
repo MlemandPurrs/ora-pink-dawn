@@ -398,7 +398,7 @@ Templates:
 			0: Cliff
 			1: Cliff
 			2: Cliff
-			3: Rough
+			3: Clear
 			4: Cliff
 			5: Cliff
 	Template@22:
@@ -439,7 +439,7 @@ Templates:
 		Tiles:
 			0: Clear
 			1: Cliff
-			2: Clear
+			2: Rough
 			3: Cliff
 			4: Cliff
 			5: Clear
@@ -579,7 +579,7 @@ Templates:
 		Tiles:
 			0: Cliff
 			1: Cliff
-			2: Rough
+			2: Clear
 			3: Rough
 			4: Cliff
 			5: Cliff
@@ -609,7 +609,7 @@ Templates:
 		Categories: Cliffs
 		Tiles:
 			0: Cliff
-			1: Clear
+			1: Cliff
 			2: Cliff
 			3: Cliff
 	Template@43:
@@ -618,8 +618,8 @@ Templates:
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
-			0: Clear
-			1: Clear
+			0: Cliff
+			1: Cliff
 			2: Cliff
 			3: Cliff
 	Template@44:
@@ -1026,16 +1026,16 @@ Templates:
 			5: Road
 			6: Road
 			7: Road
-			10: Rough
-			11: Rough
+			10: Clear
+			11: Clear
 	Template@102:
 		Id: 102
 		Images: d10.tem
 		Size: 4,2
 		Categories: Road
 		Tiles:
-			0: Rough
-			1: Ruin
+			0: Clear
+			1: Clear
 			4: Road
 			5: Road
 			6: Road
@@ -1135,12 +1135,12 @@ Templates:
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Rough
+			0: Clear
 			1: Road
-			2: Rough
+			2: Clear
 			3: Road
 			4: Road
-			5: Rough
+			5: Clear
 			6: Clear
 			7: Road
 			8: Ruin
@@ -1182,9 +1182,9 @@ Templates:
 			0: Ruin
 			1: Road
 			2: Road
-			3: Rough
+			3: Clear
 			4: Road
-			5: Rough
+			5: Clear
 	Template@114:
 		Id: 114
 		Images: d22.tem

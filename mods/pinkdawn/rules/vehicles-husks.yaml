@@ -52,6 +52,22 @@ HARV.Husk:
 	RenderSprites:
 		Image: 2trk.husk
 
+TTRK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Toxic Demo Truck (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: ttrk
+	RenderSprites:
+		Image: ttrk.husk
+
 JEEP.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -211,6 +227,22 @@ FTNK.Husk:
 	RenderSprites:
 		Image: ftnk.husk
 
+CHTK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chemical Tank (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: chtk
+	RenderSprites:
+		Image: chtk.husk
+
 STNK.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -228,6 +260,22 @@ STNK.Husk:
 		IntoActor: stnk
 	RenderSprites:
 		Image: stnk.husk
+
+ARTY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Artillery (Destroyed)
+	Health:
+		HP: 5000
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: arty
+	RenderSprites:
+		Image: arty.husk
 
 MSAM.Husk:
 	Inherits: ^Husk
@@ -265,21 +313,21 @@ MLRS.Husk:
 	RenderSprites:
 		Image: mlrs.husk
 
-ARTY.Husk:
-	Inherits: ^Husk
+V2RL.Husk:
+    Inherits: ^Husk
 	Tooltip:
-		Name: Artillery (Destroyed)
+		Name: V2 Launcher (Destroyed)
 	Health:
-		HP: 5000
+		HP: 7500
 	Armor:
 		Type: Light
 	WithIdleOverlay@Burns:
 		Image: fire
 		Sequence: 2
 	TransformOnCapture:
-		IntoActor: arty
+		IntoActor: v2rl
 	RenderSprites:
-		Image: arty.husk
+		Image: v2rl.husk
 
 MHQ.Husk:
 	Inherits: ^Husk
@@ -298,22 +346,6 @@ MHQ.Husk:
 		IntoActor: mhq
 	RenderSprites:
 		Image: mhq.husk
-
-CHTK.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Chemical Tank (Destroyed)
-	Health:
-		HP: 30000
-	Armor:
-		Type: Heavy
-	WithIdleOverlay@Burns:
-		Image: fire
-		Sequence: 1
-	TransformOnCapture:
-		IntoActor: chtk
-	RenderSprites:
-		Image: chtk.husk
 
 MSG.Husk:
 	Inherits: ^Husk
@@ -621,6 +653,27 @@ MNLY.Husk:
 	RenderSprites:
 		Image: 4tnk.husk
 
+4TNF.Husk:
+	Inherits: ^Husk
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Tooltip:
+		Name: Flame Mammoth (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: 4tnf
+	RenderSprites:
+		Image: 4tnf.husk
+
 5TNK.Husk:
 	Inherits: ^Husk
 	HitShape:
@@ -642,6 +695,22 @@ MNLY.Husk:
 	RenderSprites:
 		Image: 5tnk.husk
 
+QTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: M.A.D. Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: qtnk
+	RenderSprites:
+		Image: qtnk.husk
+
 CTNK.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -658,6 +727,22 @@ CTNK.Husk:
 	RenderSprites:
 		Image: ctnk.husk
 
+TNKD.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tank Destroyer (Destroyed)
+	Health:
+		HP: 17500
+	Armor:
+		Type: Medium
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: tnkd
+	RenderSprites:
+		Image: tnkd.husk
+
 TTNK.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -673,22 +758,6 @@ TTNK.Husk:
 		IntoActor: ttnk
 	RenderSprites:
 		Image: ttnk.husk
-
-V2RL.Husk:
-    Inherits: ^Husk
-	Tooltip:
-		Name: V2 Launcher (Destroyed)
-	Health:
-		HP: 7500
-	Armor:
-		Type: Light
-	WithIdleOverlay@Burns:
-		Image: fire
-		Sequence: 2
-	TransformOnCapture:
-		IntoActor: v2rl
-	RenderSprites:
-		Image: v2rl.husk
 
 MGG.Husk:
 	Inherits: ^Husk

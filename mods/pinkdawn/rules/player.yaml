@@ -130,6 +130,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 19
 		Prerequisites: global-husks
+	LobbyPrerequisiteCheckbox@DEFENSEREF:
+		ID: defenseref
+		Label: Defense Refinery
+		Description: Refinery/Silo also can be built at Defense queue
+		Enabled: False
+		DisplayOrder: 20
+		Prerequisites: global-defenseref
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:
@@ -166,3 +173,55 @@ Player:
     ProvidesPrerequisite@TECHVII:
         Prerequisite: techlevel.7
         RequiresCondition: no-dynamic-tech
+    # subfaction prereqs, for easy checking
+    ProvidesPrerequisite@GDI:
+        Prerequisite: player.gdi
+        Factions: gdi
+    ProvidesPrerequisite@GDIA:
+        Prerequisite: player.gdia
+        Factions: gdia
+    ProvidesPrerequisite@GDIB:
+        Prerequisite: player.gdib
+        Factions: gdib
+    ProvidesPrerequisite@GDIC:
+        Prerequisite: player.gdic
+        Factions: gdic
+    ProvidesPrerequisite@Nod:
+        Prerequisite: player.nod
+        Factions: nod
+    ProvidesPrerequisite@NodA:
+        Prerequisite: player.noda
+        Factions: noda
+    ProvidesPrerequisite@NodB:
+        Prerequisite: player.nodb
+        Factions: nodb
+    ProvidesPrerequisite@NodC:
+        Prerequisite: player.nodc
+        Factions: nodc
+    ProvidesPrerequisite@BossNod:
+        Prerequisite: player.bossnod
+        Factions: bossnod
+    ProvidesPrerequisite@Allies:
+        Prerequisite: player.allies
+        Factions: allies
+    ProvidesPrerequisite@AlliesA:
+        Prerequisite: player.alliesa
+        Factions: alliesa
+    ProvidesPrerequisite@AlliesB:
+        Prerequisite: player.alliesb
+        Factions: alliesb
+    ProvidesPrerequisite@AlliesC:
+        Prerequisite: player.alliesc
+        Factions: alliesc
+    ProvidesPrerequisite@Soviet:
+        Prerequisite: player.soviet
+        Factions: soviet
+    ProvidesPrerequisite@SovietA:
+        Prerequisite: player.sovieta
+        Factions: sovieta
+    ProvidesPrerequisite@SovietB:
+        Prerequisite: player.sovietb
+        Factions: sovietb
+    ProvidesPrerequisite@SovietC:
+        Prerequisite: player.sovietc
+        Factions: sovietc

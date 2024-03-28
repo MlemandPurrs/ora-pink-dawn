@@ -2096,3 +2096,90 @@ gun2.husk:
             TROPIC: TEMPERAT
 		Length: *
 		Offset: -1,-1
+
+ctur:
+    Inherits: emp-overlay
+	opening:
+		Start: 0
+		Length: 8
+		Tick: 30
+		Offset: 0,-2
+	idle:
+		Start: 8
+		Facings: 8
+		Offset: 0,-2
+	closing:
+		Start: 40
+		Length: 8
+		Tick: 30
+		Offset: 0,-2
+	closed-idle:
+		Start: 48
+		Offset: 0,-2
+	damaged-opening:
+		Start: 48
+		Length: 8
+		Tick: 30
+		Offset: 0,-2
+	damaged-idle:
+		Start: 55
+		Facings: 8
+		Offset: 0,-2
+	damaged-closing:
+		Start: 88
+		Length: 8
+		Tick: 30
+		Offset: 0,-2
+	damaged-closed-idle:
+		Start: 95
+		Offset: 0,-2
+	dead:
+		Start: 96
+		Tick: 800
+		Offset: 0,-2
+	place:
+		Start: 8
+		Offset: 0,-2
+	make: cturmake
+		Length: *
+		Tick: 50
+		Offset: 0,-2
+	muzzle:
+		Combine:
+			chem-n:
+				Length: *
+				Offset: 1,2
+			chem-nw:
+				Length: *
+				Offset: 8,2
+			chem-w:
+				Length: *
+				Offset: 8,-3
+			chem-sw:
+				Length: *
+				Offset: 7,-6
+			chem-s:
+				Length: *
+				Offset: 1,-6
+			chem-se:
+				Length: *
+				Offset: -5,-6
+			chem-e:
+				Length: *
+				Offset: -7,-3
+			chem-ne:
+				Length: *
+				Offset: -3,2
+		Facings: 8
+		Length: 13
+	icon: cturicon
+
+ctur.husk:
+	idle: ctur
+		Start: 96
+		Length: 1
+		Offset: 0,-2
+	dead: ctur
+		Start: 96
+		Tick: 800
+		Offset: 0,-2

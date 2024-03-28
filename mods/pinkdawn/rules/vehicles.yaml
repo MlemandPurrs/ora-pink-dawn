@@ -143,10 +143,10 @@ HARV:
     -GrantCondition@UNITSOURCE:
     ProductionCostMultiplier@noda:
         Multiplier: 84
-        Prerequisites: vehicle.chtk
+        Prerequisites: player.noda
     ProductionTimeMultiplier@noda:
         Multiplier: 80
-        Prerequisites: vehicle.chtk
+        Prerequisites: player.noda
 	DamageMultiplier@noda:
 		RequiresCondition: owner.is.noda
 		Modifier: 90
@@ -174,7 +174,7 @@ HARV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Harvester:
-        DeliveryBuildings: proc
+        DeliveryBuildings: proc, proc.clone
 		Resources: Tiberium, BlueTiberium, RedTiberium
 		Capacity: 21
 		BaleLoadDelay: 12
@@ -340,6 +340,106 @@ HARV:
 	RenderSprites:
 		Image: 2trk
 
+TTRK:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall || emp-crate-collected)
+	Valued:
+		Cost: 2100
+	Tooltip:
+		Name: Toxin Demolition Truck
+        GenericStancePrefix: false
+        GenericName: Toxin Truck
+        GenericVisibility: Ally, Neutral, Enemy
+	Buildable:
+    	BuildDuration: 3500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 15
+		Prerequisites: bio, ~vehicle.nod, ~player.nodc, ~techlevel.6
+		Queue: Vehicle
+		Description: Transports chemical demolition charge.\n\nCan be deployed for instant detonation.
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	Mobile:
+        Locomotor: wheeled-non-crusher
+        TurnSpeed: 12
+		Speed: 60
+		PauseOnCondition: emp-crate-collected || boarding
+	RevealsShroud:
+		Range: 4c0
+	Passenger:
+        CargoType: Vehicle2
+		CustomPipType: pip-blue
+	Explodes:
+		Weapon: ChemBomb
+		EmptyWeapon: ChemBomb
+		DamageSource: Killer
+	AttackFrontal:
+		FacingTolerance: 512
+        PauseOnCondition: emp-crate-collected
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+        PauseOnCondition: emp-crate-collected
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+	Chronoshiftable:
+		ExplodeInstead: true
+	RevealOnDeath:
+		Duration: 50
+		Radius: 2c512
+        RevealForRelationships: Ally, Neutral, Enemy
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || oncarryall
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+
 JEEP:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -429,7 +529,7 @@ BGGY:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: vehicleproduction, ~vehicle.bggy, ~techlevel.2
+		Prerequisites: vehicleproduction, ~vehicle.nod, ~techlevel.2
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -504,7 +604,7 @@ BIKE:
         BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anyhq, ~vehicle.bggy, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.nod, ~techlevel.5
 		Queue: Vehicle
 		Description: Fast scout vehicle with rockets.\nCan detect cloaked units and mines.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
@@ -584,7 +684,7 @@ APC:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction, ~vehicle.apc, ~techlevel.4
+		Prerequisites: infantryproduction, ~!vehicle.soviet, ~!player.gdic, ~!player.nodb, ~techlevel.4
 		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -685,7 +785,7 @@ MAAG:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.gdi, ~!vehicle.aav, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.gdi, ~!player.gdic, ~techlevel.5
 		Queue: Vehicle
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -771,6 +871,120 @@ MAAG:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+AAV:
+	Inherits: ^TrackedVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@TRANSPORT: ^Transport
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Amphibious Assault Vehicle
+        GenericStancePrefix: false
+        GenericName: AAV
+        GenericVisibility: Ally, Neutral, Enemy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: infantryproduction, ~vehicle.gdi, ~player.gdic, ~techlevel.4
+		Queue: Vehicle
+		Description: Amphibian infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: tracked-amphibian
+		TurnSpeed: 12
+		Speed: 110
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
+	Health:
+		HP: 20000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 5c128
+	Turreted:
+		TurnSpeed: 12
+        Offset: 100,100,68
+	Armament:
+		Weapon: MachineGun
+		LocalOffset: 85,0,171
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	WithFacingSpriteBody:
+		RequiresCondition: !onwater
+	WithFacingSpriteBody@WATER:
+		Sequence: idle-water
+		Name: body-water
+		RequiresCondition: onwater
+	GrantConditionOnTerrain:
+		TerrainTypes: Water
+		Condition: onwater
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		UnloadVoice: Unload
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+            snip: sniperinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Sellable:
+		RequiresCondition: unit.sellable && !loaded
+    Capturable:
+        RequiresCondition: !loaded
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+    RevealsShroudMultiplier@heroic:
+        Modifier: 150
+        RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
 BTR:
 	Inherits: ^TrackedVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -789,7 +1003,7 @@ BTR:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction, ~vehicle.btr, ~techlevel.4
+		Prerequisites: infantryproduction, ~vehicle.nod, ~player.nodb, ~techlevel.4
 		Queue: Vehicle
 		Description: Fast infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
@@ -889,7 +1103,7 @@ LTNK:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: afld, ~vehicle.nod, ~techlevel.3
+		Prerequisites: afld, ~vehicle.nod, ~!player.bossnod, ~techlevel.3
 		Queue: Vehicle
 		Description: Fast, light tank.\n\nCannot attack Air units.\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:
@@ -1051,7 +1265,7 @@ FTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix, ~vehicle.nod, ~!vehicle.chtk, ~techlevel.4
+		Prerequisites: anyfix, ~vehicle.nod, ~!player.noda, ~!player.bossnod, ~techlevel.4
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -1118,6 +1332,79 @@ FTNK:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+CHTK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Chemical Tank
+	Buildable:
+    	BuildDuration: 1650
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: bio, ~vehicle.nod, ~player.noda, ~techlevel.4
+		Queue: Vehicle
+		Description: Heavily armored chemicals-spraying vehicle.\n\nStrong vs all Ground units.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 60
+		PauseOnCondition: dont-move || emp-crate-collected || boarding
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Armament:
+		Weapon: BigChemSpray
+		LocalOffset: 512,128,42, 512,-128,42
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: ChemtankExplode
+		EmptyWeapon: ChemtankExplode
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
+    SpeedMultiplier@DONTTURN:
+        Modifier: 0
+        RequiresCondition: dont-move
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
 HTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -1135,7 +1422,7 @@ HTNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: miss, ~vehicle.htnk, ~techlevel.6
+		Prerequisites: miss, ~vehicle.gdi, ~!player.gdia, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored GDI Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
@@ -1216,6 +1503,114 @@ HTNK:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+WTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Selectable:
+		DecorationBounds: 1194, 1194
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Microwave Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: miss, ~vehicle.nod, ~player.bossnod, ~techlevel.7
+		Queue: Vehicle
+		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo full.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
+	Mobile:
+		Locomotor: tracked-crusher
+		Speed: 60
+		TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 12
+	Armament:
+        Name: primary
+		Weapon: MicroWave
+		FireDelay: 7
+		LocalOffset: 500,0,140
+		MuzzleSequence: muzzle
+		PauseOnCondition: emp-crate-collected || !ammo
+	Armament@Sound:
+        Name: secondary
+		Weapon: MicroWaveSound
+		PauseOnCondition: emp-crate-collected || !ammo
+    Armament@AIHelper:
+        Name: tertiary
+        Weapon: TargeterforWTNK
+        PauseOnCondition: ammo || emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+        Armaments: primary, secondary, tertiary
+		TargetFrozenActors: True
+		OpportunityFire: False
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	JamsMissiles:
+		Range: 3c0
+		DeflectionRelationships: Neutral, Enemy
+        RequiresCondition: ( ammo == 3 ) && !oncarryall
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 3c0
+		Color: 0000FF80
+        RequiresCondition: ( ammo == 3 ) && !oncarryall
+ 	AmmoPool:
+        Name: primary
+        Armaments: primary
+		Ammo: 3
+        InitialAmmo: 1
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 3
+        AmmoPools: primary
+        FullSequence: pip-yellow
+		RequiresSelection: false
+	ReloadAmmoPool:
+		Delay: 132
+		Count: 1
+        PauseOnCondition: emp-crate-collected
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
 STNK:
 	Inherits: ^Vehicle
 	Inherits@UpgradeCrates: ^AcceptsUpgradeCrates
@@ -1232,7 +1627,7 @@ STNK:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: tmpl, ~vehicle.stnk, ~techlevel.7
+		Prerequisites: tmpl, ~vehicle.nod, ~!player.noda, ~!player.nodb, ~techlevel.7
 		Queue: Vehicle
 		Description: Medium-range missile tank.\n\nSpecial: Cloaking\nInvisible out of combat.\n\nCan attack Aircraft.\nStrong vs Vehicles, Tanks.\nWeak vs Infantry.
 	Mobile:
@@ -1313,7 +1708,7 @@ ARTY:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyhq, ~vehicle.arty, ~techlevel.5
+		Prerequisites: anyhq, ~!vehicle.gdi, ~!vehicle.soviet, ~techlevel.5
 		Queue: Vehicle
 		Description: Long-range artillery.\n\nStrong vs Infantry and Buildings.
 	Mobile:
@@ -1386,6 +1781,79 @@ ARTY:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+MRPG:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: RPG Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: anyhq, ~vehicle.gdi, ~player.gdib, ~techlevel.5
+		Queue: Vehicle
+		Description: Fast-firing artillery.\n\nCan attack Aircraft.\nStrong vs Buildings.\nWeak vs Infantry.
+	Mobile:
+    	Locomotor: tracked-non-crusher
+		TurnSpeed: 12
+		Speed: 70
+		PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 10000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 6c0
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: RPGLauncher
+        LocalOffset: 43, 43, 256, 43, -43, 256
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+ 	Armament@SECONDARY:
+        Name: secondary
+		Weapon: RPGLauncher2
+        LocalOffset: 43, 43, 256, 43, -43, 256
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
+	AttackFrontal:
+        Armaments: primary, secondary
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True 
+        FacingTolerance: 0
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
 MSAM:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -1403,7 +1871,7 @@ MSAM:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: eye, ~vehicle.gdi, ~!vehicle.mrpg, ~techlevel.7
+		Prerequisites: eye, ~vehicle.gdi, ~!player.gdib, ~techlevel.7
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
 	Mobile:
@@ -1499,7 +1967,7 @@ MLRS:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: bio, ~vehicle.nod, ~techlevel.7
+		Prerequisites: bio, ~vehicle.nod, ~!player.nodc, ~techlevel.7
 		Queue: Vehicle
 		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
 	Mobile:
@@ -1719,187 +2187,6 @@ MHQ:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
-WTNK:
-	Inherits: ^TrackedVehicle
-	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetforTanks
-	Selectable:
-		DecorationBounds: 1194, 1194
-	Valued:
-		Cost: 1500
-	Tooltip:
-		Name: Microwave Tank
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-        BuildDuration: 2100
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 6
-		Prerequisites: miss, ~vehicle.bossnod, ~techlevel.7
-		Queue: Vehicle
-		Description: Tank with heat based gun.\n\nSpecial: Jams Missiles\nDeflects incoming missiles\nwhen has ammo full.\n\nDisables Vehicle and Defenses.\nStrong versus Infantry.
-	Mobile:
-		Locomotor: tracked-crusher
-		Speed: 60
-		TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected || boarding
-	Health:
-		HP: 45000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 5c128
-	WithSpriteTurret:
-	Turreted:
-		TurnSpeed: 12
-	Armament:
-        Name: primary
-		Weapon: MicroWave
-		FireDelay: 7
-		LocalOffset: 500,0,140
-		MuzzleSequence: muzzle
-		PauseOnCondition: emp-crate-collected || !ammo
-	Armament@Sound:
-        Name: secondary
-		Weapon: MicroWaveSound
-		PauseOnCondition: emp-crate-collected || !ammo
-    Armament@AIHelper:
-        Name: tertiary
-        Weapon: TargeterforWTNK
-        PauseOnCondition: ammo || emp-crate-collected
-	AttackMove:
-		Voice: Attack
-	AttackTurreted:
-        Armaments: primary, secondary, tertiary
-		TargetFrozenActors: True
-		OpportunityFire: False
-		Voice: Attack
-        PauseOnCondition: emp-crate-collected
-	WithMuzzleOverlay:
-	Explodes:
-		Weapon: UnitExplodeBig
-		EmptyWeapon: UnitExplodeBig
-	JamsMissiles:
-		Range: 3c0
-		DeflectionRelationships: Neutral, Enemy
-        RequiresCondition: ( ammo == 3 ) && !oncarryall
-	WithRangeCircle@JAMMER:
-		Type: jammer
-		Range: 3c0
-		Color: 0000FF80
-        RequiresCondition: ( ammo == 3 ) && !oncarryall
- 	AmmoPool:
-        Name: primary
-        Armaments: primary
-		Ammo: 3
-        InitialAmmo: 1
-		AmmoCondition: ammo
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-        PipCount: 3
-        AmmoPools: primary
-        FullSequence: pip-yellow
-		RequiresSelection: false
-	ReloadAmmoPool:
-		Delay: 132
-		Count: 1
-        PauseOnCondition: emp-crate-collected
-    ExternalCondition@CloakingField:
-        Condition: cloakfield-on
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		UncloakSound: cloak5.aud
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
-		RequiresCondition: cloakfield-on
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-CHTK:
-	Inherits: ^TrackedVehicle
-	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Valued:
-		Cost: 1200
-	Tooltip:
-		Name: Chemical Tank
-	Buildable:
-    	BuildDuration: 1650
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 7
-		Prerequisites: bio, ~vehicle.chtk, ~techlevel.4
-		Queue: Vehicle
-		Description: Heavily armored chemicals-spraying vehicle.\n\nStrong vs all Ground units.
-	Mobile:
-        Locomotor: tracked-crusher
-		TurnSpeed: 12
-		Speed: 60
-		PauseOnCondition: dont-move || emp-crate-collected || boarding
-	Health:
-		HP: 60000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 4c128
-	Armament:
-		Weapon: BigChemSpray
-		LocalOffset: 512,128,42, 512,-128,42
-		MuzzleSequence: muzzle
-        PauseOnCondition: emp-crate-collected
-	AttackFrontal:
-        FacingTolerance: 0
-        Voice: Attack
-        PauseOnCondition: emp-crate-collected
-	AttackMove:
-		Voice: Attack
-	WithMuzzleOverlay:
-	Explodes:
-		Weapon: ChemtankExplode
-		EmptyWeapon: ChemtankExplode
-	GrantConditionOnAttack:
-		Condition: dont-move
-		RevokeDelay: 16
-		RevokeOnNewTarget: False
-		RevokeAll: True
-    SpeedMultiplier@DONTTURN:
-        Modifier: 0
-        RequiresCondition: dont-move
-	Selectable:
-		DecorationBounds: 1450, 1450, 0, -128
-    ExternalCondition@CloakingField:
-        Condition: cloakfield-on
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		UncloakSound: cloak5.aud
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || oncarryall
-		RequiresCondition: cloakfield-on
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
 MSG:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
@@ -1944,7 +2231,7 @@ MSG:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: sgen, ~vehicle.bossnod, ~techlevel.7
+		Prerequisites: sgen, ~vehicle.nod, ~player.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Cloaks all units nearby when deployed.\nThe units need to remain stationary,\nand out of combat to be cloaked.\n\nUnarmed.
 	Health:
@@ -2015,7 +2302,7 @@ T55H:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: ncom, ~vehicle.bossnod, ~techlevel.7
+		Prerequisites: ncom, ~vehicle.nod, ~player.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Maximum one can be built.\n\nExperimental modified tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nScorpion tail shoots Laser.\nStrong vs Everything.
 	Mobile:
@@ -2130,193 +2417,6 @@ T55H:
 		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
-	RevealOnFire:
-		ArmamentNames: primary, secondary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-AAV:
-	Inherits: ^TrackedVehicle
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@TRANSPORT: ^Transport
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Amphibious Assault Vehicle
-        GenericStancePrefix: false
-        GenericName: AAV
-        GenericVisibility: Ally, Neutral, Enemy
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-		BuildDuration: 900
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction, ~vehicle.aav, ~techlevel.4
-		Queue: Vehicle
-		Description: Amphibian infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
-	Mobile:
-        Locomotor: tracked-amphibian
-		TurnSpeed: 12
-		Speed: 110
-		PauseOnCondition: notmobile || emp-crate-collected || boarding
-	Health:
-		HP: 20000
-	Armor:
-		Type: Medium
-	RevealsShroud:
-		Range: 5c128
-	Turreted:
-		TurnSpeed: 12
-        Offset: 100,100,68
-	Armament:
-		Weapon: MachineGun
-		LocalOffset: 85,0,171
-		MuzzleSequence: muzzle
-        PauseOnCondition: emp-crate-collected
-	AttackTurreted:
-        Voice: Attack
-        PauseOnCondition: emp-crate-collected
-	AttackMove:
-		Voice: Attack
-	WithMuzzleOverlay:
-	WithSpriteTurret:
-	WithFacingSpriteBody:
-		RequiresCondition: !onwater
-	WithFacingSpriteBody@WATER:
-		Sequence: idle-water
-		Name: body-water
-		RequiresCondition: onwater
-	GrantConditionOnTerrain:
-		TerrainTypes: Water
-		Condition: onwater
-	Cargo:
-		Types: Infantry
-		MaxWeight: 5
-		UnloadVoice: Unload
-        LoadingCondition: notmobile
-        LoadedCondition: loaded
-		PassengerConditions:
-			rmbo: commandoinside
-            tany: commandoinside
-            volk: commandoinside
-            mega: commandoinside
-            snip: sniperinside
-	WithDecoration@COMMANDOSKULL:
-		Image: pips
-		Sequence: pip-skull
-		Palette: effect
-		Position: TopLeft
-		ValidRelationships: Ally
-		RequiresCondition: commandoinside
-	WithDecoration@CROSSHAIR:
-		Image: pips
-		Sequence: pip-sniper
-		Palette: effect
-		Position: TopLeft
-		ValidRelationships: Ally
-		RequiresCondition: sniperinside
-	Explodes:
-		Weapon: UnitExplodeBig
-		EmptyWeapon: UnitExplodeBig
-	Sellable:
-		RequiresCondition: unit.sellable && !loaded
-    Capturable:
-        RequiresCondition: !loaded
-    ExternalCondition@CloakingField:
-        Condition: cloakfield-on
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		UncloakSound: cloak5.aud
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
-		RequiresCondition: cloakfield-on
-    RevealsShroudMultiplier@heroic:
-        Modifier: 150
-        RequiresCondition: rank-heroic
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal
-
-MRPG:
-	Inherits: ^Vehicle
-	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Valued:
-		Cost: 700
-	Tooltip:
-		Name: RPG Launcher
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-        BuildDuration: 1200
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 8
-		Prerequisites: anyhq, ~vehicle.mrpg, ~techlevel.5
-		Queue: Vehicle
-		Description: Fast-firing artillery.\n\nCan attack Aircraft.\nStrong vs Buildings.\nWeak vs Infantry.
-	Mobile:
-    	Locomotor: tracked-non-crusher
-		TurnSpeed: 12
-		Speed: 70
-		PauseOnCondition: emp-crate-collected || boarding
-	Health:
-		HP: 10000
-	Armor:
-		Type: Medium
-	RevealsShroud:
-		Range: 6c0
-	Armament@PRIMARY:
-        Name: primary
-		Weapon: RPGLauncher
-        LocalOffset: 43, 43, 256, 43, -43, 256
-		LocalYaw: 100, -100
-		PauseOnCondition: emp-crate-collected
-        RequiresCondition: !rank-heroic
- 	Armament@SECONDARY:
-        Name: secondary
-		Weapon: RPGLauncher2
-        LocalOffset: 43, 43, 256, 43, -43, 256
-		LocalYaw: 100, -100
-		PauseOnCondition: emp-crate-collected
-        RequiresCondition: rank-heroic
-	AttackFrontal:
-        Armaments: primary, secondary
-		TargetFrozenActors: True
-		ForceFireIgnoresActors: True 
-        FacingTolerance: 0
-        Voice: Attack
-		PauseOnCondition: emp-crate-collected
-	AttackMove:
-		Voice: Attack
-    ExternalCondition@CloakingField:
-        Condition: cloakfield-on
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		UncloakSound: cloak5.aud
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
-		RequiresCondition: cloakfield-on
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy

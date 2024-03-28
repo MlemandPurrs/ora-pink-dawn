@@ -495,3 +495,17 @@ LTUR.Husk:
 	TransformOnCapture:
 		ForceHealthPercentage: 35
 		IntoActor: ltur
+
+CTUR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 1024,1024
+	Tooltip:
+		Name: Chemical Turret (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: ctur.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: ctur

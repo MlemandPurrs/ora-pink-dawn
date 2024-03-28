@@ -82,6 +82,9 @@
 #   81. MammothFlamer
 #   82. RPGLauncher
 #   83. APMine
+#   84. ChemBomb
+#   85. BallisticMissiles
+#   86. HeavyTurretGun
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -910,7 +913,6 @@ StnkRocketsAG:
 		Arm: 0
 		Blockable: true
 		Inaccuracy: 213
-        HorizontalRateOfTurn: 40
 		Image: DRAGON
 		Shadow: true
 		HorizontalRateOfTurn: 60
@@ -1546,8 +1548,8 @@ Vulcan:
 
 #   29. Patrol boat Rockets
 BoatMissile:
-	ReloadDelay: 35
-	Range: 7c512
+	ReloadDelay: 40
+	Range: 8c512
 	Burst: 2
 	BurstDelays: 10
 	MinRange: 0c512
@@ -3226,7 +3228,7 @@ MortarShell:
 #   68. Turret's Laser
 TurretLaser:
 	ReloadDelay: 45
-	Range: 7c512
+	Range: 6c256
 	Report: lastur1.aud
 	Projectile: LaserZap
 		Width: 45
@@ -3816,3 +3818,131 @@ APMine:
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
         InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+
+#   84. Toxin Truck's Bomb
+ChemBomb:
+	ValidTargets: Ground, Water, Tree
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c768
+		Damage: 5000
+		Falloff: 1000, 368, 135, 50
+		AffectsParent: true
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: flamer2.aud, chembomb.aud
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall, Trees
+		Size: 1
+		Delay: 5
+    Warhead@4Res: CreateResource
+        AddsResourceType: Tiberium
+        Size: 1
+        Delay: 3
+
+#   85. Ballistic Sub's rockets
+BallisticMissiles:
+	ReloadDelay: 80
+	Range: 10c256
+	MinRange: 3c128
+	Burst: 4
+	BurstDelays: 7
+	TargetActorCenter: true
+	ValidTargets: Ground, Water
+	Report: rocket2.aud
+	Projectile: Bullet
+		Blockable: false
+		Image: DRAGON
+		Shadow: true
+		TrailImage: smokey
+		Inaccuracy: 1c768
+		LaunchAngle: 124
+		Speed: 341
+	Warhead@1Dam: SpreadDamage
+		Spread: 683
+		Damage: 6000
+		ValidTargets: Ground
+        Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: med_frag
+		ImpactSounds: xplobig4.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water
+	Warhead@5EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
+#   86. Grand Turret's cannons
+HeavyTurretGun:
+	ReloadDelay: 150
+	Range: 8c512
+	MinRange: 2c256
+	Burst: 3
+	BurstDelays: 8
+    Report: hvygun10.aud
+    ValidTargets: Ground, Water
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 204
+		Shadow: true
+		LaunchAngle: 56
+		Inaccuracy: 1c256
+        Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 15000
+        ValidTargets: Ground, Tree, Wall, Submarine
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ValidTargets: Ground, Tree
+        ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ground, Ship, WaterStructure, Bridge
+    Warhead@5Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true

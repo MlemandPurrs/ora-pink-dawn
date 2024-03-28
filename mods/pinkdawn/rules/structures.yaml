@@ -175,14 +175,6 @@ FACT:
 		Amount: 30
         RequiresCondition: !build-incomplete && !emp-affected-structure
 	ProvidesPrerequisite@buildingname:
-	ProvidesPrerequisite@3fld:
-		Prerequisite: building.3fld
-		Factions: gdia, soviet, sovieta, sovietb, sovietc, bossnod
-        ResetOnOwnerChange: true
-    ProvidesPrerequisite@hosp:
-        Prerequisite: building.hosp
-        Factions: gdic
-        ResetOnOwnerChange: true
 	Buildable:
         BuildDuration: 3900
         BuildDurationModifier: 100
@@ -588,7 +580,7 @@ PROC.Clone:
 	Buildable:
 		BuildPaletteOrder: 0
 		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
-		Prerequisites: fact, ~techlevel.2
+		Prerequisites: fact, ~techlevel.2, ~global-defenseref
 	ProvidesPrerequisite@ISACOPY:
         Prerequisite: proc
 	RenderSprites:
@@ -690,6 +682,7 @@ SILO.Clone:
     Inherits: SILO
 	Buildable:
 		BuildPaletteOrder: 4
+		Prerequisites: proc, ~techlevel.2, ~global-defenseref
 		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
 	ProvidesPrerequisite@ISACOPY:
         Prerequisite: silo
@@ -872,35 +865,11 @@ HAND:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@nod:
 		Prerequisite: infantry.nod
-		Factions: nod, noda, nodb, nodc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@e4:
-		Prerequisite: infantry.e4
-		Factions: nod, nodb, bossnod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
 		Factions: gdi, gdia, gdib, gdic, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: infantry.bossnod
-		Factions: bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@thf:
-		Prerequisite: infantry.thf
-		Factions: nod, nodb, nodc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@e9c:
-		Prerequisite: infantry.e9c
-		Factions: noda
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@e5:
-		Prerequisite: infantry.e5
-		Factions: nod, noda, nodc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@terr:
-		Prerequisite: infantry.terr
-		Factions: nodc
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 2048
@@ -988,7 +957,7 @@ AFLD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@nod:
 		Prerequisite: vehicle.nod
-		Factions: nod, noda, nodb, nodc
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
@@ -997,34 +966,6 @@ AFLD:
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
 		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bggy:
-		Prerequisite: vehicle.bggy
-		Factions: nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@apc:
-		Prerequisite: vehicle.apc
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodc, allies, alliesa, alliesb, alliesc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@arty:
-		Prerequisite: vehicle.arty
-		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@btr:
-		Prerequisite: vehicle.btr
-		Factions: nodb
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@chtk:
-		Prerequisite: vehicle.chtk
-		Factions: noda
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@ftnk:
-		Prerequisite: vehicle.ftnk
-		Factions: nod, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@stnk:
-		Prerequisite: vehicle.stnk
-		Factions: nod, nodc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1110,9 +1051,9 @@ UFLD:
 		Amount: -40
         RequiresCondition: !build-incomplete || emp-affected-structure
 	ProvidesPrerequisite@buildingname:
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: vehicle.bossnod
-		Factions: bossnod
+	ProvidesPrerequisite@nod:
+		Prerequisite: vehicle.nod
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
@@ -1121,18 +1062,6 @@ UFLD:
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
 		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bggy:
-		Prerequisite: vehicle.bggy
-		Factions: nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@apc:
-		Prerequisite: vehicle.apc
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@arty:
-		Prerequisite: vehicle.arty
-		Factions: nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1230,22 +1159,6 @@ WEAP:
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
 		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@apc:
-		Prerequisite: vehicle.apc
-		Factions: gdi, gdia, gdib, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, bossnod
-        ResetOnOwnerChange: true
-    ProvidesPrerequisite@htnk:
-        Prerequisite: vehicle.htnk
-        Factions: gdi, gdib, gdic
-        ResetOnOwnerChange: true
-    ProvidesPrerequisite@mrpg:
-        Prerequisite: vehicle.mrpg
-        Factions: gdib
-        ResetOnOwnerChange: true
-    ProvidesPrerequisite@aav:
-        Prerequisite: vehicle.aav
-        Factions: gdic
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -1361,7 +1274,7 @@ HPAD:
 		BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: vehicleproduction, ~!building.3fld, ~techlevel.5
+		Prerequisites: vehicleproduction, ~!player.gdia, ~techlevel.5
 		Queue: Building.GDI, Building.Nod, Building.Allies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -1388,6 +1301,7 @@ HPAD:
 	ProductionQueue:
 		Type: Aircraft
 		DisplayOrder: 4
+        Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, allliesc, soviet, sovieta, sovietb, sovietc, bossnod
 		Group: Aircraft
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -1412,7 +1326,7 @@ HPAD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
-		Factions: nod, noda, nodb, nodc
+		Factions: nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
@@ -1421,18 +1335,6 @@ HPAD:
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
 		Factions: soviet, sovieta, sovietb, sovietc
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@bossnod:
-		Prerequisite: aircraft.bossnod
-		Factions: bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@mh60:
-		Prerequisite: aircraft.mh60
-		Factions: gdic
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@nodc:
-		Prerequisite: aircraft.nodc
-		Factions: nodc
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1466,7 +1368,7 @@ HPAD:
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
-		Factions: nod, noda, nodb, nodc
+		Factions: nod, noda, nodb
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allies.player
@@ -2277,7 +2179,7 @@ H2SP:
         BuildDurationModifier: 100
         BuildPaletteOrder: 15
 		BuildLimit: 1
-		Prerequisites: miss, ~building.hosp, ~techlevel.7
+		Prerequisites: miss, ~player.gdic, ~techlevel.7
 		Queue: Building.GDI
 		Description: Maximum one can be built.\n\nEnables Infantry to self-heal.\nUnlocks Ambulance and Blackhawk for production.
 	Tooltip:

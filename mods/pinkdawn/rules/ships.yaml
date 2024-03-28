@@ -302,6 +302,73 @@ DD2:
 	ChangesHealth@RANK-HEROIC:
         RequiresCondition: rank-heroic
 
+SB:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Recon Boat
+	Buildable:
+        BuildDuration: 750
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 5
+		Queue: Navy
+		Prerequisites: syrd, anyhq, ~navy.nod, ~techlevel.5
+		Description: Fast scout boat, armed with rockets.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs fast units, Submarines.
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 16
+		Speed: 110
+        PauseOnCondition: emp-crate-collected
+	RevealsShroud:
+		Range: 4c128
+	Turreted@PRIMARY:
+		Turret: primary
+		TurnSpeed: 12
+		Offset: 480,0,24
+	Turreted@SECONDARY:
+		Turret: secondary
+		TurnSpeed: 12
+		Offset: -461,0,18
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: BikeRockets
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+ 	Armament@SECONDARY:
+        Name: secondary
+		Weapon: BikeRockets2
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
+	AttackFrontal:
+        Armaments: primary, secondary
+        FacingTolerance: 0
+        Voice: Attack
+		PauseOnCondition: emp-crate-collected
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic
+	Selectable:
+		DecorationBounds: 1536, 1536
+
 SS2:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -348,6 +415,76 @@ SS2:
         FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1621, 1621
+	ChangesHealth@RANK-HEROIC:
+        RequiresCondition: rank-heroic && deployed
+
+BSUB:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	HitShape:
+		TargetableOffsets: 576,0,0, -576,0,0
+		Type: Capsule
+			Radius: 341
+			PointA: 0, -576
+			PointB: 0, 576
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Ballistic Submarine
+	Buildable:
+        BuildDuration: 2350
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 5
+		Queue: Navy
+		Prerequisites: syrd, anytier3, ~navy.nod, ~techlevel.6
+		Description: Submerger siege unit.\n\nSpecial Ability: Submerge\nDives underwater to move unseen.\nCan be surfaced to move faster.\n\nStrong vs Buildings, slow-moving targets.\nWeak vs Naval units.
+	Health:
+		HP: 50000
+	Armor:
+		Type: Medium
+	Mobile:
+		TurnSpeed: 8
+		Speed: 40
+        PauseOnCondition: aiming || emp-crate-collected
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		Turret: primary
+		Offset: 768,0,128
+		TurnSpeed: 255
+	Armament:
+        Name: primary
+		Weapon: BallisticMissiles
+		LocalOffset: 80,-171,0, 80,171,0, 140,171,0, 140,-171,0
+		FireDelay: 2
+        PauseOnCondition: emp-crate-collected
+	AttackTurreted:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+	RenderRangeCircle:
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+	Selectable:
+		DecorationBounds: 1877, 1877
+    GrantConditionOnAttack:
+		ArmamentNames: primary
+    	Condition: aiming
+		RevokeDelay: 32
+    	RevokeAll: false
+    RangeMultiplier@Heroic:
+        Modifier: 200
+        RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 	ChangesHealth@RANK-HEROIC:
         RequiresCondition: rank-heroic && deployed
 
@@ -496,3 +633,199 @@ CA2:
         Prerequisites: ~global-unitreveal
 	ChangesHealth@RANK-HEROIC:
         RequiresCondition: rank-heroic
+
+CARR:
+	Inherits: ^Ship
+ 	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    Inherits@selection: ^SelectableSupportUnit
+	-GainsExperience:
+	-FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+	-SpeedMultiplier@RANK-VETERAN:
+	-DamageMultiplier@RANK-VETERAN:
+	-FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-ELITE:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+	-SpeedMultiplier@RANK-HEROIC:
+	-DamageMultiplier@RANK-HEROIC:
+	-ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+	-WithDecoration@RANK-ELITE:
+ 	-WithDecoration@RANK-HEROIC:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	Buildable:
+    	BuildDuration: 3300
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 6
+		Queue: Navy
+		Prerequisites: syrd, anytier3, ~navy.gdi, ~player.gdia, ~techlevel.6
+		Description: Can produce, repair and rearm Aircraft.\nRequires to be deployed to function.\n\nUnarmed.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Carrier
+	Health:
+		HP: 65000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 8
+		Speed: 40
+	RevealsShroud:
+		Range: 6c0
+	Selectable:
+		Bounds: 2048, 2048
+		#   DecorationBounds: 3440, 2960
+        DecorationBounds: 2580, 2580
+	Transforms:
+		IntoActor: carr.deployed
+		Offset: -1,0
+		Facing: 768
+	HitShape:
+        TargetableOffsets: 0,0,0, 1024,0,0, -1024,0,0
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, 1536
+
+CARR.Deployed:
+	Inherits: ^BaseBuilding
+    Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-GivesBuildableArea:
+	-RepairableBuilding:
+	-WithBuildingRepairDecoration:
+	-EngineerRepairable:
+	-WithMakeAnimation:
+	-CaptureManager:
+	-Capturable:
+    -CaptureNotification:
+    -SoundOnDamageTransition:
+	-SpawnActorsOnSell:
+	-Demolishable:
+	-Sellable:
+	-Explodes:
+	-RequiresBuildableArea:
+	-ShakeOnDeath:
+    -GrantConditionOnDamageState@DAMAGED:
+    -GrantConditionOnDamageState@LOWPOWERDMG:
+    -ChangesHealth@LOWPOWERDMG:
+    -GrantConditionOnPowerState@LOWPOWERDMG:
+    -ProductionTimeMultiplier@productionboost:
+    -ProvidesPrerequisite@productionboost:
+    -ActorPreviewPlaceBuildingPreview:
+    -ExternalCondition@AIRCRAFTREPAIR:
+	RepairsUnits:
+		-RequiresCondition:
+	GpsDot:
+		String: Ship
+	Explodes:
+		Weapon: UnitExplodeShip
+		EmptyWeapon: UnitExplodeShip
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Carrier
+	Building:
+		Footprint: xxx
+		Dimensions: 3,1
+		TerrainTypes: Water
+		RequiresBaseProvider: False
+		UndeploySounds: 
+	Health:
+		HP: 65000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Transforms:
+		IntoActor: carr
+		TransformSounds: null
+		Offset: 1,0
+		Facing: 768
+	Reservable:
+	RallyPoint:
+		ForceSetType: Plane
+	CommandBarBlacklist:
+		DisableStop: false
+	WithDecoration@deployed:
+		Image: pips
+		Sequence: tag-deployed
+		Position: Top
+		Margin: 0, -6
+	Targetable:
+		TargetTypes: Ground, Water, Ship
+	WithResupplyAnimation:
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		ExitCell: 1,2
+		ExitDelay: 3
+		Facing: 768
+        ProductionTypes: Aircraft, Plane, Chopper
+	Production:
+		Produces: Aircraft, Plane, Chopper
+        PauseOnCondition: emp-affected-structure
+	ProductionQueue:
+		Type: Aircraft
+		DisplayOrder: 4
+		Group: Aircraft
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+        Sticky: false
+	ProductionBar:
+		ProductionType: Aircraft
+	ProvidesPrerequisite:
+		Prerequisite: anyafld
+	ProvidesPrerequisite@2:
+		Prerequisite: hpad
+	ProvidesPrerequisite@3:
+        Prerequisite: 3fld
+	ProvidesPrerequisite@gdi:
+		Prerequisite: aircraft.gdi
+		Factions: gdi, gdia, gdib, gdic
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@nod:
+		Prerequisite: aircraft.nod
+		Factions: nod, noda, nodb, nodc, bossnod
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@allies:
+		Prerequisite: aircraft.allies
+		Factions: allies, alliesa, alliesb, alliesc
+        ResetOnOwnerChange: true
+	ProvidesPrerequisite@soviet:
+		Prerequisite: aircraft.soviet
+		Factions: soviet, sovieta, sovietb, sovietc
+        ResetOnOwnerChange: true
+	RenderSprites:
+		Image: carr.deployed
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
+	ActorLostNotification:
+		Notification: NavalUnitLost
+	-MapEditorData:
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 3c768
+	RenderDetectionCircle:
+	ProximityExternalCondition:
+		Condition: unit.sellable
+		Range: 1c0

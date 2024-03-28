@@ -14,6 +14,7 @@ a10:
 		Length: 6
 		Facings: 16
 	icon: a10icon
+    alticon: a10bicon
 
 tran:
 	Inherits: emp-overlay

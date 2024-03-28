@@ -39,7 +39,7 @@ TRAN.Husk2:
 	TransformOnCapture:
 		IntoActor: tran
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: tran
 
@@ -74,7 +74,7 @@ ORCA.Husk2:
 	TransformOnCapture:
 		IntoActor: orca
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: orca
 
@@ -112,7 +112,7 @@ HELI.Husk2:
 	TransformOnCapture:
 		IntoActor: heli
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: heli
 
@@ -150,7 +150,7 @@ HEL2.Husk2:
 	TransformOnCapture:
 		IntoActor: hel2
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: heli
 
@@ -188,7 +188,7 @@ HIND.Husk2:
 	TransformOnCapture:
 		IntoActor: hind
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: hind
 
@@ -205,7 +205,7 @@ RH66.Husk:
         Speed: 200
 	WithIdleOverlay@ROTOR:
 		Offset: 0,0,85
-		Sequence: rotor2
+		Sequence: rotor
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
@@ -226,7 +226,7 @@ RH66.Husk2:
 	TransformOnCapture:
 		IntoActor: rh66
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: rh66
 
@@ -261,7 +261,7 @@ OCAR.Husk2:
 	TransformOnCapture:
 		IntoActor: ocar
 	MapEditorData:
-		Categories: Aircraft Husk
+		Categories: Aircraft husk
 	RenderSprites:
 		Image: ocar
 
@@ -560,3 +560,41 @@ BADG.Husk:
 		Type: GroundPosition
 	RenderSprites:
 		Image: badg
+
+MH60.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Blackhawk (Falling)
+	Health:
+		HP: 8750
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 12
+        Speed: 200
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: mh60
+
+MH60.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Blackhawk (Destroyed)
+	Health:
+		HP: 8750
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: rh66
+	MapEditorData:
+		Categories: Aircraft husk
+	RenderSprites:
+		Image: mh60

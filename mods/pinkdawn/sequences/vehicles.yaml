@@ -639,3 +639,16 @@ mrpg.husk:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
+
+ttrk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: ttrkicon
+
+ttrk.husk:
+	idle: ttrk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
