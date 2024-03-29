@@ -1795,13 +1795,13 @@ MRPG:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq, ~vehicle.gdi, ~player.gdib, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.gdi, ~player.gdic, ~techlevel.5
 		Queue: Vehicle
-		Description: Fast-firing artillery.\n\nCan attack Aircraft.\nStrong vs Buildings.\nWeak vs Infantry.
+		Description: Fast-firing artillery.\n\nStrong vs Buildings.\nWeak vs Infantry.
 	Mobile:
     	Locomotor: tracked-non-crusher
 		TurnSpeed: 12
-		Speed: 70
+		Speed: 90
 		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 10000
@@ -1832,6 +1832,7 @@ MRPG:
 		PauseOnCondition: emp-crate-collected
 	AttackMove:
 		Voice: Attack
+	RenderRangeCircle:
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
@@ -1871,7 +1872,7 @@ MSAM:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: eye, ~vehicle.gdi, ~!player.gdib, ~techlevel.7
+		Prerequisites: eye, ~vehicle.gdi, ~!player.gdic, ~techlevel.7
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n\nStrong vs all Ground units.
 	Mobile:

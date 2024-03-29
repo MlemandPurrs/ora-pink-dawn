@@ -194,12 +194,12 @@
 	Faction@gdib:
 		Name: Tech Division
 		InternalName: gdib
-		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build MLRS
+		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - NYI\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - NYI
         Selectable: true
 	Faction@gdic:
 		Name: Special Ops
 		InternalName: gdic
-		Description: GDI: Special Operations\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nSpecial Unit:\n    - Blackhawk\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA
+		Description: GDI: Special Operations\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nSpecial Units:\n    - Blackhawk\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA\n    - Cannot build MLRS
         Selectable: true
 	Faction@nod:
 		Name: Nod

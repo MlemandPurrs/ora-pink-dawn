@@ -85,6 +85,8 @@
 #   84. ChemBomb
 #   85. BallisticMissiles
 #   86. HeavyTurretGun
+#   87. ScatterBomb
+#   88. AutoCannon
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1200,7 +1202,6 @@ Napalm:
 	Burst: 2
 	BurstDelays: 2
 	InvalidTargets: Wall, Flamer
-	Report: flamer2.aud
 	Projectile: GravityBomb
 		Image: BOMBLET
 		Shadow: true
@@ -1225,6 +1226,7 @@ Napalm:
 		InvalidTargets: Vehicle, Structure, Wall
 	Warhead@3Eff: CreateEffect
 		Explosions: med_napalm
+		ImpactSounds: flamer2.aud
         ValidTargets: Ground, Water
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
@@ -3946,3 +3948,96 @@ HeavyTurretGun:
 		ImpactSounds: xplosml2.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+#   87. different bomb for the buildable A-10 variant
+ScatterBomb:
+	ReloadDelay: 1
+	Range: 5c0
+	MinRange: 3c0
+	Report: bombdrop.aud
+	TargetActorCenter: true
+	ValidTargets: Ground, Water, Tree
+	InvalidTargets: Wall, Flamer
+	Projectile: Bullet
+		Image: BOMBLET
+		Speed: 192
+        Blockable: false
+		LaunchAngle: 56
+		Inaccuracy: 1c512
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 384
+		Damage: 7000
+		ValidTargets: Ground, Water, Tree
+		InvalidTargets: Wall, Flamer
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 68
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: flamer2.aud
+		ValidTargets: Ground, Tree
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash2.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+    Warhead@5Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: flamer2.aud
+        ValidTargets: Water
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+#   88. different nose gun for the buildable A-10 variant
+AutoCannon:
+	ReloadDelay: 35
+    Range: 5c826
+	MinRange: 2c768
+	Burst: 8
+	BurstDelays: 2
+	FirstBurstTargetOffset: -768,64,0
+	FollowingBurstTargetOffset: 512,0,0
+    Report: gun5.aud
+    InvalidTargets: Tree, Wall
+	Projectile: Bullet
+		Speed: 1c682
+        Inaccuracy: 256
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4000
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        InvalidTargets: Tree, Wall
+		DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground, Ship, Air, Tree
+        InvalidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure

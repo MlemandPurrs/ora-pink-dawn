@@ -1664,6 +1664,7 @@ OCAR:
 MH60:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+    Inherits@TRANSPORT: ^Transport
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
 	Selectable:
 		DecorationBounds: 1280, 1024
@@ -1680,7 +1681,7 @@ MH60:
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyfix, ~aircraft.gdi, ~player.gdic, ~techlevel.7
 		Queue: Aircraft
-		Description: Helicopter Gunship with Chainguns.\n\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+		Description: Helicopter Gunship with Chainguns.\nCan carry one Infantry.\n\nSpecial ability: Field Mechanic\nEnables nearby Vehicles to\nauto-repair while on ground.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200
@@ -1781,6 +1782,34 @@ MH60:
 	WithRangeCircle@FIELDMECHANIC:
 		Range: 1c826
 		RequiresCondition: !airborne && !emp-crate-collected
+	Cargo:
+        LoadedCondition: loaded
+		Types: Infantry
+		MaxWeight: 1
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+            snip: sniperinside
+	WithCargoPipsDecoration:
+		Margin: 4, 6
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
+	Sellable:
+		RequiresCondition: unit.sellable && !airborne && !loaded
 
 UAV:
 	Inherits: ^Plane
@@ -1846,53 +1875,47 @@ A10B:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
 		Prerequisites: ~anyafld, eye, ~aircraft.gdi, ~player.gdia, ~techlevel.7
-		Description: Fast Ground-Attack Plane.\n\nStrong vs Buildings, Vehicles.\nWeak vs Infantry.
+		Description: Ground-attack bomber plane.\n\nStrong vs Everything.\nWeak vs Anti-Air.
         Icon: alticon
      -Armament:
 	Armament@PRIMARY:
         Name: primary
-		Weapon: ChainGun.Yak.Left
-		LocalOffset: 256,-213,0
+		Weapon: AutoCannon
+		LocalOffset: 1024,0,-85
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo
 	Armament@SECONDARY:
-		Name: secondary
-		Weapon: ChainGun.Yak.Right
-		LocalOffset: 256,213,0
-		MuzzleSequence: muzzle
-		FireDelay: 1
-		PauseOnCondition: !ammo    
-	Armament@TERTIARY:
-        Name: tertiary
-        Weapon: Napalm
-        LocalOffset: 0,-213,-43, 0,213,-43
+        Name: secondary
+        Weapon: ScatterBomb
+		LocalOffset: 0,-256,-43, 0,256,-43
         PauseOnCondition: !ammo2
     AttackAircraft:
-		Armaments: primary, secondary, tertiary
+		Armaments: primary, secondary
 	AmmoPool@1:
         Name: primary
-        Armaments: primary, secondary
-		Ammo: 16
+        Armaments: primary
+		Ammo: 6
+        ReloadCount: 2
 		ReloadDelay: 60
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
-		Margin: 4, 3
-		PipCount: 2
+        Margin: 4, 6
+		PipCount: 1
         FullSequence: pip-green
         AmmoPools: primary
 		RequiresSelection: true
 	AmmoPool@2:
         Name: secondary
-        Armaments: tertiary
-        Ammo: 3
-        ReloadCount: 3
+        Armaments: secondary
+		Ammo: 6
+		ReloadCount: 2
         ReloadDelay: 90
         AmmoCondition: ammo2 
     WithAmmoPipsDecoration@2:
         Position: BottomLeft
-        Margin: 4, 6
-        PipCount: 1
+        Margin: 4, 3
+		PipCount: 2
         FullSequence: pip-red
         AmmoPools: secondary
         RequiresSelection: true
