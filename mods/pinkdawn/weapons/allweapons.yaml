@@ -3227,6 +3227,11 @@ MortarShell:
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
 
+MortarShellChem:
+    Inherits: MortarShell
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+
 #   68. Turret's Laser
 TurretLaser:
 	ReloadDelay: 45

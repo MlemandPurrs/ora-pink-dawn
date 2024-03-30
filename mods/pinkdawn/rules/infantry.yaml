@@ -1544,6 +1544,8 @@ E9C:
 		Description: Slow artillery infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs Buildings, slow-moving targets.
 	Mobile:
 		Locomotor: foot-immune
+	Armament:
+		Weapon: MortarShellChem
 	Targetable:
 		TargetTypes: Ground, Infantry, ChemImmune
     RenderSprites:
