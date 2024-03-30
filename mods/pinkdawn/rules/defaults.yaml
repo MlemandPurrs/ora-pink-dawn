@@ -371,6 +371,9 @@
         TotalCap: 1
     # this used by Fanatic
 	EdibleByLeap:
+	Targetable@MirageDisguise:
+		RequiresCondition: !parachute
+		TargetTypes: Disguise2
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle

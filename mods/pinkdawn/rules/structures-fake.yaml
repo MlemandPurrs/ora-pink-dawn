@@ -390,6 +390,15 @@ DOMF:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	InfiltrateForDecoration:
+		Types: SpyInfiltrate2
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 	RenderSprites:
 		Image: DOME
 
@@ -466,6 +475,15 @@ CSPF:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-3
+	InfiltrateForDecoration:
+		Types: SpyInfiltrate2
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 	RenderSprites:
 		Image: CSPH
 
@@ -500,5 +518,14 @@ MSLF:
 	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-5
+	InfiltrateForDecoration:
+		Types: SpyInfiltrate2
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
 	RenderSprites:
 		Image: MSLO

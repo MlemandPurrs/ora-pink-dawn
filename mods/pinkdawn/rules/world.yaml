@@ -218,7 +218,7 @@
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nSpecial Units:\n    - Fanatic\n    - Toxin Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
+		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
         Selectable: true
 	Faction@bossnod:
 		Name: Black Hand
@@ -236,7 +236,7 @@
 	Faction@alliesa:
 		Name: Secret Service
 		InternalName: alliesa
-		Description: Allies: Secret Service\n\nFaction Variations:\n    - Spy are improved, can do more\n    - Tech Center is cheaper to build\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
+		Description: Allies: Secret Service\n\nFaction Variations:\n    - Spy are improved, can do more\n    - Tech Center is cheaper to build\n\nSpecial Unit:\n    - Mirage Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesb:
 		Name: Mecha. Assault

@@ -103,6 +103,7 @@ Rules:
 	pinkdawn|rules/vehicles-husks.yaml
     pinkdawn|rules/ships-ra.yaml
     pinkdawn|rules/giantants.yaml
+	pinkdawn|rules/vehicles-dtnk.yaml
 
 Sequences:
 	pinkdawn|sequences/structures.yaml
@@ -118,6 +119,7 @@ Sequences:
 	pinkdawn|sequences/structures-ra.yaml
 	pinkdawn|sequences/naval.yaml
 	pinkdawn|sequences/giantants.yaml
+	pinkdawn|sequences/vehicles-dtnk.yaml
 
 TileSets:
 	pinkdawn|tilesets/desert.yaml

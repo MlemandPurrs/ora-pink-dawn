@@ -338,6 +338,10 @@ pips:
         Offset: 6, 5
     tag-deployed: tag-deployed
         Offset: 0, -3
+	pip-disguise: pip-disguise
+		Length: *
+		Tick: 240
+		Offset: 0, -3
 
 overlay:
 	Defaults: trans.icn

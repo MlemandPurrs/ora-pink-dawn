@@ -376,9 +376,9 @@ TTRK:
 	Valued:
 		Cost: 2100
 	Tooltip:
-		Name: Toxin Demolition Truck
+		Name: Toxic Demolition Truck
         GenericStancePrefix: false
-        GenericName: Toxin Truck
+        GenericName: Toxic Demo Truck
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
     	BuildDuration: 3500
@@ -777,7 +777,7 @@ MAAG:
 	Tooltip:
 		Name: Mobile Anti-Air Gun
         GenericStancePrefix: false
-        GenericName: MAAG
+        GenericName: Mobile AA Gun
         GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -2127,6 +2127,7 @@ MHQ:
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
 		Offset: -256,0,256
+        PauseOnCondition: emp-crate-collected
 	DetectCloaked:
         DetectionTypes: Stealth, Underground
 		Range: 3c768

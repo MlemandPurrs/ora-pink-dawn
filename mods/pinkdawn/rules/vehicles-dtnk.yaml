@@ -1,0 +1,834 @@
+DTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	-WithFacingSpriteBody:
+	-Tooltip:
+    -Targetable@MirageDisguise:
+	Valued:
+		Cost: 1000
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 1350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 14
+		Prerequisites: atek, ~vehicle.allies, ~player.alliesa, ~techlevel.6
+		Queue: Vehicle
+		Description: Tank that can appear as any vehicle.\nNeed to use force-fire to attack\nVehicles while being disguised.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Mobile:
+        TurnSpeed: 12
+        Locomotor: tracked-crusher
+		Speed: 80
+		PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c128
+	Disguise:
+		DisguisedCondition: disguise
+		ValidRelationships: Ally, Neutral, Enemy
+		TargetTypes: Disguise2
+		DisguisedAsConditions:
+			mcv: mcv
+            mcv2: mcv2
+            harv: harv
+            ohrv: ohrv
+            ahrv: ahrv
+            truk: truk
+            2trk: trk2
+            dtrk: dtrk
+            ttrk: ttrk
+            jeep: jeep
+            bggy: bggy
+            bike: bike
+            r4wd: r4wd
+            ftrk: ftrk
+            apc: apc
+            apc2: apc2
+            apc3: apc3
+            maag: maag
+            mnly: mnly
+            aav: aav
+            btr: btr
+            ltnk: ltnk
+            mtnk: mtnk
+            ftnk: ftnk
+            chtk: chtk
+            htnk: htnk
+            wtnk: wtnk
+            stnk: stnk
+            1tnk: tnk1
+            2tnk: tnk2
+            3tnk: tnk3
+            3t1b: b1t3
+            4tnk: tnk4
+            4tnf: tnf4
+            5tnk: tnk5
+            qtnk: qtnk
+            tnkd: tnkd
+            ctnk: ctnk
+            ttnk: ttnk
+            arty: arty
+            mrpg: mrpg
+            msam: msam
+            mlrs: mlrs
+            v2rl: v2rl
+            mhq: mhq
+            msg: msg
+            mgg: mgg
+            t55h: t55h
+	DisguiseTooltip@default:
+		Name: Mirage Tank
+		GenericName: Mirage Tank
+        GenericVisibility: Ally, Neutral, Enemy
+        GenericStancePrefix: false
+        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !tnk2 && !tnk3 && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ttnk && !arty && !mrpg && !msam && !mlrs && !v2rl && !mhq && !msg && !mgg && !t55h
+	DisguiseTooltip@mcv:
+		Name: Mobile Construction Vehicle
+		GenericName: MCV
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mcv
+	DisguiseTooltip@mcv2:
+		Name: Mobile Construction Vehicle
+		GenericName: MCV
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mcv2
+	DisguiseTooltip@harv:
+		Name: Tiberium Harvester
+		GenericName: Harvester
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: harv
+	DisguiseTooltip@ohrv:
+		Name: Ore Harvester
+		GenericName: Harvester
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: harv
+	DisguiseTooltip@ahrv:
+		Name: Armed Ore Harvester
+		GenericName: Armed Harvester
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ahrv
+	DisguiseTooltip@truk:
+		Name: Supply Truck
+		GenericName: Supply Truck
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: truk
+	DisguiseTooltip@trk2:
+		Name: Supply Truck
+		GenericName: Supply Truck
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: trk2
+	DisguiseTooltip@dtrk:
+		Name: Demolition Truck
+		GenericName: Demo Truck
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: dtrk
+	DisguiseTooltip@ttrk:
+		Name: Toxic Demolition Truck
+        GenericName: Toxic Demo Truck
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ttrk
+	DisguiseTooltip@jeep:
+		Name: Humvee
+		GenericName: Humvee
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: jeep
+	DisguiseTooltip@bggy:
+		Name: Buggy
+		GenericName: Buggy
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: bggy
+	DisguiseTooltip@bike:
+		Name: Recon Bike
+		GenericName: Recon Bike
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: bike
+	DisguiseTooltip@r4wd:
+		Name: Ranger
+		GenericName: Ranger
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: r4wd
+	DisguiseTooltip@ftrk:
+		Name: Mobile Flak
+		GenericName: Mobile Flak
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ftrk
+	DisguiseTooltip@apc:
+		Name: Armored Personnel Carrier
+		GenericName: APC
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: apc
+	DisguiseTooltip@apc2:
+		Name: Heavy Personnel Carrier
+		GenericName: Heavy APC
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: apc2
+	DisguiseTooltip@apc3:
+		Name: Phase Vehicle
+		GenericName: Phase Vehicle
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: apc3
+	DisguiseTooltip@maag:
+		Name: Mobile Anti-Air Gun
+		GenericName: Mobile AA Gun
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: maag
+	DisguiseTooltip@mnly:
+		Name: Minelayer
+		GenericName: Minelayer
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mnly
+	DisguiseTooltip@aav:
+		Name: Amphibious Assault Vehicle
+		GenericName: AAV
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: aav
+	DisguiseTooltip@btr:
+		Name: Light Personnel Carrier
+		GenericName: Light APC
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: btr
+	DisguiseTooltip@ltnk:
+		Name: Light Tank
+		GenericName: Light Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ltnk
+	DisguiseTooltip@mtnk:
+		Name: Main Battle Tank
+		GenericName: MBT
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mtnk
+	DisguiseTooltip@ftnk:
+		Name: Flame Tank
+		GenericName: Flame Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ftnk
+	DisguiseTooltip@chtk:
+		Name: Chemical Tank
+		GenericName: Chemical Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: chtk
+	DisguiseTooltip@htnk:
+		Name: Mammoth Tank
+		GenericName: Mammoth Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: htnk
+	DisguiseTooltip@wtnk:
+		Name: Microwave Tank
+		GenericName: Microwave Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: wtnk
+	DisguiseTooltip@stnk:
+		Name: Stealth Tank
+		GenericName: Stealth Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: stnk
+	DisguiseTooltip@tnk1:
+		Name: Light Tank
+		GenericName: Light Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnk1
+	DisguiseTooltip@tnk2:
+		Name: Medium Tank
+		GenericName: Medium Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnk2
+	DisguiseTooltip@tnk3:
+		Name: Heavy Tank
+		GenericName: Heavy Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnk3
+	DisguiseTooltip@b1t3:
+		Name: Heavy Tank
+		GenericName: Heavy Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: b1t3
+	DisguiseTooltip@tnk4:
+		Name: Mammoth Tank
+		GenericName: Mammoth Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnk4
+	DisguiseTooltip@tnf4:
+		Name: Flame Mammoth Tank
+		GenericName: Flame Mammoth
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnf4
+	DisguiseTooltip@tnk5:
+		Name: Behemoth Tank
+		GenericName: Behemoth Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnk5
+	DisguiseTooltip@qtnk:
+		Name: Mutually Assured Destruction Vehicle
+		GenericName: M.A.D. Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: qtnk
+	DisguiseTooltip@tnkd:
+		Name: Tank Destroyer
+		GenericName: Tank Destroyer
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: tnkd
+	DisguiseTooltip@ctnk:
+		Name: Chrono Tank
+		GenericName: Chrono Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ctnk
+	DisguiseTooltip@ttnk:
+		Name: Tesla Tank
+		GenericName: Tesla Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ttnk
+	DisguiseTooltip@arty:
+		Name: Artillery
+		GenericName: Artillery
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: arty
+	DisguiseTooltip@mrpg:
+		Name: Mobile RPG Launcher
+		GenericName: RPG Launcher
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mrpg
+	DisguiseTooltip@msam:
+		Name: Multiple Launch Rocket System
+		GenericName: MLRS
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: msam
+	DisguiseTooltip@mlrs:
+		Name: Surface-to-Surface Missile Launcher
+		GenericName: SSM Launcher
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mlrs
+	DisguiseTooltip@v2rl:
+		Name: V2 Rocket Launcher
+		GenericName: V2 Launcher
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: v2rl
+	DisguiseTooltip@mhq:
+		Name: Mobile Jammer
+		GenericName: Mobile Jammer
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mhq
+	DisguiseTooltip@msg:
+		Name: Mobile Stealth Generator
+		GenericName: Mobile Stealth Generator
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: msg
+	DisguiseTooltip@mgg:
+		Name: Mobile GAP Generator
+		GenericName: Mobile GAP
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: mgg
+	DisguiseTooltip@t55h:
+		Name: Scorpion Tank
+		GenericName: Scorpion Tank
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: t55h
+	WithDecoration@disguise:
+		Position: Top
+		Margin: 0, 6
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		RequiresCondition: disguise
+	WithFacingSpriteBody@default:
+		PauseOnCondition: mcv && mcv2 && harv && ohrv && ahrv && truk && trk2 && dtrk && ttrk && jeep && bggy && bike && r4wd && ftrk && apc && apc2 && apc3 && maag && mnly && aav && btr && ltnk && mtnk && ftnk && chtk && htnk && wtnk && stnk && tnk1 && tnk2 && tnk3 && b1t3 && tnk4 && tnf4 && tnk5 && qtnk && tnkd && ctnk && ttnk && arty && mrpg && msam && mlrs && v2rl && mhq && msg && mgg && t55h
+		RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !tnk2 && !tnk3 && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ttnk && !arty && !mrpg && !msam && !mlrs && !v2rl && !mhq && !msg && !mgg && !t55h
+	WithFacingSpriteBody@mcv:
+		Name: mcv
+		Sequence: mcv-body
+		RequiresCondition: mcv
+	WithFacingSpriteBody@mcv2:
+		Name: mcv2
+		Sequence: mcv2-body
+		RequiresCondition: mcv2
+	WithFacingSpriteBody@harv:
+		Name: harv
+		Sequence: harv-body
+		RequiresCondition: harv
+	WithFacingSpriteBody@ohrv:
+		Name: ohrv
+		Sequence: ohrv-body
+		RequiresCondition: ohrv
+	WithFacingSpriteBody@ahrv:
+		Name: ahrv
+		Sequence: ahrv-body
+		RequiresCondition: ahrv
+	WithFacingSpriteBody@truk:
+		Name: truk
+		Sequence: truk-body
+		RequiresCondition: truk
+	WithFacingSpriteBody@trk2:
+		Name: 2trk
+		Sequence: 2trk-body
+		RequiresCondition: trk2
+	WithFacingSpriteBody@dtrk:
+		Name: dtrk
+		Sequence: dtrk-body
+		RequiresCondition: dtrk
+	WithFacingSpriteBody@ttrk:
+		Name: ttrk
+		Sequence: ttrk-body
+		RequiresCondition: ttrk
+	WithFacingSpriteBody@jeep:
+		Name: jeep
+		Sequence: jeep-body
+		RequiresCondition: jeep
+	WithFacingSpriteBody@bggy:
+		Name: bggy
+		Sequence: bggy-body
+		RequiresCondition: bggy
+	WithFacingSpriteBody@bike:
+		Name: bike
+		Sequence: bike-body
+		RequiresCondition: bike
+	WithFacingSpriteBody@r4wd:
+		Name: r4wd
+		Sequence: r4wd-body
+		RequiresCondition: r4wd
+	WithFacingSpriteBody@ftrk:
+		Name: ftrk
+		Sequence: ftrk-body
+		RequiresCondition: ftrk
+	WithFacingSpriteBody@apc:
+		Name: apc
+		Sequence: apc-body
+		RequiresCondition: apc
+	WithFacingSpriteBody@apc2:
+		Name: apc2
+		Sequence: apc2-body
+		RequiresCondition: apc2
+	WithFacingSpriteBody@apc3:
+		Name: apc3
+		Sequence: apc3-body
+		RequiresCondition: apc3
+	WithFacingSpriteBody@maag:
+		Name: maag
+		Sequence: maag-body
+		RequiresCondition: maag
+	WithFacingSpriteBody@mnly:
+		Name: mnly
+		Sequence: mnly-body
+		RequiresCondition: mnly
+	WithFacingSpriteBody@aav:
+		Name: aav
+		Sequence: aav-body
+		RequiresCondition: aav
+	WithFacingSpriteBody@btr:
+		Name: btr
+		Sequence: btr-body
+		RequiresCondition: btr
+	WithFacingSpriteBody@ltnk:
+		Name: ltnk
+		Sequence: ltnk-body
+		RequiresCondition: ltnk
+	WithFacingSpriteBody@mtnk:
+		Name: mtnk
+		Sequence: mtnk-body
+		RequiresCondition: mtnk
+	WithFacingSpriteBody@ftnk:
+		Name: ftnk
+		Sequence: ftnk-body
+		RequiresCondition: ftnk
+	WithFacingSpriteBody@chtk:
+		Name: chtk
+		Sequence: chtk-body
+		RequiresCondition: chtk
+	WithFacingSpriteBody@htnk:
+		Name: htnk
+		Sequence: htnk-body
+		RequiresCondition: htnk
+	WithFacingSpriteBody@wtnk:
+		Name: wtnk
+		Sequence: wtnk-body
+		RequiresCondition: wtnk
+	WithFacingSpriteBody@stnk:
+		Name: stnk
+		Sequence: stnk-body
+		RequiresCondition: stnk
+	WithFacingSpriteBody@tnk1:
+		Name: 1tnk
+		Sequence: 1tnk-body
+		RequiresCondition: tnk1
+	WithFacingSpriteBody@tnk2:
+		Name: 2tnk
+		Sequence: 2tnk-body
+		RequiresCondition: tnk2
+	WithFacingSpriteBody@tnk3:
+		Name: 3tnk
+		Sequence: 3tnk-body
+		RequiresCondition: tnk3
+	WithFacingSpriteBody@b1t3:
+		Name: 3t1b
+		Sequence: 3t1b-body
+		RequiresCondition: b1t3
+	WithFacingSpriteBody@tnk4:
+		Name: 4tnk
+		Sequence: 4tnk-body
+		RequiresCondition: tnk4
+	WithFacingSpriteBody@tnf4:
+		Name: 4tnf
+		Sequence: 4tnf-body
+		RequiresCondition: tnf4
+	WithFacingSpriteBody@tnk5:
+		Name: 5tnk
+		Sequence: 5tnk-body
+		RequiresCondition: tnk5
+	WithFacingSpriteBody@qtnk:
+		Name: qtnk
+		Sequence: qtnk-body
+		RequiresCondition: qtnk
+	WithFacingSpriteBody@tnkd:
+		Name: tnkd
+		Sequence: tnkd-body
+		RequiresCondition: tnkd
+	WithFacingSpriteBody@ctnk:
+		Name: ctnk
+		Sequence: ctnk-body
+		RequiresCondition: ctnk
+	WithFacingSpriteBody@ttnk:
+		Name: ttnk
+		Sequence: ttnk-body
+		RequiresCondition: ttnk
+	WithFacingSpriteBody@arty:
+		Name: arty
+		Sequence: arty-body
+		RequiresCondition: arty
+	WithFacingSpriteBody@mrpg:
+		Name: mrpg
+		Sequence: mrpg-body
+		RequiresCondition: mrpg
+	WithFacingSpriteBody@msam:
+		Name: msam
+		Sequence: msam-body
+		RequiresCondition: msam
+	WithFacingSpriteBody@mlrs:
+		Name: mlrs
+		Sequence: mlrs-body
+		RequiresCondition: mlrs
+	WithFacingSpriteBody@v2rl:
+		Name: v2rl
+		Sequence: v2rl-body
+		RequiresCondition: v2rl
+	WithFacingSpriteBody@mhq:
+		Name: mhq
+		Sequence: mhq-body
+		RequiresCondition: mhq
+	WithFacingSpriteBody@msg:
+		Name: msg
+		Sequence: msg-body
+		RequiresCondition: msg
+	WithFacingSpriteBody@mgg:
+		Name: mgg
+		Sequence: mgg-body
+		RequiresCondition: mgg
+	WithFacingSpriteBody@t55h:
+		Name: t55h
+		Sequence: t55h-body
+		RequiresCondition: t55h
+	Turreted@default:
+		Turret: default-turret
+		TurnSpeed: 12
+		Offset: 0,0,128
+	Turreted@disguise:
+		Turret: disguise-turret
+		TurnSpeed: 12
+		Offset: 0,0,128
+	Turreted@ahrv:
+		Turret: ahrv-turret
+		TurnSpeed: 12
+		Offset: 508,0,128
+	Turreted@jeep:
+		Turret: jeep-turret
+		TurnSpeed: 18
+		Offset: -85,0,128
+	Turreted@bggy:
+ 		Turret: bggy-turret   
+		TurnSpeed: 18
+		Offset: -43,0,128
+	Turreted@r4wd:
+        Turret: r4wd-turret
+		TurnSpeed: 18
+		Offset: -85,0,128
+	Turreted@ftrk:
+        Turret: ftrk-turret
+		TurnSpeed: 18
+		Offset: -256,0,272
+	Turreted@apc2:
+		Turret: apc2-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@apc3:
+		Turret: apc3-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@maag:
+    	Turret: maag-turret
+		TurnSpeed: 18
+		Offset: 0,0,0
+	Turreted@aav:
+    	Turret: aav-turret
+		TurnSpeed: 12
+        Offset: 100,100,68
+	Turreted@btr:
+    	Turret: btr-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@ltnk:
+    	Turret: ltnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@mtnk:
+        Turret: mtnk-turret
+		TurnSpeed: 12
+        Offset: 0,0,24
+	Turreted@htnk:
+    	Turret: htnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@wtnk:
+    	Turret: wtnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@stnk:
+    	Turret: stnk-turret
+		TurnSpeed: 18
+		Offset: 0,0,0
+	Turreted@tnk1:
+		Turret: 1tnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@tnk2:
+		Turret: 2tnk-turret
+		TurnSpeed: 12
+        Offset: 0,0,12
+	Turreted@tnk3:
+		Turret: 3tnk-turret
+		TurnSpeed: 12
+        Offset: 0,0,12
+	Turreted@b1t3:
+		Turret: 3t1b-turret
+		TurnSpeed: 12
+        Offset: 0,0,12
+	Turreted@tnk4:
+		Turret: 4tnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@tnf4:
+		Turret: 4tnf-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@tnk5:
+		Turret: 5tnk-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	Turreted@msam:
+        Turret: msam-turret
+		TurnSpeed: 12
+		Offset: -256,0,128
+	Turreted@mlrs:
+        Turret: mlrs-turret
+		TurnSpeed: 12
+		Offset: -128,0,128
+		RealignDelay: 0
+	Turreted@mhq:
+        Turret: mhq-turret
+		TurnSpeed: 12
+		Offset: 246,-60,112
+	Turreted@t55h:
+    	Turret: t55h-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
+	WithSpriteTurret@Default:
+		Sequence: turret-default
+		Turret: default-turret
+        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !tnk2 && !tnk3 && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ttnk && !arty && !mrpg && !msam && !mlrs && !v2rl && !mhq && !msg && !mgg && !t55h
+	WithSpriteTurret@ahrv:
+		Sequence: turret-ahrv
+		Turret: ahrv-turret
+		RequiresCondition: ahrv
+	WithSpriteTurret@jeep:
+		Sequence: turret-jeep
+		Turret: jeep-turret
+		RequiresCondition: jeep
+	WithSpriteTurret@bggy:
+		Sequence: turret-bggy
+		Turret: bggy-turret
+		RequiresCondition: bggy
+	WithSpriteTurret@r4wd:
+		Sequence: turret-r4wd
+		Turret: r4wd-turret
+		RequiresCondition: r4wd
+	WithSpriteTurret@ftrk:
+		Sequence: turret-ftrk
+		Turret: ftrk-turret
+		RequiresCondition: ftrk
+	WithSpriteTurret@apc2:
+		Sequence: turret-apc2
+		Turret: apc2-turret
+		RequiresCondition: apc2
+	WithSpriteTurret@apc3:
+		Sequence: turret-apc3
+		Turret: apc3-turret
+		RequiresCondition: apc3
+	WithSpriteTurret@maag:
+		Sequence: turret-maag
+		Turret: maag-turret
+		RequiresCondition: maag
+	WithSpriteTurret@aav:
+		Sequence: turret-aav
+		Turret: aav-turret
+		RequiresCondition: aav
+	WithSpriteTurret@btr:
+		Sequence: turret-btr
+		Turret: btr-turret
+		RequiresCondition: btr
+	WithSpriteTurret@ltnk:
+		Sequence: turret-ltnk
+		Turret: ltnk-turret
+		RequiresCondition: ltnk
+	WithSpriteTurret@mtnk:
+		Sequence: turret-mtnk
+		Turret: mtnk-turret
+		RequiresCondition: mtnk
+	WithSpriteTurret@htnk:
+		Sequence: turret-htnk
+		Turret: htnk-turret
+		RequiresCondition: htnk
+	WithSpriteTurret@wtnk:
+		Sequence: turret-wtnk
+		Turret: wtnk-turret
+		RequiresCondition: wtnk
+	WithSpriteTurret@stnk:
+		Sequence: turret-stnk
+		Turret: stnk-turret
+		RequiresCondition: stnk
+	WithSpriteTurret@tnk1:
+		Sequence: turret-1tnk
+		Turret: 1tnk-turret
+		RequiresCondition: tnk1
+	WithSpriteTurret@tnk2:
+		Sequence: turret-2tnk
+		Turret: 2tnk-turret
+		RequiresCondition: tnk2
+	WithSpriteTurret@tnk3:
+		Sequence: turret-3tnk
+		Turret: 3tnk-turret
+		RequiresCondition: tnk3
+	WithSpriteTurret@b1t3:
+		Sequence: turret-3t1b
+		Turret: 3t1b-turret
+		RequiresCondition: b1t3
+	WithSpriteTurret@tnk4:
+		Sequence: turret-4tnk
+		Turret: 4tnk-turret
+		RequiresCondition: tnk4
+	WithSpriteTurret@tnf4:
+		Sequence: turret-4tnf
+		Turret: 4tnf-turret
+		RequiresCondition: tnf4
+	WithSpriteTurret@tnk5:
+		Sequence: turret-5tnk
+		Turret: 5tnk-turret
+		RequiresCondition: tnk5
+	WithSpriteTurret@msam:
+		Sequence: turret-msam
+		Turret: msam-turret
+		RequiresCondition: msam
+	WithSpriteTurret@mlrs:
+		Sequence: turret-mlrs
+		Turret: mlrs-turret
+		RequiresCondition: mlrs
+	WithSpriteTurret@mhq:
+		Sequence: turret-mhq
+		Turret: mhq-turret
+		RequiresCondition: mhq
+	WithSpriteTurret@t55h:
+		Sequence: turret-t55h
+		Turret: t55h-turret
+		RequiresCondition: t55h
+	AttackTurreted: 
+        Armaments: primary, secondary
+        Turrets: default-turret, disguise-turret, ahrv-turret, jeep-turret, bggy-turret, r4wd-turret, ftrk-turret, apc2-turret, apc3-turret, maag-turret, aav-turret, btr-turret, ltnk-turret, mtnk-turret, htnk-turret, wtnk-turret, stnk-turret, 1tnk-turret, 2tnk-turret, 3tnk-turret, 3t1b-turret, 4tnk-turret, 4tnf-turret, 5tnk-turret, msam-turret, mlrs-turret, mhq-turret, t55h-turret
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+    #   actually to get the position right i could declare a secondary invis turret and assign copy only once, and then tell it to appear with all non-default.
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: MediumCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-pri
+        PauseOnCondition: reload-sec || emp-crate-collected
+		RequiresCondition: !disguise
+        Turret: default-turret
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: MediumCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-sec
+        PauseOnCondition: reload-pri || emp-crate-collected
+        RequiresCondition: disguise
+		Turret: disguise-turret
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1194, 1194
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	WithIdleOverlay@MGG:
+		Offset: -299,0,171
+		Sequence: mgg-spinner
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: mgg
+	WithIdleOverlay@MHQ:
+		Sequence: mhq-spinner
+		Offset: -256,0,256
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: mhq
+
+DTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mirage Tank (Destroyed)
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: dtnk
+	RenderSprites:
+		Image: dtnk.husk

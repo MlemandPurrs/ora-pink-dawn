@@ -1314,7 +1314,10 @@ MNLY:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Flame Mammoth
+		Name: Flame Mammoth Tank
+        GenericStancePrefix: false
+        GenericName: Flame Mammoth
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1565,7 +1568,10 @@ QTNK:
 	Valued:
 		Cost: 1800
 	Tooltip:
-		Name: M.A.D. Tank
+		Name: Mutually Assured Destruction Vehicle
+        GenericStancePrefix: false
+        GenericName: M.A.D. Tank
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1615,6 +1621,8 @@ QTNK:
 	Passenger:
         CargoType: Vehicle2
 		CustomPipType: pip-red
+	GpsDot:
+		String: Heavy
 
 TNKD:
 	Inherits: ^TrackedVehicle
@@ -1984,6 +1992,9 @@ MGG:
 		Cost: 600
 	Tooltip:
 		Name: Mobile Gap Generator
+        GenericStancePrefix: false
+        GenericName: Mobile GAP
+        GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
         BuildDuration: 900
         BuildDurationModifier: 100
