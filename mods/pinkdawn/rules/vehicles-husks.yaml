@@ -797,3 +797,19 @@ MGG.Husk:
 		IntoActor: 3t1b
 	RenderSprites:
 		Image: 3t1b.husk
+
+ECTK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chrono Tortoise (Destroyed)
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: ectk
+	RenderSprites:
+		Image: ectk.husk

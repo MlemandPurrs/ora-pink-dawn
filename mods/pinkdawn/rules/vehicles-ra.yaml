@@ -1695,7 +1695,7 @@ CTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 3300
+    	BuildDuration: 3100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		Prerequisites: atek, ~vehicle.allies, ~!player.alliesa, ~!player.alliesc, ~techlevel.7
@@ -1712,7 +1712,7 @@ CTNK:
         TurnSpeed: 12
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
 	Armament:
 		Weapon: APTusk
 		LocalOffset: -160,-276,232, -160,276,232
@@ -2064,3 +2064,90 @@ MGG:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+
+ECTK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Chrono Tortoise
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 3100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 15
+        BuildLimit: 1
+		Prerequisites: atek, ~vehicle.allies, ~player.alliesb, ~techlevel.7
+		Queue: Vehicle
+		Description: Maximum one can be built.\n\nHeavily armored Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
+	SelectionDecorations:
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	Mobile:
+        Locomotor: tracked-crusher
+		Speed: 40
+        TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || boarding
+	RevealsShroud:
+		Range: 5c128
+	Armament:
+        Name: primary
+		Weapon: APTusk
+		LocalOffset: 240,-276,340, 240,276,340
+		LocalYaw: 60, -60
+        PauseOnCondition: reload-secondary || emp-crate-collected
+        ReloadingCondition: reload-primary
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: APTusk
+		LocalOffset: 240,138,340, 240,-138,340
+		LocalYaw: 60, -60
+        PauseOnCondition: reload-primary || emp-crate-collected
+        ReloadingCondition: reload-secondary
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+	PortableChrono:
+		ChargeDelay: 2250
+		HasDistanceLimit: false
+	Selectable:
+		DecorationBounds: 1030, 1030
+	Passenger:
+		CustomPipType: red
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

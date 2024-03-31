@@ -517,3 +517,18 @@ qtnk.husk:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
+
+ectk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: gunfire2
+		Length: 5
+	icon: ectkicon
+
+ectk.husk:
+	idle: ectk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512

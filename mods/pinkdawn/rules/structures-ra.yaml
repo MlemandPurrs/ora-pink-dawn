@@ -520,15 +520,15 @@ OSIL:
 		Amount: 200
 		UseResourceStorage: true
 		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
-        RequiresCondition: infiniteincome-enabled
+        RequiresCondition: secondaryincome-enabled
 	CashTricklerBar:
 		Color: FFFF9E
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     GrantConditionOnPrerequisite@PassiveIncome:
-        Condition: infiniteincome-enabled
-        Prerequisites: global-infiniteincome
+        Condition: secondaryincome-enabled
+        Prerequisites: global-secondaryincome
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	WithResourceStoragePipsDecoration:
@@ -539,7 +539,7 @@ OSIL:
 		FullSequence: pip-yellow
     CashTricklerMultiplier@AIBoost:
         Modifier: 120
-        RequiresCondition: ai-income-boost && infiniteincome-enabled
+        RequiresCondition: ai-income-boost && secondaryincome-enabled
 	GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai

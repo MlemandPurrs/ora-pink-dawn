@@ -180,7 +180,7 @@
 	Faction@Random:
 		Name: Random TD
 		InternalName: Random
-		RandomFactionMembers: gdi, nod
+		RandomFactionMembers: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc
 		Description: Random TD Faction\nGDI or Nod will be chosen at random when the game starts.
 	Faction@gdi:
 		Name: GDI
@@ -227,7 +227,7 @@
 	Faction@Random3:
 		Name: Random Any
 		InternalName: Random3
-		RandomFactionMembers: gdi, nod, allies, soviet
+		RandomFactionMembers: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
 		Description: Random Any Faction\nOne of GDI, Nod, Allies, Soviet will be chosen at random when the game starts.
 	Faction@allies:
 		Name: Allies
@@ -241,7 +241,7 @@
 	Faction@alliesb:
 		Name: Mecha. Assault
 		InternalName: alliesb
-		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
+		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Unit:\n    - Chrono Tortoise\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesc:
 		Name: Defense Corps
@@ -270,7 +270,7 @@
 	Faction@RandomRA:
 		Name: Random RA
 		InternalName: Random2
-		RandomFactionMembers: allies, soviet
+		RandomFactionMembers: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
 		Description: Random RA Faction\nAllies or Soviet will be chosen at random when the game starts.
 	ResourceRenderer:
 		ResourceTypes:

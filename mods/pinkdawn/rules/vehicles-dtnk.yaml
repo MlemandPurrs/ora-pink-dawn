@@ -4,7 +4,6 @@ DTNK:
 	Inherits@AUTOTARGET: ^AutoTargetforTanks
 	-WithFacingSpriteBody:
 	-Tooltip:
-    -Targetable@MirageDisguise:
 	Valued:
 		Cost: 1000
 	UpdatesPlayerStatistics:

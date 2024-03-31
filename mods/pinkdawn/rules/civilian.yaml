@@ -493,7 +493,7 @@ BRIDGEDW1:
         #   SpawnOffset: 2,0
     FreeActor@south:
         Actor: bridgehut
-		SpawnOffset: 1,3
+		SpawnOffset: 1,2
 	Interactable:
 		Bounds: 6144, 4096
 

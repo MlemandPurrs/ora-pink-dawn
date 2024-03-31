@@ -88,13 +88,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 11
 		Prerequisites: global-expensivemcv
-	LobbyPrerequisiteCheckbox@INFINITEINCOME:
-		ID: infiniteincome
-		Label: Infinite Income
+	LobbyPrerequisiteCheckbox@SECONDARYINCOME:
+		ID: secondaryincome
+		Label: Secondary Income
 		Description: Silos generate periodic income while powered
 		Enabled: False
 		DisplayOrder: 12
-		Prerequisites: global-infiniteincome
+		Prerequisites: global-secondaryincome
 	LobbyPrerequisiteCheckbox@PRODUCTIONBOOSTER:
 		ID: productionbooster
 		Label: Fast Production
