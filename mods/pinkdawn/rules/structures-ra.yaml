@@ -154,8 +154,9 @@ FAC2:
 	ProductionBar@AlliesFake:
 		ProductionType: Defense.Allies2
 		Color: 8A8A8A
-	#   BaseProvider:
-	#	Range: 14c0
+	BaseProvider:
+		PauseOnCondition: being-captured
+		Range: 15c0
 	WithBuildingBib:
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
@@ -918,7 +919,7 @@ FIX2:
 2FLD:
 	Inherits: ^BaseBuilding
     Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
-	Inherits@shape: ^2x2Shape
+	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 3072, 2048
@@ -1162,7 +1163,7 @@ FIX2:
 3FLD:
 	Inherits: ^BaseBuilding
     Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
-	Inherits@shape: ^2x2Shape
+	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 3072, 2048

@@ -166,8 +166,9 @@ FACT:
 	ProductionBar@DefenseBlackhand:
 		ProductionType: Defense.Blackhand
 		Color: 8A8A8A
-	#   BaseProvider:
-	#	Range: 14c0
+	BaseProvider:
+		PauseOnCondition: being-captured
+		Range: 15c0
 	WithBuildingBib:
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete

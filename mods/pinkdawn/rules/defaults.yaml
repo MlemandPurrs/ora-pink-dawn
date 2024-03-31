@@ -1146,7 +1146,7 @@
     Inherits@LowPowerDamage: ^DamagedOnLowPower
     Inherits@productionboost: ^ProductionBoost
 	Building:
-		RequiresBaseProvider: false
+		RequiresBaseProvider: true
 		BuildSounds: constru2.aud, hvydoor1.aud
 		UndeploySounds: cashturn.aud
 		TerrainTypes: Clear,Road
@@ -1395,7 +1395,7 @@
 	Tooltip:
 		Name: Gate
 	Building:
-        RequiresBaseProvider: false
+        RequiresBaseProvider: true
 		BuildSounds: place2.aud
 		TerrainTypes: Clear, Road
 	RequiresBuildableArea:
@@ -1432,7 +1432,7 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
-        RequiresBaseProvider: false
+        RequiresBaseProvider: true
 		Dimensions: 1,1
 		Footprint: x
 		BuildSounds: hvydoor1.aud
@@ -2262,7 +2262,7 @@
 	Valued:
 		Cost: 50
 	Building:
-		RequiresBaseProvider: false
+		RequiresBaseProvider: true
 		BuildSounds: constru2.aud, hvydoor1.aud
 		UndeploySounds: cashturn.aud
 		TerrainTypes: Clear,Road

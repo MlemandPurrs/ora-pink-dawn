@@ -354,9 +354,9 @@ World:
         AllyBuildRadiusCheckboxLocked: True
 		AllyBuildRadiusCheckboxVisible: False
         AllyBuildRadiusCheckboxEnabled: False
-        BuildRadiusCheckboxDisplayOrder: 99
-        BuildRadiusCheckboxLocked: True
-        BuildRadiusCheckboxVisible: False
+        BuildRadiusCheckboxDisplayOrder: 21
+        BuildRadiusCheckboxLocked: False
+        BuildRadiusCheckboxVisible: True
         BuildRadiusCheckboxEnabled: False
 	MapOptions:
 		ShortGameCheckboxDisplayOrder: 2
