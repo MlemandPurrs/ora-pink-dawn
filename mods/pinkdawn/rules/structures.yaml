@@ -32,7 +32,7 @@ FACT:
 	RevealsShroud:
 		Range: 4c512
 	Production:
-		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod, Building.Blackhand, Defense.Blackhand
+		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod, Building.BossGDI, Defense.BossGDI, Building.BossNod, Defense.BossNod
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
@@ -90,8 +90,23 @@ FACT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@BlackhandBuilding:
-		Type: Building.Blackhand
+	ProductionQueue@BossGDIBuilding:
+		Type: Building.BossGDI
+		DisplayOrder: 0
+		Factions: bossgdi
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@BossNodBuilding:
+		Type: Building.BossNod
 		DisplayOrder: 0
 		Factions: bossnod
 		Group: Building
@@ -135,8 +150,23 @@ FACT:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@BlackhandDefense:
-		Type: Defense.Blackhand
+	ProductionQueue@BossGDIDefense:
+		Type: Defense.BossGDI
+		DisplayOrder: 1
+		Factions: bossgdi
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@BossNodDefense:
+		Type: Defense.BossNod
 		DisplayOrder: 1
 		Factions: bossnod
 		Group: Defense
@@ -155,16 +185,21 @@ FACT:
 		ProductionType: Building.GDI
 	ProductionBar@BuildingNod:
 		ProductionType: Building.Nod
-	ProductionBar@BuildingBlackhand:
-		ProductionType: Building.Blackhand
+	ProductionBar@BuildingBossGDI:
+		ProductionType: Building.BossGDI
+	ProductionBar@BuildingBossNod:
+		ProductionType: Building.BossNod
 	ProductionBar@DefenseGDI:
 		ProductionType: Defense.GDI
 		Color: 8A8A8A
 	ProductionBar@DefenseNod:
 		ProductionType: Defense.Nod
 		Color: 8A8A8A
-	ProductionBar@DefenseBlackhand:
-		ProductionType: Defense.Blackhand
+	ProductionBar@DefenseBossGDI:
+		ProductionType: Defense.BossGDI
+		Color: 8A8A8A
+	ProductionBar@DefenseBossNod:
+		ProductionType: Defense.BossNod
 		Color: 8A8A8A
 	BaseProvider:
 		PauseOnCondition: being-captured
@@ -196,6 +231,7 @@ FACT:
             gdia: gdifact
             gdib: gdifact
             gdic: gdifact
+            bossgdi: gdifact
 			nod: nodfact
 			noda: nodfact
 			nodb: nodfact
@@ -241,7 +277,7 @@ NUKE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Generates a standard amount of power.
 	Building:
 		Footprint: Xx xx
@@ -322,7 +358,7 @@ NUK2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq, ~techlevel.5
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
 		Footprint: Xx xX
@@ -404,7 +440,7 @@ NUK3:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
 		Prerequisites: anytier3, ~techlevel.7
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Provides even more power,\nabove triple the standard amount.
 	Building:
 		Footprint: xXx XxX
@@ -490,7 +526,7 @@ PROC:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Processes raw Tiberium\ninto useable resources.
 	Building:
 		Footprint: _x_ xxx ++x ===
@@ -580,7 +616,7 @@ PROC.Clone:
     Inherits: PROC
 	Buildable:
 		BuildPaletteOrder: 0
-		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
+		Queue: Defense.GDI, Defense.Nod, Defense.BossGDI, Defense.BossNod
 		Prerequisites: fact, ~techlevel.2, ~global-defenseref
 	ProvidesPrerequisite@ISACOPY:
         Prerequisite: proc
@@ -616,7 +652,7 @@ SILO:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~techlevel.2
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Stores processed Tiberium.
 	Building:
 		Footprint: xx
@@ -684,7 +720,7 @@ SILO.Clone:
 	Buildable:
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~techlevel.2, ~global-defenseref
-		Queue: Defense.GDI, Defense.Nod, Defense.Bossnod
+		Queue: Defense.GDI, Defense.Nod, Defense.BossGDI, Defense.BossNod
 	ProvidesPrerequisite@ISACOPY:
         Prerequisite: silo
 	RenderSprites:
@@ -720,7 +756,7 @@ PYLE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
         Prerequisites: fact
-		Queue: Building.GDI
+		Queue: Building.GDI, Building.BossGDI
 		Description: Trains Infantry units.
 	Building:
 		Footprint: xx ++ ==
@@ -768,15 +804,15 @@ PYLE:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: infantry.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc
+		Factions: gdi, gdia, gdib, gdic, bossgdi, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
@@ -811,7 +847,7 @@ HAND:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: fact
-		Queue: Building.Nod, Building.Blackhand
+		Queue: Building.Nod, Building.BossNod
 		Description: Trains Infantry units.
 	Building:
 		Footprint: xX xx ==
@@ -870,7 +906,7 @@ HAND:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 2048
@@ -962,11 +998,11 @@ AFLD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1058,11 +1094,11 @@ UFLD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -1097,7 +1133,7 @@ WEAP:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, infantryproduction, ~techlevel.2
-		Queue: Building.GDI
+		Queue: Building.GDI, Building.BossGDI
 		Description: Produces Vehicle units.
 	Building:
 		Footprint: xxx +++ ===
@@ -1151,15 +1187,15 @@ WEAP:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: vehicle.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv:
 		Prerequisite: vehicle.mcv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@harv:
 		Prerequisite: vehicle.harv
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -1192,7 +1228,7 @@ FIX:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction, ~techlevel.3
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
 		Footprint: =+= +++ =+=
@@ -1276,7 +1312,7 @@ HPAD:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction, ~!player.gdia, ~techlevel.5
-		Queue: Building.GDI, Building.Nod, Building.Allies
+		Queue: Building.GDI, Building.Nod, Building.Allies, Building.BossGDI, Building.BossAllies
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
 		Footprint: =x x=
@@ -1302,7 +1338,6 @@ HPAD:
 	ProductionQueue:
 		Type: Aircraft
 		DisplayOrder: 4
-        Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, allies, alliesa, alliesb, allliesc, soviet, sovieta, sovietb, sovietc, bossnod
 		Group: Aircraft
 		LowPowerModifier: 150
 		ReadyAudio: UnitReady
@@ -1323,7 +1358,7 @@ HPAD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
@@ -1331,11 +1366,11 @@ HPAD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1365,11 +1400,11 @@ HPAD:
 		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
-		Factions: nod, noda, nodb
+		Factions: nod, noda, nodb, bossnod
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allies.player
@@ -1432,7 +1467,7 @@ HQ:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
@@ -1561,7 +1596,7 @@ MISS:
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
-		Queue: Building.GDI, Building.Blackhand
+		Queue: Building.GDI, Building.BossGDI, Building.BossNod
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
 	Valued:
 		Cost: 2000
@@ -1621,7 +1656,7 @@ MISS:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@GDI:
         Condition: owner.is.gdi
-        Factions: gdi, gdib, gdic
+        Factions: gdi, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1808,7 +1843,7 @@ EYE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
 		Prerequisites: miss, ~techlevel.7
-		Queue: Building.GDI
+		Queue: Building.GDI, Building.BossGDI
 		BuildLimit: 1
 		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
 	Building:
@@ -1942,7 +1977,7 @@ NCOM:
 		BuildPaletteOrder: 13
 		BuildLimit: 1
 		Prerequisites: miss, ~techlevel.7
-		Queue: Building.Blackhand
+		Queue: Building.BossNod
 		Description: Maximum one can be built.\n\nUnlocks Infiltrator and Scorpion Tank.\n\nProvides 'Stealth Airstrike' super-weapon.
 	Building:
 		Footprint: xx xx ==
@@ -2053,7 +2088,7 @@ SGEN:
         BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: miss, ~global-superweapons, ~techlevel.7
-		Queue: Building.Blackhand
+		Queue: Building.BossNod
 		Description: Maximum one can be built.\n\nEnables the usage of 'Stealth Field'\nto activate cloaking when ready.
 	Tooltip:
 		Name: Stealth Generator

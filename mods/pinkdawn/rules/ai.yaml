@@ -587,8 +587,8 @@ Player:
             minb: 1
 	BaseBuilderBotModule@Blackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
-		BuildingQueues: Building.Blackhand
-		DefenseQueues: Defense.Blackhand
+		BuildingQueues: Building.BossNod
+		DefenseQueues: Defense.BossNod
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
@@ -733,7 +733,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -746,7 +746,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -956,6 +956,7 @@ Player:
             arty: 30
             tnkd: 30
             ctnk: 20
+            ectk: 1
             mgg: 3
             hel2: 5
             f16: 1
@@ -974,7 +975,8 @@ Player:
             apc: 4
             apc3: 2
             arty: 5
-            ctnk: 1
+            ctnk: 2
+            ectk: 1
             mgg: 2
             hel2: 2
             f16: 1

@@ -210,7 +210,7 @@ SYRD:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: navy.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: navy.nod
@@ -218,19 +218,19 @@ SYRD:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: navy.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: navy.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@lst:
 		Prerequisite: navy.lst
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@lst2:
 		Prerequisite: navy.lst2
-		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
@@ -450,7 +450,7 @@ APRT:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
@@ -458,11 +458,11 @@ APRT:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 
 APRT.Husk:
@@ -876,7 +876,7 @@ CSTL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 99
 		Prerequisites: ~disabled
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.BossGDI, Defense.BossNod, Defense.BossAllies, Defense.BossSoviet
 		Description: Anti-Ship base defense.\n\nCan attack only Naval units.
 	Building:
 	Health:

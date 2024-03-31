@@ -13,7 +13,7 @@ GTWR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: infantryproduction, ~techlevel.3
-		Queue: Defense.GDI, Defense.Nod
+		Queue: Defense.GDI, Defense.Nod, Defense.BossGDI
 		Description: Basic defensive structure.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:
@@ -78,7 +78,7 @@ GUN:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction, ~!player.alliesc, ~techlevel.4
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.BossGDI, Defense.BossAllies
 		Description: Anti-Tank base defense.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Building:
 	Health:
@@ -242,7 +242,7 @@ ATWR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: miss, ~techlevel.6
-		Queue: Defense.GDI
+		Queue: Defense.GDI, Defense.BossGDI
 		Description: All-purpose defensive structure.\nRequires power to operate.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
 	Selectable:
 		Bounds: 1024, 1024
@@ -351,7 +351,7 @@ OBLI:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anytier3, ~techlevel.6
-		Queue: Defense.Nod, Defense.Blackhand
+		Queue: Defense.Nod, Defense.BossNod
 		Description: Advanced base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Selectable:
 		Bounds: 1024, 1024
@@ -425,7 +425,7 @@ LTUR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction, ~techlevel.4
-		Queue: Defense.Blackhand
+		Queue: Defense.BossNod
 		Description: All-purpose base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Building:
 	Health:
@@ -505,7 +505,7 @@ SAM:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Nod, Defense.Blackhand
+		Queue: Defense.Nod, Defense.BossNod
 		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx
@@ -606,7 +606,7 @@ SAM2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Soviet
+		Queue: Defense.Soviet, Defense.BossSoviet
 		Description: Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx
@@ -696,7 +696,7 @@ FTWR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction, ~!player.sovieta, ~techlevel.4
-		Queue: Defense.Soviet
+		Queue: Defense.Soviet, Defense.BossSoviet
 		Description: General-purpose base defense.\nRequires power to operate.\n\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Building:
 	Health:
@@ -763,7 +763,7 @@ CTUR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: vehicleproduction, ~techlevel.3
-		Queue: Defense.Blackhand
+		Queue: Defense.BossNod
 		Description: Cloaked Anti-Infantry base defense.\n\nStrong vs Infantry.
 	Building:
 	Health:
@@ -845,7 +845,7 @@ TSLA:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anyhq, ~!player.sovietb, ~!player.sovietc, ~techlevel.5
-		Queue: Defense.Soviet
+		Queue: Defense.Soviet, Defense.BossSoviet
 		Description: Advanced base defense.\nRequires power to operate.\n\nSpecial: Electromagnetic\nAttacks briefly short-circuit\nenemy Vehicles and Defenses.\n\nStrong vs Vehicles, Infantry.\nWeak vs Aircraft, Artillery.
 	Health:
 		HP: 60000
@@ -933,7 +933,7 @@ GAP:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Queue: Building.Allies
+		Queue: Building.Allies, Building.BossAllies
 		Prerequisites: atek, ~!player.alliesa, ~!player.alliesb, ~techlevel.7
 		Description: Obscures the enemy's view with shroud.\nCan be toggled on/off via deploy command.\nRequires power to operate.
 	Selectable:
@@ -1006,7 +1006,7 @@ GAP:
 GAP.Clone:
     Inherits: GAP
 	Buildable:
-		Queue: Defense.Allies
+		Queue: Defense.Allies, Defense.BossAllies
 	RenderSprites:
 		Image: gap
     -MapEditorData:
@@ -1031,7 +1031,7 @@ AGUN:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Allies
+		Queue: Defense.Allies, Defense.BossAllies
 		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
     Building:
 	Health:
@@ -1117,7 +1117,7 @@ SBAG:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: infantryproduction, ~techlevel.2
-		Queue: Defense.GDI, Defense.Allies
+		Queue: Defense.GDI, Defense.Allies, Defense.BossGDI, Defense.BossAllies
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -1142,7 +1142,7 @@ BARB:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: infantryproduction, ~techlevel.2
-		Queue: Defense.Nod, Defense.Blackhand
+		Queue: Defense.Nod, Defense.BossNod
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -1167,7 +1167,7 @@ CYCL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction, ~techlevel.4
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.BossGDI, Defense.BossNod, Defense.BossAllies, Defense.BossSoviet
 		Description: Stops infantry and light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
 	Armor:
 		Type: Aluminium
@@ -1193,7 +1193,7 @@ BRIK:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anytier3, ~techlevel.6
-		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.Blackhand
+		Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.BossGDI, Defense.BossNod, Defense.BossAllies, Defense.BossSoviet
 		Description: Stops infantry and vehicles.\nBlocks projectiles.
 	Health:
 		HP: 20000
@@ -1244,7 +1244,7 @@ FENC:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: infantryproduction, ~techlevel.2
-		Queue: Defense.Soviet
+		Queue: Defense.Soviet, Defense.BossSoviet
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -1272,7 +1272,7 @@ HGAT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anytier3, ~techlevel.6
-		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.Blackhand
+        Queue: Defense.GDI, Defense.Nod, Defense.Allies, Defense.Soviet, Defense.BossGDI, Defense.BossNod, Defense.BossAllies, Defense.BossSoviet
 		Description: Places a gate that blocks enemy access into your base.\n\nYou can rotate using Rotate Building hotkey (default: V)
 	Valued:
 		Cost: 100
@@ -1301,19 +1301,22 @@ HGAT:
             gdia: hgat-gdi
             gdib: hgat-gdi
             gdic: hgat-gdi
+            bossgdi: hgat-gdi
 			nod: hgat-nod
             noda: hgat-nod
             nodb: hgat-nod
             nodc: hgat-nod
+            bossnod: hgat-nod
             allies: hgat-allies
             alliesa: hgat-allies
             alliesb: hgat-allies
             alliesc: hgat-allies
+            bossallies: hgat-allies
             soviet: hgat-soviet
             sovieta: hgat-soviet
             sovietb: hgat-soviet
             sovietc: hgat-soviet
-            bossnod: hgat-nod
+            bosssoviet: hgat-soviet
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -1347,7 +1350,7 @@ VGAT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: ~disabled
-		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.Blackhand
+		Queue: Defense.GDI, Defense.Nod, Defense.Soviet, Defense.Allies, Defense.BossGDI, Defense.BossNod, Defense.BossSoviet, Defense.BossAllies
 		Description: Places an vertical gate.\nBlocks enemy access into your base.
 	Valued:
 		Cost: 100
@@ -1400,7 +1403,7 @@ PBOX:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: infantryproduction, ~techlevel.3
-		Queue: Defense.Allies
+		Queue: Defense.Allies, Defense.BossAllies
 		Description: Static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:
@@ -1504,7 +1507,7 @@ HBOX:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anyhq, ~techlevel.5
-		Queue: Defense.Allies
+		Queue: Defense.Allies, Defense.BossAllies
 		Description: Camouflaged static defense with\na heavy machine gun.\n\nCan shelter one Infantry.\nCannot attack without inhabitant.\nComes with a initial inhabitant.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
 	Health:

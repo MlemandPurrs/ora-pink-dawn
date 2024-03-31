@@ -5,10 +5,13 @@ Speech:
 	Prefixes:
         neutral: gdi
 		gdi: gdi
+        bossgdi: bossgdi
 		nod: nod
-        allies: allies
-        soviet: soviet
         bossnod: bossnod
+        allies: allies
+        bossallies: bossallies
+        soviet: soviet
+        bosssoviet: bosssoviet
 	Notifications:
         AirstrikeInbound: airinc1
 		AirstrikeReady: airredy1

@@ -37,7 +37,7 @@ FAC2:
 	RevealsShroud:
 		Range: 4c512
 	Production:
-		Produces: Building.Allies, Building.Soviet, Defense.Allies, Defense.Soviet, Defense.Allies2
+		Produces: Building.Allies, Building.Soviet, Defense.Allies, Defense.Soviet, Defense.Allies2, Building.BossAllies, Defense.BossAllies, Building.BossSoviet, Defense.BossSoviet
         PauseOnCondition: build-incomplete || emp-affected-structure
 	Transforms:
 		RequiresCondition: factundeploy
@@ -95,6 +95,36 @@ FAC2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@BossAlliesBuilding:
+		Type: Building.BossAllies
+		DisplayOrder: 0
+		Factions: bossallies
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@BossSovietBuilding:
+		Type: Building.BossSoviet
+		DisplayOrder: 0
+		Factions: bosssoviet
+		Group: Building
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@AlliesDefense:
 		Type: Defense.Allies
 		DisplayOrder: 1
@@ -125,6 +155,36 @@ FAC2:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@BossAlliesDefense:
+		Type: Defense.BossAllies
+		DisplayOrder: 1
+		Factions: bossallies
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@BossSovietDefense:
+		Type: Defense.BossSoviet
+		DisplayOrder: 1
+		Factions: bosssoviet
+		Group: Defense
+		LowPowerModifier: 150
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@AlliesFake:
 		Type: Defense.Allies2
 		DisplayOrder: 2
@@ -143,13 +203,23 @@ FAC2:
 	BaseBuilding:
 	ProductionBar@BuildingAllies:
 		ProductionType: Building.Allies
+	ProductionBar@BuildingBossAllies:
+		ProductionType: Building.BossAllies
 	ProductionBar@BuildingSoviet:
 		ProductionType: Building.Soviet
+	ProductionBar@BuildingBossSoviet:
+		ProductionType: Building.BossSoviet
 	ProductionBar@DefenseAllies:
 		ProductionType: Defense.Allies
 		Color: 8A8A8A
+	ProductionBar@DefenseBossAllies:
+		ProductionType: Defense.BossAllies
+		Color: 8A8A8A
 	ProductionBar@DefenseSoviet:
 		ProductionType: Defense.Soviet
+		Color: 8A8A8A
+	ProductionBar@DefenseBossSoviet:
+		ProductionType: Defense.BossSoviet
 		Color: 8A8A8A
 	ProductionBar@AlliesFake:
 		ProductionType: Defense.Allies2
@@ -216,7 +286,7 @@ POWR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: fac2
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Generates a standard amount of power.
 	Building:
 		Footprint: xx xx
@@ -290,7 +360,7 @@ APWR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq, ~techlevel.5
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
 		Footprint: XxX xXx
@@ -377,7 +447,7 @@ OREF:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: fac2
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Processes valuable minerals\ninto useable resources.
 	Building:
 		Footprint: _X_ xxx X== ===
@@ -408,11 +478,11 @@ OREF:
         RequiresCondition: !build-incomplete && owner.is.soviet
 	GrantConditionOnFaction@Soviet:
 		Condition: owner.is.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: owner.is.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
 		ResetOnOwnerChange: True
 	WithBuildingBib:
 	Power:
@@ -492,7 +562,7 @@ OSIL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: oref, ~techlevel.2
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Stores processed Ore and Gems.
 	Building:
 		Footprint: x
@@ -588,7 +658,7 @@ TENT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
         Prerequisites: fac2
-		Queue: Building.Allies
+		Queue: Building.Allies, Building.BossAllies
 		Description: Trains Infantry units.\nNearby infantry can heal.
 	Building:
 		Footprint: xx xx ==
@@ -636,7 +706,7 @@ TENT:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
 		Prerequisite: infantry.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -681,7 +751,7 @@ BARR:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
         Prerequisites: fac2
-		Queue: Building.Soviet
+		Queue: Building.Soviet, Building.BossSoviet
 		Description: Trains Infantry units.
 	Building:
 		Footprint: xx xx ==
@@ -729,11 +799,11 @@ BARR:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@soviet:
 		Prerequisite: infantry.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc
+		Factions: gdi, gdia, gdib, gdic, bossgdi, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
@@ -765,7 +835,7 @@ WARF:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, infantryproduction, ~techlevel.2
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Produces vehicles
 	Building:
 		Footprint: xxx xxx ===
@@ -818,15 +888,15 @@ WARF:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
 		Prerequisite: vehicle.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: vehicle.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@mcv2:
 		Prerequisite: vehicle.mcv2
-		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -862,7 +932,7 @@ FIX2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction, ~techlevel.3
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Repairs Vehicles and Aircraft.\n\nCan sell Vehicles and Aircraft.
 	Building:
 		Footprint: =+= +++ =+=
@@ -981,7 +1051,7 @@ FIX2:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
@@ -989,11 +1059,11 @@ FIX2:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     WithBuildingBib:
 	ProximityExternalCondition:
@@ -1135,7 +1205,7 @@ FIX2:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet, sovietb, sovietc
+        Factions: soviet, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     GrantConditionOnFaction@Soviet3:
         Condition: owner.is.sovieta
@@ -1179,7 +1249,7 @@ FIX2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction, ~!player.gdi, ~!player.gdib, ~!player.gdic, ~techlevel.5
-		Queue: Building.GDI, Building.Soviet, Building.Blackhand
+		Queue: Building.GDI, Building.Soviet, Building.BossNod, Building.BossSoviet
 		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
 		Footprint: x=x =xx
@@ -1225,7 +1295,7 @@ FIX2:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@gdi:
 		Prerequisite: aircraft.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@nod:
 		Prerequisite: aircraft.nod
@@ -1233,11 +1303,11 @@ FIX2:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@allies:
 		Prerequisite: aircraft.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@soviet:
 		Prerequisite: aircraft.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     WithBuildingBib:
 	FreeActor@1:
@@ -1267,7 +1337,7 @@ FIX2:
 		RequiresCondition: !build-incomplete && bossnod.player && gratisair
 	GrantConditionOnFaction@GDI:
 		Condition: gdi.player
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Nod:
 		Condition: nod.player
@@ -1275,11 +1345,11 @@ FIX2:
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allies.player
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
-		Factions: soviet, sovieta, sovietb, sovietc
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Blackhand:
 		Condition: bossnod.player
@@ -1435,7 +1505,7 @@ FIX2:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet, sovietc
+        Factions: soviet, sovietc, bosssoviet
         ResetOnOwnerChange: true
     GrantConditionOnFaction@Soviet3:
         Condition: owner.is.sovieta
@@ -1482,7 +1552,7 @@ DOME:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.Soviet, Building.BossAllies, Building.BossSoviet
 		Description: Provides Radar and 'Spy Plane' support-power.\nRequires power to operate.
 	Building:
 		Footprint: xx xx ==
@@ -1541,7 +1611,7 @@ DOME:
 	SupportPowerChargeBar:
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
-        Factions: soviet, sovieta, sovietb, sovietc
+        Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@WIRELESS:
 		Prerequisite: activeradar
@@ -1590,7 +1660,7 @@ ATEK:
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
-		Queue: Building.Allies
+		Queue: Building.Allies, Building.BossAllies
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nLaunches a sattelite that reveals map terrain\nand periodically provides tactical information.
 	Health:
 		HP: 100000
@@ -1614,7 +1684,7 @@ ATEK:
 		Prerequisite: anytier3
 	ProvidesPrerequisite@2:
 		Prerequisite: anytechra
-        Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+        Factions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1767,7 +1837,7 @@ STEK:
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
-		Queue: Building.Soviet
+		Queue: Building.Soviet, Building.BossSoviet
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
 	Valued:
 		Cost: 2000
@@ -1794,7 +1864,7 @@ STEK:
 		Prerequisite: anytier3
 	ProvidesPrerequisite@2:
 		Prerequisite: anytechra
-        Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+        Factions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
@@ -1824,7 +1894,7 @@ FCOM:
 		BuildPaletteOrder: 13
 		BuildLimit: 1
 		Prerequisites: stek, ~techlevel.7
-		Queue: Building.Soviet
+		Queue: Building.Soviet, Building.BossSoviet
 		Description: Maximum one can be built.\n\nUnlocks Volkov, Behemoth Tank,\nNuclear Tactical Submarine,\nand MiG Nuclear Bomber to be built.\n\nProvides 'Parabombs' super-weapon.
 	Building:
 		Footprint: xx xx ==
@@ -1874,7 +1944,7 @@ FCOM:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
-        Factions: soviet, sovietc
+        Factions: soviet, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
 	Capturable:
@@ -1916,7 +1986,7 @@ CSPH:
         BuildPaletteOrder: 15
 		BuildLimit: 1
 		Prerequisites: atek, ~global-superweapons, ~techlevel.7
-		Queue: Building.Allies
+		Queue: Building.Allies, Building.BossAllies
 		Description: Maximum one can be built.\n\nEnables the usage of 'Chronosphere' super-weapon.
 	Tooltip:
 		Name: Chronosphere Device
@@ -2023,7 +2093,7 @@ IRON:
         BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: stek, ~global-superweapons, ~techlevel.7
-		Queue: Building.Soviet
+		Queue: Building.Soviet, Building.BossSoviet
 		Description: Maximum one can be built.\n\nEnables the usage of 'Iron Curtain' super-weapon.
 	Tooltip:
 		Name: Iron Curtain Device
@@ -2109,7 +2179,7 @@ MSLO:
         BuildPaletteOrder: 17
 		BuildLimit: 1
 		Prerequisites: anytier3, ~global-superweapons, ~techlevel.7
-		Queue: Building.Allies, Building.Soviet, Building.Blackhand
+		Queue: Building.Allies, Building.Soviet, Building.BossNod, Building.BossAllies, Building.BossSoviet
 		Description: Maximum one can be built.\n\nEnables the usage of 'Atomic Bomb' super-weapon.
 	Tooltip:
 		Name: Nuclear Missile Silo

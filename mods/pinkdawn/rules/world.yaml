@@ -201,6 +201,11 @@
 		InternalName: gdic
 		Description: GDI: Special Operations\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nSpecial Units:\n    - Blackhawk\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA\n    - Cannot build MLRS
         Selectable: true
+	Faction@bossgdi:
+		Name: Future Corps
+		InternalName: bossgdi
+		Description: Future Corps
+        Selectable: false
 	Faction@nod:
 		Name: Nod
 		InternalName: nod
@@ -248,6 +253,11 @@
 		InternalName: alliesc
 		Description: Allies: Defense Corps\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nSpecial Unit:\n    - Grand Turret\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
         Selectable: true
+	Faction@bossallies:
+		Name: U.S.A.
+		InternalName: bossallies
+		Description: United States of America
+        Selectable: false
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
@@ -267,6 +277,11 @@
 		InternalName: sovietc
 		Description: Soviet: Rocket Command\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Missile Silo cheaper to build\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
         Selectable: true
+	Faction@bosssoviet:
+		Name: Stalin's Elite
+		InternalName: bosssoviet
+		Description: Black Guard
+        Selectable: false
 	Faction@RandomRA:
 		Name: Random RA
 		InternalName: Random2
@@ -373,12 +388,12 @@ World:
 	StartingUnits@mcvonlytd:
 		Class: none
 		ClassName: MCV Only
-		Factions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
 		BaseActor: mcv
 	StartingUnits@mcvonlyra:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, alliesa, alliesb, alliesc, soviet, sovieta, sovietb, sovietc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
 		BaseActor: mcv2
 	SpawnStartingUnits:
         DropdownLocked: true
@@ -427,21 +442,24 @@ World:
             gdia: htnk.colorpicker
             gdib: htnk.colorpicker
             gdic: htnk.colorpicker
+            bossgdi: htnk.colorpicker
             nod: htnk.colorpicker
             noda: htnk.colorpicker
             nodb: htnk.colorpicker
             nodc: htnk.colorpicker
+            bossnod: t55h.colorpicker
             random3: csph.colorpicker
             allies: 4tnk.colorpicker
             alliesa: 4tnk.colorpicker
             alliesb: 4tnk.colorpicker
             alliesc: 4tnk.colorpicker
+            bossallies: 4tnk.colorpicker
             soviet: 4tnk.colorpicker
             sovieta: 4tnk.colorpicker
             sovietb: 4tnk.colorpicker
             sovietc: 4tnk.colorpicker
+            bosssoviet: 4tnk.colorpicker
             random2: fac2.colorpicker
-            bossnod: t55h.colorpicker
 		PresetHues: 0, 0.125, 0.185, 0.4, 0.54, 0.66, 0.79, 0.875, 0, 0.14, 0.23, 0.43, 0.54, 0.625, 0.77, 0.85
 		PresetSaturations: 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5
 	OrderEffects:
