@@ -194,7 +194,7 @@
 	Faction@gdib:
 		Name: Tech Division
 		InternalName: gdib
-		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - NYI\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - NYI
+		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - NYI\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Cruise Missile\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Air Strike
         Selectable: true
 	Faction@gdic:
 		Name: Special Ops
@@ -205,7 +205,7 @@
 		Name: Future Corps
 		InternalName: bossgdi
 		Description: Future Corps
-        Selectable: true
+        Selectable: false
 	Faction@nod:
 		Name: Nod
 		InternalName: nod

@@ -67,3 +67,24 @@ TargeterforV3RL:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
         ValidTargets: Ground, Water, Tree
+
+# this range is correct to hit target with speed 300 on aircraft
+DummyBomb:
+	ReloadDelay: 8
+	Range: 8c938
+	Projectile: GravityBomb
+		Image: dummy
+		OpenSequence: idle
+		Velocity: 0, 0, -100
+		Acceleration: 0, 0, 0
+		Shadow: False
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 1
+		Versus:
+			None: 0
+			Light: 0
+			Heavy: 0
+			Wood: 0
+			Concrete: 0
+		DamageTypes: ExplosionDeath

@@ -598,3 +598,30 @@ MH60.Husk2:
 		Categories: Aircraft husk
 	RenderSprites:
 		Image: mh60
+
+THWK.Husk:
+	Inherits: ^AirplaneHusk
+	Tooltip:
+		Name: Tomahawk (Falling)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Aluminium
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 12
+		Speed: 300
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	Explodes:
+		Weapon: CruiseExplode
+		EmptyWeapon: CruiseExplode
+    RevealOnDeath:
+        Duration: 75
+		Radius: 3c0
+	RenderSprites:
+		Image: thwk

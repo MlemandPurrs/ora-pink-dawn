@@ -137,6 +137,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 20
 		Prerequisites: global-defenseref
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		Enabled: False
+		DisplayOrder: 23
+		Prerequisites: global-bounty
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:

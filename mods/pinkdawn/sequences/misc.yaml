@@ -390,6 +390,7 @@ icon:
     dbomb: 2tomicon
     reconuav: uavicon
     empbicon: empbicon
+    cmisicon: thwkicon
 
 moveflsh:
 	idle:

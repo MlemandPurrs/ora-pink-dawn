@@ -1939,3 +1939,48 @@ A10B:
         RequiresCondition: airborne && !hasairfield
     RenderSprites:
         Image: a10
+
+# this works by exploding via husk
+THWK:
+	Inherits: ^Plane
+	-ActorLostNotification:
+	Interactable:
+	HitShape:
+	Health:
+		HP: 6000
+	Armor:
+		Type: Aluminium
+	Tooltip:
+		Name: Tomahawk
+	Valued:
+		Cost: 800
+	UpdatesPlayerStatistics:
+		AddToAssetsValue: false
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 300
+		Repulsable: False
+		MaximumPitch: 56
+		AirborneCondition: airborne
+	AttackBomber:
+		Armaments: primary
+        FacingTolerance: 8
+	Armament:
+		Name: primary
+		Weapon: DummyBomb
+	Explodes@Air:
+		Weapon: UnitExplodeAirBig
+		RequiresCondition: airborne && !triggered
+	GrantConditionOnAttack:
+		Condition: triggered
+	KillsSelf:
+        Delay: 1
+		RequiresCondition: triggered
+        GrantsCondition: spawnhusk
+	SpawnActorOnDeath:
+		Actor: THWK.Husk
+        RequiresCondition: spawnhusk
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Airplane
+		RequiresCondition: airborne
+	-MapEditorData:

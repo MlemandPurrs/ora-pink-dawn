@@ -292,6 +292,7 @@
     Inherits@airliftable: ^CarryallPassenger
     Inherits@repairing: ^VehicleRepairing
     Inherits@boink: ^BoinkSound
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -420,6 +421,7 @@
     Inherits@experience: ^ExperienceMechanicAircraft
     Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -541,6 +543,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^ClassicFacingSpriteActor
 	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@bounty: ^GlobalBounty
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
@@ -575,6 +578,7 @@
     Inherits@experience: ^ExperienceMechanicAircraft
     Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
+	Inherits@bounty: ^GlobalBounty
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
@@ -749,6 +753,7 @@
 	Inherits@hazmat: ^InfantryTiberiumDamage
 	Inherits@healing: ^InfantryHealing
     Inherits@stealthgen: ^AffectedByCloakingField
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -973,6 +978,7 @@
     Inherits@experience: ^ExperienceMechanic
     Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -2443,3 +2449,10 @@
 	GrantCondition@UNITSOURCE:
 		RequiresCondition: fieldmechanic && damaged
 		Condition: mechanicrepair
+
+^GlobalBounty:
+	GrantConditionOnPrerequisite@GLOBALBOUNTY:
+		Condition: global-bounty
+		Prerequisites: global-bounty
+	GivesBounty:
+		RequiresCondition: global-bounty

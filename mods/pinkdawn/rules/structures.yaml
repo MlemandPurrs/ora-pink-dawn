@@ -812,7 +812,7 @@ PYLE:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossgdi, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
@@ -914,7 +914,7 @@ HAND:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@rmbo:
 		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossgdi, bossnod
+		Factions: gdi, gdia, gdib, gdic, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 2048
@@ -1658,13 +1658,46 @@ MISS:
 		Cursor: airstrike
         CameraActor: camera.small
 		SupportPowerPaletteOrder: 2
+    AirstrikePower@CruiseMissile:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.gdib
+		OrderName: CruiseMissile
+		Prerequisites: ~eye, ~global-superweapons
+		Icon: cmisicon
+		ChargeInterval: 6750
+		UnitType: thwk
+		SquadSize: 1
+		QuantizedFacings: 8
+		Name: Cruise Missile
+		Description: Launch a missile strike,\nthat can be intercepted.\nApplies heavy damage.
+		EndChargeSpeechNotification: AirstrikeReady
+        EndChargeTextNotification: Airstrike ready.
+        LaunchSpeechNotification: AirstrikeInbound
+        LaunchTextNotification: Airstrike inbound.
+        SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+        IncomingSpeechNotification: EnemyPlanesApproaching
+        IncomingTextNotification: Enemy planes approaching.
+        InsufficientPowerTextNotification: Insufficient power.
+		DisplayBeacon: true
+		BeaconPoster: airstrike
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 5
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@GDI:
         Condition: owner.is.gdi
-        Factions: gdi, gdib, gdic, bossgdi
+        Factions: gdi, gdic, bossgdi
+        ResetOnOwnerChange: true
+    GrantConditionOnFaction@GDI2:
+        Condition: owner.is.gdib
+        Factions: gdib
         ResetOnOwnerChange: true
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1

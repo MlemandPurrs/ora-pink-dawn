@@ -207,3 +207,10 @@ c130:
 		Facings: 32
 		UseClassicFacings: True
 	icon: c17icon
+
+thwk:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: thwkicon
