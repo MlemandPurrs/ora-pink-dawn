@@ -87,6 +87,8 @@
 #   86. HeavyTurretGun
 #   87. ScatterBomb
 #   88. AutoCannon
+#   89. V3Missile
+#   90. EMPBomb
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -2215,6 +2217,15 @@ ATMine:
 		SmudgeType: Crater
         InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
 
+ATMineEMP:
+    Inherits: ATMine
+    Warhead@EMP: GrantExternalCondition
+		Range: 0c256
+		Duration: 25
+		Condition: emp-crate-collected
+		ValidTargets: EMPApplicable
+        InvalidTargets: Invulnerable
+
 #   44. Tanya's akimbo pistols
 TanyaPistol:
 	ReloadDelay: 7
@@ -4046,3 +4057,151 @@ AutoCannon:
 		Explosions: water_piffs
 		ValidTargets: Water, Underwater
         InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
+#   89. V3 Rocket
+V3Missile:
+    ValidTargets: Ground, Water, Tree
+	ReloadDelay: 399
+	Range: 16c256
+	MinRange: 3c128
+	Report: missile1.aud
+	Projectile: Bullet
+		Speed: 162
+		Blockable: false
+		TrailImage: smokey
+		TrailDelay: 5
+		TrailInterval: 3
+		Inaccuracy: 213
+		Image: V3
+		Shadow: True
+		LaunchAngle: 62
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 6000
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: big_napalm
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+	Warhead@5EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+
+V3MissileNuke:
+    Inherits: V3Missile
+	Projectile: Bullet
+		Speed: 162
+		Blockable: false
+		TrailImage: smokey
+		TrailDelay: 5
+		TrailInterval: 3
+		Inaccuracy: 213
+		Image: V3G
+		Shadow: True
+		LaunchAngle: 62
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Range: 1c0, 2c512, 3c768
+        Falloff: 900, 600, 300
+        AffectsParent: True
+		Damage: 12000
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@3Eff: CreateEffect
+		Explosions: mini_nuke_explosion
+		ImpactSounds: nukexplo.aud
+		ImpactActors: false
+	Warhead@5EffWater: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@6Eff_areanuke: CreateEffect
+		ImpactSounds: xplobig4.aud
+		Delay: 3
+		ImpactActors: false
+	Warhead@13Shake: ShakeScreen
+		Duration: 20
+		Intensity: 5
+		Multiplier: 1,1
+	Warhead@14FlashEffect: FlashPaletteEffect
+		Duration: 20
+
+#   90. parachuted E.M.P. bomb
+EMPBomb:
+	ReloadDelay: 10
+    Range: 0c938
+	Report: grenade2.aud
+	Projectile: GravityBomb
+		Image: PARABOMB
+		OpenSequence: open
+		Velocity: 0, 0, -86
+		Acceleration: 0, 0, 0
+		Shadow: True
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 1c1, 2c1, 3c1, 3c512, 4c1, 4c512
+		Damage: 2400
+		Falloff: 1000, 368, 135, 90, 68, 37, 10
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: pulse_explosion
+		ImpactSounds: empexpl.aud
+	Warhead@emp: GrantExternalCondition
+		Range: 5c0
+		Duration: 300
+		Condition: emp-crate-collected
+		ValidRelationships: Ally, Neutral, Enemy
+		ValidTargets: EMPApplicable
+        InvalidTargets: Invulnerable
+	Warhead@emp2: GrantExternalCondition
+		Range: 5c0
+		Duration: 300
+		Condition: emp-affected-structure
+		ValidRelationships: Ally, Neutral, Enemy
+		ValidTargets: EMPApplicableBuilding
+        InvalidTargets: Invulnerable
+	Warhead@2Smu_impact: LeaveSmudge
+		SmudgeType: Crater
+	Warhead@3Smu_area: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+		Size: 1
+		Delay: 3
+	Warhead@4Smu_area2: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+		Size: 2,1
+		Delay: 6

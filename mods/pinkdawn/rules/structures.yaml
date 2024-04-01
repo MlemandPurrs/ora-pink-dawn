@@ -216,7 +216,7 @@ FACT:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: anytier3, anyfix, ~techlevel.6
-		Queue: Building.GDI, Building.Nod, Building.Blackhand
+		Queue: Building.GDI, Building.BossGDI, Building.Nod, Building.BossNod
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
@@ -756,7 +756,7 @@ PYLE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
         Prerequisites: fact
-		Queue: Building.GDI, Building.BossGDI
+		Queue: Building.GDI
 		Description: Trains Infantry units.
 	Building:
 		Footprint: xx ++ ==
@@ -828,6 +828,14 @@ PYLE:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+PYL2:
+    Inherits: PYLE
+	Buildable:
+        Prerequisites: fact
+		Queue: Building.BossGDI
+	SpawnActorOnDeath@HUSK:
+        Actor: PYL2.Husk
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -1041,7 +1049,7 @@ UFLD:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anypower, infantryproduction, ~techlevel.2
-		Queue: Building.Blackhand
+		Queue: Building.BossNod
 		Description: Produces Vehicle units.
 	Building:
 		Footprint: XXX+ xxx+ ====

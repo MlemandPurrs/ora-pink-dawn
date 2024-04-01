@@ -592,6 +592,15 @@ RMBO:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+RMB2:
+    Inherits: RMBO
+	Buildable:
+		Prerequisites: miss, ~infantry.gdi, ~player.bossgdi, ~techlevel.7
+		BuildLimit: 2
+        Description: Maximum two can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
+    RenderSprites:
+        Image: rmbo
+
 TECN:
 	Inherits@1: ^ArmedCivilian
 	GrantCondition@HAZMAT:

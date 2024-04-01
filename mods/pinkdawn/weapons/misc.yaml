@@ -57,3 +57,13 @@ DemoManTargeting:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: DetonateAttack2
+
+TargeterforV3RL:
+	ReloadDelay: 3
+	Range: 16c256
+    MinRange: 3c128
+    ValidTargets: Ground, Water, Tree
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+        ValidTargets: Ground, Water, Tree

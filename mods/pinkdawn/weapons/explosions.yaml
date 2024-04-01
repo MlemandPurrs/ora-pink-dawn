@@ -319,6 +319,11 @@ V2rlExplode:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
+V3rlExplode:
+    Inherits: V2rlExplode
+    Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
 V2rlExplodeNuke:
 	Inherits: ^DamagingExplosion
 	Warhead@1Dam: SpreadDamage

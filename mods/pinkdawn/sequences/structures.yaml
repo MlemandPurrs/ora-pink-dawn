@@ -508,6 +508,38 @@ pyle.husk:
 		UseTilesetExtension: true
 		Length: *
 
+pyl2:
+    Inherits: emp-overlay
+	idle:
+		Length: 10
+		Tick: 100
+		ZOffset: -511
+	damaged-idle:
+		Start: 10
+		Length: 10
+		Tick: 100
+		ZOffset: -511
+	dead:
+		Start: 20
+		Tick: 800
+	make: pyl2make
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: pyleicon
+
+pyl2.husk:
+	idle: pyl2
+		Start: 20
+	dead: pyl2
+		Start: 20
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
 hand:
     Inherits: emp-overlay
 	idle:
@@ -1693,7 +1725,7 @@ empb:
             TROPIC: TEMPERAT
 		Length: *
 		Offset: 0,1
-	icon: empbicon
+	icon: emplicon
 
 empb.husk:
 	idle: empbmake

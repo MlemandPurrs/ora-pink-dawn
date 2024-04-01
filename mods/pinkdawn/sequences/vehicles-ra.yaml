@@ -323,7 +323,8 @@ v2rl:
 	icon: v2rlicon
 
 v2rl.husk:
-	idle: v2rl
+	idle: v2rl  
+        Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
@@ -529,6 +530,27 @@ ectk:
 
 ectk.husk:
 	idle: ectk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+v3rl:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	empty-idle:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	idle2: v3gl
+		Facings: 32
+		UseClassicFacings: True
+	icon: v3rlicon
+
+v3rl.husk:
+	idle: v3rl
+        Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512

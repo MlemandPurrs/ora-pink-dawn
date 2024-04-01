@@ -142,6 +142,24 @@ PYLE.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: pyle
 
+PYL2.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx ++ ==
+		Dimensions: 2,3
+        LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Barracks (Destroyed)
+	Health:
+		HP: 30000
+	RenderSprites:
+		Image: pyl2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: pyl2
+
 HAND.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

@@ -191,7 +191,7 @@ beacon:
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
-    empmbcon: empmbcon
+    empbbcon: empbbcon
         Offset: 0,-42
 	pbmbbcon: pbmbbcon
 		Offset: 0,-42
@@ -389,6 +389,7 @@ icon:
     paratanks: ptnkicon
     dbomb: 2tomicon
     reconuav: uavicon
+    empbicon: empbicon
 
 moveflsh:
 	idle:
@@ -690,6 +691,10 @@ minv:
 	idle:
 		ZOffset: -512
 
+mine:
+	idle:
+		ZOffset: -512
+
 minp:
 	idle:
 		ZOffset: -512
@@ -817,3 +822,13 @@ dummyb:
 	idle: blank1
         Length: *
     icon: jminicon
+
+v3:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+v3g:
+	idle:
+		Facings: 32
+		ZOffset: 1023

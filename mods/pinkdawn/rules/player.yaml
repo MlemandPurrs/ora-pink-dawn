@@ -186,6 +186,9 @@ Player:
     ProvidesPrerequisite@GDIC:
         Prerequisite: player.gdic
         Factions: gdic
+    ProvidesPrerequisite@BossGDI:
+        Prerequisite: player.bossgdi
+        Factions: bossgdi
     ProvidesPrerequisite@Nod:
         Prerequisite: player.nod
         Factions: nod
@@ -213,6 +216,9 @@ Player:
     ProvidesPrerequisite@AlliesC:
         Prerequisite: player.alliesc
         Factions: alliesc
+    ProvidesPrerequisite@BossAllies:
+        Prerequisite: player.bossallies
+        Factions: bossallies
     ProvidesPrerequisite@Soviet:
         Prerequisite: player.soviet
         Factions: soviet
@@ -225,3 +231,6 @@ Player:
     ProvidesPrerequisite@SovietC:
         Prerequisite: player.sovietc
         Factions: sovietc
+    ProvidesPrerequisite@BossSoviet:
+        Prerequisite: player.bosssoviet
+        Factions: bosssoviet

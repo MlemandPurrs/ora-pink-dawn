@@ -415,6 +415,7 @@ TTRK:
 		Condition: triggered
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
+        PauseOnCondition: emp-crate-collected
 	KillsSelf:
 		RequiresCondition: triggered
 	Chronoshiftable:

@@ -317,8 +317,6 @@ CAMERA.sonar:
 	MapEditorData:
 		Categories: System
 
-
-
 FLARE:
 	Immobile:
 		OccupiesSpace: false
@@ -649,8 +647,18 @@ MINV:
 		Name: Anti-Vehicle Mine
 	RenderSprites:
 		Image: minv
+		FactionImages:
+			bosssoviet: mine
 	Explodes:
 		Weapon: ATMine
+        RequiresCondition: !owner.is.bosssoviet
+	Explodes@2:
+		Weapon: ATMineEMP
+        RequiresCondition: owner.is.bosssoviet
+    GrantConditionOnFaction@bosssoviet:
+		Condition: owner.is.bosssoviet
+		Factions: bosssoviet
+		ResetOnOwnerChange: False
 
 MINP:
 	Inherits: ^Mine
@@ -701,7 +709,7 @@ MINB:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: infantryproduction, ~techlevel.3
-		Queue: Defense.Soviet
+		Queue: Defense.Soviet, Defense.BossSoviet
 		Description: Can be placed only adjacent to a structure.\nDetonates vs Infantry.
 	Huntable:
 	OwnerLostAction:

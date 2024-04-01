@@ -804,6 +804,17 @@ BADR.Bomber:
     RenderSprites:
         Image: badr
 
+BADR.Emp:
+    Inherits: BADR.Bomber
+	Armament:
+		Weapon: EMPBomb
+	AmmoPool:
+		Ammo: 1
+    -SpeedMultiplier@BombingRun:
+    -GrantConditionOnAttack@BombingRun:
+    RenderSprites:
+        Image: badr
+
 BADR.tran:
 	Inherits: ^Plane
 	Inherits@TRANSPORT: ^Transport

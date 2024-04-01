@@ -239,7 +239,7 @@ FAC2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: anytier3, fix2, ~techlevel.6
-		Queue: Building.Allies, Building.Soviet
+		Queue: Building.Allies, Building.BossAllies, Building.Soviet, Building.BossSoviet
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
@@ -1609,9 +1609,38 @@ DOME:
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 5
 	SupportPowerChargeBar:
+	AirstrikePower@SpyPlane2:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bosssoviet
+		OrderName: SpyPlaneSecondary
+		Prerequisites: anyafld, fcom
+		Icon: spyplane
+		ChargeInterval: 4500
+		Name: Spy Plane
+		Description: Reveals an area of the map\nand cloaked enemy units.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		SelectTargetTextNotification: Select target.
+		EndChargeTextNotification: Spy plane ready.
+		CameraActor: camera.spyplane
+		CameraRemoveDelay: 150
+		UnitType: smig
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: spypbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 6
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
         Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
+        ResetOnOwnerChange: true
+    GrantConditionOnFaction@Blackhand:
+        Condition: owner.is.bosssoviet
+        Factions: bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@WIRELESS:
 		Prerequisite: activeradar
@@ -1927,10 +1956,10 @@ FCOM:
 		Cursor: para
         CameraActor: camera.small
 		UnitType: badr.bomber
+		SquadSize: 1
 		QuantizedFacings: 8
 		DisplayBeacon: true
 		BeaconPoster: pbmbbcon
-		SquadSize: 1
 		SquadOffset: 1792,1792,0
 		ArrowSequence: arrow
 		ClockSequence: clock
@@ -1938,13 +1967,41 @@ FCOM:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 3
+	AirstrikePower@EMPBomb:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bosssoviet
+		OrderName: EMPBomb
+		Prerequisites: anyafld, ~global-superweapons
+		Icon: empbicon
+		ChargeInterval: 7500
+		Name: E.M.P. Bomb
+		Description: A Badger drops an electro magnetic pulse bomb,\nthat temporarily disables all units and structures.\nAffected units cannot move or shoot,\nhidden units will be revealed.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		Cursor: para
+        CameraActor: camera.small
+		UnitType: badr.emp
+		SquadSize: 1
+		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPoster: empbbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 3
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet:
         Condition: owner.is.soviet
-        Factions: soviet, sovietc, bosssoviet
+        Factions: soviet, sovietc
+        ResetOnOwnerChange: true
+    GrantConditionOnFaction@BossSoviet:
+        Condition: owner.is.bosssoviet
+        Factions: bosssoviet
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
 	Capturable:
