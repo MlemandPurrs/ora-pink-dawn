@@ -98,6 +98,9 @@ dtnk:
 	3tnk-body: 3tnk
 		Facings: 32
 		UseClassicFacings: True
+	3tni-body: 3tni
+		Facings: 32
+		UseClassicFacings: True
 	3t1b-body: 3tnk
 		Facings: 32
 		UseClassicFacings: True
@@ -119,10 +122,16 @@ dtnk:
     ctnk-body: ctnk
 		Facings: 32
 		UseClassicFacings: True
+	ectk-body: ectk
+		Facings: 32
+		UseClassicFacings: True
 	ttnk-body: ttnk
 		Facings: 32
 		UseClassicFacings: True
 	arty-body: arty
+		Facings: 32
+		UseClassicFacings: True
+	howi-body: howi
 		Facings: 32
 		UseClassicFacings: True
 	mrpg-body: mrpg
@@ -221,6 +230,10 @@ dtnk:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+	turret-3tni: 3tni
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
 	turret-3t1b: 3t1b
 		Start: 32
 		Facings: 32
@@ -242,6 +255,10 @@ dtnk:
 		Facings: 32
 		UseClassicFacings: True
 	turret-mlrs: mlrs
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret-howi: howi
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
