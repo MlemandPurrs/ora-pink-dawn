@@ -172,6 +172,37 @@ apc2.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+apc3:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	open:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 35
+        Length: 3
+	turret: apc3
+        Start: 38
+		Facings: 32
+		UseClassicFacings: True
+	icon: apc3icon
+
+apc3.husk:
+	idle: apc3
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: apc3
+		Start: 38
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 1tnk:
     Inherits: emp-overlay
 	idle:
@@ -250,6 +281,56 @@ apc2.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+3t1b:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: 3t1bicon
+
+3t1b.husk:
+	idle: 3t1b
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: 3t1b
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+3tni:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: 3tnkicon
+
+3tni.husk:
+	idle: 3tni
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: 3tni
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 4tnk:
     Inherits: emp-overlay
 	idle:
@@ -270,6 +351,31 @@ apc2.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 	turret: 4tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+4tnf:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: 4tnficon
+
+4tnf.husk:
+	idle: 4tnf
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: 4tnf
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -302,6 +408,23 @@ apc2.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+qtnk:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	piston:
+		Start: 32
+		Facings: 8
+		Length: 8
+	icon: qtnkicon
+
+qtnk.husk:
+	idle: qtnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 v2rl:
     Inherits: emp-overlay
 	idle:
@@ -324,6 +447,27 @@ v2rl:
 
 v2rl.husk:
 	idle: v2rl  
+        Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+v3rl:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	empty-idle:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	idle2: v3gl
+		Facings: 32
+		UseClassicFacings: True
+	icon: v3rlicon
+
+v3rl.husk:
+	idle: v3rl
         Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -371,6 +515,22 @@ mgg.husk:
 		Facings: 8
 		ZOffset: -512
 
+tnkd:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: tnkdicon
+
+tnkd.husk:
+	idle: tnkd
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 ttnk:
     Inherits: emp-overlay
 	idle:
@@ -405,120 +565,6 @@ ctnk.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
-apc3:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	open:
-		Start: 32
-		Length: 3
-	unload:
-		Start: 35
-        Length: 3
-	turret: apc3
-        Start: 38
-		Facings: 32
-		UseClassicFacings: True
-	icon: apc3icon
-
-apc3.husk:
-	idle: apc3
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-	turret: apc3
-		Start: 38
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
-3t1b:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: cannmuzz
-		Length: 2
-		Facings: 16
-	icon: 3t1bicon
-
-3t1b.husk:
-	idle: 3t1b
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-	turret: 3t1b
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
-tnkd:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: cannmuzz
-		Length: 2
-		Facings: 16
-	icon: tnkdicon
-
-tnkd.husk:
-	idle: tnkd
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
-qtnk:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	piston:
-		Start: 32
-		Facings: 8
-		Length: 8
-	icon: qtnkicon
-
-qtnk.husk:
-	idle: qtnk
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
-4tnf:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: cannmuzz
-		Length: 2
-		Facings: 16
-	icon: 4tnficon
-
-4tnf.husk:
-	idle: 4tnf
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-	turret: 4tnf
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
 ectk:
     Inherits: emp-overlay
 	idle:
@@ -530,27 +576,6 @@ ectk:
 
 ectk.husk:
 	idle: ectk
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-
-v3rl:
-    Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacings: True
-	empty-idle:
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-	idle2: v3gl
-		Facings: 32
-		UseClassicFacings: True
-	icon: v3rlicon
-
-v3rl.husk:
-	idle: v3rl
-        Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512

@@ -277,6 +277,24 @@ ARTY.Husk:
 	RenderSprites:
 		Image: arty.husk
 
+HOWI.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Howitzer (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Light
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: howi
+	RenderSprites:
+		Image: howi.husk
+
 MSAM.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -632,6 +650,42 @@ MNLY.Husk:
 	RenderSprites:
 		Image: 3tnk.husk
 
+3T1B.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 3t1b
+	RenderSprites:
+		Image: 3t1b.husk
+
+3TNI.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Tank (Destroyed)
+	Health:
+		HP: 22500
+	Armor:
+		Type: Heavy
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: 3tni
+	RenderSprites:
+		Image: 3tni.husk
+
 4TNK.Husk:
 	Inherits: ^Husk
 	HitShape:
@@ -727,6 +781,22 @@ CTNK.Husk:
 	RenderSprites:
 		Image: ctnk.husk
 
+ECTK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chrono Tortoise (Destroyed)
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+	TransformOnCapture:
+		IntoActor: ectk
+	RenderSprites:
+		Image: ectk.husk
+
 TNKD.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -779,37 +849,3 @@ MGG.Husk:
 		IntoActor: mgg
 	RenderSprites:
 		Image: mgg.husk
-
-3T1B.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Heavy Tank (Destroyed)
-	Health:
-		HP: 22500
-	Armor:
-		Type: Heavy
-	ThrowsParticle@turret:
-		Anim: turret
-	WithIdleOverlay@Burns:
-		Image: fire
-		Sequence: 2
-	TransformOnCapture:
-		IntoActor: 3t1b
-	RenderSprites:
-		Image: 3t1b.husk
-
-ECTK.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Chrono Tortoise (Destroyed)
-	Health:
-		HP: 35000
-	Armor:
-		Type: Heavy
-	WithIdleOverlay@Burns:
-		Image: fire
-		Sequence: 1
-	TransformOnCapture:
-		IntoActor: ectk
-	RenderSprites:
-		Image: ectk.husk

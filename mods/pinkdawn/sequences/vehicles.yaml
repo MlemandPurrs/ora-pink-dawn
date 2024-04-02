@@ -343,6 +343,30 @@ arty.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+howi:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: gunfire2
+		Length: *
+	icon: howiicon
+
+howi.husk:
+	idle: howi
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: howi
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 msam:
     Inherits: emp-overlay
 	idle:

@@ -1053,6 +1053,8 @@ bio:
 		UseTilesetExtension: true
 		Length: *
 		Offset: 0,0
+	none: blank1
+		Length: *
 	icon: bioicon
 		Offset: 0,0
 

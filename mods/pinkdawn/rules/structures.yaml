@@ -1997,6 +1997,28 @@ BIO:
  	Capturable:
 		RequiresCondition: !build-incomplete
 		Types: building-player, building-player-2
+	GrantExternalConditionPower@StealthPlug:
+		PauseOnCondition: lowpower
+		OrderName: StealthPlug
+		Prerequisites: ~player.nodb
+		Icon: stlhicon
+		ChargeInterval: 5250
+		Dimensions: 1, 1
+		Footprint: x
+		Duration: 0
+		Name: Stealth Plug
+		Description: Renders one Vehicle\npermanently Invisible.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+        InsufficientPowerTextNotification: Insufficient power.
+		Condition: cloak-crate-collected
+		Sequence: none
+		SupportPowerPaletteOrder: 7
+	SupportPowerChargeBar:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	SpawnActorOnDeath@HUSK:
 		Actor: BIO.Husk
         OwnerType: Victim

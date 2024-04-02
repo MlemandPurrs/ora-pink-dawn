@@ -650,7 +650,7 @@ bggy.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.\n\nHeroic rank:\nGains Stealth capability, becoming cloaked itself.
+        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.
         Category: Nod Vehicles
 		Order: 9
 	RenderSprites:

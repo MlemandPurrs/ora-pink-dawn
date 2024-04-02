@@ -22,7 +22,7 @@ Container@LOBBY_PLAYER_BIN:
 					Align: Center
 					Font: Bold
 				Label@FACTION:
-					X: 287
+					X: 289
 					Width: 120
 					Height: 25
 					Text: Faction

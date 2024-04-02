@@ -74,6 +74,8 @@ A10:
 	-ActorLostNotification:
 	Interactable:
 	HitShape:
+		Type: Circle
+			Radius: 448
 	Health:
 		HP: 9000
 	Armor:
@@ -1505,6 +1507,8 @@ SFIG:
 	-ActorLostNotification:
 	Interactable:
 	HitShape:
+		Type: Circle
+			Radius: 448
 	Health:
 		HP: 9000
 	Armor:
@@ -1874,6 +1878,9 @@ UAV:
 
 A10B:
     Inherits: GenericJet
+	HitShape:
+		Type: Circle
+			Radius: 448
 	Tooltip:
 		Name: A-10 Warthog
         GenericStancePrefix: false

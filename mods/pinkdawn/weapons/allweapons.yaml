@@ -89,6 +89,7 @@
 #   88. AutoCannon
 #   89. V3Missile
 #   90. EMPBomb
+#   91. HowitzerShell
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1342,7 +1343,7 @@ HonestJohn:
 		SmudgeType: Scorch
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
-		ImpactSounds: firebl3.aud
+		ImpactSounds: xplos.aud, firebl3.aud
 		ValidTargets: Ground, Water
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
@@ -4205,3 +4206,70 @@ EMPBomb:
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
 		Size: 2,1
 		Delay: 6
+
+#   91. Howitzer's gun
+HowitzerShell:
+	ReloadDelay: 100
+	Range: 10c256
+	MinRange: 3c128
+	Report: tnkfire2.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 204
+        Blockable: false
+		LaunchAngle: 37
+		Inaccuracy: 1c256
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 15000
+		Versus:
+            None: 87
+            Light: 100
+            Medium: 68
+            Heavy: 25
+            Concrete: 50
+            Wood: 100
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+	Warhead@3Eff: CreateEffect
+		Explosions: big_napalm
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Water
+	Warhead@5EffWater: CreateEffect
+		Explosions: sml_splash
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+        InvalidTargets: Vehicle, Structure, Wall
+
+HowitzerShellChem:
+    Inherits: HowitzerShell
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 30000
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+    -Warhead@Flames:

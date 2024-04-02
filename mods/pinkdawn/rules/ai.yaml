@@ -832,7 +832,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, mlrs, badg, sfig, pt2, dd2, ss2, ctur, ltur, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3tni, wtnk, arty, mlrs, badg, sfig, pt2, dd2, ss2, ctur, ltur, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: rh66, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -845,7 +845,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3t1b, wtnk, arty, mlrs, badg, sfig, rh66, f22, ctur, ltur, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3tni, wtnk, arty, mlrs, badg, sfig, rh66, f22, ctur, ltur, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: rh66, f22
         NavalUnitsTypes: pt2, dd2, ss2
@@ -1066,7 +1066,7 @@ Player:
 			bggy: 15
             bike: 15
             apc: 20
-            3t1b: 40
+            3tni: 40
             wtnk: 15
             t55h: 1
             arty: 30

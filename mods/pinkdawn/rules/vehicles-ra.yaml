@@ -1200,7 +1200,7 @@ MNLY:
     Inherits: 3TNK
     Buildable:
 		BuildPaletteOrder: 5
-		Prerequisites: anyfix, ~vehicle.nod, ~player.bossnod, ~techlevel.4
+		Prerequisites: ~disabled
 		Queue: Vehicle
 		Description: Heavily-armored Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Armament:
@@ -1208,6 +1208,26 @@ MNLY:
         LocalOffset: 768,0,90
     RenderSprites:
         Image: 3t1b
+
+3TNI:
+    Inherits: 3TNK
+    Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: anyfix, ~vehicle.nod, ~player.bossnod, ~techlevel.4
+		Queue: Vehicle
+		Description: Dual-barreled Tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Turreted:
+		TurnSpeed: 12
+        Offset: 0,0,0
+	Armament:
+		Weapon: HeavyCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 720,85,90, 720,-85,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+    RenderSprites:
+        Image: 3tni
 
 4TNK:
 	Inherits: ^TrackedVehicle

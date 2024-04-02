@@ -263,7 +263,7 @@ E5:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: bio, ~infantry.nod, ~!player.nodb, ~techlevel.7
+		Prerequisites: bio, ~infantry.nod, ~!player.nodb, ~!player.bossnod, ~techlevel.7
 		Queue: Infantry
 		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:

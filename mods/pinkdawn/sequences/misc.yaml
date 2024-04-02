@@ -391,6 +391,7 @@ icon:
     reconuav: uavicon
     empbicon: empbicon
     cmisicon: thwkicon
+    stlhicon: stlhicon
 
 moveflsh:
 	idle:

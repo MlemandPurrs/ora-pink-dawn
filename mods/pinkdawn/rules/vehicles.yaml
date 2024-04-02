@@ -567,21 +567,8 @@ BGGY:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected || rank-heroic
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
-    -Cloak:
-	Cloak:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		CloakSound: trans1.aud
-		UncloakSound: trans1.aud
-		Palette: cloak
-		IsPlayerPalette: false
-		UncloakOn: Attack, Unload, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || emp-crate-collected || oncarryall
-		RequiresCondition: cloak-crate-collected && rank-heroic
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -1969,9 +1956,9 @@ MLRS:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
-		Prerequisites: bio, ~vehicle.nod, ~!player.nodc, ~techlevel.7
+		Prerequisites: bio, ~vehicle.nod, ~!player.nodb, ~!player.nodc, ~!player.bossnod, ~techlevel.7
 		Queue: Vehicle
-		Description: Long range missile artillery.\n\nStrong vs all Ground units.\nWeak vs Aircraft.
+		Description: Long-range missile artillery.\n\nStrong vs all Ground units.
 	Mobile:
 		Speed: 90
 		TurnSpeed: 12
@@ -2070,6 +2057,96 @@ MLRS:
 		Weapon: MlrsExplodeChem
         EmptyWeapon: UnitExplodeSmall
         RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
+HOWI:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Howitzer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 15
+		Prerequisites: bio, ~vehicle.nod, ~player.nodb, ~techlevel.7
+		Queue: Vehicle
+		Description: Long-range artillery.\n\nStrong vs all Ground units.
+	Mobile:
+        Locomotor: wheeled-non-crusher
+		TurnSpeed: 12
+		Speed: 100
+        PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 12000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c256
+	Turreted:
+		TurnSpeed: 12
+		Offset: -100,0,0
+	Armament@PRIMARY:
+        Name: primary
+		Weapon: HowitzerShell
+		LocalOffset: 724,0,208
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: HowitzerShellChem
+		LocalOffset: 724,0,208
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
+	AttackTurreted:
+        Armaments: primary, secondary
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	AutoTarget:
+		InitialStanceAI: Defend
+	Explodes:
+		Weapon: ArtyExplode
+		EmptyWeapon: UnitExplode
+	Passenger:
+		CustomPipType: pip-yellow
+	RenderRangeCircle:
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+    Targetable@Extra:
+		TargetTypes: Artillery
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
