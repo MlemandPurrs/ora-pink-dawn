@@ -1370,6 +1370,7 @@ CHTK:
         Modifier: 0
         RequiresCondition: dont-move
 	Selectable:
+    	Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
@@ -1458,6 +1459,7 @@ HTNK:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy

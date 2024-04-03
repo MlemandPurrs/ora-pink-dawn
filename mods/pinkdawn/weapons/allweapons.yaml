@@ -90,6 +90,7 @@
 #   89. V3Missile
 #   90. EMPBomb
 #   91. HowitzerShell
+#   92. TurretRailgun
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -4273,3 +4274,41 @@ HowitzerShellChem:
 		ImpactSounds: xplos.aud, firebl3.aud
 		ValidTargets: Ground, Air, Ship, Tree
     -Warhead@Flames:
+
+#   92. Railgun of Turret
+TurretRailgun:
+	ReloadDelay: 120
+	Range: 7c768
+	Report: railgun.aud
+	ValidTargets: Ground, Water
+    InvalidTargets: Wall
+	Projectile: Railgun
+		Duration: 8
+		Blockable: true
+		DamageActorsInLine: true
+		BeamColor: 00FFFFC8
+		BeamWidth: 40
+		HelixThickness: 16
+		HelixRadius: 32
+		HitAnim: explosion
+		HitAnimSequence: small_frag
+		ZOffset: 2047
+	Warhead@1Dam: SpreadDamage
+        Range: 0, 32, 48, 64, 80
+		Spread: 0c64
+		Falloff: 100, 37, 14, 5, 0
+		Damage: 15000
+		AffectsParent: false
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100
+        ValidTargets: Ground, Water
+        InvalidTargets: Wall
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
+		ValidRelationships: Ally, Neutral, Enemy

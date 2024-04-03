@@ -1640,7 +1640,7 @@ OCAR:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: fix, ~aircraft.gdi, ~!player.nodc, ~techlevel.7
+		Prerequisites: fix, ~aircraft.gdi, ~player.gdib, ~techlevel.7
 		Queue: Aircraft
 		Description: VTOL aircraft capable\nof airlifting vehicles.\n\nUnarmed.
 	Aircraft:

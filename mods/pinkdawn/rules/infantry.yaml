@@ -1662,7 +1662,7 @@ JET:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 90
-		Prerequisites: eye, ~infantry.gdi, ~techlevel.7
+		Prerequisites: eye, ~infantry.gdi, ~player.gdib, ~techlevel.7
 		Queue: Infantry
 		Description: Flying reconnaisance infantry.\nCan detect cloaked units and mines.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Health:

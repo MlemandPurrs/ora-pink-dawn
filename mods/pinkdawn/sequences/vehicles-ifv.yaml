@@ -1,0 +1,44 @@
+
+ifv:
+    Inherits: emp-overlay
+	idle:
+        Start: 0
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 38
+		Facings: 32
+		UseClassicFacings: True
+    turret-mg: 1tnk
+        Start: 32
+        Facings: 32
+  		UseClassicFacings: True
+    turret-repair: crane-tur
+        Start: 0
+        Facings: 32
+  		UseClassicFacings: True
+    turret-rambo: gtnk-tur
+        Start: 0
+        Facings: 32
+  		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	muzzle2: minigun
+		Length: 6
+		Facings: 8
+	spinner: mhq
+		Start: 32
+		Length: 32
+	icon: ifvicon
+
+ifv.husk:
+	idle: ifv
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: ifv
+		Start: 38
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512

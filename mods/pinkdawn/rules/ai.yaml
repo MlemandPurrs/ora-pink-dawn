@@ -407,7 +407,7 @@ Player:
 		VehiclesFactoryTypes: weap
 		ProductionTypes: pyle, weap, hpad, 3fld
 		SiloTypes: silo, silo.clone
-        DefenseTypes: gtwr, atwr, gun
+        DefenseTypes: gtwr, atwr, gun, rtur
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 70
@@ -426,6 +426,7 @@ Player:
 			miss: 1
             h2sp: 1
             atwr: 10
+            rtur: 1
 		BuildingFractions:
 			proc: 10
             proc.clone: 10
@@ -443,6 +444,7 @@ Player:
 			gtwr: 5
 			gun: 5
 			atwr: 7
+            rtur: 1
 	BaseBuilderBotModule@Nod:
 		RequiresCondition: enable-ai-player && ai.nod
 		BuildingQueues: Building.Nod
@@ -506,7 +508,7 @@ Player:
 		VehiclesFactoryTypes: warf
 		ProductionTypes: tent, warf, hpad
 		SiloTypes: osil, osil.clone
-        DefenseTypes: pbox, hbox, gun, agun
+        DefenseTypes: pbox, hbox, gun, gun2, agun, htur
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 70
@@ -529,6 +531,7 @@ Player:
             weaf: 1
             hpaf: 2
             cspf: 1
+            htur: 1
 		BuildingFractions:
 			oref: 10
             oref.clone: 10
@@ -545,6 +548,7 @@ Player:
             hbox: 3
 			gun: 5
             gun2: 5
+            htur: 1
 			agun: 3
             gap: 1
             fpwr: 1
@@ -663,12 +667,12 @@ Player:
 		RushInterval: 400
 		SquadSize: 6
         SquadSizeRandomBonus: 6
-        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, weap, hpad, 3fld, fix, hq, eye, miss, gtwr, atwr, gun, mcv, harv
+		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, weap, hpad, 3fld, fix, hq, eye, miss, gtwr, atwr, gun, rtur, mcv, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirGDI:
@@ -676,7 +680,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -689,7 +693,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -746,7 +750,7 @@ Player:
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
         NavalProductionTypes: syrd
-		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, tent, warf, hpad, fix2, dome, atek, mslo, pbox, hbox, gun, gun2, agun, mcv2, ohrv
+		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, tent, warf, hpad, fix2, dome, atek, mslo, pbox, hbox, gun, gun2, htur, agun, mcv2, ohrv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirAllies:
@@ -754,7 +758,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -767,7 +771,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca

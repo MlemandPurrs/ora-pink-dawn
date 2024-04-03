@@ -185,16 +185,16 @@
 	Faction@gdi:
 		Name: GDI
 		InternalName: gdi
-		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
 	Faction@gdia:
 		Name: Air Force
 		InternalName: gdia
-		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nSpecial Units:\n    - A-10 Bomber\n    - Carrier\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
+		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nSpecial Units:\n    - A-10 Bomber\n    - Carrier\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\n\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
         Selectable: true
 	Faction@gdib:
 		Name: Tech Division
 		InternalName: gdib
-		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Unit:\n    - NYI\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Cruise Missile\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Air Strike
+		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nSpecial Units:\n    - Jumpjet Trooper\n    - Carryall\n    - Railgun Turret\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Cruise Missile\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Air Strike
         Selectable: true
 	Faction@gdic:
 		Name: Special Ops
@@ -209,7 +209,7 @@
 	Faction@nod:
 		Name: Nod
 		InternalName: nod
-		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike
+		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike
 	Faction@noda:
 		Name: Bio Command
 		InternalName: noda
@@ -237,7 +237,7 @@
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
-		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.\n\nFaction Variations:\n    - None\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike
+		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike
 	Faction@alliesa:
 		Name: Secret Service
 		InternalName: alliesa
@@ -261,7 +261,7 @@
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
-		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.\n\nFaction Variations:\n    - None\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike
+		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike
 	Faction@sovieta:
 		Name: Shock Division
 		InternalName: sovieta
@@ -280,7 +280,7 @@
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\nFaction Variations:\n    - Full\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike
+		Description: Black Guard\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
         Selectable: false
 	Faction@RandomRA:
 		Name: Random RA

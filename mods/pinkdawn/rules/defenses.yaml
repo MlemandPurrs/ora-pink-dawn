@@ -1598,3 +1598,79 @@ HBOX:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+RTUR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetforGUN
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	-BodyOrientation:
+	Selectable:
+		Bounds: 1280, 1280
+        DecorationBounds: 1450, 1450
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Railgun Turret
+	Buildable:
+        BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: miss, ~player.gdib, ~techlevel.6
+		Queue: Defense.GDI
+		Description: Experimental base defense.\nThe armament damages in a line.\nRequires power to operate.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
+	Building:
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c512
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 496
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+		Weapon: TurretRailgun
+		LocalOffset: 1024,-32,224
+		MuzzleSequence: muzzle
+        PauseOnCondition: build-incomplete
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+	RenderDetectionCircle:
+	ReloadArmamentsBar:
+		Armaments: primary
+		Color: FFFF00
+	Power:
+		Amount: -100
+		RequiresCondition: !build-incomplete && !emp-affected-structure
+	ClassicFacingBodyOrientation:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: RTUR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished

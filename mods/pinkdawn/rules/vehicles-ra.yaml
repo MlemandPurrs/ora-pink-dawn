@@ -1294,6 +1294,7 @@ MNLY:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy
@@ -1393,6 +1394,7 @@ MNLY:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy
@@ -1495,6 +1497,7 @@ MNLY:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy
@@ -1585,6 +1588,7 @@ QTNK:
 		DamageCooldown: 125
 		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall || emp-crate-collected || deployed)
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	Valued:
 		Cost: 1800
@@ -2254,6 +2258,7 @@ ECTK:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
 	GpsDot:
 		String: Heavy

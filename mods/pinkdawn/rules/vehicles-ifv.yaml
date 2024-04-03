@@ -1,0 +1,222 @@
+IFV:
+	Inherits: ^TrackedVehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@TRANSPORT: ^Transport
+	Valued:
+		Cost: 600
+    -Tooltip:
+	Tooltip@Default:
+		Name: Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: !loaded
+	Tooltip@E1Inside:
+		Name: Gunner Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Gunner IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: gunnerinside
+	Tooltip@E3Inside:
+		Name: Missile Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Missile IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: rocketinside
+	Tooltip@E6Inside:
+		Name: Repair Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Repair IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: engineerinside
+	Tooltip@MediInside:
+		Name: Medic Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Medical IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: mediinside
+	Tooltip@SpyInside:
+		Name: Recon Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Recon IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: spyinside
+	Tooltip@RmboInside:
+		Name: Commando Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Commando IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: commandoinside
+	Tooltip@SnipInside:
+		Name: Sniper Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Sniper IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: sniperinside
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 4
+		Prerequisites: infantryproduction, ~vehicle.allies, ~player.bossallies, ~techlevel.4
+		Queue: Vehicle
+		Description: Modular infantry transport.\nCan carry one Infantry.\nArmament changes with Passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
+	Mobile:
+        Locomotor: tracked-crusher
+		TurnSpeed: 12
+		Speed: 90
+		PauseOnCondition: notmobile || emp-crate-collected || boarding
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c128
+	Armament@DEFAULT:
+        Name: weapon-default
+		Weapon: LightCannon
+		Recoil: 85
+		RecoilRecovery: 17
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: !loaded
+	Armament@E1:
+        Name: weapon-gunner
+		Weapon: MachineGun
+		MuzzleSequence: muzzle2
+		LocalOffset: 720,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: e1inside
+	Armament@E3Ground:
+        Name: weapon-rocket-ag
+		Weapon: StingerAG
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-air || emp-crate-collected
+		ReloadingCondition: reload-ground
+        RequiresCondition: e3inside
+	Armament@E3Air:
+		Name: weapon-rocket-aa
+		Weapon: StingerAA
+		LocalOffset: 192,-100,176, 192,100,176
+		LocalYaw: 64, -64
+		PauseOnCondition: reload-ground || emp-crate-collected
+		ReloadingCondition: reload-air
+        RequiresCondition: e3inside
+	Armament@E6:
+        Name: weapon-engineer
+		Weapon: Repair
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: e6inside
+	Armament@RMBO:
+        Name: weapon-commando
+		Weapon: MachineGun
+		MuzzleSequence: muzzle2
+		LocalOffset: 720,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: rmboinside
+	Armament@SNIP:
+        Name: weapon-sniper
+		Weapon: Sniper
+		MuzzleSequence: muzzle2
+		LocalOffset: 720,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: snipinside
+	Turreted:
+		TurnSpeed: 12
+	AttackTurreted:
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected || spyinside
+	WithSpriteTurret@Default:
+        Sequence: turret
+        RequiresCondition: !loaded
+	WithSpriteTurret@E1Inside:
+		RequiresCondition: gunnerinside && sniperinside
+		Sequence: turret-mg
+	WithSpriteTurret@E3Inside:
+		RequiresCondition: rocketinside
+		Sequence: turret-rocket
+	WithSpriteTurret@E6Inside:
+		RequiresCondition: engineerinside
+		Sequence: turret-repair
+	WithSpriteTurret@RmboInside:
+		RequiresCondition: rmboinside
+		Sequence: turret-rambo
+	WithIdleOverlay@SpyInside:
+		Sequence: spinner
+		Offset: 0,0,512
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: spyinside
+	AttackMove:
+		Voice: Attack
+	WithMuzzleOverlay:
+	DetectCloaked@SpyInside:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: spyinside
+	RenderDetectionCircle:
+		RequiresCondition: spyinside
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		UnloadVoice: Unload
+        LoadingCondition: notmobile
+        LoadedCondition: loaded
+		PassengerConditions:
+            e1: gunnerinside
+            e3: rocketinside
+            engi: engineerinside
+            medi: medicinside
+            mech: engineerinside
+            spy: spyinside
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+            snip: sniperinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Sellable:
+		RequiresCondition: unit.sellable && !loaded
+    Capturable:
+        RequiresCondition: !loaded
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: weapon-default, weapon-gunner, weapon-rocket-ag, weapon-rocket-aa, weapon-commando, weapon-sniper
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

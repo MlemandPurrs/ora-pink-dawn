@@ -2217,3 +2217,42 @@ ctur.husk:
 		Start: 96
 		Tick: 800
 		Offset: 0,-2
+
+rtur:
+    Inherits: emp-overlay
+	idle: blank1 # Empty first frame. We need WithSpriteBody for the make anim, and WSB needs at least a placeholder default sequence to work
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+	damaged-turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	make: rturmake
+		Length: *
+		Tick: 80
+	dead: rtur
+		Start: 16
+		Tick: 800
+	muzzle: gunfire2
+		Length: *
+	bib: mbFTWR
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+	icon: rturicon
+
+rtur.husk:
+	idle: rtur
+        Start: 16
+	dead: rtur
+		Start: 16
+		Tick: 800
+	bib: mbFTWR
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT

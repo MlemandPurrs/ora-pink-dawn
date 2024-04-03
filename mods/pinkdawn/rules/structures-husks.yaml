@@ -527,3 +527,22 @@ CTUR.Husk:
 	TransformOnCapture:
 		ForceHealthPercentage: 35
 		IntoActor: ctur
+
+RTUR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 496
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Tooltip:
+		Name: Railgun Turret (Destroyed)
+	Health:
+		HP: 30000
+	RenderSprites:
+		Image: rtur.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: rtur
