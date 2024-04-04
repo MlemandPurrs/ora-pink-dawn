@@ -1249,7 +1249,7 @@ FIX2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction, ~!player.gdi, ~!player.gdib, ~!player.gdic, ~techlevel.5
-		Queue: Building.GDI, Building.Soviet, Building.BossNod, Building.BossSoviet
+		Queue: Building.GDI, Building.Soviet, Building.BossNod, Building.BossSoviet, Building.BossAllies
 		Description: Produces and reloads both\nfixed wing and VTOL aircraft.\nAlso can repair Aircraft if\nwithin Service Depot radius. 
 	Building:
 		Footprint: x=x =xx
@@ -1499,6 +1499,37 @@ FIX2:
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
         AllowMultiple: false
+	ParatroopersPower@AlliesParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bossallies
+		OrderName: AlliesParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badg
+		Name: Paratroopers
+		Description: A Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1518,6 +1549,10 @@ FIX2:
 	GrantConditionOnFaction@GDI2:
 		Condition: owner.is.gdia
 		Factions: gdia
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@AlliesBoss:
+		Condition: owner.is.bossallies
+		Factions: bossallies
 		ResetOnOwnerChange: True
     ActorPreviewPlaceBuildingPreview:
 		Animated: false

@@ -25,6 +25,14 @@ ifv:
         Start: 32
         Facings: 32
   		UseClassicFacings: True
+    turret-flamer: flam-tur
+        Start: 0
+        Facings: 32
+  		UseClassicFacings: True
+    turret-chemical: chem-tur
+        Start: 0
+        Facings: 32
+  		UseClassicFacings: True
 	muzzle: cannmuzz
 		Length: 2
 		Facings: 16
@@ -34,6 +42,20 @@ ifv:
 	spinner: mhq
 		Start: 32
 		Length: 32
+	medical: medicoverlay
+		Start: 0
+		Length: 1
+	tsla-orb: minittnk
+		Start: 0
+		Length: 1
+    tsla-orb-charge: minittnk
+        Start: 0
+        Tick: 100
+        Length: 32
+	red-light: red-light
+		Length: *
+		Tick: 80
+		#   BlendMode: DoubleMultiplicative
 	icon: ifvicon
 
 ifv.husk:

@@ -1320,7 +1320,7 @@ HPAD:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: vehicleproduction, ~!player.gdia, ~techlevel.5
-		Queue: Building.GDI, Building.Nod, Building.Allies, Building.BossGDI, Building.BossAllies
+		Queue: Building.GDI, Building.Nod, Building.Allies, Building.BossGDI
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
 		Footprint: =x x=

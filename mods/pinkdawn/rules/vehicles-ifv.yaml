@@ -1,3 +1,4 @@
+#   current issues: Demo IFV does not detonate despite attacking
 IFV:
 	Inherits: ^TrackedVehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -11,7 +12,7 @@ IFV:
         GenericStancePrefix: false
         GenericName: IFV
         GenericVisibility: Ally, Neutral, Enemy
-        RequiresCondition: !loaded
+        RequiresCondition: !loaded || nochange
 	Tooltip@E1Inside:
 		Name: Gunner Infantry Fighting Vehicle
         GenericStancePrefix: false
@@ -54,6 +55,30 @@ IFV:
         GenericName: Sniper IFV
         GenericVisibility: Ally, Neutral, Enemy
         RequiresCondition: sniperinside
+	Tooltip@E4Inside:
+		Name: Flamer Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Flamer IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: flamerinside
+	Tooltip@E5Inside:
+		Name: Chemical Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Chem IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: chemicalinside
+	Tooltip@SHOKInside:
+		Name: Tesla Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Tesla IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: shockinside
+	Tooltip@TERRInside:
+		Name: Demolition Infantry Fighting Vehicle
+        GenericStancePrefix: false
+        GenericName: Demo IFV
+        GenericVisibility: Ally, Neutral, Enemy
+        RequiresCondition: bomberinside
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -62,12 +87,12 @@ IFV:
 		BuildPaletteOrder: 4
 		Prerequisites: infantryproduction, ~vehicle.allies, ~player.bossallies, ~techlevel.4
 		Queue: Vehicle
-		Description: Modular infantry transport.\nCan carry one Infantry.\nArmament changes with Passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
+		Description: Adaptable infantry transport.\nCan carry one Infantry.\nArmament changes with Passenger.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
         Locomotor: tracked-crusher
 		TurnSpeed: 12
 		Speed: 90
-		PauseOnCondition: notmobile || emp-crate-collected || boarding
+		PauseOnCondition: notmobile || emp-crate-collected || boarding || pausefortesla
 	Health:
 		HP: 20000
 	Armor:
@@ -120,10 +145,51 @@ IFV:
 		LocalOffset: 540,0,90
 		PauseOnCondition: emp-crate-collected
 		RequiresCondition: sniperinside
+	Armament@E4:
+        Name: weapon-flamer
+		Weapon: PortaFireball
+		LocalOffset: 321,0,85
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: flamerinside
+	Armament@E5:
+        Name: weapon-chemical
+		Weapon: PortaChemball
+		LocalOffset: 321,0,85
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: chemicalinside
+	Armament@SHOK:
+        Name: weapon-tesla
+		Weapon: PortaTesla
+		LocalOffset: 0,0,85
+		FireDelay: 22
+		PauseOnCondition: emp-crate-collected || !zapping
+		RequiresCondition: shockinside
+	Armament@TERR:
+        Name: weapon-demolition
+		Weapon: DemoIFVTargeting
+		LocalOffset: 0,0,0
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: bomberinside
+	GrantConditionOnAttack@TERR:
+		Condition: triggered
+		RequiresCondition: bomberinside
+	Explodes@TERR:
+		Weapon: FanaticExplode
+		EmptyWeapon: FanaticExplode
+		DamageSource: Killer
+		Chance: 100
+        RequiresCondition: bomberinside
+    KillsSelf:
+		RequiresCondition: bomberinside && triggered
+	GrantConditionWhileAiming@SHOK:
+		Condition: zapping
+	GrantCondition@momentaryimmobilize:
+		Condition: pausefortesla
+		RequiresCondition: shockinside && zapping
 	Turreted:
 		TurnSpeed: 12
 	AttackTurreted:
-        Armaments: weapon-default, weapon-gunner, weapon-rockets, weapon-engineer, weapon-commando, weapon-sniper
+        Armaments: weapon-default, weapon-gunner, weapon-rockets, weapon-engineer, weapon-commando, weapon-sniper, weapon-flamer, weapon-chemical, weapon-tesla, weapon-demolition
         Voice: Attack
         PauseOnCondition: emp-crate-collected || spyinside
 	WithSpriteTurret@Default:
@@ -141,11 +207,33 @@ IFV:
 	WithSpriteTurret@RmboInside:
 		RequiresCondition: commandoinside
 		Sequence: turret-rambo
+	WithSpriteTurret@E4Inside:
+		RequiresCondition: flamerinside
+		Sequence: turret-flamer
+	WithSpriteTurret@E5Inside:
+		RequiresCondition: chemicalinside
+		Sequence: turret-chemical
 	WithIdleOverlay@SpyInside:
 		Sequence: spinner
-		Offset: -10,0,328
+		Offset: -10,0,316
         PauseOnCondition: emp-crate-collected
         RequiresCondition: spyinside
+	WithIdleOverlay@MedicInside:
+		Sequence: medical
+		Offset: 0,0,0
+        RequiresCondition: medicinside
+	WithIdleOverlay@ShockInside:
+		Sequence: tsla-orb
+		Offset: 0,0,0
+        RequiresCondition: shockinside && !zapping
+	WithIdleOverlay@ShockInside2:
+		Sequence: tsla-orb-charge
+		Offset: 0,0,0
+        RequiresCondition: shockinside && zapping
+	WithIdleOverlay@TerrInside:
+		Sequence: red-light
+		Offset: -10,0,216
+        RequiresCondition: bomberinside
 	AttackMove:
 		Voice: Attack
 	WithMuzzleOverlay:
@@ -154,7 +242,7 @@ IFV:
 		Range: 3c768
 		RequiresCondition: spyinside
 	RenderDetectionCircle:
-	ProximityExternalCondition@Medicnside:
+	ProximityExternalCondition@MedicInside:
 		Condition: barracks
 		ValidRelationships: Ally
 		Range: 1c826
@@ -170,6 +258,7 @@ IFV:
         LoadedCondition: loaded
 		PassengerConditions:
             e1: gunnerinside
+            e2: nochange
             e3: rocketinside
             e6: engineerinside
             medi: medicinside
@@ -181,14 +270,16 @@ IFV:
             mega: commandoinside
             snip: sniperinside
             seal: gunnerinside
-            # e4: flamerinside
-            # e8: flamerinside
-            # e5: cheminside
-            # dog: spyinside
-            # shok: shockinside
-            # terr: bomberinside
-            # inf: spyinside
-            # thf: spyinside
+            e4: flamerinside
+            e8: flamerinside
+            e5: chemicalinside
+            dog: spyinside
+            shok: shockinside
+            terr: bomberinside
+            inf: spyinside
+            thf: spyinside
+            e9: nochange
+            e9c: nochange
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
@@ -206,6 +297,7 @@ IFV:
 	Explodes:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
+        RequiresCondition: !bomberinside
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
     Capturable:
@@ -224,7 +316,7 @@ IFV:
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
 	RevealOnFire:
-		ArmamentNames: weapon-default, weapon-gunner, weapon-rocket-ag, weapon-rocket-aa, weapon-commando, weapon-sniper
+		ArmamentNames: weapon-default, weapon-gunner, weapon-rocket-ag, weapon-rocket-aa, weapon-commando, weapon-sniper. weapon-flamer, weapon-chemical
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
         RequiresCondition: reveal-on

@@ -2098,11 +2098,11 @@ HOWI:
 		Range: 5c256
 	Turreted:
 		TurnSpeed: 12
-		Offset: -100,0,0
+		Offset: -150,0,24
 	Armament@PRIMARY:
         Name: primary
 		Weapon: HowitzerShell
-		LocalOffset: 724,0,208
+		LocalOffset: 924,0,258
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
         RequiresCondition: !rank-heroic

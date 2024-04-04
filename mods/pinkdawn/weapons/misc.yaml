@@ -58,6 +58,11 @@ DemoManTargeting:
 	Warhead@1Dam: TargetDamage
 		ValidTargets: DetonateAttack2
 
+DemoIFVTargeting:
+	Range: 1c849
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+
 TargeterforV3RL:
 	ReloadDelay: 3
 	Range: 16c256

@@ -256,7 +256,7 @@
 	Faction@bossallies:
 		Name: U.S.A.
 		InternalName: bossallies
-		Description: United States of America\n\nFaction Variations:\n    - Gattling Gun replaces Anti-Air Gun\n    - IFV replaces APC\n    - GPS Sattelite is permanent\n\nSpecial Unit:\n    - SEAL\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Light Tanks\n    - Cannot train Mechanics\n    - Cannot build Phase Vehicle
+		Description: United States of America\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Gattling Gun replaces Anti-Air Gun\n    - IFV replaces APC\n    - GPS Sattelite is permanent\n\nSpecial Unit:\n    - SEAL\n\nSpecial Abilities:\n    - Paratroopers\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Light Tanks\n    - Cannot train Mechanics\n    - Cannot build Phase Vehicle
         Selectable: false
 	Faction@soviet:
 		Name: Soviet
