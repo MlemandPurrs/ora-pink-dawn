@@ -91,10 +91,12 @@
 #   90. EMPBomb
 #   91. HowitzerShell
 #   92. TurretRailgun
+#   93. VulcanAA
+#   94. VulcanAPC
 
 #   1. Commando's Sniper rifle
 Sniper:
-	ReloadDelay: 40
+	ReloadDelay: 60
 	Range: 5c512
 	ValidTargets: Ground, Infantry
 	InvalidTargets: Vehicle, Water, Structure, Tree, Wall
@@ -4312,3 +4314,77 @@ TurretRailgun:
         InvalidTargets: Wall
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 		ValidRelationships: Ally, Neutral, Enemy
+
+#   93. CRAM weaponry
+VulcanAA:
+	ReloadDelay: 4
+	Range: 6c0
+	MinRange: 1c0
+	Burst: 5
+	ValidTargets: Air, Helicopter, Airplane
+	Report: minigun.aud
+	Projectile: Bullet
+		Speed: 5c682
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 1750
+        ValidTargets: Air, Helicopter, Airplane
+		Versus:
+            None: 25
+            Light: 75
+            Medium: 75
+            Heavy: 100
+            Concrete: 50
+            Wood: 75
+            Aluminium: 75
+            Steel: 100
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath	
+	Warhead@2Eff: CreateEffect
+		Explosions: small_poof
+        ValidTargets: Helicopter, Airplane
+	Warhead@3Eff: CreateEffect
+		Explosions: flak_explosion
+        ValidTargets: Air
+        InvalidTargets: Helicopter, Airplane
+
+#   94. Commando IFV's gattling
+VulcanAPC:
+	ReloadDelay: 30
+	Burst: 5
+	Range: 4c768
+	MinRange: 0c768
+    InvalidTargets: Tree, Wall
+	Report: gun5.aud
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2500
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        InvalidTargets: Tree, Wall
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground, Air, Helicopter
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure

@@ -1813,99 +1813,6 @@ mega:
 		Facings: 8
 	icon: megaicon
 
-e7:
-	stand:
-		Facings: 8
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot:
-		Start: 56
-		Length: 7
-		Facings: 8
-	liedown:
-		Start: 112
-		Length: 2
-		Facings: 8
-	standup:
-		Start: 160
-		Length: 2
-		Facings: 8
-	prone-stand:
-		Start: 128
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Start: 128
-		Length: 4
-		Facings: 8
-		Tick: 100
-	prone-shoot:
-		Start: 176
-		Length: 7
-		Facings: 8
-	idle1:
-		Start: 232
-		Length: 15
-		Tick: 120
-	idle2:
-		Start: 247
-		Length: 15
-		Tick: 120
-	die1:
-		Start: 262
-		Length: 8
-		Tick: 80
-	die2:
-		Start: 270
-		Length: 8
-		Tick: 80
-	die3:
-		Start: 278
-		Length: 8
-		Tick: 80
-	die4:
-		Start: 286
-		Length: 12
-	die5:
-		Start: 298
-		Length: 18
-	die6:
-		Start: 298
-		Length: 18
-	die7: electro
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-            TROPIC: TEMPERAT
-	die-crushed: e1rot
-		Start: 16
-		Length: 4
-		Tick: 1600
-		ZOffset: -511
-	parachute:
-        Start: 0
-		Facings: 8
-	icon: e7icon
-	swimidle: e7swimidle
-		Length: 3
-		Facings: 8
-		Tick: 180
-	swim: e7swim
-		Length: 4
-		Facings: 8
-		Tick: 120
-	splash: h2o_exp3
-		Length: *
-		ZOffset: 2047
-		IgnoreWorldTint: true
-
 e9:
 	stand:
 		Facings: 8
@@ -2453,3 +2360,117 @@ terr:
 		Start: 0
 		Facings: 8
 	icon: terricon
+
+seal:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 4
+		Facings: 8
+	liedown:
+		Start: 96
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 112
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+	parachute:
+		Start: 422
+        Length: 3
+		Facings: 8
+	idle1:
+		Start: 192
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 208
+		Length: 16
+		Tick: 120
+	idle3:
+		Start: 224
+		Length: 15
+		Tick: 120
+	swimstand: sealswim
+		Length: 3
+		Facings: 8
+		Tick: 180
+	swim: sealswim
+		Start: 24
+        Length: 4
+		Facings: 8
+		Tick: 120
+	swimidle: sealswim
+		Start: 56
+		Length: 3
+        Facings: 8
+		Tick: 120
+	die1:
+		Start: 318
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 326
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 334
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 342
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 354
+		Length: 18
+		Tick: 80
+	die6:
+		Start: 354
+		Length: 18
+		Tick: 80
+	die7: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			SNOW: TEMPERAT
+			JUNGLE: TEMPERAT
+            TROPIC: TEMPERAT
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	splash: h2o_exp3
+		Length: *
+		ZOffset: 2047
+		IgnoreWorldTint: true
+	icon: sealicon

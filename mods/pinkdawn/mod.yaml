@@ -104,6 +104,7 @@ Rules:
     pinkdawn|rules/ships-ra.yaml
     pinkdawn|rules/giantants.yaml
 	pinkdawn|rules/vehicles-dtnk.yaml
+	pinkdawn|rules/vehicles-ifv.yaml
 
 Sequences:
 	pinkdawn|sequences/structures.yaml
@@ -120,6 +121,7 @@ Sequences:
 	pinkdawn|sequences/naval.yaml
 	pinkdawn|sequences/giantants.yaml
 	pinkdawn|sequences/vehicles-dtnk.yaml
+	pinkdawn|sequences/vehicles-ifv.yaml
 
 TileSets:
 	pinkdawn|tilesets/desert.yaml

@@ -727,7 +727,7 @@
 		Sequence: pip-heal
 		Position: TopRight
 		Margin: 5, 6
-		RequiresCondition: hospitalheal
+		RequiresCondition: barracksheal || hospitalheal
 		BlinkInterval: 31
 		BlinkPattern: On, Off
 	ExternalCondition@BARRACKS:

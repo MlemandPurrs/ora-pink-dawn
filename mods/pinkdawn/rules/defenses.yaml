@@ -1031,7 +1031,7 @@ AGUN:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Allies, Defense.BossAllies
+		Queue: Defense.Allies
 		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
     Building:
 	Health:
@@ -1099,6 +1099,96 @@ AGUN:
         Prerequisites: ~global-unitreveal
 	SpawnActorOnDeath@HUSK:
 		Actor: AGUN.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+
+CRAM:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAir
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+    -BodyOrientation:
+    ClassicFacingBodyOrientation:
+    -RenderDetectionCircle:
+	Selectable:
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1365, 0, -170
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Gattling Gun
+	Buildable:
+        BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 6
+		Prerequisites: anyhq, ~techlevel.6
+		Queue: Defense.BossAllies
+		Description: Anti-Air base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
+    Building:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+    RevealsShroudMultiplier@Shooting:
+        Modifier: 200
+        RequiresCondition: is-shooting && !emp-affected-structure
+	GrantConditionOnAttack@ShootingVision:
+		Condition: is-shooting
+		ArmamentNames: primary
+		RevokeDelay: 75
+	Turreted:
+		TurnSpeed: 24
+		InitialFacing: 832
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+        Name: primary
+		Weapon: VulcanAA
+		LocalOffset: 520,0,450
+		MuzzleSequence: muzzle
+        PauseOnCondition: !ammo
+	AmmoPool:
+		Name: primary
+		Armaments: primary
+		Ammo: 24
+		AmmoCondition: ammo
+		ReloadDelay: 6
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 6
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 42
+		Count: 24
+		RequiresCondition: !ammo && !emp-affected-structure
+	AttackTurreted:
+		Armaments: primary
+		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Power:
+		Amount: -45
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	WithBuildingBib:
+        HasMinibib: true
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	SpawnActorOnDeath@HUSK:
+		Actor: CRAM.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished

@@ -419,27 +419,27 @@ E6:
 	Voiced:
 		VoiceSet: EngineerVoice
 
-E7:
+SEAL:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 500
+		Cost: 800
 	Tooltip:
-		Name: Special Forces
+		Name: SEAL
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 750
+        BuildDuration: 1000
         BuildDurationModifier: 100
-		BuildPaletteOrder: 10
-		Prerequisites: ~disabled
+		BuildPaletteOrder: 9
+		Prerequisites: atek, ~infantry.allies, ~player.bossallies, ~techlevel.6
 		Queue: Infantry
 		Description: Elite amphibian infantry.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:
-		Speed: 50
+		Speed: 60
         Locomotor: foot-amphibian
 	Health:
-		HP: 5000
+		HP: 7500
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -451,13 +451,13 @@ E7:
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:
-		IdleSequences: idle1,idle2
-        StandSequences: stand
+		IdleSequences: idle1,idle2,idle3
+        StandSequences: stand, stand2
 		DefaultAttackSequence: shoot
         RequiresCondition: !onwater && !parachute
 	WithInfantryBody@Swim:
-		-IdleSequences:
-		StandSequences: swimidle
+		IdleSequences: swimidle
+		StandSequences: swimstand
 		-AttackSequences:
 		DefaultAttackSequence: swim
 		MoveSequence: swim
@@ -476,6 +476,14 @@ E7:
 	Demolition:
 		DetonationDelay: 45
 		Voice: Action
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E8:
 	Inherits: ^Soldier
@@ -846,7 +854,7 @@ MECH:
 		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: anyfix, ~infantry.allies, ~techlevel.5
+		Prerequisites: anyfix, ~infantry.allies, ~!player.bossallies, ~techlevel.5
 		Queue: Infantry
 		Description: Field mechanic infantry.\n\nRepairs nearby Vehicle units.
 	Mobile:

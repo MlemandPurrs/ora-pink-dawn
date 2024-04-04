@@ -787,7 +787,7 @@ APC3:
         BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
-		Prerequisites: atek, ~vehicle.allies, ~!player.alliesb, ~!player.alliesc, ~techlevel.7
+		Prerequisites: atek, ~vehicle.allies, ~!player.alliesb, ~!player.alliesc, ~!player.bossallies, ~techlevel.7
 		Queue: Vehicle
 		Description: Experimental vehicle with cloaking.\nCan carry one Infantry.\n\nCan attack Aircraft.\nStrong vs Vehicles, Aircraft.\nWeak vs Infantry.
 	Mobile:
@@ -980,7 +980,7 @@ MNLY:
         BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: warf, ~vehicle.allies, ~!player.alliesb, ~techlevel.3
+		Prerequisites: warf, ~vehicle.allies, ~!player.alliesb, ~!player.bossallies, ~techlevel.3
 		Queue: Vehicle
 		Description: Fast, amphibian light tank.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Mobile:

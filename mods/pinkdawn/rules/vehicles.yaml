@@ -672,7 +672,7 @@ APC:
 		BuildDuration: 900
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: infantryproduction, ~!vehicle.soviet, ~!player.gdic, ~!player.nodb, ~techlevel.4
+		Prerequisites: infantryproduction, ~!vehicle.soviet, ~!player.gdic, ~!player.nodb, ~!player.bossallies, ~techlevel.4
 		Queue: Vehicle
 		Description: Armored infantry transport.\nCan transport up to 5 Infantry.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Mobile:

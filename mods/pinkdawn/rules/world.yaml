@@ -155,8 +155,8 @@
 			Beach: 80
 			Shallow: 80
             Ruin: 80
-            Water: 50
             Ramp: 100
+            Water: 50
 	Locomotor@TRACKED-AMPHIBIAN:
 		Name: tracked-amphibian
 		Crushes: crate, mine, infantry, wall
@@ -256,7 +256,7 @@
 	Faction@bossallies:
 		Name: U.S.A.
 		InternalName: bossallies
-		Description: United States of America
+		Description: United States of America\n\nFaction Variations:\n    - Gattling Gun replaces Anti-Air Gun\n    - IFV replaces APC\n    - GPS Sattelite is permanent\n\nSpecial Unit:\n    - SEAL\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Light Tanks\n    - Cannot train Mechanics\n    - Cannot build Phase Vehicle
         Selectable: false
 	Faction@soviet:
 		Name: Soviet
@@ -275,12 +275,12 @@
 	Faction@sovietc:
 		Name: Rocket Comm.
 		InternalName: sovietc
-		Description: Soviet: Rocket Command\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Missile Silo cheaper to build\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
+		Description: Soviet: Rocket Command\n\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Missile Silo cheaper to build\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
         Selectable: true
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
+		Description: Black Guard\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
         Selectable: false
 	Faction@RandomRA:
 		Name: Random RA

@@ -924,6 +924,55 @@ agun.husk:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
 
+cram:
+    Inherits: emp-overlay
+	idle: blank1
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	make: crammake
+		Length: *
+		Offset: 0,-13
+        Tick: 80
+	damaged-turret: cram
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	dead: crammake
+		Start: 5
+		Length: 1
+		Tick: 800
+        Offset: 0,-13
+	muzzle: gunfire2
+		Start: 1
+		Length: 4
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+	icon: cramicon
+
+cram.husk:
+	idle: crammake
+		Start: 5
+		Length: 1
+		Offset: 0,-13
+    dead: crammake
+		Start: 5
+		Length: 1
+		Offset: 0,-13
+        Tick: 800
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+            TROPIC: TEMPERAT
+
 sam2:
     Inherits: emp-overlay
 	idle: blank1 # Empty first frame. We need WithSpriteBody for the make anim, and WSB needs at least a placeholder default sequence to work

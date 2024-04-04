@@ -1659,6 +1659,8 @@ DOME:
 		InfiltratedTextNotification: Building Infiltrated.
 	Targetable@Infiltration:
         TargetTypes: SpyInfiltrate2
+	RenderSprites:
+		Image: dome
 
 ATEK:
 	Inherits: ^BaseBuilding
@@ -1733,7 +1735,7 @@ ATEK:
 		DisplayTimerRelationships: None
 		SupportPowerPaletteOrder: 9
 		StartFullyCharged: True
-		RequiresActiveRadar: True        
+		RequiresActiveRadar: True
 	ProduceActorPower@powergps:
 		Name: GPS Satellite
 		Description: Reveals map terrain and provides tactical\ninformation.
@@ -1759,6 +1761,7 @@ ATEK:
 		SupportPowerPaletteOrder: 9
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		RequiresCondition: gpsactivated
+        Prerequisites: ~!player.bossallies
 	GrantConditionOnPrerequisite@gpsactivation:
 		Prerequisites: gpsactiveprereq
 		Condition: gpsactivated
@@ -1810,9 +1813,18 @@ gpsactivenoise:
 		Step: -1
 		StartIfBelow: 101
 		Delay: 1
-	SpawnActorOnDeath:
+	SpawnActorOnDeath@1:
 		Actor: powergps
 		SpawnAfterDefeat: False
+        RequiresCondition: !owner.is.bossallies
+	SpawnActorOnDeath@2:
+		Actor: powergps.perma
+		SpawnAfterDefeat: False
+        RequiresCondition: owner.is.bossallies
+    GrantConditionOnFaction@BossSoviet:
+        Condition: owner.is.bossallies
+        Factions: bossallies
+        ResetOnOwnerChange: true
 	KillsSelf:
 
 powergps:
@@ -1841,6 +1853,34 @@ powergps:
 		Step: -1
 		StartIfBelow: 101
 		Delay: 1
+	GrantConditionOnPrerequisite@satelliteexists:
+		Prerequisites: uplink
+		Condition: uplinkexists
+	KillsSelf:
+		RequiresCondition: !uplinkexists
+
+powergps.perma:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (GPS Power Perma Dummy)
+	AlwaysVisible:
+	Aircraft:
+		Repulsable: False
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	MapEditorData:
+		Categories: System
+	ProvidesPrerequisite@gap:
+		Prerequisite: gpsactiveprereq
+	ActorLostNotification:
+		Notification: SatelliteTerminated
+		NotifyAll: True
+	Health:
+		HP: 1
+	HitShape:
 	GrantConditionOnPrerequisite@satelliteexists:
 		Prerequisites: uplink
 		Condition: uplinkexists

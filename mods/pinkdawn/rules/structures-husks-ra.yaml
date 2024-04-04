@@ -366,6 +366,25 @@ AGUN.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: agun
 
+CRAM.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 1024, 1024
+	Turreted:
+		TurnSpeed: 12
+        InitialFacing: 820
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Tooltip:
+		Name: Gattling Gun (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: agun.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: cram
+
 FTWR.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

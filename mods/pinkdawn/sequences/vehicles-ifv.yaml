@@ -13,12 +13,16 @@ ifv:
         Start: 32
         Facings: 32
   		UseClassicFacings: True
-    turret-repair: crane-tur
+	turret-rocket: apc3
+        Start: 38
+		Facings: 32
+		UseClassicFacings: True
+    turret-repair: rep-tur
         Start: 0
         Facings: 32
   		UseClassicFacings: True
-    turret-rambo: gtnk-tur
-        Start: 0
+    turret-rambo: vulc-tur
+        Start: 32
         Facings: 32
   		UseClassicFacings: True
 	muzzle: cannmuzz

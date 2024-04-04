@@ -35,7 +35,7 @@ IFV:
         GenericStancePrefix: false
         GenericName: Medical IFV
         GenericVisibility: Ally, Neutral, Enemy
-        RequiresCondition: mediinside
+        RequiresCondition: medicinside
 	Tooltip@SpyInside:
 		Name: Recon Infantry Fighting Vehicle
         GenericStancePrefix: false
@@ -87,55 +87,50 @@ IFV:
         Name: weapon-gunner
 		Weapon: MachineGun
 		MuzzleSequence: muzzle2
-		LocalOffset: 720,0,90
-		PauseOnCondition: empdisable
-		RequiresCondition: e1inside
+		LocalOffset: 540,0,90
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: gunnerinside
 	Armament@E3Ground:
-        Name: weapon-rocket-ag
-		Weapon: StingerAG
+        Name: weapon-rockets
+		Weapon: BikeRockets
 		LocalOffset: 192,-100,176, 192,100,176
 		LocalYaw: 64, -64
-		PauseOnCondition: reload-air || emp-crate-collected
-		ReloadingCondition: reload-ground
-        RequiresCondition: e3inside
-	Armament@E3Air:
-		Name: weapon-rocket-aa
-		Weapon: StingerAA
-		LocalOffset: 192,-100,176, 192,100,176
-		LocalYaw: 64, -64
-		PauseOnCondition: reload-ground || emp-crate-collected
-		ReloadingCondition: reload-air
-        RequiresCondition: e3inside
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rocketinside
 	Armament@E6:
         Name: weapon-engineer
 		Weapon: Repair
-		LocalOffset: 768,0,90
-		PauseOnCondition: empdisable
-		RequiresCondition: e6inside
+		Cursor: fix
+		OutsideRangeCursor: fix
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: engineerinside
 	Armament@RMBO:
         Name: weapon-commando
-		Weapon: MachineGun
+		Weapon: VulcanAPC
 		MuzzleSequence: muzzle2
-		LocalOffset: 720,0,90
-		PauseOnCondition: empdisable
-		RequiresCondition: rmboinside
+		LocalOffset: 321,0,85
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: commandoinside
 	Armament@SNIP:
         Name: weapon-sniper
 		Weapon: Sniper
 		MuzzleSequence: muzzle2
-		LocalOffset: 720,0,90
-		PauseOnCondition: empdisable
-		RequiresCondition: snipinside
+		LocalOffset: 540,0,90
+		PauseOnCondition: emp-crate-collected
+		RequiresCondition: sniperinside
 	Turreted:
 		TurnSpeed: 12
 	AttackTurreted:
+        Armaments: weapon-default, weapon-gunner, weapon-rockets, weapon-engineer, weapon-commando, weapon-sniper
         Voice: Attack
         PauseOnCondition: emp-crate-collected || spyinside
 	WithSpriteTurret@Default:
         Sequence: turret
         RequiresCondition: !loaded
 	WithSpriteTurret@E1Inside:
-		RequiresCondition: gunnerinside && sniperinside
+		RequiresCondition: gunnerinside || sniperinside
 		Sequence: turret-mg
 	WithSpriteTurret@E3Inside:
 		RequiresCondition: rocketinside
@@ -144,11 +139,11 @@ IFV:
 		RequiresCondition: engineerinside
 		Sequence: turret-repair
 	WithSpriteTurret@RmboInside:
-		RequiresCondition: rmboinside
+		RequiresCondition: commandoinside
 		Sequence: turret-rambo
 	WithIdleOverlay@SpyInside:
 		Sequence: spinner
-		Offset: 0,0,512
+		Offset: -10,0,328
         PauseOnCondition: emp-crate-collected
         RequiresCondition: spyinside
 	AttackMove:
@@ -159,7 +154,14 @@ IFV:
 		Range: 3c768
 		RequiresCondition: spyinside
 	RenderDetectionCircle:
-		RequiresCondition: spyinside
+	ProximityExternalCondition@Medicnside:
+		Condition: barracks
+		ValidRelationships: Ally
+		Range: 1c826
+		RequiresCondition: medicinside && !emp-crate-collected
+	WithRangeCircle@MedicInside:
+		Range: 1c826
+		RequiresCondition: medicinside && !emp-crate-collected
 	Cargo:
 		Types: Infantry
 		MaxWeight: 1
@@ -169,7 +171,7 @@ IFV:
 		PassengerConditions:
             e1: gunnerinside
             e3: rocketinside
-            engi: engineerinside
+            e6: engineerinside
             medi: medicinside
             mech: engineerinside
             spy: spyinside
@@ -178,6 +180,15 @@ IFV:
             volk: commandoinside
             mega: commandoinside
             snip: sniperinside
+            seal: gunnerinside
+            # e4: flamerinside
+            # e8: flamerinside
+            # e5: cheminside
+            # dog: spyinside
+            # shok: shockinside
+            # terr: bomberinside
+            # inf: spyinside
+            # thf: spyinside
 	WithDecoration@COMMANDOSKULL:
 		Image: pips
 		Sequence: pip-skull
