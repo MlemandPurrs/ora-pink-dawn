@@ -591,7 +591,6 @@ Player:
             iron: 1
             mslo: 1
             tsla: 10
-            minb: 3
 		BuildingFractions:
 			oref: 10
             oref.clone: 10
@@ -609,7 +608,6 @@ Player:
             ftwr: 7
             tsla: 5
 			sam2: 3
-            minb: 1
 	BaseBuilderBotModule@Blackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
 		BuildingQueues: Building.BossNod
@@ -1056,7 +1054,7 @@ Player:
             mig: 1
             ss: 5
             msub: 3
-            nts: 1            
+            nts: 1
  	UnitBuilderBotModule@Blackhand:
 		RequiresCondition: enable-ai-player && ai.bossnod
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy   

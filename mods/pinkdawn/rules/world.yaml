@@ -246,7 +246,7 @@
 	Faction@alliesb:
 		Name: Mecha. Assault
 		InternalName: alliesb
-		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Unit:\n    - Chrono Tortoise\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
+		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nSpecial Units:\n    - Chrono Tortoise\n    - Flak Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesc:
 		Name: Defense Corps

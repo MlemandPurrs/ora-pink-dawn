@@ -630,6 +630,24 @@ MNLY.Husk:
 	RenderSprites:
 		Image: 1tnk.husk
 
+ATNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Flak Tank (Destroyed)
+	Health:
+		HP: 15000
+	Armor:
+		Type: Medium
+	ThrowsParticle@turret:
+		Anim: turret
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: atnk
+	RenderSprites:
+		Image: atnk.husk
+
 2TNK.Husk:
 	Inherits: ^Husk
 	Tooltip:

@@ -1730,9 +1730,9 @@ RTUR:
 		Weapon: TurretRailgun
 		LocalOffset: 1024,-32,224
 		MuzzleSequence: muzzle
-        PauseOnCondition: build-incomplete
+        PauseOnCondition: build-incomplete || lowpower
 	AttackTurreted:
-		PauseOnCondition: build-incomplete || emp-affected-structure
+		PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
 	WithMuzzleOverlay:
 	DetectCloaked:
         DetectionTypes: Stealth, AirStealth, Underground, Underwater
