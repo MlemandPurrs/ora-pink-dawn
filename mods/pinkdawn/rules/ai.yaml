@@ -719,7 +719,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, pt2, dd2, ss2, sb, bsub, badg, c17, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, howi, mlrs, pt2, dd2, ss2, sb, bsub, badg, c17, gtwr, gun, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, f22
         NavalUnitsTypes: pt2, dd2, ss2, sb, bsub
@@ -732,7 +732,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, badg, c17, heli, f22, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, howi, mlrs, badg, c17, heli, f22, gtwr, gun, obli, sam, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, f22
         NavalUnitsTypes: pt2, dd2, ss2, sb, bsub
@@ -927,6 +927,7 @@ Player:
             chtk: 15
             stnk: 25
             arty: 30
+            howi: 15
             mlrs: 15
             heli: 5
             f22: 1
@@ -953,6 +954,7 @@ Player:
             stnk: 4
             arty: 7
             mlrs: 1
+            howi: 2
             heli: 2
             f22: 1
             pt2: 4
