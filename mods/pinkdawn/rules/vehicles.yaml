@@ -2269,6 +2269,98 @@ MHQ:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+MHON:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall )
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability-crate-collected
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Fist of Nod
+	Buildable:
+		BuildDuration: 950
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+        BuildLimit: 1
+        Prerequisites: anyfix, ~vehicle.nod, ~player.nodb,  ~techlevel.5
+		Queue: Vehicle
+		Description: Maximum one can be built.\n\nMobile infantry barracks.\nDeploys into a Fist of Nod.\n\nUnarmed.
+	Mobile:
+        TurnSpeed: 12
+		Speed: 60
+		Locomotor: tracked-crusher
+        PauseOnCondition: boarding
+ 	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+	Transforms:
+        PauseOnCondition: cant-undeploy
+		IntoActor: fist
+		Offset: 0,-1
+		Facing: 432
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
+		Voice: Unload
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	RenderSprites:
+		Image: mhon
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || oncarryall
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    Passenger:
+
 MSG:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit

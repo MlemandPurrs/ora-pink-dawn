@@ -218,7 +218,7 @@
 	Faction@nodb:
 		Name: Raider Corps
 		InternalName: nodb
-		Description: Nod: Raider Corps\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n    - Can plug Stealth to any Vehicle\n\nSpecial unit:\n    - Howitzer\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Plug\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Stealth Tanks\n    - Cannot train Chem Troopers\n    - Cannot build SSM Launcher
+		Description: Nod: Raider Corps\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n    - Can plug Stealth to any Vehicle\n\nSpecial Units:\n    - Howitzer\n    - Fist of Nod\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Plug\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Stealth Tanks\n    - Cannot train Chem Troopers\n    - Cannot build SSM Launcher
         Selectable: true
 	Faction@nodc:
 		Name: Terror Cell

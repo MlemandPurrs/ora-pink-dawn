@@ -365,6 +365,22 @@ MHQ.Husk:
 	RenderSprites:
 		Image: mhq.husk
 
+MHON.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Fist of Nod (Destroyed)
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 2
+	TransformOnCapture:
+		IntoActor: mhon
+	RenderSprites:
+		Image: mhon.husk
+
 MSG.Husk:
 	Inherits: ^Husk
 	Tooltip:

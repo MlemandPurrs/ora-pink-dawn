@@ -676,3 +676,16 @@ ttrk.husk:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
+
+mhon:
+    Inherits: emp-overlay
+	idle: mhq
+		Facings: 32
+		UseClassicFacings: True
+	icon: mhonicon
+
+mhon.husk:
+	idle: mhq
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512

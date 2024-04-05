@@ -4215,7 +4215,7 @@ HowitzerShell:
 	ReloadDelay: 100
 	Range: 10c256
 	MinRange: 3c128
-	Report: tnkfire2.aud
+	Report: tank5.aud
 	TargetActorCenter: true
 	Projectile: Bullet
 		Image: 120MM

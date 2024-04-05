@@ -178,6 +178,24 @@ HAND.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: hand
 
+FIST.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Fist of Nod (Destroyed)
+	Health:
+		HP: 30000
+	RenderSprites:
+		Image: hand.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hand
+
 WEAP.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

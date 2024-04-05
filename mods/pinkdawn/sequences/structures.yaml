@@ -2256,3 +2256,46 @@ rtur.husk:
 		TilesetOverrides:
 			WINTER: TEMPERAT
             TROPIC: TEMPERAT
+
+fist:
+    Inherits: emp-overlay
+	idle:
+		Offset: 0,-8
+	damaged-idle:
+		Start: 1
+		Offset: 0,-8
+	dead:
+		Start: 2
+		Tick: 800
+		Offset: 0,-8
+	make: fistmake
+		Length: *
+		Tick: 80
+		Offset: 0,-8
+	build-top: fist2
+        Start: 0
+		Length: 4
+		ZOffset: -1024
+		Offset: 0,-8
+	damaged-build-top: fist2
+		Start: 4
+		Length: 4
+		ZOffset: -1024
+		Offset: 0,-8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: fisticon
+
+fist.husk:
+	idle: fist
+		Start: 2
+		Offset: 0,-8
+	dead: fist
+		Start: 2
+		Tick: 800
+		Offset: 0,-8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0

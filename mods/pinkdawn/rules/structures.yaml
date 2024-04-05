@@ -930,6 +930,128 @@ HAND:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
+FIST:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+    -GivesBuildableArea:
+	WithColoredOverlay@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+        Color: 800000A3
+	DamageMultiplier@Invulnerability:
+		RequiresCondition: invulnerability-crate-collected
+		Modifier: 0
+	TimedConditionBar@Invulnerability:
+		Condition: invulnerability-crate-collected
+	ExternalCondition@Invulnerability:
+		Condition: invulnerability-crate-collected
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability-crate-collected
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Fist of Nod
+	ProvidesPrerequisite:
+		Prerequisite: infantryproduction
+	Buildable:
+		BuildDuration: 950
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 2
+		#   Prerequisites: fact, ~player.nodb
+        Prerequisites: ~disabled
+		Queue: Building.Nod
+		Description: Trains Infantry units.
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c512
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+        RequiresCondition: !build-incomplete
+        Sequence: build-top
+	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
+	Exit@1:
+		Priority: 2
+		SpawnOffset: 512,1024,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -1026,380,0
+		ExitCell: 0,2
+	Exit@fallback1:
+		SpawnOffset: -1024,256,0
+		ExitCell: -1,1
+	Production:
+		Produces: Infantry
+        PauseOnCondition: build-incomplete || emp-affected-structure
+	ProductionQueue:
+		Type: Infantry
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+        Sticky: false
+	ProductionBar:
+		ProductionType: Infantry
+	GrantExternalConditionToProduced:
+		Condition: produced
+	Power:
+		Amount: -15
+        RequiresCondition: !build-incomplete || emp-affected-structure
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@nod:
+		Prerequisite: infantry.nod
+		Factions: nod, noda, nodb, nodc, bossnod
+        ResetOnOwnerChange: true
+	Selectable:
+		Bounds: 2048, 2048
+		DecorationBounds: 2048, 2901, 0, -426
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: FIST.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	Transforms:
+		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure || cant-undeploy
+		IntoActor: mhon
+		Offset: 0,1
+		Facing: 432
+	TransformsIntoMobile:
+		Locomotor: tracked-crusher
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		CargoType: Vehicle
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RepairActors: fix, fix2
+		RequiresForceMove: true
+	TransformsIntoTransforms:
+		RequiresCondition: build-incomplete
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
+
 AFLD:
 	Inherits: ^BaseBuilding
     Inherits@EMPMechanic: ^EMPApplicableStructure
