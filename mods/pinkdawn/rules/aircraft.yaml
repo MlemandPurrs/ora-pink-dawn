@@ -164,7 +164,7 @@ TRAN:
         BuildDuration: 1400
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: hpad
+		Prerequisites: hpad, ~!player.bosssoviet
 		Queue: Aircraft
 		Description: Flying infantry transport.\nCan transport up to 5 Infantry.\n\nUnarmed.
 	Aircraft:
@@ -233,6 +233,8 @@ TRAN:
 		DecorationBounds: 1749, 1749
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+    Capturable:
+        RequiresCondition: !airborne && !loaded
 
 ORCA:
 	Inherits: ^Helicopter
@@ -1991,3 +1993,107 @@ THWK:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
 	-MapEditorData:
+
+HALO:
+	Inherits: ^Helicopter
+	Inherits@TRANSPORT: ^Transport
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadAmmoDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Halo Transport
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 1600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: hpad, ~player.bosssoviet
+		Queue: Aircraft
+		Description: Flying infantry transport.\nCan transport up to 10 Infantry.\n\nUnarmed.
+	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
+		TurnSpeed: 12
+		Speed: 150
+        MoveIntoShroud: false
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 260,0,343
+		Sequence: rotor
+		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 260,0,343
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
+	Cargo:
+		Types: Infantry
+		MaxWeight: 10
+		UnloadVoice: Unload
+		AfterUnloadDelay: 40
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+            snip: sniperinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
+	Sellable:
+		RequiresCondition: unit.sellable && !airborne && !loaded
+	Selectable:
+		DecorationBounds: 1749, 1749, 0, -128
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+    Capturable:
+        RequiresCondition: !airborne && !loaded

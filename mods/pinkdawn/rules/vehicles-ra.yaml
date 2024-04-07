@@ -965,6 +965,7 @@ MNLY:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+    ProvidesPrerequisite@unitname:
 
 1TNK:
 	Inherits: ^TrackedVehicle
@@ -1069,6 +1070,7 @@ ATNK:
 		Range: 6c128
 	Turreted:
 		TurnSpeed: 12
+        Offset: 0,0,-24
 	AutoTargetPriority@Air:
 		ValidTargets: Air
 		Priority: 2
@@ -1320,9 +1322,9 @@ ATNK:
 		TurnSpeed: 12
         Offset: 0,0,0
 	Armament:
-		Weapon: HeavyCannon
-		Recoil: 128
-		RecoilRecovery: 26
+		Weapon: LightCannon2
+		Recoil: 85
+		RecoilRecovery: 17
 		LocalOffset: 720,85,90, 720,-85,90
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected

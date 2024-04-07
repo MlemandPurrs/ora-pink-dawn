@@ -56,9 +56,6 @@ dtnk:
 	apc3-body: apc2
 		Facings: 32
 		UseClassicFacings: True
-	maag-body: apc
-		Facings: 32
-		UseClassicFacings: True
 	mnly-body: mnly
 		Facings: 32
 		UseClassicFacings: True
@@ -101,9 +98,6 @@ dtnk:
 	3tni-body: 3tni
 		Facings: 32
 		UseClassicFacings: True
-	3t1b-body: 3tnk
-		Facings: 32
-		UseClassicFacings: True
 	4tnk-body: 4tnk
 		Facings: 32
 		UseClassicFacings: True
@@ -144,6 +138,9 @@ dtnk:
 		Facings: 32
 		UseClassicFacings: True
 	v2rl-body: v2rl
+		Facings: 32
+		UseClassicFacings: True
+	v3rl-body: v3rl
 		Facings: 32
 		UseClassicFacings: True
 	mhq-body: mhq
@@ -297,3 +294,17 @@ dtnk.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+dtnk.dummy:
+    Inherits: emp-overlay
+	idle: mnly
+        Start: 0
+		Facings: 32
+		UseClassicFacings: True
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: cannmuzz
+		Length: 2
+		Facings: 16
+	icon: dtnkicon

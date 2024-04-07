@@ -555,7 +555,7 @@ RMBO:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: miss, ~infantry.rmbo, ~techlevel.7
+		Prerequisites: miss, ~infantry.gdi, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -603,7 +603,7 @@ RMBO:
 RMB2:
     Inherits: RMBO
 	Buildable:
-		Prerequisites: miss, ~infantry.gdi, ~player.bossgdi, ~techlevel.7
+		Prerequisites: miss, ~infantry.nod, ~player.bossnod, ~techlevel.7
 		BuildLimit: 2
         Description: Maximum two can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
     RenderSprites:
@@ -1374,7 +1374,7 @@ THF:
 		BuildPaletteOrder: 9
 		Prerequisites: anyfix, ~infantry.nod, ~!player.noda, ~!player.bossnod, ~techlevel.5
 		Queue: Infantry
-		Description: Steals credits of enemies.\nHijacks enemy vehicles.\n\nUnarmed.
+		Description: Steals credits of enemies.\nHijacks enemy vehicles,\nhelicopters when landed,\nbeaching naval transports.\n\nUnarmed.
 	Mobile:
 		Speed: 50
 		Voice: Move

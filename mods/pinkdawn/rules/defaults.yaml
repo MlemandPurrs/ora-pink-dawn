@@ -421,6 +421,7 @@
     Inherits@experience: ^ExperienceMechanicAircraft
     Inherits@academy: ^AffectedByAcademy
     Inherits@stealthgen: ^AffectedByCloakingField
+    Inherits@hijackable: ^HijackerMechanicAircraft
 	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
@@ -2257,6 +2258,11 @@
     SpeedMultiplier@Hijack:
         Modifier: 0
         RequiresCondition: being-hijacked
+
+^HijackerMechanicAircraft:
+    Inherits: ^HijackerMechanic
+    Capturable:
+        RequiresCondition: !airborne
 
 ^FakeBuilding:
 	Inherits: ^Building

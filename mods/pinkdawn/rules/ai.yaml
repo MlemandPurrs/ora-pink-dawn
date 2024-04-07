@@ -419,7 +419,7 @@ Player:
 			pyle: 3
 			weap: 2
 			hpad: 2
-            3fld: 2
+            3fld: 3
 			fix: 1
 			hq: 1
 			eye: 1
@@ -756,7 +756,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -769,7 +769,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -977,6 +977,7 @@ Player:
             apc: 10
             apc3: 5
             1tnk: 30
+            atnk: 15
             2tnk: 50
             arty: 30
             tnkd: 30

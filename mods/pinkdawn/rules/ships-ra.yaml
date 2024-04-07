@@ -88,6 +88,23 @@ LST2:
 		RequiresCondition: sniperinside
 	Sellable:
 		RequiresCondition: ship.sellable && !loaded
+	CaptureManager:
+		BeingCapturedCondition: being-hijacked
+	Capturable:
+		Types: hijackable
+		CancelActivity: True
+        RequiresCondition: !loaded && onshore
+	CaptureNotification:
+		Notification: UnitStolen
+		TextNotification: Unit stolen.
+		LoseNotification: UnitLost
+		LoseTextNotification: Unit lost.
+    SpeedMultiplier@Hijack:
+        Modifier: 0
+        RequiresCondition: being-hijacked
+	GrantConditionOnTerrain:
+		TerrainTypes: Beach, Shallow
+		Condition: onshore
 
 PT:
 	Inherits: ^Ship

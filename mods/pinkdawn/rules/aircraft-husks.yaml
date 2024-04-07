@@ -625,3 +625,41 @@ THWK.Husk:
 		Radius: 3c0
 	RenderSprites:
 		Image: thwk
+
+HALO.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Halo Transport (Falling)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Heavy
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 150
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+	WithIdleOverlay@ROTOR1:
+		Offset: 260,0,343
+		Sequence: rotor
+	RenderSprites:
+		Image: halo
+
+HALO.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Halo Transport (Destroyed)
+	Health:
+		HP: 6000
+	Armor:
+		Type: Heavy
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: halo
+	MapEditorData:
+		Categories: Aircraft husk
+	RenderSprites:
+		Image: halo

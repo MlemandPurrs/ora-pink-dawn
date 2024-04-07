@@ -1778,7 +1778,10 @@ MRPG:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: RPG Launcher
+		Name: Rocketed Propulsion Grenade Launcher
+        GenericStancePrefix: false
+        GenericName: RPG Launcher
+        GenericVisibility: Ally, Neutral, Enemy
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:

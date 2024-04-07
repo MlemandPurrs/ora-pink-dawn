@@ -810,10 +810,6 @@ PYLE:
 		Prerequisite: infantry.e2
 		Factions: gdi, gdia, gdib, gdic, bossgdi, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
-	ProvidesPrerequisite@rmbo:
-		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossnod
-        ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
     Sellable:
@@ -911,10 +907,6 @@ HAND:
 	ProvidesPrerequisite@nod:
 		Prerequisite: infantry.nod
 		Factions: nod, noda, nodb, nodc, bossnod
-        ResetOnOwnerChange: true
-	ProvidesPrerequisite@rmbo:
-		Prerequisite: infantry.rmbo
-		Factions: gdi, gdia, gdib, gdic, bossnod
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 2048
@@ -1588,6 +1580,7 @@ HQ:
 		Name: Communications Center
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
+    ProvidesPrerequisite@buildingname:
     GrantConditionOnFaction@gdia:
         Condition: owner.is.gdia
         Factions: gdia
@@ -2291,7 +2284,7 @@ SGEN:
 		PauseOnCondition: lowpower
         Prerequisite: cloakingfield-active
 		OrderName: CloakingField
-		DischargeModifier: 300
+		DischargeModifier: 450 #  this was not going down fast enough, lets try
 		ActiveText: ACTIVE
 		AvailableText: READY
 		ChargeInterval: 4500 #  6-minutes cloaking was insane, reduced to 3min

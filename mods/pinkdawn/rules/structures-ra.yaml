@@ -1109,6 +1109,7 @@ FIX2:
 	ParatroopersPower@ShockParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovieta
+		Prerequisites: stek
 		OrderName: ShockParatroopers
 		Icon: parainfra2
 		ChargeInterval: 6750
@@ -1140,7 +1141,8 @@ FIX2:
 	ParatroopersPower@Paratanks:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovietb
-		OrderName: Paratanks
+		Prerequisites: fix
+        OrderName: Paratanks
 		Icon: paratanks
 		ChargeInterval: 6750
 		UnitType: badr
@@ -1582,6 +1584,7 @@ DOME:
 		Name: Radar Dome
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
+    ProvidesPrerequisite@buildingname:
 	Buildable:
     	BuildDuration: 1500
         BuildDurationModifier: 100

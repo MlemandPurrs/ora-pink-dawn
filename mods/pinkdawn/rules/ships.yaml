@@ -695,6 +695,10 @@ CARR:
 		Type: Rectangle
 			TopLeft: -512, -1536
 			BottomRight: 512, 1536
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 7c512
+	RenderDetectionCircle:
 
 CARR.Deployed:
 	Inherits: ^BaseBuilding
@@ -764,7 +768,7 @@ CARR.Deployed:
 		Image: pips
 		Sequence: tag-deployed
 		Position: Top
-		Margin: 0, -6
+		Margin: 0, 6
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	WithResupplyAnimation:
@@ -828,7 +832,7 @@ CARR.Deployed:
 	-MapEditorData:
 	DetectCloaked:
 		DetectionTypes: Underwater
-		Range: 3c768
+		Range: 7c512
 	RenderDetectionCircle:
 	ProximityExternalCondition:
 		Condition: unit.sellable

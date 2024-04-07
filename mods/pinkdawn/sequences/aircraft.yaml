@@ -214,3 +214,15 @@ thwk:
 		Facings: 32
 		UseClassicFacings: True
 	icon: thwkicon
+
+halo:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	rotor: lrotorxl
+		Length: 4
+	slow-rotor: lrotorxl
+		Start: 4
+		Length: 8
+	icon: haloicon

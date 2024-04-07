@@ -612,8 +612,46 @@ litning:
 		Length: 4
 		ZOffset: 1023
 
-ionicon:
-    idle: ionicnh.tem
+cyclicons:
+    scanicon: scanicon.shp
+		AddExtension: False
+    uavicon: uavicon.shp
+		AddExtension: False
+    stlhicon: stlhicon.shp
+		AddExtension: False
+    cfldicon: cfldicon.shp
+		AddExtension: False
+    sonricon: sonricon.shp
+		AddExtension: False
+    gpssicon: gpssicon.shp
+		AddExtension: False
+    smigicon: smigicon.shp
+		AddExtension: False
+    pinficon: pinfraicon.shp
+		AddExtension: False
+    pshkicon: pshkicon.shp
+		AddExtension: False
+    ptnkicon: ptnkicon.shp
+		AddExtension: False
+    warpicon: warpicon.shp
+		AddExtension: False
+    ironicon: infxicon.shp
+		AddExtension: False
+    ionicon: ionicon.shp
+		AddExtension: False
+    atomicon: atomicon.shp
+		AddExtension: False
+    bombicon: bombicon.shp
+		AddExtension: False
+    sfigicon: sfigicon.shp
+		AddExtension: False
+    cmisicon: thwkicon.shp
+		AddExtension: False
+    pbmbicon: pbmbicon.shp
+		AddExtension: False
+    empbicon: empbicon.shp
+		AddExtension: False
+    empmicon: empmicon.shp
 		AddExtension: False
     icon: blank1
 
@@ -692,10 +730,12 @@ v2g:
 minv:
 	idle:
 		ZOffset: -512
+    icon: jminicon
 
 mine:
 	idle:
 		ZOffset: -512
+    icon: jminicon
 
 minp:
 	idle:
@@ -707,6 +747,7 @@ minw:
 		Length: *
 		ZOffset: -512
 		Tick: 250
+    icon: jminicon
 
 parabomb:
 	open:
@@ -770,15 +811,6 @@ missilets:
 	idle:
 		Facings: 32
 		ZOffset: 1023
-
-bombicon:
-    idle: bombicnh.tem
-		AddExtension: False
-    icon: blank1
-
-pbmbicon:
-    idle: pbmbicon
-    icon: blank1
 
 sparks_overlay:
 	Defaults:
