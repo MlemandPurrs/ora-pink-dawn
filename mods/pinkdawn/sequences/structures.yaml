@@ -172,6 +172,113 @@ nodnuke.husk:
 		UseTilesetExtension: true
 		Length: *
 
+gdinuke:
+    Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-4
+    idle: blank1
+        Offset: 0,0
+    damaged-idle: blank1
+        Offset: 0,0
+    dead: gdinuke
+		Start: 8
+		Tick: 800
+    make: gdinukemake
+		Length: *
+		Tick: 80
+	idle2:
+		Length: 4
+		Tick: 1000
+	damaged-idle2:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead2: gdinuke
+		Start: 8
+		Tick: 800
+	make2: gdinukemake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	idle3: gdinuk2
+		Length: 4
+		Tick: 1000
+	damaged-idle3: gdinuk2
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead3: gdinuk2
+		Start: 8
+		Tick: 800
+	make3: gdinukemake
+		Length: *
+		Tick: 80
+	icon: nukeicon
+		Offset: 0,0
+    upgrade: gdinukeupgr
+		Length: *
+		Tick: 80
+
+gdinuke.husk:
+	idle: gdinuke
+		Start: 8
+		Offset: 0,-4
+	dead: gdinuke
+		Start: 8
+		Tick: 800
+		Offset: 0,-4
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+powrup:
+	place: gdinuk2make
+		Offset: 0,-4
+		Start: 21
+		Length: 1
+	icon: nuk2icon
+
+gdinuk2:
+    Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-4
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+		Tick: 800
+	make: gdinuk2make
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+        Offset: 0,0
+	icon: nuk2icon
+        Offset: 0,0
+
+gdinuk2.husk:
+	idle: gdinuk2
+		Start: 8
+		Offset: 0,-4
+	dead: gdinuk2
+		Start: 8
+		Tick: 800
+		Offset: 0,-4
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
 nuk2:
     Inherits: emp-overlay
 	idle:

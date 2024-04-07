@@ -277,7 +277,7 @@ NUKE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
+		Queue: Building.GDI, Building.Nod, Building.BossNod
 		Description: Generates a standard amount of power.
 	Building:
 		Footprint: Xx xx
@@ -339,6 +339,150 @@ NUKE:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
+GDINUKE:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant
+        RequiresCondition: !powrup.on
+    Tooltip@upgrade:
+        Name: Advanced Power Plant
+        RequiresCondition: powrup.on
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: fact
+		Queue: Building.BossGDI
+		Description: Generates a standard amount of power.\nCan be upgraded to generate more power.
+	Building:
+		Footprint: Xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+	Power:
+		Amount: 100
+        RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
+	Power@upgrade:
+		RequiresCondition: powrup.on && !build-incomplete && !emp-affected-structure && !power-outage
+		Amount: 100
+    PowerMultiplier@gdib:
+        Modifier: 150
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: gdinuke
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	AffectedByPowerOutage:
+		Condition: power-outage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate, SpyInfiltrate2
+        Duration: 750
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate, SpyInfiltrate2
+	WithDecoration@PowerOutage:
+		Image: nopower
+		Palette: chrome
+		Sequence: powerdown-blocked
+		Position: Center
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: power-outage
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral, Enemy
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled && !powrup.on
+	WithDeathAnimation@upgrade:
+		DeathSequence: dead3
+		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled && powrup.on
+	SpawnActorOnDeath@HUSK:
+		Actor: GDINUKE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !powrup.on && !being-demolished
+	SpawnActorOnDeath@HUSK2:
+		Actor: GDINUK2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !powrup.on && !being-demolished
+	ProvidesPrerequisite@upgradeable:
+		RequiresCondition: !powrup.on
+		Prerequisite: gdinuke.socket
+	Pluggable@upgrade:
+		Offset: 1,1
+		Conditions:
+			powrup: powrup.on
+		Requirements:
+			powrup: !build-incomplete && !powrup.on
+		EditorOptions:
+			powrup: Power Turbine
+    WithIdleOverlay@normal:
+        Sequence: idle2
+        RequiresCondition: !build-incomplete && !powrup.on
+    WithSpriteBody:
+        Sequence: idle
+    WithSpriteBody@upgrade:
+        Name: body2
+        StartSequence: upgrade
+        Sequence: idle3
+        RequiresCondition: !build-incomplete && powrup.on
+
+GDINUKE.SOCKET:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Power Plant
+
+POWRUP:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Power Turbine
+	Building:
+		Footprint: _
+		Dimensions: 1,1
+		LocalCenterOffset: -512,-1024,0
+	Buildable:
+		BuildDuration: 350
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+        Prerequisites: anyhq, gdinuke.socket, ~techlevel.5
+        Queue: Building.BossGDI
+		Description: Provides extra power generation.\nPlace this on a Power Plant.
+	Plug:
+		Type: powrup
+	Power:
+		Amount: 100
+
 NUK2:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -358,7 +502,7 @@ NUK2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq, ~techlevel.5
-		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
+		Queue: Building.GDI, Building.Nod, Building.BossNod
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
 		Footprint: Xx xX
@@ -416,6 +560,81 @@ NUK2:
 		Types: building-player, building-player-1
 	SpawnActorOnDeath@HUSK:
 		Actor: NUK2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+
+GDINUK2:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Selectable:
+		Bounds: 2048, 2048
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildDuration: 1200
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 7
+		Prerequisites: ~disabled
+		Queue: Building.BossGDI
+		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
+	Building:
+		Footprint: Xx xX
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	RevealsShroud:
+		Range: 2c512
+	WithBuildingBib:
+	Power:
+		Amount: 200
+        RequiresCondition: !build-incomplete && !emp-affected-structure && !power-outage
+    PowerMultiplier@gdib:
+        Modifier: 150
+        RequiresCondition: owner.is.gdib
+    GrantConditionOnFaction@gdib:
+		Condition: owner.is.gdib
+		Factions: gdib
+		ResetOnOwnerChange: True
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: gdinuk2
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	AffectedByPowerOutage:
+		Condition: power-outage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate, SpyInfiltrate2
+        Duration: 750
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate, SpyInfiltrate2
+	WithDecoration@PowerOutage:
+		Image: nopower
+		Palette: chrome
+		Sequence: powerdown-blocked
+		Position: Center
+		BlinkInterval: 15
+		BlinkPattern: on, off
+		RequiresCondition: power-outage
+		RequiresSelection: False
+		ValidRelationships: Ally, Neutral, Enemy
+	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-1
+	SpawnActorOnDeath@HUSK:
+		Actor: GDINUK2.Husk
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
@@ -2075,6 +2294,54 @@ EYE:
 	Targetable@Infiltration:
         TargetTypes: SpyInfiltrate2
 
+H2SP:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+    Inherits@EMPMechanic: ^EMPApplicableStructure
+	SelectionDecorations:
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Valued:
+		Cost: 1000
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+        BuildPaletteOrder: 15
+		BuildLimit: 1
+		Prerequisites: miss, ~player.gdic, ~techlevel.7
+		Queue: Building.GDI
+		Description: Maximum one can be built.\n\nEnables Infantry to self-heal.\nUnlocks Ambulance and Blackhawk for production.
+	Tooltip:
+		Name: GDI Hospital
+	ProvidesPrerequisite@buildingname:
+    ProvidesPrerequisite@ISCOPY:
+        Prerequisite: hosp
+        RequiresCondition: !emp-affected-structure
+	Power:
+		Amount: -40
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+ 	Capturable:
+		RequiresCondition: !build-incomplete
+		Types: building-player, building-player-2
+	SpawnActorOnDeath@HUSK:
+		Actor: H2SP.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+    RenderSprites:
+        Image: hosp
+
 BIO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -2372,51 +2639,3 @@ ANYTIER3:
 	Interactable:
 	Tooltip:
 		Name: Tech Center or Temple of Nod
-
-H2SP:
-	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	SelectionDecorations:
-	Selectable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx ==
-		Dimensions: 2,3
-		LocalCenterOffset: 0,-512,0
-	Health:
-		HP: 40000
-	Valued:
-		Cost: 1000
-	Buildable:
-    	BuildDuration: 1500
-        BuildDurationModifier: 100
-        BuildPaletteOrder: 15
-		BuildLimit: 1
-		Prerequisites: miss, ~player.gdic, ~techlevel.7
-		Queue: Building.GDI
-		Description: Maximum one can be built.\n\nEnables Infantry to self-heal.\nUnlocks Ambulance and Blackhawk for production.
-	Tooltip:
-		Name: GDI Hospital
-	ProvidesPrerequisite@buildingname:
-    ProvidesPrerequisite@ISCOPY:
-        Prerequisite: hosp
-        RequiresCondition: !emp-affected-structure
-	Power:
-		Amount: -40
-		RequiresCondition: !build-incomplete
-	RevealsShroud:
-		Range: 3c0
-	WithBuildingBib:
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
- 	Capturable:
-		RequiresCondition: !build-incomplete
-		Types: building-player, building-player-2
-	SpawnActorOnDeath@HUSK:
-		Actor: H2SP.Husk
-        OwnerType: Victim
-        EffectiveOwnerFromOwner: true
-        RequiresCondition: husks-enabled && !being-demolished
-    RenderSprites:
-        Image: hosp

@@ -41,6 +41,42 @@ NUKE.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: nuke
 
+GDINUKE.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Power Plant (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: gdinuke.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gdinuke
+
+GDINUK2.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Power Plant (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: gdinuk2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gdinuk2
+
 NUK2.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:
