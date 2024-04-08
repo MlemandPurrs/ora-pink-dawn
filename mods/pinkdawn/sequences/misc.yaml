@@ -317,6 +317,12 @@ pips:
 		Start: 5
 	pip-white:
 		Start: 6
+	pip-orange:
+		Start: 7
+	pip-beige:
+		Start: 8
+	pip-pink:
+		Start: 9
 	pip-heal: pip-heal
 		Offset: -1, 1
 	groups: pdigits
@@ -713,7 +719,7 @@ t55h.colorpicker:
         Length: 1
 
 csph.colorpicker:
-	idle: csph		
+	idle: csph-dummy
         Start: 0
         Length: 1
 

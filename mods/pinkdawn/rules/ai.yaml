@@ -388,6 +388,15 @@ Player:
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 2c0
+			UseStealthPlug:
+				OrderName: StealthPlug
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Ally
+					Types: Harvester
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 2c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv, ohrv, ahrv

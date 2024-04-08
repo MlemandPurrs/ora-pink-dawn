@@ -3,16 +3,6 @@ FAC2:
 	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
 	Inherits@BOTI: ^BotFallbackInsurance
-	WithColoredOverlay@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-        Color: 800000A3
-	DamageMultiplier@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-		Modifier: 0
-	TimedConditionBar@Invulnerability:
-		Condition: invulnerability-crate-collected
-	ExternalCondition@Invulnerability:
-		Condition: invulnerability-crate-collected
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
 	HitShape:
@@ -1749,6 +1739,13 @@ ATEK:
 	Power:
 		Amount: -200
 		RequiresCondition: !build-incomplete && !emp-affected-structure
+    PowerMultiplier@alliesa:
+        Modifier: 80
+        RequiresCondition: owner.is.alliesa
+    GrantConditionOnFaction@alliesa:
+		Condition: owner.is.alliesa
+		Factions: alliesa
+		ResetOnOwnerChange: True
 	ProvidesPrerequisite@buildingname:
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -2255,7 +2252,7 @@ IRON:
 		Icon: invulnerable
 		ChargeInterval: 9000
         Name: Invulnerability
-		Description: Makes a group of units\nInvulnerable for 45 seconds.
+		Description: Makes a group of units,\nor base structures\nInvulnerable for 45 seconds.
 		Duration: 1125
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: Select target.

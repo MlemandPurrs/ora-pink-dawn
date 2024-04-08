@@ -356,6 +356,12 @@ ORCA:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+    ProductionCostMultiplier@gdia:
+        Multiplier: 90
+        Prerequisites: player.gdia
+    ProductionTimeMultiplier@gdia:
+        Multiplier: 90
+        Prerequisites: player.gdia
 	Selectable:
 		DecorationBounds: 1030,1024
 	Valued:
@@ -985,14 +991,14 @@ BADR.tran:
 		TargetTypes: Ground
     Huntable:
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	Tooltip:
 		Name: Badger Transport Plane
         GenericStancePrefix: false
         GenericName: Badger
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-        BuildDuration: 3000
+        BuildDuration: 2500
         BuildDurationModifier: 100
 		Queue: Aircraft
 		BuildAtProductionType: Plane

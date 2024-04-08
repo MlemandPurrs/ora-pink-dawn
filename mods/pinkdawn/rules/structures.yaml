@@ -3,16 +3,6 @@ FACT:
 	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
 	Inherits@BOTI: ^BotFallbackInsurance
-	WithColoredOverlay@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-        Color: 800000A3
-	DamageMultiplier@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-		Modifier: 0
-	TimedConditionBar@Invulnerability:
-		Condition: invulnerability-crate-collected
-	ExternalCondition@Invulnerability:
-		Condition: invulnerability-crate-collected
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
 	Selectable:
@@ -1150,16 +1140,6 @@ FIST:
 	Inherits@shape: ^2x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
     -GivesBuildableArea:
-	WithColoredOverlay@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-        Color: 800000A3
-	DamageMultiplier@Invulnerability:
-		RequiresCondition: invulnerability-crate-collected
-		Modifier: 0
-	TimedConditionBar@Invulnerability:
-		Condition: invulnerability-crate-collected
-	ExternalCondition@Invulnerability:
-		Condition: invulnerability-crate-collected
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
 	HitShape:
@@ -1270,6 +1250,12 @@ FIST:
 AFLD:
 	Inherits: ^BaseBuilding
     Inherits@EMPMechanic: ^EMPApplicableStructure
+    ProductionCostMultiplier@nodb:
+        Multiplier: 75
+        Prerequisites: player.nodb
+    ProductionTimeMultiplier@nodb:
+        Multiplier: 80
+        Prerequisites: player.nodb
 	Selectable:
 		Bounds: 4096, 2048
 	HitShape:
@@ -2065,6 +2051,12 @@ TMPL:
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^3x2Shape
     Inherits@EMPMechanic: ^EMPApplicableStructure
+    ProductionCostMultiplier@nodc:
+        Multiplier: 75
+        Prerequisites: player.nodc
+    ProductionTimeMultiplier@nodc:
+        Multiplier: 80
+        Prerequisites: player.nodc
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -2206,6 +2198,12 @@ EYE:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
     Inherits@EMPMechanic: ^EMPApplicableStructure
+    ProductionCostMultiplier@gdib:
+        Multiplier: 84
+        Prerequisites: player.gdib
+    ProductionTimeMultiplier@gdib:
+        Multiplier: 80
+        Prerequisites: player.gdib
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 120,-598,0
 		Type: Rectangle

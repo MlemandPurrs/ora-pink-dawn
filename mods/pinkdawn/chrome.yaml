@@ -1034,9 +1034,9 @@ flags:
 		sovietb: 464, 402, 32, 16
 		sovietc: 398, 436, 32, 16
 		neutral: 299, 436, 32, 16
-		Random: 299, 419, 32, 16
-        Random2: 332, 419, 32, 16
-        Random3: 332, 436, 32, 16
+        Random: 332, 436, 32, 16
+		Random2: 299, 419, 32, 16
+        Random3: 332, 419, 32, 16
         bossnod: 431, 419, 32, 16
         bossgdi: 431, 436, 32, 16
         bossallies: 464, 419, 32, 16

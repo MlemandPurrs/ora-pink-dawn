@@ -769,6 +769,9 @@ rmbo.nod.info:
 
 terr.info:
     Inherits: TERR
+    Buildable:
+        Queue: Nothing
+        Prerequisites: hq
 	Encyclopedia:
         Description: Fanatical, brainwashed believers of Nod's tenets that are willing to sacrifice their lives for the cause. Highly trained in athletics to run fast, they rush to battle carrying a grenade-vest to deliver a fiery explosion to the Brotherhood's enemies at the cost of their own lives.\nWhile Nod definitely has no qualms about employing terrorism as a means to achieve their goals, the employment of such suicidal tactics is deemed wasteful even among the Brotherhood of Nod, only the most radical sects will train to make use of them.
         Category: Nod Infantry

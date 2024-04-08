@@ -45,6 +45,8 @@ E1:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+    Passenger:
+        CustomPipType: green
 
 E1R1:
 	Inherits: E1
@@ -115,6 +117,8 @@ E2:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+    Passenger:
+        CustomPipType: yellow
 
 E3:
 	Inherits: ^Soldier
@@ -166,6 +170,8 @@ E3:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+    Passenger:
+        CustomPipType: green
 
 E3R1:
 	Inherits: E3
@@ -251,6 +257,8 @@ E4:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+    Passenger:
+        CustomPipType: yellow
 
 E5:
 	Inherits: ^Soldier
@@ -318,8 +326,6 @@ E5:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
-	Passenger:
-		CustomPipType: yellow
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -328,6 +334,8 @@ E5:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: red
 
 E6:
 	Inherits: ^Soldier
@@ -354,6 +362,12 @@ E6:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
     -ProducibleWithLevel:
     -WithProductionIconOverlay:
+    ProductionCostMultiplier@alliesc:
+        Multiplier: 90
+        Prerequisites: player.alliesc
+    ProductionTimeMultiplier@alliesc:
+        Multiplier: 90
+        Prerequisites: player.alliesc
 	GrantCondition@HAZMAT:
 		RequiresCondition: hazmatenabled || biolab && ontiberium
 	ChangesHealth@SELFHEAL:
@@ -383,8 +397,6 @@ E6:
         RevealGeneratedShroud: True
 	Health:
 		HP: 2500
-	Passenger:
-		CustomPipType: blue
 	EngineerRepair:
         Cursor: enter-yellow
         RepairBlockedCursor: enter-yellow-blocked
@@ -438,6 +450,8 @@ E6:
 		Prerequisites: global-singleengineer
 	Voiced:
 		VoiceSet: EngineerVoice
+	Passenger:
+		CustomPipType: blue
 
 #   just pause primary when ammo full
 #   that has to wait for secondary attack
@@ -523,6 +537,8 @@ E7:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: green
 
 SEAL:
 	Inherits: ^Soldier
@@ -596,6 +612,8 @@ SEAL:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: red
 
 E8:
 	Inherits: ^Soldier
@@ -655,6 +673,8 @@ E8:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: red
 
 RMBO:
 	Inherits: ^Soldier
@@ -662,6 +682,12 @@ RMBO:
     -Crushable:
     -GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
     -GrantExternalConditionToCrusher@CRUSHSLOW:
+    ProductionCostMultiplier@gdic:
+        Multiplier: 85
+        Prerequisites: player.gdic
+    ProductionTimeMultiplier@gdic:
+        Multiplier: 90
+        Prerequisites: player.gdic
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -680,8 +706,6 @@ RMBO:
 		Speed: 50
 	Health:
 		HP: 10000
-	Passenger:
-		CustomPipType: red
 	RevealsShroud:
 		Range: 6c0
 		RevealGeneratedShroud: False
@@ -721,6 +745,8 @@ RMBO:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: white
 
 RMB2:
     Inherits: RMBO
@@ -743,7 +769,7 @@ TECN:
 		HP: 5000
 	Passenger:
 		Weight: 1
-		CustomPipType: pip-blue
+		CustomPipType: gray
 	RenderSprites:
 		Image: TECN
 	Voiced:
@@ -911,8 +937,6 @@ MEDI:
         RevealGeneratedShroud: True
 	Health:
 		HP: 7500
-	Passenger:
-		CustomPipType: blue
 	Armament:
 		Weapon: Heal
 		Cursor: heal
@@ -946,6 +970,8 @@ MEDI:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	Passenger:
+		CustomPipType: blue
 
 MECH:
 	Inherits: ^Soldier
@@ -1022,13 +1048,13 @@ MECH:
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Vehicle
-	Passenger:
-		CustomPipType: pip-blue
 	GrantConditionOnAttack:
 		Condition: dont-move
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	Passenger:
+		CustomPipType: orange
 
 TANY:
 	Inherits: ^Soldier
@@ -1067,9 +1093,6 @@ TANY:
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
-	Passenger:
-		CustomPipType: red
-		Voice: Move
 	Armament@PRIMARY:
 		Weapon: TanyaPistol
         LocalOffset: 0,0,0, 0,0,0
@@ -1103,6 +1126,9 @@ TANY:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: white
+		Voice: Move
 
 VOLK:
 	Inherits: ^Soldier
@@ -1131,8 +1157,6 @@ VOLK:
 		HP: 7500
     Armor:
         Type: Concrete
-	Passenger:
-		CustomPipType: red
 	RevealsShroud:
 		Range: 6c0
 		RevealGeneratedShroud: False
@@ -1187,6 +1211,8 @@ VOLK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: white
 
 SPY:
 	Inherits: ^Soldier
@@ -1273,8 +1299,6 @@ SPY:
 		Position: TopLeft
 		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: commandodisguise
-	Passenger:
-        Voice: Move
 	AttackMove:
 		Voice: Move
     # cut power
@@ -1304,6 +1328,9 @@ SPY:
 		Condition: owner.is.alliesa
 		Factions: alliesa
 		ResetOnOwnerChange: False
+	Passenger:
+        CustomPipType: gray
+        Voice: Move
 
 DOG:
 	Inherits: ^Soldier
@@ -1375,8 +1402,6 @@ DOG:
         PauseOnCondition: attack-cooldown || eating
 	Guard:
 		Voice: Move
-	Passenger:
-		Voice: Move
 	Health:
 		HP: 5000
 	AutoTarget:
@@ -1418,10 +1443,19 @@ DOG:
     Voiced:
 		VoiceSet: DogVoice
 	-TakeCover:
+	Passenger:
+        CustomPipType: gray
+		Voice: Move
 
 SHOK:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+    ProductionCostMultiplier@sovieta:
+        Multiplier: 89
+        Prerequisites: player.sovieta
+    ProductionTimeMultiplier@sovieta:
+        Multiplier: 90
+        Prerequisites: player.sovieta
 	Valued:
 		Cost: 450
 	Tooltip:
@@ -1477,6 +1511,9 @@ SHOK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+        CustomPipType: red
+		Voice: Action
 
 SHOKR1:
 	Inherits: SHOK
@@ -1587,6 +1624,9 @@ THF:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloakfield-on && !owner.is.nodc
+	Passenger:
+        CustomPipType: gray
+		Voice: Move
 
 MEGA:
 	Inherits: ^Soldier
@@ -1644,9 +1684,6 @@ MEGA:
 		Palette: effect
 		Position: TopLeft
 		ValidRelationships: Ally, Enemy, Neutral
-	Passenger:
-		CustomPipType: red
-		Voice: Move
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -1655,6 +1692,9 @@ MEGA:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: white
+		Voice: Move
 
 E9:
 	Inherits: ^Soldier
@@ -1707,6 +1747,9 @@ E9:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: red
+		Voice: Action
 
 E9C:
     Inherits: E9
@@ -1767,8 +1810,6 @@ INF:
 		StandSequences: stand
 	Voiced:
 		VoiceSet: ThiefVoice
-	Passenger:
-        Voice: Move
 	RevealsShroud:
 		Range: 4c0
 	Cloak:
@@ -1804,6 +1845,9 @@ INF:
     AppearsOnRadar:
         ValidRelationships: Ally
     -GpsDot:
+	Passenger:
+		CustomPipType: gray
+		Voice: Move
 
 JET:
 	Inherits: ^Soldier
@@ -2058,6 +2102,9 @@ SNIP:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	Passenger:
+		CustomPipType: red
+		Voice: Action
 
 TERR:
 	Inherits: ^Soldier
@@ -2156,3 +2203,6 @@ TERR:
 	KillsSelf:
 		RequiresCondition: triggered
 	-TakeCover:
+	Passenger:
+		CustomPipType: yellow
+		Voice: Action

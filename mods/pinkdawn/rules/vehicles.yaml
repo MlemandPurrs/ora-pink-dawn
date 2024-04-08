@@ -147,10 +147,10 @@ HARV:
     -ExternalCondition@UNITSOURCE:
     -GrantCondition@UNITSOURCE:
     ProductionCostMultiplier@noda:
-        Multiplier: 84
+        Multiplier: 85
         Prerequisites: player.noda
     ProductionTimeMultiplier@noda:
-        Multiplier: 80
+        Multiplier: 90
         Prerequisites: player.noda
 	DamageMultiplier@noda:
 		RequiresCondition: owner.is.noda
@@ -265,6 +265,8 @@ HARV:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
+    Targetable@Extra:
+		TargetTypes: Harvester
 
 2TRK:
 	Inherits: ^Vehicle

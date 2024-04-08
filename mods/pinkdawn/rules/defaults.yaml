@@ -228,12 +228,18 @@
 			pip-blue: pip-blue
 			pip-red: pip-red
             pip-white: pip-white
+            pip-orange: pip-orange
+            pip-beige: pip-beige
+            pip-pink: pip-pink
             gray: pip-gray
 			yellow: pip-yellow
 			green: pip-green
             red: pip-red
             blue: pip-blue
             white: pip-white
+            orange: pip-orange
+            beige: pip-beige
+            pink: pip-pink
 
 ^StoresResources:
 	StoresResources:
@@ -1130,6 +1136,7 @@
 	Inherits: ^Building
     Inherits@LowPowerDamage: ^DamagedOnLowPower
     Inherits@productionboost: ^ProductionBoost
+    Inherits@ironcurtain: ^AcceptsInvulnerabilityCrate
 	Building:
 		RequiresBaseProvider: true
 		BuildSounds: constru2.aud, hvydoor1.aud
