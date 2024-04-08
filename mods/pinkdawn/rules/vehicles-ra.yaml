@@ -62,6 +62,11 @@ MCV2:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Transforms:
         PauseOnCondition: cant-undeploy
 		IntoActor: fac2
@@ -171,6 +176,11 @@ OHRV:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	ActorLostNotification:
 		Notification: HarvesterLost
 		TextNotification: Harvester lost.
@@ -329,7 +339,12 @@ TRUK:
 		Speed: 60
 		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	DeliversCash:
         Cursor: sell-unit
 		Payload: 1000
@@ -415,7 +430,12 @@ DTRK:
 		Speed: 60
 		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Passenger:
         CargoType: Vehicle2
 		CustomPipType: pip-blue
@@ -492,6 +512,21 @@ R4WD:
 		Type: Light
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+        RequiresCondition: sniperinside
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+	RenderDetectionCircle:
 	Turreted:
 		TurnSpeed: 18
 		Offset: -85,0,128
@@ -558,11 +593,6 @@ R4WD:
 		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
 		RequiresCondition: cloakfield-on
-	DetectCloaked:
-        DetectionTypes: Stealth, Underground
-		Range: 3c768
-        RequiresCondition: sniperinside
-	RenderDetectionCircle:
 	RevealOnFire:
 		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -600,6 +630,11 @@ FTRK:
 		Type: Light
 	RevealsShroud:
 		Range: 6c128
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 18
 		Offset: -256,0,272
@@ -698,6 +733,11 @@ APC2:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: MachineGun
 		LocalOffset: 320,0,171
@@ -801,6 +841,11 @@ APC3:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	AutoTargetPriority@Air:
 		ValidTargets: Air
 		Priority: 2
@@ -925,6 +970,11 @@ MNLY:
 		TargetTypes: Ground, Vehicle, Mine
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Minelayer:
 		Mine: MINV
 		TileUnknownName: build-valid
@@ -995,6 +1045,11 @@ MNLY:
 		Type: Medium
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 	Armament:
@@ -1068,6 +1123,11 @@ ATNK:
 		Type: Medium
 	RevealsShroud:
 		Range: 6c128
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,-24
@@ -1169,6 +1229,11 @@ ATNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,12
@@ -1240,6 +1305,11 @@ ATNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,24
@@ -1325,7 +1395,7 @@ ATNK:
 		Weapon: LightCannon2
 		Recoil: 85
 		RecoilRecovery: 17
-		LocalOffset: 720,85,90, 720,-85,90
+		LocalOffset: 624,85,90, 624,-85,90
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
     RenderSprites:
@@ -1362,6 +1432,11 @@ ATNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12
@@ -1462,6 +1537,11 @@ ATNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12
@@ -1560,10 +1640,20 @@ ATNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	DetectCloaked:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected && !wireless
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
 	WithSpriteTurret:
 	Turreted:
@@ -1719,7 +1809,12 @@ QTNK:
         PauseOnCondition: emp-crate-collected || boarding
 		RequiresCondition: !deployed
 	RevealsShroud:
-		Range: 3c512
+		Range: 3c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	MadTank:
         ThumpInterval: 12
         DriverActor: dummy.qtnk
@@ -1779,6 +1874,11 @@ TNKD:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: TurretGun
 		LocalOffset: 720,0,90
@@ -1840,6 +1940,11 @@ CTNK:
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: APTusk
 		LocalOffset: -160,-276,232, -160,276,232
@@ -1854,6 +1959,96 @@ CTNK:
 		HasDistanceLimit: false
 	Selectable:
 		DecorationBounds: 1030, 1030
+	Passenger:
+		CustomPipType: red
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
+ECTK:
+	Inherits: ^TrackedVehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Chrono Tortoise
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 3100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 14
+        BuildLimit: 1
+		Prerequisites: atek, ~vehicle.allies, ~player.alliesb, ~techlevel.7
+		Queue: Vehicle
+		Description: Maximum one can be built.\n\nHeavily armored Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
+	Health:
+		HP: 70000
+	Armor:
+		Type: Heavy
+	Mobile:
+        Locomotor: tracked-crusher
+		Speed: 40
+        TurnSpeed: 12
+        PauseOnCondition: emp-crate-collected || boarding
+	RevealsShroud:
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
+	Armament:
+        Name: primary
+		Weapon: APTusk
+		LocalOffset: 240,-276,340, 240,276,340
+		LocalYaw: 60, -60
+        PauseOnCondition: reload-secondary || emp-crate-collected
+        ReloadingCondition: reload-primary
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: APTusk
+		LocalOffset: 240,138,340, 240,-138,340
+		LocalYaw: 60, -60
+        PauseOnCondition: reload-primary || emp-crate-collected
+        ReloadingCondition: reload-secondary
+	AttackFrontal:
+        FacingTolerance: 0
+        Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	Explodes:
+		Weapon: UnitExplodeBig
+		EmptyWeapon: UnitExplodeBig
+	Selectable:
+		Bounds: 1280, 1280
+		DecorationBounds: 1450, 1450, 0, -128
+	GpsDot:
+		String: Heavy
+	PortableChrono:
+		ChargeDelay: 2250
+		HasDistanceLimit: false
 	Passenger:
 		CustomPipType: red
     ExternalCondition@CloakingField:
@@ -1906,6 +2101,11 @@ TTNK:
         PauseOnCondition: dont-move || emp-crate-collected || boarding || lowpower
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: TeslaTankZap
 		LocalOffset: 0,0,213
@@ -1996,6 +2196,11 @@ V2RL:
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: V2Missile
@@ -2109,6 +2314,11 @@ V3RL:
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: V3Missile
@@ -2256,7 +2466,12 @@ MGG:
 		Sequence: spinner
         PauseOnCondition: emp-crate-collected || deployed || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	CreatesShroud:
 		Range: 5c0
         RequiresCondition: !emp-crate-collected && !deployed
@@ -2304,88 +2519,3 @@ MGG:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-
-ECTK:
-	Inherits: ^TrackedVehicle
-	Inherits@Crates: ^AcceptsAllCrates
-	Inherits@AUTOTARGET: ^AutoTargetforTanks
-	HitShape:
-		Type: Circle
-			Radius: 512
-	Valued:
-		Cost: 2500
-	Tooltip:
-		Name: Chrono Tortoise
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-    	BuildDuration: 3100
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 14
-        BuildLimit: 1
-		Prerequisites: atek, ~vehicle.allies, ~player.alliesb, ~techlevel.7
-		Queue: Vehicle
-		Description: Maximum one can be built.\n\nHeavily armored Tank with missile pods.\n\nSpecial: Teleport\nCan instantly relocate to anywhere.\n\nStrong vs Vehicles, Buildings.\nWeak vs Infantry, Aircraft.
-	Health:
-		HP: 70000
-	Armor:
-		Type: Heavy
-	Mobile:
-        Locomotor: tracked-crusher
-		Speed: 40
-        TurnSpeed: 12
-        PauseOnCondition: emp-crate-collected || boarding
-	RevealsShroud:
-		Range: 5c128
-	Armament:
-        Name: primary
-		Weapon: APTusk
-		LocalOffset: 240,-276,340, 240,276,340
-		LocalYaw: 60, -60
-        PauseOnCondition: reload-secondary || emp-crate-collected
-        ReloadingCondition: reload-primary
-	Armament@SECONDARY:
-        Name: secondary
-		Weapon: APTusk
-		LocalOffset: 240,138,340, 240,-138,340
-		LocalYaw: 60, -60
-        PauseOnCondition: reload-primary || emp-crate-collected
-        ReloadingCondition: reload-secondary
-	AttackFrontal:
-        FacingTolerance: 0
-        Voice: Attack
-        PauseOnCondition: emp-crate-collected
-	Explodes:
-		Weapon: UnitExplodeBig
-		EmptyWeapon: UnitExplodeBig
-	Selectable:
-		Bounds: 1280, 1280
-		DecorationBounds: 1450, 1450, 0, -128
-	GpsDot:
-		String: Heavy
-	PortableChrono:
-		ChargeDelay: 2250
-		HasDistanceLimit: false
-	Passenger:
-		CustomPipType: red
-    ExternalCondition@CloakingField:
-        Condition: cloakfield-on
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-		InitialDelay: 90
-		CloakDelay: 90
-		UncloakSound: cloak5.aud
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
-		RequiresCondition: cloakfield-on
-	RevealOnFire:
-		ArmamentNames: primary
-        RevealForRelationships: Ally, Neutral, Enemy
-        RevealGeneratedShroud: false
-        RequiresCondition: reveal-on
-    GrantConditionOnPrerequisite@REVEALTOGGLE:
-        Condition: reveal-on
-        Prerequisites: ~global-unitreveal

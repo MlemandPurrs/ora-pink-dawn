@@ -26,6 +26,11 @@ DTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Disguise:
 		DisguisedCondition: disguise
 		ValidRelationships: Ally, Neutral, Enemy
@@ -48,6 +53,7 @@ DTNK:
             apc: apc
             apc2: apc2
             apc3: apc3
+            ifv: ifv
             maag: maag
             mnly: mnly
             aav: aav
@@ -90,7 +96,7 @@ DTNK:
 		GenericName: Mirage Tank
         GenericVisibility: Ally, Neutral, Enemy
         GenericStancePrefix: false
-        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ttnk && !arty && !mrpg && !msam && !mlrs && !howi && !v2rl && !v3rl && !mhq && !mhon && !msg && !mgg && !t55h
+        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !ifv && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ttnk && !arty && !mrpg && !msam && !mlrs && !howi && !v2rl && !v3rl && !mhq && !mhon && !msg && !mgg && !t55h
 	DisguiseTooltip@mcv:
 		Name: Mobile Construction Vehicle
 		GenericName: MCV
@@ -176,6 +182,11 @@ DTNK:
 		GenericName: Phase Vehicle
         GenericVisibility: Ally, Neutral, Enemy
 		RequiresCondition: apc3
+	DisguiseTooltip@ifv:
+		Name: Infantry Fighting Vehicle
+		GenericName: IFV
+        GenericVisibility: Ally, Neutral, Enemy
+		RequiresCondition: ifv
 	DisguiseTooltip@maag:
 		Name: Mobile Anti-Air Gun
 		GenericName: Mobile AA Gun
@@ -302,7 +313,7 @@ DTNK:
         GenericVisibility: Ally, Neutral, Enemy
 		RequiresCondition: arty
 	DisguiseTooltip@mrpg:
-		Name: Mobile RPG Launcher
+		Name: Rocketed Propulsion Grenade Launcher
 		GenericName: RPG Launcher
         GenericVisibility: Ally, Neutral, Enemy
 		RequiresCondition: mrpg
@@ -364,8 +375,8 @@ DTNK:
 		Palette: effect
 		RequiresCondition: disguise
 	WithFacingSpriteBody@default:
-		PauseOnCondition: mcv && mcv2 && harv && ohrv && ahrv && truk && trk2 && dtrk && ttrk && jeep && bggy && bike && r4wd && ftrk && apc && apc2 && apc3 && maag && mnly && aav && btr && ltnk && mtnk && ftnk && chtk && htnk && wtnk && stnk && tnk1 && atnk && tnk2 && tnk3 && tnki && b1t3 && tnk4 && tnf4 && tnk5 && qtnk && tnkd && ctnk && ectk && ttnk && arty && mrpg && msam && mlrs && howi && v2rl && v3rl && mhon && mhq && msg && mgg && t55h
-		RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ectk && !ttnk && !arty && !mrpg && !msam && !mlrs && !howi && !v2rl && !v3rl && !mhon && !mhq && !msg && !mgg && !t55h
+		PauseOnCondition: mcv && mcv2 && harv && ohrv && ahrv && truk && trk2 && dtrk && ttrk && jeep && bggy && bike && r4wd && ftrk && apc && apc2 && apc3 && ifv && maag && mnly && aav && btr && ltnk && mtnk && ftnk && chtk && htnk && wtnk && stnk && tnk1 && atnk && tnk2 && tnk3 && tnki && b1t3 && tnk4 && tnf4 && tnk5 && qtnk && tnkd && ctnk && ectk && ttnk && arty && mrpg && msam && mlrs && howi && v2rl && v3rl && mhon && mhq && msg && mgg && t55h
+		RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !ifv && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ectk && !ttnk && !arty && !mrpg && !msam && !mlrs && !howi && !v2rl && !v3rl && !mhon && !mhq && !msg && !mgg && !t55h
 	WithFacingSpriteBody@mcv:
 		Name: mcv
 		Sequence: mcv-body
@@ -434,6 +445,10 @@ DTNK:
 		Name: apc3
 		Sequence: apc3-body
 		RequiresCondition: apc3
+	WithFacingSpriteBody@ifv:
+		Name: ifv
+		Sequence: ifv-body
+		RequiresCondition: ifv
 	WithFacingSpriteBody@mnly:
 		Name: mnly
 		Sequence: mnly-body
@@ -602,6 +617,10 @@ DTNK:
 		Turret: apc3-turret
 		TurnSpeed: 12
 		Offset: 0,0,0
+	Turreted@ifv:
+    	Turret: ifv-turret
+		TurnSpeed: 12
+		Offset: 0,0,0
 	Turreted@maag:
     	Turret: maag-turret
 		TurnSpeed: 18
@@ -694,7 +713,7 @@ DTNK:
 	WithSpriteTurret@Default:
 		Sequence: turret-default
 		Turret: default-turret
-        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ectk && !ttnk && !arty && !mrpg && !msam && !mlrs && !v2rl && !v3rl && !howi && !mhon && !mhq && !msg && !mgg && !t55h
+        RequiresCondition: !mcv && !mcv2 && !harv && !ohrv && !ahrv && !truk && !trk2 && !dtrk && !ttrk && !jeep && !bggy && !bike && !r4wd && !ftrk && !apc && !apc2 && !apc3 && !ifv && !maag && !mnly && !aav && !btr && !ltnk && !mtnk && !ftnk && !chtk && !htnk && !wtnk && !stnk && !tnk1 && !atnk && !tnk2 && !tnk3 && !tnki && !b1t3 && !tnk4 && !tnf4 && !tnk5 && !qtnk && !tnkd && !ctnk && !ectk && !ttnk && !arty && !mrpg && !msam && !mlrs && !v2rl && !v3rl && !howi && !mhon && !mhq && !msg && !mgg && !t55h
 	WithSpriteTurret@ahrv:
 		Sequence: turret-ahrv
 		Turret: ahrv-turret
@@ -723,6 +742,10 @@ DTNK:
 		Sequence: turret-apc3
 		Turret: apc3-turret
 		RequiresCondition: apc3
+	WithSpriteTurret@ifv:
+		Sequence: turret-ifv
+		Turret: ifv-turret
+		RequiresCondition: ifv
 	WithSpriteTurret@maag:
 		Sequence: turret-maag
 		Turret: maag-turret
@@ -813,7 +836,7 @@ DTNK:
 		RequiresCondition: t55h
 	AttackTurreted: 
         Armaments: primary, secondary
-        Turrets: default-turret, disguise-turret, ahrv-turret, jeep-turret, bggy-turret, r4wd-turret, ftrk-turret, apc2-turret, apc3-turret, maag-turret, aav-turret, btr-turret, ltnk-turret, mtnk-turret, htnk-turret, wtnk-turret, stnk-turret, 1tnk-turret, atnk-turret, 2tnk-turret, 3tnk-turret, 3tni-turret, 3t1b-turret, 4tnk-turret, 4tnf-turret, 5tnk-turret, msam-turret, mlrs-turret, howi-turret, mhq-turret, t55h-turret
+        Turrets: default-turret, disguise-turret, ahrv-turret, jeep-turret, bggy-turret, r4wd-turret, ftrk-turret, apc2-turret, apc3-turret, ifv-turret, maag-turret, aav-turret, btr-turret, ltnk-turret, mtnk-turret, htnk-turret, wtnk-turret, stnk-turret, 1tnk-turret, atnk-turret, 2tnk-turret, 3tnk-turret, 3tni-turret, 3t1b-turret, 4tnk-turret, 4tnf-turret, 5tnk-turret, msam-turret, mlrs-turret, howi-turret, mhq-turret, t55h-turret
         Voice: Attack
         PauseOnCondition: emp-crate-collected
     #   actually to get the position right i could declare a secondary invis turret and assign copy only once, and then tell it to appear with all non-default.

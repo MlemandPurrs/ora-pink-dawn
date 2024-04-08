@@ -99,6 +99,11 @@ IFV:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament@DEFAULT:
         Name: weapon-default
 		Weapon: LightCannon
@@ -241,6 +246,11 @@ IFV:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: spyinside
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
 	ProximityExternalCondition@MedicInside:
 		Condition: barracks

@@ -44,7 +44,7 @@ Terrain:
 	TerrainType@River:
 		Type: River
 		TargetTypes: Ground
-		Color: 587474
+		Color: 5C8CB4
 	TerrainType@Shallow:
 		Type: Shallow
 		TargetTypes: Ground

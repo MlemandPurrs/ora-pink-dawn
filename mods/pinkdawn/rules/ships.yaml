@@ -52,7 +52,12 @@ LST:
 	Armor:
 		Type: Medium
 	RevealsShroud:
-		Range: 3c0
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Selectable:
 		Bounds: 2048, 2048
 	WithCargo:
@@ -162,6 +167,11 @@ PT2:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
 		Turret: primary
 		TurnSpeed: 12
@@ -251,6 +261,11 @@ DD2:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 		Offset: 512,0,64
@@ -329,6 +344,11 @@ SB:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
 		Turret: primary
 		TurnSpeed: 12
@@ -405,7 +425,12 @@ SS2:
 		Speed: 60
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
         Name: primary
 		Weapon: Torpedo
@@ -449,7 +474,12 @@ BSUB:
 		Speed: 40
         PauseOnCondition: aiming || emp-crate-collected
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		Turret: primary
 		Offset: 768,0,128
@@ -520,6 +550,11 @@ DD3:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 		Offset: 576,0,144
@@ -587,6 +622,11 @@ CA2:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -896,0,80
@@ -682,6 +722,11 @@ CARR:
 		Speed: 40
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Selectable:
 		Bounds: 2048, 2048
 		#   DecorationBounds: 3440, 2960
@@ -754,6 +799,11 @@ CARR.Deployed:
 		Type: Heavy
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Transforms:
 		IntoActor: carr
 		TransformSounds: null

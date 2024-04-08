@@ -708,6 +708,10 @@ TENT:
 		Prerequisite: infantry.allies
 		Factions: allies, alliesa, alliesb, alliesc, bossallies
         ResetOnOwnerChange: true
+	ProvidesPrerequisite@medic:
+		Prerequisite: infantry.medic
+		Factions: allies, alliesa, alliesb, alliesc, bossallies, bossgdi
+        ResetOnOwnerChange: true 
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
 	ActorPreviewPlaceBuildingPreview:
@@ -803,7 +807,7 @@ BARR:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, gdia, gdib, gdic, bossgdi, soviet, sovieta, sovietb, sovietc, bosssoviet
+		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure

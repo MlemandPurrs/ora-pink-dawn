@@ -4,7 +4,7 @@ V19:
 	Selectable:
 		Bounds: 1024, 1024
 	RevealsShroud:
-		Range: 3c0
+		Range: 2c512
 	CashTrickler:
         Interval: 50
 		Amount: 15

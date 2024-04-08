@@ -204,7 +204,7 @@
 	Faction@bossgdi:
 		Name: Future Corps
 		InternalName: bossgdi
-		Description: Future Corps\n\nFaction Variations:\n    - Can upgrade Power Plants\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+		Description: Future Corps\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Gunners replace Soldiers\n\nSpecial Units:\n    - Medic\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Grenadiers
         Selectable: false
 	Faction@nod:
 		Name: Nod

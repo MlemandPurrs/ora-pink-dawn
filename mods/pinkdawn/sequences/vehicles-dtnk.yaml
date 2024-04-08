@@ -56,6 +56,9 @@ dtnk:
 	apc3-body: apc2
 		Facings: 32
 		UseClassicFacings: True
+	ifv-body: ifv
+		Facings: 32
+		UseClassicFacings: True
 	mnly-body: mnly
 		Facings: 32
 		UseClassicFacings: True
@@ -184,6 +187,10 @@ dtnk:
 		Facings: 32
 		UseClassicFacings: True
 	turret-apc3: apc3
+        Start: 38
+		Facings: 32
+		UseClassicFacings: True
+	turret-ifv: ifv
         Start: 38
 		Facings: 32
 		UseClassicFacings: True

@@ -55,6 +55,11 @@ LST2:
 		PauseOnCondition: notmobile || emp-crate-collected
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Selectable:
 		Bounds: 2048, 2048
 		DecorationBounds: 1536, 1536
@@ -139,6 +144,11 @@ PT:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
 		Turret: primary
 		TurnSpeed: 12
@@ -227,6 +237,11 @@ CA:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -896,0,128
@@ -313,6 +328,11 @@ DD:
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted@PRIMARY:
         Turret: primary
 		TurnSpeed: 12
@@ -414,7 +434,12 @@ SS:
 		Speed: 60
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: Torpedo
@@ -483,7 +508,12 @@ MSUB:
 		Speed: 50
         PauseOnCondition: aiming || emp-crate-collected
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
         Name: primary
 		Weapon: SubMissile
@@ -576,7 +606,12 @@ NTS:
 		Speed: 40
         PauseOnCondition: emp-crate-collected
 	RevealsShroud:
-		Range: 5c0
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament@AntiShip:
         Name: primary
 		Weapon: NukeTorpedo

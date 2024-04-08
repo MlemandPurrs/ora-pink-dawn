@@ -11,11 +11,18 @@ E1:
     	BuildDuration: 150
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: infantryproduction
+		Prerequisites: infantryproduction, ~!player.bossgdi
 		Queue: Infantry
 		Description: General-purpose infantry.\n\nStrong vs Infantry.\nWeak vs Vehicles.
 	Mobile:
 		Speed: 40
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 5000
 	AutoTarget:
@@ -30,15 +37,6 @@ E1:
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
-    -RevealsShroudMultiplier@GAPGenerator:
-    -ExternalCondition@GAPGenerator:
-	RevealsShroud:
-		Range: 2c512
-		RevealGeneratedShroud: False
-        MinRange: 2c0
-	RevealsShroud@GAPGenerator:
-		Range: 2c0
-        RevealGeneratedShroud: True
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -73,7 +71,7 @@ E2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 150
+    	BuildDuration: 225
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: anyhq, ~infantry.e2, ~techlevel.3
@@ -81,6 +79,13 @@ E2:
 		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow-moving targets.
 	Mobile:
 		Speed: 50
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 5000
 	AutoTarget:
@@ -102,15 +107,6 @@ E2:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 100
-    -RevealsShroudMultiplier@GAPGenerator:
-    -ExternalCondition@GAPGenerator:
-	RevealsShroud:
-		Range: 2c512
-		RevealGeneratedShroud: False
-        MinRange: 2c0
-	RevealsShroud@GAPGenerator:
-		Range: 2c0
-        RevealGeneratedShroud: True
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -140,6 +136,11 @@ E3:
 		Speed: 30
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 2500
 	AutoTarget:
@@ -200,6 +201,13 @@ E4:
 	Mobile:
 		Speed: 40
 		PauseOnCondition: dont-move
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 7500
 	AutoTarget:
@@ -270,6 +278,13 @@ E5:
 		Speed: 50
 		Locomotor: foot-immune
 		PauseOnCondition: dont-move
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 7500
 	AutoTarget:
@@ -361,6 +376,11 @@ E6:
 		Speed: 40
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 2500
 	Passenger:
@@ -419,6 +439,91 @@ E6:
 	Voiced:
 		VoiceSet: EngineerVoice
 
+#   just pause primary when ammo full
+#   that has to wait for secondary attack
+#   anim to end so give conditiononattack
+#   at secondary with sufficient length
+E7:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Gunner
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 375
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: infantryproduction, ~player.bossgdi
+		Queue: Infantry
+		Description: Advanced general-purpose infantry.\nUses Machinegun.\nThrows Grenades.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+	Mobile:
+		Speed: 50
+        #   PauseOnCondition: throwing
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	Health:
+		HP: 5000
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+        Name: primary
+		Weapon: MachineGunLight
+		LocalOffset: 341,0,256
+        PauseOnCondition: ammo || throwing
+	Armament@Secondary:
+		Name: secondary
+		Weapon: Grenade
+		LocalOffset: 0,0,427
+		FireDelay: 15
+        PauseOnCondition: !ammo
+	AmmoPool:
+		Name: ammo
+		Armaments: secondary
+		Ammo: 1
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: ammo
+		Delay: 59
+		Count: 1
+    GrantConditionOnAttack@throwing:
+        Condition: throwing
+        ArmamentNames: secondary
+        RevokeDelay: 19
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+		AttackSequences:
+			primary: shoot
+			secondary: throw
+		StandSequences: stand, stand2
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
 SEAL:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -438,6 +543,13 @@ SEAL:
 	Mobile:
 		Speed: 60
         Locomotor: foot-amphibian
+	RevealsShroud:
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 7500
 	AutoTarget:
@@ -506,6 +618,11 @@ E8:
 		PauseOnCondition: dont-move
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 2500
 	AutoTarget:
@@ -567,6 +684,11 @@ RMBO:
 		CustomPipType: red
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	AutoTarget:
 		ScanRadius: 8
 	Demolition:
@@ -678,6 +800,11 @@ VICE:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	AutoTarget:
 		ScanRadius: 5
 	Selectable:
@@ -769,7 +896,7 @@ MEDI:
         BuildDuration: 600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: anyhq, ~infantry.allies, ~techlevel.3
+		Prerequisites: anyhq, ~infantry.medic, ~techlevel.3
 		Queue: Infantry
 		Description: Field medic infantry.\n\nSpecial: Regeneration\nSelf-heals slowly out of combat.\n\nHeals nearby Infantry units.
 	Mobile:
@@ -777,6 +904,11 @@ MEDI:
 		PauseOnCondition: dont-move
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 7500
 	Passenger:
@@ -863,6 +995,11 @@ MECH:
 		PauseOnCondition: dont-move
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 7500
 	Passenger:
@@ -922,6 +1059,11 @@ TANY:
 		Voice: Move
 	RevealsShroud:
 		Range: 5c0
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
@@ -993,6 +1135,11 @@ VOLK:
 		CustomPipType: red
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	AutoTarget:
 		ScanRadius: 8
 	Demolition:
@@ -1058,6 +1205,13 @@ SPY:
 	Mobile:
 		Speed: 50
 		Voice: Move
+	RevealsShroud:
+		Range: 4c0
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Health:
 		HP: 2500
 	AutoTarget:
@@ -1123,8 +1277,6 @@ SPY:
         Voice: Move
 	AttackMove:
 		Voice: Move
-	RevealsShroud:
-		Range: 4c0
     # cut power
 	Infiltrates@0:
 		Types: SpyInfiltrate
@@ -1203,9 +1355,19 @@ DOG:
 		Description: Canine with combat training.\nCan detect cloaked units and mines.\n\nSpecial: Devouring\nGains health while eating.\n\nStrong vs Infantry.\nWeak vs everything Else.
 	RevealsShroud:
 		Range: 4c0
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	DetectCloaked:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
 	Mobile:
 		Speed: 60
@@ -1753,15 +1915,13 @@ JET:
 		Voice: Zapped
 		DeathTypes: ElectricityDeath
         RequiresCondition: !airborne
-    -RevealsShroudMultiplier@GAPGenerator:
-    -ExternalCondition@GAPGenerator:
 	RevealsShroud:
-		Range: 3c512
+		Range: 4c0
         Type: GroundPosition
 		RevealGeneratedShroud: False
         MinRange: 2c0
 	RevealsShroud@GAPGenerator:
-		Range: 3c768
+		Range: 2c0
         Type: GroundPosition
         RevealGeneratedShroud: True
     RevealsShroudMultiplier@AIR:
@@ -1771,6 +1931,11 @@ JET:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
         RequiresCondition: airborne
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
     -Cloak@CloakingField:
 	Cloak@CloakingField:
@@ -1819,6 +1984,22 @@ SNIP:
 		Speed: 50
 	Health:
 		HP: 2500
+	RevealsShroud:
+		Range: 5c768
+		RevealGeneratedShroud: False
+        MinRange: 2c256
+	RevealsShroud@GAPGenerator:
+		Range: 2c256
+        RevealGeneratedShroud: True
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+	RenderDetectionCircle:
 	AutoTarget:
 		ScanRadius: 6
 	Armament:
@@ -1869,19 +2050,6 @@ SNIP:
 		CrushedSequence: die-crushed
         DeathSequencePalette: player-tropic
         RequiresCondition: at-tropic && !parachute
-    -RevealsShroudMultiplier@GAPGenerator:
-    -ExternalCondition@GAPGenerator:
-	RevealsShroud:
-		Range: 5c768
-		RevealGeneratedShroud: False
-        MinRange: 2c256
-	RevealsShroud@GAPGenerator:
-		Range: 2c256
-        RevealGeneratedShroud: True
-	DetectCloaked:
-        DetectionTypes: Stealth, Underground
-		Range: 3c768
-	RenderDetectionCircle:
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
@@ -1939,6 +2107,13 @@ TERR:
 		Speed: 50
 	Health:
 		HP: 5000
+	RevealsShroud:
+		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	AutoTarget:
 		ScanRadius: 4
 	Armament@PRIMARY:
@@ -1981,12 +2156,3 @@ TERR:
 	KillsSelf:
 		RequiresCondition: triggered
 	-TakeCover:
-    -RevealsShroudMultiplier@GAPGenerator:
-    -ExternalCondition@GAPGenerator:
-	RevealsShroud:
-		Range: 2c512
-		RevealGeneratedShroud: False
-        MinRange: 2c0
-	RevealsShroud@GAPGenerator:
-		Range: 2c0
-        RevealGeneratedShroud: True

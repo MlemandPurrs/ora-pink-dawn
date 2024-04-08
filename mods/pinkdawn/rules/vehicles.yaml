@@ -62,6 +62,11 @@ MCV:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Transforms:
         PauseOnCondition: cant-undeploy
 		IntoActor: fact
@@ -193,6 +198,11 @@ HARV:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	ActorLostNotification:
 		Notification: HarvesterLost
 		TextNotification: Harvester lost.
@@ -311,7 +321,12 @@ HARV:
 		Speed: 60
 		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	DeliversCash:
         Cursor: sell-unit
 		Payload: 1000
@@ -397,7 +412,12 @@ TTRK:
 		Speed: 60
 		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Passenger:
         CargoType: Vehicle2
 		CustomPipType: pip-blue
@@ -469,6 +489,11 @@ JEEP:
 		Type: Light
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 18
 		Offset: -85,0,128
@@ -543,6 +568,11 @@ BGGY:
 		Type: Light
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 18
 		Offset: -43,0,128
@@ -606,6 +636,11 @@ BIKE:
 		Type: Light
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: BikeRockets
@@ -686,6 +721,11 @@ APC:
 		Type: Medium
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: MachineGun
 		LocalOffset: 85,0,171
@@ -787,6 +827,11 @@ MAAG:
 		Type: Medium
 	RevealsShroud:
 		Range: 6c128
+		RevealGeneratedShroud: False
+        MinRange: 3c128
+	RevealsShroud@GAPGenerator:
+		Range: 3c128
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 18
 	AutoTargetPriority@Air:
@@ -891,6 +936,11 @@ AAV:
 		Type: Medium
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
         Offset: 100,100,68
@@ -1005,6 +1055,11 @@ BTR:
 		Type: Medium
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: MachineGun
 		LocalOffset: 213,0,340
@@ -1105,6 +1160,11 @@ LTNK:
 		Type: Medium
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 	Armament@PRIMARY:
@@ -1189,6 +1249,11 @@ MTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,24
@@ -1267,6 +1332,11 @@ FTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: BigFlamer
@@ -1346,6 +1416,11 @@ CHTK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: BigChemSpray
 		LocalOffset: 512,128,42, 512,-128,42
@@ -1425,6 +1500,11 @@ HTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12
@@ -1523,6 +1603,11 @@ WTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12
@@ -1631,6 +1716,11 @@ STNK:
 		Type: Light
 	RevealsShroud:
 		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Cloak:
         CloakType: Stealth
         DetectionTypes: Stealth
@@ -1712,6 +1802,11 @@ ARTY:
 		Type: Light
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: ArtilleryShell
@@ -1802,6 +1897,11 @@ MRPG:
 		Type: Medium
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+        MinRange: 3c0
+	RevealsShroud@GAPGenerator:
+		Range: 3c0
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
         Name: primary
 		Weapon: RPGLauncher
@@ -1878,6 +1978,11 @@ MSAM:
 		Type: Medium
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 		Offset: -256,0,128
@@ -1973,7 +2078,12 @@ MLRS:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 5c256
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 		Offset: -128,0,128
@@ -2098,7 +2208,12 @@ HOWI:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 5c256
+		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
 		Offset: -150,0,24
@@ -2207,6 +2322,11 @@ MHQ:
 		PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
 		Offset: -256,0,256
@@ -2215,6 +2335,11 @@ MHQ:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
 		RequiresCondition: !emp-crate-collected
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
 	Buildable:
         BuildDuration: 900
@@ -2329,6 +2454,11 @@ MHON:
 		Type: Heavy
 	RevealsShroud:
 		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Transforms:
         PauseOnCondition: cant-undeploy
 		IntoActor: fist
@@ -2421,7 +2551,12 @@ MSG:
 		Speed: 80
         PauseOnCondition: emp-crate-collected || boarding
 	RevealsShroud:
-		Range: 4c0
+		Range: 4c128
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	GrantCondition@PREVIEWWORKAROUND:
 		Condition: real-actor
 	WithMakeAnimation:
@@ -2493,6 +2628,11 @@ T55H:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+		RevealGeneratedShroud: False
+        MinRange: 2c512
+	RevealsShroud@GAPGenerator:
+		Range: 2c512
+        RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 12

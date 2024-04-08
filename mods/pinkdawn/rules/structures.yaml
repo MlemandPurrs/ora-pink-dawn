@@ -1027,7 +1027,7 @@ PYLE:
         ResetOnOwnerChange: true
 	ProvidesPrerequisite@e2:
 		Prerequisite: infantry.e2
-		Factions: gdi, gdia, gdib, gdic, bossgdi, soviet, sovieta, sovietb, sovietc, bosssoviet
+		Factions: gdi, gdia, gdib, gdic, soviet, sovieta, sovietb, sovietc, bosssoviet
         ResetOnOwnerChange: true
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
@@ -1046,6 +1046,10 @@ PYLE:
 
 PYL2:
     Inherits: PYLE
+	ProvidesPrerequisite@medic:
+		Prerequisite: infantry.medic
+		Factions: allies, alliesa, alliesb, alliesc, bossallies, bossgdi
+        ResetOnOwnerChange: true
 	Buildable:
         Prerequisites: fact
 		Queue: Building.BossGDI

@@ -337,11 +337,6 @@
 		Categories: Vehicle
 	GpsDot:
 		String: Vehicle
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
 	Parachutable:
 		FallRate: 26
 		KilledOnImpassableTerrain: true
@@ -490,11 +485,6 @@
 		String: Helicopter
 	RevealsShroud:
 		Range: 2c0
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
     -Cloak@CloakingField:
 	Cloak@CloakingField:
         CloakType: Stealth
@@ -646,11 +636,6 @@
 	RevealsShroud:
 		Range: 2c0
 		Type: GroundPosition
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
     -Cloak@CloakingField:
 	Cloak@CloakingField:
         CloakType: Stealth
@@ -865,11 +850,6 @@
 		RequiresCondition: !parachute
 		TargetTypes: Disguise
 	EdibleByLeap:
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -909,6 +889,11 @@
 		HP: 2500
 	RevealsShroud:
 		Range: 2c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
 	Passenger:
 		CustomPipType: gray
 	ScaredyCat:
@@ -1030,11 +1015,6 @@
 	RenderDetectionCircle:
 	RevealsShroud:
 		Range: 2c512
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
 
 ^Submarine:
 	Inherits: ^Ship
@@ -1077,8 +1057,6 @@
 	Targetable@AIHelper:
 		TargetTypes: SonarTarget
 		RequiresCondition: underwater
-    RevealsShroudMultiplier@GAPGenerator:
-        RequiresCondition: within-gap-radius || !underwater
 	ExternalCondition@MINEHIT:
 		Condition: minehit
 	GrantConditionOnTerrain@CROSSINGFORD:

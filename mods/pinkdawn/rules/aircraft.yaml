@@ -181,6 +181,12 @@ TRAN:
 	RevealsShroud:
 		Range: 3c768
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,85
 		Sequence: rotor
@@ -236,6 +242,116 @@ TRAN:
     Capturable:
         RequiresCondition: !airborne && !loaded
 
+HALO:
+	Inherits: ^Helicopter
+	Inherits@TRANSPORT: ^Transport
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadAmmoDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:    
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	HitShape:
+		Type: Circle
+			Radius: 512
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Halo Transport
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 1600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 0
+		Prerequisites: hpad, ~player.bosssoviet
+		Queue: Aircraft
+		Description: Flying infantry transport.\nCan transport up to 10 Infantry.\n\nUnarmed.
+	Aircraft:
+        IdleBehavior: Land
+        TurnToLand: True
+		TurnSpeed: 12
+		Speed: 150
+        MoveIntoShroud: false
+        PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 12000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 260,0,343
+		Sequence: rotor
+		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 260,0,343
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
+	Cargo:
+		Types: Infantry
+		MaxWeight: 10
+		UnloadVoice: Unload
+		AfterUnloadDelay: 40
+        LoadedCondition: loaded
+		PassengerConditions:
+			rmbo: commandoinside
+            tany: commandoinside
+            volk: commandoinside
+            mega: commandoinside
+            snip: sniperinside
+	WithDecoration@COMMANDOSKULL:
+		Image: pips
+		Sequence: pip-skull
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: commandoinside
+	WithDecoration@CROSSHAIR:
+		Image: pips
+		Sequence: pip-sniper
+		Palette: effect
+		Position: TopLeft
+		ValidRelationships: Ally
+		RequiresCondition: sniperinside
+	Sellable:
+		RequiresCondition: unit.sellable && !airborne && !loaded
+	Selectable:
+		DecorationBounds: 1749, 1749, 0, -128
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+    Capturable:
+        RequiresCondition: !airborne && !loaded
+
 ORCA:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -268,6 +384,12 @@ ORCA:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
 		Weapon: OrcaRocketsAG
 		LocalOffset: 427,-171,-213, 427,171,-213
@@ -365,6 +487,12 @@ HELI:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: HeliGunAG
@@ -475,8 +603,14 @@ HEL2:
 	Armor:
 		Type: Medium
 	RevealsShroud:
-		Range: 3c512
+		Range: 4c128
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	DetectCloaked:
         DetectionTypes: Stealth, Underground, Underwater
 		Range: 3c768
@@ -620,6 +754,12 @@ HIND:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: HeliGunAG
@@ -945,13 +1085,14 @@ BADR.tran:
     CommandBarBlacklist:
         DisableStop: false
 	RevealsShroud:
+		Range: 3c768
+		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
 		Range: 2c0
 		Type: GroundPosition
-    RevealsShroudMultiplier@GAPGenerator:
-        Modifier: 50
-        RequiresCondition: within-gap-radius
-	ExternalCondition@GAPGenerator:
-		Condition: within-gap-radius
+        RevealGeneratedShroud: True
 	Sellable:
 		RequiresCondition: unit.sellable && !airborne && !loaded
 	ChangesHealth@planecrash:
@@ -986,6 +1127,12 @@ GenericJet:
 	RevealsShroud:
 		Range: 3c768
 		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament:
 		Weapon: Maverick
 		LocalOffset: 0,-640,0, 0,640,0
@@ -1408,6 +1555,12 @@ RH66:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: StnkRocketsAG
@@ -1621,6 +1774,12 @@ GenericCarryall:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Selectable:
 		Priority: 8
 		PriorityModifiers: Ctrl, Alt
@@ -1713,6 +1872,12 @@ MH60:
 	RevealsShroud:
 		Range: 3c512
 		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: HeliGunAG
@@ -1866,16 +2031,26 @@ UAV:
 		EmptyWeapon: UnitExplodeAirBig
 	RevealsShroud:
 		Range: 15c768
-		Type: CenterPosition
+		Type: GroundPosition
+ 		RevealGeneratedShroud: False
+        MinRange: 7c512
+	RevealsShroud@GAPGenerator:
+		Range: 7c512
+		Type: GroundPosition
+        RevealGeneratedShroud: True
 	DetectCloaked:
         DetectionTypes: Stealth, AirStealth, Underground, Underwater
 		Range: 7c536
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 	RenderDetectionCircle:
         TrailCount: 2
         Visible: Always
         UpdateLineTick: 6
         BorderWidth: 0
-	RenderDetectionCircle:
 	-MapEditorData:
 
 A10B:
@@ -1993,107 +2168,3 @@ THWK:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
 	-MapEditorData:
-
-HALO:
-	Inherits: ^Helicopter
-	Inherits@TRANSPORT: ^Transport
-	Inherits@Speed: ^AcceptsSpeedCrate
-	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
-	Inherits@EMP: ^AcceptsEMPCrate
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -ReloadAmmoDelayMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -ReloadAmmoDelayMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
-    -FirepowerMultiplier@RANK-HEROIC:
-    -ReloadAmmoDelayMultiplier@RANK-HEROIC:
-    -SpeedMultiplier@RANK-HEROIC:
-    -DamageMultiplier@RANK-HEROIC:
-    -ChangesHealth@RANK-HEROIC:
-    -GivesExperienceMultiplier@RANK-HEROIC:
-    -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
-    -WithDecoration@RANK-HEROIC:    
-    -GainsExperienceMultiplier@EXPTOGGLE2:
-    -GrantConditionOnPrerequisite@EXPTOGGLE2:
-    -ProducibleWithLevel:
-    -WithProductionIconOverlay:
-	HitShape:
-		Type: Circle
-			Radius: 512
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Halo Transport
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-        BuildAtProductionType: Chopper
-        BuildDuration: 1600
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 0
-		Prerequisites: hpad, ~player.bosssoviet
-		Queue: Aircraft
-		Description: Flying infantry transport.\nCan transport up to 10 Infantry.\n\nUnarmed.
-	Aircraft:
-        IdleBehavior: Land
-        TurnToLand: True
-		TurnSpeed: 12
-		Speed: 150
-        MoveIntoShroud: false
-        PauseOnCondition: emp-crate-collected
-	Health:
-		HP: 12000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 3c768
-		Type: GroundPosition
-	WithIdleOverlay@ROTOR1AIR:
-		Offset: 260,0,343
-		Sequence: rotor
-		RequiresCondition: airborne
-        PauseOnCondition: emp-crate-collected
-	WithIdleOverlay@ROTOR1GROUND:
-		Offset: 260,0,343
-		Sequence: slow-rotor
-		RequiresCondition: !airborne
-        PauseOnCondition: emp-crate-collected
-	Cargo:
-		Types: Infantry
-		MaxWeight: 10
-		UnloadVoice: Unload
-		AfterUnloadDelay: 40
-        LoadedCondition: loaded
-		PassengerConditions:
-			rmbo: commandoinside
-            tany: commandoinside
-            volk: commandoinside
-            mega: commandoinside
-            snip: sniperinside
-	WithDecoration@COMMANDOSKULL:
-		Image: pips
-		Sequence: pip-skull
-		Palette: effect
-		Position: TopLeft
-		ValidRelationships: Ally
-		RequiresCondition: commandoinside
-	WithDecoration@CROSSHAIR:
-		Image: pips
-		Sequence: pip-sniper
-		Palette: effect
-		Position: TopLeft
-		ValidRelationships: Ally
-		RequiresCondition: sniperinside
-	Sellable:
-		RequiresCondition: unit.sellable && !airborne && !loaded
-	Selectable:
-		DecorationBounds: 1749, 1749, 0, -128
-	KillsSelf:
-		RequiresCondition: airborne && emp-crate-collected
-    Capturable:
-        RequiresCondition: !airborne && !loaded
