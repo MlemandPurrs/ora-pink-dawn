@@ -185,21 +185,21 @@
 	Faction@gdi:
 		Name: GDI
 		InternalName: gdi
-		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
+		Description: Global Defense Initiative\nDescription:\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon
 	Faction@gdia:
 		Name: Air Force
 		InternalName: gdia
-		Description: GDI: Air Force\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nDiscount:\n    - Orca (-10%)\n\nSpecial Units:\n    - A-10 Bomber\n    - Carrier\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\n\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
+		Description: GDI: Air Force\nDescription:\nPride of the whole GDI, the Air Force is capable of\nperforming any airborne operations with success.\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Can use Paratroopers\n\nDiscount:\n    - Orca (-10%)\n\nSpecial Units:\n    - A-10 Bomber\n    - Carrier\n\nSpecial Abilities:\n    - Paratroopers\n    - Recon Drone\n\nSuperweapons:\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Radar Scan\n    - Cannot use Air Strike\n    - Cannot build Mammoth Tanks
         Selectable: true
 	Faction@gdib:
 		Name: Tech Division
 		InternalName: gdib
-		Description: GDI: Tech Division\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nDiscount:\n    - Adv. Comm. Center (-16%)\n\nSpecial Units:\n    - Jumpjet Trooper\n    - Carryall\n    - Railgun Turret\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Cruise Missile\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Air Strike
+		Description: GDI: Tech Division\nDescription:\nA division within the GDI that is solely dedicated to\ndevelopment and field testing of new technologies.\n\nFaction Variations:\n    - Power Plants generate more power\n    - Advanced Guard Tower shoots E.M.P.\n\nDiscount:\n    - Adv. Comm. Center (-16%)\n\nSpecial Units:\n    - Jumpjet Trooper\n    - Carryall\n    - Railgun Turret\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Cruise Missile\n    - Ion Cannon\n\nLimitations:\n    - Cannot use Air Strike
         Selectable: true
 	Faction@gdic:
 		Name: Special Ops
 		InternalName: gdic
-		Description: GDI: Special Operations\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nDiscount:\n    - Commando (-15%)\n\nSpecial Units:\n    - Blackhawk\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA\n    - Cannot build MLRS
+		Description: GDI: Special Operations\nDescription:\nThe Special Operations command the missions\nwhere a more refined approach has become\nnecessary to tackle the problem at hand.\n\nFaction Variations:\n    - APCs are replaced by AAVs\n    - Can build their own Hospital\n\nDiscount:\n    - Commando (-15%)\n\nSpecial Units:\n    - Blackhawk\n    - RPG Launcher\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot build Mobile AA\n    - Cannot build MLRS
         Selectable: true
 	Faction@bossgdi:
 		Name: Future Corps
@@ -213,22 +213,22 @@
 	Faction@noda:
 		Name: Bio Command
 		InternalName: noda
-		Description: Nod: Bio Command\n\nFaction Variations:\n    - Chem Tanks replace Flame Tanks\n    - Harvesters are more durable\n\nDiscount:\n    - Harvester (-15%)\n\nSpecial Unit:\n    - Chem Mortar\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Dirty Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build Stealth Tanks\n    - Cannot train Thief
+		Description: Nod: Bio Command\nDescription:\nThe Bio Command unit is responsible for the deployment,\nand research of Tiberium based technology and weaponry.\n\nFaction Variations:\n    - Chem Tanks replace Flame Tanks\n    - Harvesters are more durable\n\nDiscount:\n    - Harvester (-15%)\n\nSpecial Unit:\n    - Chem Mortar\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Dirty Nuclear Strike\n\nLimitations:\n    - Cannot train Flamethrowers\n    - Cannot build Stealth Tanks\n    - Cannot train Thief
         Selectable: true
 	Faction@nodb:
 		Name: Raider Corps
 		InternalName: nodb
-		Description: Nod: Raider Corps\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n    - Can plug Stealth to any Vehicle\n\nDiscount:\n    - Airstrip (-25%)\n\nSpecial Units:\n    - Howitzer\n    - Fist of Nod\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Plug\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Stealth Tanks\n    - Cannot train Chem Troopers\n    - Cannot build SSM Launcher
+		Description: Nod: Raider Corps\nDescription:\nUnits made up of veterans within the Brotherhood of Nod,\nthe Raider Corps specialise in a direct assault approach.\n\nFaction Variations:\n    - APCs are replaced by Light APCs\n    - Can plug Stealth to any Vehicle\n\nDiscount:\n    - Airstrip (-25%)\n\nSpecial Units:\n    - Howitzer\n    - Fist of Nod\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Plug\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Stealth Tanks\n    - Cannot train Chem Troopers\n    - Cannot build SSM Launcher
         Selectable: true
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launchers
+		Description: Nod: Terror Cell\nDescription:\nOnly ever found to be affiliated, Terror Cells that are\nloyalist to the Nod cause are known to be fanatically\nzealous, radical, and explosively dangerous.\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launchers
         Selectable: true
 	Faction@bossnod:
 		Name: Black Hand
 		InternalName: bossnod
-		Description: Black Hand\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Heavy Tanks replace Light Tanks\n    - Comanche replaces Apache\n    - Builds vehicles without Delivery\n    - Can train two Commandos\n    - Can build Tech Center\n    - Can build Stealth Generator\n    - Can build Missile Silo\n\nSpecial Units:\n    - Scorpion Tank\n    - Mobile Stealth Generator\n    - Microwave Tank\n    - Infiltrator\n    - Chemical Turret\n    - Laser Turret\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\n\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Chemical Troopers\n    - Cannot build SSM Launchers\n    - Cannot build Stealth Tanks\n    - Cannot build Temple of Nod\n    - Cannot build Research Laboratory\n    - Cannot build Guard Tower\n    - Cannot build Gun Turret
+		Description: Black Hand\nDescription:\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Heavy Tanks replace Light Tanks\n    - Comanche replaces Apache\n    - Builds vehicles without Delivery\n    - Can train two Commandos\n    - Can build Tech Center\n    - Can build Stealth Generator\n    - Can build Missile Silo\n\nSpecial Units:\n    - Scorpion Tank\n    - Mobile Stealth Generator\n    - Microwave Tank\n    - Infiltrator\n    - Chemical Turret\n    - Laser Turret\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\n\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Chemical Troopers\n    - Cannot build SSM Launchers\n    - Cannot build Stealth Tanks\n    - Cannot build Temple of Nod\n    - Cannot build Research Laboratory\n    - Cannot build Guard Tower\n    - Cannot build Gun Turret
 	Faction@Random2:
 		Name: Random TD
 		InternalName: Random2
@@ -237,21 +237,21 @@
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
-		Description: European Allies\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike
+		Description: European Allies\nDescription:\nThe military alliance of European nations, that have united against the Soviet threat.\nThey have divergent tactical options, possess a strong Navy and have access to unique\ntechnologies such as time travel and invisibility, most that are products of Prof. Einstein's genius.\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike
 	Faction@alliesa:
 		Name: Secret Service
 		InternalName: alliesa
-		Description: Allies: Secret Service\n\nFaction Variations:\n    - Spy are improved, can do more\n    - Tech Center consumes less power\n\nDiscount:\n    - Allies Tech Center (-25%)\n\nSpecial Unit:\n    - Mirage Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
+		Description: Allies: Secret Service\nDescription:\nSpecialising in counter-intelligence and subterfuge,\nthis secretive branch within the Allies has achieved\nprofound success under directorate of the British.\n\nFaction Variations:\n    - Spy are improved, can do more\n    - Tech Center consumes less power\n\nDiscount:\n    - Allies Tech Center (-25%)\n\nSpecial Unit:\n    - Mirage Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Chrono Tank\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesb:
 		Name: Mecha. Assault
 		InternalName: alliesb
-		Description: Allies: Mechanised Assault\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nDiscount:\n    - Medium Tank (-10%)\n\nSpecial Units:\n    - Chrono Tortoise\n    - Flak Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
+		Description: Allies: Mechanised Assault\nDescription:\nPrimarily consisting of armored forces based in\nGermany, the Mechanised Assault branch takes\npride in the technological prowess achieved.\n\nFaction Variations:\n    - Tank Destroyer replaces Light Tank\n    - Chronosphere recharges faster\n\nDiscount:\n    - Medium Tank (-10%)\n\nSpecial Units:\n    - Chrono Tortoise\n    - Flak Tank\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Fake Structures\n    - Cannot use GAP technology
         Selectable: true
 	Faction@alliesc:
 		Name: Defense Corps
 		InternalName: alliesc
-		Description: Allies: Defense Corps\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nDiscount:\n    - Engineer (-10%)\n\nSpecial Unit:\n    - Grand Turret\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
+		Description: Allies: Defense Corps\nDescription:\nThe masters of entrenchment and holding the line,\nthat are heavily reliant on the French support for\nthe personnel, funding and material required.\n\nFaction Variations:\n    - Heavy Turret replaces Gun Turret\n    - Concrete Walls are more durable\n\nDiscount:\n    - Engineer (-10%)\n\nSpecial Unit:\n    - Grand Turret\n\nSpecial Ability:\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Phase Vehicle\n    - Cannot build Chrono Tank\n    - Cannot build Fake Structures
         Selectable: true
 	Faction@bossallies:
 		Name: U.S.A.
@@ -261,26 +261,26 @@
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
-		Description: Soviet Empire\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike
+		Description: Soviet Empire\nDescription:\nThe Soviet empire consist of the combined forces of the USSR members.\nThey use strong armoured divisions, napalm weaponry, tesla technology\nand strength in numbers to overwhelm and overcome the opposition.\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike
 	Faction@sovieta:
 		Name: Shock Division
 		InternalName: sovieta
-		Description: Soviet: Shock Division\n\nFaction Variations:\n    - Tesla tech uses less power\n    - Can paradrop Shock Troopers\n\nDiscount:\n    - Shock Trooper (-11%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs\n    - Cannot use Flame technology
+		Description: Soviet: Shock Division\nDescription:\nA merciless, specialist division in the Soviet forces\nthat has got proficiency in the usage of tesla weaponry.\n\nFaction Variations:\n    - Tesla tech uses less power\n    - Can paradrop Shock Troopers\n\nDiscount:\n    - Shock Trooper (-11%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot build Mammoth Tanks\n    - Cannot use Parabombs\n    - Cannot use Flame technology
         Selectable: true
 	Faction@sovietb:
 		Name: Heavy Armor
 		InternalName: sovietb
-		Description: Soviet: Heavy Armor\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can air drop Heavy Tanks\n\nDiscount:\n    - Heavy and Mammoth (-10%)\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Air Drop\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
+		Description: Soviet: Heavy Armor\nDescription:\nThis branch of command is responsible for the\ncountless armored elements within the Soviet Empire.\n\nFaction Variations:\n    - Frogfoot replaces Yak\n    - Can air drop Heavy Tanks\n\nDiscount:\n    - Heavy and Mammoth (-10%)\n\nSpecial Unit:\n    - M.A.D. Tank\n\nSpecial Abilities:\n    - Spy Plane\n    - Air Drop\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Parabombs
         Selectable: true
 	Faction@sovietc:
 		Name: Rocket Comm.
 		InternalName: sovietc
-		Description: Soviet: Rocket Command\n\nFaction Variations:\n    - Mammoth shoots Fireballs\n\nDiscount:\n    - Missile Silo (-20%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Paratroopers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
+		Description: Soviet: Rocket Command\nDescription:\nThe branch of command that is responsible for the\ndeployment of strategic, and ballistic missiles\nto achieve accurate, perfected demolitions.\n\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Can paradrop Grenadiers\n\nDiscount:\n    - Missile Silo (-20%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Paragrenadiers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
         Selectable: true
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
+		Description: Black Guard\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
         Selectable: false
 	Faction@RandomRA:
 		Name: Random RA

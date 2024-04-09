@@ -258,6 +258,36 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			UseGrenadierParatroopers:
+				OrderName: GrenadierParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			UseSovietBossParatroopers:
+				OrderName: SovietBossParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			UseGDIParatroopers:
 				OrderName: GdiParatroopers
 				MinimumAttractiveness: 5

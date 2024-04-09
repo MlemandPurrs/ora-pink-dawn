@@ -392,6 +392,7 @@ icon:
     airstrike2: sfigicon
     sonar: sonricon
     parainfra2: pshkicon
+    parainfra3: pie2icon
     paratanks: ptnkicon
     dbomb: 2tomicon
     reconuav: uavicon
@@ -637,6 +638,8 @@ cyclicons:
 		AddExtension: False
     pshkicon: pshkicon.shp
 		AddExtension: False
+    pie2icon: pie2icon.shp
+		AddExtension: False 
     ptnkicon: ptnkicon.shp
 		AddExtension: False
     warpicon: warpicon.shp

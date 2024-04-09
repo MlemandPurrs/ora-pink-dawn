@@ -1440,7 +1440,7 @@ ATNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3, ~vehicle.soviet, ~!player.sovietc, ~techlevel.6
+		Prerequisites: anytier3, ~vehicle.soviet, ~!player.sovieta, ~!player.sovietc, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
@@ -2138,9 +2138,6 @@ TTNK:
 		MaxCharges: 1
 		ReloadDelay: 120
     WithTeslaChargeAnimation:
-	SelectionDecorations:
-	Selectable:
-		DecorationBounds: 1030, 1030
 	RenderRangeCircle:
 	Passenger:
 		CustomPipType: pip-yellow

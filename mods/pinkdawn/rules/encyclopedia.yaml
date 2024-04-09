@@ -164,7 +164,7 @@ eye.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: An upgrade to the Communications Center, this structure not only provides radar, but is the uplink center for the Ion Cannon - GDI's most devastating weapon. Once charged, it can unleash a blast on an unsuspecting target.\nThe Ion Cannon requires power to charge: If your base is under powered, it will stop. To fire, left click on the Ion Cannon icon in the sidebar once it has charged full.
+        Description: An upgrade to the Communications Center, this structure not only provides radar, but is the uplink center for the Ion Cannon - GDI's most devastating weapon. Once charged, it can unleash a blast on an unsuspecting target.\nThe Ion Cannon requires power to charge: If your base is under powered, it will stop. To fire, left click on the Ion Cannon icon in the sidebar once it has charged full.\n\nThe Tech Division of the GDI forces are capable of constructing the structure at a considerable discount due to their connections in the field of hi-tech development.
         Category: GDI Buildings
 		Order: 14
 	RenderSprites:
@@ -258,7 +258,7 @@ afld.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Airstrip allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airstrips will enable you to order multiple units delivered at a time.
+        Description: The Airstrip allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airstrips will enable you to order multiple units delivered at a time.\n\nThe Raider Corps of the Nod forces are capable of building this structure at a considerable discount.
         Category: Nod Buildings
 		Order: 7
 	RenderSprites:
@@ -318,7 +318,7 @@ tmpl.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles.
+        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles.\n\nThe Terror Cells among the Nod forces know perfectly to exploit the masses with religious fervor to construct a monument of their faith, resulting in the Temple of Nod getting built faster and cheaper.
         Category: Nod Buildings
 		Order: 12
 	RenderSprites:
@@ -463,7 +463,7 @@ rtur.info:
     Buildable:
         Queue: Nothing    
 	Encyclopedia:
-        Description: A rather experimental development in the fledgling energy weapons technology, this massive turret is equipped with a macro scale railgun to act like an stationary artillery piece. Its usage is being reserved solely for the Tech Division in the GDI that continues field testing and further development of the device. 
+        Description: A rather experimental development in the fledgling energy weapons technology, this massive turret is equipped with a macro scale railgun to act like an stationary artillery piece.\nIts usage is being reserved solely for the Tech Division in the GDI that continues ardous field testing and further development of the device. 
         Category: GDI Defenses
 		Order: 7
 	RenderSprites:
@@ -632,7 +632,7 @@ e6.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.
+        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.\nAnother capability of the Engineers is, due to their expert knowledge of structural integrity, to repair damaged structures at what appears to be an instant by simply entering them.\nEngineers are also capable of repairing destroyed bridges, or restoring husks of structures to operational capacity.\n\nThe Defense Corps branch of the Allies enjoys cheaper deployment costs of the engineers, perhaps due to extensive support of the best educational facilities in the free European land.
         Category: GDI Infantry
 		Order: 5
 	RenderSprites:
@@ -646,7 +646,7 @@ rmbo.info:
         Queue: Nothing
         Prerequisites: miss
 	Encyclopedia:
-        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.
+        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.\n\nThe Special Operations branch of the GDI forces are capable of deploying the Commando at a lowered cost due to a long history of being the architects of success for the Elite Forces Unit.
         Category: GDI Infantry
 		Order: 6
 	RenderSprites:
@@ -835,7 +835,7 @@ harv.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This armor-plated vehicle seeks out and scoops up raw Tiberium, then transports it to refineries for processing. It is slow and unwieldy and will need to be protected. Its good points are that it can take a beating before being destroyed and it is proficient at crushing enemy infantry.
+        Description: This armor-plated vehicle seeks out and scoops up raw Tiberium, then transports it to refineries for processing. It is slow and unwieldy and will need to be protected. Its good points are that it can take a beating before being destroyed and it is proficient at crushing enemy infantry.\n\nThe Bio Command unit within the Broterhood of Nod has perfectly streamlined the assemble and manufacture process of the Harvester, resulting in not only being able to produce it cheaper and faster, but also enhancing its durability.
         Category: GDI Vehicles
 		Order: 1
 	RenderSprites:
@@ -1175,7 +1175,7 @@ chtk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Started out as a modification of the Flame Tank to carry chemical weaponry, this unit is considered an evolution of the Flame Tank.
+        Description: Started out as a modification of the Flame Tank to carry chemical weaponry, this unit is considered an evolution of the Flame Tank.\nIts capable of attacking using a larger variant of the weapon used by the Chemical Troopers.\nOn destruction the tank will explode violently, causing an chemical explosion that deals damage and may cause Infantry unfortunate enough to be caught within the blast radius to horrendously mutate into Visceroids.
         Category: Nod Vehicles
 		Order: 16
 	RenderSprites:
@@ -1242,7 +1242,7 @@ orca.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.
+        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.\n\nThe Air Force branch of the GDI forces are capable of manufacturing the Orca VTOL at a considerable discount, due to their Engineers having the perfect knowhow of aircraft optimization.
         Category: GDI Aircraft
 		Order: 1
 	RenderSprites:
@@ -1254,7 +1254,7 @@ ocar.info:
     Inherits: OCAR
     Buildable:
         Queue: Nothing
-        Prerequisites: fix
+        Prerequisites: hpad, fix
 	Encyclopedia:
         Description: Carryalls are VTOL aircraft that are capable of airlifting Vehicles to carry them across the skies. The Carryall loses speed while carrying a unit, and particularly heavy cargo such as a MCV will cause it to slow-down considerably.
         Category: GDI Aircraft
@@ -1267,7 +1267,7 @@ mh60.info:
     Inherits: MH60
     Buildable:
         Queue: Nothing
-        Prerequisites: fix
+        Prerequisites: hpad, fix
 	Encyclopedia:
         Description: Helicopter gunship armed with an array of chainguns, that is also capable of carrying a passenger Infantry, while landed on the ground acts like an Mechanic providing repair support to friendly vehicles.
         Category: GDI Aircraft
@@ -1290,7 +1290,7 @@ f18.info:
     Inherits: F18
     Buildable:
         Queue: Nothing
-        Prerequisites: anyafld
+        Prerequisites: anyafld, miss
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: GDI Aircraft
@@ -1369,7 +1369,7 @@ f22.info:
     Inherits: F22
     Buildable:
         Queue: Nothing
-        Prerequisites: anyafld
+        Prerequisites: anyafld, anytier3
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: Nod Aircraft
@@ -1602,7 +1602,7 @@ atomic.info:
 	Tooltip:
 		Name: Nuclear Missile
 	Encyclopedia:
-		Description: The Nuclear missile carries a atomic warhead capable of devastating the enemies of the Brotherhood of Nod.\nCertain groupations within the structure of the Brotherhood of Nod are known to be experimenting with enhancing the payload using Tiberium, to obtain a lethal destruction with a lasting tiberian impact.
+		Description: The Nuclear missile carries a atomic warhead capable of devastating the enemies of the Brotherhood of Nod.\n\nThe Bio Command branch in the Brotherhood of Nod is known to be experimenting with enhancing the payload using Tiberium, to obtain a lethal destruction with a lasting Tiberian impact.
 		Order: 0
 		Category: Super Weapons
 	RenderSprites:

@@ -140,7 +140,7 @@ atek.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: A vital structure of technological progress, that can be made cheaper when constructed by the Secret Service branch of Allies.\nIn addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nUpon being launched it will periodically enable to see the positions of enemy units, unless it's the U.S.A. for them its permanent.
+		Description: A vital structure of technological progress.\nIn addition to allowing utilization of high-tech like the Chrono Tank and Gap Generator, building a Tech Center also starts construction of the GPS Satellite. When finished, the satellite will require to be manually launched.\nUpon being launched it will periodically enable to see the positions of enemy units, unless it's the U.S.A. for them its permanent.\n\nThe Secret service branch of the Allies are capable of constructing a far more refined design, that uses less power and can get built for cheap.
         Category: Allies Buildings
 		Order: 13
 	RenderSprites:
@@ -153,7 +153,7 @@ csph.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: The evolution of the Philadelphia Experiment, the Chronosphere allows the Allies player to move a unit from one location to an other without having to cross the space in between. However, the unit will only exist in its new location for a brief time before returning to its point of origin.\nThis technology is still a bit unstable. Using it on certain units or using it constantly could produce unusual side effects.\nThe Mechanized Assault branch of the Allies forces has refined the usage of the Chronosphere to the point they can operate it with less power, and recharge it faster also.
+		Description: The evolution of the Philadelphia Experiment, the Chronosphere allows the Allies player to move a unit from one location to an other without having to cross the space in between. However, the unit will only exist in its new location for a brief time before returning to its point of origin.\nThis technology is still a bit unstable. Using it on certain units or using it constantly could produce unusual side effects.\n\nThe Mechanised Assault branch of the Allies forces has refined the usage of the Chronosphere to the point they can operate it with less power, and recharge it faster also.
         Category: Allies Buildings
 		Order: 15
 	RenderSprites:
@@ -166,7 +166,7 @@ mslo.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: Once built, the Missile Silo readies an Atomic Bomb that can be launched onto the battlefield, causing massive destruction to structures and infantry. The more heavily armored units will fare better, but not by much.
+		Description: Once built, the Missile Silo readies an Atomic Bomb that can be launched onto the battlefield, causing massive destruction to structures and infantry. The more heavily armored units will fare better, but not by much.\n\nThe Rocket Command of the Soviet forces is capable of constructing a missile silo at a reasonable discount.
         Category: Allies Buildings
 		Order: 16
 	RenderSprites:
@@ -285,7 +285,7 @@ fcom.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: A forward command post that can be used to shelter high-ranking staff and vital equipment in the field to authorize the usage of most advanced soviet doctrine, including tactical nuclear weapons, construction of the Behemoth Tank, or the assistance of comrade Volkov.\nWhen used together with an Airfield, it allows access to 'Parachuted Bombs' to be used.\nDropped from Badger Bombers, these explosives fall in a line over their target, removing the object targeted and anything in the area around it. Troops can see these falling and will attempt to leave the targeted area.
+		Description: A forward command post that can be used to shelter high-ranking staff and vital equipment in the field to authorize the usage of most advanced soviet doctrine, including tactical nuclear weapons, construction of the Behemoth Tank, or the assistance of comrade Volkov.\nWhen used together with an Airfield, it allows access to 'Parabombs' to be used.
         Category: Soviet Buildings
 		Order: 14
 	RenderSprites:
@@ -722,7 +722,7 @@ shok.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Most ruthless and effective of soviet soldiers forming the Stalin's elite corps, each of those men was already a killing machine before picking up the portable tesla coil. This version has sacrificed some power in order to become man-portable, its still capable of zapping infantry in one-shot however.\nThe weapon was proponent of a discovery made in the field, as it has been determined the device can be used to empower a tesla coil when it had lost power. Since then, soviet commanders have been able to use this tactic for keeping their tesla coils up and running in case of a power failure. 
+        Description: Most ruthless and effective of soviet soldiers forming the Stalin's elite corps, each of those men was already a killing machine before picking up the portable tesla coil. This version has sacrificed some power in order to become man-portable, its still capable of zapping infantry in one-shot however.\nThe weapon was proponent of a discovery made in the field, as it has been determined the device can be used to empower a tesla coil when it had lost power. Since then, soviet commanders have been able to use this tactic for keeping their tesla coils up and running in case of a power failure.\n\nThe Shock Division among the Soviet forces is, perhaps unsurprisingly, capable of training Shock Troopers at a discount rate due the influx of new recruits.
         Category: Soviet Infantry
 		Order: 8
 	RenderSprites:
@@ -835,7 +835,7 @@ ifv.info:
 	Tooltip:
 		Name: IFV
 	Encyclopedia:
-        Description: A modular infantry transport that can be swapped purpose with ease thanks to easily interchangeable parts. Its main strength is the varying armament that can be tailored to the proficiency of the passenger inside the vehicle, effectively allowing to switch purpose dependant on the type of Infantry that has been get to put inside.\n\nA Soldier or similar machinegun using Infantry allows to use Anti-Infantry armament.\nWith a Rocket Soldier inside it can fire missiles to engage air and ground targets.\nA Spy inside will bestow detection capability to the vehicle.\nWith a Medic it can act like an ambulance to heal nearby injured Infantry.\nAn Engineer or Mechanic can use repair crane arm to perform work from within the safety of the Vehicle.\nA sniper is able to use the Machinegun turret to shoot the marksman rifle.
+        Description: A modular infantry transport that can be swapped purpose with ease thanks to easily interchangeable parts. Its main strength is the varying armament that can be tailored to the proficiency of the passenger inside the vehicle, effectively allowing to switch purpose dependant on the type of Infantry that has been get to put inside.\n\nA Soldier or similar machinegun using Infantry allows to use Anti-Infantry armament.\nWith a Rocket Soldier inside it can fire missiles to engage air and ground targets.\nA Spy inside will bestow detection capability to the vehicle.\nWith a Medic it can act like an ambulance to heal nearby injured Infantry.\nTanya gets to enjoy a special gift in the form of a turreted gattling vulcan.\nAn Engineer or Mechanic can use repair crane arm to perform work from within the safety of the Vehicle.\nA sniper is able to use the Machinegun turret to shoot the marksman rifle.
         Category: Allies Vehicles
 		Order: 6
 	RenderSprites:
@@ -861,7 +861,7 @@ atnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Anti-Air version of the main Allies Tank, amphibian just like the real deal. A rather specialised development that came into being after Engineers of the Mechanised Assault branch had get the captured Mobile Flak units reverse engineered.
+        Description: Anti-Air version of the main Allies Tank, amphibian just like the real deal. A rather specialised development that came into being after Engineers of the Mechanised Assault branch have managed to get the captured Mobile Flak units reverse engineered.\nThe unit that came into being as a result of the effort is a fast moving, light armor unit capable of providing anti-air cover for armored columns on the advance.
         Category: Allies Vehicles
 		Order: 8
 	RenderSprites:
@@ -874,7 +874,7 @@ atnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The higher-grade Allies Tank, this unit is just as well armored, faster, and less costly than the Soviet Heavy Tank, though armed with only a single barrel. Used in groups with Light Tanks, the Medium Tank can draw fire while the Lighter Tanks destroy the threat.
+        Description: The higher-grade Allies Tank, this unit is just as well armored, faster, and less costly than the Soviet Heavy Tank, though armed with only a single barrel. Used in groups with Light Tanks, the Medium Tank can draw fire while the Lighter Tanks destroy the threat.\n\nThe Mechanised Assault branch of the Allies forces have perfectly streamlined the assemble and manufacture process of the Medium Tank, resulting in being able to produce it cheaper and faster.
         Category: Allies Vehicles
 		Order: 9
 	RenderSprites:
@@ -895,7 +895,7 @@ tnkd.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: A versatile mobile anti-armor platform that can effectively combat any Soviet armor, that came into being only due to Mechanised Assault branch's engineer and mechanics tampering with captured Mammoth Tank cannons in the hopes of developing a gun of similar calibre.
+        Description: A versatile mobile anti-armor platform that can effectively combat any Soviet armor, that came into being only due to Mechanised Assault branch's engineer and mechanics tampering with captured Mammoth Tank cannons in the hopes of developing a gun of similar calibre.\nWhile that initial intention might have indeed failed, the knowledge obtained during the process have found good use.
         Category: Allies Vehicles
 		Order: 11
 	RenderSprites:
@@ -921,7 +921,7 @@ ectk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: A massive version of the Chrono Tank that is the result of failed development to obtain an chrono-capable rocket artillery system. Only ever gets built in limited quantity and on demand should the commanders of the Mechanised Assault branch decide to make use of this embarassment.
+        Description: A massive version of the Chrono Tank that is the result of failed development to obtain an chrono-capable rocket artillery system.\nOnly ever gets built in limited quantity and on demand should the commanders of the Mechanised Assault branch decide to make use of this embarassment.
         Category: Allies Vehicles
 		Order: 13
 	RenderSprites:
@@ -959,8 +959,10 @@ dtnk.info:
     Inherits: 2TNK
     Buildable:
         Queue: Nothing
+    Tooltip:
+		Name: Mirage Tank
 	Encyclopedia:
-        Description: This armored vehicle can seem to appear as an senseless modification at the distance, consisting of a tank turret mounted on a modified minelayer chassis. Its true purpose gets revealed upon taking a second glance, as its equipped with the experimental Mirage projection system. This system when activated envelops the tank in a perfect optical illusion that allows the Vehicle to assume the form of any other Vehicle, effectively allowing it to disguise.
+        Description: This armored vehicle can seem to appear as an senseless modification at the distance, consisting of a tank turret mounted on the modified chassis of a captured minelayer. Its true purpose gets revealed upon taking a second glance, as its equipped with the experimental Mirage projection system. This system when activated envelops the tank in a perfect optical illusion that allows the Vehicle to assume the form of any other Vehicle, effectively allowing it to disguise and masquerade as any enemy vehicle.
         Category: Allies Vehicles
 		Order: 14
     Turreted:
@@ -1040,7 +1042,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The basic tank of the Soviet Empire, this beast is equipped with twin 105mm cannons, giving it twice the punch of the nearest Allies equivalent, the Medium Tank. It sacrifices speed for this bonus, but the net result still makes it a formidable opponent on the battlefield.
+        Description: The basic tank of the Soviet Empire, this beast is equipped with twin 105mm cannons, giving it twice the punch of the nearest Allies equivalent, the Medium Tank. It sacrifices speed for this bonus, but the net result still makes it a formidable opponent on the battlefield.\n\nThe Heavy Armor division of the Soviet forces have perfectly streamlined the assemble and manufacture process of the Heavy Tank, resulting in being able to produce it cheaper and faster.
         Category: Soviet Vehicles
 		Order: 6
 	RenderSprites:
@@ -1053,7 +1055,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.
+        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.\n\nThe Heavy Armor division of the Soviet forces have perfectly streamlined the assemble and manufacture process of the Mammoth Tank, resulting in being able to produce it cheaper and faster.
         Category: Soviet Vehicles
 		Order: 7
 	RenderSprites:
@@ -1187,7 +1189,7 @@ f16.info:
     Inherits: F16
     Buildable:
         Queue: Nothing
-        Prerequisites: anyafld
+        Prerequisites: anyafld, atek
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: Allies Aircraft
@@ -1211,7 +1213,7 @@ halo.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Bigger and larger aerial transport that can carry more infantry, is also heavily armored like the Hind Gunship. Only available for the Black Guard.
+        Description: Bigger and larger aerial transport that can carry more infantry, is also heavily armored like the Hind Gunship.\nOnly available for the Black Guard faction of Soviets.
         Category: Soviet Aircraft
 		Order: 1
 	RenderSprites:
@@ -1270,6 +1272,7 @@ mig.info:
     Inherits: MIG
     Buildable:
         Queue: Nothing
+        Prerequisites: anyafld, stek
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the MiG can remove armored craft before they can become a threat.\nIt can also target Submarines, however has no means of detecting them, having to rely on a naval unit to do so.
         Category: Soviet Aircraft
@@ -1292,6 +1295,7 @@ nmig.info:
     Inherits: NMIG
     Buildable:
         Queue: Nothing
+        Prerequisites: 3fld, fcom
 	Encyclopedia:
         Description: A specially modified MiG design made with a singular purpose in mind - to carry one parachuted nuclear device to its destination. Reserved usage for the most high-ranking and distinguished commanders in rising, this type of tactical strike is efficient to wipe out a battalion of armor, a fleet of ships or a small scale enemy base on it's own.
         Category: Soviet Aircraft
@@ -1362,7 +1366,7 @@ lst2.soviet.info:
         Category: Soviet Navy
 	RenderSprites:
 		Image: lst2
-        Palette: soviet
+        Palette: nod
 
 ss.info:
     Inherits: SS
@@ -1374,7 +1378,7 @@ ss.info:
 		Order: 1
 	RenderSprites:
 		Image: ss
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 msub.info:
@@ -1387,7 +1391,7 @@ msub.info:
 		Order: 2
 	RenderSprites:
 		Image: msub
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 nts.info:
@@ -1400,7 +1404,7 @@ nts.info:
 		Order: 3
 	RenderSprites:
 		Image: nts
-        Palette: soviet
+        Palette: nod
     -MapEditorData:
 
 #   Special Abilities
@@ -1462,11 +1466,11 @@ paratroopers.info:
         Sequence: pinficon
 	Interactable:
 	Buildable:
-		Prerequisites: 3fld
+		Prerequisites: 3fld, barr
 	Tooltip:
 		Name: Paratroopers
 	Encyclopedia:
-		Description: Dropped from the Badger, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.
+		Description: Dropped from the Badger, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.\nThe Black Guard are capable of ordering twice the amount of Paratroopers, obtaining two full squads instead of only one.
 		Order: 8
 		Category: Special Abilities
 	RenderSprites:
@@ -1502,6 +1506,23 @@ stormtroopers.info:
 	Encyclopedia:
 		Description: Dropped from the Badger, this squad of 5 soldiers consists of 3 Shock Troopers and 2 Soldiers. Stormtroopers can be dropped anywhere on the map, even in areas not yet explored.
 		Order: 10
+		Category: Special Abilities
+	RenderSprites:
+		Image: cyclicons
+        Palette: effect
+
+paragrenadiers.info:
+    AlwaysVisible:
+    WithSpriteBody:
+        Sequence: pie2icon
+	Interactable:
+	Buildable:
+		Prerequisites: 3fld, dome
+	Tooltip:
+		Name: Paragrenadiers
+	Encyclopedia:
+		Description: Dropped from the Badger, this squad of 5 soldiers consists of 3 Grenadiers and 2 Soldiers. Paragrenadiers can be dropped anywhere on the map, even in areas not yet explored.
+		Order: 11
 		Category: Special Abilities
 	RenderSprites:
 		Image: cyclicons

@@ -17,14 +17,14 @@ CRATE:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv
-        ValidFactions: gdi, nod, bossnod
+        ValidFactions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
 	GiveMcvCrateAction@RA:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv2
-        ValidFactions: allies, soviet
+        ValidFactions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
 	ExplodeCrateAction@nuke:
-		Weapon: Atomic
+		Weapon: MiniNuke
 		SelectionShares: 1
 	HideMapCrateAction:
 		SelectionShares: 5
@@ -95,17 +95,17 @@ CRATE:
 		Units: harv
 		SelectionShares: 3
         Prerequisites: proc
-        ValidFactions: gdi, nod, bossnod
+        ValidFactions: gdi, gdia, gdib, gdic, bossgdi, nod, noda, nodb, nodc, bossnod
 	GiveUnitCrateAction@ohrv:
 		Units: ohrv
 		SelectionShares: 3
         Prerequisites: oref
-        ValidFactions: allies
+        ValidFactions: allies, alliesa, alliesb, alliesc, bossallies
 	GiveUnitCrateAction@ahrv:
 		Units: ahrv
 		SelectionShares: 3
         Prerequisites: oref
-        ValidFactions: soviet
+        ValidFactions: soviet, sovieta, sovietb, sovietc, bosssoviet
 	LevelUpCrateAction:
 		SelectionShares: 5
         Prerequisites: ~global-veterancy

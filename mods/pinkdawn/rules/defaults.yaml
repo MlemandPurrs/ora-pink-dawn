@@ -1189,6 +1189,13 @@
 		Position: Center
 		Palette: player
 		IsPlayerPalette: True
+    RevealsShroud:
+        Range: 3c0
+    RevealsShroudMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
 
 ^Defense:
 	Inherits: ^BaseBuilding

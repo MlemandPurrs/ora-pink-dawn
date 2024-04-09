@@ -1072,6 +1072,7 @@ FIX2:
 	ParatroopersPower@SovietParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.soviet
+        Prerequisites: barr
 		OrderName: SovietParatroopers
 		Icon: parainfra
 		ChargeInterval: 6750
@@ -1103,7 +1104,7 @@ FIX2:
 	ParatroopersPower@ShockParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovieta
-		Prerequisites: stek
+        Prerequisites: stek
 		OrderName: ShockParatroopers
 		Icon: parainfra2
 		ChargeInterval: 6750
@@ -1135,8 +1136,8 @@ FIX2:
 	ParatroopersPower@Paratanks:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovietb
-		Prerequisites: fix
-        OrderName: Paratanks
+        Prerequisites: fix
+		OrderName: Paratanks
 		Icon: paratanks
 		ChargeInterval: 6750
 		UnitType: badr
@@ -1164,15 +1165,114 @@ FIX2:
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
         AllowMultiple: false
+	ParatroopersPower@GrenadierParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovietc
+        Prerequisites: dome
+		OrderName: GrenadierParatroopers
+		Icon: parainfra3
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paragrenadiers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: E2R1,E1R1,E2R1,E1R1,E2R1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	ParatroopersPower@SovietBossParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bosssoviet
+        Prerequisites: barr
+		OrderName: SovietBossParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratroopers
+		Description: Badgers drops two squads of infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1, E1R1,E3R1,E1R1,E3R1,E1R1
+		AllowImpassableCells: false
+		SquadSize: 2
+		SquadOffset: 1792,1792,0
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
 	ParatroopersPower@GDIParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.gdia
+        Prerequisites: pyle
 		OrderName: GdiParatroopers
-		Icon: parainfra
+		Icon: parainf
 		ChargeInterval: 6750
 		UnitType: c17.paradrop
 		Name: Paratroopers
-		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	ParatroopersPower@AlliesParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bossallies
+        Prerequisites: tent
+		OrderName: AlliesParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badg
+		Name: Paratroopers
+		Description: A Plane drops a squad of infantry\nanywhere on the map.
 		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
 		AllowImpassableCells: false
 		QuantizedFacings: 8
@@ -1201,7 +1301,7 @@ FIX2:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet, sovietb, sovietc, bosssoviet
+        Factions: soviet
         ResetOnOwnerChange: true
     GrantConditionOnFaction@Soviet3:
         Condition: owner.is.sovieta
@@ -1211,10 +1311,22 @@ FIX2:
         Condition: owner.is.sovietb
         Factions: sovietb
         ResetOnOwnerChange: true	
-    GrantConditionOnFaction@GDI:
-        Condition: owner.is.gdia
-        Factions: gdia
+    GrantConditionOnFaction@Soviet5:
+        Condition: owner.is.sovietc
+        Factions: sovietc
         ResetOnOwnerChange: true	
+    GrantConditionOnFaction@SovietBoss:
+        Condition: owner.is.bosssoviet
+        Factions: bosssoviet
+        ResetOnOwnerChange: true	
+	GrantConditionOnFaction@GDI2:
+		Condition: owner.is.gdia
+		Factions: gdia
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@AlliesBoss:
+		Condition: owner.is.bossallies
+		Factions: bossallies
+		ResetOnOwnerChange: True
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	Capturable:
@@ -1374,6 +1486,7 @@ FIX2:
 	ParatroopersPower@SovietParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.soviet
+        Prerequisites: barr
 		OrderName: SovietParatroopers
 		Icon: parainfra
 		ChargeInterval: 6750
@@ -1405,6 +1518,7 @@ FIX2:
 	ParatroopersPower@ShockParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovieta
+        Prerequisites: stek
 		OrderName: ShockParatroopers
 		Icon: parainfra2
 		ChargeInterval: 6750
@@ -1436,6 +1550,7 @@ FIX2:
 	ParatroopersPower@Paratanks:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.sovietb
+        Prerequisites: fix
 		OrderName: Paratanks
 		Icon: paratanks
 		ChargeInterval: 6750
@@ -1464,9 +1579,76 @@ FIX2:
         LaunchSpeechNotification: ReinforceEnroute
         LaunchTextNotification: Reinforcements on the way.
         AllowMultiple: false
+	ParatroopersPower@GrenadierParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.sovietc
+        Prerequisites: dome
+		OrderName: GrenadierParatroopers
+		Icon: parainfra3
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paragrenadiers
+		Description: A Badger drops a squad of infantry\nanywhere on the map.
+		DropItems: E2R1,E1R1,E2R1,E1R1,E2R1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
+	ParatroopersPower@SovietBossParatroopers:
+        PauseOnCondition: lowpower || emp-affected-structure
+        RequiresCondition: owner.is.bosssoviet
+        Prerequisites: barr
+		OrderName: SovietBossParatroopers
+		Icon: parainfra
+		ChargeInterval: 6750
+		UnitType: badr
+		Name: Paratroopers
+		Description: Badgers drops two squads of infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1, E1R1,E3R1,E1R1,E3R1,E1R1
+		AllowImpassableCells: false
+		SquadSize: 2
+		SquadOffset: 1792,1792,0
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainfra
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: para
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+        AllowMultiple: false
 	ParatroopersPower@GDIParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.gdia
+        Prerequisites: pyle
 		OrderName: GdiParatroopers
 		Icon: parainf
 		ChargeInterval: 6750
@@ -1498,6 +1680,7 @@ FIX2:
 	ParatroopersPower@AlliesParatroopers:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.bossallies
+        Prerequisites: tent
 		OrderName: AlliesParatroopers
 		Icon: parainfra
 		ChargeInterval: 6750
@@ -1532,7 +1715,7 @@ FIX2:
 		ValidPowerStates: Low, Critical
     GrantConditionOnFaction@Soviet2:
         Condition: owner.is.soviet
-        Factions: soviet, sovietc, bosssoviet
+        Factions: soviet
         ResetOnOwnerChange: true
     GrantConditionOnFaction@Soviet3:
         Condition: owner.is.sovieta
@@ -1541,6 +1724,14 @@ FIX2:
     GrantConditionOnFaction@Soviet4:
         Condition: owner.is.sovietb
         Factions: sovietb
+        ResetOnOwnerChange: true	
+    GrantConditionOnFaction@Soviet5:
+        Condition: owner.is.sovietc
+        Factions: sovietc
+        ResetOnOwnerChange: true	
+    GrantConditionOnFaction@SovietBoss:
+        Condition: owner.is.bosssoviet
+        Factions: bosssoviet
         ResetOnOwnerChange: true	
 	GrantConditionOnFaction@GDI2:
 		Condition: owner.is.gdia

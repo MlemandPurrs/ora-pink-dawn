@@ -284,7 +284,7 @@ HALO:
         BuildDuration: 1600
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
-		Prerequisites: hpad, ~player.bosssoviet
+		Prerequisites: 3fld, ~player.bosssoviet
 		Queue: Aircraft
 		Description: Flying infantry transport.\nCan transport up to 10 Infantry.\n\nUnarmed.
 	Aircraft:

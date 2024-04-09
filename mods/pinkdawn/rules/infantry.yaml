@@ -120,6 +120,21 @@ E2:
     Passenger:
         CustomPipType: yellow
 
+E2R1:
+	Inherits: E2
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: e2
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: E2
+    -MapEditorData:
+
 E3:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -1403,7 +1418,7 @@ DOG:
 	Guard:
 		Voice: Move
 	Health:
-		HP: 5000
+		HP: 4500
 	AutoTarget:
 		ScanRadius: 4
 	IgnoresDisguise:
@@ -2153,7 +2168,7 @@ TERR:
 	Mobile:
 		Speed: 50
 	Health:
-		HP: 5000
+		HP: 4500
 	RevealsShroud:
 		Range: 2c512
 		RevealGeneratedShroud: False

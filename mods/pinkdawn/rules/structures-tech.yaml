@@ -4,7 +4,7 @@ V19:
 	Selectable:
 		Bounds: 1024, 1024
 	RevealsShroud:
-		Range: 2c512
+		Range: 3c0
 	CashTrickler:
         Interval: 50
 		Amount: 15
@@ -381,6 +381,7 @@ APRT:
 		ValidPowerStates: Low, Critical
 	ParatroopersPower@Paratroopers:
         PauseOnCondition: lowpower || emp-affected-structure
+        Prerequisites: infantryproduction
 		OrderName: Paratroopers
 		Icon: parainfra
 		ChargeInterval: 6750
@@ -705,7 +706,7 @@ WIND:
 	Health:
 		HP: 20000
 	RevealsShroud:
-		Range: 3c512
+		Range: 3c0
 	Tooltip:
 		Name: Windmill Plant
 	TooltipDescription@ally:
@@ -863,7 +864,7 @@ CSTL:
 		Name: Coastal Defense Turret
 		ShowOwnerRow: True
 	TooltipDescription@ally:
-		Description: Anti-Ship base defense.
+		Description: Anti-Ship base defense turret.
 		ValidRelationships: Ally
 	TooltipDescription@other:
 		Description: Capture to obtain formidable anti-ship defense.

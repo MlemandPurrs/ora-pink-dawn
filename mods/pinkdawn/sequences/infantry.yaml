@@ -1414,9 +1414,49 @@ tany:
 		Length: 6
 		Facings: 8
 		Tick: 80
-	shoot:
-		Start: 56
-		Length: 7
+	shoot-left:
+		Combine:
+			tany:
+				Length: 8
+				Frames: 58, 56, 64, 63, 71, 70, 79, 77
+			tany:
+				Length: 2
+				Frames: 85, 84
+				Offset: 1, 0
+			tany:
+				Length: 2
+				Frames: 92, 91
+			tany:
+				Length: 2
+				Frames: 99, 98
+				Offset: 1, -2
+			tany:
+				Length: 2
+				Frames: 107, 105
+				Offset: 0, -2
+		Length: 2
+		Facings: 8
+	shoot-right:
+		Combine:
+			tany:
+				Length: 8
+				Frames: 57, 56, 65, 63, 72, 70, 78, 77
+			tany:
+				Length: 2
+				Frames: 86, 84
+				Offset: 1, 0
+			tany:
+				Length: 2
+				Frames: 93, 91
+			tany:
+				Length: 2
+				Frames: 100, 98
+				Offset: 1, -2
+			tany:
+				Length: 2
+				Frames: 106, 105
+				Offset: 0, -2
+		Length: 2
 		Facings: 8
 	idle1:
 		Start: 233
@@ -1467,9 +1507,13 @@ tany:
 		Length: 4
 		Facings: 8
 		Tick: 80
-	prone-shoot:
-		Start: 176
-		Length: 7
+	prone-shoot-left:
+		Frames: 179, 177, 185, 184, 192, 191, 200, 198, 206, 205, 213, 212, 220, 219, 228, 226
+		Length: 2
+		Facings: 8
+	prone-shoot-right:
+		Frames: 178, 177, 186, 184, 193, 191, 199, 198, 207, 205, 214, 212, 221, 219, 227, 226
+		Length: 2
 		Facings: 8
 	liedown:
 		Start: 112
@@ -1477,50 +1521,6 @@ tany:
 		Facings: 8
 	standup:
 		Start: 160
-		Length: 2
-		Facings: 8
-	shoot-left:
-		Combine:
-			tany:
-				Length: 8
-				Frames: 58, 56, 64, 63, 71, 70, 79, 77
-			tany:
-				Length: 2
-				Frames: 85, 84
-				Offset: 1, 0
-			tany:
-				Length: 2
-				Frames: 92, 91
-			tany:
-				Length: 2
-				Frames: 99, 98
-				Offset: 1, -2
-			tany:
-				Length: 2
-				Frames: 107, 105
-				Offset: 0, -2
-		Length: 2
-		Facings: 8
-	shoot-right:
-		Combine:
-			tany:
-				Length: 8
-				Frames: 57, 56, 65, 63, 72, 70, 78, 77
-			tany:
-				Length: 2
-				Frames: 86, 84
-				Offset: 1, 0
-			tany:
-				Length: 2
-				Frames: 93, 91
-			tany:
-				Length: 2
-				Frames: 100, 98
-				Offset: 1, -2
-			tany:
-				Length: 2
-				Frames: 106, 105
-				Offset: 0, -2
 		Length: 2
 		Facings: 8
 	icon: tanyicon
