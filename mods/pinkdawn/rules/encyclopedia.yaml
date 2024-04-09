@@ -1842,3 +1842,29 @@ acad.info:
 		Image: acad
         Palette: civilian
     -MapEditorData:
+
+vice.info:
+    Inherits: VICE
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The visceroid is a mutated abomination that spits liquid tiberium, and is capable of healing itself while standing on Tiberium.
+        Category: Miscellaneous
+		Order: 0
+	RenderSprites:
+		Image: pvice
+        Palette: neongreen
+    -MapEditorData:
+
+crate.info:
+    Inherits: SCRATE
+	Tooltip:
+		Name: Crate
+	Encyclopedia:
+		Description: Those are containing a power-up each that can get picked up by any unit, there is also the possibility of it containing a bad suprise however.\nPossible rewards include increased armor, firepower, speed, invisibility, free cash, one free Harvester, a free MCV, revealing the map, instant healing, invulnerability, one-shot copies of super weapons or special abilities, a free rank of veterancy(only when enabled), a group of technicians to appear.\nOn the other side of the coin there is possibility of a visceroid appearing, instant death of the unit, a fiery explosion, a nuclear detonation, a pulse of e.m.p. disabling the vehicle, the map becoming hidden anew, seeds a patch of tiberium.\nIn the event you have lost the Construction Yard and no longer have any MCV remaining, you can obtain a guaranteed MCV from the first crate picked up.
+        Category: Miscellaneous
+		Order: 1
+	RenderSprites:
+		Image: scrate
+        Palette: effect
+    -MapEditorData:

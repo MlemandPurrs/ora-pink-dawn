@@ -8,18 +8,18 @@ CRATE:
 		SelectionShares: 20
 		UseCashTick: true
 	RevealMapCrateAction:
-		SelectionShares: 1
+		SelectionShares: 5
 		Sequence: reveal-map
 	ExplodeCrateAction@fire:
 		Weapon: CrateNapalm
 		SelectionShares: 5
 	GiveMcvCrateAction:
-		SelectionShares: 0
+		SelectionShares: 1
 		NoBaseSelectionShares: 100
 		Units: mcv
         ValidFactions: gdi, gdia, gdib, gdic, nod, noda, nodb, nodc, bossnod
 	GiveMcvCrateAction@RA:
-		SelectionShares: 0
+		SelectionShares: 1
 		NoBaseSelectionShares: 100
 		Units: mcv2
         ValidFactions: allies, alliesa, alliesb, alliesc, bossallies, soviet, sovieta, sovietb, sovietc, bosssoviet
@@ -131,7 +131,16 @@ CRATE:
 		Proxy: crate.paratroopers
 		SelectionShares: 1
 		TimeDelay: 7500
-		Sequence: parabombs
+		Sequence: parabombs	
+	ExplodeCrateAction@Tiberium:
+		Weapon: TiberiumExplosion
+		SelectionShares: 3
+	GiveUnitCrateAction@horde:
+		SelectionShares: 3
+		Units: tecn,tecn,tecn,tecn,tecn,tecn,tecn,tecn
+	GiveUnitCrateAction@playercreep:
+		Units: pvice
+		SelectionShares: 10
 
 WCRATE:
 	Inherits: ^Crate

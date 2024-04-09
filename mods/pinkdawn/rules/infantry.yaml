@@ -823,13 +823,6 @@ VICE:
 		Name: Visceroid
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	Buildable:
-		BuildDuration: 900
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 99
-		Prerequisites: ~bio2
-        Queue: Infantry2
-		Description: Mutated abomination that wanders\nand spits liquid Tiberium.\nImpossible to command.\n\nStrong vs all Ground units.
 	Mobile:
 		Voice: Move
 		Speed: 90
@@ -899,6 +892,18 @@ VICE:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+
+PVICE:
+    Inherits: VICE
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 99
+		Prerequisites: ~bio2
+        Queue: Infantry2
+		Description: Mutated abomination that wanders\nand spits liquid Tiberium.\nImpossible to command.\n\nStrong vs all Ground units.
+    RenderSprites:
+        Image: pvice
 
 MEDI:
 	Inherits: ^Soldier

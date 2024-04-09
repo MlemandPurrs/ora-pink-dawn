@@ -1118,6 +1118,10 @@ vice:
 		ZOffset: 2047
 	icon: viceicon
 
+pvice:
+    Inherits: vice
+	Defaults: pvice
+
 medi:
 	stand:
 		Facings: 8

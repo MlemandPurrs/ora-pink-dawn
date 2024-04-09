@@ -252,7 +252,7 @@ crate-effects:
 	reveal-map: radarcrate
 	hide-map: earth
 	heal: healcrate
-	mine: mine
+	mine: minecrate
 		Tick: 100
 	redskull: rapid
 	cloak: cloakcrate
