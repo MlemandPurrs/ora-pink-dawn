@@ -945,10 +945,10 @@ AAV:
         RevealGeneratedShroud: True
 	Turreted:
 		TurnSpeed: 12
-        Offset: 100,100,68
+        Offset: 112,76,92
 	Armament:
 		Weapon: MachineGun
-		LocalOffset: 85,0,171
+		LocalOffset: 320,0,171
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
 	AttackTurreted:
@@ -958,6 +958,7 @@ AAV:
 		Voice: Attack
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+        Sequence: turret
 	WithFacingSpriteBody:
 		RequiresCondition: !onwater
 	WithFacingSpriteBody@WATER:

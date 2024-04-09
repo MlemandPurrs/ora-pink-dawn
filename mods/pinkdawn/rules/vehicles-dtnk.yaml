@@ -628,7 +628,7 @@ DTNK:
 	Turreted@aav:
     	Turret: aav-turret
 		TurnSpeed: 12
-        Offset: 100,100,68
+        Offset: 112,76,92
 	Turreted@btr:
     	Turret: btr-turret
 		TurnSpeed: 12

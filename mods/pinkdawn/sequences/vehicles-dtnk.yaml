@@ -202,8 +202,8 @@ dtnk:
         Start: 38
 		Facings: 32
 		UseClassicFacings: True
-	turret-aav: aav
-		Start: 32
+	turret-aav: apc2
+        Start: 38
 		Facings: 32
 		UseClassicFacings: True
 	turret-ltnk: ltnk-tur2
