@@ -245,7 +245,7 @@ fist.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: A mobile version of the Hand of Nod, this structure can be conveniently deployed anywhere with an suitable build area to produce Infantry remotely.
+        Description: A mobile version of the Hand of Nod, the Fist of Nod is a mobile Infantry barracks that can be deployed anywhere with suitable build area to remotely produce Infantry.\n\nThis is the deployed form of the Fist of Nod, it can be ordered to pack up for relocation via the deploy command.
         Category: Nod Buildings
 		Order: 6
 	RenderSprites:
@@ -1201,7 +1201,7 @@ mhon.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Fist of Nod is a mobile Infantry barracks that can be deployed anywhere suitable to remotely produce Infantry.\nThis is the mobilized form to the Fist of Nod. It's sole purpose is to find a suitable area for deploying the Fist of Nod.
+        Description: A mobile version of the Hand of Nod, the Fist of Nod is a mobile Infantry barracks that can be deployed anywhere with suitable build area to remotely produce Infantry.\n\nThis is the mobilized form to the Fist of Nod. It's sole purpose is to find a suitable area for deploying the Fist of Nod.
         Category: Nod Vehicles
 		Order: 18
 	RenderSprites:
@@ -1566,7 +1566,7 @@ stealthplug.info:
 	Tooltip:
 		Name: Stealth Plug
 	Encyclopedia:
-		Description: Used only by certain branches of the Brotherhood, those new experimental devices are made of similar alloys as those used in the coating of the Stealth Tank's mantle. They are capable of bestowing stealth capability when grafted onto any Vehicle.
+		Description: Used only by certain forces within the Brotherhood of Nod, those new experimental devices are made of alloys similar to those used in the coating of the Stealth Tank's mantle. Those devices are capable of bestowing stealth capability when grafted onto any Vehicle, although they wear down fast and will need to be replaced regularly.
 		Order: 2
 		Category: Special Abilities
 	RenderSprites:

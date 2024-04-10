@@ -2442,10 +2442,9 @@ MHON:
 		BuildDuration: 950
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-        BuildLimit: 1
         Prerequisites: anyfix, ~vehicle.nod, ~player.nodb,  ~techlevel.5
 		Queue: Vehicle
-		Description: Maximum one can be built.\n\nMobile infantry barracks.\nDeploys into a Fist of Nod.\n\nUnarmed.
+		Description: Mobile infantry barracks.\nDeploys into a Fist of Nod.\n\nUnarmed.
 	Mobile:
         TurnSpeed: 12
 		Speed: 60

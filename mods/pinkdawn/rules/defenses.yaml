@@ -190,7 +190,7 @@ HTUR:
 		Recoils: false
 	Armament:
 		Weapon: HeavyTurretGun
-		LocalOffset: 1000,200,60, 1000,0,60, 1000,-200,60
+		LocalOffset: 1000,200,171, 1000,0,171, 1000,-200,171
 		MuzzleSequence: muzzle
         PauseOnCondition: build-incomplete
 	AttackTurreted:

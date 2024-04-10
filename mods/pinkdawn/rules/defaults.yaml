@@ -152,6 +152,9 @@
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	TimedConditionBar@CLOAK:
+		Condition: cloak-crate-collected
+        Color: 8b008b
 
 ^AcceptsInvulnerabilityCrate:
 	WithColoredOverlay@Invulnerability:

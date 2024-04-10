@@ -478,7 +478,7 @@ E7:
 	Valued:
 		Cost: 250
 	Tooltip:
-		Name: Gunner
+		Name: Future Soldier
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:

@@ -2386,12 +2386,12 @@ BIO:
 		OrderName: StealthPlug
 		Prerequisites: ~player.nodb
 		Icon: stlhicon
-		ChargeInterval: 5250
+		ChargeInterval: 4500
 		Dimensions: 1, 1
 		Footprint: x
-		Duration: 0
+		Duration: 2250
 		Name: Stealth Plug
-		Description: Renders one Vehicle\npermanently Invisible.
+		Description: Renders one Vehicle\ntemporarily Invisible.\nLasts for 1.5 minutes.
 		SelectTargetSpeechNotification: SelectTarget
         SelectTargetTextNotification: Select target.
 		InsufficientPowerSpeechNotification: InsufficientPower

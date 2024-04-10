@@ -3937,7 +3937,7 @@ BallisticMissiles:
 #   86. Grand Turret's cannons
 HeavyTurretGun:
 	ReloadDelay: 150
-	Range: 8c512
+    Range: 12c512
 	MinRange: 2c256
 	Burst: 3
 	BurstDelays: 8
@@ -3947,7 +3947,7 @@ HeavyTurretGun:
 		Image: 120MM
 		Speed: 204
 		Shadow: true
-		LaunchAngle: 56
+		LaunchAngle: 37
 		Inaccuracy: 1c256
         Blockable: false
 	Warhead@1Dam: SpreadDamage

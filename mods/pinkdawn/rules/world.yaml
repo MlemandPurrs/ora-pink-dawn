@@ -204,8 +204,8 @@
 	Faction@bossgdi:
 		Name: Future Corps
 		InternalName: bossgdi
-		Description: Future Corps\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Gunners replace Soldiers\n\nSpecial Units:\n    - Medic\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Grenadiers
-        Selectable: false
+		Description: Future Corps\nDescription:\nThe most Elite forces among the GDI.\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Can train Medics\n\nSpecial Units:\n    - Future Soldier\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Soldiers\n    - Cannot train Grenadiers
+        Selectable: true
 	Faction@nod:
 		Name: Nod
 		InternalName: nod
@@ -256,8 +256,8 @@
 	Faction@bossallies:
 		Name: U.S.A.
 		InternalName: bossallies
-		Description: United States of America\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Gattling Gun replaces Anti-Air Gun\n    - IFV replaces APC\n    - GPS Sattelite is permanent\n\nSpecial Unit:\n    - SEAL\n\nSpecial Abilities:\n    - Paratroopers\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Light Tanks\n    - Cannot train Mechanics\n    - Cannot build Phase Vehicle
-        Selectable: false
+		Description: United States of America\nDescription:\nthe Chief commanding branch of the Allies.\nJack of all trades, master of none.\n\nFaction Variations:\n    - Can build Airfields, not Helipads\n    - Gattling Gun replaces Anti-Air Gun\n    - IFV replaces APC\n    - GPS Sattelite is permanent\n\nSpecial Unit:\n    - SEAL\n\nSpecial Abilities:\n    - Paratroopers\n    - GPS Sattelite\n\nSuperweapons:\n    - Chronosphere\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Light Tanks\n    - Cannot train Mechanics\n    - Cannot build Phase Vehicle
+        Selectable: true
 	Faction@soviet:
 		Name: Soviet
 		InternalName: soviet
@@ -280,8 +280,8 @@
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
-        Selectable: false
+		Description: Black Guard\nDescription:\nStalin's elite guard, prestigious, deadly and\nmercilessly inhuman.\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
+        Selectable: true
 	Faction@RandomRA:
 		Name: Random RA
 		InternalName: Random3
