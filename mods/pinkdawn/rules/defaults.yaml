@@ -2426,7 +2426,7 @@
 ^VehicleRepairing:
 	ChangesHealth@SELFREPAIR:
 		Step: 500
-		Delay: 100
+		Delay: 50
 		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( rank-heroic || in-transport || parachute || oncarryall || emp-crate-collected )
@@ -2442,7 +2442,7 @@
 		Sequence: repair-small
 		Position: TopRight
 		Margin: 5, 6
-		RequiresCondition: armoryrepair
+		RequiresCondition: armoryrepair || mechanicrepair
 		BlinkInterval: 31
 		BlinkPattern: On, Off
 	ExternalCondition@UNITSOURCE:

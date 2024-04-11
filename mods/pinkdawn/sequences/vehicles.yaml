@@ -82,6 +82,29 @@ jeep.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+jsam:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -1
+	icon: jsamicon
+
+jsam.husk:
+	idle: jsam
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: jsam
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
 bggy:
     Inherits: emp-overlay
 	idle:
@@ -376,14 +399,17 @@ msam:
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
+        ZOffset: -1
 	empty-aim:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+		ZOffset: -1
 	aim:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+		ZOffset: -1
 	icon: msamicon
 
 msam.husk:
@@ -645,8 +671,8 @@ aav.husk:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: aav
-		Start: 32
+	turret: apc2
+		Start: 38
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
@@ -686,6 +712,22 @@ mhon:
 
 mhon.husk:
 	idle: mhq
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+mwf:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	idle-water: mwf-water
+		Facings: 32
+		UseClassicFacings: True
+	icon: aavicon
+
+mwf.husk:
+	idle: aav
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512

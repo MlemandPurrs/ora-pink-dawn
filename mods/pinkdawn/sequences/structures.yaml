@@ -2406,3 +2406,42 @@ fist.husk:
 		UseTilesetExtension: true
 		Length: *
 		Offset: 0,0
+
+mwfb:
+    Inherits: emp-overlay
+	idle:
+		ZOffset: -511
+	damaged-idle:
+		Start: 1
+		ZOffset: -511
+	dead: mwfb
+		Start: 2
+		Tick: 800
+	build-top: mwfb2
+		Length: 4
+		ZOffset: -1024
+	damaged-build-top: mwfb2
+		Start: 4
+		Length: 4
+		ZOffset: -1024
+	place: mwfbmake
+		Start: 14
+	make: mwfbmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: mwfbicon
+
+mwfb.husk:
+	idle: mwfb
+		Start: 2
+		ZOffset: -1023
+	dead: mwfb
+		Start: 2
+		Tick: 800
+		Offset: 0,-12
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *

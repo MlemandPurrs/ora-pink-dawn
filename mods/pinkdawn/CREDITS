@@ -9,11 +9,12 @@ Credits:
 E.M.P. Missile battery, Airfield with Helipad edit, Flame Trooper icon,
 E7 swimming frames, RH66 Comanche, Laser Turret, Infiltrator, Stealth Generator,
 Stealthfield cameo icon, Mobile Stealth Generator, Microwave Tank, Nod FCOM,
-IFV turret graphics used for the Nod ships, Jetpack Trooper, Sniper, Blackhawk,
-Grand Turret, Ballistic sub, Recon Boat sprite and icons, Tomahawk missile,
+IFV turret graphics, Jetpack Trooper, Sniper, Blackhawk, Grand Turret, 
+Ballistic sub, Recon Boat sprite and icons, Tomahawk missile, Halo Transport,
 Blackhand version of Heavy Tank, Howitzer icon, V3 Launcher sprite and icon,
-Seal sprite, Halo Transport, etc.)
-	* MissKylie (Nod construction yard, Tatra Supply Truck, C130, Howitzer sprites)
+Seal sprite, etc.)
+	* MissKylie (Nod construction yard, Tatra Supply Truck, C130, Howitzer,
+AAV unit sprites, Avenger sprite and icon)
 	* Pinkthoth (for helped me discover Tacotron, Civilian Airfield sprite,
 Behemoth Tank, Mobile Flak sprites, Academy sprite, Chrono Tortoise sprite)
 	* AchromicWhite (Light Tank's new turret, MLRS new chassis, 
@@ -32,8 +33,9 @@ Mobile Flak icon, Tank Destroyer sprite)
 for making RAClassic mod)
 	* Nolt (F22 and F18, Stealth Fighter sprites)
 	* Norman (F22 and F18 cameos)
-	* InsertName (most RA building husk sprites, extra Obelisk anim, AAV, 
-for creating TD naval modmaps, Best Map Evur <3, Coastal Defense turret)
+	* InsertName (most RA building husk sprites, extra Obelisk anim, 
+for creating TD naval modmaps, Best Map Evur <3, Coastal Defense turret
+sprite and icon, original AAV used as Mobile Factory unit, icon of AAV)
 	* Ho6org (sidebar Allies logo)
 	* Harrison (improved Ore Silo sprite)
 	* FF-Design (Mobile Flak unit based on their concept)
@@ -56,9 +58,9 @@ for creating TD naval modmaps, Best Map Evur <3, Coastal Defense turret)
 	* SoScared (Flame Mammoth from Unplugged mod)
 	* Kiraye (idea of disguising Mirage Tank from mod-map)
 	* Soup Can Sam (Armored GDI Barracks sprite)
-	and any others i might have forgotten...
 	* Phoebe (help with getting the upgrade anim of GDI power plant to work)
-	
+	and any others i might have forgotten...
+
 Special thanks to:
 	* all OpenRA developers (without them this mod would not exist)
 	* all the map-makers whom their maps have been used:

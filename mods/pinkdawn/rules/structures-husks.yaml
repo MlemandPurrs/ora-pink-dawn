@@ -250,6 +250,24 @@ WEAP.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: weap
 
+MWFB.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Weapons Factory (Destroyed)
+	Health:
+		HP: 40000
+	RenderSprites:
+		Image: mwfb.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: mwfb
+
 AFLD.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

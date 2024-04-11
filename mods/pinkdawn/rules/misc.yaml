@@ -326,6 +326,32 @@ CAMERA.sonar:
 	MapEditorData:
 		Categories: System
 
+CAMERA.repair:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: ( mechanic of field repairs )
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+        Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c128
+		Type: CenterPosition
+	ProximityExternalCondition:
+		Condition: fieldmechanic
+		ValidRelationships: Ally
+		Range: 2c826
+	WithRangeCircle:
+		Range: 2c826
+        Visible: Always
+        UsePlayerColor: true
+	MapEditorData:
+		Categories: System
+
 FLARE:
 	Immobile:
 		OccupiesSpace: false

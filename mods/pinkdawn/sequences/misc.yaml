@@ -399,6 +399,7 @@ icon:
     empbicon: empbicon
     cmisicon: thwkicon
     stlhicon: stlhicon
+    frepicon: frepicon
 
 moveflsh:
 	idle:

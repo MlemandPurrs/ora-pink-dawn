@@ -204,7 +204,7 @@
 	Faction@bossgdi:
 		Name: Future Corps
 		InternalName: bossgdi
-		Description: Future Corps\nDescription:\nThe most Elite forces among the GDI.\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Can train Medics\n\nSpecial Units:\n    - Future Soldier\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Soldiers\n    - Cannot train Grenadiers
+		Description: Future Corps\nDescription:\nThe most Elite forces among the GDI.\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Can train Medics\n    - Avenger replaces MAAG\n\nSpecial Units:\n    - Future Soldier\n    - Mobile Factory\n\nSpecial Abilities:\n    - Radar Scan\n    - Field Repairs\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Soldiers\n    - Cannot train Grenadiers
         Selectable: true
 	Faction@nod:
 		Name: Nod

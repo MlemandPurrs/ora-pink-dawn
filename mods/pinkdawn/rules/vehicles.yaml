@@ -543,6 +543,80 @@ JEEP:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+JSAM:
+	Inherits: ^Vehicle
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Avenger
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildDuration: 600
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: anyhq, ~vehicle.gdi, ~player.bossgdi, ~techlevel.5
+		Queue: Vehicle
+		Description: Mobile SAM vehicle.\n\nCan attack only Aircraft.
+	Mobile:
+        Locomotor: wheeled-non-crusher
+		TurnSpeed: 18
+		Speed: 150
+		PauseOnCondition: emp-crate-collected || boarding
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c128
+		RevealGeneratedShroud: False
+        MinRange: 3c128
+	RevealsShroud@GAPGenerator:
+		Range: 3c128
+        RevealGeneratedShroud: True
+	AutoTargetPriority@Air:
+		ValidTargets: Air
+		Priority: 2
+	Turreted:
+		TurnSpeed: 18
+		Offset: -258,0,224
+	Armament:
+		Weapon: TowerMissileAA
+		LocalOffset: 256,128,194, 256,-128,194
+		LocalYaw: -100,100
+        PauseOnCondition: emp-crate-collected
+	AttackMove:
+		Voice: Attack
+	AttackTurreted:
+		Voice: Attack
+        PauseOnCondition: emp-crate-collected
+	WithSpriteTurret:
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || cloak-crate-collected
+		RequiresCondition: cloakfield-on
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	RenderRangeCircle:
+		RangeCircleType: aa
+
 BGGY:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
@@ -815,7 +889,7 @@ MAAG:
         BuildDuration: 1200
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.gdi, ~!player.gdic, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.gdi, ~!player.gdic, ~!player.bossgdi, ~techlevel.5
 		Queue: Vehicle
 		Description: All-rounder fire-support vehicle.\n\nCan attack Aircraft.\nStrong vs Aircraft, Infantry.\nWeak vs Vehicles.
 	Mobile:
@@ -834,11 +908,11 @@ MAAG:
 	RevealsShroud@GAPGenerator:
 		Range: 3c128
         RevealGeneratedShroud: True
-	Turreted:
-		TurnSpeed: 18
 	AutoTargetPriority@Air:
 		ValidTargets: Air
 		Priority: 2
+	Turreted:
+		TurnSpeed: 18
 	Armament@PRIMARY:
         Name: primary
 		Weapon: APCGunAG
@@ -2011,6 +2085,7 @@ MSAM:
 	AttackMove:
 		Voice: Attack
 	WithSpriteTurret:
+        Recoils: false
 	Explodes:
 		Weapon: MsamExplode
 		EmptyWeapon: UnitExplodeSmall
@@ -2230,7 +2305,7 @@ HOWI:
 	Armament@SECONDARY:
         Name: secondary
 		Weapon: HowitzerShellChem
-		LocalOffset: 724,0,208
+		LocalOffset: 924,0,258
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
         RequiresCondition: rank-heroic
@@ -2403,7 +2478,9 @@ MHQ:
 MHON:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
     -FirepowerMultiplier@RANK-VETERAN:
     -ReloadDelayMultiplier@RANK-VETERAN:
@@ -2449,7 +2526,7 @@ MHON:
         TurnSpeed: 12
 		Speed: 60
 		Locomotor: tracked-crusher
-        PauseOnCondition: boarding
+        PauseOnCondition: emp-crate-collected || boarding
  	Health:
 		HP: 60000
 	Armor:
@@ -2462,7 +2539,7 @@ MHON:
 		Range: 2c0
         RevealGeneratedShroud: True
 	Transforms:
-        PauseOnCondition: cant-undeploy
+        PauseOnCondition: cant-undeploy || emp-crate-collected
 		IntoActor: fist
 		Offset: 0,-1
 		Facing: 432
@@ -2475,9 +2552,114 @@ MHON:
 		ValidDamageStates: Heavy, Critical
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	BaseBuilding:
 	RenderSprites:
 		Image: mhon
+    ExternalCondition@CloakingField:
+        Condition: cloakfield-on
+	Cloak@CloakingField:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		UncloakSound: cloak5.aud
+		Palette: cloaktransparent
+		IsPlayerPalette: true
+		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || oncarryall
+		RequiresCondition: cloakfield-on
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    Passenger:
+
+MWF:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@Speed: ^AcceptsSpeedCrate
+	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
+	Inherits@EMP: ^AcceptsEMPCrate
+    -GainsExperience:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+    -ProducibleWithLevel:
+    -WithProductionIconOverlay:
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( in-transport || parachute || oncarryall )
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability-crate-collected
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mobile Factory
+	Buildable:
+		BuildDuration: 2100
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+        Prerequisites: anyfix, ~vehicle.gdi, ~player.bossgdi,  ~techlevel.5
+		Queue: Vehicle
+		Description: Mobile vehicle production.\nDeploys into a Light Weapons Factory.\n\nUnarmed.
+	Mobile:
+        TurnSpeed: 12
+		Speed: 60
+		Locomotor: tracked-amphibian
+        PauseOnCondition: emp-crate-collected || boarding
+ 	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	Transforms:
+        PauseOnCondition: cant-undeploy || emp-crate-collected
+		IntoActor: mwfb
+		Offset: -1,-1
+		Facing: 432
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
+		Voice: Unload
+	GrantConditionOnDamageState@undeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	WithFacingSpriteBody:
+		RequiresCondition: !onwater
+	WithFacingSpriteBody@WATER:
+		Sequence: idle-water
+		Name: body-water
+		RequiresCondition: onwater
+	GrantConditionOnTerrain:
+		TerrainTypes: Water
+		Condition: onwater
+	RenderSprites:
+		Image: mwf
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:
