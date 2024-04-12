@@ -713,7 +713,7 @@ RMBO:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: miss, ~infantry.gdi, ~techlevel.7
+		Prerequisites: miss, ~infantry.gdi, ~!player.bossgdi, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
@@ -766,7 +766,7 @@ RMBO:
 RMB2:
     Inherits: RMBO
 	Buildable:
-		Prerequisites: miss, ~infantry.nod, ~player.bossnod, ~techlevel.7
+		Prerequisites: miss, ~infantry.gdi, ~player.bossgdi, ~techlevel.7
 		BuildLimit: 2
         Description: Maximum two can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.
     RenderSprites:
@@ -1664,7 +1664,7 @@ MEGA:
     	BuildDuration: 1650
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: tmpl, ~infantry.nod, ~!player.bossnod, ~techlevel.7
+		Prerequisites: tmpl, ~infantry.nod, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry
 		Description: Maximum one can be built.\n\nElite sniper mercenary.\n\nSpecial: Demolition\nUses C4 explosive to blow up\nenemy Building and Defenses.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.

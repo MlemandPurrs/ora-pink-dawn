@@ -204,7 +204,7 @@
 	Faction@bossgdi:
 		Name: Future Corps
 		InternalName: bossgdi
-		Description: Future Corps\nDescription:\nThe most Elite forces among the GDI.\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Can train Medics\n    - Avenger replaces MAAG\n\nSpecial Units:\n    - Future Soldier\n    - Mobile Factory\n\nSpecial Abilities:\n    - Radar Scan\n    - Field Repairs\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Soldiers\n    - Cannot train Grenadiers
+		Description: Future Corps\nDescription:\nThe most Elite forces among the GDI.\n\nFaction Variations:\n    - Can upgrade Power Plants\n    - Can train Medics\n    - Avenger replaces MAAG\n    - Can train two Commandos\n\nSpecial Units:\n    - Future Soldier\n    - Mobile Factory\n\nSpecial Abilities:\n    - Radar Scan\n    - Field Repairs\n\nSuperweapons:\n    - Air Strike\n    - Ion Cannon\n\nLimitations:\n    - Cannot train Soldiers\n    - Cannot train Grenadiers
         Selectable: true
 	Faction@nod:
 		Name: Nod
@@ -228,7 +228,7 @@
 	Faction@bossnod:
 		Name: Black Hand
 		InternalName: bossnod
-		Description: Black Hand\nDescription:\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Heavy Tanks replace Light Tanks\n    - Comanche replaces Apache\n    - Builds vehicles without Delivery\n    - Can train two Commandos\n    - Can build Tech Center\n    - Can build Stealth Generator\n    - Can build Missile Silo\n\nSpecial Units:\n    - Scorpion Tank\n    - Mobile Stealth Generator\n    - Microwave Tank\n    - Infiltrator\n    - Chemical Turret\n    - Laser Turret\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\n\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Chemical Troopers\n    - Cannot build SSM Launchers\n    - Cannot build Stealth Tanks\n    - Cannot build Temple of Nod\n    - Cannot build Research Laboratory\n    - Cannot build Guard Tower\n    - Cannot build Gun Turret
+		Description: Black Hand\nDescription:\nThe secretive Black Hand consists of the Brotherhood's elite,\ntheir members hand-picked by Kane himself.\nFanatically loyal and brutally through in their methods,\nthey stop nothing short of total extermination of Nod's rivals.\n\nFaction Variations:\n    - Heavy Tanks replace Light Tanks\n    - Comanche replaces Apache\n    - Builds vehicles without Delivery\n    - Can build Tech Center\n    - Can build Stealth Generator\n    - Can build Missile Silo\n\nSpecial Units:\n    - Scorpion Tank\n    - Mobile Stealth Generator\n    - Microwave Tank\n    - Infiltrator\n    - Chemical Turret\n    - Laser Turret\n\nSpecial Abilities:\n    - Radar Scan\n    - Stealth Field\n\nSuperweapons:\n    - Stealth Airstrike\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Chemical Troopers\n    - Cannot build SSM Launchers\n    - Cannot build Stealth Tanks\n    - Cannot build Temple of Nod\n    - Cannot build Research Laboratory\n    - Cannot build Guard Tower\n    - Cannot build Gun Turret
 	Faction@Random2:
 		Name: Random TD
 		InternalName: Random2
@@ -280,7 +280,7 @@
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\nDescription:\nStalin's elite guard, prestigious, deadly and\nmercilessly inhuman.\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Tech Center allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
+		Description: Black Guard\nDescription:\nStalin's elite guard, prestigious, deadly and\nmercilessly inhuman.\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Command Post allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
         Selectable: true
 	Faction@RandomRA:
 		Name: Random RA

@@ -7,23 +7,19 @@ Player:
 		Bots: normalai
 	GrantConditionOnFaction@AIGDI:
 		Condition: ai.gdi
-		Factions: gdi, gdia, gdib, gdic
+		Factions: gdi, gdia, gdib, gdic, bossgdi
         RequiresCondition: enable-ai-player
 	GrantConditionOnFaction@AINod:
 		Condition: ai.nod
-		Factions: nod, noda, nodb, nodc
+		Factions: nod, noda, nodb, nodc, bossnod
         RequiresCondition: enable-ai-player
 	GrantConditionOnFaction@AIAllies:
 		Condition: ai.allies
-		Factions: allies, alliesa, alliesb, alliesc
+		Factions: allies, alliesa, alliesb, alliesc, bossallies
         RequiresCondition: enable-ai-player
 	GrantConditionOnFaction@AISoviet:
 		Condition: ai.soviet
-		Factions: soviet, sovieta, sovietb, sovietc
-        RequiresCondition: enable-ai-player
-	GrantConditionOnFaction@AIBlackhand:
-		Condition: ai.bossnod
-		Factions: bossnod
+		Factions: soviet, sovieta, sovietb, sovietc, bosssoviet
         RequiresCondition: enable-ai-player
 	SupportPowerBotModule:
 		RequiresCondition: enable-ai-player
@@ -312,7 +308,16 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
-			UseReconDrone:
+			UseSpyPlane2:
+				OrderName: SpyPlane2
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+            UseReconDrone:
 				OrderName: ReconDrone
 				MinimumAttractiveness: 1
 				Consideration@1:
@@ -427,22 +432,31 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 2c0
+			UseFieldRepairs:
+				OrderName: FieldRepairs
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Ally
+					Types: Repair
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 2c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv, ohrv, ahrv
 		RefineryTypes: proc, proc.clone, oref, oref.clone
 	BaseBuilderBotModule@GDI:
 		RequiresCondition: enable-ai-player && ai.gdi
-		BuildingQueues: Building.GDI
-		DefenseQueues: Defense.GDI
+		BuildingQueues: Building.GDI, Building.BossGDI
+		DefenseQueues: Defense.GDI, Defense.BossGDI
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 5
 		ConstructionYardTypes: fact
 		RefineryTypes: proc, proc.clone
-		PowerTypes: nuke, nuk2
-		BarracksTypes: pyle
+		PowerTypes: nuke, nuk2, gdinuke, powrup
+		BarracksTypes: pyle, pyl2
 		VehiclesFactoryTypes: weap
 		ProductionTypes: pyle, weap, hpad, 3fld
 		SiloTypes: silo, silo.clone
@@ -456,6 +470,7 @@ Player:
 			silo: 2
             silo.clone: 2
 			pyle: 3
+            pyl2: 3
 			weap: 2
 			hpad: 2
             3fld: 3
@@ -472,6 +487,7 @@ Player:
             silo: 3
             silo.clone: 3
 			pyle: 5
+            pyl2: 5
 			weap: 10
 			hpad: 3
             3fld: 3
@@ -484,10 +500,11 @@ Player:
 			gun: 5
 			atwr: 7
             rtur: 1
+            powrup: 1
 	BaseBuilderBotModule@Nod:
 		RequiresCondition: enable-ai-player && ai.nod
-		BuildingQueues: Building.Nod
-		DefenseQueues: Defense.Nod
+		BuildingQueues: Building.Nod, Building.BossNod
+		DefenseQueues: Defense.Nod, Defense.BossNod
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
@@ -497,9 +514,9 @@ Player:
 		PowerTypes: nuke, nuk2
 		BarracksTypes: hand
 		VehiclesFactoryTypes: afld
-		ProductionTypes: hand, afld, hpad
+		ProductionTypes: hand, afld, hpad, ufld, 3fld
 		SiloTypes: silo, silo.clone
-        DefenseTypes: gtwr, obli, gun, sam
+        DefenseTypes: gtwr, obli, gun, sam, ctur, ltur
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 70
@@ -510,12 +527,17 @@ Player:
             silo.clone: 2
 			hand: 3
 			afld: 2
+            ufld: 2
 			hpad: 2
+            3fld: 2
 			fix: 1
 			hq: 1
 			tmpl: 1
+            miss: 1
             bio: 1
+            ncom: 1
             obli: 10
+            mslo: 1
 		BuildingFractions:
 			proc: 10
             proc.clone: 10
@@ -523,19 +545,26 @@ Player:
             silo.clone: 3
 			hand: 5
 			afld: 10
+            ufld: 10
 			hpad: 3
+            3fld: 3
 			fix: 1
 			hq: 5
             tmpl: 1
+            miss: 1
             bio: 1
+            ncom: 1
+            mslo: 1
 			gtwr: 5
 			gun: 5
 			obli: 7
 			sam: 3
+            ctur: 2
+            ltur: 5
 	BaseBuilderBotModule@Allies:
 		RequiresCondition: enable-ai-player && ai.allies
-		BuildingQueues: Building.Allies, Defense.Allies2
-		DefenseQueues: Defense.Allies, Defense.Allies2
+		BuildingQueues: Building.Allies, Building.BossAllies, Defense.Allies2
+		DefenseQueues: Defense.Allies, Defense.BossAllies, Defense.Allies2
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
@@ -545,9 +574,9 @@ Player:
 		PowerTypes: powr, apwr
 		BarracksTypes: tent
 		VehiclesFactoryTypes: warf
-		ProductionTypes: tent, warf, hpad
+		ProductionTypes: tent, warf, hpad, 3fld
 		SiloTypes: osil, osil.clone
-        DefenseTypes: pbox, hbox, gun, gun2, agun, htur
+        DefenseTypes: pbox, hbox, gun, gun2, agun, htur, cram
         MinimumDefenseRadius: 8
         MaximumDefenseRadius: 16
         PlaceDefenseTowardsEnemyChance: 70
@@ -559,6 +588,7 @@ Player:
 			tent: 3
 			warf: 2
 			hpad: 2
+            3fld: 2
 			fix2: 1
 			dome: 1
 			atek: 1
@@ -579,6 +609,7 @@ Player:
 			tent: 5
 			warf: 10
 			hpad: 3
+            3fld: 3
 			fix2: 1
 			dome: 5
             atek: 1
@@ -589,6 +620,7 @@ Player:
             gun2: 5
             htur: 1
 			agun: 3
+            cram: 3
             gap: 1
             fpwr: 1
             fapw: 1
@@ -598,8 +630,8 @@ Player:
             cspf: 1
 	BaseBuilderBotModule@Soviet:
 		RequiresCondition: enable-ai-player && ai.soviet
-		BuildingQueues: Building.Soviet
-		DefenseQueues: Defense.Soviet
+		BuildingQueues: Building.Soviet, Building.BossSoviet
+		DefenseQueues: Defense.Soviet, Defense.BossSoviet
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
@@ -647,56 +679,6 @@ Player:
             ftwr: 7
             tsla: 5
 			sam2: 3
-	BaseBuilderBotModule@Blackhand:
-		RequiresCondition: enable-ai-player && ai.bossnod
-		BuildingQueues: Building.BossNod
-		DefenseQueues: Defense.BossNod
-		MinimumExcessPower: 30
-		MaximumExcessPower: 150
-		ExcessPowerIncrement: 30
-		ExcessPowerIncreaseThreshold: 5
-		ConstructionYardTypes: fact
-		RefineryTypes: proc, proc.clone
-		PowerTypes: nuke, nuk2
-		BarracksTypes: hand
-		VehiclesFactoryTypes: ufld
-		ProductionTypes: hand, ufld, 3fld
-		SiloTypes: silo, silo.clone
-        DefenseTypes: ctur, ltur, obli, sam
-        MinimumDefenseRadius: 8
-        MaximumDefenseRadius: 16
-        PlaceDefenseTowardsEnemyChance: 70
-		BuildingLimits:
-			proc: 4
-            proc.clone: 4
-			silo: 2
-            silo.clone: 2
-			hand: 3
-			ufld: 2
-			3fld: 2
-			fix: 1
-			hq: 1
-			miss: 1
-            ncom: 1
-            mslo: 1
-            obli: 10
-		BuildingFractions:
-			proc: 10
-            proc.clone: 10
-            silo: 3
-            silo.clone: 3
-			hand: 5
-			ufld: 10
-			3fld: 3
-			fix: 1
-			hq: 5
-            miss: 1
-            ncom: 1
-            mslo: 1
-            ctur: 2
-			ltur: 5
-			obli: 7
-			sam: 3
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
 	SquadManagerBotModule@LandGDI:
@@ -704,12 +686,12 @@ Player:
 		RushInterval: 400
 		SquadSize: 6
         SquadSizeRandomBonus: 6
-        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, weap, hpad, 3fld, fix, hq, eye, miss, gtwr, atwr, gun, rtur, mcv, harv
+		ProtectionTypes: fact, nuke, nuk2, gdinuke, proc, proc.clone, silo, silo.clone, pyle, pyl2, weap, hpad, 3fld, fix, hq, eye, miss, gtwr, atwr, gun, rtur, mcv, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirGDI:
@@ -717,7 +699,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -730,7 +712,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e9, rmbo, jet, harv, mcv, jeep, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -743,12 +725,12 @@ Player:
 		RushInterval: 400
 		SquadSize: 4
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, harv, mcv, heli, badg, c17, f22, pt2, dd2, ss2, sb, bsub, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e6, harv, mcv, heli, rh66, badg, c17, f22, pt2, dd2, ss2, sb, bsub, gtwr, gun, obli, sam, ctur, ltur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
-		AirUnitsTypes: heli, f22
+		AirUnitsTypes: heli, f22, rh66
         NavalUnitsTypes: pt2, dd2, ss2, sb, bsub
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, hand, afld, hpad, fix, hq, tmpl, bio, gtwr, gun, obli, sam, mcv, harv
+		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, hand, afld, ufld, hpad, 3fld, fix, hq, tmpl, miss, bio, ncom, gtwr, gun, obli, sam, ctur, ltur, mcv, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirNod:
@@ -756,9 +738,9 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, howi, mlrs, pt2, dd2, ss2, sb, bsub, badg, c17, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, inf, harv, mcv, bggy, bike, apc, btr, ltnk, 3tni, ftnk, wtnk, chtk, stnk, t55h, arty, howi, mlrs, pt2, dd2, ss2, sb, bsub, badg, c17, sfig, gtwr, gun, obli, sam, ctur, ltur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
-		AirUnitsTypes: heli, f22
+		AirUnitsTypes: heli, f22, rh66
         NavalUnitsTypes: pt2, dd2, ss2, sb, bsub
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, proc, proc.clone, mcv, harv
@@ -769,9 +751,9 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, harv, mcv, bggy, bike, apc, btr, ltnk, ftnk, chtk, stnk, arty, howi, mlrs, badg, c17, heli, f22, gtwr, gun, obli, sam, camera.scan, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, e9c, mega, thf, inf, harv, mcv, bggy, bike, apc, btr, ltnk, 3tni, ftnk, wtnk, chtk, stnk, t55h, arty, howi, mlrs, badg, c17, sfig, heli, f22, rh66, gtwr, gun, obli, sam, ctur, ltur, camera.scan, camera.sonar
 		ConstructionYardTypes: fact
-		AirUnitsTypes: heli, f22
+		AirUnitsTypes: heli, f22, rh66
         NavalUnitsTypes: pt2, dd2, ss2, sb, bsub
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
@@ -787,7 +769,7 @@ Player:
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
         NavalProductionTypes: syrd
-		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, tent, warf, hpad, fix2, dome, atek, mslo, pbox, hbox, gun, gun2, htur, agun, mcv2, ohrv
+		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, tent, warf, hpad, 3fld, fix2, dome, atek, mslo, pbox, hbox, gun, gun2, htur, agun, mcv2, ohrv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirAllies:
@@ -795,7 +777,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, seal, ohrv, mcv2, r4wd, apc, apc3, ifv, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -808,7 +790,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, ohrv, mcv2, r4wd, apc, apc3, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, seal, ohrv, mcv2, r4wd, apc, apc3, ifv, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hel2, f16
         NavalUnitsTypes: pt, dd, ca
@@ -834,7 +816,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, badg, ss, msub, nts, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, ss, msub, nts, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, frog, mig
         NavalUnitsTypes: ss, msub, nts
@@ -847,49 +829,10 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, frog, mig
         NavalUnitsTypes: ss, msub, nts
-        NavalProductionTypes: syrd
-		ProtectionTypes: syrd
-        MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
-	SquadManagerBotModule@LandBlackhand:
-		RequiresCondition: enable-ai-player && ai.bossnod
-		RushInterval: 400
-		SquadSize: 4
-        SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, harv, mcv, badg, sfig, rh66, f22, pt2, dd2, ss2, ltur, obli, sam, camera.scan, camera.sonar
-		ConstructionYardTypes: fact
-		AirUnitsTypes: rh66, f22
-        NavalUnitsTypes: pt2, dd2, ss2
-        NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, hand, ufld, 3fld, fix, hq, miss, ncom, ctur, ltur, obli, sam, mcv, harv
-        MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
-	SquadManagerBotModule@AirBlackhand:
-		RequiresCondition: enable-ai-player && ai.bossnod
-		RushInterval: 400
-		SquadSize: 1
-        SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3tni, wtnk, arty, mlrs, badg, sfig, pt2, dd2, ss2, ctur, ltur, obli, sam, camera.scan, camera.sonar
-		ConstructionYardTypes: fact
-		AirUnitsTypes: rh66, f22
-        NavalUnitsTypes: pt2, dd2, ss2
-        NavalProductionTypes: syrd
-		ProtectionTypes: fact, proc, proc.clone, mcv, harv
-        MinimumAttackForceDelay: 200
-        IgnoredEnemyTargetTypes: Husk, Airplane
-	SquadManagerBotModule@SeaBlackhand:
-		RequiresCondition: enable-ai-player && ai.bossnod
-		RushInterval: 400
-		SquadSize: 1
-        SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e4, e5, e6, rmbo, inf, harv, mcv, bggy, bike, apc, 3tni, wtnk, arty, mlrs, badg, sfig, rh66, f22, ctur, ltur, obli, sam, camera.scan, camera.sonar
-		ConstructionYardTypes: fact
-		AirUnitsTypes: rh66, f22
-        NavalUnitsTypes: pt2, dd2, ss2
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
         MinimumAttackForceDelay: 200
@@ -902,14 +845,18 @@ Player:
 			e2: 25
 			e3: 40
             e6: 5
+            e7: 40
             e9: 5
+            medi: 5
             rmbo: 1
+            rmb2: 1
             jet: 5
 			harv: 10
 			jeep: 15
             apc: 10
             aav: 10
             maag: 15
+            jsam: 10
             mtnk: 50
             htnk: 25
             mrpg: 20
@@ -923,14 +870,17 @@ Player:
             dd3: 10
 		UnitLimits:
             rmbo: 1
+            rmb2: 2
             jet: 1
             e6: 1
             e9: 3
+            medi: 2
 			harv: 8
             jeep: 6
             apc: 4
             aav: 4
             maag: 2
+            jsam: 2
             htnk: 4
             mrpg: 3
             msam: 6
@@ -953,6 +903,7 @@ Player:
             e9c: 5
             mega: 1
             thf: 3
+            inf: 3
             terr: 1
 			harv: 10
 			bggy: 15
@@ -973,9 +924,14 @@ Player:
             ss2: 10
             sb: 15
             bsub: 1
+            3tni: 40
+            wtnk: 15
+            t55h: 1
+            rh66: 5
 		UnitLimits:
             mega: 1
             thf: 1
+            inf: 1
             terr: 2
             e4: 3
             e5: 5
@@ -999,6 +955,9 @@ Player:
             ss2: 2
             sb: 3
             bsub: 1
+            wtnk: 1
+            t55h: 1
+            rh66: 2
  	UnitBuilderBotModule@Allies:
 		RequiresCondition: enable-ai-player && ai.allies
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy   
@@ -1011,10 +970,12 @@ Player:
             tany: 1
             spy: 3
             snip: 3
+            seal: 3
 			ohrv: 10
             r4wd: 10
             apc: 10
             apc3: 5
+            ifv: 10
             1tnk: 30
             atnk: 15
             2tnk: 50
@@ -1034,6 +995,7 @@ Player:
             mech: 2
             spy: 1
             snip: 2
+            seal: 2
             e6: 1
 			ohrv: 8
             r4wd: 6
@@ -1095,50 +1057,6 @@ Player:
             ss: 5
             msub: 3
             nts: 1
- 	UnitBuilderBotModule@Blackhand:
-		RequiresCondition: enable-ai-player && ai.bossnod
-		UnitQueues: Vehicle, Infantry, Aircraft, Navy   
-		UnitsToBuild:
-			e1: 30
-			e3: 40
-            e4: 20
-            e5: 10
-            e6: 5
-            rmbo: 1
-            inf: 3
-			harv: 10
-			bggy: 15
-            bike: 15
-            apc: 20
-            3tni: 40
-            wtnk: 15
-            t55h: 1
-            arty: 30
-            mlrs: 15
-            rh66: 5
-            f22: 1
-            pt2: 5
-            dd2: 10
-            ss2: 10
-		UnitLimits:
-            rmbo: 1
-            inf: 1
-            e4: 6
-            e5: 3
-            e6: 1
-			harv: 8
-            bggy: 5
-            bike: 5
-            apc: 3
-            wtnk: 1
-            arty: 7
-            mlrs: 1
-            t55h: 1
-            rh66: 2
-            f22: 1
-            pt2: 4
-            dd2: 3
-            ss2: 2
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv, mcv2
@@ -1153,19 +1071,19 @@ Player:
         Prerequisites: ~global-husks
     CaptureManagerBotModule@restorebaseGDI:
         CapturingActorTypes: e6
-        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, pyle.husk, weap.husk, hpad.husk, fix.husk, hq.husk, eye.husk, miss.husk 
+        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, gdinuke.husk, proc.husk, pyle.husk, pyl2.husk, weap.husk, hpad.husk, fix.husk, hq.husk, eye.husk, miss.husk
         CheckCaptureTargetsForVisibility: true
         MaximumCaptureTargetOptions: 1
         RequiresCondition: husks-enabled && ai.gdi
     CaptureManagerBotModule@restorebaseNod:
         CapturingActorTypes: e6
-        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, hand.husk, afld.husk, hpad.husk, fix.husk, hq.husk, tmpl.husk, bio.husk 
+        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, hand.husk, afld.husk, ufld.husk, hpad.husk, 3fld.husk, fix.husk, hq.husk, tmpl.husk, miss.husk, bio.husk, ncom.husk 
         CheckCaptureTargetsForVisibility: true
         MaximumCaptureTargetOptions: 1
         RequiresCondition: husks-enabled && ai.nod
     CaptureManagerBotModule@restorebaseAllies:
         CapturingActorTypes: e6
-        CapturableActorTypes: fac2.husk, powr.husk, apwr.husk, oref.husk, tent.husk, warf.husk, hpad.husk, fix2.husk, dome.husk, atek.husk
+        CapturableActorTypes: fac2.husk, powr.husk, apwr.husk, oref.husk, tent.husk, warf.husk, hpad.husk, 3fld.husk, fix2.husk, dome.husk, atek.husk
         CheckCaptureTargetsForVisibility: true
         MaximumCaptureTargetOptions: 1
         RequiresCondition: husks-enabled && ai.allies
@@ -1175,9 +1093,3 @@ Player:
         CheckCaptureTargetsForVisibility: true
         MaximumCaptureTargetOptions: 1
         RequiresCondition: husks-enabled && ai.soviet
-    CaptureManagerBotModule@restorebaseBlackhand:
-        CapturingActorTypes: e6
-        CapturableActorTypes: fact.husk, nuke.husk, nuk2.husk, nuk3.husk, proc.husk, hand.husk, ufld.husk, 3fld.husk, fix.husk, hq.husk, miss.husk, ncom.husk 
-        CheckCaptureTargetsForVisibility: true
-        MaximumCaptureTargetOptions: 1
-        RequiresCondition: husks-enabled && ai.bossnod

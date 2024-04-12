@@ -1835,7 +1835,7 @@ DOME:
 	AirstrikePower@SpyPlane2:
         PauseOnCondition: lowpower || emp-affected-structure
         RequiresCondition: owner.is.bosssoviet
-		OrderName: SpyPlaneSecondary
+		OrderName: SpyPlane2
 		Prerequisites: anyafld, fcom
 		Icon: spyplane
 		ChargeInterval: 4500
