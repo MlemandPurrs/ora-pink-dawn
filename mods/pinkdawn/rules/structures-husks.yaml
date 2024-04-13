@@ -379,6 +379,42 @@ EYE.Husk:
 		ForceHealthPercentage: 35
 		IntoActor: eye
 
+GDIHQ.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 1706
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Center (Destroyed)
+	Health:
+		HP: 45000
+	RenderSprites:
+		Image: gdihq.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gdihq
+
+GDIHQ2.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 2048, 1706
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Communications Center (Destroyed)
+	Health:
+		HP: 45000
+	RenderSprites:
+		Image: gdihq2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gdihq
+
 MISS.Husk:
 	Inherits: ^BuildingHusk
 	Interactable:

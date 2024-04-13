@@ -1034,6 +1034,85 @@ eye.husk:
 		UseTilesetExtension: true
 		Length: *
 
+gdihq:
+    Inherits: emp-overlay
+    idle: blank1
+        Offset: 0,0
+    damaged-idle: blank1
+        Offset: 0,0
+	dead: hq
+		Start: 32
+		Tick: 800
+	make: hqmake
+		Length: *
+		Tick: 80
+	idle2: hq
+		Length: 16
+		Tick: 160
+	damaged-idle2: hq
+		Start: 16
+		Length: 16
+		Tick: 160
+	dead2: hq
+		Start: 32
+		Tick: 800
+	make2: hqmake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	idle3: eye
+		Length: 16
+		Tick: 160
+	damaged-idle3: eye
+		Start: 16
+		Length: 16
+		Tick: 160
+	dead3: eye
+		Start: 32
+		Tick: 800
+	make3: eyemake
+		Length: *
+		Tick: 80
+    upgrade: gdihqupgr
+		Length: *
+		Tick: 80
+	icon: gdihqicon
+	white-light: white-light
+		Length: *
+		Tick: 80
+	damaged-white-light: white-light
+		Length: *
+		Tick: 80
+        Offset: -2,0
+
+gdihq.husk:
+	idle: hq
+		Start: 32
+	dead: hq
+		Start: 32
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+gdihq2.husk:
+	idle: eye
+		Start: 32
+	dead: eye
+		Start: 32
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+eyeup:
+	place: eyemake
+		Start: 19
+		Length: 1
+	icon: eyeupicon
+
 miss:
     Inherits: emp-overlay
 	idle:

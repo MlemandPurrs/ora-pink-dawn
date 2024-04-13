@@ -2596,3 +2596,21 @@ seal:
 		ZOffset: 2047
 		IgnoreWorldTint: true
 	icon: sealicon
+
+exo:
+    Inherits: emp-overlay
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 4
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 40
+		Length: 3
+		Facings: 8
+	icon: exoicon
+    parachute:
+        Start: 0
+        Facings: 8

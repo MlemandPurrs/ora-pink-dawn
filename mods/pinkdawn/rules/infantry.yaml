@@ -1344,6 +1344,15 @@ SPY:
         PlayerExperience: 0
         EnterCursor: enter-blue-timer
         RequiresCondition: owner.is.alliesa
+    # clone of reset timer, used only on 
+    # upgraded gdi hq
+	Infiltrates@3:
+		Types: SpyInfiltrate3
+		Notification: BuildingInfiltrated
+		TextNotification: Building infiltrated.
+        PlayerExperience: 0
+        EnterCursor: enter-blue-timer
+        RequiresCondition: owner.is.alliesa
 	GrantConditionOnFaction@alliesa:
 		Condition: owner.is.alliesa
 		Factions: alliesa
@@ -1895,7 +1904,7 @@ JET:
 	Buildable:
         BuildDuration: 900
         BuildDurationModifier: 100
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 7
 		Prerequisites: eye, ~infantry.gdi, ~player.gdib, ~techlevel.7
 		Queue: Infantry
 		Description: Flying reconnaisance infantry.\nCan detect cloaked units and mines.\n\nStrong vs Infantry.\nWeak vs Vehicles.
@@ -2226,3 +2235,183 @@ TERR:
 	Passenger:
 		CustomPipType: yellow
 		Voice: Action
+
+EXO:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Inherits@selection: ^SelectableCombatUnit
+	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@slowdown: ^SlowdownWhenDamagedInfantry
+    Inherits@stealthgen: ^AffectedByCloakingField
+	Inherits@bounty: ^GlobalBounty
+	Inherits@productionboost: ^ProductionBoost
+    Inherits@discount: ^OilRefineryDiscount
+    Inherits@experience: ^ExperienceMechanic
+    Inherits@academy: ^AffectedByAcademy
+    Inherits@repairing: ^VehicleRepairing
+	Inherits@Crates: ^AcceptsAllCrates
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	MustBeDestroyed:
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: DefaultDeath
+	Selectable:
+		Bounds: 768, 853, 0, -256
+		DecorationBounds: 512, 768, 0, -128
+	Targetable:
+		TargetTypes: Ground, DetonateAttack2, Infantry
+        RequiresCondition: !parachute
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+        RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	AttackMove:
+	Passenger:
+		CargoType: Infantry
+        Weight: 5
+        CargoCondition: in-transport
+        CustomPipType: orange
+	HiddenUnderFog:
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	Guardable:
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 1c826
+        RequiresCondition: !parachute
+	DeathSounds@NORMAL:
+		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath, RippedApartDeath, FireDeath, TiberiumDeath
+	DeathSounds@POISONED:
+		Voice: Poisoned
+		DeathTypes: TiberiumDeath
+	DeathSounds@ZAPPED:
+		Voice: Zapped
+		DeathTypes: ElectricityDeath
+	Voiced:
+		VoiceSet: GenericVoice
+	HitShape:
+		Type: Circle
+			Radius: 128
+        RequiresCondition: !parachute
+	HitShape@parachute:
+		Type: Circle
+			Radius: 256
+        RequiresCondition: parachute
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		GroundCorpseSequence: corpse
+		GroundImpactSound: squish2.aud
+		WaterImpactSound: splash9.aud
+		WaterCorpseSequence: sml_splash
+		ParachutingCondition: parachute
+	WithParachute:
+		ShadowImage: parach-shadow
+		ShadowSequence: idle
+		Image: parach
+		Sequence: idle
+		OpeningSequence: open
+		Offset: 0,0,427
+		RequiresCondition: parachute
+        Palette: effect
+        IsPlayerPalette: false
+    Targetable@Parachute:
+        TargetTypes: Parachute
+        RequiresCondition: parachute
+	Guard:
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Exosuit Trooper
+		GenericName: Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+    	BuildDuration: 800
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 8
+		Prerequisites: miss, ~infantry.gdi, ~player.bossgdi, ~techlevel.7
+		Queue: Infantry
+		Description: Power armored infantry.\nCan detect cloaked units and mines.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs Infantry.\nWeak vs Vehicles.
+	Mobile:
+		Locomotor: foot-immune
+		Speed: 50
+		AlwaysTurnInPlace: true
+	RevealsShroud:
+		Range: 4c0
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+    DetectCloakedMultiplier@GAPGenerator:
+        Modifier: 50
+        RequiresCondition: within-gap-radius
+	ExternalCondition@GAPGenerator:
+		Condition: within-gap-radius
+	RenderDetectionCircle:
+	Health:
+		HP: 7500
+    Armor:
+		Type: Concrete
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: ExoChainGun
+        LocalOffset: 48,100,0, 48,-100,0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+        StandSequences: stand
+		DefaultAttackSequence: shoot
+	Explodes:
+		Weapon: GrenadierExplode
+		EmptyWeapon: GrenadierExplode
+        DamageSource: Killer
+		Chance: 100
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	ChangesHealth@SELFREPAIR:
+		Step: 500
+		Delay: 50
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: ( armoryrepair || mechanicrepair ) && !( rank-heroic || in-transport || parachute || emp-crate-collected )
+	Cloak:
+        CloakType: Stealth
+        DetectionTypes: Stealth
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || emp-crate-collected
+		RequiresCondition: cloak-crate-collected
+	GpsDot:
+		String: Infantry
+	MapEditorData:
+		Categories: Infantry

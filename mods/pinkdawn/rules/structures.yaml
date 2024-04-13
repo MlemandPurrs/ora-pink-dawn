@@ -359,7 +359,7 @@ GDINUKE:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 40000
+		HP: 50000
 	RevealsShroud:
 		Range: 2c512
 	WithBuildingBib:
@@ -380,7 +380,16 @@ GDINUKE:
 	RenderSprites:
 		Image: gdinuke
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure 
+    #   && !powrup.on
+    #   crashes with error message:
+    #   "Type dictionary containts multiple instances of type"
+    #   Sellable@Upgrade:
+    #   RefundPercent: 83
+    #   SellSounds: cashturn.aud
+    #   Notification: BuildingSold
+    #   TextNotification: Structure sold.
+    #   RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure && powrup.on
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	AffectedByPowerOutage:
@@ -1940,16 +1949,12 @@ HQ:
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
     ProvidesPrerequisite@buildingname:
-    GrantConditionOnFaction@gdia:
-        Condition: owner.is.gdia
-        Factions: gdia
-        ResetOnOwnerChange: true
 	Buildable:
     	BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
-		Queue: Building.GDI, Building.Nod, Building.BossGDI, Building.BossNod
+		Queue: Building.GDI, Building.Nod, Building.BossNod
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
@@ -2027,6 +2032,11 @@ HQ:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
         SupportPowerPaletteOrder: 5
+	SupportPowerChargeBar:
+    GrantConditionOnFaction@gdia:
+        Condition: owner.is.gdia
+        Factions: gdia
+        ResetOnOwnerChange: true
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
 	ExternalCondition@JAMMED:
@@ -2058,6 +2068,254 @@ HQ:
 		InfiltratedTextNotification: Building Infiltrated.
 	Targetable@Infiltration:
         TargetTypes: SpyInfiltrate2
+
+GDIHQ:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+    Inherits@EMPMechanic: ^EMPApplicableStructure    
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 120,-598,0
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Communications Center
+        RequiresCondition: !eyeup.on
+    Tooltip@upgrade:
+        Name: Advanced Communications Center
+        RequiresCondition: eyeup.on
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+    ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@upgrade:
+		Prerequisite: eye
+        RequiresCondition: eyeup.on
+	ProvidesPrerequisite@limiting:
+		Prerequisite: eyeup
+		RequiresCondition: eyeup.on
+	Buildable:
+    	BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+		Prerequisites: anyproc, vehicleproduction, ~techlevel.3
+		Queue: Building.BossGDI
+		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.\nCan be upgraded to provide Radar and 'Ion Cannon' super-weapon.
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 2048, 1706, 0, 384
+		DecorationBounds: 2048, 2261, 0, -170
+	WithSpriteBody:
+		PauseOnCondition: lowpower || emp-affected-structure
+	Health:
+		HP: 90000
+	RevealsShroud:
+		Range: 10c0
+	WithBuildingBib:
+	ProvidesRadar:
+		RequiresCondition: !jammed && !lowpower && !build-incomplete && !emp-affected-structure
+	RenderDetectionCircle:
+	DetectCloaked:
+        DetectionTypes: Stealth, AirStealth, Underground, Underwater
+		Range: 5c0
+		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+	Power:
+		Amount: -50
+        RequiresCondition: !build-incomplete && !emp-affected-structure
+	Power@upgrade:
+		RequiresCondition: eyeup.on && !build-incomplete && !emp-affected-structure
+		Amount: -100
+	RenderSprites:
+		Image: gdihq
+	IonCannonPower@IonCannon:
+		PauseOnCondition: lowpower || jammed || emp-affected-structure
+        RequiresCondition: eyeup.on
+		Prerequisites: ~global-superweapons
+		OrderName: IonCannon
+		Icon: ioncannon
+		Cursor: ioncannon
+		ChargeInterval: 10500
+		Name: Ion Cannon
+		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		BeginChargeSpeechNotification: IonCannonCharging
+        BeginChargeTextNotification: Ion cannon charging.
+		EndChargeSpeechNotification: IonCannonReady
+        EndChargeTextNotification: Ion cannon ready.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OnFireSound: ion1.aud
+		DisplayRadarPing: True
+		CameraActor: camera.small
+		SupportPowerPaletteOrder: 1
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+	SupportPowerChargeBar:
+	SpawnActorPower@RadarScan:
+		PauseOnCondition: lowpower || jammed || emp-affected-structure
+        RequiresCondition: !owner.is.gdia && !eyeup.on
+		OrderName: RadarScan
+		Actor: camera.scan
+		LifeTime: 300
+		ChargeInterval: 3750
+		Icon: radarscan
+		Name: Radar Scan 
+		Description: Reveals an area of the map.   \nDetects cloaked units there.\n\nLasts for 12 seconds.
+		StartFullyCharged: false
+		EndChargeSpeechNotification: RadarScanReady
+        EndChargeTextNotification: Radar Scan ready.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		Cursor: chrono-target
+		SupportPowerPaletteOrder: 4
+		EffectImage: sonarbox
+		EffectSequence: scanping
+		EffectPalette: effect
+		DeploySound: reveal1.aud
+	AirstrikePower@ReconDrone:
+        PauseOnCondition: lowpower || jammed || emp-affected-structure
+        RequiresCondition: owner.is.gdia && !eyeup.on
+		OrderName: ReconDrone
+		Prerequisites: anyafld
+		Icon: reconuav
+		ChargeInterval: 4500
+		Name: Recon Drone  
+		Description: Reveals a strip of the map.\nDetects cloaked units in sight.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ReconDroneAvailable
+		SelectTargetTextNotification: Select target.
+		EndChargeTextNotification: Recon Drone available.
+		UnitType: uav
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: uavbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 5
+    GrantConditionOnFaction@gdia:
+        Condition: owner.is.gdia
+        Factions: gdia
+        ResetOnOwnerChange: true
+	ActorPreviewPlaceBuildingPreview:
+		Animated: false
+	ExternalCondition@JAMMED:
+		Condition: jammed
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    #   && !eyeup.on
+    #   crashes with error message:
+    #   "Type dictionary containts multiple instances of type"
+    #   Sellable@Upgrade:
+    #   RefundPercent: 90
+    #   SellSounds: cashturn.aud
+    #   Notification: BuildingSold
+    #   TextNotification: Structure sold.
+    #   RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure && eyeup.on
+    WithColoredOverlay@IDISABLE:
+        RequiresCondition: lowpower && !emp-affected-structure
+	ProvidesPrerequisite@WIRELESS:
+		Prerequisite: activeradar
+		RequiresCondition: !jammed && !lowpower && !build-incomplete
+    WithIdleOverlay@1:
+        Palette: effect
+        Sequence: white-light
+        Offset: 640,300,0
+        PauseOnCondition: lowpower
+        RequiresCondition: !build-incomplete && !eyeup.on
+	Capturable:
+		RequiresCondition: !build-incomplete && !eyeup.on
+		Types: building-player, building-player-2
+	Capturable@upgrade:
+		RequiresCondition: !build-incomplete && eyeup.on
+		Types: building-player, building-player-4
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled && !eyeup.on
+	WithDeathAnimation@upgrade:
+		DeathSequence: dead3
+		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled && eyeup.on
+	SpawnActorOnDeath@HUSK:
+		Actor: GDIHQ.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !eyeup.on && !being-demolished
+	SpawnActorOnDeath@HUSK2:
+		Actor: GDIHQ2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && eyeup.on && !being-demolished
+	ProvidesPrerequisite@upgradeable:
+		RequiresCondition: !eyeup.on
+		Prerequisite: gdihq.socket
+	Pluggable@upgrade:
+		Offset: 1,1
+		Conditions:
+			eyeup: eyeup.on
+		Requirements:
+			eyeup: !build-incomplete && !eyeup.on
+		EditorOptions:
+			eyeup: Advanced Uplink
+    WithIdleOverlay@normal:
+        Sequence: idle2
+        RequiresCondition: !build-incomplete && !eyeup.on
+    WithSpriteBody:
+        Sequence: idle
+    WithSpriteBody@upgrade:
+        Name: body2
+        StartSequence: upgrade
+        Sequence: idle3
+        RequiresCondition: !build-incomplete && eyeup.on
+	InfiltrateForExploration:
+		Types: SpyInfiltrate2
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate3
+        InfiltratedNotification: BuildingInfiltrated
+		InfiltratedTextNotification: Building Infiltrated.
+	Targetable@Infiltration:
+        TargetTypes: SpyInfiltrate2
+        RequiresCondition: !eyeup.on
+	Targetable@InfiltrationUpgrade:
+        TargetTypes: SpyInfiltrate3
+        RequiresCondition: eyeup.on
+
+GDIHQ.SOCKET:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Communications Center
+
+EYEUP:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Advanced Uplink
+	Building:
+		Footprint: _
+		Dimensions: 1,1
+		LocalCenterOffset: -512,-512,0
+	Buildable:
+        BuildDuration: 1000
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 14
+        Prerequisites: miss, gdihq.socket, ~techlevel.7
+        Queue: Building.BossGDI
+		BuildLimit: 1
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon\nEnables 'Air Strike' at Technology Center.\nPlace this on a Communications Center.
+	Plug:
+		Type: eyeup
+	Power:
+		Amount: -100
 
 MISS:
 	Inherits: ^BaseBuilding
@@ -2370,9 +2628,9 @@ EYE:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
 		Prerequisites: miss, ~techlevel.7
-		Queue: Building.GDI, Building.BossGDI
+		Queue: Building.GDI
 		BuildLimit: 1
-		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Air Strike' at Technology Center.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3

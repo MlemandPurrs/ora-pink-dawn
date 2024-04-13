@@ -93,6 +93,7 @@
 #   92. TurretRailgun
 #   93. VulcanAA
 #   94. VulcanAPC
+#   95. ExoChainGun
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -4373,6 +4374,51 @@ VulcanAPC:
 	Report: gun5.aud
 	Projectile: Bullet
 		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2500
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+        InvalidTargets: Tree, Wall
+        DamageTypes: Prone50Percent, TriggerProne, RippedApartDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: false
+        Inaccuracy: 213
+        ValidTargets: Ground, Air, Helicopter
+        InvalidTargets: Water
+	Warhead@3Eff: CreateEffect
+		Explosions: water_piffs
+        Inaccuracy: 213
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+	Warhead@5Eff: CreateEffect
+		Explosions: piffs
+        ImpactActors: true
+        Inaccuracy: 213
+		ValidTargets: Ship, WaterStructure
+
+#   95. Exosuit Trooper's dakka
+ExoChainGun:
+	ReloadDelay: 35
+	Burst: 2
+	BurstDelays: 0
+	Range: 4c768
+	MinRange: 0c768
+    InvalidTargets: Tree, Wall
+    Report: gun5.aud
+	#   sound too silent, needs fix
+    #   StartBurstReport: tsgun4.aud
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 2500
