@@ -137,6 +137,8 @@ GUN:
 
 GUN2:
     Inherits: GUN
+	Valued:
+		Cost: 600
 	Tooltip:
 		Name: Heavy Turret
 	Buildable:

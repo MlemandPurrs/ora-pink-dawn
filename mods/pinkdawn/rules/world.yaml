@@ -223,7 +223,7 @@
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\nDescription:\nOnly ever found to be affiliated, Terror Cells that are\nloyalist to the Nod cause are known to be fanatically\nzealous, radical, and explosively dangerous.\n\nFaction Variations:\n    - Thief are cloaked when not moving\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launchers
+		Description: Nod: Terror Cell\nDescription:\nOnly ever found to be affiliated, Terror Cells that are\nloyalist to the Nod cause are known to be fanatically\nzealous, radical, and explosively dangerous.\n\nFaction Variations:\n    - Vehicle deliveries are cloaked\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launchers
         Selectable: true
 	Faction@bossnod:
 		Name: Black Hand

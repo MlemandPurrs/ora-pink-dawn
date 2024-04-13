@@ -23,6 +23,19 @@ C17:
 	-MapEditorData:
 	GpsDot:
 		String: BigPlane
+	GrantConditionOnFaction@nodc:
+		Condition: owner.is.nodc
+		Factions: nodc
+		ResetOnOwnerChange: False
+	Cloak:
+        CloakType: AirStealth
+        DetectionTypes: AirStealth
+		InitialDelay: 0
+		CloakDelay: 42
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Dock, Unload, Damage, Heal
+		RequiresCondition: owner.is.nodc
 
 C17.Crate:
     Inherits: C17

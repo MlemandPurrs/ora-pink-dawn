@@ -1602,7 +1602,7 @@ THF:
 		BuildPaletteOrder: 9
 		Prerequisites: anyfix, ~infantry.nod, ~!player.noda, ~!player.bossnod, ~techlevel.5
 		Queue: Infantry
-		Description: Steals credits of enemies.\nHijacks enemy vehicles,\nhelicopters when landed,\nbeaching naval transports.\n\nUnarmed.
+		Description: Steals credits of enemies.\nHijacks enemy vehicles,\nhelicopters when landed,\nbeaching naval transports.\nTurns invisible when not moving.\n\nUnarmed.
 	Mobile:
 		Speed: 50
 		Voice: Move
@@ -1630,29 +1630,15 @@ THF:
 	Cloak:
         CloakType: Stealth
         DetectionTypes: Stealth
-		InitialDelay: 240
+		InitialDelay: 120
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Dock, Demolish, Move
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakSound: appear1.aud
 		PauseOnCondition: cloak-force-disabled
-        RequiresCondition: owner.is.nodc
-	GrantConditionOnFaction@nodc:
-		Condition: owner.is.nodc
-		Factions: nodc
-		ResetOnOwnerChange: False
-	Cloak@CloakingField:
-        CloakType: Stealth
-        DetectionTypes: Stealth
-        InitialDelay: 90
-		CloakDelay: 90
-		Palette: cloaktransparent
-		IsPlayerPalette: true
-        UncloakSound: cloak5.aud
-		UncloakOn: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal
-		PauseOnCondition: cloak-force-disabled
-		RequiresCondition: cloakfield-on && !owner.is.nodc
+    -ExternalCondition@CloakingField:
+	-Cloak@CloakingField:
 	Passenger:
         CustomPipType: gray
 		Voice: Move

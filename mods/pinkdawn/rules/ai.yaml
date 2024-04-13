@@ -476,11 +476,13 @@ Player:
             3fld: 3
 			fix: 1
 			hq: 1
+            gdihq: 2
 			eye: 1
 			miss: 1
             h2sp: 1
             atwr: 10
             rtur: 1
+            eyeup: 1
 		BuildingFractions:
 			proc: 10
             proc.clone: 10
@@ -493,6 +495,7 @@ Player:
             3fld: 3
 			fix: 1
 			hq: 5
+            gdihq: 5
 			eye: 1
             miss: 1
             h2sp: 1
@@ -501,6 +504,7 @@ Player:
 			atwr: 7
             rtur: 1
             powrup: 1
+            eyeup: 1
 	BaseBuilderBotModule@Nod:
 		RequiresCondition: enable-ai-player && ai.nod
 		BuildingQueues: Building.Nod, Building.BossNod
@@ -691,7 +695,7 @@ Player:
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, gdinuke, proc, proc.clone, silo, silo.clone, pyle, pyl2, weap, hpad, 3fld, fix, hq, eye, miss, gtwr, atwr, gun, rtur, mcv, harv
+		ProtectionTypes: fact, nuke, nuk2, gdinuke, proc, proc.clone, silo, silo.clone, pyle, pyl2, weap, hpad, 3fld, fix, hq, eye, gdihq, miss, gtwr, atwr, gun, rtur, mcv, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirGDI:
@@ -699,7 +703,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -712,7 +716,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -851,6 +855,7 @@ Player:
             rmbo: 1
             rmb2: 1
             jet: 5
+            exo: 5
 			harv: 10
 			jeep: 15
             apc: 10
@@ -872,6 +877,7 @@ Player:
             rmbo: 1
             rmb2: 2
             jet: 1
+            exo: 2
             e6: 1
             e9: 3
             medi: 2

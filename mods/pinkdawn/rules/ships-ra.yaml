@@ -64,7 +64,7 @@ LST2:
 		Bounds: 2048, 2048
 		DecorationBounds: 1536, 1536
 	WithLandingCraftAnimation:
-		OpenTerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
+		OpenTerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach, Shallow
 	Cargo:
 		Types: Infantry, Vehicle, Vehicle2
 		MaxWeight: 10

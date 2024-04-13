@@ -34,7 +34,7 @@ nuke.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.
+		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.\n\nThe Future Corps of GDI are capable of modularly upgrading their Power Plants to provide more power, sparing construction costs and build time required to erect a seperate structure.
         Category: GDI Buildings
 		Order: 1
 	RenderSprites:
@@ -107,6 +107,19 @@ weap.info:
         Palette: gdi
     -MapEditorData:
 
+mwfb.info:
+    Inherits: MWFB
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This is the deployed form of the Mobile Weapons Factory. As a structure its functionally identical to a regular Weapons Factory.
+        Category: GDI Buildings
+		Order: 7
+	RenderSprites:
+		Image: mwfb
+        Palette: gdi
+    -MapEditorData:
+
 fix.info:
     Inherits: FIX
     Buildable:
@@ -138,7 +151,7 @@ hq.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.\n\nThe Future Corps of the GDI are capable of modularly upgrading their Communication Centers to bestow advanced capabilities upon them.
         Category: GDI Buildings
 		Order: 12
 	RenderSprites:
@@ -588,6 +601,19 @@ e1.info:
         Palette: gdi
     -MapEditorData:
 
+e7.info:
+    Inherits: E7
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A combination of the Soldier and Grenadier roles into one unit, this infantry is capable of engaging targets using their machinegun and grenades simultaneously.
+        Category: GDI Infantry
+		Order: 1
+	RenderSprites:
+		Image: e7
+        Palette: gdi
+    -MapEditorData:
+
 e2.info:
     Inherits: E2
     Buildable:
@@ -595,11 +621,21 @@ e2.info:
 	Encyclopedia:
         Description: The Grenadier is a very useful all-purpose infantry unit. This troop is faster, and hits harder than regular infantry. The grenade this unit throws can not only go over walls, but can destroy them as well. They explode good, too !!
         Category: GDI Infantry
-		Order: 1
+		Order: 2
 	RenderSprites:
 		Image: e2
         Palette: gdi
     -MapEditorData:
+
+gdi.medi.info:
+    Inherits: medi.info
+	Encyclopedia:
+        Description: The medic can only be trained by the Future Corps branch of the GDI.\n\nAny wounded infantry near the Medic will be getting healed back to full health. The medic can slowly regenerate lost health by itself.\nMedics working in teams make excellent additions to any infantry force.
+        Category: GDI Infantry
+		Order: 3
+	RenderSprites:
+		Image: medi
+        Palette: gdi
 
 e3.info:
     Inherits: E3
@@ -608,7 +644,7 @@ e3.info:
 	Encyclopedia:
         Description: These infantry units are slower and easier to kill than other infantry, but can tear through armor faster than any other infantry unit. Their major advantage is the ability to attack airborne units. Most effective as support unit in diverse groups.
         Category: GDI Infantry
-		Order: 2
+		Order: 4
 	RenderSprites:
 		Image: e3
         Palette: gdi
@@ -621,7 +657,7 @@ e9.info:
 	Encyclopedia:
         Description: Capable of rapidly damaging structures, these infantry make up for their lack of speed with a powerful punch. In addition to dealing with targeted structures, their shells are also effective against infantry attackers.
         Category: GDI Infantry
-		Order: 4
+		Order: 5
 	RenderSprites:
 		Image: e9
         Palette: gdi
@@ -634,7 +670,7 @@ e6.info:
 	Encyclopedia:
         Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.\nAnother capability of the Engineers is, due to their expert knowledge of structural integrity, to repair damaged structures at what appears to be an instant by simply entering them.\nEngineers are also capable of repairing destroyed bridges, or restoring husks of structures to operational capacity.\n\nThe Defense Corps branch of the Allies enjoys cheaper deployment costs of the engineers, perhaps due to extensive support of the best educational facilities in the free European land.
         Category: GDI Infantry
-		Order: 5
+		Order: 6
 	RenderSprites:
 		Image: e6
         Palette: gdi
@@ -646,9 +682,9 @@ rmbo.info:
         Queue: Nothing
         Prerequisites: miss
 	Encyclopedia:
-        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.\n\nThe Special Operations branch of the GDI forces are capable of deploying the Commando at a lowered cost due to a long history of being the architects of success for the Elite Forces Unit.
+        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.\n\nThe Special Operations branch of the GDI forces are capable of deploying the Commando at a lowered cost due to a long history of being the architects of success for the Elite Forces Unit.\n\nThe Future Corps among the GDI are capable of deploying two Commandoes at once, instead of being limited to only one.
         Category: GDI Infantry
-		Order: 6
+		Order: 7
 	RenderSprites:
 		Image: rmbo
         Palette: gdi
@@ -661,9 +697,22 @@ jet.info:
 	Encyclopedia:
         Description: Recruited from among the airborne divisions of GDI's infantry, these soldiers are capable of flight allowing them to reach targets normally inaccesible to standard infantry. Armed with a light-weight machinegun and equipped with a package of detectors, these flying soldiers can perform quick surgical hits on poorly defended targets, and reveal cloaked units over the distance that would have remain hidden to standard infantry until they have had came up close enough to see.
         Category: GDI Infantry
-		Order: 7
+		Order: 8
 	RenderSprites:
 		Image: jet
+        Palette: gdi
+    -MapEditorData:
+
+exo.info:
+    Inherits: EXO
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The first version of a mass-producible powered armor suit, this development poses a revolution for the future of mechanized warfare. The Exosuit is equipped with a pair of chainguns for weaponry, an array of scanner packages that make it capable of detecting cloaked units within range, and is capable of crossing Tiberium without the occupant user coming to harm thanks to its thick, isolating armor plating.\nThe exosuit is capable of boarding transports suitable for Infantry, although its sheer size means it will take up all the occupancy while inside a transport.
+        Category: GDI Infantry
+		Order: 9
+	RenderSprites:
+		Image: exo
         Palette: gdi
     -MapEditorData:
 
@@ -794,7 +843,7 @@ thf.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Any Thief that enters an enemy Refinery will steal half the credits in that structure. Also they can hijack enemy vehicles, helicopters that have landed on ground, or naval transports that have came ashore, allowing you to comandeer the enemy arsenal to your purposes.
+        Description: Any Thief that enters an enemy Refinery will steal half the credits in that structure. Also they can hijack enemy vehicles, helicopters that have landed on ground, or naval transports that have came ashore, allowing you to comandeer the enemy arsenal to your purposes.\nThieves are capable of perfectly exploiting their surroundings to appear invisible to the untrained eye, becoming effectively hiding in plain sight while not moving.
         Category: Nod Infantry
 		Order: 8
 	RenderSprites:
@@ -866,6 +915,19 @@ jeep.info:
 		Order: 3
 	RenderSprites:
 		Image: jeep
+        Palette: gdi
+    -MapEditorData:
+
+jsam.info:
+    Inherits: JSAM
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A light-weight, fast moving vehicle that is capable of functioning as a Mobile SAM site. Their rockets are threat to any Aircraft, as they are capable of targeting even fast moving enemy Air planes. Those require to be protected however, as the weight of the mounted system left no room on the vehicle for even the most meagre of a self-defense armament, rendering it completely helpless against ground units.
+        Category: GDI Vehicles
+		Order: 4
+	RenderSprites:
+		Image: jsam
         Palette: gdi
     -MapEditorData:
 
@@ -970,6 +1032,19 @@ msam.info:
 		Order: 12
 	RenderSprites:
 		Image: msam
+        Palette: gdi
+    -MapEditorData:
+
+mwf.info:
+    Inherits: MWF
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Mobile Weapons factory is, as its naming implies, a portable, light-weight version of the standard Weapons Factory. It can be ordered to deployed anywhere suitable to remotely produce Vehicles.\nWhile travelling the unit is capable of crossing open bodies of water by itself, being amphibian. 
+        Category: GDI Vehicles
+		Order: 13
+	RenderSprites:
+		Image: mwf
         Palette: gdi
     -MapEditorData:
 
@@ -1358,7 +1433,7 @@ sfig.info:
 c17.info:
     Inherits: C17
 	Encyclopedia:
-        Description: This carrier ships purchased units to the Brotherhood of Nod via the Airfield. Any units ordered will be shipped in as soon as possible.
+        Description: This carrier ships purchased units to the Brotherhood of Nod via the Airfield. Any units ordered will be shipped in as soon as possible.\n\nThe delivery planes outgoing to nod affiliated Terror Cells are equipped with cloaking technology, perhaps in an effort to conceal their cooperative ties.
         Category: Nod Aircraft
 		Order: 2
 	RenderSprites:
