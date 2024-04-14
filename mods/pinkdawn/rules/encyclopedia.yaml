@@ -682,7 +682,7 @@ rmbo.info:
         Queue: Nothing
         Prerequisites: miss
 	Encyclopedia:
-        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.\n\nThe Special Operations branch of the GDI forces are capable of deploying the Commando at a lowered cost due to a long history of being the architects of success for the Elite Forces Unit.\n\nThe Future Corps among the GDI are capable of deploying two Commandoes at once, instead of being limited to only one.
+        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.\n\nThe Special Operations branch of the GDI forces are capable of deploying the Commando at a lowered cost due to a long history of being the architects of success for the Elite Forces Unit.\n\nThe Future Corps among the GDI are capable of deploying two Commandos at once, instead of being limited to only one.
         Category: GDI Infantry
 		Order: 7
 	RenderSprites:

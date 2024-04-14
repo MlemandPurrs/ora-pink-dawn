@@ -1395,7 +1395,7 @@ FTNK:
         BuildDuration: 1350
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyfix, ~vehicle.nod, ~!player.noda, ~!player.bossnod, ~techlevel.4
+		Prerequisites: anyfix, ~vehicle.nod, ~!player.noda, ~!player.nodc, ~!player.bossnod, ~techlevel.4
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:

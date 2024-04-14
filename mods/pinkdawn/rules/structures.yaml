@@ -2535,7 +2535,7 @@ TMPL:
 		Cursor: nuke
 		ChargeInterval: 13500
 		Name: Dirty Nuclear Strike
-		Description: Launch a tactical nuclear warhead,\nenhanced with Tiberium.\nApplies heavy damage over a large area.\nIt may mutate Infantry, seeds Tiberium.
+		Description: Launch a tactical nuclear warhead,\nenhanced with Tiberium.\nApplies heavy damage over a large area.\nIt can mutate Infantry, seeds Tiberium.
 		EndChargeSpeechNotification: NuclearWeaponAvailable
         EndChargeTextNotification: Nuclear weapon available.
 		SelectTargetSpeechNotification: SelectTarget
