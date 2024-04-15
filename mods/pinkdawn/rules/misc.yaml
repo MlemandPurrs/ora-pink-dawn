@@ -332,8 +332,9 @@ CAMERA.repair:
 		Name: ( mechanic of field repairs )
 	AlwaysVisible:
 	WithSpriteBody:
-	RenderSpritesEditorOnly:
-        Image: camera
+        Sequence: repair
+	RenderSprites:
+        Image: select
 	BodyOrientation:
 		QuantizedFacings: 1
 	Immobile:

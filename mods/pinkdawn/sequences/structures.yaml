@@ -1047,6 +1047,7 @@ gdihq:
 		Length: *
 		Tick: 80
 	idle2: hq
+        Start: 0
 		Length: 16
 		Tick: 160
 	damaged-idle2: hq
@@ -1063,6 +1064,7 @@ gdihq:
 		UseTilesetExtension: true
 		Length: *
 	idle3: eye
+        Start: 0
 		Length: 16
 		Tick: 160
 	damaged-idle3: eye

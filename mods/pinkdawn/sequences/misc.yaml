@@ -207,8 +207,11 @@ beacon:
 select:
 	repair:
 		Start: 2
+        Length: 1
+        ZOffset: 2047
 	repair-small: select
 		Start: 3
+        Length: 1
 
 allyrepair:
 	repair:

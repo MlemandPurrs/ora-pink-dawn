@@ -2265,14 +2265,23 @@ GDIHQ:
 			eyeup: Advanced Uplink
     WithIdleOverlay@normal:
         Sequence: idle2
+        PauseOnCondition: lowpower
         RequiresCondition: !build-incomplete && !eyeup.on
     WithSpriteBody:
         Sequence: idle
-    WithSpriteBody@upgrade:
+    WithSpriteBody@upgrade: 
         Name: body2
         StartSequence: upgrade
         Sequence: idle3
         RequiresCondition: !build-incomplete && eyeup.on
+    #   obscures the StartSequence of the second WSB,
+    #   with StartSequence enabled at IdleOverlay itself 
+    #   then the make anim does not appear at all.
+    #   WithIdleOverlay@upgrade:
+    #   Sequence: idle3
+    #   StartSequence: upgrade
+    #   PauseOnCondition: lowpower
+    #   RequiresCondition: !build-incomplete && eyeup.on
 	InfiltrateForExploration:
 		Types: SpyInfiltrate2
         InfiltratedNotification: BuildingInfiltrated
