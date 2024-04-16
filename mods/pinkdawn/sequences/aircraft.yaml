@@ -226,3 +226,13 @@ halo:
 		Start: 4
 		Length: 8
 	icon: haloicon
+
+pnix:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	move:
+		Start: 32
+		Facings: 32
+	icon: pnixicon

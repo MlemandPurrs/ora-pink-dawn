@@ -663,3 +663,38 @@ HALO.Husk2:
 		Categories: Aircraft husk
 	RenderSprites:
 		Image: halo
+
+PNIX.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Phoenix (Falling)
+	Health:
+		HP: 12500
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 14
+		Speed: 150
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+	RenderSprites:
+		Image: pnix
+
+PNIX.Husk2:
+    Inherits: ^Husk
+	Tooltip:
+		Name: Phoenix (Destroyed)
+	Health:
+		HP: 12500
+	Armor:
+		Type: Light
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 3
+	TransformOnCapture:
+		IntoActor: pnix
+	MapEditorData:
+		Categories: Aircraft husk
+	RenderSprites:
+		Image: pnix

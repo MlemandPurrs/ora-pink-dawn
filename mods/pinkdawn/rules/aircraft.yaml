@@ -1855,6 +1855,8 @@ OCAR:
 		MoveSequence: move
     RenderSprites:
         Image: ocar
+	MapEditorData:
+		Categories: Aircraft
 
 MH60:
 	Inherits: ^Helicopter
@@ -2187,3 +2189,106 @@ THWK:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
 	-MapEditorData:
+
+PNIX:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+		DecorationBounds: 1194, 1194
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Phoenix
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 2800
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 9
+		BuildLimit: 1
+		Prerequisites: hpad, miss, ~aircraft.gdi, ~player.bossgdi, ~techlevel.7
+		Queue: Aircraft
+		Description: Maximum one can be built.\n\nExperimental gunship with lasers.\nReloads ammo on air by itself.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 150
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 25000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c512
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
+	Armament@PRIMARY:
+		Weapon: OrcaLaser
+		LocalOffset: 415,-211,-131, 415,211,-131
+		PauseOnCondition: !ammo || emp-crate-collected
+	WithMuzzleOverlay:
+	AutoTarget:
+		InitialStanceAI: HoldFire
+		ScanRadius: 5
+	AttackAircraft:
+		Armaments: primary, secondary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+	AmmoPool:
+        Name: primary
+		Armaments: primary, secondary
+		Ammo: 6
+		ReloadDelay: 90
+		ReloadCount: 2
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+        PipCount: 3
+		FullSequence: pip-blue
+        AmmoPools: primary
+		RequiresSelection: true
+	WithMoveAnimation:
+		MoveSequence: move
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        ResetOnFire: true
+        AmmoPool: primary
+		Delay: 180
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
+	ReloadArmamentsBar:
+        Armaments: primary
+        Color: FFFF00
+	RenderRangeCircle:

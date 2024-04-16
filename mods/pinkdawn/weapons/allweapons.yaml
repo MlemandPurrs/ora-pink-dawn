@@ -94,6 +94,7 @@
 #   93. VulcanAA
 #   94. VulcanAPC
 #   95. ExoChainGun
+#   96. OrcaLaser
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -4449,3 +4450,40 @@ ExoChainGun:
         ImpactActors: true
         Inaccuracy: 213
 		ValidTargets: Ship, WaterStructure
+
+#   96. Phoenix Laser
+OrcaLaser:
+	ReloadDelay: 90
+    Burst: 2
+    BurstDelays: 0
+	Range: 6c512
+	Report: xolaser1.aud
+    ValidTargets: Ground, Water, Helicopter
+	Projectile: LaserZap
+		Width: 56
+		HitAnim: laserfire
+		ZOffset: 2047
+		Color: 5050FC80
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: 0000A880
+		Inaccuracy: 128
+		InaccuracyType: Maximum
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 10000
+		Versus:
+            None: 100
+            Light: 100
+            Medium: 100
+            Heavy: 100
+            Concrete: 100
+            Wood: 100
+            Aluminium: 100
+            Steel: 100            
+        ValidTargets: Ground, Tree, Helicopter
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath, ObeliskLaser
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+54FCFC

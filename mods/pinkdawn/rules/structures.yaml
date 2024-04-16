@@ -904,7 +904,7 @@ SILO:
 	CashTrickler:
 		Interval: 300
 		InitialDelay: 300
-		Amount: 200
+		Amount: 150
 		UseResourceStorage: true
 		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
         RequiresCondition: secondaryincome-enabled

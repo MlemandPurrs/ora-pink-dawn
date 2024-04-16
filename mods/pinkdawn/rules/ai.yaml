@@ -690,7 +690,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 6
         SquadSizeRandomBonus: 6
-        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
+        ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, pnix, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -716,7 +716,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, pnix, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
 		AirUnitsTypes: orca, f18, a10b
         NavalUnitsTypes: pt2, dd3
@@ -873,6 +873,7 @@ Player:
             a10b: 1
             pt2: 5
             dd3: 10
+            pnix: 1
 		UnitLimits:
             rmbo: 1
             rmb2: 2
@@ -897,6 +898,7 @@ Player:
             a10b: 1
             pt2: 4
             dd3: 2
+            pnix: 1
  	UnitBuilderBotModule@Nod:
 		RequiresCondition: enable-ai-player && ai.nod
 		UnitQueues: Vehicle, Infantry, Aircraft, Navy   

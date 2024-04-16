@@ -1317,7 +1317,7 @@ orca.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.\n\nThe Air Force branch of the GDI forces are capable of manufacturing the Orca VTOL at a considerable discount, due to their Engineers having the perfect knowhow of aircraft optimization.
+        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. Orcas are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.\n\nThe Air Force branch of the GDI forces are capable of manufacturing the Orca VTOL at a considerable discount, due to their Engineers having the perfect knowhow of aircraft optimization.
         Category: GDI Aircraft
 		Order: 1
 	RenderSprites:
@@ -1337,6 +1337,7 @@ ocar.info:
 	RenderSprites:
 		Image: ocar
         Palette: gdi
+    -MapEditorData:
 
 mh60.info:
     Inherits: MH60
@@ -1350,13 +1351,27 @@ mh60.info:
 	RenderSprites:
 		Image: mh60
         Palette: gdi
+    -MapEditorData:
+
+pnix.info:
+    Inherits: PNIX
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The culminative result of the top-secret PATSUX program, this laser-equipped VTOL gunship operates on the same principles as the Orca. Only ever produced on demand in limited quantity for the most elite forces of GDI, this unit when used can bring certain annihilation to enemies of the free world.\n\nThe Phoenix can reload ammo on air by itself, not requiring the need to resupply.
+        Category: GDI Aircraft
+		Order: 4
+	RenderSprites:
+		Image: pnix
+        Palette: gdi
+    -MapEditorData:
 
 a10.info:
     Inherits: A10
 	Encyclopedia:
         Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
         Category: GDI Aircraft
-		Order: 4
+		Order: 5
 	RenderSprites:
 		Image: a10
         Palette: gdi
@@ -1369,7 +1384,7 @@ f18.info:
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: GDI Aircraft
-		Order: 5
+		Order: 6
 	RenderSprites:
 		Image: f18
         Palette: gdi
@@ -1379,7 +1394,7 @@ uav.info:
 	Encyclopedia:
         Description: This unmanned aerial vehicle travels at an reasonable speed, providing vision and stealth detection in the vicinity of the craft as it passes by, all the while travelling in the given direction.
         Category: GDI Aircraft
-		Order: 6
+		Order: 7
 	RenderSprites:
 		Image: uav
         Palette: gdi
