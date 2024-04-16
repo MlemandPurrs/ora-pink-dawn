@@ -2164,17 +2164,18 @@ TTNK:
 		RequiresCondition: cloakfield-on
 	Power:
 		Amount: -20
-        RequiresCondition: !emp-crate-collected && !owner.is.russia
+        RequiresCondition: !emp-crate-collected && !owner.is.sovieta
 	GrantConditionOnFaction@sovieta:
-		Condition: owner.is.russia
+		Condition: owner.is.sovieta
 		Factions: sovieta
 		ResetOnOwnerChange: True
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+        RequiresCondition: !owner.is.sovieta
 	WithColoredOverlay@LOWPOWER:
 		Color: 000000B4
-		RequiresCondition: lowpower
+		RequiresCondition: lowpower && !owner.is.sovieta
 	RevealOnFire:
 		ArmamentNames: primary
         RevealForRelationships: Ally, Neutral, Enemy
