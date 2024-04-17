@@ -199,12 +199,8 @@ ltnk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: ltnk-tur2
-        Start: 0
-		Facings: 32
-		UseClassicFacings: True
-	turret2: ltnk-tur
-        Start: 0
+	turret:
+        Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: cannmuzz
@@ -217,8 +213,8 @@ ltnk.husk:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: ltnk-tur2
-		Start: 0
+	turret: ltnk
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
@@ -230,10 +226,6 @@ mtnk:
 		UseClassicFacings: True
 	turret:
 		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-	turret2:
-		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: cannmuzz

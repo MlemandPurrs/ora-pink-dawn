@@ -1021,6 +1021,7 @@
 	DetectCloaked:
 		DetectionTypes: Underwater
 		Range: 3c768
+        RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
 	RevealsShroud:
 		Range: 2c512

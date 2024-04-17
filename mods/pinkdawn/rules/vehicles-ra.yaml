@@ -456,6 +456,8 @@ DTRK:
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
         PauseOnCondition: emp-crate-collected
+        DeployCursor: deploy-orange
+        DeployBlockedCursor: deploy-blocked-orange
 	KillsSelf:
 		RequiresCondition: triggered
 	Chronoshiftable:
@@ -1524,6 +1526,11 @@ ATNK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected && rank-heroic
+	RenderDetectionCircle:
 
 4TNF:
 	Inherits: ^TrackedVehicle
@@ -1595,8 +1602,8 @@ ATNK:
 		DamageCooldown: 150
         RequiresCondition: !rank-heroic && !emp-crate-collected && !in-transport && !oncarryall
 	Explodes:
-		Weapon: UnitExplodeBig
-		EmptyWeapon: UnitExplodeBig
+		Weapon: FlametankExplode
+		EmptyWeapon: FlametankExplode
 	Selectable:
 		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
@@ -1629,6 +1636,11 @@ ATNK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected && rank-heroic
+	RenderDetectionCircle:
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -1667,13 +1679,21 @@ ATNK:
 	RevealsShroud@GAPGenerator:
 		Range: 2c512
         RevealGeneratedShroud: True
+	RejectsOrders:
+		RequiresCondition: emp-crate-collected || !wireless
+    RevealsShroudMultiplier@EMPulse:
+        Modifier: 0
+        RequiresCondition: emp-crate-collected || !wireless
 	DetectCloaked:
         DetectionTypes: Stealth, Underground
 		Range: 3c768
-		RequiresCondition: !emp-crate-collected && !wireless
+		RequiresCondition: !emp-crate-collected
     DetectCloakedMultiplier@GAPGenerator:
         Modifier: 50
         RequiresCondition: within-gap-radius
+    DetectCloakedMultiplier@NoSignal:
+        Modifier: 0
+        RequiresCondition: !wireless
 	ExternalCondition@GAPGenerator:
 		Condition: within-gap-radius
 	RenderDetectionCircle:
@@ -1682,7 +1702,7 @@ ATNK:
 		TurnSpeed: 12
 	Armament@PRIMARY:
 		Weapon: BehemothCannon
-		LocalOffset: 900,180,340, 900,-180,340
+		LocalOffset: 908,180,340, 908,-180,340
 		Recoil: 170
 		RecoilRecovery: 42
 		MuzzleSequence: muzzle
@@ -1841,6 +1861,7 @@ QTNK:
         ThumpInterval: 12
         DriverActor: dummy.qtnk
         DeployedCondition: deployed
+        DeployCursor: deploy-orange
 	WithRangeCircle:
 		Color: FFFF0080
 		Range: 7c0
@@ -2099,6 +2120,8 @@ TTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	Selectable:
+		DecorationBounds: 1194, 1194
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -2128,6 +2151,9 @@ TTNK:
 	RevealsShroud@GAPGenerator:
 		Range: 2c0
         RevealGeneratedShroud: True
+    RevealsShroudMultiplier@EMPulse:
+        Modifier: 0
+        RequiresCondition: emp-crate-collected || lowpower
 	Armament:
 		Weapon: TeslaTankZap
 		LocalOffset: 0,0,213
@@ -2149,6 +2175,8 @@ TTNK:
     SpeedMultiplier@DONTTURN:
         Modifier: 0
         RequiresCondition: dont-move
+	RejectsOrders:
+		RequiresCondition: emp-crate-collected || lowpower
     ExternalCondition@CloakingField:
         Condition: cloakfield-on
 	Cloak@CloakingField:

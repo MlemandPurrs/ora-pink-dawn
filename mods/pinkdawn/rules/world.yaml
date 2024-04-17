@@ -223,7 +223,7 @@
 	Faction@nodc:
 		Name: Terror Cell
 		InternalName: nodc
-		Description: Nod: Terror Cell\nDescription:\nOnly ever found to be affiliated, Terror Cells that are\nloyalist to the Nod cause are known to be fanatically\nzealous, radical, and explosively dangerous.\n\nFaction Variations:\n    - Vehicle deliveries are cloaked\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launchers
+		Description: Nod: Terror Cell\nDescription:\nOnly ever found to be affiliated, Terror Cells that are\nloyalist to the Nod cause are known to be fanatically\nzealous, radical, and explosively dangerous.\n\nFaction Variations:\n    - Vehicle deliveries are cloaked\n\nDiscount:\n    - Temple of Nod (-25%)\n\nSpecial Units:\n    - Fanatic\n    - Toxic Demo Truck\n\nSpecial Ability:\n    - Radar Scan\n\nSuperweapon:\n    - Nuclear Strike\n\nLimitations:\n    - Cannot train Flamer units\n    - Cannot build combat Aircraft\n    - Cannot build SSM Launcher
         Selectable: true
 	Faction@bossnod:
 		Name: Black Hand
@@ -265,7 +265,7 @@
 	Faction@sovieta:
 		Name: Shock Division
 		InternalName: sovieta
-		Description: Soviet: Shock Division\nDescription:\nA merciless, specialist division in the Soviet forces\nthat has got proficiency in the usage of tesla weaponry.\n\nFaction Variations:\n    - Tesla tech uses less power\n    - Can paradrop Shock Troopers\n\nDiscount:\n    - Shock Trooper (-11%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot build Mammoth Tanks\n    - Cannot use Parabombs\n    - Cannot use Flame technology
+		Description: Soviet: Shock Division\nDescription:\nA merciless, specialist division in the Soviet forces\nthat has got proficiency in the usage of tesla weaponry.\n\nFaction Variations:\n    - Tesla tech uses less power\n    - Can paradrop Shock Troopers\n\nDiscount:\n    - Shock Trooper (-11%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Stormtroopers\n\nSuperweapons:\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot build Mammoth Tank\n    - Cannot use Parabombs\n    - Cannot use Flame technology
         Selectable: true
 	Faction@sovietb:
 		Name: Heavy Armor

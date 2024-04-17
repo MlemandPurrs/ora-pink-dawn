@@ -351,3 +351,22 @@ Cursors:
 		enter-blue-timer-blocked-minimap:
 			Start: 7
 			Length: 1
+    mousextra2.shp: cursor
+		deploy-blue:
+			Start: 0
+			Length: 9
+		deploy-blocked-blue:
+			Start: 10
+			Length: 1
+		deploy-orange:
+			Start: 10
+			Length: 9
+		deploy-blocked-orange:
+			Start: 20
+			Length: 1
+		deploy-red:
+			Start: 20
+			Length: 9
+		deploy-blocked-red:
+			Start: 30
+			Length: 1

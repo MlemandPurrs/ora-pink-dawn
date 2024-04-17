@@ -1055,7 +1055,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.\n\nThe Heavy Armor division of the Soviet forces have perfectly streamlined the assemble and manufacture process of the Mammoth Tank, resulting in being able to produce it cheaper and faster.
+        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.\n\nThe Heavy Armor division of the Soviet forces have perfectly streamlined the assemble and manufacture process of the Mammoth Tank, resulting in being able to produce it cheaper and faster.\n\nHeroic rank:\nGains stealth detection.
         Category: Soviet Vehicles
 		Order: 7
 	RenderSprites:
@@ -1068,7 +1068,7 @@ apc2.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Flamethrowing variant of the Mammoth Tank that came into being after a engineering competition has got held on what to do with all the excessive rocket fuel.\nThe winning proposition converted the Mammoth armament into that similar on a Flame Tower, the Rocket Command have instantly greenlight the project and begin to exclusively use the converted Mammoths.
+        Description: Flamethrowing variant of the Mammoth Tank that came into being after a engineering competition has got held on what to do with all the excessive rocket fuel.\nThe winning proposition converted the Mammoth armament into that similar on a Flame Tower, the Rocket Command have instantly greenlight the project and begin to exclusively use the converted Mammoths.\n\nHeroic rank:\nGains stealth detection.
         Category: Soviet Vehicles
 		Order: 8
 	RenderSprites:

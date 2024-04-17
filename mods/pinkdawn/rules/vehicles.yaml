@@ -438,6 +438,8 @@ TTRK:
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
         PauseOnCondition: emp-crate-collected
+        DeployCursor: deploy-orange
+        DeployBlockedCursor: deploy-blocked-orange
 	KillsSelf:
 		RequiresCondition: triggered
 	Chronoshiftable:
@@ -1649,6 +1651,11 @@ HTNK:
     GrantConditionOnPrerequisite@REVEALTOGGLE:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected && rank-heroic
+	RenderDetectionCircle:
 
 WTNK:
 	Inherits: ^TrackedVehicle
@@ -2721,7 +2728,7 @@ MSG:
 	Buildable:
         BuildDuration: 1350
         BuildDurationModifier: 100
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 15
 		Prerequisites: sgen, ~vehicle.nod, ~player.bossnod, ~techlevel.7
 		Queue: Vehicle
 		Description: Cloaks all units nearby when deployed.\nThe units need to remain stationary,\nand out of combat to be cloaked.\n\nUnarmed.
@@ -2761,15 +2768,17 @@ MSG:
 		DeploySounds: placbldg.aud
 		UndeploySounds: clicky1.aud
 		UndeployOnMove: true
+        DeployCursor: deploy-blue
+        DeployBlockedCursor: deploy-blocked-blue
 	ProximityExternalCondition@StealthGenerator:
 		Condition: cloakfield-on
 		ValidRelationships: Ally
 		Range: 6c0
-        RequiresCondition: !emp-crate-collected && deployed
+        RequiresCondition: !emp-crate-collected && deployed && !lowpower
 	DetectCloaked@RadialIndicator:
         DetectionTypes: Nonsense
 		Range: 6c0
-        RequiresCondition: deployed
+        RequiresCondition: deployed && !lowpower
 	RenderDetectionCircle@RadialIndicator:
         TrailCount: 2
         Visible: Always
@@ -2782,6 +2791,9 @@ MSG:
     PowerMultiplier@deployed:
         Modifier: 200
         RequiresCondition: !emp-crate-collected && deployed
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 
 T55H:
 	Inherits: ^TrackedVehicle

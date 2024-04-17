@@ -988,7 +988,7 @@ htnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.
+        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.\n\nHeroic rank:\nGains stealth detection.
         Category: GDI Vehicles
 		Order: 9
 	RenderSprites:
