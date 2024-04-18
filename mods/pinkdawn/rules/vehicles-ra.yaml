@@ -52,7 +52,7 @@ MCV2:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Mobile:
-        TurnSpeed: 12
+        TurnSpeed: 10
 		Speed: 60
 		Locomotor: tracked-crusher
         PauseOnCondition: boarding
@@ -1442,13 +1442,13 @@ ATNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3, ~vehicle.soviet, ~!player.sovieta, ~!player.sovietc, ~techlevel.6
+		Prerequisites: anytier3, ~vehicle.soviet, ~!player.sovieta, ~!player.bosssoviet, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
-		TurnSpeed: 12
+		TurnSpeed: 8
         PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
@@ -1463,7 +1463,7 @@ ATNK:
         RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 	Armament@PRIMARY:
 		Weapon: MammothCannon
 		LocalOffset: 900,180,340, 900,-180,340
@@ -1552,13 +1552,13 @@ ATNK:
         BuildDuration: 2100
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anytier3, ~vehicle.soviet, ~player.sovietc, ~techlevel.6
+		Prerequisites: anytier3, ~vehicle.soviet, ~player.bosssoviet, ~techlevel.6
 		Queue: Vehicle
 		Description: Heavily armored Soviet Tank.\n\nSpecial: Self-repair\nRegenerates lost hitpoints\nwhen below half health.\n\nCan attack Aircraft.\nStrong vs Everything.
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
-		TurnSpeed: 12
+		TurnSpeed: 8
         PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
@@ -1573,7 +1573,7 @@ ATNK:
         RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 	Armament@PRIMARY:
 		Weapon: MammothFlamer
 		LocalOffset: 900,180,340, 900,-180,340
@@ -1666,7 +1666,7 @@ ATNK:
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 40
-		TurnSpeed: 12
+		TurnSpeed: 8
         PauseOnCondition: emp-crate-collected || !wireless
 	Health:
 		HP: 100000
@@ -1699,7 +1699,7 @@ ATNK:
 	RenderDetectionCircle:
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 	Armament@PRIMARY:
 		Weapon: BehemothCannon
 		LocalOffset: 908,180,340, 908,-180,340
@@ -2221,7 +2221,7 @@ V2RL:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.soviet, ~!player.bosssoviet, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.soviet, ~!player.sovietc, ~techlevel.5
 		Queue: Vehicle
 		Description: Long-range rocket artillery.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks, Aircraft.
 	Valued:
@@ -2339,7 +2339,7 @@ V3RL:
         BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anyhq, ~vehicle.soviet, ~player.bosssoviet, ~techlevel.5
+		Prerequisites: anyhq, ~vehicle.soviet, ~player.sovietc, ~techlevel.5
 		Queue: Vehicle
 		Description: Extreme range rocket artillery.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks, Aircraft.
 	Valued:

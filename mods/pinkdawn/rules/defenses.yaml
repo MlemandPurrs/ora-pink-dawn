@@ -507,7 +507,7 @@ SAM:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Nod, Defense.BossNod
+		Queue: Defense.Nod, Defense.BossNod, Defense.BossSoviet
 		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx
@@ -608,7 +608,7 @@ SAM2:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: anyhq, ~techlevel.6
-		Queue: Defense.Soviet, Defense.BossSoviet
+		Queue: Defense.Soviet
 		Description: Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
 		Footprint: xx

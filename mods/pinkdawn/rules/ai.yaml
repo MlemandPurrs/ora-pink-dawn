@@ -469,20 +469,26 @@ Player:
             proc.clone: 4
 			silo: 2
             silo.clone: 2
+            nuke: 8
+            nuk2: 8
+            gdinuke: 8
+            powrup: 8
 			pyle: 3
             pyl2: 3
 			weap: 2
-			hpad: 2
+			hpad: 3
             3fld: 3
 			fix: 1
 			hq: 1
             gdihq: 2
 			eye: 1
+            eyeup: 1
 			miss: 1
             h2sp: 1
-            atwr: 10
+            gtwr: 8
+            gun: 6
+            atwr: 4
             rtur: 1
-            eyeup: 1
 		BuildingFractions:
 			proc: 10
             proc.clone: 10
@@ -529,19 +535,26 @@ Player:
             proc.clone: 4
 			silo: 2
             silo.clone: 2
+            nuke: 8
+            nuk2: 8
 			hand: 3
 			afld: 2
             ufld: 2
-			hpad: 2
-            3fld: 2
+			hpad: 3
+            3fld: 3
 			fix: 1
 			hq: 1
 			tmpl: 1
             miss: 1
             bio: 1
             ncom: 1
-            obli: 10
             mslo: 1
+            gtwr: 6
+            gun: 8
+            obli: 4
+            ltur: 8
+            ctur: 4
+            sam: 4
 		BuildingFractions:
 			proc: 10
             proc.clone: 10
@@ -589,22 +602,30 @@ Player:
             oref.clone: 4
 			osil: 2
             osil.clone: 2
+            powr: 8
+            apwr: 8
 			tent: 3
 			warf: 2
-			hpad: 2
-            3fld: 2
+			hpad: 3
+            3fld: 3
 			fix2: 1
 			dome: 1
 			atek: 1
             mslo: 1
             gap: 2
-            fpwr: 2
-            fapw: 1
+            pbox: 6
+            hbox: 4
+            gun: 6
+            gun2: 6
+            htur: 1
+            agun: 4
+            cram: 4
+            fpwr: 3
+            fapw: 2
             tenf: 1
             weaf: 1
             hpaf: 2
             cspf: 1
-            htur: 1
 		BuildingFractions:
 			oref: 10
             oref.clone: 10
@@ -656,6 +677,8 @@ Player:
             oref.clone: 4
 			osil: 2
             osil.clone: 2
+            powr: 8
+            apwr: 8
 			barr: 2
 			warf: 3
 			3fld: 4
@@ -665,7 +688,10 @@ Player:
             fcom: 1
             iron: 1
             mslo: 1
-            tsla: 10
+            ftwr: 6
+            tsla: 4
+            sam: 4
+            sam2: 4
 		BuildingFractions:
 			oref: 10
             oref.clone: 10
@@ -682,6 +708,7 @@ Player:
 			mslo: 1
             ftwr: 7
             tsla: 5
+            sam: 3
 			sam2: 3
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
@@ -692,7 +719,7 @@ Player:
         SquadSizeRandomBonus: 6
         ExcludeFromSquadsTypes: e6, harv, mcv, badg, a10, c17.paradrop, uav, orca, pnix, mh60, f18, a10b, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
-		AirUnitsTypes: orca, f18, a10b
+		AirUnitsTypes: orca, f18, a10b, pnix, mh60
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, gdinuke, proc, proc.clone, silo, silo.clone, pyle, pyl2, weap, hpad, 3fld, fix, hq, eye, gdihq, miss, gtwr, atwr, gun, rtur, mcv, harv
@@ -705,7 +732,7 @@ Player:
         SquadSizeRandomBonus: 1
         ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, a10, c17.paradrop, uav, pt2, dd3, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
-		AirUnitsTypes: orca, f18, a10b
+		AirUnitsTypes: orca, f18, a10b, pnix, mh60
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, proc, proc.clone, mcv, harv
@@ -718,7 +745,7 @@ Player:
         SquadSizeRandomBonus: 2
         ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e7, e9, rmbo, rmb2, jet, exo, harv, mcv, jeep, jsam, apc, maag, mtnk, htnk, mrpg, msam, mhq, badg, orca, pnix, mh60, f18, a10, a10b, c17.paradrop, uav, gtwr, atwr, gun, rtur, camera.scan, camera.sonar, camera.repair
 		ConstructionYardTypes: fact
-		AirUnitsTypes: orca, f18, a10b
+		AirUnitsTypes: orca, f18, a10b, pnix, mh60
         NavalUnitsTypes: pt2, dd3
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
@@ -807,12 +834,12 @@ Player:
 		RushInterval: 400
 		SquadSize: 8
         SquadSizeRandomBonus: 4
-        ExcludeFromSquadsTypes: e6, ahrv, mcv2, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ss, msub, nts, ftwr, tsla, sam2, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e6, ahrv, mcv2, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ss, msub, nts, ftwr, tsla, sam, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, frog, mig
         NavalUnitsTypes: ss, msub, nts
         NavalProductionTypes: syrd
-		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, barr, warf, 3fld, fix2, dome, stek, fcom, mslo, ftwr, tsla, sam2, minb, mcv2, ahrv
+		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, barr, warf, 3fld, fix2, dome, stek, fcom, mslo, ftwr, tsla, sam, sam2, mcv2, ahrv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane
 	SquadManagerBotModule@AirSoviet:
@@ -820,7 +847,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, ss, msub, nts, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, ss, msub, nts, ftwr, tsla, sam, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, frog, mig
         NavalUnitsTypes: ss, msub, nts
@@ -833,7 +860,7 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ftwr, tsla, sam2, minb, camera.spyplane, camera.sonar
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e6, e8, volk, dog, shok, shokr1, ahrv, mcv2, ftrk, apc2, 3tnk, 3tnkr1, 4tnk, 4tnf, 5tnk, ttnk, v2rl, v3rl, smig, badr, badr.bomber, badg, hind, yak, frog, mig, ftwr, tsla, sam, sam2, camera.spyplane, camera.sonar
 		ConstructionYardTypes: fac2
 		AirUnitsTypes: hind, yak, frog, mig
         NavalUnitsTypes: ss, msub, nts

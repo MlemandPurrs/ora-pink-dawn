@@ -275,12 +275,12 @@
 	Faction@sovietc:
 		Name: Rocket Comm.
 		InternalName: sovietc
-		Description: Soviet: Rocket Command\nDescription:\nThe branch of command that is responsible for the\ndeployment of strategic, and ballistic missiles\nto achieve accurate, perfected demolitions.\n\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Can paradrop Grenadiers\n\nDiscount:\n    - Missile Silo (-20%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Paragrenadiers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
+		Description: Soviet: Rocket Command\nDescription:\nThe branch of command that is responsible for the\ndeployment of strategic, and ballistic missiles\nto achieve accurate, perfected demolitions.\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Can paradrop Grenadiers\n\nDiscount:\n    - Missile Silo (-20%)\n\nSpecial Abilities:\n    - Spy Plane\n    - Paragrenadiers\n\nSuperweapons:\n    - Parabombs\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot build Nuclear units\n    - Cannot use Tesla Technology
         Selectable: true
 	Faction@bosssoviet:
 		Name: Black Guard
 		InternalName: bosssoviet
-		Description: Black Guard\nDescription:\nStalin's elite guard, prestigious, deadly and\nmercilessly inhuman.\n\nFaction Variations:\n    - V3 Launcher replaces V2 Launcher\n    - Command Post allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
+		Description: Black Guard\nDescription:\nStalin's elite guard, prestigious, deadly and\nmercilessly inhuman.\n\nFaction Variations:\n    - Mammoth shoots Fireballs\n    - Command Post allows a second Spy Plane\n    - Paratroopers delivers two squads\n    - Mines apply E.M.P. on hit\n    - SAM Sites are cloaked\n\nSpecial Abilities:\n    - Spy Plane(2x)\n    - Paratroopers\n\nSuperweapons:\n    - E.M.P. Bomb\n    - Iron Curtain\n    - Nuclear Strike\n\nLimitations:\n    - Cannot use Parabombs
         Selectable: true
 	Faction@RandomRA:
 		Name: Random RA

@@ -666,6 +666,8 @@ cyclicons:
 		AddExtension: False
     empmicon: empmicon.shp
 		AddExtension: False
+    frepicon: frepicon.shp
+		AddExtension: False
     icon: blank1
 
 dummy:

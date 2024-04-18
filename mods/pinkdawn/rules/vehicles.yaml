@@ -52,7 +52,7 @@ MCV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Mobile:
-        TurnSpeed: 12
+        TurnSpeed: 10
 		Speed: 60
 		Locomotor: tracked-crusher
         PauseOnCondition: boarding
@@ -1571,7 +1571,7 @@ HTNK:
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
-		TurnSpeed: 12
+		TurnSpeed: 8
 		PauseOnCondition: emp-crate-collected || boarding
 	Health:
 		HP: 60000
@@ -1586,7 +1586,7 @@ HTNK:
         RevealGeneratedShroud: True
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 	Armament@PRIMARY:
 		Weapon: MammothCannon
 		LocalOffset: 900,180,340, 900,-180,340
