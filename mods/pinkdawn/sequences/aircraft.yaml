@@ -69,6 +69,23 @@ heli:
 	icon: heliicon
 	alticon: hel2icon
 
+uh60:
+    Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	rotor: lrotorlg2
+		Length: 8
+        Tick: 30
+	slow-rotor: lrotorlg2
+		Start: 8
+		Length: 8
+        Tick: 30
+	muzzle: minigun16
+		Length: 6
+		Facings: 16
+	icon: uh60icon
+
 hind:
     Inherits: emp-overlay
 	idle:

@@ -1185,6 +1185,19 @@ hel2.info:
         Palette: allies
     -MapEditorData:
 
+uh60.info:
+    Inherits: UH60
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: A fast, and rather nimble helicopter that excels in scouting duty, that is also capable of quickly eliminating enemy Infantry.\nIt can also detect cloaked units, and submarines in the vicinity by inbuilt sensors.\n\nHeroic rank:\nCan reload ammo on air by itself.
+        Category: Allies Aircraft
+		Order: 2
+	RenderSprites:
+		Image: uh60
+        Palette: allies
+    -MapEditorData:
+
 f16.info:
     Inherits: F16
     Buildable:
@@ -1193,7 +1206,7 @@ f16.info:
 	Encyclopedia:
         Description: This fast-attack craft carries a limited number of powerful and accurate missiles. Used in hit-and-run tactics, the plane can remove armored units before they can become a threat.
         Category: Allies Aircraft
-		Order: 2
+		Order: 3
 	RenderSprites:
 		Image: f16
         Palette: allies

@@ -741,6 +741,155 @@ HEL2:
 		Condition: owned-by-ai
 		Bots: normalai
 
+UH60:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+	Selectable:
+		DecorationBounds: 1280, 1024
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Iroquois
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+        BuildAtProductionType: Chopper
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 3
+		Prerequisites: hpad, anyhq, ~aircraft.allies, ~player.bossallies, ~techlevel.5
+		Queue: Aircraft
+		Description: Scout Helicopter with Chainguns.\nCan detect cloaked units,\nmines and submarines.\n\nCan attack Aircraft, Submarines.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 250
+        MoveIntoShroud: false
+		PauseOnCondition: emp-crate-collected
+	Health:
+		HP: 6000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 4c128
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+		Type: GroundPosition
+        RevealGeneratedShroud: True
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground, Underwater
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected
+	RenderDetectionCircle:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: HeliGunAG
+        LocalOffset: 128,-213,-304, 128,213,-304
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliGunAA
+		LocalOffset: 128,-213,-304, 128,213,-304
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo || emp-crate-collected
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: HeliDepthCharges
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo2 || emp-crate-collected
+	AmmoPool@1:
+		Name: primary
+		Armaments: primary, secondary
+		Ammo: 6
+		ReloadDelay: 40
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration@1:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 3
+		FullSequence: pip-yellow
+		AmmoPools: primary
+		RequiresSelection: true
+	AmmoPool@2:
+		Name: secondary
+		Armaments: tertiary
+		Ammo: 3
+		ReloadDelay: 80
+		ReloadCount: 3
+        AmmoCondition: ammo2
+	WithAmmoPipsDecoration@2:
+		AmmoPools: secondary
+		Position: BottomLeft
+		Margin: 4, 6
+		PipCount: 1
+		FullSequence: pip-blue
+		RequiresSelection: true
+	AttackMove:
+		Voice: Attack
+	AutoTarget:
+		InitialStanceAI: HoldFire
+		ScanRadius: 4
+	AttackAircraft:
+		Armaments: primary, secondary, tertiary
+		FacingTolerance: 80
+		OpportunityFire: false
+		PersistentTargeting: false
+		AttackType: Hover
+        Voice: Attack
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,45
+		Sequence: rotor
+		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,45
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
+	WithMuzzleOverlay:
+	Rearmable:
+        AmmoPools: primary, tertiary
+		RearmActors: hpad, aprt, 3fld, carr.deployed
+	KillsSelf:
+		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        AmmoPool: primary
+        ResetOnFire: true
+		Delay: 80
+		Count: 1
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	ReloadAmmoPool@HEROIC2:
+        AmmoPool: secondary
+        ResetOnFire: true
+		Delay: 80
+		Count: 3
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 150
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
+
 HIND:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove

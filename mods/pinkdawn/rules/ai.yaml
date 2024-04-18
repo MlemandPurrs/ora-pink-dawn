@@ -795,9 +795,9 @@ Player:
 		RushInterval: 400
 		SquadSize: 4
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, ohrv, mcv2, badg, hel2, f16, pt, dd, ca, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e6, ohrv, mcv2, badg, hel2, uh60, f16, pt, dd, ca, pbox, hbox, gun, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
-		AirUnitsTypes: hel2, f16
+		AirUnitsTypes: hel2, f16, uh60
         NavalUnitsTypes: pt, dd, ca
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, powr, apwr, oref, oref.clone, osil, osil.clone, tent, warf, hpad, 3fld, fix2, dome, atek, mslo, pbox, hbox, gun, gun2, htur, agun, mcv2, ohrv
@@ -810,7 +810,7 @@ Player:
         SquadSizeRandomBonus: 1
         ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, seal, ohrv, mcv2, r4wd, apc, apc3, ifv, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, pt, dd, ca, badg, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
-		AirUnitsTypes: hel2, f16
+		AirUnitsTypes: hel2, f16, uh60
         NavalUnitsTypes: pt, dd, ca
         NavalProductionTypes: syrd
 		ProtectionTypes: fac2, oref, oref.clone, mcv2, ohrv
@@ -821,9 +821,9 @@ Player:
 		RushInterval: 400
 		SquadSize: 1
         SquadSizeRandomBonus: 2
-        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, seal, ohrv, mcv2, r4wd, apc, apc3, ifv, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
+        ExcludeFromSquadsTypes: e1, e1r1, e3, e3r1, e6, medi, mech, tany, spy, snip, seal, ohrv, mcv2, r4wd, apc, apc3, ifv, 1tnk, atnk, 2tnk, ctnk, ectk, tnkd, arty, mgg, badg, hel2, uh60, f16, pbox, hbox, gun, gun2, htur, agun, camera.sonar, gpsactivenoise, powergps
 		ConstructionYardTypes: fac2
-		AirUnitsTypes: hel2, f16
+		AirUnitsTypes: hel2, f16, uh60
         NavalUnitsTypes: pt, dd, ca
         NavalProductionTypes: syrd
 		ProtectionTypes: syrd
@@ -1020,6 +1020,7 @@ Player:
             ectk: 1
             mgg: 3
             hel2: 5
+            uh60: 3
             f16: 1
             pt: 5
             dd: 10
@@ -1041,6 +1042,7 @@ Player:
             ectk: 1
             mgg: 2
             hel2: 2
+            uh60: 1
             f16: 1
             pt: 4
             dd: 3
