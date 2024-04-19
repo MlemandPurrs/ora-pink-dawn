@@ -21,6 +21,8 @@ VehicleVoice:
 		Action: ackno, affirm1, movout1
 		Attack: ackno, affirm1, yessir1
 		Unload: movout1, affirm1
+		Boink: boink
+    DisableVariants: Boink
 
 CivilianMaleVoice:
 	Voices:

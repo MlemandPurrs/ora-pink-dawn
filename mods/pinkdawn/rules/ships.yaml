@@ -2,28 +2,18 @@ LST:
 	Inherits: ^Ship
 	Inherits@TRANSPORT: ^Transport
     Inherits@selection: ^SelectableSupportUnit
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
-    -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
-    -GainsExperienceMultiplier@EXPTOGGLE2:
-    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 608
 	Valued:
 		Cost: 750
 	Tooltip:
 		Name: Landing Craft
 	Buildable:
-        BuildDuration: 1400
+        BuildDuration: 750
         BuildDurationModifier: 100
         BuildPaletteOrder: 0
-		Queue: Navy.GDI, Navy.Nod
+		Queue: Navy
 		Prerequisites: syrd
 		Description: Transports ground units across water.\n\nUnarmed.
 	Mobile:
@@ -58,19 +48,37 @@ LST:
 		Position: TopLeft
 		ValidRelationships: Ally
 		RequiresCondition: commandoinside
+    WithSpriteBody@roof:
+        Sequence: roof
+        Name: body2
+        RequiresCondition: loaded
 	Sellable:
 		RequiresCondition: ship.sellable && !loaded
 
 BOAT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+    Inherits@experience: ^ExperienceMechanic
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 4
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic
+	HitShape:
+		TargetableOffsets: 341,0,0, -341,0,0
+		Type: Capsule
+			Radius: 288
+			PointA: 0, -341
+			PointB: 0, 341
 	Valued:
-		Cost: 600
+		Cost: 800
 	Buildable:
-        BuildDuration: 900
+        BuildDuration: 750
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
-		Queue: Navy.GDI, Navy.Nod
+		Queue: Navy
 		Prerequisites: syrd
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
@@ -97,4 +105,11 @@ BOAT:
 	Selectable:
 		Bounds: 1792, 1024
 		DecorationBounds: 1792, 1024
-
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

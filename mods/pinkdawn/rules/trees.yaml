@@ -438,3 +438,33 @@ TC05.Husk:
 		Dimensions: 4,3
 	MapEditorData:
 		ExcludeTilesets: DESERT
+
+ICE01:
+	Inherits: ^Ice
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+
+ICE02:
+	Inherits: ^Ice
+	Building:
+		Footprint: x x
+		Dimensions: 1,2
+
+ICE03:
+	Inherits: ^Ice
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+ICE04:
+	Inherits: ^Ice
+	Building:
+		Footprint: x
+        Dimensions: 1,1
+
+ICE05:
+	Inherits: ^Ice
+	Building:
+		Footprint: x
+        Dimensions: 1,1

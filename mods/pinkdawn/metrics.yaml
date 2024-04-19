@@ -1,6 +1,9 @@
 # General dumping-ground for UI element sizes, etc.
 
 Metrics:
+	FactionSuffix-gdi: gdi
+	FactionSuffix-nod: nod
+	FactionSuffix-neutral: gdi
 	ButtonDepth: 0
 	ButtonFont: Bold
 	TextfieldColorHighlight: 800000

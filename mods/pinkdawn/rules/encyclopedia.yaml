@@ -1,3 +1,6 @@
+
+#  GDI Buildings
+
 fact.info:
     Inherits: FACT
     Buildable:
@@ -7,38 +10,22 @@ fact.info:
         Category: GDI Buildings
 		Order: 0
 	RenderSprites:
-		Image: fact
+		Image: gdifact
         Palette: gdi
     -MapEditorData:
-
-fact.nod.info:
-    Inherits: fact.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodfact
-        Palette: nod
 
 nuke.info:
     Inherits: NUKE
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.
+		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.\n\nThe Future Corps of GDI are capable of modularly upgrading their Power Plants to provide more power, sparing construction costs and build time required to erect a seperate structure.
         Category: GDI Buildings
 		Order: 1
 	RenderSprites:
 		Image: nuke
         Palette: gdi
     -MapEditorData:
-
-nuke.nod.info:
-    Inherits: nuke.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodnuke
-        Palette: nod
 
 nuk2.info:
     Inherits: NUK2
@@ -53,34 +40,18 @@ nuk2.info:
         Palette: gdi
     -MapEditorData:
 
-nuk2.nod.info:
-    Inherits: nuk2.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodnuk2
-        Palette: nod
-
 proc.info:
     Inherits: PROC
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Ore Truck and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
+        Description: The Refinery smelts valuable minerals into its component elements. Building the Refinery immediately deploys an Harvester and each Refinery can handle an infinite number of Harvesters. The Refinery can store up to 1,500 credits of processed resources.
         Category: GDI Buildings
 		Order: 3
 	RenderSprites:
 		Image: proc
         Palette: gdi
     -MapEditorData:
-
-proc.nod.info:
-    Inherits: proc.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodproc
-        Palette: nod
 
 silo.info:
     Inherits: SILO
@@ -95,14 +66,6 @@ silo.info:
         Palette: gdi
     -MapEditorData:
 
-silo.nod.info:
-    Inherits: silo.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodsilo
-        Palette: nod
-
 pyle.info:
     Inherits: PYLE
     Buildable:
@@ -116,32 +79,6 @@ pyle.info:
         Palette: gdi
     -MapEditorData:
 
-hand.info:
-    Inherits: HAND
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: This structure is a field training center for all Nod infantry units. Building multiples of this structure will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.
-        Category: Nod Buildings
-		Order: 6
-	RenderSprites:
-		Image: hand
-        Palette: nod
-    -MapEditorData:
-
-afld.info:
-    Inherits: AFLD
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: The Airfield allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airfields will enable you to order multiple units delivered at a time.
-        Category: Nod Buildings
-		Order: 8
-	RenderSprites:
-		Image: afld
-        Palette: nod
-    -MapEditorData:
-
 weap.info:
     Inherits: WEAP
     Buildable:
@@ -149,7 +86,7 @@ weap.info:
 	Encyclopedia:
         Description: This structure builds any available Vehicles. It is well armored, but is also a favorite target for enemy Engineers. Building multiple War Factories will decrease the amount of time required to create a Vehicle.
         Category: GDI Buildings
-		Order: 7
+		Order: 6
 	RenderSprites:
 		Image: weap
         Palette: gdi
@@ -168,20 +105,12 @@ fix.info:
         Palette: gdi
     -MapEditorData:
 
-fix.nod.info:
-    Inherits: fix.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodfix
-        Palette: nod
-
 hpad.info:
     Inherits: HPAD
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Building the Helipad allows the use of the VTOL aircraft. The Helipad is also the rearming station for armed VTOL aircraft. If the Helipad is lost\nthe armed VTOL aircraft would not be able to reload. Any VTOL aircraft can use any Helipad on your side.
+        Description: Building the Helipad allows the use of the VTOL aircraft. The Helipad is also the rearming station for armed VTOL aircraft. If the Helipad is lost\nthe armed VTOL aircraft would not be able to reload. Any VTOL aircraft can use any Helipad on your side.\nHelipads can be used for repairing damaged VTOL aircraft landed on them while in the range of a Service Depot, eliminating the need to manually ordering repairs at the latter structure.
         Category: GDI Buildings
 		Order: 10
 	RenderSprites:
@@ -189,34 +118,18 @@ hpad.info:
         Palette: gdi
     -MapEditorData:
 
-hpad.nod.info:
-    Inherits: hpad.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: hpad
-        Palette: nod
-
 hq.info:
     Inherits: HQ
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.\n\nThe Future Corps of the GDI are capable of modularly upgrading their Communication Centers to bestow advanced capabilities upon them.
         Category: GDI Buildings
-		Order: 11
+		Order: 12
 	RenderSprites:
 		Image: hq
         Palette: gdi
     -MapEditorData:
-
-hq.nod.info:
-    Inherits: hq.info
-	Encyclopedia:
-        Category: Nod Buildings
-	RenderSprites:
-		Image: nodhq
-        Palette: nod
 
 miss.info:
     Inherits: MISS
@@ -231,19 +144,6 @@ miss.info:
         Palette: gdi
     -MapEditorData:
 
-tmpl.info:
-    Inherits: TMPL
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles.
-        Category: Nod Buildings
-		Order: 14
-	RenderSprites:
-		Image: tmpl
-        Palette: nod
-    -MapEditorData:
-
 eye.info:
     Inherits: EYE
     Buildable:
@@ -251,10 +151,115 @@ eye.info:
 	Encyclopedia:
         Description: An upgrade to the Communications Center, this structure not only provides radar, but is the uplink center for the Ion Cannon - GDI's most devastating weapon. Once charged, it can unleash a blast on an unsuspecting target.\nThe Ion Cannon requires power to charge: If your base is under powered, it will stop. To fire, left click on the Ion Cannon icon in the sidebar once it has charged full.
         Category: GDI Buildings
-		Order: 12
+		Order: 14
 	RenderSprites:
 		Image: eye
         Palette: gdi
+    -MapEditorData:
+
+#   Nod Buildings
+
+fact.nod.info:
+    Inherits: fact.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodfact
+        Palette: nod
+
+nuke.nod.info:
+    Inherits: nuke.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodnuke
+        Palette: nod
+
+nuk2.nod.info:
+    Inherits: nuk2.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodnuk2
+        Palette: nod
+
+proc.nod.info:
+    Inherits: proc.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodproc
+        Palette: nod
+
+silo.nod.info:
+    Inherits: silo.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodsilo
+        Palette: nod
+
+hand.info:
+    Inherits: HAND
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This structure is a field training center for all Nod infantry units. Building multiples of this structure will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.
+        Category: Nod Buildings
+		Order: 5
+	RenderSprites:
+		Image: hand
+        Palette: nod
+    -MapEditorData:
+
+afld.info:
+    Inherits: AFLD
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Airstrip allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airstrips will enable you to order multiple units delivered at a time.
+        Category: Nod Buildings
+		Order: 7
+	RenderSprites:
+		Image: afld
+        Palette: nod
+    -MapEditorData:
+
+fix.nod.info:
+    Inherits: fix.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodfix
+        Palette: nod
+
+hpad.nod.info:
+    Inherits: hpad.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: hpad
+        Palette: nod
+
+hq.nod.info:
+    Inherits: hq.info
+	Encyclopedia:
+        Category: Nod Buildings
+	RenderSprites:
+		Image: nodhq
+        Palette: nod
+
+tmpl.info:
+    Inherits: TMPL
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles.
+        Category: Nod Buildings
+		Order: 12
+	RenderSprites:
+		Image: tmpl
+        Palette: nod
     -MapEditorData:
 
 bio.info:
@@ -262,13 +267,15 @@ bio.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.\nIts presence is required to facilitate the procurement of materials used in the assembly of a Nuclear device.\nIt will also provide the components necessary to unlock the SSM Launcher and Chem Trooper for production.
+		Description: This highly-secured facility is where the Brotherhood of Nod is conducting their Tiberium based experiments.\nIts presence is required to facilitate the procurement of materials used in the assembly of a Nuclear device.\nIt will also provide the components necessary to unlock units for production, such as the SSM Launcher and Chem Trooper.
         Category: Nod Buildings
-		Order: 15
+		Order: 13
 	RenderSprites:
 		Image: bio
         Palette: nod
     -MapEditorData:
+
+#   GDI Defenses
 
 sbag.info:
     Inherits: SBAG
@@ -283,19 +290,6 @@ sbag.info:
         Palette: staticterrain
     -MapEditorData:
 
-barb.info:
-    Inherits: BARB
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Used to deter the enemy from advancing. Barbed Wire provide limited cover and may slow units down.\nOnly explosive weapons such as grenades, missiles, and shells can damage Barbed Wires.
-        Category: Nod Defenses
-		Order: 1
-	RenderSprites:
-		Image: barb
-        Palette: staticterrain
-    -MapEditorData:
-
 cycl.info:
     Inherits: CYCL
     Buildable:
@@ -303,34 +297,24 @@ cycl.info:
 	Encyclopedia:
         Description: Chain Link functions in the same way that the sandbags do, but they also block projectiles.\nOnly explosive weapons such as grenades, missiles and shells can damage a Chain Link Barrier.
         Category: GDI Defenses
-		Order: 2
+		Order: 1
 	RenderSprites:
 		Image: cycl
         Palette: staticterrain
     -MapEditorData:
-
-cycl.nod.info:
-    Inherits: cycl.info
-	Encyclopedia:
-        Category: Nod Defenses
 
 brik.info:
     Inherits: BRIK
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Concrete walls are the most effective barrier. They are much harder to destroy and will take the enemy much longer to blast through.\nOnly explosive weapons such as grenades, missiles, and shells can damage Concrete Barriers.
+        Description: Concrete walls are the most effective barrier. They are much harder to destroy and will take the enemy much longer to blast through.\nOnly explosive weapons such as grenades, missiles and shells can damage Concrete Barriers.
         Category: GDI Defenses
-		Order: 3
+		Order: 2
 	RenderSprites:
 		Image: brik
         Palette: staticterrain
     -MapEditorData:
-
-brik.nod.info:
-    Inherits: brik.info
-	Encyclopedia:
-        Category: Nod Defenses
 
 hgat.info:
     Inherits: HGAT
@@ -339,11 +323,67 @@ hgat.info:
 	Encyclopedia:
         Description: Gates are used to restrict access into a base area, just like walls they block projectiles when not open. They can be built directly into concrete walls without the need to tear down first to make space.\nOnly explosive weapons such as grenades, missiles, and shells can damage Gates.
         Category: GDI Defenses
-		Order: 4
+		Order: 3
 	RenderSprites:
 		Image: hgat-gdi
         Palette: staticterrain
     -MapEditorData:
+
+gtwr.info:
+    Inherits: GTWR
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: Armed with a high-velocity machine gun, this structure provides manned defense against ground attack.\nThe Guard Tower is exceptionally useful against infantry and other light units, and since it doesn't require\nany power, it will remain functional when your base loses power. It can also detect stealth units nearby.
+        Category: GDI Defenses
+		Order: 4
+	RenderSprites:
+		Image: gtwr
+        Palette: gdi
+    -MapEditorData:
+
+atwr.info:
+    Inherits: ATWR
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: Provides strong fortification against ground and air units. The Advanced Guard Tower (AGT) fires missiles at considerable range, but it requires power to operate.\nBecause of the AGT's long range, it cannot hit units that are directly adjacent to it. It is always wise to back up the AGT with another defense like the Guard Tower.
+        Category: GDI Defenses
+		Order: 5
+	RenderSprites:
+		Image: atwr
+        Palette: gdi
+    -MapEditorData:
+
+gun.info:
+    Inherits: GUN
+    Buildable:
+        Queue: Nothing    
+	Encyclopedia:
+        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.\nGun turrets are capable of firing on detected Submarines in range.
+        Category: GDI Defenses
+		Order: 6
+	RenderSprites:
+		Image: gun
+        Palette: gdi
+    -MapEditorData:
+
+#   Nod Defenses
+
+sbag.nod.info:
+    Inherits: sbag.info
+	Encyclopedia:
+        Category: Nod Defenses
+
+cycl.nod.info:
+    Inherits: cycl.info
+	Encyclopedia:
+        Category: Nod Defenses
+
+brik.nod.info:
+    Inherits: brik.info
+	Encyclopedia:
+        Category: Nod Defenses
 
 hgat.nod.info:
     Inherits: hgat.info
@@ -353,19 +393,6 @@ hgat.nod.info:
 		Image: hgat-nod
         Palette: staticterrain
 
-gtwr.info:
-    Inherits: GTWR
-    Buildable:
-        Queue: Nothing    
-	Encyclopedia:
-        Description: Armed with a high-velocity machine gun, this structure provides manned defense against ground attack.\nThe Guard Tower is exceptionally useful against infantry and other light units, and since it doesn't require\nany power, it will remain functional when your base loses power. It can also detect stealth units nearby.
-        Category: GDI Defenses
-		Order: 6
-	RenderSprites:
-		Image: gtwr
-        Palette: gdi
-    -MapEditorData:
-
 gtwr.nod.info:
     Inherits: gtwr.info
 	Encyclopedia:
@@ -374,39 +401,14 @@ gtwr.nod.info:
 		Image: gtwr
         Palette: nod
 
-gun.info:
-    Inherits: GUN
-    Buildable:
-        Queue: Nothing    
-	Encyclopedia:
-        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.
-        Category: GDI Defenses
-		Order: 8
-	RenderSprites:
-		Image: gun
-        Palette: gdi
-    -MapEditorData:
-
 gun.nod.info:
     Inherits: gun.info
 	Encyclopedia:
         Category: Nod Defenses
+        Order: 4
 	RenderSprites:
 		Image: gun
         Palette: nod
-
-atwr.info:
-    Inherits: ATWR
-    Buildable:
-        Queue: Nothing    
-	Encyclopedia:
-        Description: Provides strong fortification against ground and air units. The Advanced Guard Tower (AGT) fires missiles at considerable range, but it requires power to operate.\nBecause of the AGT's long range, it cannot hit units that are directly adjacent to it. It is always wise to back up the AGT with another defense like the Guard Tower.
-        Category: GDI Defenses
-		Order: 7
-	RenderSprites:
-		Image: atwr
-        Palette: gdi
-    -MapEditorData:
 
 obli.info:
     Inherits: OBLI
@@ -415,7 +417,7 @@ obli.info:
 	Encyclopedia:
         Description: This high-power laser effectively destroys troops and armament at long range. It is the most powerful on-board weapon in the game.\nIts slow recharge time means that it cannot be the only weapon defending your base, however. Make sure you have excess power\nbefore building these, because damage to your power plants will keep the obelisks off-line.
         Category: Nod Defenses
-		Order: 9
+		Order: 5
 	RenderSprites:
 		Image: obli
         Palette: nod
@@ -428,11 +430,13 @@ sam.info:
 	Encyclopedia:
         Description: Fires surface-to-air missiles at airborne enemy units. When its recessed in the ground, it is more difficult to harm. \nHowever, when the launcher is exposed, it will get damaged more easily. Position these around your base in a triangular layout.\nThis gives you the best chances of destroying aerial threats before they can cause serious damage to your base.
         Category: Nod Defenses
-		Order: 9
+		Order: 8
 	RenderSprites:
 		Image: sam
         Palette: nod
     -MapEditorData:
+
+#   GDI Infantry
 
 e1.info:
     Inherits: E1
@@ -447,14 +451,6 @@ e1.info:
         Palette: gdi
     -MapEditorData:
 
-e1.nod.info:
-    Inherits: e1.info
-	Encyclopedia:
-        Category: Nod Infantry
-	RenderSprites:
-		Image: e1
-        Palette: nodunits
-
 e2.info:
     Inherits: E2
     Buildable:
@@ -462,7 +458,7 @@ e2.info:
 	Encyclopedia:
         Description: The Grenadier is a very useful all-purpose infantry unit. This troop is faster, and hits harder than regular infantry. The grenade this unit throws can not only go over walls, but can destroy them as well. They explode good, too !!
         Category: GDI Infantry
-		Order: 1
+		Order: 2
 	RenderSprites:
 		Image: e2
         Palette: gdi
@@ -475,11 +471,59 @@ e3.info:
 	Encyclopedia:
         Description: These infantry units are slower and easier to kill than other infantry, but can tear through armor faster than any other infantry unit. Their major advantage is the ability to attack airborne units. Most effective as support unit in diverse groups.
         Category: GDI Infantry
-		Order: 2
+		Order: 4
 	RenderSprites:
 		Image: e3
         Palette: gdi
     -MapEditorData:
+
+e6.info:
+    Inherits: E6
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.\nAnother capability of the Engineers is, due to their expert knowledge of structural integrity, to repair damaged structures at what appears to be an instant by simply entering them.\nEngineers are also capable of repairing destroyed bridges, or restoring husks of structures to operational capacity.
+        Category: GDI Infantry
+		Order: 6
+	RenderSprites:
+		Image: e6
+        Palette: gdi
+    -MapEditorData:
+
+rmbo.info:
+    Inherits: RMBO
+    Buildable:
+        Queue: Nothing
+        Prerequisites: miss
+	Encyclopedia:
+        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.
+        Category: GDI Infantry
+		Order: 7
+	RenderSprites:
+		Image: rmbo
+        Palette: gdi
+    -MapEditorData:
+
+tecn.info:
+    Inherits: TECN
+	Encyclopedia:
+        Description: Technicians are the every-day workers employed inside the structures that make up your base. When those structures get destroyed, there is a chance of your workers emerging unharmed from the wreckage.\nIn that case the Technician will desperately shoot at enemies using its assigned self-defense pistole, they panic when get shot back at however and will uncontrollably flee.
+        Category: GDI Infantry
+		Order: 12
+	RenderSprites:
+		Image: tecn
+        Palette: gdi
+    -MapEditorData:
+
+#   Nod Infantry
+
+e1.nod.info:
+    Inherits: e1.info
+	Encyclopedia:
+        Category: Nod Infantry
+	RenderSprites:
+		Image: e1
+        Palette: nodunits
 
 e3.nod.info:
     Inherits: e3.info
@@ -515,19 +559,6 @@ e5.info:
         Palette: nodunits
     -MapEditorData:
 
-e6.info:
-    Inherits: E6
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Engineers are used to capture enemy buildings. Since they carry no weapons, they are extremely vulnerable on the battlefield and must be directed very carefully. These infantry are very slow, so loading them into an APC is an ideal way to move them about the battlefield.\nA common tactic involving Engineers is to load a group of them into a Transport Helicopter and fly them to the enemy base to capture unguarded structures.
-        Category: GDI Infantry
-		Order: 5
-	RenderSprites:
-		Image: e6
-        Palette: gdi
-    -MapEditorData:
-
 e6.nod.info:
     Inherits: e6.info
 	Encyclopedia:
@@ -536,40 +567,14 @@ e6.nod.info:
 		Image: e6
         Palette: nodunits
 
-rmbo.info:
-    Inherits: RMBO
-    Buildable:
-        Queue: Nothing
-        Prerequisites: miss
-	Encyclopedia:
-        Description: The Commando is part of the Elite Forces Unit. This unit uses a Raptor 50cal. assault rifle with suppressor that is able to take out infantry units from extreme range. In addition, the Commando carries C-4 explosives.\nWhen placed in enemy structures, these explosives will level the target structure in seconds.
-        Category: GDI Infantry
-		Order: 6
-	RenderSprites:
-		Image: rmbo
-        Palette: gdi
-    -MapEditorData:
-
 rmbo.nod.info:
     Inherits: rmbo.info
-    Buildable:
-        Prerequisites: tmpl
 	Encyclopedia:
         Category: Nod Infantry
+        Order: 7
 	RenderSprites:
 		Image: rmbo
         Palette: nodunits
-
-tecn.info:
-    Inherits: TECN
-	Encyclopedia:
-        Description: Technicians are the every-day workers employed inside the structures that make up your base. When those structures get destroyed, there is a chance of your workers emerging unharmed from the wreckage.\nIn that case the Technician will desperately shoot at enemies using its assigned self-defense pistole, they panic when get shot back at however and will uncontrollably flee.
-        Category: GDI Infantry
-		Order: 7
-	RenderSprites:
-		Image: tecn
-        Palette: gdi
-    -MapEditorData:
 
 tecn.nod.info:
     Inherits: tecn.info
@@ -578,6 +583,8 @@ tecn.nod.info:
 	RenderSprites:
 		Image: tecn
         Palette: nod
+
+#   GDI Vehicles
 
 mcv.info:
     Inherits: MCV
@@ -592,14 +599,6 @@ mcv.info:
         Palette: gdi
     -MapEditorData:
 
-mcv.nod.info:
-    Inherits: mcv.info
-	Encyclopedia:
-        Category: Nod Vehicles
-	RenderSprites:
-		Image: mcv
-        Palette: nod
-
 harv.info:
     Inherits: HARV
     Buildable:
@@ -613,14 +612,6 @@ harv.info:
         Palette: gdi
     -MapEditorData:
 
-harv.nod.info:
-    Inherits: harv.info
-	Encyclopedia:
-        Category: Nod Vehicles
-	RenderSprites:
-		Image: harv
-        Palette: nod
-
 truk.info:
     Inherits: TRUK
     Buildable:
@@ -628,11 +619,120 @@ truk.info:
 	Encyclopedia:
         Description: This lightly armored truck, while moving slow is capable of transporting cargo worth 1,000 to financially assist your allies. The transported amount will be added to their resources should it have managed to reach their Construction Yard.\nBe careful however, as should the truck get destroyed it will drop a crate containing the transported amount, which can then be picked up by anyone.
         Category: GDI Vehicles
-		Order: 17
+		Order: 2
 	RenderSprites:
 		Image: truk
         Palette: gdi
     -MapEditorData:
+
+jeep.info:
+    Inherits: JEEP
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: These all-terrain attack vehicles are fast and very useful against infantry and can wipeout large numbers of Recon Bikes when used en masse. Its light armor makes it vulnerable to any explosive weapon.\n\nHeroic rank:\nMachinegun gets an upgrade, becoming the same as an APC.
+        Category: GDI Vehicles
+		Order: 3
+	RenderSprites:
+		Image: jeep
+        Palette: gdi
+    -MapEditorData:
+
+apc.info:
+    Inherits: APC
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The Armored Personnel Carrier (APC) transports and protects up to five troops heading to and from battle locations. Its heavy armor, fast speed, and long sight range make it an ideal scouting unit. It is also useful for crushing infantry.\n\nHeroic rank:\nGain increased sight-radius, about 50% more.
+        Category: GDI Vehicles
+		Order: 5
+	RenderSprites:
+		Image: apc
+        Palette: gdi
+    -MapEditorData:
+
+maag.info:
+    Inherits: MAAG
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This APC chassis had been outfitted with a twin-linked flak cannon to serve as mobile anti-air deterrent, and has sacrificed carrying capacity in doing so.
+        Category: GDI Vehicles
+		Order: 6
+	RenderSprites:
+		Image: maag
+        Palette: gdi
+    -MapEditorData:
+
+mtnk.info:
+    Inherits: MTNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: From its single barrel, the Main Battle Tank (MBT) fires armor-piercing shells. It is faster, heavier and more destructive than Nod's Light Tank. This is one of the best all around vehicles in the game. It is effective against both vehicles and structures, but can be taken down by groups of infantry or aerial units.\n\nHeroic rank:\nCannon gains a calibre upgrade, becoming equivelant to an Mammoth's.
+        Category: GDI Vehicles
+		Order: 8
+	RenderSprites:
+		Image: mtnk
+        Palette: gdi
+    -MapEditorData:
+
+htnk.info:
+    Inherits: HTNK
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.\n\nHeroic rank:\nGains stealth detection capability.
+        Category: GDI Vehicles
+		Order: 9
+	RenderSprites:
+		Image: htnk
+        Palette: gdi
+    -MapEditorData:
+    
+mhq.info:
+    Inherits: MHQ
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This is a electronic counter-measure vehicle. It's primary purpose is to detect nearby stealth units using the outfitted array of sensor equipment. It can also disrupt enemy communications over the distance, causing their radar facilities to jam and malfunction.
+        Category: GDI Vehicles
+		Order: 10
+	RenderSprites:
+		Image: mhq
+        Palette: gdi
+    -MapEditorData:
+
+msam.info:
+    Inherits: MSAM
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Mobile devastation. GDI's longest-range attacker fires 227mm rockets and is effective against just about everything, excluding aerial threats. With no short-range fighting ability, this unit needs close-quarter backup. Keep it in the background and don't let enemies in close to it.\n\nHeroic rank:\nAmount of rockets per salvo gets doubled.
+        Category: GDI Vehicles
+		Order: 12
+	RenderSprites:
+		Image: msam
+        Palette: gdi
+    -MapEditorData:
+
+#   Nod Vehicles
+
+mcv.nod.info:
+    Inherits: mcv.info
+	Encyclopedia:
+        Category: Nod Vehicles
+	RenderSprites:
+		Image: mcv
+        Palette: nod
+
+harv.nod.info:
+    Inherits: harv.info
+	Encyclopedia:
+        Category: Nod Vehicles
+	RenderSprites:
+		Image: harv
+        Palette: nod
 
 truk.nod.info:
     Inherits: truk.info
@@ -642,27 +742,14 @@ truk.nod.info:
 		Image: truk
         Palette: nod
 
-jeep.info:
-    Inherits: JEEP
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: These all-terrain attack vehicles are fast and very useful against infantry and can wipeout large numbers of Recon Bikes when used en masse. Its light armor makes it vulnerable to any explosive weapon.
-        Category: GDI Vehicles
-		Order: 2
-	RenderSprites:
-		Image: jeep
-        Palette: gdi
-    -MapEditorData:
-
 bggy.info:
     Inherits: BGGY
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.
+        Description: These all-terrain vehicles are armed with an M60 machine-gun in a turret. Faster than GDI's Humvee, the Buggy has sacrificed some armor for this advantage. Used in hit and run tactics on infantry and other lightly armored targets, the Buggy shines. Against armor, it dies.\n\nHeroic rank:\nMachinegun gets an upgrade, becoming the same as an APC.
         Category: Nod Vehicles
-		Order: 9
+		Order: 3
 	RenderSprites:
 		Image: bggy
         Palette: nodunits
@@ -673,25 +760,12 @@ bike.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.\nThis unit is outfitted with a sensor package that allows it to see any Stealth units nearby.
+        Description: Mounting twin rocket launchers, the cycles have great flexibility, serving multiple roles in Nod's forces. Learn to use these units in packs, hunting down lone units or harvesters. When in guard mode, they will shoot at enemy aircraft, making them ideal at destroying incoming aerial assaults. Their speed makes them an ideal scouting unit as well.\nThis unit is outfitted with a sensor package that allows it to see any Stealth units nearby.\n\nHeroic rank:\nShoots double the amount of rockets.
         Category: Nod Vehicles
-		Order: 10
+		Order: 4
 	RenderSprites:
 		Image: bike
         Palette: nodunits
-    -MapEditorData:
-
-apc.info:
-    Inherits: APC
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: The Armored Personnel Carrier (APC) transports and protects up to five troops heading to and from battle locations. Its heavy armor, fast speed, and long sight range make it an ideal scouting unit. It is also useful for crushing infantry.
-        Category: GDI Vehicles
-		Order: 3
-	RenderSprites:
-		Image: apc
-        Palette: gdi
     -MapEditorData:
 
 apc.nod.info:
@@ -702,43 +776,17 @@ apc.nod.info:
 		Image: apc
         Palette: nodunits
 
-maag.info:
-    Inherits: MAAG
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: This APC chassis had been outfitted with a twin-linked flak cannon to serve as mobile anti-air deterrent, and has sacrificed carrying capacity in doing so.
-        Category: GDI Vehicles
-		Order: 4
-	RenderSprites:
-		Image: maag
-        Palette: gdi
-    -MapEditorData:
-
 ltnk.info:
     Inherits: LTNK
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.
+        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.\n\nHeroic rank:\nThe gun gets a calibre upgrade, becoming the same as a Medium Tank's weapon. 
         Category: Nod Vehicles
-		Order: 11
+		Order: 7
 	RenderSprites:
 		Image: ltnk
         Palette: nodunits
-    -MapEditorData:
-
-mtnk.info:
-    Inherits: MTNK
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: From its single barrel, the Main Battle Tank (MBT) fires armor-piercing shells. It is faster, heavier and more destructive than Nod's Light Tank. This is one of the best all around vehicles in the game. It is effective against both vehicles and structures, but can be taken down by groups of infantry or aerial units.
-        Category: GDI Vehicles
-		Order: 5
-	RenderSprites:
-		Image: mtnk
-        Palette: gdi
     -MapEditorData:
 
 ftnk.info:
@@ -748,23 +796,10 @@ ftnk.info:
 	Encyclopedia:
         Description: Especially useful against infantry and structures, the Flame Tank can mow through swarms of infantry with little or no damage to itself. To top off its destructive capabilities, the flame tank is fast, able to avoid some of the slower firing weapons and get close to its target quickly.
         Category: Nod Vehicles
-		Order: 12
+		Order: 8
 	RenderSprites:
 		Image: ftnk
         Palette: nodunits
-    -MapEditorData:
-
-htnk.info:
-    Inherits: HTNK
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Armed with dual 120mm cannons and 'Mammoth Tusk' Missiles, this giant is a very versatile attack unit. These weapons help compensate for its lack of speed and mobility.\nWhen this unit takes a lot of damage, it can slowly regenerate its health back up to 50% of it's maximum.\nWhen the Mammoth tank is placed in guard mode, it can fire at aerial units.
-        Category: GDI Vehicles
-		Order: 6
-	RenderSprites:
-		Image: htnk
-        Palette: gdi
     -MapEditorData:
 
 stnk.info:
@@ -774,7 +809,7 @@ stnk.info:
 	Encyclopedia:
         Description: This lightly-armored tank is equipped with the Lazarus shield, cloaking it from enemy sight. This shield is neutralized during firing, giving the tanks the ability to 'appear' out of thin air. Although vehicles and most structures are not able to see the tank while cloaked, Infantry and Defenses will reveal the tank if it gets too close to them.
         Category: Nod Vehicles
-		Order: 14
+		Order: 9
 	RenderSprites:
 		Image: stnk
         Palette: nodunits
@@ -785,25 +820,12 @@ arty.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This massive cannon has great range and ballistic power.\nThis unit is very slow. Any attacks using this unit have to be orchestrated carefully-just getting the unit to its target can be difficult. However, once it gets within range, little stands in the way of its firepower.\nBy nature, artillery is somewhat innacurate.
+        Description: This massive cannon has great range and ballistic power.\nThis unit is very slow. Any attacks using this unit have to be orchestrated carefully-just getting the unit to its target can be difficult. However, once it gets within range, little stands in the way of its firepower.\nBy nature, artillery is somewhat innacurate.\n\nHeroic rank:\nShoots two shells in rapid succession.
         Category: Nod Vehicles
-		Order: 13
+		Order: 10
 	RenderSprites:
 		Image: arty
         Palette: nodunits
-    -MapEditorData:
-
-msam.info:
-    Inherits: MSAM
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: Mobile devastation. GDI's longest-range attacker fires 227mm rockets and is effective against just about everything, excluding aerial threats. With no short-range fighting ability, this unit needs close-quarter backup. Keep it in the background and don't let enemies in close to it.
-        Category: GDI Vehicles
-		Order: 7
-	RenderSprites:
-		Image: msam
-        Palette: gdi
     -MapEditorData:
 
 mlrs.info:
@@ -811,51 +833,23 @@ mlrs.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The SSM is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.
+        Description: The SSM Launcher is Nod's longest-ranged unit, able to fire on the enemy from a great distance. Its napalm rounds are useful at cracking through tough base defenses without any worry of retaliation. Infantry in a large group will also suffer from its high area of effect. The reload rate on this unit is extremely long, requiring other units to protect it during its lag-time.\n\nHeroic rank:\nShoots chemical missiles that can turn enemy infantry to Visceroids.
         Category: Nod Vehicles
-		Order: 15
+		Order: 12
 	WithSpriteTurret:
 		-RequiresCondition:
     -WithSpriteTurret@OneMissile:
     -WithSpriteTurret@NoMissiles:
+	-WithSpriteTurret@Heroic:
+	-WithSpriteTurret@HeroicOneMissile:
+	-WithSpriteTurret@HeroicNoMissiles:
 	RenderSprites:
 		Image: mlrs
         Palette: nodunits
     -MapEditorData:
-    
-mhq.info:
-    Inherits: MHQ
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: This is a electronic counter-measure vehicle. It's primary purpose is to detect nearby stealth units using the outfitted array of sensor equipment. It can also disrupt enemy communications over the distance, causing their radar facilities to jam and malfunction.
-        Category: GDI Vehicles
-		Order: 8
-	RenderSprites:
-		Image: mhq
-        Palette: gdi
-    -MapEditorData:
 
-c17.info:
-    Inherits: C17
-	Encyclopedia:
-        Description: This carrier ships purchased units to the Brotherhood of Nod via the Airfield. Any units ordered will be shipped in as soon as possible.
-        Category: Nod Aircraft
-		Order: 4
-	RenderSprites:
-		Image: c17
-        Palette: nodunits
+#   GDI Aircraft
 
-a10.info:
-    Inherits: A10
-	Encyclopedia:
-        Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
-        Category: GDI Aircraft
-		Order: 3
-	RenderSprites:
-		Image: a10
-        Palette: gdi
-    
 tran.info:
     Inherits: TRAN
     Buildable:
@@ -869,6 +863,34 @@ tran.info:
         Palette: gdi
     -MapEditorData:
 
+orca.info:
+    Inherits: ORCA
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. Orcas are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an Orca runs out of rockets, it must return to base for reloading.\n\nHeroic rank:\nCan reload ammo on air by itself.
+        Category: GDI Aircraft
+		Order: 1
+	RenderSprites:
+		Image: orca
+        Palette: gdi
+    -MapEditorData:
+
+a10.info:
+    Inherits: A10
+    Buildable:
+        Queue: Nothing
+        Prerequisites: airstrike.info
+	Encyclopedia:
+        Description: These units are highly maneuverable, ground-hugging craft that level enemy units with napalm. Since the A-10 bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
+        Category: GDI Aircraft
+		Order: 5
+	RenderSprites:
+		Image: a10
+        Palette: gdi
+
+#   Nod Aircraft
+
 tran.nod.info:
     Inherits: tran.info
 	Encyclopedia:
@@ -877,31 +899,33 @@ tran.nod.info:
 		Image: tran
         Palette: nodunits
 
-orca.info:
-    Inherits: ORCA
-    Buildable:
-        Queue: Nothing
-	Encyclopedia:
-        Description: This vertical takeoff and landing (VTOL) craft carries five salvos of rockets. ORCAs are exceptionally useful for taking out enemy units like Harvesters. When used in conjunction with Ion Cannon strikes, then can easily destroy enemy structures. When an ORCA runs out of rockets, it must return to base for reloading.
-        Category: GDI Aircraft
-		Order: 2
-	RenderSprites:
-		Image: orca
-        Palette: gdi
-    -MapEditorData:
-
 heli.info:
     Inherits: HELI
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Nod's Apache Helicopter is fast, mobile, and carries a large quantity of ammunition. Used primarily against infantry and structures, the Apache can take down armored units when en-masse. Use them to soften up bases before a nuclear weapon is dropped, or gun through a horde of engineers coming towards your base.
+        Description: Nod's Apache Helicopter is fast, mobile, and carries a large quantity of ammunition. Used primarily against infantry and structures, the Apache can take down armored units when en-masse. Use them to soften up bases before a nuclear weapon is dropped, or gun through a horde of engineers coming towards your base.\n\nHeroic rank:\nCan reload ammo on air by itself.
         Category: Nod Aircraft
 		Order: 1
 	RenderSprites:
 		Image: heli
         Palette: nodunits
     -MapEditorData:
+
+c17.info:
+    Inherits: C17
+    Buildable:
+        Queue: Nothing
+        Prerequisites: afld.info
+	Encyclopedia:
+        Description: This carrier ships purchased units to the Brotherhood of Nod via the Airfield. Any units ordered will be shipped in as soon as possible.
+        Category: Nod Aircraft
+		Order: 2
+	RenderSprites:
+		Image: c17
+        Palette: nodunits
+
+#   GDI Navy
 
 lst.info:
     Inherits: LST
@@ -916,6 +940,21 @@ lst.info:
         Palette: gdi
     -MapEditorData:
 
+boat.info:
+    Inherits: BOAT
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Heavily armored, and armed with surface-to-surface missiles, this unit is the backbone of naval forces.
+        Category: GDI Navy
+		Order: 1
+	RenderSprites:
+		Image: boat
+        Palette: gdi
+    -MapEditorData:
+
+#   Nod Navy
+
 lst.nod.info:
     Inherits: lst.info
 	Encyclopedia:
@@ -924,39 +963,39 @@ lst.nod.info:
 		Image: lst
         Palette: nodunits
 
-boat.info:
-    Inherits: BOAT
-    Buildable:
-        Queue: Nothing
+boat.nod.info:
+    Inherits: boat.info
 	Encyclopedia:
-        Description: Heavily armored, and armed with surface-to-surface missiles, this unit is the backbone of GDI's naval forces.
-        Category: GDI Navy
-		Order: 1
+        Category: Nod Navy
 	RenderSprites:
 		Image: boat
-        Palette: gdi
-    -MapEditorData:
+        Palette: nod
 
-ioncannon.info:
+#   Special Powers
+
+radarscan.info:
     AlwaysVisible:
     WithSpriteBody:
+        Sequence: scanicon
 	Interactable:
 	Buildable:
-		Prerequisites: eye
+		Prerequisites: hq
 	Tooltip:
-		Name: Ion Cannon Sattelite
+		Name: Radar Scan
 	Encyclopedia:
-		Description: The orbital Ion Cannon fires a devastating particle beam cannon directly on top of the enemy, capable of instantly obliterating it's target.
-		Order: 1
-		Category: Super Weapons
+		Description: The Communications Center is capable of performing limited long-range scans that can temporarily reveal map terrain, provide vision and ensure detection of cloaked units in the given area.\nAs the required equipment easily overheats there is a necessary pause time required before another Radar Scan can be performed again.
+		Order: 0
+		Category: Special Abilities
 	RenderSprites:
-		Image: ionicon
+		Image: cyclicons
         Palette: effect
+
+#   Super Weapons
 
 atomic.info:
     AlwaysVisible:
     WithSpriteBody:
-		Sequence: up
+        Sequence: atomicon
 	Interactable:
 	Buildable:
 		Prerequisites: tmpl
@@ -967,44 +1006,54 @@ atomic.info:
 		Order: 0
 		Category: Super Weapons
 	RenderSprites:
-		Image: atomic
+		Image: cyclicons
+        Palette: effect
+
+ioncannon.info:
+    AlwaysVisible:
+    WithSpriteBody:
+        Sequence: ionicon
+	Interactable:
+	Buildable:
+		Prerequisites: eye
+	Tooltip:
+		Name: Ion Cannon Sattelite
+	Encyclopedia:
+		Description: The orbital Ion Cannon fires a devastating particle beam cannon directly on top of the enemy, capable of instantly obliterating it's target.
+		Order: 1
+		Category: Super Weapons
+	RenderSprites:
+		Image: cyclicons
         Palette: effect
 
 airstrike.info:
+    ProvidesPrerequisite@self:
     AlwaysVisible:
     WithSpriteBody:
+        Sequence: bombicon
 	Interactable:
 	Buildable:
 		Prerequisites: miss
 	Tooltip:
-		Name: Airstrike
+		Name: Air Strike
 	Encyclopedia:
 		Description: A-10 'Warthog' plane will drop bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
 		Order: 2
 		Category: Super Weapons
 	RenderSprites:
-		Image: bombicon
+		Image: cyclicons
         Palette: effect
+
+#   Tech Buildings
 
 v19.info:
     Inherits: V19
 	Encyclopedia:
-		Description: This civilian asset when captured will extract valuable oil from reserves deep underground thus generating income periodically. While the amount of income pales in comparison to tiberium, the rate at which extracted oil can get sold on the market makes it a worthwhile investion.\nThe Oil Derrick will generate 15 credits every 2 seconds.
+		Description: This civilian asset when captured will extract valuable oil from reserves deep underground thus generating income periodically. While the amount of income pales in comparison to tiberium, the rate at which extracted oil can get sold on the market makes it a worthwhile investion.\nThe Oil Derrick will generate 30 credits every 2 seconds.
         Category: Tech Buildings
 		Order: 0
 	RenderSprites:
 		Image: v19
-        Palette: civilian
-    -MapEditorData:
-
-oil.info:
-    Inherits: OIL
-	Encyclopedia:
-        Description: The Oil Refinery when captured will reduce the manufacturing cost of fuel used, in effect reducing the production cost of all units by 10%. Capturing multiple oil refineries does not cumulatively stack the discount.\nDuring a lengthy battle the resources saved by the ownership of an Oil Refinery can be strategically important, and may alter the outcome of some important skirmishes.
-        Category: Tech Buildings
-		Order: 1
-	RenderSprites:
-		Image: oil
         Palette: civilian
     -MapEditorData:
 
@@ -1019,14 +1068,14 @@ hosp.info:
         Palette: civilian
     -MapEditorData:
 
-army.info:
-    Inherits: ARMY
+bio2.info:
+    Inherits: BIO2
 	Encyclopedia:
-		Description: This facility is well-stocked with arms and ammunition to be used by experienced soldiers. Wherever such a facility can be located, commanders may endeavour to secure it's usage for their own forces.\nCapturing this structure with an Engineer will enable to train Infantry units at Veteran rank.
+		Description: An independent establishment dedicated to the research of dangerous substance Tiberium, and the mutations it can cause. Found often in the vicinity of hazardous Tiberium fields, the scientists are well equipped with a surplus of hazmat suits, that they can share with whomever decided to claim ownership and sponsor their field research.\nDark rumours are often abound such facilities however, as some had been found conducting experimentation of questionable ethics. Efforts into observing controlled mutation may result in the increasingly frequent appearances of Visceroids around such facilities.
         Category: Tech Buildings
-		Order: 3
+		Order: 4
 	RenderSprites:
-		Image: army
+		Image: bio2
         Palette: civilian
     -MapEditorData:
 
@@ -1035,31 +1084,9 @@ comm.info:
 	Encyclopedia:
         Description: This facility houses an array of long-range communications equipment that can provide vision in a large radius when captured. While this facility is internally powered, it can also activate it's sensors when supplied with extra power from your base to detect cloaked units in a medium-range.
         Category: Tech Buildings
-		Order: 4
-	RenderSprites:
-		Image: comm
-        Palette: civilian
-    -MapEditorData:
-
-aprt.info:
-    Inherits: APRT
-	Encyclopedia:
-        Description: The civilian airport can allow the usage of Paratroopers when captured.\nParatroopers consist of a mixed group of regular Infantry that can be air-dropped anywhere on the map. 
-        Category: Tech Buildings
 		Order: 5
 	RenderSprites:
-		Image: aprt
-        Palette: civilian
-    -MapEditorData:
-
-expb.info:
-    Inherits: EXPB
-	Encyclopedia:
-        Description: Construction outposts such as these can be used to expand your base. To do so, simply use an Engineer to capture the structure and you will able to build structures nearby it's location.
-        Category: Tech Buildings
-		Order: 6
-	RenderSprites:
-		Image: acom
+		Image: comm
         Palette: civilian
     -MapEditorData:
 
@@ -1068,32 +1095,34 @@ syrd.info:
 	Encyclopedia:
         Description: The shipyard is a production facility for naval units. This structure will allow you to build naval transports and ships when captured.
         Category: Tech Buildings
-		Order: 7
+		Order: 8
 	RenderSprites:
 		Image: syrd
         Palette: civilian
     -MapEditorData:
 
-empb.info:
-    Inherits: EMPB
+vice.info:
+    Inherits: VICE
+    Buildable:
+        Queue: Nothing
 	Encyclopedia:
-        Description: Highly-experimental technology deployed in limited quantity for field-testing. Each of those structures houses a battery of missiles outfitted with an Electro Magnetic Pulse (E.M.P.) warhead, that can be fired to anywhere on the map.\nThe missile when hit discharges electro-magnetic particles that disable all mechanical units(and structures) affected within the blast radius.\nVehicles will stop working, Aircraft explodes on air, and Buildings malfunction until the effect has worn-off.
-        Category: Tech Buildings
-		Order: 9
-	Turreted:
-        InitialFacing: 288
+        Description: The visceroid is a mutated abomination that spits liquid tiberium, and is capable of healing itself while standing on Tiberium.
+        Category: Miscellaneous
+		Order: 0
 	RenderSprites:
-		Image: empb
-        Palette: civilian
+		Image: pvice
+        Palette: neongreen
     -MapEditorData:
 
-wind.info:
-    Inherits: WIND
+crate.info:
+    Inherits: SCRATE
+	Tooltip:
+		Name: Crate
 	Encyclopedia:
-        Description: This structure is a type of power generation that is employed world-wide, especially in the developing or poor countries such as those located in the continent of Africa and post-Iron Curtain countries of Europe. As it must harness the power of wind to generate some energy (only +30), they can be found spread across the countryside in groups that are at most minimum three placed near together.
-        Category: Tech Buildings
-		Order: 8
+		Description: Those are containing a power-up each that can get picked up by any unit, there is also the possibility of it containing a bad suprise however.\nPossible rewards include increased armor, firepower, speed, invisibility, free cash, one free Harvester, a free MCV, revealing the map, instant healing, invulnerability, one-shot copies of super weapons, a free rank of veterancy(only when enabled).\nOn the other side of the coin there is possibility of a visceroid appearing, instant death of the unit, a fiery explosion, a nuclear detonation, E.M.P. disabling the vehicle, the map becoming hidden again, or seeds a patch of tiberium.\nIn the event you have lost the Construction Yard and no longer have any MCV remaining, you can obtain a guaranteed MCV from the first crate picked up.
+        Category: Miscellaneous
+		Order: 1
 	RenderSprites:
-		Image: wind
-        Palette: civilian
+		Image: scrate
+        Palette: effect
     -MapEditorData:

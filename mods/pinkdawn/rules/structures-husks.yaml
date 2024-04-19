@@ -1,5 +1,5 @@
 FACT.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -8,13 +8,19 @@ FACT.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Construction Yard (Destroyed)
+	Health:
+		HP: 45000
 	RenderSprites:
 		Image: fact.husk
 		FactionImages:
-			nod: nodfact.husk
+			gdi: gdifact.husk
+            nod: nodfact.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: fact
 
 NUKE.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -23,13 +29,18 @@ NUKE.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Power Plant (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
 		Image: nuke.husk
 		FactionImages:
 			nod: nodnuke.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: nuke
 
 NUK2.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -38,13 +49,18 @@ NUK2.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Advanced Power Plant (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: nuk2.husk
 		FactionImages:
 			nod: nodnuk2.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: nuk2
 
 PROC.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 3072, 3056
 	Building:
@@ -53,13 +69,18 @@ PROC.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Tiberium Refinery (Destroyed)
+	Health:
+		HP: 35000
 	RenderSprites:
 		Image: proc.husk
 		FactionImages:
 			nod: nodproc.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: proc
 
 SILO.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 1024
 	Building:
@@ -67,37 +88,54 @@ SILO.Husk:
 		Dimensions: 2,1
 	Tooltip:
 		Name: Tiberium Silo (Destroyed)
+	Health:
+		HP: 15000
 	RenderSprites:
 		Image: silo.husk
 		FactionImages:
 			nod: nodsilo.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: silo
 
 PYLE.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx ++ ==
+		Dimensions: 2,3
+        LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Barracks (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: pyle.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: pyle
 
 HAND.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xX xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Hand of Nod (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: hand.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hand
 
 WEAP.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
@@ -105,12 +143,17 @@ WEAP.Husk:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: War Factory (Destroyed)
+		Name: Weapons Factory (Destroyed)
+	Health:
+		HP: 40000
 	RenderSprites:
 		Image: weap.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: weap
 
 AFLD.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 4096, 2048
 	Building:
@@ -119,33 +162,52 @@ AFLD.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Airstrip (Destroyed)
+	Health:
+		HP: 50000
 	RenderSprites:
 		Image: afld.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: afld
 
 FIX.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2730, 1450
 	Building:
-		Footprint: === xxx ===
+		Footprint: =+= +++ =+=
 		Dimensions: 3,3
 	Tooltip:
 		Name: Service Depot (Destroyed)
+	Health:
+		HP: 35000
 	RenderSprites:
 		Image: fix.husk
+		FactionImages:
+			nod: nodfix.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: fix
 
 HPAD.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
-		Footprint: xx xx
+		Footprint: =x x=
 		Dimensions: 2,2
 	Tooltip:
 		Name: Helipad (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: hpad.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hpad
 
 HQ.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 1706
 	Building:
@@ -154,13 +216,18 @@ HQ.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Center (Destroyed)
+	Health:
+		HP: 45000
 	RenderSprites:
 		Image: hq.husk
 		FactionImages:
 			nod: nodhq.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hq
 
 EYE.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 1706
 	Building:
@@ -169,37 +236,52 @@ EYE.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Advanced Communications Center (Destroyed)
+	Health:
+		HP: 45000
 	RenderSprites:
 		Image: eye.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: eye
 
 MISS.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
-		Footprint: xxx xxx ===
+		Footprint: xx_ xxx ===
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-256,0
 	Tooltip:
 		Name: Technology Center (Destroyed)
+	Health:
+		HP: 50000
 	RenderSprites:
 		Image: miss.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: miss
 
 TMPL.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 3072, 2048
 	Building:
-		Footprint: xxx xxx ===
+		Footprint: xXx xxx ===
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Temple of Nod (Destroyed)
+	Health:
+		HP: 100000
 	RenderSprites:
 		Image: tmpl.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: tmpl
 
 BIO.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
@@ -207,21 +289,33 @@ BIO.Husk:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: Biological Laboratory (Destroyed)
+		Name: Research Laboratory (Destroyed)
+	Health:
+		HP: 35000
 	RenderSprites:
 		Image: bio.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: bio
 
 GTWR.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Tooltip:
 		Name: Guard Tower (Destroyed)
+	Health:
+		HP: 20000
 	RenderSprites:
 		Image: gtwr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gtwr
+	MapEditorData:
+		Categories: Defense husk
 
 GUN.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Turreted:
@@ -231,27 +325,50 @@ GUN.Husk:
 	WithEmbeddedTurretSpriteBody:
 	Tooltip:
 		Name: Gun Turret (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: gun.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: gun
+	MapEditorData:
+		Categories: Defense husk
 
 ATWR.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 1024,1024
 	Tooltip:
 		Name: Advanced Guard Tower (Destroyed)
+	Health:
+		HP: 30000
 	RenderSprites:
 		Image: atwr.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: atwr
+	MapEditorData:
+		Categories: Defense husk
 
 OBLI.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 1024, 1024
 	Tooltip:
 		Name: Obelisk of Light (Destroyed)
+	Health:
+		HP: 37500
 	RenderSprites:
 		Image: obli.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: obli
+	MapEditorData:
+		Categories: Defense husk
 
 SAM.Husk:
-	Inherits: ^BaseBuildingHusk
+	Inherits: ^BuildingHusk
 	Interactable:
 		Bounds: 2048, 1024
 	Building:
@@ -259,3 +376,12 @@ SAM.Husk:
 		Dimensions: 2,1
 	Tooltip:
 		Name: SAM Site (Destroyed)
+	Health:
+		HP: 20000
+	RenderSprites:
+		Image: sam.husk
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: sam
+	MapEditorData:
+		Categories: Defense husk

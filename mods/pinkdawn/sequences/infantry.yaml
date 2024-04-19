@@ -991,3 +991,7 @@ vice:
 		Length: *
 		ZOffset: 2047
 	icon: viceicon
+
+pvice:
+    Inherits: vice
+	Defaults: pvice

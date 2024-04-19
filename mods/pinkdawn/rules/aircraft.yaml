@@ -77,6 +77,8 @@ A10:
 	-ActorLostNotification:
 	Interactable:
 	HitShape:
+		Type: Circle
+			Radius: 448
 	Health:
 		HP: 9000
 	Armor:
@@ -129,19 +131,9 @@ TRAN:
 	Inherits@Speed: ^AcceptsSpeedCrate
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	Inherits@EMP: ^AcceptsEMPCrate
-    -GainsExperience:
-    -FirepowerMultiplier@RANK-VETERAN:
-    -SpeedMultiplier@RANK-VETERAN:
-    -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
-    -FirepowerMultiplier@RANK-ELITE:
-    -SpeedMultiplier@RANK-ELITE:
-    -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
-    -WithDecoration@RANK-VETERAN:
-    -WithDecoration@RANK-ELITE:
-    -GainsExperienceMultiplier@EXPTOGGLE2:
-    -GrantConditionOnPrerequisite@EXPTOGGLE2:
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -149,7 +141,7 @@ TRAN:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1400
+        BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: hpad
@@ -211,6 +203,7 @@ ORCA:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+    Inherits@experience: ^ExperienceMechanicAircraft
 	Selectable:
 		DecorationBounds: 1030,1024
 	Valued:
@@ -220,7 +213,7 @@ ORCA:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 2100
+    	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: hpad, anyhq
@@ -275,11 +268,39 @@ ORCA:
 		RearmActors: hpad
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        ResetOnFire: true
+        AmmoPool: primary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 200
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HELI:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@Crates: ^AcceptsAllCratesExceptCloak
+    Inherits@experience: ^ExperienceMechanicAircraft
 	Selectable:
 		DecorationBounds: 1280, 1024
 	Valued:
@@ -289,7 +310,7 @@ HELI:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 2100
+    	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: hpad, anyhq
@@ -348,12 +369,41 @@ HELI:
 		Offset: 0,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	Rearmable:
 		RearmActors: hpad
 	KillsSelf:
 		RequiresCondition: airborne && emp-crate-collected
+	ReloadAmmoPool@HEROIC:
+        ResetOnFire: true
+        AmmoPool: primary
+		Delay: 80
+		Count: 2
+        PauseOnCondition: emp-crate-collected || unit.sellable || !rank-heroic
+     RevealsShroudMultiplier@UnitAIFix:
+        Modifier: 150
+        RequiresCondition: heli-shoots
+    GrantConditionOnAttack@UnitAIFix:
+        Condition: heli-shoots
+        ArmamentNames: primary, secondary
+        RevokeDelay: 25
+     RevealsShroudMultiplier@UnitAIFix2:
+        Modifier: 200
+        RequiresCondition: owned-by-ai
+	GrantConditionOnBotOwner@UnitAIFix2:
+		Condition: owned-by-ai
+		Bots: normalai
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

@@ -8,10 +8,24 @@
 	Image2x: chrome-pink-2x.png
 	Image3x: chrome-pink-3x.png
 
+^ChromeSides:
+	Image: chrome-sides.png
+	Image2x: chrome-sides-2x.png
+	Image3x: chrome-sides-3x.png
+
+^ChromeRadar:
+	Image: chrome-radar.png
+	Image2x: chrome-radar-2x.png
+	Image3x: chrome-radar-3x.png
+
 logos:
 	Inherits: ^Chrome
 	Regions:
-		eva: 769, 320, 128, 64
+		eva: 257, 320, 128, 64
+
+logos-load:
+	Inherits: ^ChromeSides
+	Regions:
 		nod-load: 0, 256, 256, 256
 		gdi-load: 256, 256, 256, 256
 
@@ -25,12 +39,11 @@ button:
 	PanelRegion: 129, 1, 2, 2, 26, 26, 2, 2
 
 button-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 129, 1, 2, 2, 26, 26, 2, 2
-	Inherits: button
 
 button-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 385, 1, 2, 2, 26, 26, 2, 2
 
 button-hover:
@@ -38,12 +51,11 @@ button-hover:
 	PanelRegion: 161, 1, 2, 2, 26, 26, 2, 2
 
 button-nod-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 161, 1, 2, 2, 26, 26, 2, 2
-	Inherits: button-hover
 
 button-gdi-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 417, 1, 2, 2, 26, 26, 2, 2
 
 button-disabled:
@@ -51,11 +63,11 @@ button-disabled:
 	PanelRegion: 161, 33, 2, 2, 26, 26, 2, 2
 
 button-nod-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 161, 33, 2, 2, 26, 26, 2, 2
 
 button-gdi-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 417, 33, 2, 2, 26, 26, 2, 2
 
 button-pressed:
@@ -63,11 +75,11 @@ button-pressed:
 	PanelRegion: 129, 33, 2, 2, 26, 26, 2, 2
 
 button-nod-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 129, 33, 2, 2, 26, 26, 2, 2
 
 button-gdi-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 385, 33, 2, 2, 26, 26, 2, 2
 
 button-highlighted:
@@ -75,11 +87,11 @@ button-highlighted:
 	PanelRegion: 129, 65, 2, 2, 26, 26, 2, 2
 
 button-nod-highlighted:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 129, 65, 2, 2, 26, 26, 2, 2
 
 button-gdi-highlighted:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 385, 65, 2, 2, 26, 26, 2, 2
 
 button-highlighted-hover:
@@ -87,11 +99,11 @@ button-highlighted-hover:
 	PanelRegion: 161, 65, 2, 2, 26, 26, 2, 2
 
 button-nod-highlighted-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 161, 65, 2, 2, 26, 26, 2, 2
 
 button-gdi-highlighted-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 417, 65, 2, 2, 26, 26, 2, 2
 
 button-highlighted-pressed:
@@ -99,11 +111,11 @@ button-highlighted-pressed:
 	PanelRegion: 129, 97, 2, 2, 26, 26, 2, 2
 
 button-nod-highlighted-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 129, 97, 2, 2, 26, 26, 2, 2
 
 button-gdi-highlighted-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 385, 97, 2, 2, 26, 26, 2, 2
 
 button-highlighted-disabled:
@@ -111,11 +123,11 @@ button-highlighted-disabled:
 	PanelRegion: 161, 97, 2, 2, 26, 26, 2, 2
 
 button-nod-highlighted-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 161, 97, 2, 2, 26, 26, 2, 2
 
 button-gdi-highlighted-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 417, 97, 2, 2, 26, 26, 2, 2
 
 #
@@ -252,7 +264,7 @@ scrollheader-highlighted:
 # ===
 #
 slider:
-	Inherits: ^Chrome
+	Inherits: ^ChromePink
 	Regions:
 		tick: 65, 1, 1, 4
 
@@ -322,11 +334,11 @@ panel-black:
 	PanelRegion: 65, 1, 2, 2, 58, 58, 2, 2
 
 panel-black-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 65, 1, 2, 2, 58, 58, 2, 2
 
 panel-black-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 321, 1, 2, 2, 58, 58, 2, 2
 
 panel-darkred:
@@ -334,11 +346,11 @@ panel-darkred:
 	PanelRegion: 1, 65, 2, 2, 58, 58, 2, 2
 
 panel-darkred-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 1, 65, 2, 2, 58, 58, 2, 2
 
 panel-darkred-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 257, 65, 2, 2, 58, 58, 2, 2
 
 panel-gray:
@@ -346,11 +358,11 @@ panel-gray:
 	PanelRegion: 65, 65, 2, 2, 58, 58, 2, 2
 
 panel-gray-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 65, 65, 2, 2, 58, 58, 2, 2
 
 panel-gray-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 321, 65, 2, 2, 58, 58, 2, 2
 
 panel-allblack:
@@ -359,12 +371,12 @@ panel-allblack:
 	PanelSides: Center
 
 panel-allblack-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 1, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 panel-allblack-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 257, 1, 2, 2, 26, 26, 2, 2
 	PanelSides: Center
 
@@ -374,12 +386,12 @@ panel-transparent:
 	PanelSides: Edges
 
 panel-transparent-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 1, 33, 1, 1, 28, 28, 1, 1
 	PanelSides: Edges
 
 panel-transparent-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 257, 33, 0, 0, 30, 30, 0, 0
 	PanelSides: Edges
 
@@ -389,12 +401,12 @@ shellmapborder:
 	PanelSides: Edges
 
 shellmapborder-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 129, 129, 32, 32, 62, 62, 32, 32
 	PanelSides: Edges
 
 shellmapborder-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 385, 129, 32, 32, 62, 62, 32, 32
 	PanelSides: Edges
 
@@ -406,57 +418,57 @@ shellmapborder-gdi:
 music:
 	Inherits: ^Chrome
 	Regions:
-		pause: 768, 0, 16, 16
-		stop: 785, 0, 16, 16
-		play: 802, 0, 16, 16
-		next: 819, 0, 16, 16
-		prev: 836, 0, 16, 16
-		fastforward: 853, 0, 16, 16
+		pause: 256, 0, 16, 16
+		stop: 273, 0, 16, 16
+		play: 290, 0, 16, 16
+		next: 307, 0, 16, 16
+		prev: 324, 0, 16, 16
+		fastforward: 341, 0, 16, 16
 
 lobby-bits:
 	Inherits: ^Chrome
 	Regions:
-		spawn-claimed: 744, 215, 18, 18
-		spawn-unclaimed: 744, 234, 18, 18
-		spawn-disabled: 744, 253, 18, 18
-		admin: 938, 0, 6, 5
-		colorpicker: 887, 0, 14, 14
-		huepicker: 904, 0, 7, 15
-		kick: 921, 0, 11, 11
-		protected: 768, 17, 12, 13
-		protected-disabled: 785, 17, 12, 13
-		authentication: 802, 17, 12, 13
-		authentication-disabled: 819, 17, 12, 13
-		admin-registered: 768, 51, 16, 16
-		admin-anonymous: 802, 51, 16, 16
-		player-registered: 785, 51, 16, 16
-		player-anonymous: 819, 51, 16, 16
+		spawn-claimed: 232, 215, 18, 18
+		spawn-unclaimed: 232, 234, 18, 18
+		spawn-disabled: 232, 253, 18, 18
+		admin: 426, 0, 6, 5
+		colorpicker: 375, 0, 14, 14
+		huepicker: 392, 0, 7, 15
+		kick: 409, 0, 11, 11
+		protected: 256, 17, 12, 13
+		protected-disabled: 273, 17, 12, 13
+		authentication: 290, 17, 12, 13
+		authentication-disabled: 307, 17, 12, 13
+		admin-registered: 256, 51, 16, 16
+		admin-anonymous: 290, 51, 16, 16
+		player-registered: 273, 51, 16, 16
+		player-anonymous: 307, 51, 16, 16
 
 reload-icon:
 	Inherits: ^Chrome
 	Regions:
-		enabled: 768, 34, 16, 16
-		disabled-0: 785, 34, 16, 16
-		disabled-1: 802, 34, 16, 16
-		disabled-2: 819, 34, 16, 16
-		disabled-3: 836, 34, 16, 16
-		disabled-4: 853, 34, 16, 16
-		disabled-5: 870, 34, 16, 16
-		disabled-6: 887, 34, 16, 16
-		disabled-7: 904, 34, 16, 16
-		disabled-8: 921, 34, 16, 16
-		disabled-9: 938, 34, 16, 16
-		disabled-10: 955, 34, 16, 16
-		disabled-11: 972, 34, 16, 16
+		enabled: 256, 34, 16, 16
+		disabled-0: 273, 34, 16, 16
+		disabled-1: 290, 34, 16, 16
+		disabled-2: 307, 34, 16, 16
+		disabled-3: 324, 34, 16, 16
+		disabled-4: 341, 34, 16, 16
+		disabled-5: 358, 34, 16, 16
+		disabled-6: 375, 34, 16, 16
+		disabled-7: 392, 34, 16, 16
+		disabled-8: 409, 34, 16, 16
+		disabled-9: 426, 34, 16, 16
+		disabled-10: 443, 34, 16, 16
+		disabled-11: 460, 34, 16, 16
 
 checkmark-tick:
 	Inherits: ^Chrome
 	Regions:
-		checked: 972, 17, 16, 16
-		checked-pressed: 989, 17, 16, 16
-		checked-disabled: 989, 17, 16, 16
+		checked: 460, 17, 16, 16
+		checked-pressed: 477, 17, 16, 16
+		checked-disabled: 477, 17, 16, 16
 		unchecked: 0, 0, 0, 0
-		unchecked-pressed: 989, 17, 16, 16
+		unchecked-pressed: 477, 17, 16, 16
 
 checkmark-tick-highlighted:
 	Inherits: checkmark-tick
@@ -464,11 +476,11 @@ checkmark-tick-highlighted:
 checkmark-cross:
 	Inherits: ^Chrome
 	Regions:
-		checked: 972, 0, 16, 16
-		checked-pressed: 989, 0, 16, 16
-		checked-disabled: 989, 0, 16, 16
+		checked: 460, 0, 16, 16
+		checked-pressed: 477, 0, 16, 16
+		checked-disabled: 477, 0, 16, 16
 		unchecked: 0, 0, 0, 0
-		unchecked-pressed: 989, 0, 16, 16
+		unchecked-pressed: 477, 0, 16, 16
 
 checkmark-cross-highlighted:
 	Inherits: checkmark-cross
@@ -476,10 +488,10 @@ checkmark-cross-highlighted:
 checkmark-mute:
 	Inherits: ^Chrome
 	Regions:
-		unchecked: 989, 34, 16, 16
-		unchecked-pressed: 1006, 34, 16, 16
-		checked: 1006, 34, 16, 16
-		checked-pressed: 989, 34, 16, 16
+		unchecked: 477, 34, 16, 16
+		unchecked-pressed: 494, 34, 16, 16
+		checked: 494, 34, 16, 16
+		checked-pressed: 477, 34, 16, 16
 
 checkmark-mute-highlighted:
 	Inherits: checkmark-mute
@@ -487,29 +499,30 @@ checkmark-mute-highlighted:
 flags:
 	Inherits: ^Chrome
 	Regions:
-		nod: 811, 385, 32, 16
-		gdi: 811, 402, 32, 16
-		Random: 811, 419, 32, 16
+		gdi: 299, 402, 32, 16
+		nod: 299, 385, 32, 16
+		neutral: 299, 436, 32, 16
+        Random: 299, 419, 32, 16
 
 strategic:
 	Inherits: ^Chrome
 	Regions:
-		unowned: 768, 223, 22, 22
-		critical_unowned: 814, 223, 22, 22
-		enemy_owned: 837, 223, 22, 22
-		player_owned: 883, 223, 22, 22
+		unowned: 256, 223, 22, 22
+		critical_unowned: 302, 223, 22, 22
+		enemy_owned: 325, 223, 22, 22
+		player_owned: 371, 223, 22, 22
 
 scrollpanel-decorations:
 	Inherits: ^Chrome
 	Regions:
-		down: 836, 17, 16, 16
-		down-disabled: 853, 17, 16, 16
-		up: 870, 17, 16, 16
-		up-disabled: 887, 17, 16, 16
-		right: 904, 17, 16, 16
-		right-disabled: 921, 17, 16, 16
-		left: 938, 17, 16, 16
-		left-disabled: 955, 17, 16, 16
+		down: 324, 17, 16, 16
+		down-disabled: 341, 17, 16, 16
+		up: 358, 17, 16, 16
+		up-disabled: 375, 17, 16, 16
+		right: 392, 17, 16, 16
+		right-disabled: 409, 17, 16, 16
+		left: 426, 17, 16, 16
+		left-disabled: 443, 17, 16, 16
 
 scrollpanel-decorations-nod:
 	Inherits: scrollpanel-decorations
@@ -520,11 +533,11 @@ scrollpanel-decorations-gdi:
 dropdown-decorations:
 	Inherits: ^Chrome
 	Regions:
-		marker: 836, 17, 16, 16
-		marker-disabled: 853, 17, 16, 16
+		marker: 324, 17, 16, 16
+		marker-disabled: 341, 17, 16, 16
 
 dropdown-separators:
-	Inherits: ^Chrome
+	Inherits: ^ChromePink
 	Regions:
 		separator: 129, 2, 1, 19
 		separator-hover: 161, 2, 1, 19
@@ -542,129 +555,129 @@ separator:
 sidebar:
 	Inherits: ^Chrome
 	Regions:
-		background-sidebar: 513, 0, 230, 315
-		background-commandbar: 513, 468, 494, 44
+		background-sidebar: 1, 0, 230, 315
+		background-commandbar: 1, 468, 494, 44
 
 sidebar-bits:
 	Inherits: ^Chrome
 	Regions:
-		indicator-left: 955, 0, 16, 8
-		indicator-right: 955, 8, 16, 8
-		production-tooltip-time: 904, 51, 16, 16
-		production-tooltip-power: 870, 51, 16, 16
-		production-tooltip-cost: 836, 51, 16, 16
-		indicator-muted: 918, 221, 26, 24
+		indicator-left: 443, 0, 16, 8
+		indicator-right: 443, 8, 16, 8
+		production-tooltip-time: 392, 51, 16, 16
+		production-tooltip-power: 358, 51, 16, 16
+		production-tooltip-cost: 324, 51, 16, 16
+		indicator-muted: 406, 221, 26, 24
 
 vertical-bars:
 	Inherits: ^Chrome
 	Regions:
-		power: 744, 0, 10, 190
-		silo: 755, 0, 10, 190
+		power: 232, 0, 10, 190
+		silo: 243, 0, 10, 190
 
 production-icons:
 	Inherits: ^Chrome
 	Regions:
-		building: 768, 68, 16, 16
-		building-disabled: 768, 85, 16, 16
-		building-alert: 768, 102, 16, 16
-		defense: 785, 68, 16, 16
-		defense-disabled: 785, 85, 16, 16
-		defense-alert: 785, 102, 16, 16
-		infantry: 802, 68, 16, 16
-		infantry-disabled: 802, 85, 16, 16
-		infantry-alert: 802, 102, 16, 16
-		vehicle: 819, 68, 16, 16
-		vehicle-disabled: 819, 85, 16, 16
-		vehicle-alert: 819, 102, 16, 16
-		aircraft: 836, 68, 16, 16
-		aircraft-disabled: 836, 85, 16, 16
-		aircraft-alert: 836, 102, 16, 16
-		navy: 955, 68, 16, 16
-		navy-disabled: 955, 85, 16, 16
-		navy-alert: 955, 102, 16, 16
+		building: 256, 68, 16, 16
+		building-disabled: 256, 85, 16, 16
+		building-alert: 256, 102, 16, 16
+		defense: 273, 68, 16, 16
+		defense-disabled: 273, 85, 16, 16
+		defense-alert: 273, 102, 16, 16
+		infantry: 290, 68, 16, 16
+		infantry-disabled: 290, 85, 16, 16
+		infantry-alert: 290, 102, 16, 16
+		vehicle: 307, 68, 16, 16
+		vehicle-disabled: 307, 85, 16, 16
+		vehicle-alert: 307, 102, 16, 16
+		aircraft: 324, 68, 16, 16
+		aircraft-disabled: 324, 85, 16, 16
+		aircraft-alert: 324, 102, 16, 16
+		navy: 443, 68, 16, 16
+		navy-disabled: 443, 85, 16, 16
+		navy-alert: 443, 102, 16, 16
 
 order-icons:
 	Inherits: ^Chrome
 	Regions:
-		repair: 904, 68, 16, 16
-		repair-disabled: 904, 85, 16, 16
-		repair-active: 904, 102, 16, 16
-		sell: 887, 68, 16, 16
-		sell-disabled: 887, 85, 16, 16
-		sell-active: 887, 102, 16, 16
-		options: 870, 68, 16, 16
-		options-disabled: 870, 85, 16, 16
-		options-active: 870, 102, 16, 16
-		beacon: 921, 68, 16, 16
-		beacon-disabled: 921, 85, 16, 16
-		beacon-active: 921, 102, 16, 16
-		stats: 972, 68, 16, 16
-		stats-disabled: 972, 85, 16, 16
-		stats-active: 972, 102, 16, 16
+		repair: 392, 68, 16, 16
+		repair-disabled: 392, 85, 16, 16
+		repair-active: 392, 102, 16, 16
+		sell: 375, 68, 16, 16
+		sell-disabled: 375, 85, 16, 16
+		sell-active: 375, 102, 16, 16
+		options: 358, 68, 16, 16
+		options-disabled: 358, 85, 16, 16
+		options-active: 358, 102, 16, 16
+		beacon: 409, 68, 16, 16
+		beacon-disabled: 409, 85, 16, 16
+		beacon-active: 409, 102, 16, 16
+		stats: 460, 68, 16, 16
+		stats-disabled: 460, 85, 16, 16
+		stats-active: 460, 102, 16, 16
 
 power-icons:
 	Inherits: ^Chrome
 	Regions:
-		power-normal: 870, 51, 16, 16
-		power-critical: 887, 51, 16, 16
+		power-normal: 358, 51, 16, 16
+		power-critical: 375, 51, 16, 16
 
 cash-icons:
 	Inherits: ^Chrome
 	Regions:
-		cash-normal: 836, 51, 16, 16
-		cash-critical: 853, 51, 16, 16
+		cash-normal: 324, 51, 16, 16
+		cash-critical: 341, 51, 16, 16
 
 stance-icons:
 	Inherits: ^Chrome
 	Regions:
-		attack-anything: 768, 119, 16, 16
-		attack-anything-disabled: 768, 136, 16, 16
-		defend: 785, 119, 16, 16
-		defend-disabled: 785, 136, 16, 16
-		return-fire: 802, 119, 16, 16
-		return-fire-disabled: 802, 136, 16, 16
-		hold-fire: 819, 119, 16, 16
-		hold-fire-disabled: 819, 136, 16, 16
+		attack-anything: 256, 119, 16, 16
+		attack-anything-disabled: 256, 136, 16, 16
+		defend: 273, 119, 16, 16
+		defend-disabled: 273, 136, 16, 16
+		return-fire: 290, 119, 16, 16
+		return-fire-disabled: 290, 136, 16, 16
+		hold-fire: 307, 119, 16, 16
+		hold-fire-disabled: 307, 136, 16, 16
 
 stance-icons-highlighted:
 	Inherits: stance-icons
 	Regions:
-		attack-anything: 768, 153, 16, 16
-		defend: 785, 153, 16, 16
-		return-fire: 802, 153, 16, 16
-		hold-fire: 819, 153, 16, 16
+		attack-anything: 256, 153, 16, 16
+		defend: 273, 153, 16, 16
+		return-fire: 290, 153, 16, 16
+		hold-fire: 307, 153, 16, 16
 
 command-icons:
 	Inherits: ^Chrome
 	Regions:
-		attack-move: 768, 246, 24, 24
-		attack-move-disabled: 768, 271, 24, 24
-		force-move: 793, 246, 24, 24
-		force-move-disabled: 793, 271, 24, 24
-		force-attack: 818, 246, 24, 24
-		force-attack-disabled: 818, 271, 24, 24
-		guard: 843, 246, 24, 24
-		guard-disabled: 843, 271, 24, 24
-		deploy: 868, 246, 24, 24
-		deploy-disabled: 868, 271, 24, 24
-		scatter: 893, 246, 24, 24
-		scatter-disabled: 893, 271, 24, 24
-		stop: 918, 246, 24, 24
-		stop-disabled: 918, 271, 24, 24
-		queue-orders: 943, 246, 24, 24
-		queue-orders-disabled: 943, 271, 24, 24
+		attack-move: 256, 246, 24, 24
+		attack-move-disabled: 256, 271, 24, 24
+		force-move: 281, 246, 24, 24
+		force-move-disabled: 281, 271, 24, 24
+		force-attack: 306, 246, 24, 24
+		force-attack-disabled: 306, 271, 24, 24
+		guard: 331, 246, 24, 24
+		guard-disabled: 331, 271, 24, 24
+		deploy: 356, 246, 24, 24
+		deploy-disabled: 356, 271, 24, 24
+		scatter: 381, 246, 24, 24
+		scatter-disabled: 381, 271, 24, 24
+		stop: 406, 246, 24, 24
+		stop-disabled: 406, 271, 24, 24
+		queue-orders: 431, 246, 24, 24
+		queue-orders-disabled: 431, 271, 24, 24
 
 command-icons-highlighted:
 	Inherits: command-icons
 	Regions:
-		attack-move: 768, 296, 24, 24
-		force-move: 793, 296, 24, 24
-		force-attack: 818, 296, 24, 24
-		guard: 843, 296, 24, 24
-		deploy: 868, 296, 24, 24
-		scatter: 893, 296, 24, 24
-		stop: 918, 296, 24, 24
-		queue-orders: 943, 296, 24, 24
+		attack-move: 256, 296, 24, 24
+		force-move: 281, 296, 24, 24
+		force-attack: 306, 296, 24, 24
+		guard: 331, 296, 24, 24
+		deploy: 356, 296, 24, 24
+		scatter: 381, 296, 24, 24
+		stop: 406, 296, 24, 24
+		queue-orders: 431, 296, 24, 24
 
 #
 # NOD chrome
@@ -672,42 +685,42 @@ command-icons-highlighted:
 #
 
 chrome-button-background-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 193, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 225, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 193, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 225, 33, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-highlighted:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 193, 65, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-highlighted-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 225, 65, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-highlighted-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 193, 97, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-nod-highlighted-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 225, 97, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
@@ -717,9 +730,9 @@ chrome-button-nod:
 		separator: 745, 192, 1, 22
 
 chrome-radar-nod:
-	Inherits: ^Chrome
+	Inherits: ^ChromeRadar
 	Regions:
-		logo: 512, 320, 132, 132
+		logo: 1, 1, 132, 132
 
 #
 # GDI chrome
@@ -727,42 +740,42 @@ chrome-radar-nod:
 #
 
 chrome-button-background-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 449, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 481, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 449, 1, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 481, 33, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-highlighted:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 449, 65, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-highlighted-hover:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 481, 65, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-highlighted-pressed:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 449, 97, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
 chrome-button-background-gdi-highlighted-disabled:
-	Inherits: ^Chrome
+	Inherits: ^ChromeSides
 	PanelRegion: 481, 97, 0, 0, 30, 30, 0, 0
 	PanelSides: Center
 
@@ -772,6 +785,6 @@ chrome-button-gdi:
 		separator: 747, 192, 1, 22
 
 chrome-radar-gdi:
-	Inherits: ^Chrome
+	Inherits: ^ChromeRadar
 	Regions:
-		logo: 644, 320, 132, 132
+		logo: 134, 1, 132, 132

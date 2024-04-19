@@ -70,7 +70,7 @@ Player:
 	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
 		ID: superweapons
 		Label: Super Weapons
-		Description: Enables Nuclear Strike and Ion Cannon
+		Description: Enables Nuclear Strike, Air Strike and Ion Cannon
 		Enabled: True
 		DisplayOrder: 9
 		Prerequisites: global-superweapons
@@ -88,13 +88,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 11
 		Prerequisites: global-expensivemcv
-	LobbyPrerequisiteCheckbox@INFINITEINCOME:
-		ID: infiniteincome
-		Label: Infinite Income
+	LobbyPrerequisiteCheckbox@SECONDARYINCOME:
+		ID: secondaryincome
+		Label: Secondary Income
 		Description: Tiberium Silos generate periodic income when powered
 		Enabled: False
 		DisplayOrder: 12
-		Prerequisites: global-infiniteincome
+		Prerequisites: global-secondaryincome
 	LobbyPrerequisiteCheckbox@PRODUCTIONBOOSTER:
 		ID: productionbooster
 		Label: Fast Production
@@ -109,6 +109,34 @@ Player:
 		Enabled: False
 		DisplayOrder: 16
 		Prerequisites: global-veterancy
+	LobbyPrerequisiteCheckbox@UNITREVEAL:
+		ID: unitreveal
+		Label: Reveal on Fire
+		Description: Units and Defenses get shown through fog/shroud in combat
+		Enabled: False
+		DisplayOrder: 17
+		Prerequisites: global-unitreveal
+	LobbyPrerequisiteCheckbox@BOINK:
+		ID: boinksound
+		Label: Boink !
+		Description: All Vehicles emit a funny sound on destruction
+		Enabled: False
+		DisplayOrder: 18
+		Prerequisites: global-boink
+	LobbyPrerequisiteCheckbox@HUSKS:
+		ID: husks
+		Label: Husks
+		Description: All Buildings and Defenses leave behind a restorable husk
+		Enabled: False
+		DisplayOrder: 19
+		Prerequisites: global-husks
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		Enabled: False
+		DisplayOrder: 23
+		Prerequisites: global-bounty
 	PlayerStatistics:
 	FrozenActorLayer:
 	PlaceBeacon:
@@ -120,7 +148,3 @@ Player:
 	PlayerRadarTerrain:
 	HarvesterAttackNotifier:
         NotifyInterval: 60000
-	ProductionIconOverlayManager:
-		Type: Veterancy
-		Image: veteranoverlay
-		Sequence: veteran

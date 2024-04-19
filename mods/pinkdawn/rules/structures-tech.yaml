@@ -1,14 +1,12 @@
 V19:
 	Inherits: ^TechBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 1024, 1024
 	RevealsShroud:
 		Range: 3c0
 	CashTrickler:
         Interval: 50
-		Amount: 15
-        PauseOnCondition: emp-affected-structure
+		Amount: 30
 		RequiresCondition: owner.is.player
 	Building:
 		Footprint: x
@@ -32,11 +30,10 @@ V19:
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	WithSpriteBody:
-        PauseOnCondition: !owner.is.player || emp-affected-structure
+        PauseOnCondition: !owner.is.player
 
 V19.Husk:
 	Inherits: ^TechBuildingHusk
-    Inherits@restorable: ^RestorableBuilding
 	Interactable:
 		Bounds: 1024, 1024
 	WithIdleOverlay:
@@ -54,7 +51,6 @@ V19.Husk:
 HOSP:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	Building:
@@ -80,7 +76,6 @@ HOSP:
 	WithBuildingBib:
 		HasMinibib: true
 	ProvidesPrerequisite@buildingname:
-        RequiresCondition: !emp-affected-structure
 
 HOSP.Husk:
 	Inherits: ^TechBuildingHusk
@@ -91,13 +86,136 @@ HOSP.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Hospital (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: hosp
+
+BIO2:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape 
+	Selectable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 40000
+	Tooltip:
+		Name: Biological Laboratory
+	TooltipDescription@ally:
+		Description: Provides infantry with Tiberium immunity.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to enable Tiberium immunity for infantry.
+		ValidRelationships: Neutral, Enemy
+	SpawnActorOnDeath:
+		Actor: BIO2.Husk
+	ProvidesPrerequisite@buildingname:
+	WithBuildingBib:
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: Infantry2
+	ProductionQueue:
+		Type: Infantry2
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry2
+	RallyPoint:
+	WithProductionDoorOverlay:
+        Sequence: build-top
+
+BIO2.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 2048, 2048
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Biological Laboratory (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: bio2
+
+COMM:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
+	Selectable:
+		Bounds: 3072, 2048
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+        LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Array
+	Valued:
+		Cost: 0
+	Health:
+		HP: 50000
+	RevealsShroud:
+		Range: 12c0
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !lowpower && owner.is.player
+    RenderDetectionCircle:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+        RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
+	WithSpriteBody:
+		PauseOnCondition: lowpower
+	TooltipDescription@ally:
+		Description: Provides range of vision and detects stealth.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain visual range and detection.
+		ValidRelationships: Neutral, Enemy
+	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: COMM.Husk
+        OwnerType: InternalName
+
+COMM.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 3072, 2048 
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+        LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Array (Destroyed)
+	TransformOnCapture:
+		ForceHealthPercentage: 35
+		IntoActor: comm
 
 SYRD:
 	Inherits: ^BaseBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-GivesBuildableArea:
 	-SpawnActorsOnSell:
 	-Sellable:
+    -ChangesHealth@LOWPOWERDMG:
+    -GrantConditionOnDamageState@LOWPOWERDMG:
+	-GrantConditionOnPowerState@LOWPOWERDMG:
 	OwnerLostAction:
 		Action: ChangeOwner
 	Capturable:
@@ -145,16 +263,15 @@ SYRD:
 	RevealsShroud:
 		Range: 3c0
 	Production:
-		Produces: Navy.GDI, Navy.Nod
-		PauseOnCondition: build-incomplete || being-demolished || emp-affected-structure
-	ProductionQueue@GDINavy:
-		Type: Navy.GDI
+		Produces: Navy
+		PauseOnCondition: build-incomplete || being-demolished
+	ProductionQueue@Navy:
+		Type: Navy
 		DisplayOrder: 5
 		Group: Navy
-		Factions: gdi
 		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyAudio: NavalUnitReady
+		ReadyTextNotification: Naval unit ready.
 		BlockedAudio: NoBuild
 		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
@@ -162,25 +279,8 @@ SYRD:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@NodNavy:
-		Type: Navy.Nod
-		DisplayOrder: 5
-		Group: Navy
-		Factions: nod
-		LowPowerModifier: 150
-		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
-		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionBar@GDINavy:
-		ProductionType: Navy.GDI
-	ProductionBar@NodNavy:
-		ProductionType: Navy.Nod
+	ProductionBar@Navy:
+		ProductionType: Navy
 	RepairsUnits:
 		HpPerStep: 1000
 		Interval: 15
@@ -189,467 +289,56 @@ SYRD:
 		StartRepairingTextNotification: Repairing.
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
-        PauseOnCondition: emp-affected-structure
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
 		SpawnOffset: -1024,1024,0
 		Facing: 160
 		ExitCell: 0,2
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,1024,0
 		Facing: 224
 		ExitCell: 2,2
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: -1024,-1024,0
 		Facing: 96
 		ExitCell: 0,0
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 1024,-1024,0
 		Facing: 32
 		ExitCell: 2,0
-		ProductionTypes: Navy.GDI, Navy.Nod
+		ProductionTypes: Navy
 	Power:
 		Amount: -40
-		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
+		RequiresCondition: !build-incomplete && owner.is.player
     GrantConditionOnCombatantOwner:
         Condition: owner.is.player
 	ProvidesPrerequisite@buildingname:
 	ProximityExternalCondition@SELLSHIPS:
 		Condition: ship.sellable
-		Range: 3c768
-        RequiresCondition: !emp-affected-structure
+		Range: 5c0
+	SpawnActorOnDeath:
+		Actor: SYRD.Husk
+        OwnerType: InternalName
 
-COMM:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
-	Selectable:
+SYRD.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
 		Bounds: 3072, 2048
 	Building:
-		Footprint: xxx xxx ===
+		Footprint: XXX xxx XXX
 		Dimensions: 3,3
-        LocalCenterOffset: 0,-512,0
+		TerrainTypes: Water
 	Tooltip:
-		Name: Communications Array
-	Valued:
-		Cost: 0
-	Health:
-		HP: 50000
-	RevealsShroud:
-		Range: 12c0
-	DetectCloaked:
-		Range: 6c0
-		RequiresCondition: !lowpower && owner.is.player && !emp-affected-structure
-    RenderDetectionCircle:
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-        RequiresCondition: owner.is.player
-    GrantConditionOnCombatantOwner:
-        Condition: owner.is.player
-	WithSpriteBody:
-		PauseOnCondition: lowpower || emp-affected-structure
-	TooltipDescription@ally:
-		Description: Provides range of vision and detects stealth.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to gain visual range and detection.
-		ValidRelationships: Neutral, Enemy
-	WithBuildingBib:
-	ProvidesPrerequisite@buildingname:
-	SpawnActorOnDeath:
-		Actor: COMM.Husk
-        OwnerType: InternalName
-
-COMM.Husk:
-	Inherits: ^TechBuildingHusk
-	Interactable:
-		Bounds: 3072, 2048 
-	Building:
-		Footprint: xxx xxx ===
-		Dimensions: 3,3
-        LocalCenterOffset: 0,-512,0
-	Tooltip:
-		Name: Communications Array (Destroyed)
-
-APRT:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	AppearsOnMapPreview:
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
-	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2	
-	Tooltip:
-		Name: Airport
-	TooltipDescription@ally:
-		Description: Grants the usage of Paratroopers.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to obtain Paratroopers.
-		ValidRelationships: Neutral, Enemy
-	Selectable:
-		Bounds: 3072, 2048
-	Health:
-		HP: 60000
-	Armor:
-		Type: Medium
-	RevealsShroud:
-		Range: 3c0
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-	ParatroopersPower@paratroopers:
-        PauseOnCondition: lowpower || emp-affected-structure
-		OrderName: Paratroopers
-		Icon: paratroopers
-		ChargeInterval: 6750
-		UnitType: c17.paradrop
-		Name: Paratroopers
-		Description: A Cargo Plane drops a squad of infantry\nanywhere on the map.
-		DropItems: E1,E3,E1,E3,E1
-		AllowImpassableCells: false
-		QuantizedFacings: 8
-		CameraActor: camera.small
-		DisplayBeacon: true
-		BeaconPoster: paratroopers
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: paradirection
-        SupportPowerPaletteOrder: 9
-        Cursor: ability
-		ReinforcementsArrivedSpeechNotification: Reinforce
-        ReinforcementsArrivedTextNotification: Reinforcements arrived.
-		SelectTargetSpeechNotification: SelectTarget
-        SelectTargetTextNotification: Select target.
-		EndChargeSpeechNotification: ReinforceAvailable
-        EndChargeTextNotification: Reinforcements available.
-        LaunchSpeechNotification: ReinforceEnroute
-        LaunchTextNotification: Reinforcements on the way.
-        AllowMultiple: true
-	SupportPowerChargeBar:
-    WithBuildingBib:
-    ProvidesPrerequisite@buildingname:
-	SpawnActorOnDeath:
-		Actor: APRT.Husk
-        OwnerType: InternalName
-
-APRT.Husk:
-	Inherits: ^TechBuildingHusk
-	Interactable:
-		Bounds: 3072, 2048
-	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
-	Tooltip:
-		Name: Airport (Destroyed)
-
-EXPB:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	Selectable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx ==
-		Dimensions: 2,3
-		LocalCenterOffset: 0,-512,0
-	Health:
-		HP: 45000
-	Tooltip:
-		Name: Expansion Post
-	RevealsShroud:
-		MinRange: 5c0
-	GivesBuildableArea:
-		AreaTypes: building
-        RequiresCondition: !emp-affected-structure
-	TooltipDescription@ally:
-		Description: Provides buildable area.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to gain buildable area.
-		ValidRelationships: Neutral, Enemy
-	SpawnActorOnDeath:
-		Actor: EXPB.Husk
-        OwnerType: InternalName
-	WithBuildingBib:
-	ProvidesPrerequisite@buildingname:
-	RenderSprites:
-		Image: acom
-
-EXPB.Husk:
-	Inherits: ^TechBuildingHusk
-	Inherits@shape: ^2x2Shape
-	Interactable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx ==
-		Dimensions: 2,3
-		LocalCenterOffset: 0,-512,0
-	Tooltip:
-		Name: Expansion Post (Destroyed)
-	RenderSprites:
-		Image: acom.husk
-
-OIL:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure    
-	Selectable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 40000
-	Tooltip:
-		Name: Oil Refinery
-	TooltipDescription@ally:
-		Description: Reduces the production cost of all Units.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to produce all units more cheap.
-		ValidRelationships: Neutral, Enemy
-	SpawnActorOnDeath:
-		Actor: OIL.Husk
-	ProvidesPrerequisite@buildingname:
-        RequiresCondition: !emp-affected-structure
-	WithBuildingBib:
-
-OIL.Husk:
-	Inherits: ^TechBuildingHusk
-	Interactable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Tooltip:
-		Name: Oil Refinery (Destroyed)
-
-EMPB:
-	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	-GivesBuildableArea:
-	-SpawnActorsOnSell:
-	-Sellable:
-	-WithSpriteBody:
-    Demolishable:
-        -Condition: being-demolished
-	OwnerLostAction:
-		Action: ChangeOwner
-    CaptureManager:
-        -BeingCapturedCondition:
-	Capturable:
-		Types: building-neutral
-	CaptureNotification:
-		Notification: CivilianBuildingCaptured
-    GivesCashOnCapture:
-        Amount: 500
-	MapEditorData:
-		Categories: Tech building
-	AppearsOnMapPreview:
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	Selectable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-		LocalCenterOffset: 0,-512,0
-	Health:
-		HP: 60000
-	Tooltip:
-		Name: E.M.P. Launcher
-	TooltipDescription@ally:
-		Description: Prepares and launches E.M.P. Missiles.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to fire E.M.P. Missiles.
-		ValidRelationships: Neutral, Enemy
-	SpawnActorOnDeath:
-		Actor: EMPB.Husk
-        OwnerType: InternalName
-	WithBuildingBib:
-		HasMinibib: true
-	ProvidesPrerequisite@buildingname:
-	Turreted:
-		TurnSpeed: 10
-		InitialFacing: 0
-		RealignDelay: -1
-	WithEmbeddedTurretSpriteBody:
-		PauseOnCondition: lowpower || emp-affected-structure
-	BodyOrientation:
-        UseClassicPerspectiveFudge: true
-	AttackTurreted:
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure || reloading
-        RequiresCondition: !reloading
-		OpportunityFire: False
-		PersistentTargeting: False
-		ForceFireIgnoresActors: True
-	Armament:
-		Weapon: EMPLauncher
-		PauseOnCondition: lowpower || emp-affected-structure
-		LocalOffset: 1000,0,500
-		ReloadingCondition: reloading
-	AttackOrderPower@EMPMISSILE:
-		OrderName: empmissile
-		PauseOnCondition: lowpower || emp-affected-structure
-		Cursor: empstrike
-		Icon: empmissile
-		ChargeInterval: 4500
-		Name: E.M.P. Missile
-		Description: Fires a Missile which disables all Vehicles in the area.\nAircraft caught within blast will explode if not landed.
-		BeginChargeSpeechNotification: EMPMissilePreparing
-        BeginChargeTextNotification: E.M.P. Missile preparing.
-		EndChargeSpeechNotification: EMPMissileReady
-        EndChargeTextNotification: E.M.P. Missile ready.
-		SelectTargetSpeechNotification: SelectTarget
-        SelectTargetTextNotification: Select target.
-		InsufficientPowerSpeechNotification: InsufficientPower
-        InsufficientPowerTextNotification: Insufficient power. 
-		IncomingSpeechNotification: EMPMissileLaunched
-        IncomingTextNotification: E.M.P. Missile launched.
-		DisplayTimerRelationships: Ally, Neutral, Enemy
-        #  each E.M.P. Launcher will give its own strike
-        AllowMultiple: true
-        StartFullyCharged: true
-	SupportPowerChargeBar:
-	RejectsOrders:
-	Power:
-		Amount: -100
-		RequiresCondition: !build-incomplete && owner.is.player && !emp-affected-structure
-    GrantConditionOnCombatantOwner:
-        Condition: owner.is.player
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-	RevealsShroud:
-		Range: 3c0
-    -GrantConditionOnDamageState@LOWPOWERDMG:
-    -ChangesHealth@LOWPOWERDMG:
-    -GrantConditionOnPowerState@LOWPOWERDMG:
-	CommandBarBlacklist:
-		DisableStop: false
-
-EMPB.Husk:
-	Inherits: ^TechBuildingHusk
-	Interactable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-		LocalCenterOffset: 0,-512,0
-	Tooltip:
-		Name: E.M.P. Launcher (Destroyed)
-	RenderSprites:
-        Image: empb.husk
-
-WIND:
-	Inherits: ^TechBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -512, -512
-			BottomRight: 512, 512
-	Selectable:
-		Bounds: 1024, 3072, 0, -1024
-        DecorationBounds: 1024, 3072, 0, -1024
-	Building:
-		Footprint: x
-		Dimensions: 1,1
-	Health:
-		HP: 20000
-	RevealsShroud:
-		Range: 3c512
-	Tooltip:
-		Name: Windmill Plant
-	TooltipDescription@ally:
-		Description: Provides a meagre amount of Power.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to obtain a little Power.
-		ValidRelationships: Neutral, Enemy
-	SpawnActorOnDeath:
-        Actor: WIND.Husk
-        OwnerType: InternalName
-	Power:
-		Amount: 30
-		RequiresCondition: owner.is.player
-    GrantConditionOnCombatantOwner:
-        Condition: owner.is.player
-	WithBuildingBib:
-		HasMinibib: true
-	WithSpriteBody:
-		PauseOnCondition: emp-affected-structure
-
-WIND.Husk:
-	Inherits: ^TechBuildingHusk
-    Inherits@restorable: ^RestorableBuilding
-	Interactable:
-		Bounds: 1024, 1024
-	Building:
-		Footprint: x
-		Dimensions: 1,1
-	Tooltip:
-		Name: Windmill Plant (Destroyed)
+		Name: Shipyard (Destroyed)
 	TransformOnCapture:
 		ForceHealthPercentage: 35
-		IntoActor: wind
-
-ARMY:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	Selectable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 40000
-	Armor:
-		Type: Medium
-	RevealsShroud:
-		Range: 3c0
-	Tooltip:
-		Name: Armory
-	TooltipDescription@ally:
-		Description: Provides veterancy for trained Infantry.
-		ValidRelationships: Ally
-	TooltipDescription@other:
-		Description: Capture to train ranked Infantry.
-		ValidRelationships: Neutral, Enemy
-	SpawnActorOnDeath:
-		Actor: ARMY.Husk
-        OwnerType: InternalName
-	WithBuildingBib:
-		HasMinibib: true
-	ProvidesPrerequisite@buildingname:
-        RequiresCondition: !emp-affected-structure
-
-ARMY.Husk:
-	Inherits: ^TechBuildingHusk
-	Interactable:
-		Bounds: 2048, 2048
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Tooltip:
-		Name: Armory (Destroyed)
+		IntoActor: syrd
+	RenderSprites:
+		Image: syrd.husk

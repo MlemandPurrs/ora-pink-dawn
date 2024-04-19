@@ -438,55 +438,184 @@ BRIDGEHUT:
 	Interactable:
 		Bounds: 2048, 2048
 
+BRIDGEHUT2:
+    Inherits: BRIDGEHUT
+	Building:
+		Footprint: __ __
+		Dimensions: 2,2    
+		LocalCenterOffset: 0,1024,0
+
+BRIDGEW1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 380
+		DestroyedTemplate: 381
+	Building:
+		Footprint: _____ _____ _____ _____
+		Dimensions: 5,4
+	FreeActor@north:
+		Actor: bridgehut2
+		SpawnOffset: 2,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 1,2
+	Interactable:
+		Bounds: 5120, 4096
+
+BRIDGEW2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 382
+		DestroyedTemplate: 383
+	Building:
+		Footprint: _____ _____ _____ _____ _____
+		Dimensions: 5,5
+	FreeActor@north:
+		Actor: bridgehut2
+		SpawnOffset: 1,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,2
+	Interactable:
+		Bounds: 5120, 5120
+
+BRIDGEDW1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 384
+		DestroyedTemplate: 385
+	Building:
+		Footprint: ______ ______ ______ ______
+		Dimensions: 6,4
+	FreeActor@north:
+		Actor: bridgehut2
+		SpawnOffset: 3,-1
+        #   SpawnOffset: 2,0
+    FreeActor@south:
+        Actor: bridgehut
+		SpawnOffset: 1,2
+	Interactable:
+		Bounds: 6144, 4096
+
+BRIDGEDW2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 386
+		DestroyedTemplate: 387
+	Building:
+		Footprint: ______ ______ ______ ______
+		Dimensions: 6,4
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 3,2
+	Interactable:
+		Bounds: 6144, 4096
+
 C1:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C2:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C3:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C4:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C5:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C6:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C7:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C8:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C9:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 C10:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 
 DELPHI:
 	Inherits: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 	-Wanders:
 	Tooltip:
 		Name: Agent Delphi
 
 CHAN:
 	Inherits: ^CivInfantry
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
+    -Wanders:
 	Tooltip:
 		Name: Dr. Chan
 
 MOEBIUS:
 	Inherits: ^CivInfantry
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !in-transport
 	-Wanders:
 	Voiced:
 		VoiceSet: MoebiusVoice

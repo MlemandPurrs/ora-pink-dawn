@@ -28,6 +28,7 @@ Packages:
 	~general.mix
 	pinkdawn|bits
     pinkdawn|bits/audio
+    pinkdawn|bits/audio/eva
     pinkdawn|bits/icons
     pinkdawn|bits/structures
     pinkdawn|bits/structures/bibs
@@ -183,9 +184,9 @@ Hotkeys:
 	pinkdawn|hotkeys.yaml
 
 LoadScreen: CncLoadScreen
-	Image: pinkdawn|uibits/chrome.png
-	Image2x: pinkdawn|uibits/chrome-2x.png
-	Image3x: pinkdawn|uibits/chrome-3x.png
+	Image: pinkdawn|uibits/chrome-old.png
+	Image2x: pinkdawn|uibits/chrome-old-2x.png
+	Image3x: pinkdawn|uibits/chrome-old-3x.png
 	Text: Loading
 
 ServerTraits:

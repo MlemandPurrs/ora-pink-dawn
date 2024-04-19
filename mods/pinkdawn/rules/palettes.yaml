@@ -151,6 +151,15 @@
         BasePalette: player-static
         Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
         ReplaceIndex: 192, 193, 195, 194, 197, 169, 199, 169, 195, 194, 196, 197, 42, 198, 199, 199
+    IndexedPalette@neongreen:
+        Name: neongreen
+        BasePalette: player-static
+        Index: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 
+        ReplaceIndex: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
     PaletteFromFile@alphafx:
 		Name: alphafx
 		Filename: alphafx.pal
+	LightPaletteRotator:
+		ExcludePalettes: terrain, effect, desert
+        ModifyIndex: 8
+        RotationIndices: 127, 126, 125, 124, 123, 122, 121, 120, 121, 122, 123, 124, 125, 126

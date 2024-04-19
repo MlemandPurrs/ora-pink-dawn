@@ -270,6 +270,10 @@ M16:
 		Inaccuracy: 171
 		ValidTargets: Ship, WaterStructure
 
+#   variant for MHQ, with +1 range
+VehicleM16:
+    Inherits: M16
+	Range: 3c512
 
 #   6. Rocket Soldier's Bazooka
 Bazooka:
@@ -323,7 +327,7 @@ Bazooka:
 
 #   7. Recon Bike's Rockets
 BikeRockets:
-	ReloadDelay: 30
+	ReloadDelay: 35
     Range: 5c128
 	MinRange: 0c512
 	Burst: 2
@@ -373,6 +377,12 @@ BikeRockets:
 		ValidTargets: Water
 		InvalidTargets: Ground
 
+#   heroic version
+BikeRockets2:
+    Inherits: BikeRockets
+    ReloadDelay: 35
+    Burst: 4
+
 #   8. E4's weapon
 Flamer:
 	ReloadDelay: 50
@@ -406,13 +416,6 @@ Flamer:
 		Dimensions: 1,1
 		Footprint: x
         InvalidTargets: Vehicle, Structure, Wall
-
-    #    Warhead@Incendiary: GrantExternalCondition
-    #    Condition: burning
-    #    Duration: 112
-    #    ValidTargets: Incendiary
-    #    ValidRelationships: Ally, Neutral, Enemy
-    #    Range: 1c128
 
 #   9. FTNK's weapon
 BigFlamer:
@@ -449,13 +452,6 @@ BigFlamer:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
-
-    #   Warhead@Incendiary: GrantExternalCondition
-    #   Condition: burning
-    #   Duration: 112
-    #   ValidTargets: Incendiary
-    #    ValidRelationships: Ally, Neutral, Enemy
-    #    Range: 1c128
 
 #   10. E5's weapon
 ChemSpray:
@@ -666,6 +662,14 @@ MammothCannon:
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
 
+#   the Calibre upgrade for elite Medium Tanks
+HeavyCannon:
+    Inherits: MammothCannon
+	ReloadDelay: 60
+    Range: 5c256
+    -Burst:
+    -BurstDelays:
+
 #   15. Gun Turret's weapon
 TurretGun:
 	ReloadDelay: 50
@@ -768,7 +772,7 @@ MLRSMissiles:
 	Range: 7c0
 	MinRange: 3c0
 	Burst: 4
-	BurstDelays: 4
+    BurstDelays: 7
 	Report: rocket1.aud
 	ValidTargets: Ground, Water
 	TargetActorCenter: true
@@ -807,7 +811,12 @@ MLRSMissiles:
 		ImpactSounds: ssplash1.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
-        
+
+#   elite version
+MLRSMissiles2:
+    Inherits: MLRSMissiles
+    Burst: 8
+
 #   18. Stealth Tank rockets
 StnkRocketsAG:
 	ReloadDelay: 70
@@ -913,6 +922,12 @@ ArtilleryShell:
 		ImpactSounds: xplosml2.aud
 		ValidTargets: Ship, WaterStructure
         ImpactActors: true
+
+#   elite version
+ArtilleryShell2:
+    Inherits: ArtilleryShell
+    Burst: 2
+    BurstDelays: 10
 
 #   20. Machinegun for APC
 MachineGun:
@@ -1161,7 +1176,7 @@ HonestJohn:
 		Blockable: false
 		Shadow: true
 		Inaccuracy: 0c511
-		Image: ssmmsl
+		Image: hjm
 		TrailImage: smokey
 		TrailDelay: 3
 		Speed: 200
@@ -1183,7 +1198,7 @@ HonestJohn:
 		SmudgeType: Scorch
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
-		ImpactSounds: firebl3.aud
+		ImpactSounds: xplos.aud, firebl3.aud
 	Warhead@5EffWater: CreateEffect
 		Explosions: sml_splash
 		ImpactSounds: ssplash3.aud
@@ -1194,6 +1209,38 @@ HonestJohn:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
         InvalidTargets: Vehicle, Structure, Wall
+
+#   elite version
+HonestJohnChem:
+    Inherits: HonestJohn
+	Projectile: Bullet
+		Blockable: false
+		Shadow: true
+		Inaccuracy: 0c511
+		Image: hjmb
+		TrailImage: smokey
+		TrailDelay: 3
+		Speed: 200
+		LaunchAngle: 37
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 30000
+		ValidTargets: Ground, Water, Tree
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: big_chem
+		ImpactSounds: xplos.aud, firebl3.aud
+		ValidTargets: Ground, Air, Ship, Tree
+    -Warhead@Flames:
 
 #   26. Mobile Anti-Air Gun
 APCGunAG:

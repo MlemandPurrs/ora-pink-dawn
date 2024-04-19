@@ -8,7 +8,7 @@ E1:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 150
+    	BuildDuration: 125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: infantryproduction
@@ -30,6 +30,14 @@ E1:
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E2:
 	Inherits: ^Soldier
@@ -41,7 +49,7 @@ E2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 150
+    	BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: anyhq
@@ -70,6 +78,14 @@ E2:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 100
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E3:
 	Inherits: ^Soldier
@@ -81,7 +97,7 @@ E3:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 450
+    	BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: vehicleproduction
@@ -108,6 +124,14 @@ E3:
 		ProneOffset: 180,0,-200
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E4:
 	Inherits: ^Soldier
@@ -119,7 +143,7 @@ E4:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 300
+    	BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: anyhq
@@ -154,6 +178,14 @@ E4:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E5:
 	Inherits: ^Soldier
@@ -161,6 +193,7 @@ E5:
 	-DamagedByTerrain@TIBERIUM:
 	-GrantConditionOnTerrain@HAZMAT:
 	-GrantConditionOnPrerequisite@HAZMAT:
+    -GrantConditionOnPrerequisite@HAZMAT2:
 	-GrantCondition@HAZMAT:
 	-WithDecoration@HAZMAT:
 	Valued:
@@ -170,7 +203,7 @@ E5:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 600
+		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: bio
@@ -208,26 +241,46 @@ E5:
 		RevokeAll: True
 	Passenger:
 		CustomPipType: yellow
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 E6:
 	Inherits: ^Soldier
 	Inherits@selection: ^SelectableSupportUnit
     -GainsExperience:
+    -GrantCondition@RANK-VETERAN:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
+    -GrantCondition@RANK-ELITE:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -GrantCondition@RANK-HEROIC:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
-    -ProducibleWithLevel:
-    -WithProductionIconOverlay:
 	-AttackFrontal:
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !( in-transport || parachute)
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -235,7 +288,7 @@ E6:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		BuildDuration: 900
+		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: proc
@@ -252,12 +305,19 @@ E6:
 	EngineerRepair:
         Cursor: enter-yellow
         RepairBlockedCursor: enter-yellow-blocked
+        RepairSound: build5.aud
 	RepairsBridges:
         RepairNotification: BridgeRepaired
+        RepairTextNotification: Bridge repaired.
 	CaptureManager:
 	Captures@NEUTRALCAPTURES:
 		CaptureTypes: building-neutral
 		PlayerExperience: 0
+	Captures@NEUTRALRESTORE:
+		CaptureTypes: building-restore
+		PlayerExperience: 0
+        EnterCursor: goldwrench
+        EnterBlockedCursor: goldwrench-blocked
 	Captures@MULTICAPTURES:
 		CaptureTypes: building-player
 		SabotageThreshold: 34
@@ -268,11 +328,6 @@ E6:
 		CaptureTypes: building-player
 		PlayerExperience: 0
 		RequiresCondition: !multiengineer
-	Captures@NEUTRALRESTORE:
-		CaptureTypes: building-restore
-		PlayerExperience: 0
-        EnterCursor: goldwrench
-        EnterBlockedCursor: goldwrench-blocked
 	GrantConditionOnPrerequisite@MULTIENGINEER:
 		Condition: multiengineer
 		Prerequisites: global-multiengineer
@@ -287,7 +342,7 @@ RMBO:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-    	BuildDuration: 1650
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: anytier3
@@ -326,9 +381,21 @@ RMBO:
 		Palette: effect
 		Position: TopLeft
 		ValidRelationships: Ally, Enemy, Neutral
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 TECN:
 	Inherits@1: ^ArmedCivilian
+	GrantCondition@HAZMAT:
+		RequiresCondition: hazmatenabled || biolab && ontiberium
+	ChangesHealth@SELFHEAL:
+        RequiresCondition: hospitalheal && !( in-transport || parachute)
 	Tooltip:
 		Name: Technician
 	Health:
@@ -344,6 +411,18 @@ TECN:
         FacingTolerance: 0
 	ActorLostNotification:
 		TextNotification: Unit lost.
+	DeliversCash:
+        Cursor: sell-vehicle
+		Payload: 10
+        PlayerExperience: 0
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 VICE:
 	Inherits@1: ^ExistsInWorld
@@ -351,31 +430,39 @@ VICE:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@selection: ^SelectableCombatUnit
 	Inherits@handicaps: ^PlayerHandicaps
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 8
 	Huntable:
+	HiddenUnderFog:
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Visceroid
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Voice: Move
+		Speed: 90
+		Locomotor: critter
+		PauseOnCondition: dont-move
 	Health:
 		HP: 15000
 	Armor:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
-	Mobile:
-		Voice: Move
-		Speed: 90
-		Locomotor: critter
-		PauseOnCondition: dont-move
+		RevealGeneratedShroud: False
+        MinRange: 2c0
+	RevealsShroud@GAPGenerator:
+		Range: 2c0
+        RevealGeneratedShroud: True
+	AutoTarget:
+		ScanRadius: 5
 	Selectable:
 		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
-	AutoTarget:
-		ScanRadius: 5
-	AttackMove:
-		Voice: Attack
-	HiddenUnderFog:
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Visceroid
 	Armament:
 		Weapon: Chemspray
 		LocalOffset: 384,0,0
@@ -383,10 +470,9 @@ VICE:
 	AttackFrontal:
 		Voice: Attack
         FacingTolerance: 0
-	BodyOrientation:
-		QuantizedFacings: 8
-	WithSpriteBody:
 	WithMuzzleOverlay:
+	AttackMove:
+		Voice: Attack
 	Guard:
 		Voice: Move
 	Guardable:
@@ -404,13 +490,35 @@ VICE:
 		Categories: Critter
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	AttackWander:
+    RejectsOrders:
+        RequiresCondition: owner.is.player
+    GrantConditionOnCombatantOwner:
+        Condition: owner.is.player
 	GrantConditionOnAttack:
 		Condition: dont-move
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+
+PVICE:
+    Inherits: VICE
+	Buildable:
+		BuildDuration: 900
+        BuildDurationModifier: 100
+		BuildPaletteOrder: 99
+		Prerequisites: ~bio2
+        Queue: Infantry2
+		Description: Mutated abomination that wanders\nand spits liquid Tiberium.\nImpossible to command.\n\nStrong vs all Ground units.
+    RenderSprites:
+        Image: pvice

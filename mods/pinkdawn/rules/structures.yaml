@@ -1,7 +1,7 @@
 FACT:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
+	Inherits@BOTI: ^BotFallbackInsurance
 	WithColoredOverlay@Invulnerability:
 		RequiresCondition: invulnerability-crate-collected
         Color: 800000A3
@@ -32,10 +32,10 @@ FACT:
 		Range: 4c512
 	Production:
 		Produces: Building.GDI, Building.Nod, Defense.GDI, Defense.Nod
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	Transforms:
 		RequiresCondition: factundeploy
-		PauseOnCondition: being-demolished || build-incomplete || emp-affected-structure
+		PauseOnCondition: being-demolished || build-incomplete
 		IntoActor: mcv
 		Offset: 1,1
 		Facing: 432
@@ -127,20 +127,20 @@ FACT:
 	ProductionBar@DefenseNod:
 		ProductionType: Defense.Nod
 		Color: 8A8A8A
-	#   BaseProvider:
-	#	Range: 14c0
+	BaseProvider:
+        Range: 15c0
 	WithBuildingBib:
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 30
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	Buildable:
-        BuildDuration: 3900
+        BuildDuration: 3000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anytier3, fix
+		Prerequisites: anyhq, fix
 		Queue: Building.GDI, Building.Nod
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
@@ -152,6 +152,7 @@ FACT:
 	RenderSprites:
 		Image: fact
 		FactionImages:
+            gdi: gdifact
 			nod: nodfact
     AcceptsDeliveredCash:
 	ActorPreviewPlaceBuildingPreview:
@@ -159,12 +160,19 @@ FACT:
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+	GrantConditionOnBotOwner@botinsurance:
+		Condition: bot-insurance-enabler
+		Bots: normalai
+	SpawnActorOnDeath@HUSK:
+		Actor: FACT.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 NUKE:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -176,7 +184,7 @@ NUKE:
 	ProvidesPrerequisite:
 		Prerequisite: anypower
 	Buildable:
-		BuildDuration: 600
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: fact
@@ -193,21 +201,25 @@ NUKE:
 	WithBuildingBib:
 	Power:
 		Amount: 100
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuke
 		FactionImages:
 			nod: nodnuke
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	SpawnActorOnDeath@HUSK:
+		Actor: NUKE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 NUK2:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -219,7 +231,7 @@ NUK2:
 	ProvidesPrerequisite:
 		Prerequisite: anypower
 	Buildable:
-		BuildDuration: 1200
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: anyhq
@@ -236,66 +248,25 @@ NUK2:
 	WithBuildingBib:
 	Power:
 		Amount: 200
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ScalePowerWithHealth:
 	RenderSprites:
 		Image: nuk2
 		FactionImages:
 			nod: nodnuk2
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
-
-NUK3:
-	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
-	Selectable:
-		Bounds: 3072, 2048
-		DecorationBounds: 3072, 2148, 0, 0
-	HitShape:
-		TargetableOffsets: 630,299,0
-	Valued:
-		Cost: 700
-	Tooltip:
-		Name: Hi-Tech Power Plant
-	ProvidesPrerequisite:
-		Prerequisite: anypower
-	Buildable:
-		BuildDuration: 1200
-        BuildDurationModifier: 100
-		BuildPaletteOrder: 16
-		BuildLimit: 1
-		Prerequisites: ~disabled # anytier3
-		Queue: Building.GDI, Building.Nod
-		Description: Provides a tremendous amount of power.
-	Building:
-		Footprint: xXx XxX
-		Dimensions: 3,2
-		LocalCenterOffset: 0,-512,0
-	Health:
-		HP: 80000
-	RevealsShroud:
-		Range: 2c512
-	WithBuildingBib:
-	Power:
-		Amount: 400
-        RequiresCondition: !build-incomplete && !emp-affected-structure
-	ScalePowerWithHealth:
-	RenderSprites:
-		Image: nuk3
-		FactionImages:
-			nod: nodnuk3
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
-	ActorPreviewPlaceBuildingPreview:
-		Animated: false
+	SpawnActorOnDeath@HUSK:
+		Actor: NUK2.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 PROC:
 	Inherits: ^BaseBuilding
 	Inherits@RESOURCES: ^StoresResources
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -512
@@ -309,7 +280,7 @@ PROC:
 	Tooltip:
 		Name: Tiberium Refinery
 	Buildable:
-        BuildDuration: 2100
+        BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: fact
@@ -350,7 +321,7 @@ PROC:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -30
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	ExternalCondition@DOCKED:
 		Condition: dockinprocess
@@ -361,7 +332,7 @@ PROC:
 		Range: 1c0
 		ValidRelationships: Ally
 	Sellable:
-		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess && !emp-affected-structure
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !dockinprocess
 	RenderSprites:
 		Image: proc
 		FactionImages:
@@ -374,12 +345,16 @@ PROC:
 	GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai
+	SpawnActorOnDeath@HUSK:
+		Actor: PROC.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 SILO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@RESOURCES: ^StoresResources
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-GivesBuildableArea:
 	-WithSpriteBody:
 	-SpawnActorsOnSell:
@@ -390,7 +365,7 @@ SILO:
 	Tooltip:
 		Name: Tiberium Silo
 	Buildable:
-		BuildDuration: 300
+		BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: proc
@@ -424,30 +399,34 @@ SILO:
 	CashTrickler:
 		Interval: 300
 		InitialDelay: 300
-		Amount: 200
+		Amount: 150
 		UseResourceStorage: true
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
-        RequiresCondition: infiniteincome-enabled
+		PauseOnCondition: lowpower || build-incomplete
+        RequiresCondition: secondaryincome-enabled
 	CashTricklerBar:
 		Color: FFFF9E
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-    GrantConditionOnPrerequisite@PassiveIncome:
-        Condition: infiniteincome-enabled
-        Prerequisites: global-infiniteincome
-    Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+    GrantConditionOnPrerequisite@SecondaryIncome:
+        Condition: secondaryincome-enabled
+        Prerequisites: global-secondaryincome
     CashTricklerMultiplier@AIBoost:
         Modifier: 120
-        RequiresCondition: ai-income-boost && infiniteincome-enabled
+        RequiresCondition: ai-income-boost && secondaryincome-enabled
 	GrantConditionOnBotOwner@AIBoost:
 		Condition: ai-income-boost
 		Bots: normalai
+    Sellable:
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+	SpawnActorOnDeath@HUSK:
+		Actor: SILO.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 PYLE:
 	Inherits: ^BaseBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
@@ -455,13 +434,13 @@ PYLE:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Valued:
-		Cost: 300
+		Cost: 500
 	Tooltip:
 		Name: Barracks
 	ProvidesPrerequisite:
 		Prerequisite: infantryproduction
 	Buildable:
-		BuildDuration: 600
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
         Prerequisites: fact
@@ -487,7 +466,7 @@ PYLE:
 		ExitCell: 1,1
 	Production:
 		Produces: Infantry.GDI
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionQueue:
@@ -508,30 +487,34 @@ PYLE:
 		ProductionType: Infantry.GDI
 	Power:
 		Amount: -15
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	Selectable:
 		Bounds: 2048, 1792, 0, -213
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	SpawnActorOnDeath@HUSK:
+		Actor: PYLE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 HAND:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Valued:
-		Cost: 300
+		Cost: 500
 	Tooltip:
 		Name: Hand of Nod
 	ProvidesPrerequisite:
 		Prerequisite: infantryproduction
 	Buildable:
-		BuildDuration: 600
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: fact
@@ -546,6 +529,9 @@ HAND:
 	RevealsShroud:
 		Range: 3c512
 	WithBuildingBib:
+	WithProductionDoorOverlay:
+        RequiresCondition: !build-incomplete
+        Sequence: build-top
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -561,7 +547,7 @@ HAND:
 		ExitCell: -1,1
 	Production:
 		Produces: Infantry.Nod
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	ProductionQueue:
 		Type: Infantry.Nod
 		DisplayOrder: 2
@@ -580,17 +566,21 @@ HAND:
 		ProductionType: Infantry.Nod
 	Power:
 		Amount: -15
-        RequiresCondition: !build-incomplete || emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	Selectable:
 		Bounds: 2048, 2048
 		DecorationBounds: 2048, 2901, 0, -426
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+	SpawnActorOnDeath@HUSK:
+		Actor: HAND.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 AFLD:
 	Inherits: ^BaseBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 4096, 2048
 	HitShape:
@@ -605,10 +595,10 @@ AFLD:
 	ProvidesPrerequisite:
 		Prerequisite: vehicleproduction
 	Buildable:
-    	BuildDuration: 3300
+    	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: proc, infantryproduction
 		Queue: Building.Nod
 		Description: Provides a dropzone for Vehicle reinforcements.
 	Building:
@@ -632,7 +622,7 @@ AFLD:
 		Produces: Vehicle.Nod
 		ActorType: c17
 		ReadyTextNotification: Reinforcements have arrived.
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	WithBuildingBib:
 	WithIdleOverlay@DISH:
 		RequiresCondition: !build-incomplete
@@ -655,17 +645,21 @@ AFLD:
 		ProductionType: Vehicle.Nod
 	Power:
 		Amount: -40
-        RequiresCondition: !build-incomplete || emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
 	ActorPreviewPlaceBuildingPreview:
 		Animated: false
+	SpawnActorOnDeath@HUSK:
+		Actor: AFLD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 WEAP:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
 		Type: Rectangle
@@ -678,10 +672,10 @@ WEAP:
 	ProvidesPrerequisite:
 		Prerequisite: vehicleproduction
 	Buildable:
-    	BuildDuration: 3300
+    	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: anypower, infantryproduction
+		Prerequisites: proc, infantryproduction
 		Queue: Building.GDI
 		Description: Produces Vehicle units.
 	Building:
@@ -712,7 +706,7 @@ WEAP:
 		ExitDelay: 3
 	Production:
 		Produces: Vehicle.GDI
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	ProductionQueue:
 		Type: Vehicle.GDI
 		DisplayOrder: 3
@@ -731,18 +725,22 @@ WEAP:
 		ProductionType: Vehicle.GDI
 	Power:
 		Amount: -40
-        RequiresCondition: !build-incomplete || emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequenceAlpha: 0.65
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+	SpawnActorOnDeath@HUSK:
+		Actor: WEAP.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 FIX:
 	Inherits: ^BaseBuilding
-    Inherits@EMPMechanic: ^EMPApplicableStructure    
 	HitShape:
 		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
 		Type: Polygon
@@ -752,7 +750,7 @@ FIX:
 	Tooltip:
 		Name: Service Depot
 	Buildable:
-        BuildDuration: 1350
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: vehicleproduction
@@ -771,7 +769,7 @@ FIX:
 	WithBuildingBib:
 		HasMinibib: true
 	WithResupplyAnimation:
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	Reservable:
 	RepairsUnits:
 		HpPerStep: 1000
@@ -781,7 +779,6 @@ FIX:
 		StartRepairingTextNotification: Repairing.
         FinishRepairingNotification: UnitRepaired
         FinishRepairingTextNotification: Unit repaired.
-        PauseOnCondition: emp-affected-structure
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -793,7 +790,7 @@ FIX:
 		Condition: unit.sellable
 		Range: 1c0
 	Sellable:
-		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured
 	ExternalCondition@Docked:
 		Condition: unit.docked
 	ProximityExternalCondition@AIRCRAFTREPAIR:
@@ -806,12 +803,16 @@ FIX:
 		Image: fix
 		FactionImages:
 			nod: nodfix
+	SpawnActorOnDeath@HUSK:
+		Actor: FIX.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 HPAD:
 	Inherits: ^BaseBuilding
     Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 2048, 2048
 	HitShape:
@@ -822,10 +823,10 @@ HPAD:
 	Tooltip:
 		Name: Helipad
 	Buildable:
-		BuildDuration: 600
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: vehicleproduction
+		Prerequisites: anyhq
 		Queue: Building.GDI, Building.Nod
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -842,10 +843,10 @@ HPAD:
         ProductionTypes: Aircraft.GDI, Aircraft.Nod
 	Production:
 		Produces: Aircraft.GDI, Aircraft.Nod
-        PauseOnCondition: build-incomplete || emp-affected-structure
+        PauseOnCondition: build-incomplete
 	Reservable:
 	WithResupplyAnimation:
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	RallyPoint:
 	CommandBarBlacklist:
 		DisableStop: false
@@ -885,7 +886,7 @@ HPAD:
 		ProductionType: Aircraft.Nod
 	Power:
 		Amount: -20
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
     WithBuildingBib:
 	FreeActor@1:
@@ -913,20 +914,24 @@ HPAD:
 		Multiplier: 500
 		Prerequisites: global-freeaircraft
 	ProductionTimeMultiplier@FREEAIRCRAFT:
-		Multiplier: 350
+		Multiplier: 500
 		Prerequisites: global-freeaircraft
 	ProximityExternalCondition:
 		Condition: unit.sellable
 		Range: 1c0
 	Sellable:
-		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+		RequiresCondition: !unit.docked && !build-incomplete && !being-demolished && !being-captured
 	ExternalCondition@Docked:
 		Condition: unit.docked
+	SpawnActorOnDeath@HUSK:
+		Actor: HPAD.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 HQ:
 	Inherits: ^BaseBuilding
-	Inherits@IDISABLE: ^DisabledOverlay
-    Inherits@EMPMechanic: ^EMPApplicableStructure    
+	Inherits@IDISABLE: ^DisabledOverlay 
 	HitShape:
         TargetableOffsets: 0,0,0, 0,512,0, 120,-598,0
 		Type: Rectangle
@@ -936,10 +941,11 @@ HQ:
 		Cost: 1000
 	Tooltip:
 		Name: Communications Center
+    ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
 	Buildable:
-    	BuildDuration: 1500
+    	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anypower, vehicleproduction
@@ -953,27 +959,27 @@ HQ:
 		Bounds: 2048, 1706, 0, 384
 		DecorationBounds: 2048, 2261, 0, -170
 	WithSpriteBody:
-		PauseOnCondition: lowpower || emp-affected-structure
+		PauseOnCondition: lowpower
 	Health:
 		HP: 100000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !build-incomplete && !lowpower && !emp-affected-structure
+		RequiresCondition: !jammed && !build-incomplete && !lowpower
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete
 	Power:
 		Amount: -50
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
 	RenderSprites:
 		Image: hq
 		FactionImages:
 			nod: nodhq
 	SpawnActorPower@RadarScan:
-		PauseOnCondition: lowpower || jammed || emp-affected-structure
+		PauseOnCondition: lowpower || jammed
 		OrderName: RadarScan
 		Actor: camera.scan
 		LifeTime: 300
@@ -997,20 +1003,24 @@ HQ:
 	ExternalCondition@JAMMED:
 		Condition: jammed
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
     WithIdleOverlay@1:
         Palette: effect
         Sequence: white-light
         Offset: 640,300,0
         PauseOnCondition: lowpower
         RequiresCondition: !build-incomplete
+	SpawnActorOnDeath@HUSK:
+		Actor: HQ.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 MISS:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 3072, 2048
 	HitShape:
@@ -1021,13 +1031,13 @@ MISS:
 		Dimensions: 3,3
         LocalCenterOffset: 0,-256,0
 	Buildable:
-    	BuildDuration: 3300
+    	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq
 		Queue: Building.GDI
-		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Air Strike'\n(requires Advanced Communications to charge-up)
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1041,7 +1051,7 @@ MISS:
 	WithBuildingBib:
 	Power:
 		Amount: -100
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -1050,8 +1060,8 @@ MISS:
 		Prerequisite: anytier3
 	AirstrikePower@AirStrike:
 		OrderName: AirStrike
-		PauseOnCondition: lowpower || emp-affected-structure
-		Prerequisites: ~eye, ~global-superweapons
+		PauseOnCondition: lowpower || !eye-available
+		Prerequisites: ~global-superweapons
 		Icon: airstrike
 		ChargeInterval: 6750
 		SquadSize: 1
@@ -1078,6 +1088,9 @@ MISS:
 		DirectionArrowAnimation: paradirection
 		Cursor: airstrike
 		SupportPowerPaletteOrder: 2
+    GrantConditionOnPrerequisite@EyeCheck:
+        Condition: eye-available
+        Prerequisites: eye
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1085,13 +1098,17 @@ MISS:
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+	SpawnActorOnDeath@HUSK:
+		Actor: MISS.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 TMPL:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^3x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -1100,13 +1117,13 @@ TMPL:
 	Tooltip:
 		Name: Temple of Nod
 	Buildable:
-    	BuildDuration: 5100
+    	BuildDuration: 3625
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		BuildLimit: 1
 		Prerequisites: vehicleproduction, anyhq
 		Queue: Building.Nod
-		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Biological Laboratory to charge-up)
+		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Research Laboratory to charge-up)
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -1122,11 +1139,11 @@ TMPL:
 		Range: 4c0
 	NukePower@NuclearStrike:
 		OrderName: NukeMissile
-		PauseOnCondition: lowpower || emp-affected-structure || !bio-available
+		PauseOnCondition: lowpower || !bio-available
 		Prerequisites: ~global-superweapons
 		Icon: abomb
 		Cursor: nuke
-		ChargeInterval: 13500
+		ChargeInterval: 12750
 		Name: Nuclear Strike
 		Description: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
 		EndChargeSpeechNotification: NuclearWeaponAvailable
@@ -1165,7 +1182,7 @@ TMPL:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -150
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	WithBuildingBib:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
@@ -1173,14 +1190,18 @@ TMPL:
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
+	SpawnActorOnDeath@HUSK:
+		Actor: TMPL.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 EYE:
 	Inherits: ^BaseBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
         TargetableOffsets: 0,0,0, 0,512,128, 120,-598,0
 		Type: Rectangle
@@ -1193,13 +1214,13 @@ EYE:
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
 	Buildable:
-        BuildDuration: 3000
+    	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
 		Prerequisites: miss
 		Queue: Building.GDI
 		BuildLimit: 1
-		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Airstrike' at Technology Center.\nRequires power to operate.
+		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Air Strike' at Technology Center.\nRequires power to operate.
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3
@@ -1208,25 +1229,25 @@ EYE:
 		Bounds: 2048, 1706, 0, 384
 		DecorationBounds: 2048, 2261, 0, -170
 	WithSpriteBody:
-		PauseOnCondition: lowpower || emp-affected-structure
+		PauseOnCondition: lowpower
 	Health:
 		HP: 90000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
 	ProvidesRadar:
-		RequiresCondition: !jammed && !build-incomplete && !lowpower && !emp-affected-structure
+		RequiresCondition: !jammed && !build-incomplete && !lowpower
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete
 	IonCannonPower@IonCannon:
-		PauseOnCondition: lowpower || jammed || emp-affected-structure
+		PauseOnCondition: lowpower || jammed
 		Prerequisites: ~global-superweapons
 		OrderName: IonCannon
 		Icon: ioncannon
 		Cursor: ioncannon
-		ChargeInterval: 10500
+		ChargeInterval: 9750
 		Name: Ion Cannon
 		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
 		BeginChargeSpeechNotification: IonCannonCharging
@@ -1244,7 +1265,7 @@ EYE:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -100
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1254,14 +1275,18 @@ EYE:
 	ExternalCondition@JAMMED:
 		Condition: jammed
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
+	SpawnActorOnDeath@HUSK:
+		Actor: EYE.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
 
 BIO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	SelectionDecorations:
 	Selectable:
 		Bounds: 2048, 2048
@@ -1272,9 +1297,9 @@ BIO:
 	Health:
 		HP: 70000
 	Valued:
-		Cost: 800
+		Cost: 1000
 	Buildable:
-    	BuildDuration: 3900
+    	BuildDuration: 1125
         BuildDurationModifier: 100
         BuildPaletteOrder: 15
 		BuildLimit: 1
@@ -1282,7 +1307,7 @@ BIO:
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon to charge.\nUnlocks Chemical Trooper and SSM Launcher.
 	Tooltip:
-		Name: Biological Laboratory
+		Name: Research Laboratory
 	ProvidesPrerequisite@buildingname:
 	Power:
 		Amount: -60
@@ -1291,7 +1316,12 @@ BIO:
 		Range: 3c0
 	WithBuildingBib:
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !being-captured && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished && !being-captured
+ 	SpawnActorOnDeath@HUSK:
+		Actor: BIO.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
  
 INFANTRYPRODUCTION:
 	AlwaysVisible:

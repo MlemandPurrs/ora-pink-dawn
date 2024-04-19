@@ -3,28 +3,35 @@ resembling actual Tiberian Dawn in the OpenRA engine.
 
 Credits:
 	* MlemandPurrs (the madmiau responsible for this mod)
-	* Inq (Nod structures, new GDI tank turret, edited Nod cameos, 
-E.M.P. Missile battery, Shipyard, etc.)
-	* MissKylie (Nod construction yard, Tatra Supply Truck sprite)
-	* Pinkthoth (for helped me discover Tacotron, Civilian Airfield sprite)
+	* Inq (Nod structures, new GDI tank turret, edited Nod cameos)
+	* MissKylie (Nod construction yard sprite)
+	* Pinkthoth (for helped me discover Tacotron)
 	* AchromicWhite (Light Tank's new turret, MLRS new chassis)
 	* Nyerguds (for generating TD's .ini files, and much more...)
 	* Sgtmyers88 (Bio Lab cameo from Tiberian Dawn Redux, idea of Radar Scan)
 	* Mussuy (Stealth Tank with turret sprite)
-	* Kilkakon (Technology Center build-up anim)
-	* Marn or raminator (Cannon muzzle, 32 facings Flamespray, 16 facings Minigun)
-	* ROB or tchokky or sadukar09 (Supply Truck cameo)
-	* NoozeArts (Comms Array, Windmill Plant, Hi-Tech Power Plant sprites)
+	* Kilkakon (Technology Center build-up anim, Supply Truck sprite and icon,
+	neutral Bio Lab sprite with the actual bio logo)
+	* Marn or raminator (Cannon muzzle, 32 facings Flamespray, 16 facings Minigun,
+	improved Rank sprite)
+	* NoozeArts (Comms Array sprite)
 	* reaperrr (for Tiberian Dawn Xtended)
-	* MustaphaTR (tech Oil Refinery original sprite)
+	* InsertName (extra Obelisk anim)
+	* Typhoon95 (parts from TD Dos Buildings pack used for extra teamcolor
+	on Barracks and Hospital, also the GDI conyard logo)
+	* Soup Can Sam (logo used on nod Service Depot)
 	and any others i might have forgotten...
 
 Special thanks to:
 	* all OpenRA developers (without them this mod would not exist)
 	* all the map-makers whom their maps have been used:
-	* Anonymous, BLACK, Blackened, Chris Forbes, CombinE, hulk, Insert Name, Irnub, 
-	Jay, J Mega Tank, Madness, Mark, marn, MASTER, norman, PizzaAtomica, Psydev, 
-	pulse, sin, sunny_s, The Echo of Damnation, Unano, V, worstlagevur
+	* Anonymous, Bellator, BLACK, Blackened, Chris Forbes, CombinE, CuteLoliFox, 
+	GYDY Prime, hulk, Insert Name, Irnub, Jay, J Mega Tank, Madness, Mark, marn, 
+	MASTER, Materia, nodex, norman, nudels, Paul Chote, Petrenko, PizzaAtomica, 
+	Porrun, pluto atrakis, Psydev, pulse, Reaperrr, sin, sunny_s, STUKA, ZxGanon, 
+	The Echo of Damnation, The_Rock_01, Tiberian, Unano, V, worstlagevur, XXxX,
+	Uncle Albert, Zaqzorn, Arnathos, Nod Commander, Stefan, Sebastian Wich,
+	JEMCIV, Rider Rockon, Python
 	* Westwood Studios for creating the timeless classic that is C&C: Tiberian Dawn.
 
 Shout out to the fellow modders at:

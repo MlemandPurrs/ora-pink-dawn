@@ -172,13 +172,9 @@ beacon:
 		Offset: 0,-42
 	atomic: atombcon
 		Offset: 0,-42
-	paratroopers: pinfbcon
-		Offset: 0,-42
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
-    empmbcon: empmbcon
-        Offset: 0,-42
 
 select:
 	repair:
@@ -331,8 +327,6 @@ icon:
 	ioncannon: ionicon
 	abomb: atomicon
 	radarscan: scanicon
-    paratroopers: pinficon
-    empmissile: empmicon
  
 moveflsh:
 	idle:
@@ -473,8 +467,13 @@ paradirection:
 		y: 5
 		Offset: -15, -15, 0
 
-ssmmsl:
-	idle: ssmmsl
+hjm:
+	idle: hjm
+		Facings: 32
+		ZOffset: 1023
+
+hjmb:
+	idle: hjmb
 		Facings: 32
 		ZOffset: 1023
 
@@ -541,11 +540,6 @@ litning:
 		Length: 4
 		ZOffset: 1023
 
-ionicon:
-    idle: ionicnh.tem
-		AddExtension: False
-    icon: blank1
-
 dummy:
 	idle: blank32
 		Facings: 32
@@ -557,15 +551,39 @@ rank:
         Offset: 0, 3
 	rank-elite:
 		Start: 1
-		Offset: 1, 3
+		Offset: 0, 3
+	rank-heroic:
+		Start: 2
+		Offset: 0, 3
 
-veteranoverlay:
-	veteran:
-		Start: 0
-		Length: 1
-		Offset: 0, 0
-
-bombicon:
-    idle: bombicnh.tem
+cyclicons:
+    scanicon: scanicon.shp
+		AddExtension: False
+    bombicon: bombicon.shp
+		AddExtension: False
+    ionicon: ionicon.shp
+		AddExtension: False
+    atomicon: atomicon.shp
 		AddExtension: False
     icon: blank1
+
+# Ice floes
+ice01:
+	idle:
+		Length: *
+
+ice02:
+	idle:
+		Length: *
+
+ice03:
+	idle: ice03
+		Length: *
+
+ice04:
+	idle: ice04
+		Length: *
+
+ice05:
+	idle: ice05
+		Length: *

@@ -3,7 +3,7 @@
 	UpdatesPlayerStatistics:
 	CombatDebugOverlay:
 	GivesExperience:
-		PlayerExperienceModifier: 1
+		PlayerExperienceModifier: 20
     GivesExperienceMultiplier@EXPTOGGLE:
         Modifier: 0
         RequiresCondition: !giver-veterancy-on
@@ -182,6 +182,9 @@
         TargetTypes: EMPApplicable
 	RejectsOrders:
 		RequiresCondition: emp-crate-collected
+    RevealsShroudMultiplier@EMPulse:
+        Modifier: 0
+        RequiresCondition: emp-crate-collected
 
 ^AcceptsDeathCrate:
 	ExternalCondition@InstaDeath:
@@ -271,8 +274,9 @@
 	Inherits@slowdown: ^SlowdownWhenDamaged
     Inherits@unitsellable: ^SellableOnRepairPad
 	Inherits@productionboost: ^ProductionBoost
-    Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
+    Inherits@boink: ^BoinkSound
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -288,6 +292,7 @@
 	Passenger:
 		CargoType: Vehicle
         Weight: 5
+        CargoCondition: in-transport
 	ActorLostNotification:
 		TextNotification: Unit lost.
 	HiddenUnderFog:
@@ -349,8 +354,7 @@
     Inherits@unitsellable: ^SellableOnHelipad
 	Inherits@slowdown: ^SlowdownWhenDamaged
 	Inherits@productionboost: ^ProductionBoost
-    Inherits@discount: ^OilRefineryDiscount
-    Inherits@experience: ^ExperienceMechanic
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -442,6 +446,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^ClassicFacingSpriteActor
 	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@bounty: ^GlobalBounty
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
@@ -477,8 +482,11 @@
 		Condition: hazmatenabled
 		Prerequisites: global-givehazmat
 	GrantCondition@HAZMAT:
-		RequiresCondition: hazmatenabled && ontiberium
+		RequiresCondition: hazmatenabled || rank-heroic || biolab && ontiberium
 		Condition: hazmatsuits
+	GrantConditionOnPrerequisite@HAZMAT2:
+		Condition: biolab
+		Prerequisites: bio2
 	WithDecoration@HAZMAT:
 		Image: pips
 		Sequence: pip-hazmat
@@ -499,7 +507,7 @@
 		Delay: 100
 		StartIfBelow: 101
 		DamageCooldown: 125
-		RequiresCondition: hospitalheal
+		RequiresCondition: hospitalheal && !( rank-heroic || in-transport || parachute)
 	Targetable@HEAL:
 		TargetTypes: Heal
 		RequiresCondition: !parachute && damaged
@@ -537,6 +545,7 @@
 	Inherits@slowdown: ^SlowdownWhenDamagedInfantry
 	Inherits@hazmat: ^InfantryTiberiumDamage
 	Inherits@healing: ^InfantryHealing
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -578,6 +587,7 @@
 	AttackMove:
 	Passenger:
 		CargoType: Infantry
+        CargoCondition: in-transport
 	HiddenUnderFog:
 	ActorLostNotification:
 		TextNotification: Unit lost.
@@ -636,9 +646,7 @@
 ^Soldier:
 	Inherits: ^Infantry
 	Inherits@productionboost: ^ProductionBoost
-    Inherits@discount: ^OilRefineryDiscount
     Inherits@experience: ^ExperienceMechanic
-    Inherits@armory: ^AffectedByArmory
 	MustBeDestroyed:
 	Tooltip:
 		GenericName: Soldier
@@ -735,8 +743,7 @@
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@slowdown: ^SlowdownWhenDamagedShip
     Inherits@productionboost: ^ProductionBoost
-    Inherits@discount: ^OilRefineryDiscount
-    Inherits@experience: ^ExperienceMechanic
+	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -748,7 +755,8 @@
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		Notification: NavalUnitLost
+		TextNotification: Naval unit lost.
 	HiddenUnderFog:
 	AttackMove:
 	WithDamageOverlay:
@@ -771,7 +779,7 @@
 	Sellable:
 		RefundPercent: 50
 		SellSounds: cashturn.aud
-		Cursor: sell
+		Cursor: sell-vehicle
 		ShowTicks: false
 		RequiresCondition: ship.sellable
 	ExternalCondition@Sellable:
@@ -843,9 +851,8 @@
 	Inherits: ^Building
     Inherits@LowPowerDamage: ^DamagedOnLowPower
     Inherits@productionboost: ^ProductionBoost
-    #   Inherits@burndamage: ^FlammableStructure
 	Building:
-		RequiresBaseProvider: false
+		RequiresBaseProvider: true
 		BuildSounds: constru2.aud, hvydoor1.aud
 		UndeploySounds: cashturn.aud
 		TerrainTypes: Clear,Road
@@ -862,6 +869,10 @@
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
+        RequiresCondition: !husks-enabled
+    GrantConditionOnPrerequisite@HUSKS:
+        Condition: husks-enabled
+        Prerequisites: ~global-husks
 	GivesBuildableArea:
 		AreaTypes: building
 	SpawnActorsOnSell:
@@ -913,6 +924,71 @@
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished
 
+^BuildingHusk:
+	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+    Inherits@restorable: ^RestorableBuilding
+	Capturable:
+		Types: building-restore
+		ValidRelationships: Enemy, Neutral, Ally
+        RequiresCondition: husks-enabled
+    GrantConditionOnPrerequisite@HUSKS:
+        Condition: husks-enabled
+        Prerequisites: ~global-husks
+	Interactable:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		GenericName: Building (Destroyed)
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+	FrozenUnderFog:
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: Ground, C4, Husk, NoAutoTarget
+    Demolishable:
+	Health:
+		HP: 20000
+    Armor:
+        Type: Concrete
+    DamageMultiplier@IsVulnerable:
+        Modifier: 200
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+    ChangesHealth@Burns:
+        Step: -500
+        Delay: 11
+        StartIfBelow: 101
+        RequiresCondition: husks-enabled
+	WithDamageOverlay@Burns:
+		Image: burn-s
+        Palette: effect
+		MinimumDamageState: Light
+		MaximumDamageState: Medium
+	WithDamageOverlay@Burns2:
+		Image: burn-m
+        Palette: effect
+		MinimumDamageState: Medium
+		MaximumDamageState: Heavy
+	WithDamageOverlay@Burns3:
+		Image: burn-l
+        Palette: effect
+		MinimumDamageState: Heavy
+		MaximumDamageState: Dead
+	SoundOnDamageTransition:
+		DestroyedSounds: crmble2.aud, xplos.aud
+	MapEditorData:
+		Categories: Building husk
+	ScriptTriggers:
+
 ^CivBuilding:
 	Inherits: ^Building
 	Tooltip:
@@ -940,7 +1016,7 @@
 	FrozenUnderFog:
 	ScriptTriggers:
 	MapEditorData:
-		Categories: Husk
+		Categories: Civilian husk
 	RenderSprites:
 		Palette: terrain
 
@@ -992,7 +1068,7 @@
 	WithSpriteBody:
 	FrozenUnderFog:
 	MapEditorData:
-		Categories: Husk
+		Categories: Civilian husk
 
 ^CivHaystackOrIglooHusk:
 	Inherits: ^CivField
@@ -1018,7 +1094,7 @@
 	Tooltip:
 		GenericName: Tech Building
 		GenericStancePrefix: false
-		ShowOwnerRow: false
+		ShowOwnerRow: True
 	FrozenUnderFog:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -1033,15 +1109,16 @@
         Amount: 500
 	RevealsShroud:
 		Range: 3c0
-	Tooltip:
-		ShowOwnerRow: True
 	MapEditorData:
 		Categories: Tech building
 	AppearsOnMapPreview:
+	Targetable:
+		TargetTypes: Ground, C4, Structure, NoAutoTarget
 
 ^TechBuildingHusk:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^1x1Shape
+    Inherits@restorable: ^RestorableBuilding
 	AppearsOnRadar:
 	Interactable:
 	Building:
@@ -1055,11 +1132,15 @@
 	FrozenUnderFog:
 	Targetable:
 		RequiresForceFire: true
-		TargetTypes: NonSensical
+		TargetTypes: Ground, Husk, NoAutoTarget
 	Health:
 		HP: 20000
+    Armor:
+        Type: Concrete
+    DamageMultiplier@IsInvulnerable:
+        Modifier: 0
 	MapEditorData:
-		Categories: Husk
+		Categories: Tech husk
 	ScriptTriggers:
 
 ^RestorableBuilding:
@@ -1409,7 +1490,7 @@
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	WithColoredOverlay@IDISABLE:
-		RequiresCondition: lowpower
+		RequiresCondition: lowpower && !build-incomplete
 		Color: 000000B4
 
 ^Selectable:
@@ -1505,11 +1586,6 @@
     Targetable@BurnDamage:
 		TargetTypes: Incendiary
 
-^OilRefineryDiscount:
-	ProductionCostMultiplier@productionboost:
-		Multiplier: 90
-		Prerequisites: oil
-
 #   Infantry first, Light Vehicles second, then anything else
 ^AutoTargetforGTWR:
     Inherits: ^AutoTargetGround
@@ -1566,59 +1642,71 @@
 		InvalidTargets: NoAutoTarget
         Priority: 3
 
-^EMPApplicableStructure:
-	WithColoredOverlay@EMPulse:
-		RequiresCondition: emp-affected-structure
-        Color: 000000A3
-	WithIdleOverlay@EMPulse:
-		Sequence: emp-overlay
-		RequiresCondition: emp-affected-structure
-	TimedConditionBar@EMPulse:
-		Condition: emp-affected-structure
-		Color: FFFFFF
-	ExternalCondition@EMPulse:
-		Condition: emp-affected-structure
-    Targetable@EMPulse:
-        TargetTypes: EMPApplicableBuilding
-	RejectsOrders:
-		RequiresCondition: emp-affected-structure
-    RevealsShroudMultiplier:
-        Modifier: 0
-        RequiresCondition: emp-affected-structure
-
 ^ExperienceMechanic:
 	GainsExperience:
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
-			500: rank-veteran
-			1000: rank-elite
+			250: rank
+            500: rank
+            750: rank
 		LevelUpImage: crate-effects
+	GrantCondition@RANK-VETERAN:
+		RequiresCondition: rank == 1
+		Condition: rank-veteran
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 125
-	SpeedMultiplier@RANK-VETERAN:
-		RequiresCondition: rank-veteran
-		Modifier: 130
-	DamageMultiplier@RANK-VETERAN:
-		RequiresCondition: rank-veteran
-		Modifier: 75
+		Modifier: 110
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
+	SpeedMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 110
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 90
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank == 2
+		Condition: rank-elite
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 125
+		Modifier: 120
+    ReloadDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-elite
+        Modifier: 80
 	SpeedMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 130
+		Modifier: 120
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 75
-    ReloadDelayMultiplier@RANK-ELITE:
-        RequiresCondition: rank-veteran
-        Modifier: 80
-	WithDecoration@RANK-VETERAN:
+		Modifier: 80
+	GrantCondition@RANK-HEROIC:
+		RequiresCondition: rank == 3
+		Condition: rank-heroic
+	FirepowerMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 130
+    ReloadDelayMultiplier@RANK-HEROIC:
+        RequiresCondition: rank-heroic
+        Modifier: 70
+	SpeedMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 130
+	DamageMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 70
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 4
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic && !in-transport
+    GivesExperienceMultiplier@RANK-HEROIC:
+        Modifier: 200
+        RequiresCondition: rank-heroic
+    WithDecoration@RANK-VETERAN:
 		Image: rank
 		Sequence: rank-veteran
 		Palette: effect
@@ -1634,6 +1722,109 @@
 		Margin: 5, 6
 		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-elite
+ 	WithDecoration@RANK-HEROIC:
+		Image: rank
+		Sequence: rank-heroic
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-heroic
+    GainsExperienceMultiplier@EXPTOGGLE2:
+        Modifier: 0
+        RequiresCondition: !earner-veterancy-on
+    GrantConditionOnPrerequisite@EXPTOGGLE2:
+        Condition: earner-veterancy-on
+        Prerequisites: ~global-veterancy
+
+^ExperienceMechanicAircraft:
+	GainsExperience:
+		LevelUpNotification: LevelUp
+		LevelUpTextNotification: Unit promoted.
+		Conditions:
+			250: rank
+            500: rank
+            750: rank
+		LevelUpImage: crate-effects
+	GrantCondition@RANK-VETERAN:
+		RequiresCondition: rank == 1
+		Condition: rank-veteran
+	FirepowerMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 110
+    ReloadAmmoDelayMultiplier@RANK-VETERAN:
+        RequiresCondition: rank-veteran
+        Modifier: 90
+	SpeedMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 110
+	DamageMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 90
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank == 2
+		Condition: rank-elite
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 120
+    ReloadAmmoDelayMultiplier@RANK-ELITE:
+        RequiresCondition: rank-elite
+        Modifier: 80
+	SpeedMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 120
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 80
+	GrantCondition@RANK-HEROIC:
+		RequiresCondition: rank == 3
+		Condition: rank-heroic
+	FirepowerMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 130
+    ReloadAmmoDelayMultiplier@RANK-HEROIC:
+        RequiresCondition: rank-heroic
+        Modifier: 70
+	SpeedMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 130
+	DamageMultiplier@RANK-HEROIC:
+		RequiresCondition: rank-heroic
+		Modifier: 70
+	ChangesHealth@RANK-HEROIC:
+		Step: 0
+		PercentageStep: 4
+		Delay: 25
+		StartIfBelow: 101
+		DamageCooldown: 125
+		RequiresCondition: rank-heroic
+    GivesExperienceMultiplier@RANK-HEROIC:
+        Modifier: 200
+        RequiresCondition: rank-heroic
+    WithDecoration@RANK-VETERAN:
+		Image: rank
+		Sequence: rank-veteran
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-veteran
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-elite
+ 	WithDecoration@RANK-HEROIC:
+		Image: rank
+		Sequence: rank-heroic
+		Palette: effect
+		Position: TopLeft
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: rank-heroic
     GainsExperienceMultiplier@EXPTOGGLE2:
         Modifier: 0
         RequiresCondition: !earner-veterancy-on
@@ -1646,27 +1837,45 @@
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: Unit promoted.
 		Conditions:
-			500: rank-veteran
-			1000: rank-elite
+			500: rank
+            1000: rank
 		LevelUpImage: crate-effects
+	GrantCondition@RANK-VETERAN:
+		RequiresCondition: rank == 1
+		Condition: rank-veteran
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 125
 	DamageMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
-		Modifier: 75
+		Modifier: 90
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
-        Modifier: 80
+        Modifier: 90
+	RangeMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 125
+	RevealsShroudMultiplier@RANK-VETERAN:
+		RequiresCondition: rank-veteran
+		Modifier: 120
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank == 2
+		Condition: rank-elite
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 125
+		Modifier: 150
 	DamageMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 75
+		Modifier: 80
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-veteran
         Modifier: 80
+	RangeMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 150
+	RevealsShroudMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 140
 	WithDecoration@RANK-VETERAN:
 		Image: rank
 		Sequence: rank-veteran
@@ -1690,26 +1899,55 @@
         Condition: earner-veterancy-on
         Prerequisites: ~global-veterancy
 
-^AffectedByArmory:
-    ProducibleWithLevel:
-        Prerequisites: army, ~global-veterancy
-	WithProductionIconOverlay:
-		Types: Veterancy
-		Prerequisites: army, ~global-veterancy
+# The Bot does not know how to sell up when he does not have an income. 
+# This provides an income, when floating less than 2500$
+^BotFallbackInsurance:
+	GrantConditionOnPlayerResources@botinsurance:
+		Condition: noinsurance
+		Threshold: 2500
+	CashTrickler@botinsurance:
+		Interval: 450
+		Amount: 500
+		ShowTicks: False
+		RequiresCondition: bot-insurance-enabler && !noinsurance
 
-^BaseBuildingHusk:
+^GlobalBounty:
+	GrantConditionOnPrerequisite@GLOBALBOUNTY:
+		Condition: global-bounty
+		Prerequisites: global-bounty
+	GivesBounty:
+		RequiresCondition: global-bounty
+
+^Ice:
 	Inherits@1: ^SpriteActor
 	Interactable:
-	AppearsOnRadar:
-	Building:
-		Dimensions: 1,1
-		Footprint: x
-	WithSpriteBody:
 	Tooltip:
-		GenericName: Building (Destroyed)
-		GenericStancePrefix: false
+		Name: Ice Floe
 		ShowOwnerRow: false
-	FrozenUnderFog:
-	ScriptTriggers:
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+        TerrainTypes: Water
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	AppearsOnMapPreview:
+		Terrain: Rock
+	HiddenUnderShroud:
 	MapEditorData:
-		Categories: Husk
+		RequireTilesets: SNOW, WINTER
+		Categories: Decoration
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	RenderSprites:
+		Palette: staticterrain
+
+^BoinkSound:
+	DeathSounds@Boink:
+		Voice: Boink
+		VolumeMultiplier: 2
+		RequiresCondition: boink-boink
+	GrantConditionOnPrerequisite@Boink:
+		Condition: boink-boink
+		Prerequisites: global-boink

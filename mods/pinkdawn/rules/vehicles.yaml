@@ -3,20 +3,33 @@ MCV:
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
     -GainsExperience:
+    -GrantCondition@RANK-VETERAN:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
+    -GrantCondition@RANK-ELITE:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -GrantCondition@RANK-HEROIC:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability-crate-collected
+	HitShape:
+		Type: Circle
+			Radius: 608
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -25,7 +38,7 @@ MCV:
         GenericName: MCV
         GenericVisibility: Ally, Neutral, Enemy
 	Buildable:
-        BuildDuration: 3900
+        BuildDuration: 3000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
         Prerequisites: anyhq, fix
@@ -34,7 +47,7 @@ MCV:
 	Selectable:
 		DecorationBounds: 1536, 1536
 	Mobile:
-        TurnSpeed: 12
+        TurnSpeed: 10
 		Speed: 60
 		Locomotor: tracked-crusher
 	Health:
@@ -64,22 +77,34 @@ MCV:
 	ProductionTimeMultiplier@EXPENSIVEMCV:
 		Multiplier: 200
 		Prerequisites: global-expensivemcv
+    Passenger:
+        -CargoCondition:
 
 HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
     Inherits@Crates: ^AcceptsAllCratesExceptFirepower
     -GainsExperience:
+    -GrantCondition@RANK-VETERAN:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
+    -GrantCondition@RANK-ELITE:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -GrantCondition@RANK-HEROIC:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
@@ -88,13 +113,14 @@ HARV:
 		Name: Harvester
 		GenericName: Harvester
 	Buildable:
-    	BuildDuration: 1650
+    	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: proc
 		Queue: Vehicle.GDI, Vehicle.Nod
 		Description: Collects Tiberium for processing.\n\nSpecial: Self-repair\nRecovers lost hitpoints\nwhen below half health.\n\nUnarmed.
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1536, 1536
 	Harvester:
 		Resources: Tiberium, BlueTiberium, RedTiberium
@@ -147,6 +173,8 @@ HARV:
 		Delay: 3
 		StartIfBelow: 51
 		DamageCooldown: 150
+    Passenger:
+        -CargoCondition:
 	RenderSprites:
 		Image: harv
 		FactionImages:
@@ -159,20 +187,30 @@ TRUK:
 	Inherits@Invuln: ^AcceptsInvulnerabilityCrate
 	Inherits@EMP: ^AcceptsEMPCrate
     -GainsExperience:
+    -GrantCondition@RANK-VETERAN:
     -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
     -SpeedMultiplier@RANK-VETERAN:
     -DamageMultiplier@RANK-VETERAN:
-    -ReloadDelayMultiplier@RANK-VETERAN:
+    -GrantCondition@RANK-ELITE:
     -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
     -SpeedMultiplier@RANK-ELITE:
     -DamageMultiplier@RANK-ELITE:
-    -ReloadDelayMultiplier@RANK-ELITE:
+    -GrantCondition@RANK-HEROIC:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
     -WithDecoration@RANK-VETERAN:
     -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
     -GainsExperienceMultiplier@EXPTOGGLE2:
     -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Buildable:
-		BuildDuration: 900
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 17
 		Queue: Vehicle.GDI, Vehicle.Nod
@@ -194,7 +232,7 @@ TRUK:
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
-        Cursor: enter
+        Cursor: sell-vehicle
 		Payload: 1000
 		Type: MoneyTransfer
 		PlayerExperience: 0
@@ -202,19 +240,20 @@ TRUK:
 		Actor: moneycrate
 	Passenger:
 		CustomPipType: pip-blue
+        -CargoCondition:
 
 JEEP:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetforLightVehicle
 	Valued:
-		Cost: 400
+		Cost: 350
 	Tooltip:
 		Name: Humvee
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 600
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
 		Prerequisites: weap
@@ -239,13 +278,30 @@ JEEP:
 		LocalOffset: 171,0,85
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
+        Name: secondary
+		Weapon: MachineGun
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
+        Armaments: primary, secondary
 		Voice: Attack
         PauseOnCondition: emp-crate-collected
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 BGGY:
 	Inherits: ^Vehicle
@@ -258,7 +314,7 @@ BGGY:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 600
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: afld
@@ -277,29 +333,48 @@ BGGY:
 	Turreted:
 		TurnSpeed: 18
 		Offset: -43,0,128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: MachineGunLight
 		LocalOffset: 171,0,43
 		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
+        Name: secondary
+		Weapon: MachineGun
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackMove:
 		Voice: Attack
 	AttackTurreted:
+        Armaments: primary, secondary
 		Voice: Attack
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 BIKE:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
-		Cost: 500
+		Cost: 450
 	Tooltip:
 		Name: Recon Bike
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 750
+        BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: anyhq
@@ -316,12 +391,22 @@ BIKE:
 		Type: Light
 	RevealsShroud:
 		Range: 4c128
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: BikeRockets
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+ 	Armament@SECONDARY:
+        Name: secondary
+		Weapon: BikeRockets2
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
         FacingTolerance: 0
         Voice: Attack
 		PauseOnCondition: emp-crate-collected
@@ -347,7 +432,7 @@ APC:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		BuildDuration: 900
+		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: infantryproduction
@@ -396,6 +481,17 @@ APC:
 		EmptyWeapon: UnitExplodeBig
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
+    RevealsShroudMultiplier@heroic:
+        Modifier: 150
+        RequiresCondition: rank-heroic
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MAAG:
 	Inherits: ^TrackedVehicle
@@ -408,7 +504,7 @@ MAAG:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1200
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anyhq
@@ -475,6 +571,14 @@ MAAG:
         Image: maag
 	RenderRangeCircle:
 		RangeCircleType: aa
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 LTNK:
 	Inherits: ^TrackedVehicle
@@ -487,7 +591,7 @@ LTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 900
+        BuildDuration: 625
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: afld
@@ -506,20 +610,39 @@ LTNK:
 		Range: 4c128
 	Turreted:
 		TurnSpeed: 12
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: LightCannon
 		Recoil: 85
 		RecoilRecovery: 17
 		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
-		PauseOnCondition: emp-crate-collected
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: MediumCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackTurreted:
+        Armaments: primary, secondary
         Voice: Attack
-		PauseOnCondition: emp-crate-collected
 	AttackMove:
 		Voice: Attack
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MTNK:
 	Inherits: ^TrackedVehicle
@@ -532,7 +655,7 @@ MTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1350
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: fix
@@ -552,13 +675,24 @@ MTNK:
 	Turreted:
 		TurnSpeed: 12
         Offset: 0,0,24
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: MediumCannon
 		Recoil: 128
 		RecoilRecovery: 26
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: HeavyCannon
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackTurreted:
         Voice: Attack
         PauseOnCondition: emp-crate-collected
@@ -572,6 +706,14 @@ MTNK:
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
 		DecorationBounds: 1194, 1194
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 FTNK:
 	Inherits: ^TrackedVehicle
@@ -582,7 +724,7 @@ FTNK:
 	Tooltip:
 		Name: Flame Tank
 	Buildable:
-        BuildDuration: 1350
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: fix
@@ -622,11 +764,22 @@ FTNK:
     SpeedMultiplier@DONTTURN:
         Modifier: 0
         RequiresCondition: dont-move
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 HTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetforTanks
+	HitShape:
+		Type: Circle
+			Radius: 512
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -634,7 +787,7 @@ HTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 2100
+        BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
 		Prerequisites: miss
@@ -643,7 +796,7 @@ HTNK:
 	Mobile:
 		Locomotor: tracked-crusher
 		Speed: 60
-		TurnSpeed: 12
+		TurnSpeed: 8
         PauseOnCondition: emp-crate-collected
 	Health:
 		HP: 60000
@@ -651,9 +804,14 @@ HTNK:
 		Type: Heavy
 	RevealsShroud:
 		Range: 5c128
+	DetectCloaked:
+        DetectionTypes: Stealth, Underground
+		Range: 3c768
+		RequiresCondition: !emp-crate-collected && rank-heroic
+	RenderDetectionCircle:
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 	Armament@PRIMARY:
 		Weapon: MammothCannon
 		LocalOffset: 900,180,340, 900,-180,340
@@ -685,7 +843,16 @@ HTNK:
 		Weapon: UnitExplodeBig
 		EmptyWeapon: UnitExplodeBig
 	Selectable:
+		Bounds: 1280, 1280
 		DecorationBounds: 1450, 1450, 0, -128
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 STNK:
 	Inherits: ^Vehicle
@@ -700,7 +867,7 @@ STNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1500
+        BuildDuration: 875
         BuildDurationModifier: 100        
 		BuildPaletteOrder: 13
 		Prerequisites: tmpl
@@ -753,19 +920,29 @@ STNK:
 		EmptyWeapon: UnitExplode
     Targetable@Extra:
 		TargetTypes: Tank
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
+    AppearsOnRadar:
+        ValidRelationships: Ally
 
 ARTY:
 	Inherits: ^TrackedVehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 700
+		Cost: 900
 	Tooltip:
 		Name: Artillery
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1200
+        BuildDuration: 875
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
@@ -782,12 +959,22 @@ ARTY:
 		Type: Light
 	RevealsShroud:
 		Range: 6c0
-	Armament:
+	Armament@PRIMARY:
+        Name: primary
 		Weapon: ArtilleryShell
 		LocalOffset: 624,0,208
 		MuzzleSequence: muzzle
         PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+	Armament@SECONDARY:
+        Name: secondary
+		Weapon: ArtilleryShell2
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+        PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
@@ -801,15 +988,23 @@ ARTY:
 	Explodes:
 		Weapon: ArtilleryShell
 		EmptyWeapon: UnitExplode
-		LoadedChance: 75
+		LoadedChance: 100
 	Passenger:
 		CustomPipType: pip-yellow
 	RenderRangeCircle:
 	ReloadArmamentsBar:
-		Armaments: primary
+		Armaments: primary, secondary
 		Color: FFFF00
     Targetable@Extra:
 		TargetTypes: Artillery
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MSAM:
 	Inherits: ^TrackedVehicle
@@ -825,7 +1020,7 @@ MSAM:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 1500
+        BuildDuration: 1000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
 		Prerequisites: eye
@@ -845,10 +1040,19 @@ MSAM:
 		TurnSpeed: 12
 		Offset: -256,0,128
 	Armament@PRIMARY:
+        Name: primary
 		Weapon: MLRSMissiles
 		LocalOffset: 213,128,0, 213,-128,0
 		PauseOnCondition: emp-crate-collected
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
+        Name: secondary
+		Weapon: MLRSMissiles2
+		LocalOffset: 213,128,0, 213,-128,0
+		PauseOnCondition: emp-crate-collected
+        RequiresCondition: rank-heroic
 	AttackFrontal:
+        Armaments: primary, secondary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
@@ -864,16 +1068,28 @@ MSAM:
 		Sequence: aim
         RequiresCondition: aiming
     GrantConditionOnAttack:
-		ArmamentNames: primary
+		ArmamentNames: primary, secondary
     	Condition: aiming
 		RevokeDelay: 32
     	RevokeAll: false
+	Explodes:
+		Weapon: MLRSMissiles
+		EmptyWeapon: UnitExplode
+		LoadedChance: 100
 	ReloadArmamentsBar:
-        Armaments: primary
+        Armaments: primary, secondary
         Color: FFFF00
 	RenderRangeCircle:
     Targetable@Extra:
 		TargetTypes: Artillery
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MLRS:
 	Inherits: ^TrackedVehicle
@@ -889,7 +1105,7 @@ MLRS:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-        BuildDuration: 2100
+    	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 15
 		Prerequisites: bio
@@ -915,36 +1131,63 @@ MLRS:
         Recoil: 0
 		LocalOffset: 0,-171,0, 0,171,0
         PauseOnCondition: !ammo || emp-crate-collected
-    Armament@AIHelper:
+        RequiresCondition: !rank-heroic
+    Armament@SECONDARY:
         Name: secondary
+		Weapon: HonestJohnChem
+        Recoil: 0
+		LocalOffset: 0,-171,0, 0,171,0
+        PauseOnCondition: !ammo || emp-crate-collected
+        RequiresCondition: rank-heroic
+    Armament@AIHelper:
+        Name: tertiary
         Weapon: TargeterforMLRS
         PauseOnCondition: ammo || emp-crate-collected
 	AmmoPool:
-        Armaments: primary
+        Armaments: primary, secondary
 		Ammo: 2
 		AmmoCondition: ammo
 	AttackMove:
 		Voice: Attack
 	AttackFrontal:
+        Armaments: primary, secondary, tertiary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		Voice: Attack
 		FacingTolerance: 0
         PauseOnCondition: emp-crate-collected
 	GrantConditionOnAttack:
+		ArmamentNames: primary, secondary
 		Condition: aiming
 		RevokeDelay: 51
 		RevokeAll: false
 	WithSpriteTurret:
-		RequiresCondition: ammo > 1
+		RequiresCondition: ammo > 1 && !rank-heroic
 	WithSpriteTurret@OneMissile:
-		RequiresCondition: ammo == 1
+		RequiresCondition: ammo == 1 && !rank-heroic
 		Sequence: turret1
 	WithSpriteTurret@NoMissiles:
-		RequiresCondition: !ammo
+		RequiresCondition: !ammo && !rank-heroic
 		Sequence: turret0
+	WithSpriteTurret@Heroic:
+		RequiresCondition: ammo > 1 && rank-heroic
+        Sequence: turret4
+	WithSpriteTurret@HeroicOneMissile:
+		RequiresCondition: ammo == 1 && rank-heroic
+		Sequence: turret3
+	WithSpriteTurret@HeroicNoMissiles:
+		RequiresCondition: !ammo && rank-heroic
+		Sequence: turret2
 	AutoTarget:
 		InitialStanceAI: Defend
+	Explodes:
+		Weapon: HonestJohn
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: !rank-heroic
+	Explodes@2:
+		Weapon: HonestJohnChem
+        EmptyWeapon: UnitExplodeSmall
+        RequiresCondition: rank-heroic
 	RenderRangeCircle:
 	ReloadAmmoPool:
 		Delay: 200
@@ -952,13 +1195,44 @@ MLRS:
         PauseOnCondition: emp-crate-collected
     Targetable@Extra:
 		TargetTypes: Artillery
+	RevealOnFire:
+		ArmamentNames: primary, secondary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 MHQ:
 	Inherits: ^Vehicle
 	Inherits@Crates: ^AcceptsAllCrates
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    -GainsExperience:
+    -GrantCondition@RANK-VETERAN:
+    -FirepowerMultiplier@RANK-VETERAN:
+    -ReloadDelayMultiplier@RANK-VETERAN:
+    -SpeedMultiplier@RANK-VETERAN:
+    -DamageMultiplier@RANK-VETERAN:
+    -GrantCondition@RANK-ELITE:
+    -FirepowerMultiplier@RANK-ELITE:
+    -ReloadDelayMultiplier@RANK-ELITE:
+    -SpeedMultiplier@RANK-ELITE:
+    -DamageMultiplier@RANK-ELITE:
+    -GrantCondition@RANK-HEROIC:
+    -FirepowerMultiplier@RANK-HEROIC:
+    -ReloadDelayMultiplier@RANK-HEROIC:
+    -SpeedMultiplier@RANK-HEROIC:
+    -DamageMultiplier@RANK-HEROIC:
+    -ChangesHealth@RANK-HEROIC:
+    -GivesExperienceMultiplier@RANK-HEROIC:
+    -WithDecoration@RANK-VETERAN:
+    -WithDecoration@RANK-ELITE:
+    -WithDecoration@RANK-HEROIC:
+    -GainsExperienceMultiplier@EXPTOGGLE2:
+    -GrantConditionOnPrerequisite@EXPTOGGLE2:
 	Valued:
-		Cost: 600
+		Cost: 1000
 	Tooltip:
 		Name: Mobile Jammer
 	Health:
@@ -979,7 +1253,7 @@ MHQ:
 		RequiresCondition: !emp-crate-collected
 	RenderDetectionCircle:
 	Buildable:
-        BuildDuration: 900
+        BuildDuration: 1000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		Prerequisites: eye
@@ -989,7 +1263,7 @@ MHQ:
 		TurnSpeed: 12
 		Offset: 246,-60,112
 	Armament:
-		Weapon: M16
+		Weapon: VehicleM16
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		PauseOnCondition: emp-crate-collected
@@ -1012,3 +1286,13 @@ MHQ:
         RequiresCondition: !emp-crate-collected
     Targetable@Extra:
 		TargetTypes: Tank
+    Passenger:
+        -CargoCondition:
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal

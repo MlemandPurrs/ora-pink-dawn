@@ -1,7 +1,6 @@
 GTWR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetforGTWR
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Selectable:
 		Bounds: 1024, 1024
 	Valued:
@@ -9,7 +8,7 @@ GTWR:
 	Tooltip:
 		Name: Guard Tower
 	Buildable:
-		BuildDuration: 900
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
 		Prerequisites: infantryproduction
@@ -30,12 +29,12 @@ GTWR:
 		MuzzleSequence: muzzle
         PauseOnCondition: build-incomplete
 	AttackTurreted:
-		PauseOnCondition: build-incomplete || emp-affected-structure
+		PauseOnCondition: build-incomplete
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-        RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+        RequiresCondition: !lowpower && !build-incomplete
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -44,14 +43,26 @@ GTWR:
 		TurnSpeed: 512
 	Power:
 		Amount: -20
-        RequiresCondition: !build-incomplete && !emp-affected-structure
+        RequiresCondition: !build-incomplete
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished
+	SpawnActorOnDeath@HUSK:
+		Actor: GTWR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetforGUN
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-BodyOrientation:
 	Selectable:
 		Bounds: 1024, 1024
@@ -60,7 +71,7 @@ GUN:
 	Tooltip:
 		Name: Gun Turret
 	Buildable:
-		BuildDuration: 900
+		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
 		Prerequisites: vehicleproduction
@@ -91,30 +102,41 @@ GUN:
 		MuzzleSequence: muzzle
         PauseOnCondition: build-incomplete
 	AttackTurreted:
-		PauseOnCondition: build-incomplete || emp-affected-structure
+		PauseOnCondition: build-incomplete
 	WithMuzzleOverlay:
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete
 	RenderDetectionCircle:
 	Power:
 		Amount: -20
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	ClassicFacingBodyOrientation:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished
+	SpawnActorOnDeath@HUSK:
+		Actor: GUN.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 ATWR:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetAll
-    Inherits@EMPMechanic: ^EMPApplicableStructure    
-	-RenderRangeCircle:
 	Valued:
-		Cost: 1000
+		Cost: 1200
 	Tooltip:
 		Name: Advanced Guard Tower
 	Buildable:
@@ -133,9 +155,6 @@ ATWR:
 		Type: Heavy
 	RevealsShroud:
 		Range: 8c0
-	WithRangeCircle:
-		Range: 7c0
-		Color: FFFF0080
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
@@ -156,32 +175,44 @@ ATWR:
 		PauseOnCondition: build-incomplete || reload-ground || lowpower
         ReloadingCondition: reload-air
     AttackTurreted:
-        PauseOnCondition: build-incomplete || lowpower || emp-affected-structure
+        PauseOnCondition: build-incomplete || lowpower
 	BodyOrientation:
 		QuantizedFacings: 8
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete && !emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete
 	RenderDetectionCircle:
 	Power:
 		Amount: -60
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
+	SpawnActorOnDeath@HUSK:
+		Actor: ATWR.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 OBLI:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetGround
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	Valued:
 		Cost: 1500
 	Tooltip:
 		Name: Obelisk of Light
 	Buildable:
-		BuildDuration: 2700
+		BuildDuration: 1500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
 		Prerequisites: tmpl
@@ -206,7 +237,7 @@ OBLI:
 		LocalOffset: 0,-85,1280
         PauseOnCondition: build-incomplete
 	AttackCharges:
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete
 		ChargeLevel: 50
 		ChargingCondition: charging
 	AmbientSound:
@@ -215,25 +246,37 @@ OBLI:
 		Interval: 30, 40
 	DetectCloaked:
 		Range: 3c768
-		RequiresCondition: !lowpower && !build-incomplete && emp-affected-structure
+		RequiresCondition: !lowpower && !build-incomplete
 	Power:
 		Amount: -75
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
     WithChargeOverlay@BUILDUP:
 		Sequence: active-lights
 		PauseOnCondition: lowpower
 		RequiresCondition: !build-incomplete
+	SpawnActorOnDeath@HUSK:
+		Actor: OBLI.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 SAM:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@shape: ^2x1Shape
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	-WithSpriteBody:
 	-RenderDetectionCircle:
 	-BodyOrientation:
@@ -249,7 +292,7 @@ SAM:
 	Tooltip:
 		Name: SAM Site
 	Buildable:
-        BuildDuration: 1200
+        BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
 		Prerequisites: anyhq
@@ -266,7 +309,7 @@ SAM:
 		Range: 3c512
     RevealsShroudMultiplier@Shooting:
         Modifier: 200
-        RequiresCondition: is-shooting && !emp-affected-structure
+        RequiresCondition: is-shooting
 	Turreted:
 		TurnSpeed: 24
 		InitialFacing: 0
@@ -291,16 +334,16 @@ SAM:
 	ReloadAmmoPool:
 		Delay: 60
 		Count: 6
-		RequiresCondition: !ammo && !emp-affected-structure
+		RequiresCondition: !ammo
 	AttackPopupTurreted:
         ClosedDamageMultiplier: 50
-		PauseOnCondition: lowpower || build-incomplete || emp-affected-structure
+		PauseOnCondition: lowpower || build-incomplete
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 		RangeCircleType: aa
 	Power:
 		Amount: -30
-		RequiresCondition: !build-incomplete && !emp-affected-structure
+		RequiresCondition: !build-incomplete
 	ClassicFacingBodyOrientation:
 	SequencePlaceBuildingPreview:
 		Sequence: place
@@ -311,7 +354,7 @@ SAM:
 		Palette: cloaktransparent
 		IsPlayerPalette: true
 		UncloakSound: appear1.aud
-		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower || emp-affected-structure
+		PauseOnCondition: cloak-force-disabled || build-incomplete || is-shooting || lowpower
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -320,9 +363,22 @@ SAM:
 		ArmamentNames: primary
 		RevokeDelay: 75
     WithColoredOverlay@IDISABLE:
-        RequiresCondition: lowpower && !emp-affected-structure
+        RequiresCondition: lowpower
     Sellable:
-        RequiresCondition: !build-incomplete && !being-demolished && !emp-affected-structure
+        RequiresCondition: !build-incomplete && !being-demolished
+	SpawnActorOnDeath@HUSK:
+		Actor: SAM.Husk
+        OwnerType: Victim
+        EffectiveOwnerFromOwner: true
+        RequiresCondition: husks-enabled && !being-demolished
+	RevealOnFire:
+		ArmamentNames: primary
+        RevealForRelationships: Ally, Neutral, Enemy
+        RevealGeneratedShroud: false
+        RequiresCondition: reveal-on
+    GrantConditionOnPrerequisite@REVEALTOGGLE:
+        Condition: reveal-on
+        Prerequisites: ~global-unitreveal
 
 SBAG:
 	Inherits: ^Wall
@@ -334,11 +390,11 @@ SBAG:
 	Tooltip:
 		Name: Sandbag Barrier
 	Buildable:
-        BuildDuration: 75
+        BuildDuration: 125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 0
 		Prerequisites: infantryproduction
-		Queue: Defense.GDI
+		Queue: Defense.GDI, Defense.Nod
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -362,7 +418,7 @@ BARB:
         BuildDuration: 75
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: infantryproduction
+		Prerequisites: ~disabled
 		Queue: Defense.Nod
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -384,7 +440,7 @@ CYCL:
 	Tooltip:
 		Name: Chain Link Barrier
 	Buildable:
-        BuildDuration: 125
+		BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
 		Prerequisites: vehicleproduction
@@ -410,7 +466,7 @@ BRIK:
 	Tooltip:
 		Name: Concrete Barrier
 	Buildable:
-        BuildDuration: 175
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
 		Prerequisites: anytier3
@@ -447,7 +503,6 @@ WOOD:
 HGAT:
 	Inherits: ^Gate
     Inherits@productionboost: ^ProductionBoost
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -457,7 +512,7 @@ HGAT:
 		Footprint: xxx
 		Dimensions: 3,1
 	Buildable:
-        BuildDuration: 175
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 		Prerequisites: anytier3
@@ -468,15 +523,15 @@ HGAT:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
-		RequiresCondition: !being-demolished && !emp-affected-structure
+		RequiresCondition: !being-demolished
 	CustomSellValue:
 		Value: 50
 	WithGateSpriteBody:
-        PauseOnCondition: lowpower || emp-affected-structure
+        PauseOnCondition: lowpower
 		WallConnections: -1,0, 3,0
         Type: concrete
 	Gate:
-		PauseOnCondition: lowpower || emp-affected-structure
+		PauseOnCondition: lowpower
 	LineBuildNode:
 		Connections: -1,0, 1,0
 	Tooltip:
@@ -500,7 +555,6 @@ HGAT:
 VGAT:
 	Inherits: ^Gate
     Inherits@productionboost: ^ProductionBoost
-    Inherits@EMPMechanic: ^EMPApplicableStructure
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -510,7 +564,7 @@ VGAT:
 		Footprint: x x x
 		Dimensions: 1,3
 	Buildable:
-        BuildDuration: 175
+		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
 		Prerequisites: ~disabled
@@ -521,13 +575,13 @@ VGAT:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
-		RequiresCondition: !being-demolished && !emp-affected-structure
+		RequiresCondition: !being-demolished
 	CustomSellValue:
 		Value: 50
 	Gate:
-		PauseOnCondition: lowpower || emp-affected-structure
+		PauseOnCondition: lowpower
 	WithGateSpriteBody:
-        PauseOnCondition: lowpower || emp-affected-structure
+        PauseOnCondition: lowpower
 		WallConnections: 0,-1, 0,3
         Type: concrete
 	LineBuildNode:

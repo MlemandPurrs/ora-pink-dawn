@@ -8,13 +8,13 @@ CRATE:
 		SelectionShares: 20
 		UseCashTick: true
 	RevealMapCrateAction:
-		SelectionShares: 1
+		SelectionShares: 5
 		Sequence: reveal-map
 	ExplodeCrateAction@fire:
 		Weapon: CrateNapalm
 		SelectionShares: 5
 	GiveMcvCrateAction:
-		SelectionShares: 0
+		SelectionShares: 1
 		NoBaseSelectionShares: 100
 		Units: mcv
 	ExplodeCrateAction@nuke:
@@ -67,6 +67,9 @@ CRATE:
 		Units: vice
 		Owner: Creeps
 		SelectionShares: 10
+	GiveUnitCrateAction@playercreep:
+		Units: pvice
+		SelectionShares: 10
 	SupportPowerCrateAction@nuke:
 		Proxy: crate.nuke
 		SelectionShares: 1
@@ -92,6 +95,9 @@ CRATE:
 	LevelUpCrateAction:
 		SelectionShares: 5
         Prerequisites: ~global-veterancy
+	ExplodeCrateAction@Tiberium:
+		Weapon: TiberiumExplosion
+		SelectionShares: 3
 
 WCRATE:
 	Inherits: ^Crate
@@ -116,6 +122,17 @@ MONEYCRATE:
 		UseCashTick: true
 	RenderSprites:
 		Image: wcrate
+
+RANKCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Heroic Crate
+	LevelUpCrateAction:
+		SelectionShares: 1
+        Levels: 3
+        Prerequisites: ~global-veterancy
+	RenderSprites:
+		Image: scrate
 
 mpspawn:
 	Interactable:
@@ -150,13 +167,23 @@ waypoint:
 fact.colorpicker:
     AlwaysVisible:
     WithSpriteBody:
+        Sequence: place
 	RenderSprites:
 		Image: fact
+        Palette: colorpicker
+
+fact.colorpicker.gdi:
+    AlwaysVisible:
+    WithSpriteBody:
+        Sequence: place
+	RenderSprites:
+        Image: gdifact
         Palette: colorpicker
 
 fact.colorpicker.nod:
     AlwaysVisible:
     WithSpriteBody:
+        Sequence: place
 	RenderSprites:
         Image: nodfact
         Palette: colorpicker

@@ -7,12 +7,12 @@ Container@GAMESAVE_LOADING_SCREEN:
 		Image@NOD:
 			X: WINDOW_RIGHT / 2 - 384
 			Y: (WINDOW_BOTTOM - 256) / 2
-			ImageCollection: logos
+			ImageCollection: logos-load
 			ImageName: nod-load
 		Image@GDI:
 			X: WINDOW_RIGHT / 2 + 128
 			Y: (WINDOW_BOTTOM - 256) / 2
-			ImageCollection: logos
+			ImageCollection: logos-load
 			ImageName: gdi-load
 		Image@EVA:
 			X: WINDOW_RIGHT - 128 - 43
