@@ -18,7 +18,7 @@ CRATE:
 		NoBaseSelectionShares: 100
 		Units: mcv
 	ExplodeCrateAction@nuke:
-		Weapon: Atomic
+		Weapon: MiniNuke
 		SelectionShares: 1
 	HideMapCrateAction:
 		SelectionShares: 5
@@ -88,6 +88,11 @@ CRATE:
 		TimeDelay: 7500
 		Sequence: airstrike
         Prerequisites: ~global-superweapons
+	SupportPowerCrateAction@paratroopers:
+		Proxy: crate.paratroopers
+		SelectionShares: 1
+		TimeDelay: 7500
+		Sequence: parabombs
 	GiveUnitCrateAction@harv:
 		Units: harv
 		SelectionShares: 3
@@ -410,3 +415,83 @@ crate.airstrike:
 		ChargeInterval: 0
 		OneShot: true
         AllowMultiple: true
+
+crate.paratroopers:
+	AlwaysVisible:
+	ParatroopersPower@ParatroopersOneShot:
+		OrderName: CrateParatroopers
+		Icon: parainf
+		ChargeInterval: 0
+		UnitType: c130
+		Name: Paratroopers
+		Description: A Transport Plane drops a squad of infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.small
+		DisplayBeacon: true
+		BeaconPoster: parainf
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+        SupportPowerPaletteOrder: 9
+        Cursor: airdrop
+		ReinforcementsArrivedSpeechNotification: Reinforce
+        ReinforcementsArrivedTextNotification: Reinforcements arrived.
+		SelectTargetSpeechNotification: SelectTarget
+        SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ReinforceAvailable
+        EndChargeTextNotification: Reinforcements available.
+        LaunchSpeechNotification: ReinforceEnroute
+        LaunchTextNotification: Reinforcements on the way.
+		OneShot: true
+        AllowMultiple: true
+
+techlevel.2:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.3:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.4:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.5:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.6:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.7:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@name:
+
+techlevel.all:
+	AlwaysVisible:
+	Interactable:
+    ProvidesPrerequisite@name:
+	ProvidesPrerequisite@TECHII:
+        Prerequisite: techlevel.2
+	ProvidesPrerequisite@TECHIII:
+        Prerequisite: techlevel.3
+	ProvidesPrerequisite@TECHIV:
+        Prerequisite: techlevel.4
+	ProvidesPrerequisite@TECHV:
+        Prerequisite: techlevel.5
+	ProvidesPrerequisite@TECHVI:
+        Prerequisite: techlevel.6
+	ProvidesPrerequisite@TECHVII:
+        Prerequisite: techlevel.7

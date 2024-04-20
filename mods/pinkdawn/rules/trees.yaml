@@ -6,6 +6,15 @@ SPLIT2:
 	SeedsResource@2:
 		ResourceType: Tiberium
 		Interval: 300
+        RequiresCondition: double-growth
+	SeedsResource@3:
+		ResourceType: Tiberium
+		Interval: 300
+        RequiresCondition: triple-growth
+	ExternalCondition@doublegrowth:
+		Condition: double-growth
+	ExternalCondition@triplegrowth:
+		Condition: triple-growth
 	WithIdleAnimation:
 		Interval: 300
 
@@ -19,6 +28,15 @@ SPLIT3:
 	SeedsResource@2:
 		ResourceType: Tiberium
 		Interval: 300
+        RequiresCondition: double-growth
+	SeedsResource@3:
+		ResourceType: Tiberium
+		Interval: 300
+        RequiresCondition: triple-growth
+	ExternalCondition@doublegrowth:
+		Condition: double-growth
+	ExternalCondition@triplegrowth:
+		Condition: triple-growth
 	WithIdleAnimation:
 		Interval: 300
 
@@ -32,6 +50,15 @@ SPLITBLUE:
 	SeedsResource@2:
 		ResourceType: BlueTiberium
 		Interval: 450
+        RequiresCondition: double-growth
+	SeedsResource@3:
+		ResourceType: BlueTiberium
+		Interval: 450
+        RequiresCondition: triple-growth
+	ExternalCondition@doublegrowth:
+		Condition: double-growth
+	ExternalCondition@triplegrowth:
+		Condition: triple-growth
 	WithIdleAnimation:
 		Interval: 450
 	Tooltip:

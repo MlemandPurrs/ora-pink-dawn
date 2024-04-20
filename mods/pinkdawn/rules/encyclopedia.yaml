@@ -669,7 +669,7 @@ mtnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: From its single barrel, the Main Battle Tank (MBT) fires armor-piercing shells. It is faster, heavier and more destructive than Nod's Light Tank. This is one of the best all around vehicles in the game. It is effective against both vehicles and structures, but can be taken down by groups of infantry or aerial units.\n\nHeroic rank:\nCannon gains a calibre upgrade, becoming equivelant to an Mammoth's.
+        Description: From its single barrel, the Main Battle Tank (MBT) fires armor-piercing shells. It is slower, heavier and more destructive than Nod's Light Tank. This is one of the best all around vehicles in the game. It is effective against both vehicles and structures, but can be taken down by groups of infantry or aerial units.\n\nHeroic rank:\nCannon gains a calibre upgrade, becoming equivelant to an Mammoth's.
         Category: GDI Vehicles
 		Order: 8
 	RenderSprites:
@@ -990,6 +990,23 @@ radarscan.info:
 		Image: cyclicons
         Palette: effect
 
+paratroopers.info:
+    AlwaysVisible:
+    WithSpriteBody:
+        Sequence: pinficon
+	Interactable:
+	Buildable:
+		Prerequisites: aprt
+	Tooltip:
+		Name: Paratroopers
+	Encyclopedia:
+		Description: Dropped from the Transport Plane, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.
+		Order: 1
+		Category: Special Abilities
+	RenderSprites:
+		Image: cyclicons
+        Palette: effect
+
 #   Super Weapons
 
 atomic.info:
@@ -1090,6 +1107,17 @@ comm.info:
         Palette: civilian
     -MapEditorData:
 
+aprt.info:
+    Inherits: APRT
+	Encyclopedia:
+        Description: The civilian airport can allow the usage of Paratroopers when captured.\nParatroopers consist of a mixed group of regular Infantry that can be air-dropped anywhere on the map. 
+        Category: Tech Buildings
+		Order: 6
+	RenderSprites:
+		Image: aprt
+        Palette: civilian
+    -MapEditorData:
+
 syrd.info:
     Inherits: SYRD
 	Encyclopedia:
@@ -1126,3 +1154,13 @@ crate.info:
 		Image: scrate
         Palette: effect
     -MapEditorData:
+
+c130.info:
+    Inherits: C130
+	Encyclopedia:
+        Description: This is the Transport Plane used for dropping Paratroopers onto a designated target.\nIt is somewhat slow, and its lack of armor can make it a snack for any enemy SAM Sites that may be guarding the target.
+        Category: Miscellaneous
+		Order: 2
+	RenderSprites:
+		Image: c130
+        Palette: civilian

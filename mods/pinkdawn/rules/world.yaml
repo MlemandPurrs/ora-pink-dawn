@@ -63,7 +63,7 @@
             Ramp: 100
 	Locomotor@WHEELED-CRUSHER:
 		Name: wheeled-crusher
-		Crushes: crate, infantry, wall
+		Crushes: crate, infantry, bike, wall
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 80
@@ -92,6 +92,20 @@
 	Locomotor@TRACKED-CRUSHER:
 		Name: tracked-crusher
 		Crushes: crate, infantry, wall
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Tiberium: 70
+			BlueTiberium: 70
+            RedTiberium: 70
+			Beach: 70
+			Shallow: 70
+            Ramp: 100
+	Locomotor@TRACKED-CRUSHER-HEAVY:
+		Name: tracked-crusher-heavy
+		Crushes: crate, infantry, bike, wall
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 80
@@ -274,6 +288,8 @@ World:
 		ShellmapRoot: MENU_BACKGROUND
 	ScriptTriggers:
 	CellTriggerOverlay:
+	LuaScript:
+		Scripts: combinedscripts.lua
 	TimeLimitManager:
 		TimeLimitDisplayOrder: 2
 		TimeLimitWarnings:
@@ -302,6 +318,26 @@ World:
 		TerrainFlashSequence: idle
 		TerrainFlashPalette: moveflash
 	StartGameNotification:
+	ScriptLobbyDropdown@EcoSpeed:
+		ID: growthrate
+		Label: Resource Growth
+		Values:
+			default: Slow(+1)
+			double: Normal(+2)
+			triple: Fast(+3)
+        # note: default doesnt do anything. 
+		Default: double
+		Description: How much Tiberium Trees seed per blossom
+		DisplayOrder: 6
+	ScriptLobbyDropdown@DynamicTechlevel:
+		ID: dynamictechlevel
+		Label: Dynamic Techlevel
+		Values:
+			enabled: Enabled
+			disabled: Disabled
+		Default: disabled
+        Description: Tech level will dynamically progress ingame. REQUIRES VETERANCY TICKED ON TO WORK.
+		DisplayOrder: 7
 
 EditorWorld:
 	Inherits: ^BaseWorld

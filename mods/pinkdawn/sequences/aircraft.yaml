@@ -61,3 +61,10 @@ heli:
 		Length: 6
 		Facings: 16
 	icon: heliicon
+
+c130:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: c17icon

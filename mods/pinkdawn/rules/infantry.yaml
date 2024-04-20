@@ -39,6 +39,18 @@ E1:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+E1R1:
+	Inherits: E1
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: e1
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	RenderSprites:
+		Image: E1
+    -MapEditorData:
+
 E2:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -52,7 +64,7 @@ E2:
     	BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.3
 		Queue: Infantry.GDI
 		Description: Fast infantry armed with grenades.\n\nStrong vs Buildings, slow units.
 	Mobile:
@@ -100,7 +112,7 @@ E3:
     	BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.2
 		Queue: Infantry.GDI, Infantry.Nod
 		Description: Anti-tank infantry.\n\nCan attack Aircraft.\nStrong vs Tanks, Aircraft.\nWeak vs Infantry.
 	Mobile:
@@ -133,6 +145,18 @@ E3:
         Condition: reveal-on
         Prerequisites: ~global-unitreveal
 
+E3R1:
+	Inherits: E3
+	-Buildable:
+	UpdatesPlayerStatistics:
+		OverrideActor: e3
+	ProducibleWithLevel:
+		Prerequisites: ~global-veterancy
+		InitialLevels: 1
+	RenderSprites:
+		Image: E3
+    -MapEditorData:
+
 E4:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -146,7 +170,7 @@ E4:
     	BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 3
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.3
 		Queue: Infantry.Nod
 		Description: Anti-infantry unit.\n\nSpecial: Fire-Immune\nCannot be harmed by Flamers.\n\nStrong vs Infantry, Buildings.\nWeak vs Tanks.
 	Mobile:
@@ -206,7 +230,7 @@ E5:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: bio
+		Prerequisites: bio, ~techlevel.7
 		Queue: Infantry.Nod
 		Description: Advanced general-purpose Infantry.\n\nSpecial: Tiberium-proof\nCan pass Tiberium unharmed.\n\nStrong vs all Ground units.
 	Mobile:
@@ -291,7 +315,7 @@ E6:
 		BuildDuration: 500
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: proc
+		Prerequisites: proc, ~techlevel.3
 		Queue: Infantry.GDI, Infantry.Nod
 		Description: Captures enemy and tech structures.\nCan repair destroyed bridges.\n\nUnarmed.
 	Mobile:
@@ -345,7 +369,7 @@ RMBO:
 		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.7
 		BuildLimit: 1
 		Queue: Infantry.GDI, Infantry.Nod
 		Description: Maximum one can be built.\n\nElite sniper infantry unit.\n\nSpecial: Demolition\nUses C4 to blow up\nenemy Buildings.\n\nStrong vs Infantry, Buildings.\nWeak vs Vehicles.

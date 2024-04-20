@@ -140,7 +140,7 @@ FACT:
         BuildDuration: 3000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 11
-		Prerequisites: anyhq, fix
+		Prerequisites: anyhq, fix, ~techlevel.5
 		Queue: Building.GDI, Building.Nod
 		Description: Builds Structures and Defenses.
 	ProductionCostMultiplier@EXPENSIVEMCV:
@@ -234,7 +234,7 @@ NUK2:
 		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 7
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Building.GDI, Building.Nod
 		Description: Provides more power, cheaper than keep\nbuilding the standard Power Plant.
 	Building:
@@ -351,6 +351,20 @@ PROC:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
+PROC.Clone:
+    Inherits: PROC
+	Buildable:
+		BuildPaletteOrder: 0
+		Queue: Defense.GDI, Defense.Nod, Defense.BossGDI, Defense.BossNod
+		Prerequisites: fact, ~techlevel.2, ~global-defenseref
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: proc
+	RenderSprites:
+		Image: proc
+		FactionImages:
+			nod: nodproc
+    -MapEditorData:
+
 SILO:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x1Shape
@@ -368,7 +382,7 @@ SILO:
 		BuildDuration: 250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 4
-		Prerequisites: proc
+		Prerequisites: proc, ~techlevel.2
 		Queue: Building.GDI, Building.Nod
 		Description: Stores processed Tiberium.
 	Building:
@@ -424,6 +438,20 @@ SILO:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
+SILO.Clone:
+    Inherits: SILO
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: proc, ~techlevel.2, ~global-defenseref
+		Queue: Defense.GDI, Defense.Nod
+	ProvidesPrerequisite@ISACOPY:
+        Prerequisite: silo
+	RenderSprites:
+		Image: silo
+		FactionImages:
+			nod: nodsilo
+    -MapEditorData:
 
 PYLE:
 	Inherits: ^BaseBuilding
@@ -598,7 +626,7 @@ AFLD:
     	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 6
-		Prerequisites: proc, infantryproduction
+		Prerequisites: proc, infantryproduction, ~techlevel.2
 		Queue: Building.Nod
 		Description: Provides a dropzone for Vehicle reinforcements.
 	Building:
@@ -675,7 +703,7 @@ WEAP:
     	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 5
-		Prerequisites: proc, infantryproduction
+		Prerequisites: proc, infantryproduction, ~techlevel.2
 		Queue: Building.GDI
 		Description: Produces Vehicle units.
 	Building:
@@ -753,7 +781,7 @@ FIX:
 		BuildDuration: 750
         BuildDurationModifier: 100
 		BuildPaletteOrder: 9
-		Prerequisites: vehicleproduction
+		Prerequisites: vehicleproduction, ~techlevel.3
 		Queue: Building.GDI, Building.Nod
 		Description: Repairs Vehicles and Aircraft.\nCan sell Vehicles and Aircraft.
 	Building:
@@ -772,6 +800,7 @@ FIX:
 		RequiresCondition: !build-incomplete
 	Reservable:
 	RepairsUnits:
+        ValuePercentage: 20
 		HpPerStep: 1000
         Interval: 26
 		PlayerExperience: 0
@@ -826,7 +855,7 @@ HPAD:
 		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 8
-		Prerequisites: anyhq
+		Prerequisites: anyhq, ~techlevel.5
 		Queue: Building.GDI, Building.Nod
 		Description: Produces and reloads Helicopters.\nAlso can repair helicopters if\nwithin Service Depot radius. 
 	Building:
@@ -914,7 +943,7 @@ HPAD:
 		Multiplier: 500
 		Prerequisites: global-freeaircraft
 	ProductionTimeMultiplier@FREEAIRCRAFT:
-		Multiplier: 500
+		Multiplier: 400
 		Prerequisites: global-freeaircraft
 	ProximityExternalCondition:
 		Condition: unit.sellable
@@ -948,7 +977,7 @@ HQ:
     	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anypower, vehicleproduction
+		Prerequisites: anypower, vehicleproduction, ~techlevel.3
 		Queue: Building.GDI, Building.Nod
 		Description: Provides Radar and 'Radar Scan' support-power.\nRequires power to operate.
 	Building:
@@ -1035,7 +1064,7 @@ MISS:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.GDI
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Air Strike'\n(requires Advanced Communications to charge-up)
 	Valued:
@@ -1121,7 +1150,7 @@ TMPL:
         BuildDurationModifier: 100
 		BuildPaletteOrder: 13
 		BuildLimit: 1
-		Prerequisites: vehicleproduction, anyhq
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.6
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nUnlocks higher-tech units and buildings.\n\nPrepares and launches a 'Nuclear Strike'\n(requires Research Laboratory to charge-up)
 	Building:
@@ -1217,7 +1246,7 @@ EYE:
     	BuildDuration: 2250
         BuildDurationModifier: 100
 		BuildPaletteOrder: 14
-		Prerequisites: miss
+		Prerequisites: miss, ~techlevel.7
 		Queue: Building.GDI
 		BuildLimit: 1
 		Description: Maximum one can be built.\n\nProvides Radar and 'Ion Cannon' super-weapon.\nEnables 'Air Strike' at Technology Center.\nRequires power to operate.
@@ -1303,7 +1332,7 @@ BIO:
         BuildDurationModifier: 100
         BuildPaletteOrder: 15
 		BuildLimit: 1
-		Prerequisites: tmpl
+		Prerequisites: tmpl, ~techlevel.7
 		Queue: Building.Nod
 		Description: Maximum one can be built.\n\nEnables 'Nuclear Strike' super-weapon to charge.\nUnlocks Chemical Trooper and SSM Launcher.
 	Tooltip:

@@ -74,12 +74,6 @@ Cursors:
 		attack-minimap:
 			Start: 140
 			Length: 8
-		harvest:
-			Start: 18
-			Length: 8
-		harvest-minimap:
-			Start: 140
-			Length: 8
 		enter:
 			Start: 119
 			Length: 3
@@ -259,3 +253,18 @@ Cursors:
 		goldwrench-blocked:
 			Start: 24
 			Length: 1
+	cursorparadrop.shp: cursor
+		airdrop:
+			Start: 0
+			Length: 8
+			Tick: 120
+		airdrop-minimap:
+			Start: 8
+			Length: 2
+    cursorharvest.shp: cursor
+        harvest:
+			Start: 0
+			Length: 8
+		harvest-minimap:
+			Start: 8
+			Length: 8

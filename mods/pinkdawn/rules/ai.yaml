@@ -133,12 +133,45 @@ Player:
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 2c0
+			UseParatroopers:
+				OrderName: Paratroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			UseParatroopersfromCrate:
+				OrderName: CrateParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv
 		RefineryTypes: proc
+    GrantConditionOnPrerequisite@DEFENSEREF:
+        Condition: defenseref-enabled
+        Prerequisites: ~global-defenseref
 	BaseBuilderBotModule:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player && !defenseref-enabled
 		BuildingQueues: Building.Nod, Building.GDI
 		DefenseQueues: Defense.Nod, Defense.GDI
 		MinimumExcessPower: 30
@@ -179,6 +212,70 @@ Player:
             sam: 4
 		BuildingFractions:
 			proc: 20
+            silo: 3
+			pyle: 5
+			hand: 5
+			weap: 9
+			afld: 9
+			fix: 1
+			hpad: 2
+			hq: 4
+			eye: 1
+            bio: 1
+			tmpl: 1
+            miss: 1
+			gtwr: 5
+			gun: 5
+			atwr: 9
+			obli: 7
+			sam: 7
+	BaseBuilderBotModule@defenseref:
+		RequiresCondition: enable-ai-player && defenseref-enabled
+		BuildingQueues: Building.Nod, Building.GDI
+		DefenseQueues: Defense.Nod, Defense.GDI
+		MinimumExcessPower: 30
+		MaximumExcessPower: 150
+		ExcessPowerIncrement: 30
+		ExcessPowerIncreaseThreshold: 5
+		ConstructionYardTypes: fact
+		RefineryTypes: proc, proc.clone
+		PowerTypes: nuke, nuk2
+		BarracksTypes: pyle, hand
+		VehiclesFactoryTypes: weap, afld
+		ProductionTypes: pyle, hand, weap, afld, hpad
+		SiloTypes: silo, silo.clone
+        DefenseTypes: gtwr, atwr, gun, obli, sam
+        MinimumDefenseRadius: 6
+        MaximumDefenseRadius: 12
+        PlaceDefenseTowardsEnemyChance: 70
+		BuildingLimits:
+            nuke: 8
+            nuk2: 8
+			proc: 2
+            proc.clone: 2
+			silo: 1
+            silo.clone: 1
+			pyle: 3
+			hand: 3
+			weap: 3
+			afld: 3
+			fix: 1
+			hpad: 2
+			hq: 1
+			eye: 1
+            bio: 1
+			miss: 1
+            tmpl: 1
+            gtwr: 5
+            gun: 6
+            obli: 2
+            atwr: 3
+            sam: 4
+		BuildingFractions:
+			proc: 10
+            proc.clone: 10
+            silo: 3
+            silo.clone: 3
 			pyle: 5
 			hand: 5
 			weap: 9
@@ -202,16 +299,29 @@ Player:
 		RushInterval: 375
 		SquadSize: 8
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: harv, mcv, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+        ExcludeFromSquadsTypes: e6, tecn, harv, mcv, truk, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, gun, gtwr, atwr, obli, sam, orca, heli
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, silo, pyle, hand, afld, weap, hpad, hq, fix, eye, bio, tmpl, miss, gun, sam, obli, gtwr, atwr, mcv, harv
+		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, hand, afld, weap, fix, hpad, hq, eye, miss, tmpl, bio, gun, gtwr, atwr, obli, sam, mcv, harv
+        IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
+	SquadManagerBotModule@Air:
+		RequiresCondition: enable-ai-player
+		RushInterval: 375
+		SquadSize: 1
+        SquadSizeRandomBonus: 1
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, boat, tran, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+		ConstructionYardTypes: fact
+		AirUnitsTypes: heli, orca
+        NavalUnitsTypes: boat
+        NavalProductionTypes: syrd
+		ProtectionTypes: fact, proc, proc.clone, mcv, harv
+        MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy.Nod, Navy.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy
 		UnitsToBuild:
 			e1: 65
 			e2: 25
@@ -251,7 +361,7 @@ Player:
 		McvFactoryTypes: weap,afld
     CaptureManagerBotModule:
         CapturingActorTypes: e6
-        CapturableActorTypes: syrd, v19, hosp, bio2, comm, syrd.husk, v19.husk, hosp.husk, bio2.husk, comm.husk
+        CapturableActorTypes: syrd, v19, hosp, bio2, comm, aprt, syrd.husk, v19.husk, hosp.husk, bio2.husk, comm.husk, aprt.husk
         CheckCaptureTargetsForVisibility: true
     GrantConditionOnPrerequisite@HUSKS:
         Condition: husks-enabled

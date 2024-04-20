@@ -20,7 +20,7 @@ C17:
 		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
-		Types: Infantry, Vehicle, Crate
+		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
@@ -34,32 +34,34 @@ C17.Crate:
         Image: c17
 
 #   can be shot down, is slower
-C17.Paradrop:
+C130:
     Inherits: C17
     -DamageMultiplier@INVULNERABLE:
 	Aircraft:
+		CruiseAltitude: 3072
 		Speed: 300
         AirborneCondition: airborne
 	HitShape:
+		Type: Circle
+			Radius: 448
+	Tooltip:
+		Name: Transport Plane
 	Health:
 		HP: 9000
 	Armor:
 		Type: Aluminium
+	ParaDrop:
+		DropRange: 5c0
+		ChuteSound: chute1.aud
 	Targetable@AIRBORNE:
 		TargetTypes: Air, Airplane
 		RequiresCondition: airborne
+	Targetable@GROUND:
+		RequiresCondition: !airborne
+		TargetTypes: Ground
     Huntable:
-	LeavesTrails@0:
-		Offsets: -432,560,0
-		MovingInterval: 2
-		Image: smokey
-		StationaryInterval: 2
-		SpawnAtLastPosition: False
-		TrailWhileStationary: True
-		Type: CenterPosition
-		RequiresCondition: enable-smoke
-	LeavesTrails@1:
-		Offsets: -432,-560,0
+	LeavesTrails:
+		Offsets: -432,560,0, -432,-560,0
 		MovingInterval: 2
 		Image: smokey
 		StationaryInterval: 2
@@ -70,7 +72,7 @@ C17.Paradrop:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
     RenderSprites:
-        Image: c17
+        Image: c130
 
 A10:
 	Inherits: ^Plane
@@ -169,6 +171,7 @@ TRAN:
 		Offset: 597,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTOR2AIR:
 		Offset: -597,0,171
 		Sequence: rotor2
@@ -177,6 +180,7 @@ TRAN:
 		Offset: -597,0,171
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
+        PauseOnCondition: emp-crate-collected
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
@@ -216,9 +220,9 @@ ORCA:
     	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Prerequisites: hpad, anyhq
+		Prerequisites: hpad, anyhq, ~techlevel.6
 		Queue: Aircraft.GDI
-		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\n\nWeak vs Infantry.
+		Description: VTOL Gunship with Missiles.\n\nCan attack Aircraft.\nStrong vs Buildings, Tanks.\nWeak vs Infantry.
 	Aircraft:
 		TurnSpeed: 24
 		Speed: 200
@@ -313,7 +317,7 @@ HELI:
     	BuildDuration: 1125
         BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, anyhq
+		Prerequisites: hpad, anyhq, ~techlevel.6
 		Queue: Aircraft.Nod
 		Description:  Helicopter Gunship with Chainguns.\n\nCan attack Aircraft.\nStrong vs Infantry, Light Vehicles.\nWeak vs Tanks.
 	Aircraft:
@@ -369,7 +373,6 @@ HELI:
 		Offset: 0,0,85
 		Sequence: rotor
 		RequiresCondition: airborne
-        PauseOnCondition: emp-crate-collected
 	WithIdleOverlay@ROTORGROUND:
 		Offset: 0,0,85
 		Sequence: slow-rotor

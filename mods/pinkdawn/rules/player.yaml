@@ -130,6 +130,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 19
 		Prerequisites: global-husks
+	LobbyPrerequisiteCheckbox@DEFENSEREF:
+		ID: defenseref
+		Label: Defense Refinery
+		Description: Refinery/Silo also can be built at Defense queue
+		Enabled: False
+		DisplayOrder: 20
+		Prerequisites: global-defenseref
 	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
 		ID: bounty
 		Label: Kill Bounties
@@ -148,3 +155,23 @@ Player:
 	PlayerRadarTerrain:
 	HarvesterAttackNotifier:
         NotifyInterval: 60000
+	ExternalCondition@NODYNAMICTECH:
+        Condition: no-dynamic-tech
+    ProvidesPrerequisite@TECHII:
+        Prerequisite: techlevel.2
+        RequiresCondition: no-dynamic-tech
+    ProvidesPrerequisite@TECHIII:
+        Prerequisite: techlevel.3
+        RequiresCondition: no-dynamic-tech
+    ProvidesPrerequisite@TECHIV:
+        Prerequisite: techlevel.4
+        RequiresCondition: no-dynamic-tech
+    ProvidesPrerequisite@TECHV:
+        Prerequisite: techlevel.5
+        RequiresCondition: no-dynamic-tech
+    ProvidesPrerequisite@TECHVI:
+        Prerequisite: techlevel.6
+        RequiresCondition: no-dynamic-tech
+    ProvidesPrerequisite@TECHVII:
+        Prerequisite: techlevel.7
+        RequiresCondition: no-dynamic-tech

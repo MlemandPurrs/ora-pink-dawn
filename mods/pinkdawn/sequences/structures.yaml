@@ -1404,3 +1404,53 @@ syrd.husk:
     dead: syrd
         Start: 2
         Tick: 800
+
+aprt:
+	idle: 
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle: 
+		Start: 8
+		Length: 1
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022
+    dead: aprt
+        Tick: 800
+        Start: 8
+        ZOffset: -1023
+        Offset: 0,-4
+	active: aprt-active
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active: aprt-active
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+    icon: aprticon
+
+aprt.husk:
+	idle: aprt
+		Start: 8
+		Length: 1
+		ZOffset: -1023
+		Offset: 0,-4
+    dead: aprt
+        Tick: 800
+        Start: 8
+        ZOffset: -1023
+        Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+        ZOffset: -1022

@@ -308,7 +308,8 @@ Bazooka:
         DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -360,7 +361,8 @@ BikeRockets:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -509,7 +511,8 @@ Grenade:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 	Warhead@3Eff: CreateEffect
@@ -554,7 +557,8 @@ LightCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -598,7 +602,8 @@ MediumCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -644,7 +649,8 @@ MammothCannon:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -696,7 +702,8 @@ TurretGun:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -749,7 +756,8 @@ MammothTusk:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 		ImpactSounds: xplobig4.aud
@@ -800,7 +808,8 @@ MLRSMissiles:
         DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
 		ImpactSounds: xplobig4.aud
@@ -853,7 +862,8 @@ StnkRocketsAG:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -905,7 +915,8 @@ ArtilleryShell:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
@@ -974,7 +985,7 @@ MachineGunLight:
 
 #   21. AGTMissile
 TowerMissileAG:
-	ReloadDelay: 50
+	ReloadDelay: 55
 	Burst: 2
 	BurstDelays: 8
 	Range: 7c0
@@ -1007,7 +1018,8 @@ TowerMissileAG:
         DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Tree, Wall, Husk, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: big_frag
 		ImpactSounds: xplobig4.aud
@@ -1122,7 +1134,7 @@ Laser:
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath, ObeliskLaser
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Wall
 
 #   24. SAM Missile
 SAMMissile:
@@ -1182,7 +1194,7 @@ HonestJohn:
 		Speed: 200
 		LaunchAngle: 37
 	Warhead@1Dam: SpreadDamage
-		Spread: 512
+		Spread: 1c0
 		Damage: 15000
 		Versus:
             None: 87
@@ -1196,6 +1208,7 @@ HonestJohn:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall
 	Warhead@3Eff: CreateEffect
 		Explosions: big_napalm
 		ImpactSounds: xplos.aud, firebl3.aud
@@ -1223,7 +1236,7 @@ HonestJohnChem:
 		Speed: 200
 		LaunchAngle: 37
 	Warhead@1Dam: SpreadDamage
-		Spread: 512
+		Spread: 1c0
 		Damage: 30000
 		ValidTargets: Ground, Water, Tree
 		Versus:
@@ -1328,7 +1341,8 @@ OrcaRocketsAG:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
@@ -1434,7 +1448,8 @@ BoatMissile:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+        ValidTargets: Ground, Infantry
+        InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
 	Warhead@3Eff: CreateEffect
 		Explosions: small_poof
 		ImpactSounds: xplobig4.aud

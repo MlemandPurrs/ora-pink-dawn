@@ -10,8 +10,8 @@ GTWR:
 	Buildable:
 		BuildDuration: 750
         BuildDurationModifier: 100
-		BuildPaletteOrder: 4
-		Prerequisites: infantryproduction
+		BuildPaletteOrder: 1
+		Prerequisites: infantryproduction, ~techlevel.3
 		Queue: Defense.GDI, Defense.Nod
 		Description: Basic defensive structure.\n\nStrong vs Infantry.\nWeak vs Tanks.
 	Building:
@@ -73,8 +73,8 @@ GUN:
 	Buildable:
 		BuildDuration: 750
         BuildDurationModifier: 100
-		BuildPaletteOrder: 5
-		Prerequisites: vehicleproduction
+		BuildPaletteOrder: 2
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.GDI, Defense.Nod
 		Description: Anti-Tank base defense.\n\nStrong vs Tanks, Vehicles.\nWeak vs Infantry.
 	Building:
@@ -142,8 +142,8 @@ ATWR:
 	Buildable:
 		BuildDuration: 1500
         BuildDurationModifier: 100
-		BuildPaletteOrder: 6
-		Prerequisites: miss
+		BuildPaletteOrder: 5
+		Prerequisites: miss, ~techlevel.6
 		Queue: Defense.GDI
 		Description: All-purpose defensive structure.\nRequires power to operate.\n\nCan attack Aircraft.\nStrong vs Aircraft, Vehicles.\nWeak vs Tanks.
 	Selectable:
@@ -195,7 +195,7 @@ ATWR:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 	RevealOnFire:
-		ArmamentNames: primary
+		ArmamentNames: primary, secondary
         RevealForRelationships: Ally, Neutral, Enemy
         RevealGeneratedShroud: false
         RequiresCondition: reveal-on
@@ -214,8 +214,8 @@ OBLI:
 	Buildable:
 		BuildDuration: 1500
         BuildDurationModifier: 100
-		BuildPaletteOrder: 7
-		Prerequisites: tmpl
+		BuildPaletteOrder: 5
+		Prerequisites: tmpl, ~techlevel.6
 		Queue: Defense.Nod
 		Description: Advanced base defense.\nRequires power to operate.\n\nStrong vs all Ground units.
 	Selectable:
@@ -294,8 +294,8 @@ SAM:
 	Buildable:
         BuildDuration: 750
         BuildDurationModifier: 100
-		BuildPaletteOrder: 9
-		Prerequisites: anyhq
+		BuildPaletteOrder: 6
+		Prerequisites: anyhq, ~techlevel.6
 		Queue: Defense.Nod
 		Description: Cloaked Anti-Aircraft base defense.\nRequires power to operate.\n\nCan attack only Aircraft.
 	Building:
@@ -392,8 +392,8 @@ SBAG:
 	Buildable:
         BuildDuration: 125
         BuildDurationModifier: 100
-		BuildPaletteOrder: 0
-		Prerequisites: infantryproduction
+		BuildPaletteOrder: 7
+		Prerequisites: infantryproduction, ~techlevel.2
 		Queue: Defense.GDI, Defense.Nod
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -417,7 +417,7 @@ BARB:
 	Buildable:
         BuildDuration: 75
         BuildDurationModifier: 100
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 7
 		Prerequisites: ~disabled
 		Queue: Defense.Nod
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -442,8 +442,8 @@ CYCL:
 	Buildable:
 		BuildDuration: 250
         BuildDurationModifier: 100
-		BuildPaletteOrder: 2
-		Prerequisites: vehicleproduction
+		BuildPaletteOrder: 8
+		Prerequisites: vehicleproduction, ~techlevel.4
 		Queue: Defense.GDI, Defense.Nod
 		Description: Stops Infantry and Light vehicles.\nBlocks projectiles.\nCan be crushed by tanks.
 	Armor:
@@ -468,8 +468,8 @@ BRIK:
 	Buildable:
 		BuildDuration: 375
         BuildDurationModifier: 100
-		BuildPaletteOrder: 3
-		Prerequisites: anytier3
+		BuildPaletteOrder: 9
+		Prerequisites: anytier3, ~techlevel.6
 		Queue: Defense.GDI, Defense.Nod
 		Description: Stops Infantry and Vehicles.\nBlocks projectiles.
 	Health:
@@ -515,7 +515,7 @@ HGAT:
 		BuildDuration: 375
         BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-		Prerequisites: anytier3
+		Prerequisites: anytier3, ~techlevel.6
 		Queue: Defense.GDI, Defense.Nod
 		Description: Places a gate that blocks enemy access into your base.\n\nYou can rotate using Rotate Building hotkey (default: V)
 	Valued:

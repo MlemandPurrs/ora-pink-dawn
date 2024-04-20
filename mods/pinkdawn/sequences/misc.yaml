@@ -109,6 +109,8 @@ explosion:
 		Length: *
 		ZOffset: 2047
 	nuke_explosion: atomsfx
+	mini_nuke_explosion: miniatomsfx
+		Length: *
 	piff: piff
 	piffs: piffpiff
 	chemball: chemball
@@ -175,6 +177,8 @@ beacon:
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
+    parainf: pinfbcon
+		Offset: 0,-42
 
 select:
 	repair:
@@ -236,6 +240,7 @@ crate-effects:
 	emp: empulse
 	levelup: levelup
 		Tick: 200
+    parabombs: parabox
 
 atomic:
 	Defaults:
@@ -327,6 +332,7 @@ icon:
 	ioncannon: ionicon
 	abomb: atomicon
 	radarscan: scanicon
+    parainf: pinficon
  
 moveflsh:
 	idle:
@@ -564,6 +570,8 @@ cyclicons:
     ionicon: ionicon.shp
 		AddExtension: False
     atomicon: atomicon.shp
+		AddExtension: False
+    pinficon: pinficon.shp
 		AddExtension: False
     icon: blank1
 

@@ -79,7 +79,7 @@ BOAT:
         BuildDurationModifier: 100
         BuildPaletteOrder: 1
 		Queue: Navy
-		Prerequisites: syrd
+		Prerequisites: syrd, ~techlevel.3
 		Description: Multi-role fire-support ship.\n\nStrong vs Buildings, Infantry.\nWeak vs Tanks.
 	Tooltip:
 		Name: Patrol Boat

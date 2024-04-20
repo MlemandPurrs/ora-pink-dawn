@@ -91,7 +91,7 @@ apc:
 
 maag:
     Inherits: emp-overlay
-	idle: apc
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 	turret: apctur
@@ -113,8 +113,8 @@ ltnk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: ltnk-tur
-        Start: 0
+	turret:
+        Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: cannmuzz
