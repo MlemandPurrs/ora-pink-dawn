@@ -35,7 +35,7 @@ FACT:
         PauseOnCondition: build-incomplete
 	Transforms:
 		RequiresCondition: factundeploy
-		PauseOnCondition: being-demolished || build-incomplete
+		PauseOnCondition: being-demolished || build-incomplete || cant-undeploy
 		IntoActor: mcv
 		Offset: 1,1
 		Facing: 432
@@ -56,6 +56,12 @@ FACT:
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
+	GrantConditionOnDamageState@NoUndeploy:
+		Condition: cant-undeploy
+		ValidDamageStates: Heavy, Critical
+	DamageMultiplier@NoUndeploy:
+		Modifier: 90
+        RequiresCondition: cant-undeploy
 	ProductionQueue@GDIBuilding:
 		Type: Building.GDI
 		DisplayOrder: 0
@@ -147,7 +153,7 @@ FACT:
 		Multiplier: 200
 		Prerequisites: global-expensivemcv
 	ProductionTimeMultiplier@EXPENSIVEMCV:
-		Multiplier: 200
+		Multiplier: 150
 		Prerequisites: global-expensivemcv
 	RenderSprites:
 		Image: fact
@@ -169,6 +175,7 @@ FACT:
         OwnerType: Victim
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
+
 
 NUKE:
 	Inherits: ^BaseBuilding

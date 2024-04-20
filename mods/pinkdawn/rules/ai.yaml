@@ -294,12 +294,12 @@ Player:
 			sam: 7
 	BuildingRepairBotModule:
 		RequiresCondition: enable-ai-player
-	SquadManagerBotModule:
+	SquadManagerBotModule@Land:
 		RequiresCondition: enable-ai-player
 		RushInterval: 375
 		SquadSize: 8
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, tecn, harv, mcv, truk, a10, c17, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, gun, gtwr, atwr, obli, sam, orca, heli
+        ExcludeFromSquadsTypes: e6, tecn, harv, mcv, truk, a10, c17, c130, boat, lst, tran, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, gun, gtwr, atwr, obli, sam, orca, heli
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
@@ -319,6 +319,19 @@ Player:
 		ProtectionTypes: fact, proc, proc.clone, mcv, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
+	SquadManagerBotModule@Sea:
+		RequiresCondition: enable-ai-player
+		RushInterval: 375
+		SquadSize: 1
+        SquadSizeRandomBonus: 1
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, tran, orca, heli, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+		ConstructionYardTypes: fact
+		AirUnitsTypes: heli, orca
+        NavalUnitsTypes: boat
+        NavalProductionTypes: syrd
+		ProtectionTypes: syrd
+        MinimumAttackForceDelay: 200
+        IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
 	UnitBuilderBotModule:
 		RequiresCondition: enable-ai-player
 		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Navy
@@ -336,24 +349,36 @@ Player:
 			bike: 20
             apc: 10
             maag: 20
-			ltnk: 25
+			ltnk: 30
 			mtnk: 20
 			ftnk: 10
 			htnk: 50
 			stnk: 40
 			arty: 60
 			msam: 40
-			mlrs: 40
+			mlrs: 20
+            mhq: 1
 			heli: 3
 			orca: 3
             boat: 3
 		UnitLimits:
+			e2: 5
+            e4: 5
+            e5: 3
             e6: 2
             rmbo: 1
+			jeep: 4
+			bggy: 4
+            bike: 6
+            ftnk: 4
+            apc: 2
+            maag: 4
+            mlrs: 2
+			mhq: 1
 			harv: 8
             orca: 2
             heli: 2
-            boat: 4
+            boat: 5
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv

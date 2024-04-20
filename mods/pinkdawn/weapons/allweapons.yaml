@@ -123,7 +123,7 @@ HeliGunAA:
 #   3. Guard Tower's elevated Chaingun
 TowerGun:
 	ReloadDelay: 50
-	Range: 4c512
+	Range: 5c128
     InvalidTargets: Tree, Wall
     Report: gun8.aud
 	Projectile: Bullet
@@ -777,7 +777,7 @@ MammothTusk:
 #   17. MLRS rockets
 MLRSMissiles:
 	ReloadDelay: 80
-	Range: 7c0
+	Range: 7c256
 	MinRange: 3c0
 	Burst: 4
     BurstDelays: 7
@@ -889,7 +889,7 @@ StnkRocketsAA:
 #   19. Artillery's gun
 ArtilleryShell:
 	ReloadDelay: 65
-	Range: 6c512
+	Range: 7c256
 	MinRange: 3c0
 	Report: tnkfire2.aud
 	TargetActorCenter: true

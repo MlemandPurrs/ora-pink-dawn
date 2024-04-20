@@ -18,7 +18,7 @@ GTWR:
 	Health:
 		HP: 40000
 	Armor:
-		Type: Heavy
+		Type: Medium
 	RevealsShroud:
 		Range: 4c512
 	WithBuildingBib:
@@ -81,7 +81,7 @@ GUN:
 	Health:
 		HP: 40000
 	Armor:
-		Type: Heavy
+		Type: Medium
 	RevealsShroud:
 		Range: 4c512
 	WithBuildingBib:
@@ -304,7 +304,7 @@ SAM:
 	Health:
 		HP: 40000
 	Armor:
-		Type: Heavy
+		Type: Medium
 	RevealsShroud:
 		Range: 3c512
     RevealsShroudMultiplier@Shooting:
