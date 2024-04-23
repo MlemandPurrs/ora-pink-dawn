@@ -23,7 +23,7 @@ LST:
 		Speed: 110
 		PauseOnCondition: notmobile
 	Health:
-		HP: 40000
+		HP: 30000
 	Armor:
 		Type: Medium
 	RevealsShroud:
@@ -84,7 +84,7 @@ BOAT:
 	Tooltip:
 		Name: Patrol Boat
 	Health:
-		HP: 70000
+		HP: 50000
 	Armor:
 		Type: Heavy
 	Mobile:

@@ -127,8 +127,8 @@ FlametankExplode:
 	Inherits: ^DamagingExplosion
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 11500
-        Versus:
+		Damage: 9850
+		Versus:
             None: 87
             Light: 100
             Medium: 68

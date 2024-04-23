@@ -921,7 +921,7 @@ STNK:
 	Health:
 		HP: 12000
 	Armor:
-		Type: Light
+		Type: Medium
 	RevealsShroud:
 		Range: 4c128
 	Cloak:

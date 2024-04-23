@@ -246,13 +246,14 @@ ORCA:
 	WithMuzzleOverlay:
 	AutoTarget:
         InitialStanceAI: HoldFire
-		ScanRadius: 5
+		ScanRadius: 4
 	AttackAircraft:
 		Armaments: primary, secondary
 		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
+        Voice: Attack
 	AmmoPool:
         Name: primary
 		Armaments: primary, secondary

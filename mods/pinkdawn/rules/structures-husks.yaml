@@ -194,7 +194,7 @@ HPAD.Husk:
 	Interactable:
 		Bounds: 2048, 2048
 	Building:
-		Footprint: =x x=
+		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
 		Name: Helipad (Destroyed)

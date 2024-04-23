@@ -1846,9 +1846,6 @@
 	FirepowerMultiplier@RANK-VETERAN:
 		RequiresCondition: rank-veteran
 		Modifier: 125
-	DamageMultiplier@RANK-VETERAN:
-		RequiresCondition: rank-veteran
-		Modifier: 90
     ReloadDelayMultiplier@RANK-VETERAN:
         RequiresCondition: rank-veteran
         Modifier: 90
@@ -1864,9 +1861,6 @@
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 150
-	DamageMultiplier@RANK-ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 80
     ReloadDelayMultiplier@RANK-ELITE:
         RequiresCondition: rank-veteran
         Modifier: 80

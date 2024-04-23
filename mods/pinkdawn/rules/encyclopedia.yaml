@@ -781,7 +781,7 @@ ltnk.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.\n\nHeroic rank:\nThe gun gets a calibre upgrade, becoming the same as a Medium Tank's weapon. 
+        Description: This highly-mobile tread vehicle, delivers maximum weaponry and personnel destruction with minimum weight, maintenance and weaponry.\nFaster than any other tank on the battlefield, these units can reach a target quickly. Used in conjunction with aerial assaults, these units are very effective.\n\nHeroic rank:\nThe gun gets a calibre upgrade, becoming the same as a GDI Battle Tank's weapon. 
         Category: Nod Vehicles
 		Order: 7
 	RenderSprites:
