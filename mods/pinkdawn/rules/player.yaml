@@ -48,99 +48,99 @@ Player:
 		FogCheckboxDisplayOrder: 3
 	LobbyPrerequisiteCheckbox@GLOBALMULTIENGINEER:
 		ID: multiengineer
-		Label: Multi Engineer
-		Description: Multiple Engineers are required to capture a building
-		Enabled: True
+		Label: checkbox-multi-engineers.label
+		Description: checkbox-multi-engineers.description
+        Enabled: True
 		DisplayOrder: 6
 		Prerequisites: global-multiengineer
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		ID: factundeploy
-		Label: Redeployable MCVs
-		Description: Allow undeploying Construction Yard
+		Label: checkbox-redeployable-mcvs.label
+		Description: checkbox-redeployable-mcvs.description
 		Enabled: True
 		DisplayOrder: 7
 		Prerequisites: global-factundeploy
 	LobbyPrerequisiteCheckbox@FREEAIRCRAFT:
 		ID: freeaircraft
-		Label: Free Aircraft
-		Description: Helipads come with free Helicopter, price increased to 1500
+		Label: checkbox-free-aircraft.label
+		Description: checkbox-free-aircraft.description
 		Enabled: False
 		DisplayOrder: 8
 		Prerequisites: global-freeaircraft
 	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
 		ID: superweapons
-		Label: Super Weapons
-		Description: Enables Nuclear Strike, Air Strike and Ion Cannon
+		Label: checkbox-super-weapons.label
+		Description: checkbox-super-weapons.description
 		Enabled: True
 		DisplayOrder: 9
 		Prerequisites: global-superweapons
 	LobbyPrerequisiteCheckbox@PACIFYTIBERIUM:
 		ID: notiberiumdamage
-		Label: No Tiberium Damage
-		Description: Renders Tiberium harmless to cross for all Infantry
+		Label: checkbox-pacify-tiberium.label
+		Description: checkbox-pacify-tiberium.description
 		Enabled: False
 		DisplayOrder: 10
 		Prerequisites: global-givehazmat
     LobbyPrerequisiteCheckbox@EXPENSIVEMCV:
 		ID: expensivemcv
-		Label: Expensive MCV
-		Description: MCV valued twice as much, 5000 instead of 2500
+		Label: checkbox-expensive-mcvs.label
+		Description: checkbox-expensive-mcvs.description
 		Enabled: False
 		DisplayOrder: 11
 		Prerequisites: global-expensivemcv
 	LobbyPrerequisiteCheckbox@SECONDARYINCOME:
 		ID: secondaryincome
-		Label: Secondary Income
-		Description: Tiberium Silos generate periodic income when powered
+		Label: checkbox-secondary-income.label
+		Description: checkbox-secondary-income.description
 		Enabled: False
 		DisplayOrder: 12
 		Prerequisites: global-secondaryincome
 	LobbyPrerequisiteCheckbox@PRODUCTIONBOOSTER:
 		ID: productionbooster
-		Label: Fast Production
-		Description: Everything gets built 50% faster
+		Label: checkbox-production-booster.label
+		Description: checkbox-production-booster.description
 		Enabled: False
 		DisplayOrder: 14
 		Prerequisites: global-boosteron
 	LobbyPrerequisiteCheckbox@VETERANCY:
 		ID: unitveterancy
-		Label: Veterancy
-		Description: Units and Defenses can gain experience to level up for bonuses
+		Label: checkbox-unit-veterancy.label
+		Description: checkbox-unit-veterancy.description
 		Enabled: False
 		DisplayOrder: 16
 		Prerequisites: global-veterancy
 	LobbyPrerequisiteCheckbox@UNITREVEAL:
 		ID: unitreveal
-		Label: Reveal on Fire
-		Description: Units and Defenses get shown through fog/shroud in combat
+		Label: checkbox-unit-reveal.label
+		Description: checkbox-unit-reveal.description
 		Enabled: False
 		DisplayOrder: 17
 		Prerequisites: global-unitreveal
 	LobbyPrerequisiteCheckbox@BOINK:
 		ID: boinksound
-		Label: Boink !
-		Description: All Vehicles emit a funny sound on destruction
+		Label: checkbox-boink.label
+		Description: checkbox-boink.description
 		Enabled: False
 		DisplayOrder: 18
 		Prerequisites: global-boink
 	LobbyPrerequisiteCheckbox@HUSKS:
 		ID: husks
-		Label: Husks
-		Description: All Buildings and Defenses leave behind a restorable husk
+		Label: checkbox-husks.label
+		Description: checkbox-husks.description
 		Enabled: False
 		DisplayOrder: 19
 		Prerequisites: global-husks
 	LobbyPrerequisiteCheckbox@DEFENSEREF:
 		ID: defenseref
-		Label: Defense Refinery
-		Description: Refinery/Silo also can be built at Defense queue
+		Label: checkbox-defense-refinery.label
+		Description: checkbox-defense-refinery.description
 		Enabled: False
 		DisplayOrder: 20
 		Prerequisites: global-defenseref
 	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
 		ID: bounty
-		Label: Kill Bounties
-		Description: Players receive cash bonuses when killing enemy units
+		Label: checkbox-kill-bounties.label
+		Description: checkbox-kill-bounties.description
 		Enabled: False
 		DisplayOrder: 23
 		Prerequisites: global-bounty

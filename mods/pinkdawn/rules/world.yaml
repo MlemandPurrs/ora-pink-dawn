@@ -229,8 +229,8 @@ World:
 	CustomTerrainDebugOverlay:
 	MapCreeps:
 		CheckboxVisible: True
-		CheckboxLabel: Visceroids
-		CheckboxDescription: Visceroids may appear from Tiberium Trees
+		CheckboxLabel: checkbox-visceroid.label
+		CheckboxDescription: checkbox-visceroid.description
 		CheckboxEnabled: False
 		CheckboxDisplayOrder: 13
 	ActorSpawnManager:
@@ -264,7 +264,7 @@ World:
 	CreateMapPlayers:
 	StartingUnits@mcvonly:
 		Class: none
-		ClassName: MCV Only
+		ClassName: options-starting-units.mcv-only
 		Factions: gdi, nod
 		BaseActor: mcv
 	SpawnStartingUnits:
@@ -311,32 +311,32 @@ World:
         FactionPreviewActors:
             gdi: fact.colorpicker.gdi
             nod: fact.colorpicker.nod
-		PresetHues: 0, 0.125, 0.185, 0.4, 0.54, 0.66, 0.79, 0.875, 0, 0.14, 0.23, 0.43, 0.54, 0.625, 0.77, 0.85
-		PresetSaturations: 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5, 0.4, 0.5
-	OrderEffects:
+		PresetColors: FCFC54, 007070, F40000, 54FC54, D47810, A4A4BC, D0C4AC, A8704C, C4B060, 4494E4, EC0000, 00C400, FC8800, 707070, 44907C, 702C24
+        SimilarityThreshold: 20
+    OrderEffects:
 		TerrainFlashImage: moveflsh
 		TerrainFlashSequence: idle
 		TerrainFlashPalette: moveflash
 	StartGameNotification:
 	ScriptLobbyDropdown@EcoSpeed:
 		ID: growthrate
-		Label: Resource Growth
+		Label: dropdown-eco-speed.label
 		Values:
-			default: Slow(+1)
-			double: Normal(+2)
-			triple: Fast(+3)
+			default: dropdown-eco-speed.slow
+			double: dropdown-eco-speed.normal
+			triple: dropdown-eco-speed.fast
         # note: default doesnt do anything. 
 		Default: double
-		Description: How much Tiberium Trees seed per blossom
+		Description: dropdown-eco-speed.description
 		DisplayOrder: 6
 	ScriptLobbyDropdown@DynamicTechlevel:
 		ID: dynamictechlevel
-		Label: Dynamic Techlevel
+		Label: dropdown-dynamic-tech.label
 		Values:
-			enabled: Enabled
-			disabled: Disabled
+			enabled: dropdown-dynamic-tech.enabled
+			disabled: dropdown-dynamic-tech.disabled
 		Default: disabled
-        Description: Tech level will dynamically progress ingame. REQUIRES VETERANCY TICKED ON TO WORK.
+        Description: dropdown-dynamic-tech.description
 		DisplayOrder: 7
 
 EditorWorld:

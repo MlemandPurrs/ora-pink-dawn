@@ -108,10 +108,6 @@
 		Name: player-static
 		Filename: temperat.pal
 		ShadowIndex: 4
-	PaletteFromFile@player-noshadow:
-		Name: player-noshadow
-		Filename: desert.pal
-		TransparentIndex: 0, 4
 	PlayerColorPalette@normal:
 		BaseName: player
 		BasePalette: player-static
@@ -163,3 +159,11 @@
 		ExcludePalettes: terrain, effect, desert
         ModifyIndex: 8
         RotationIndices: 127, 126, 125, 124, 123, 122, 121, 120, 121, 122, 123, 124, 125, 126
+	PaletteFromFile@player-noshadow:
+		Name: player-noshadow
+		Filename: temperat.pal
+		TransparentIndex: 0, 4
+	PlayerColorPalette@NOSHADOW:
+		BaseName: player-noshadow
+		BasePalette: player-noshadow
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95

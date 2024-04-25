@@ -165,6 +165,7 @@ FACT:
 		Animated: false
 	SpawnActorsOnSell:
 		ActorTypes: e6,tecn,tecn,tecn,e1,e1
+        GuaranteedActorTypes: e1,e6
     Sellable:
         RequiresCondition: !build-incomplete && !being-demolished && !being-captured
 	GrantConditionOnBotOwner@botinsurance:

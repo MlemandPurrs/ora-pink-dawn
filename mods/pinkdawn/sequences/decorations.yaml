@@ -1,10 +1,12 @@
 #   Tiberium Trees
 split2:
 	Defaults:
+		Filename: split2.tem
+		TilesetFilenames:
+			WINTER: split2.win
+			SNOW: split2.sno
+			JUNGLE: split2.jun
 		Offset: 11, -15
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
 	make:
 		Length: 30
 		Tick: 120
@@ -16,8 +18,13 @@ split2:
 
 split3:
 	Defaults:
+		TilesetFilenames:
+			DESERT: split3.des
+			WINTER: split3.win
+			SNOW: split3.sno
+			TEMPERAT: split3.tem
+			JUNGLE: split3.jun
 		Offset: 7, -13
-		UseTilesetExtension: true
 	make:
 		Length: 30
 		Tick: 120
@@ -28,18 +35,23 @@ split3:
 		Start: 54
 
 #   Trees
+
 t01:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t01.tem
+		TilesetFilenames:
+			WINTER: t01.win
+			SNOW: t01.sno
+			JUNGLE: t01.jun
 	idle:
 
 t01.husk:
-	Defaults: t01
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t01.tem
+		TilesetFilenames:
+			WINTER: t01.win
+			SNOW: t01.sno
+			JUNGLE: t01.jun
 	idle:
 		Start: 1
 	dead:
@@ -49,16 +61,20 @@ t01.husk:
 
 t02:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t02.tem
+		TilesetFilenames:
+			WINTER: t02.win
+			SNOW: t02.sno
+			JUNGLE: t02.jun
 	idle:
 
 t02.husk:
-	Defaults: t02
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t02.tem
+		TilesetFilenames:
+			WINTER: t02.win
+			SNOW: t02.sno
+			JUNGLE: t02.jun
 	idle:
 		Start: 1
 	dead:
@@ -68,16 +84,20 @@ t02.husk:
 
 t03:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t03.tem
+		TilesetFilenames:
+			WINTER: t03.win
+			SNOW: t03.sno
+			JUNGLE: t03.jun
 	idle:
 
 t03.husk:
-	Defaults: t03
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t03.tem
+		TilesetFilenames:
+			WINTER: t03.win
+			SNOW: t03.sno
+			JUNGLE: t03.jun
 	idle:
 		Start: 1
 	dead:
@@ -86,32 +106,35 @@ t03.husk:
 		Tick: 80
 
 t04:
-	Defaults:
-		AddExtension: false
-	idle: t04.des
+	idle:
+		Filename: t04.des
 
 t04.husk:
-	Defaults: t04
-		AddExtension: false
-	idle: t04.des
+	idle:
+		Filename: t04.des
 		Start: 1
-	dead: t04.des
+	dead: 
+        Filename: t04.des
 		Start: 2
 		Length: 8
 		Tick: 80
 
 t05:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t05.tem
+		TilesetFilenames:
+			WINTER: t05.win
+			SNOW: t05.sno
+			JUNGLE: t05.jun
 	idle:
 
 t05.husk:
-	Defaults: t05
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t05.tem
+		TilesetFilenames:
+			WINTER: t05.win
+			SNOW: t05.sno
+			JUNGLE: t05.jun
 	idle:
 		Start: 1
 	dead:
@@ -121,16 +144,20 @@ t05.husk:
 
 t06:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t06.tem
+		TilesetFilenames:
+			WINTER: t06.win
+			SNOW: t06.sno
+			JUNGLE: t06.jun
 	idle:
 
 t06.husk:
-	Defaults: t06
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t06.tem
+		TilesetFilenames:
+			WINTER: t06.win
+			SNOW: t06.sno
+			JUNGLE: t06.jun
 	idle:
 		Start: 1
 	dead:
@@ -140,16 +167,20 @@ t06.husk:
 
 t07:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t07.tem
+		TilesetFilenames:
+			WINTER: t07.win
+			SNOW: t07.sno
+			JUNGLE: t07.jun
 	idle:
 
 t07.husk:
-	Defaults: t07
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t07.tem
+		TilesetFilenames:
+			WINTER: t07.win
+			SNOW: t07.sno
+			JUNGLE: t07.jun
 	idle:
 		Start: 1
 	dead:
@@ -159,12 +190,22 @@ t07.husk:
 
 t08:
 	Defaults:
-		UseTilesetExtension: true
+		TilesetFilenames:
+			DESERT: t08.des
+			WINTER: t08.win
+			SNOW: t08.sno
+			TEMPERAT: t08.tem
+			JUNGLE: t08.jun
 	idle:
 
 t08.husk:
-	Defaults: t08
-		UseTilesetExtension: true
+	Defaults:
+		TilesetFilenames:
+			DESERT: t08.des
+			WINTER: t08.win
+			SNOW: t08.sno
+			TEMPERAT: t08.tem
+			JUNGLE: t08.jun
 	idle:
 		Start: 1
 	dead:
@@ -173,32 +214,35 @@ t08.husk:
 		Tick: 80
 
 t09:
-	Defaults:
-		AddExtension: false
-	idle: t09.des
+	idle:
+		Filename: t09.des
 
 t09.husk:
-	Defaults: t09
-		AddExtension: false
-	idle: t09.des
+	idle:
+		Filename: t09.des
 		Start: 1
-	dead: t09.des
+	dead: 
+        Filename: t09.des
 		Start: 2
 		Length: 8
 		Tick: 80
 
 t10:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t10.tem
+		TilesetFilenames:
+			WINTER: t10.win
+			SNOW: t10.sno
+			JUNGLE: t10.jun
 	idle:
 
 t10.husk:
-	Defaults: t10
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t10.tem
+		TilesetFilenames:
+			WINTER: t10.win
+			SNOW: t10.sno
+			JUNGLE: t10.jun
 	idle:
 		Start: 1
 	dead:
@@ -208,16 +252,20 @@ t10.husk:
 
 t11:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t11.tem
+		TilesetFilenames:
+			WINTER: t11.win
+			SNOW: t11.sno
+			JUNGLE: t11.jun
 	idle:
 
 t11.husk:
-	Defaults: t11
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t11.tem
+		TilesetFilenames:
+			WINTER: t11.win
+			SNOW: t11.sno
+			JUNGLE: t11.jun
 	idle:
 		Start: 1
 	dead:
@@ -227,16 +275,20 @@ t11.husk:
 
 t12:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t12.tem
+		TilesetFilenames:
+			WINTER: t12.win
+			SNOW: t12.sno
+			JUNGLE: t12.jun
 	idle:
 
 t12.husk:
-	Defaults: t12
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t12.tem
+		TilesetFilenames:
+			WINTER: t12.win
+			SNOW: t12.sno
+			JUNGLE: t12.jun
 	idle:
 		Start: 1
 	dead:
@@ -246,16 +298,20 @@ t12.husk:
 
 t13:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t13.tem
+		TilesetFilenames:
+			WINTER: t13.win
+			SNOW: t13.sno
+			JUNGLE: t13.jun
 	idle:
 
 t13.husk:
-	Defaults: t13
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t13.tem
+		TilesetFilenames:
+			WINTER: t13.win
+			SNOW: t13.sno
+			JUNGLE: t13.jun
 	idle:
 		Start: 1
 	dead:
@@ -265,16 +321,20 @@ t13.husk:
 
 t14:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t14.tem
+		TilesetFilenames:
+			WINTER: t14.win
+			SNOW: t14.sno
+			JUNGLE: t14.jun
 	idle:
 
 t14.husk:
-	Defaults: t14
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t14.tem
+		TilesetFilenames:
+			WINTER: t14.win
+			SNOW: t14.sno
+			JUNGLE: t14.jun
 	idle:
 		Start: 1
 	dead:
@@ -284,16 +344,20 @@ t14.husk:
 
 t15:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t15.tem
+		TilesetFilenames:
+			WINTER: t15.win
+			SNOW: t15.sno
+			JUNGLE: t15.jun
 	idle:
 
 t15.husk:
-	Defaults: t15
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t15.tem
+		TilesetFilenames:
+			WINTER: t15.win
+			SNOW: t15.sno
+			JUNGLE: t15.jun
 	idle:
 		Start: 1
 	dead:
@@ -303,10 +367,33 @@ t15.husk:
 
 t16:
 	Defaults:
+		Filename: t16.tem
+		TilesetFilenames:
+			WINTER: t16.win
+			SNOW: t16.sno
+			JUNGLE: t16.jun
+	idle:
+
+t16.husk:
+	Defaults:
+		Filename: t16.tem
+		TilesetFilenames:
+			WINTER: t16.win
+			SNOW: t16.sno
+			JUNGLE: t16.jun
+	idle:
+		Start: 1
+
+t16:
+	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
 	idle:
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
 
 t16.husk:
 	Defaults: t16
@@ -315,23 +402,24 @@ t16.husk:
 			DESERT: TEMPERAT
 	idle:
 		Start: 1
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
+
 
 t17:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: t17.tem
+		TilesetFilenames:
+			WINTER: t17.win
+			SNOW: t17.sno
+			JUNGLE: t17.jun
 	idle:
 
 t17.husk:
-	Defaults: t17
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: t17.tem
+		TilesetFilenames:
+			WINTER: t17.win
+			SNOW: t17.sno
+			JUNGLE: t17.jun
 	idle:
 		Start: 1
 	dead:
@@ -340,145 +428,145 @@ t17.husk:
 		Tick: 80
 
 t18:
-	Defaults:
-		AddExtension: false
-	idle: t18.des
+	idle:
+		Filename: t18.des
 
 t18.husk:
-	Defaults: t18
-		AddExtension: false
-	idle: t18.des
+	idle:
+		Filename: t18.des
 		Start: 1
-	dead: t18.des
+	dead: 
+        Filename: t18.des
 		Start: 2
 		Length: 8
 		Tick: 80
 
 #   Tree Clusters
+
 tc01:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: tc01.tem
+		TilesetFilenames:
+			WINTER: tc01.win
+			SNOW: tc01.sno
+			JUNGLE: tc01.jun
 	idle:
 
 tc01.husk:
-	Defaults: tc01
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: tc01.tem
+		TilesetFilenames:
+			WINTER: tc01.win
+			SNOW: tc01.sno
+			JUNGLE: tc01.jun
 	idle:
 		Start: 1
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
 
 tc02:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: tc02.tem
+		TilesetFilenames:
+			WINTER: tc02.win
+			SNOW: tc02.sno
+			JUNGLE: tc02.jun
 	idle:
 
 tc02.husk:
-	Defaults: tc02
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: tc02.tem
+		TilesetFilenames:
+			WINTER: tc02.win
+			SNOW: tc02.sno
+			JUNGLE: tc02.jun
 	idle:
 		Start: 1
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
 
 tc03:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: tc03.tem
+		TilesetFilenames:
+			WINTER: tc03.win
+			SNOW: tc03.sno
+			JUNGLE: tc03.jun
 	idle:
 
 tc03.husk:
-	Defaults: tc03
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: tc03.tem
+		TilesetFilenames:
+			WINTER: tc03.win
+			SNOW: tc03.sno
+			JUNGLE: tc03.jun
 	idle:
 		Start: 1
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
 
 tc04:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: tc04.tem
+		TilesetFilenames:
+			WINTER: tc04.win
+			SNOW: tc04.sno
+			JUNGLE: tc04.jun
 	idle:
 	damaged-idle:
 		Start: 1
 
 tc04.husk:
-	Defaults: tc04
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: tc04.tem
+		TilesetFilenames:
+			WINTER: tc04.win
+			SNOW: tc04.sno
+			JUNGLE: tc04.jun
 	idle:
 		Start: 2
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
 
 tc05:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+		Filename: tc05.tem
+		TilesetFilenames:
+			WINTER: tc05.win
+			SNOW: tc05.sno
+			JUNGLE: tc05.jun
 	idle:
 	damaged-idle:
 		Start: 1
 
 tc05.husk:
-	Defaults: tc05
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
+	Defaults:
+		Filename: tc05.tem
+		TilesetFilenames:
+			WINTER: tc05.win
+			SNOW: tc05.sno
+			JUNGLE: tc05.jun
 	idle:
 		Start: 2
-	dead:
-		Start: 2
-		Length: 8
-		Tick: 80
 
 #   Rocks
 rock1:
-	idle: rock1.des
-		AddExtension: false
+	idle:
+		Filename: rock1.des
 
 rock2:
-	idle: rock2.des
-		AddExtension: false
+	idle:
+		Filename: rock2.des
 
 rock3:
-	idle: rock3.des
-		AddExtension: false
+	idle:
+		Filename: rock3.des
 
 rock4:
-	idle: rock4.des
-		AddExtension: false
+	idle:
+		Filename: rock4.des
 
 rock5:
-	idle: rock5.des
-		AddExtension: false
+	idle:
+		Filename: rock5.des
 
 rock6:
-	idle: rock6.des
-		AddExtension: false
+	idle:
+		Filename: rock6.des
 
 rock7:
-	idle: rock7.des
-		AddExtension: false
+	idle:
+		Filename: rock7.des

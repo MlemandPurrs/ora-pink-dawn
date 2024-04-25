@@ -13,7 +13,7 @@ CRATE:
 	ExplodeCrateAction@fire:
 		Weapon: CrateNapalm
 		SelectionShares: 5
-	GiveMcvCrateAction:
+	GiveBaseBuilderCrateAction:
 		SelectionShares: 1
 		NoBaseSelectionShares: 100
 		Units: mcv

@@ -20,7 +20,6 @@ C17:
 		DropRange: 5c0
 		ChuteSound: chute1.aud
 	Cargo:
-		#   Types: Infantry, Vehicle, Crate
 		MaxWeight: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0

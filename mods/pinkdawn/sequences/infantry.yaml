@@ -1,4 +1,6 @@
 e1:
+	Defaults:
+		Filename: e1.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -26,10 +28,12 @@ e1:
 		Length: 4
 		Facings: 8
 		Tick: 100
+	# stand -> prone transition
 	liedown:
 		Start: 128
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 176
 		Length: 2
@@ -55,77 +59,96 @@ e1:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Dancing
 	idle4:
 		Start: 517
 		Length: 9
 		Tick: 120
+	# Shot
 	die1:
 		Start: 381
 		Length: 9
 		Tick: 80
+	# Explode
 	die2:
 		Start: 390
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 398
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 406
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 418
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 366
 		Length: 11
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e1rot
+		Tick: 80
+	die-crushed:
+		Filename: e1rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-	icon: e1icon
-    parachute:
+    parachute: e1
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e1:
+			0:
+                Filename: e1.shp
                 Frames: 462
 				Length: 1
-			e1:
+			1:
+                Filename: e1.shp
                 Frames: 465
 				Length: 1
-			e1:
+			2:
+                Filename: e1.shp
                 Frames: 468
 				Length: 1
-			e1:
+			3:
+                Filename: e1.shp
                 Frames: 472
 				Length: 1
-			e1:
+			4:
+                Filename: e1.shp
                 Frames: 475
 				Length: 1
-			e1:
+			5:
+                Filename: e1.shp
                 Frames: 477
 				Length: 1
-			e1:
+			6:
+                Filename: e1.shp
                 Frames: 480
 				Length: 1
-			e1:
+			7:
+                Filename: e1.shp
                 Frames: 483
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e1icon.shp
 
 e2:
+	Defaults:
+		Filename: e2.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -140,10 +163,12 @@ e2:
 		Start: 64
 		Length: 20
 		Facings: 8
+	# stand -> prone transition
 	liedown:
 		Start: 224
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 272
 		Length: 2
@@ -178,73 +203,91 @@ e2:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
+	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 494
 		Length: 11
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e2rot
+		Tick: 80
+	die-crushed:
+		Filename: e2rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-	icon: e2icon
-    parachute:
+    parachute: e2
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e2:
+			0:
+                Filename: e2.shp
                 Frames: 590
 				Length: 1
-			e2:
+			1:
+                Filename: e2.shp
                 Frames: 593
 				Length: 1
-			e2:
+			2:
+                Filename: e2.shp
                 Frames: 596
 				Length: 1
-			e2:
+			3:
+                Filename: e2.shp
                 Frames: 599
 				Length: 1
-			e2:
+			4:
+                Filename: e2.shp
                 Frames: 602
 				Length: 1
-			e2:
+			5:
+                Filename: e2.shp
                 Frames: 605
 				Length: 1
-			e2:
+			6:
+                Filename: e2.shp
                 Frames: 608
 				Length: 1
-			e2:
+			7:
+                Filename: e2.shp
                 Frames: 611
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e2icon.shp
 
 e3:
+	Defaults:
+		Filename: e3.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -259,10 +302,12 @@ e3:
 		Start: 64
 		Length: 8
 		Facings: 8
+	# stand -> prone transition
 	liedown:
 		Start: 128
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 176
 		Length: 2
@@ -297,73 +342,91 @@ e3:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 397
 		Length: 9
 		Tick: 80
+	# Explode
 	die2:
 		Start: 406
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 414
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 422
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 434
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 382
 		Length: 11
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e3rot
+		Tick: 80
+	die-crushed:
+		Filename: e3rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-	icon: e3icon
-    parachute:
+    parachute: e3
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e3:
+			0:
+                Filename: e3.shp
                 Frames: 478
 				Length: 1
-			e3:
+			1:
+                Filename: e3.shp
                 Frames: 481
 				Length: 1
-			e3:
+			2:
+                Filename: e3.shp
                 Frames: 484
 				Length: 1
-			e3:
+			3:
+                Filename: e3.shp
                 Frames: 487
 				Length: 1
-			e3:
+			4:
+                Filename: e3.shp
                 Frames: 491
 				Length: 1
-			e3:
+			5:
+                Filename: e3.shp
                 Frames: 493
 				Length: 1
-			e3:
+			6:
+                Filename: e3.shp
                 Frames: 496
 				Length: 1
-			e3:
+			7:
+                Filename: e3.shp
                 Frames: 499
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e3icon.shp
 
 e4:
+	Defaults:
+		Filename: e4.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -378,10 +441,12 @@ e4:
 		Start: 64
 		Length: 16
 		Facings: 8
+	# stand -> prone transition
 	liedown:
 		Start: 192
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 240
 		Length: 2
@@ -416,101 +481,128 @@ e4:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
+	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 494
 		Length: 10
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e4rot
+		Tick: 80
+	die-crushed:
+		Filename: e4rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
 	muzzle:
+		Filename:
 		Combine:
-			flame-n:
+			0:
+				Filename: flame-n.shp
 				Length: *
 				Offset: 1,6
-			flame-nw:
+			1:
+				Filename: flame-nw.shp
 				Length: *
 				Offset: 8,7
-			flame-w:
+			2:
+				Filename: flame-w.shp
 				Length: *
 				Offset: 8,2
-			flame-sw:
+			3:
+				Filename: flame-sw.shp
 				Length: *
 				Offset: 7,-2
-			flame-s:
+			4:
+				Filename: flame-s.shp
 				Length: *
 				Offset: 1,-2
-			flame-se:
+			5:
+				Filename: flame-se.shp
 				Length: *
 				Offset: -5,-2
-			flame-e:
+			6:
+				Filename: flame-e.shp
 				Length: *
 				Offset: -7,2
-			flame-ne:
+			7:
+				Filename: flame-ne.shp
 				Length: *
 				Offset: -7,8
 		Facings: 8
 		Length: 13
-	icon: e4icon
-    parachute:
+    parachute: e4
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e4:
+			0:
+                Filename: e4.shp
                 Frames: 590
 				Length: 1
-			e4:
+			1:
+                Filename: e4.shp
                 Frames: 593
 				Length: 1
-			e4:
+			2:
+                Filename: e4.shp
                 Frames: 596
 				Length: 1
-			e4:
+			3:
+                Filename: e4.shp
                 Frames: 599
 				Length: 1
-			e4:
+			4:
+                Filename: e4.shp
                 Frames: 602
 				Length: 1
-			e4:
+			5:
+                Filename: e4.shp
                 Frames: 605
 				Length: 1
-			e4:
+			6:
+                Filename: e4.shp
                 Frames: 608
 				Length: 1
-			e4:
+			7:
+                Filename: e4.shp
                 Frames: 611
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e4icon.shp
 
 e5:
+	Defaults:
+		Filename: e5.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -525,10 +617,12 @@ e5:
 		Start: 64
 		Length: 16
 		Facings: 8
+	# stand -> prone transition
 	liedown:
 		Start: 192
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 240
 		Length: 2
@@ -563,101 +657,128 @@ e5:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 509
 		Length: 9
 		Tick: 80
+	# Explode
 	die2:
 		Start: 518
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 526
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 534
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 546
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 494
 		Length: 10
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e4rot
+		Tick: 80
+	die-crushed:
+		Filename: e4rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
 	muzzle:
+		Filename:
 		Combine:
-			chem-n:
+			0:
+				Filename: chem-n.shp
 				Length: *
 				Offset: 1,2
-			chem-nw:
+			1:
+				Filename: chem-nw.shp
 				Length: *
 				Offset: 8,2
-			chem-w:
+			2:
+				Filename: chem-w.shp
 				Length: *
 				Offset: 8,-3
-			chem-sw:
+			3:
+				Filename: chem-sw.shp
 				Length: *
 				Offset: 7,-6
-			chem-s:
+			4:
+				Filename: chem-s.shp
 				Length: *
 				Offset: 1,-6
-			chem-se:
+			5:
+				Filename: chem-se.shp
 				Length: *
 				Offset: -5,-6
-			chem-e:
+			6:
+				Filename: chem-e.shp
 				Length: *
 				Offset: -7,-3
-			chem-ne:
+			7:
+				Filename: chem-ne.shp
 				Length: *
 				Offset: -3,2
 		Facings: 8
 		Length: 13
-	icon: e5icon
-    parachute:
+    parachute: e5
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e5:
+			0:
+                Filename: e5.shp
                 Frames: 590
 				Length: 1
-			e5:
+			1:
+                Filename: e5.shp
                 Frames: 593
 				Length: 1
-			e5:
+			2:
+                Filename: e5.shp
                 Frames: 596
 				Length: 1
-			e5:
+			3:
+                Filename: e5.shp
                 Frames: 599
 				Length: 1
-			e5:
+			4:
+                Filename: e5.shp
                 Frames: 602
 				Length: 1
-			e5:
+			5:
+                Filename: e5.shp
                 Frames: 605
 				Length: 1
-			e5:
+			6:
+                Filename: e5.shp
                 Frames: 608
 				Length: 1
-			e5:
+			7:
+                Filename: e5.shp
                 Frames: 611
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e5icon.shp
 
 e6:
+	Defaults:
+		Filename: e6.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -668,10 +789,12 @@ e6:
 		Length: 6
 		Facings: 8
 		Tick: 100
+	# stand -> prone transition
 	liedown:
 		Start: 66
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 114
 		Length: 2
@@ -702,73 +825,91 @@ e6:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 146
 		Length: 8
 		Tick: 80
+	# Explode
 	die2:
 		Start: 154
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 162
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 170
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 182
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 130
 		Length: 4
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e1rot
+		Tick: 80
+	die-crushed:
+		Filename: e1rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-	icon: e6icon
-    parachute:
+    parachute: e6
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			e6:
+			0:
+                Filename: e6.shp
                 Frames: 225
 				Length: 1
-			e6:
+			1:
+                Filename: e6.shp
                 Frames: 228
 				Length: 1
-			e6:
+			2:
+                Filename: e6.shp
                 Frames: 231
 				Length: 1
-			e6:
+			3:
+                Filename: e6.shp
                 Frames: 234
 				Length: 1
-			e6:
+			4:
+                Filename: e6.shp
                 Frames: 237
 				Length: 1
-			e6:
+			5:
+                Filename: e6.shp
                 Frames: 240
 				Length: 1
-			e6:
+			6:
+                Filename: e6.shp
                 Frames: 243
 				Length: 1
-			e6:
+			7:
+                Filename: e6.shp
                 Frames: 246
 				Length: 1
-		Facings: 8
+	icon:
+		Filename: e6icon.shp
 
 rmbo:
+	Defaults:
+		Filename: rmbo.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -783,10 +924,12 @@ rmbo:
 		Start: 64
 		Length: 4
 		Facings: 8
+	# stand -> prone transition
 	liedown:
 		Start: 96
 		Length: 2
 		Facings: 8
+	# prone -> stand transition
 	standup:
 		Start: 144
 		Length: 2
@@ -825,73 +968,143 @@ rmbo:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	# Shot
 	die1:
 		Start: 318
 		Length: 8
 		Tick: 80
+	# Explode
 	die2:
 		Start: 326
 		Length: 8
 		Tick: 80
+	# Fly and explode in air
 	die3:
 		Start: 334
 		Length: 8
 		Tick: 80
+	# Fly through air squish on ground
 	die4:
 		Start: 342
 		Length: 12
 		Tick: 80
+	# Burn
 	die5:
 		Start: 354
 		Length: 18
 		Tick: 80
+	# Tib
 	die6:
 		Start: 308
 		Length: 4
 		Tick: 80
-	die7: electro
+    # Zap
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-            SNOW: TEMPERAT
-	die-crushed: e1rot
+		Tick: 80
+	die-crushed:
+		Filename: e1rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
 		ZOffset: -511
-	icon: rmboicon
-    parachute:
+    parachute: rmbo
+        Filename:
+        Length: 1
+		Facings: 8
 		Combine:
-			rmbo:
+			0:
+                Filename: rmbo.shp
                 Frames: 423
 				Length: 1
-			rmbo:
+			1:
+                Filename: rmbo.shp
                 Frames: 425
 				Length: 1
-			rmbo:
+			2:
+                Filename: rmbo.shp
                 Frames: 427
 				Length: 1
-			rmbo:
+			3:
+                Filename: rmbo.shp
                 Frames: 430
 				Length: 1
-			rmbo:
+			4:
+                Filename: rmbo.shp
                 Frames: 433
 				Length: 1
-			rmbo:
+			5:
+                Filename: rmbo.shp
                 Frames: 436
 				Length: 1
-			rmbo:
+			6:
+                Filename: rmbo.shp
                 Frames: 439
 				Length: 1
-			rmbo:
+			7:
+                Filename: rmbo.shp
                 Frames: 443
 				Length: 1
+	icon:
+		Filename: rmboicon.shp
+
+vice:
+	idle:
+		Filename: vice.shp
+		Length: *
+	muzzle:
+		Combine:
+			0:
+				Filename: chem-n.shp
+				Length: *
+				Offset: 1,2
+			1:
+				Filename: chem-nw.shp
+				Length: *
+				Offset: 8,2
+			2:
+				Filename: chem-w.shp
+				Length: *
+				Offset: 8,-3
+			3:
+				Filename: chem-sw.shp
+				Length: *
+				Offset: 7,-6
+			4:
+				Filename: chem-s.shp
+				Length: *
+				Offset: 1,-6
+			5:
+				Filename: chem-se.shp
+				Length: *
+				Offset: -5,-6
+			6:
+				Filename: chem-e.shp
+				Length: *
+				Offset: -7,-3
+			7:
+				Filename: chem-ne.shp
+				Length: *
+				Offset: -3,2
 		Facings: 8
+		Length: 13
+	die:
+		Filename: chemball.shp
+		Length: *
+		ZOffset: 2047
+	icon:
+		Filename: viceicon.shp
+
+pvice:
+	Inherits: vice
+	Defaults:
+		Filename: pvice.shp
 
 tecn:
+	Defaults:
+		Filename: tecn.shp
 	stand:
 		Facings: 8
 	panic-stand:
@@ -904,7 +1117,6 @@ tecn:
 		Start: 56
 		Length: 6
 		Facings: 8
-		Tick: 80
 	shoot:
 		Start: 205
 		Length: 4
@@ -935,63 +1147,21 @@ tecn:
 		Length: 18
 		Tick: 80
 	die6:
-		Start: 357
-		Length: 18
+		Start: 182
+		Length: 4
 		Tick: 80
-	die7: electro
+	die7:
+		Filename: electro.shp
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			SNOW: TEMPERAT
-			JUNGLE: TEMPERAT
-	die-crushed: e1rot
+		Tick: 80
+	die-crushed:
+		Filename: e1rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
-		ZOffset: -511
 	parachute:
+        Filename: tecn.shp
         Start: 0
         Length: 1
         Facings: 8
-
-vice:
-	idle:
-		Length: *
-	muzzle:
-		Combine:
-			chem-n:
-				Length: *
-				Offset: 1,2
-			chem-nw:
-				Length: *
-				Offset: 8,2
-			chem-w:
-				Length: *
-				Offset: 8,-3
-			chem-sw:
-				Length: *
-				Offset: 7,-6
-			chem-s:
-				Length: *
-				Offset: 1,-6
-			chem-se:
-				Length: *
-				Offset: -5,-6
-			chem-e:
-				Length: *
-				Offset: -7,-3
-			chem-ne:
-				Length: *
-				Offset: -3,2
-		Facings: 8
-		Length: 13
-	die: chemball
-		Length: *
-		ZOffset: 2047
-	icon: viceicon
-
-pvice:
-    Inherits: vice
-	Defaults: pvice

@@ -29,7 +29,7 @@ Container@LOBBY_PLAYER_BIN:
 					Align: Center
 					Font: Bold
 				Label@TEAM:
-					X: 460-25
+					X: 460 - 25
 					Width: 50
 					Height: 25
 					Text: Team
@@ -132,7 +132,7 @@ Container@LOBBY_PLAYER_BIN:
 							Font: Regular
 							IgnoreChildMouseOver: true
 							TooltipContainer: TOOLTIP_CONTAINER
-							PanelRoot: FACTION_DROPDOWN_PANEL_ROOT
+							PanelRoot: FACTION_DROPDOWN_PANEL_ROOT # ensure that tooltips for the options are on top of the dropdown panel
 							Children:
 								Image@FACTIONFLAG:
 									X: 4

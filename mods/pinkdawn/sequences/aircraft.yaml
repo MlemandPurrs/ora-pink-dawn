@@ -1,33 +1,42 @@
 c17:
-	Inherits: emp-overlay
 	idle:
+		Filename: c17.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: c17icon
+	icon:
+        Filename: c17icon.shp
 
 a10:
-	Inherits: emp-overlay
 	idle:
+		Filename: a10.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun16
+	muzzle:
+        Filename: minigun16.shp
 		Length: 6
 		Facings: 16
-	icon: a10icon
+	icon: 
+        Filename: a10icon.shp
 
 tran:
-	Inherits: emp-overlay
+    Inherits: emp-overlay
+	Defaults:
+		Filename: tran.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotor
+	rotor:
+		Filename: lrotor.shp
 		Length: 4
-	rotor2: rrotor
+	rotor2:
+		Filename: rrotor.shp
 		Length: 4
-	slow-rotor: lrotor
+	slow-rotor:
+		Filename: lrotor.shp
 		Start: 4
 		Length: 8
-	slow-rotor2: rrotor
+	slow-rotor2:
+		Filename: rrotor.shp
 		Start: 4
 		Length: 8
 	open:
@@ -35,36 +44,46 @@ tran:
 		Length: 4
 	unload:
 		Start: 35
-	icon: tranicon
+	icon:
+		Filename: tranicnh.tem
 
 orca:
     Inherits: emp-overlay
 	idle:
+        Filename: orca.shp
 		Facings: 32
 		UseClassicFacings: True
 	move:
+        Filename: orca.shp
 		Start: 32
 		Facings: 32
-	icon: orcaicon
+	icon:
+        Filename: orcaicon.shp
 
 heli:
     Inherits: emp-overlay
 	idle:
+        Filename: heli.shp
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotor
+	rotor:
+        Filename: lrotor.shp
 		Length: 4
-	slow-rotor: lrotor
+	slow-rotor:
+        Filename: lrotor.shp
 		Start: 4
 		Length: 8
-	muzzle: minigun16
+	muzzle:
+        Filename: minigun16.shp
 		Length: 6
 		Facings: 16
-	icon: heliicon
+	icon:
+        Filename: heliicon.shp
 
 c130:
-	Inherits: emp-overlay
 	idle:
+        Filename: c130.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: c17icon
+	icon: 
+        Filename: c17icon.shp

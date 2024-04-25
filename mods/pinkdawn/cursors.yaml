@@ -239,13 +239,6 @@ Cursors:
 		airstrike-minimap:
 			Start: 4
 			Length: 4
-	cursoremp.shp: cursor	
-		empstrike:
-			Start: 0
-			Length: 13
-		empstrike-minimap:
-			Start: 14
-			Length: 2
     goldwrench.shp: cursor
 		goldwrench:
 			Start: 0

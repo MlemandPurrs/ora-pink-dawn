@@ -572,6 +572,8 @@
         RequiresCondition: !parachute
 	WithInfantryBody@PARACHUTE:
 		StandSequences: parachute
+		#   Palette: player-noshadow
+		#   IsPlayerPalette: true
 		RequiresCondition: parachute
 	WithDeathAnimation:
 		DeathTypes:
@@ -878,11 +880,8 @@
 	SpawnActorsOnSell:
         ValuePercent: 20
 		ActorTypes: tecn,tecn,tecn,e1,e1
-	EngineerRepairable:
-		RequiresCondition: damaged
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
+		GuaranteedActorTypes: e1
+	InstantlyRepairable:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
@@ -1104,7 +1103,7 @@
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured
 		TextNotification: Civilian building captured.
-	EngineerRepairable:
+	InstantlyRepairable:
     GivesCashOnCapture:
         Amount: 500
 	RevealsShroud:

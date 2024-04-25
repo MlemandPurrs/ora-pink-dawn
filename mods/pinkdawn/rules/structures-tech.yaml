@@ -8,6 +8,12 @@ V19:
         Interval: 50
 		Amount: 30
 		RequiresCondition: owner.is.player
+    CashTricklerMultiplier@AIBoost:
+        Modifier: 120
+        RequiresCondition: ai-income-boost
+	GrantConditionOnBotOwner@AIBoost:
+		Condition: ai-income-boost
+		Bots: normalai
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -218,7 +224,11 @@ SYRD:
     -ChangesHealth@LOWPOWERDMG:
     -GrantConditionOnDamageState@LOWPOWERDMG:
 	-GrantConditionOnPowerState@LOWPOWERDMG:
-	EngineerRepairable:
+	InstantlyRepairable:
+		RequiresCondition: damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	OwnerLostAction:
 		Action: ChangeOwner
 	Capturable:
