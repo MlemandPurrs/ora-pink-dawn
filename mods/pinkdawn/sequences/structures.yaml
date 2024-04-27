@@ -1183,10 +1183,10 @@ tmpl:
 		Offset: 0,-12
 	idle:
         Start: 0
-        Length: 5
+        Length: 1
 	damaged-idle:
 		Start: 5
-        Length: 5
+        Length: 1
 	active:
         Start: 0
 		Length: 5
@@ -1492,6 +1492,7 @@ obli.husk:
         Filename: obli.shp
 		Start: 8
 		Tick: 800
+		Offset: 0, -12
 	bib:
 		Filename: mbOBLI.tem
 		TilesetFilenames:

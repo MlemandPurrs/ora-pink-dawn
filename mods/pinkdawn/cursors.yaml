@@ -261,3 +261,10 @@ Cursors:
 		harvest-minimap:
 			Start: 8
 			Length: 8
+	medicursor.shp: cursor
+		heal:
+			Start: 0
+			Length: 4
+		heal-minimap:
+			Start: 4
+			Length: 1

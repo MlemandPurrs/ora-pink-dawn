@@ -876,7 +876,7 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-			2: Rough
+			2: Rock
 	Template@88:
 		Id: 88
 		Images: sh6.win

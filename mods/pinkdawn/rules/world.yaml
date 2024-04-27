@@ -311,7 +311,7 @@ World:
         FactionPreviewActors:
             gdi: fact.colorpicker.gdi
             nod: fact.colorpicker.nod
-		PresetColors: FCFC54, 007070, F40000, 54FC54, D47810, A4A4BC, D0C4AC, A8704C, C4B060, 4494E4, EC0000, 00C400, FC8800, 707070, 44907C, 702C24
+		PresetColors: FCFC54, A4A4BC, F40000, 54FC54, D47810, 007070, D0C4AC, A8704C, C4B060, 4494E4, EC0000, 00C400, FC8800, 707070, 44907C, 702C24
         SimilarityThreshold: 20
     OrderEffects:
 		TerrainFlashImage: moveflsh

@@ -89,6 +89,11 @@ burn-s:
 		Length: 5
 		ZOffset: 512
 
+50cal:
+	idle:
+		Filename: 50cal.shp
+		ZOffset: 1023
+
 120mm:
 	idle:
 		Filename: 120mm.shp
@@ -287,7 +292,7 @@ allyrepair:
 scrate:
 	idle:
 		Filename: scrate.shp
-		Start: 1
+		Start: 0
 		ZOffset: -511
 	land:
 		Filename: scrate.shp
@@ -303,7 +308,7 @@ scrate:
 wcrate:
 	idle:
 		Filename: wcrate.shp
-		Start: 1
+		Start: 0
 		ZOffset: -511
 	land:
 		Filename: wcrate.shp

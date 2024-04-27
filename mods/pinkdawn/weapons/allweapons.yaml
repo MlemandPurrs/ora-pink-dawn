@@ -28,6 +28,8 @@
 #   27. OrcaRocketsAG/OrcaRocketsAA
 #   28. A-10 Vulcan
 #   29. BoatMissile
+#   30. MortarShell
+#   31. Heal
 
 #   1. Commando's Sniper rifle
 Sniper:
@@ -1278,7 +1280,7 @@ APCGunAG:
             Wood: 100
             Aluminium: 68
             Steel: 25
-		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: small_frag
         ImpactActors: false
@@ -1465,3 +1467,65 @@ BoatMissile:
 		ImpactSounds: ssplash2.aud
 		ValidTargets: Water
 		InvalidTargets: Ground
+
+#   30. Mortar Soldier's weapon
+MortarShell:
+	ReloadDelay: 65
+	Range: 7c256
+	MinRange: 3c0
+	Report: grenlnch.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Image: 50CAL
+		Speed: 204
+        Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 1c256
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 7500
+		Versus:
+            None: 87
+            Light: 75
+            Medium: 56
+            Heavy: 25
+            Concrete: 100
+            Wood: 75
+            Aluminium: 56
+            Steel: 25
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplosml2.aud
+		ValidTargets: Ground, Tree
+        ImpactActors: false
+		InvalidTargets: Water
+	Warhead@4Eff: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: ssplash1.aud
+		ValidTargets: Water, Underwater
+        InvalidTargets: Ground, Bridge, Ship, WaterStructure
+    Warhead@5Eff: CreateEffect
+		Explosions: small_poof
+		ImpactSounds: xplosml2.aud
+		ValidTargets: Ship, WaterStructure
+        ImpactActors: true
+
+#   31. Medic's healing kit
+Heal:
+	ReloadDelay: 70
+	Range: 1c826
+	Report: heal2.aud
+	ValidTargets: Heal
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: -4000
+		ValidRelationships: Ally
+		ValidTargets: Heal
+		DebugOverlayColor: 00FF00

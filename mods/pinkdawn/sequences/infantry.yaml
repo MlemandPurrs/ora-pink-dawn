@@ -1103,8 +1103,8 @@ pvice:
 		Filename: pvice.shp
 
 tecn:
-	Defaults:
-		Filename: tecn.shp
+    Defaults:
+        Filename: tecn.shp
 	stand:
 		Facings: 8
 	panic-stand:
@@ -1117,6 +1117,7 @@ tecn:
 		Start: 56
 		Length: 6
 		Facings: 8
+		Tick: 80
 	shoot:
 		Start: 205
 		Length: 4
@@ -1147,21 +1148,225 @@ tecn:
 		Length: 18
 		Tick: 80
 	die6:
-		Start: 182
-		Length: 4
+		Start: 357
+		Length: 18
 		Tick: 80
-	die7:
-		Filename: electro.shp
+	die7: electro
 		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
-		Tick: 80
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			SNOW: TEMPERAT
+			JUNGLE: TEMPERAT
 	die-crushed:
 		Filename: e1rot.shp
 		Start: 16
 		Length: 4
 		Tick: 1600
+		ZOffset: -511
 	parachute:
-        Filename: tecn.shp
         Start: 0
         Length: 1
         Facings: 8
+
+e9:
+	Defaults:
+		Filename: e9.shp
+	stand:
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 20
+		Facings: 8
+	liedown:
+		Start: 224
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 272
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 288
+		Length: 12
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 494
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	die6:
+		Start: 440
+		Length: 12
+		Tick: 80
+	die7: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			SNOW: TEMPERAT
+			JUNGLE: TEMPERAT
+	die-crushed:
+		Filename: e1rot.shp
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+    parachute:
+        Filename:
+        Length: 1
+        Facings: 8
+		Combine:
+			0:
+                Filename: e9.shp
+                Frames: 478
+				Length: 1
+			1:
+                Filename: e9.shp
+                Frames: 481
+				Length: 1
+			2:
+                Filename: e9.shp
+                Frames: 484
+				Length: 1
+			3:
+                Filename: e9.shp
+                Frames: 487
+				Length: 1
+			4:
+                Filename: e9.shp
+                Frames: 491
+				Length: 1
+			5:
+                Filename: e9.shp
+                Frames: 493
+				Length: 1
+			6:
+                Filename: e9.shp
+                Frames: 496
+				Length: 1
+			7:
+                Filename: e9.shp
+                Frames: 499
+				Length: 1
+	icon:
+		Filename: e9icon.shp
+
+medi:
+    Defaults:
+        Filename: medi.shp
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	heal:
+		Start: 56
+		Length: 58
+		Tick: 120
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 130
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 130
+		Length: 4
+		Facings: 8
+		Tick: 100
+	idle:
+		Start: 178
+		Length: 14
+		Tick: 120
+	die1:
+		Start: 193
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 201
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 209
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 217
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 229
+		Length: 18
+		Tick: 80
+	die6:
+		Start: 229
+		Length: 18
+		Tick: 80
+	die7: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			SNOW: TEMPERAT
+			JUNGLE: TEMPERAT
+	die-crushed:
+		Filename: e1rot.shp
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon:
+        Filename: mediicon.shp
+    parachute:
+        Start: 0
+		Facings: 8

@@ -177,7 +177,6 @@ FACT:
         EffectiveOwnerFromOwner: true
         RequiresCondition: husks-enabled && !being-demolished
 
-
 NUKE:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape

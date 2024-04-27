@@ -572,8 +572,8 @@
         RequiresCondition: !parachute
 	WithInfantryBody@PARACHUTE:
 		StandSequences: parachute
-		#   Palette: player-noshadow
-		#   IsPlayerPalette: true
+		Palette: player-noshadow
+		IsPlayerPalette: true
 		RequiresCondition: parachute
 	WithDeathAnimation:
 		DeathTypes:
@@ -1457,11 +1457,12 @@
 		GenericName: Crate
 		ShowOwnerRow: false
 	Crate:
-		TerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, RedTiberium, Beach
+		TerrainTypes: Clear, Rough, Road, Ramp, Beach, Water, Tiberium, BlueTiberium, RedTiberium
 	RenderSprites:
 		Palette: effect
 		Image: scrate
 	WithCrateBody:
+        IdleSequence: idle
 		LandSequence: land
 		WaterSequence: water
 	Passenger:

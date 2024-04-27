@@ -29,6 +29,7 @@ Packages:
 	pinkdawn|bits
     pinkdawn|bits/audio
     pinkdawn|bits/audio/eva
+    pinkdawn|bits/audio/medic
     pinkdawn|bits/icons
     pinkdawn|bits/structures
     pinkdawn|bits/structures/bibs

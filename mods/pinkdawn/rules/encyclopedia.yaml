@@ -19,7 +19,7 @@ nuke.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.\n\nThe Future Corps of GDI are capable of modularly upgrading their Power Plants to provide more power, sparing construction costs and build time required to erect a seperate structure.
+		Description: This structure provides a standard amount of power to the structures in your base. Power output is directly related to the structure's condition, so protect them during battles. If they get damaged, you must repair them quickly or else some of your base defenses may cease to function.\n\nThe Power Plant outputs 100 units of power.
         Category: GDI Buildings
 		Order: 1
 	RenderSprites:
@@ -71,7 +71,7 @@ pyle.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This structure is a field training center for all GDI infantry units. Building multiple Barracks will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.
+        Description: This structure is a field training center for all GDI infantry units. Building multiple Barracks will not decrease the amount of time required to create a Infantry, instead it will allow to produce multiple Infantry at same time. Some advanced / special infantry units may not be available until other structures are built.
         Category: GDI Buildings
 		Order: 5
 	RenderSprites:
@@ -84,7 +84,7 @@ weap.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: This structure builds any available Vehicles. It is well armored, but is also a favorite target for enemy Engineers. Building multiple War Factories will decrease the amount of time required to create a Vehicle.
+        Description: This structure builds any available Vehicles. It is well armored, but is also a favorite target for enemy Engineers. Building multiple Weapons Factories will not decrease the amount of time required to create a Vehicle, instead it will allow to produce multiple Vehicle at the same time.
         Category: GDI Buildings
 		Order: 6
 	RenderSprites:
@@ -123,7 +123,7 @@ hq.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.\n\nThe Future Corps of the GDI are capable of modularly upgrading their Communication Centers to bestow advanced capabilities upon them.
+        Description: Allows the use of the minimap as long as there is sufficient power. The minimap allows for an overhead view of the battlefield and for commanding units over great distances.\nThis structure will also able to periodically allow the usage of 'Radar Scan' whenever it has charged up. This ability can be used to reveal an area of the map to temporarily obtain vision for a duration.
         Category: GDI Buildings
 		Order: 12
 	RenderSprites:
@@ -136,7 +136,7 @@ miss.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-		Description: This hi-tech facility houses the necessary equipment for research and development of new technologies, arms and armor.
+		Description: This hi-tech facility houses the necessary equipment for research and development of new technologies, arms and armor.\nIts presence is required to unlock hi-tech units and structures, such as the Mammoth Tank and Adv. Comm. Center for production.\nThis structure also gives GDI players the ability to periodically use Air Strikes, this however requires the presence of an Adv. Comm. Center for becoming useable.
         Category: GDI Buildings
 		Order: 13
 	RenderSprites:
@@ -149,7 +149,7 @@ eye.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: An upgrade to the Communications Center, this structure not only provides radar, but is the uplink center for the Ion Cannon - GDI's most devastating weapon. Once charged, it can unleash a blast on an unsuspecting target.\nThe Ion Cannon requires power to charge: If your base is under powered, it will stop. To fire, left click on the Ion Cannon icon in the sidebar once it has charged full.
+        Description: An upgrade to the Communications Center, this structure not only provides radar, but is the uplink center for the Ion Cannon - GDI's most devastating weapon. Once charged, it can unleash a blast on an unsuspecting target.\nIts presence is also necessary to coordinate the efforts necessary for an Air Strike to commence.
         Category: GDI Buildings
 		Order: 14
 	RenderSprites:
@@ -217,7 +217,7 @@ afld.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: The Airstrip allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airstrips will enable you to order multiple units delivered at a time.
+        Description: The Airstrip allows cargo planes to land and deliver equipment. It is functionally equivalent to the GDI War Factory. However, you do not instantly get the unit when it is complete, first it must be flown in, so plan accordingly. Building multiple Airstrips will enable you to order multiple units delivered at a time, it does not however fasten the build time of each individual unit order.
         Category: Nod Buildings
 		Order: 7
 	RenderSprites:
@@ -254,7 +254,7 @@ tmpl.info:
     Buildable:
         Queue: Nothing
 	Encyclopedia:
-        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles.
+        Description: Houses the central computer core that is the hub of all Nod communications and center of Nod command. It is heavily armored.\nThis structure also gives Nod players the ability to fire nuclear missiles, however requires the presence of a Research Laboratory for becoming useable.
         Category: Nod Buildings
 		Order: 12
 	RenderSprites:
@@ -345,7 +345,7 @@ gtwr.info:
 atwr.info:
     Inherits: ATWR
     Buildable:
-        Queue: Nothing    
+        Queue: Nothing
 	Encyclopedia:
         Description: Provides strong fortification against ground and air units. The Advanced Guard Tower (AGT) fires missiles at considerable range, but it requires power to operate.\nBecause of the AGT's long range, it cannot hit units that are directly adjacent to it. It is always wise to back up the AGT with another defense like the Guard Tower.
         Category: GDI Defenses
@@ -360,7 +360,7 @@ gun.info:
     Buildable:
         Queue: Nothing    
 	Encyclopedia:
-        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.\nGun turrets are capable of firing on detected Submarines in range.
+        Description: For broad sweep, short-range protection against heavy assault vehicles.\nThis is the staple of base defense, so be sure to have several of these around your base entrances.\nFire-power wise, they are the equivalent of a main battle tank's cannon, without the mobility.
         Category: GDI Defenses
 		Order: 6
 	RenderSprites:
@@ -474,6 +474,19 @@ e3.info:
 		Order: 4
 	RenderSprites:
 		Image: e3
+        Palette: gdi
+    -MapEditorData:
+
+e9.info:
+    Inherits: E9
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: Capable of rapidly damaging structures, these infantry make up for their lack of speed with a powerful punch. In addition to dealing with targeted structures, their shells are also effective against infantry attackers.
+        Category: GDI Infantry
+		Order: 5
+	RenderSprites:
+		Image: e9
         Palette: gdi
     -MapEditorData:
 
@@ -983,7 +996,7 @@ radarscan.info:
 	Tooltip:
 		Name: Radar Scan
 	Encyclopedia:
-		Description: The Communications Center is capable of performing limited long-range scans that can temporarily reveal map terrain, provide vision and ensure detection of cloaked units in the given area.\nAs the required equipment easily overheats there is a necessary pause time required before another Radar Scan can be performed again.
+		Description: The Communications Center is capable of performing limited long-range scans that can temporarily reveal map terrain, provide vision and ensure detection of cloaked units in the given area.\nAs the required equipment easily overheats there is a necessary pause time required before another Radar Scan can be performed again.\nThe Radar Scan requires power to charge: If your base is under powered, it will stop. To use, left click on the Radar Scan icon in the sidebar once it has charged full.
 		Order: 0
 		Category: Special Abilities
 	RenderSprites:
@@ -1000,7 +1013,7 @@ paratroopers.info:
 	Tooltip:
 		Name: Paratroopers
 	Encyclopedia:
-		Description: Dropped from the Transport Plane, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.
+		Description: Dropped from the Transport Plane, this squad of 5 soldiers are in every way similar to regular ground based infantry. Paratroopers can be dropped anywhere on the map, even in areas not yet explored.\nThe Paratroopers requires power to charge: If your base is under powered, it will stop. To use, left click on the Paratroopers icon in the sidebar once it has charged full.\nYou can determine the angle of approach to be used by the Paratroopers by holding down the primary mouse button and dragging around while placing down the target. 
 		Order: 1
 		Category: Special Abilities
 	RenderSprites:
@@ -1019,7 +1032,7 @@ atomic.info:
 	Tooltip:
 		Name: Nuclear Missile
 	Encyclopedia:
-		Description: The Nuclear missile carries a atomic warhead capable of devastating the enemies of the Brotherhood of Nod.
+		Description: The Nuclear missile carries a atomic warhead capable of devastating the enemies of the Brotherhood of Nod.\nThe Nuclear Missile requires both power and the presence of a Research Laboratory to charge: If your base is under powered, or the Research Lab gets destroyed, it will stop. To fire, left click on the Nuclear Strike icon in the sidebar once it has charged full.
 		Order: 0
 		Category: Super Weapons
 	RenderSprites:
@@ -1036,7 +1049,7 @@ ioncannon.info:
 	Tooltip:
 		Name: Ion Cannon Sattelite
 	Encyclopedia:
-		Description: The orbital Ion Cannon fires a devastating particle beam cannon directly on top of the enemy, capable of instantly obliterating it's target.
+		Description: The orbital Ion Cannon fires a devastating particle beam cannon directly on top of the enemy, capable of instantly obliterating it's target.\nThe Ion Cannon requires power to charge: If your base is under powered, it will stop. To fire, left click on the Ion Cannon icon in the sidebar once it has charged full.
 		Order: 1
 		Category: Super Weapons
 	RenderSprites:
@@ -1054,7 +1067,7 @@ airstrike.info:
 	Tooltip:
 		Name: Air Strike
 	Encyclopedia:
-		Description: A-10 'Warthog' plane will drop bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.
+		Description: A-10 'Warthog' plane will drop bombs in a line, it is a good idea to pick a target that is part of a group. You can do damage to more enemies this way.\nThe Air Strike requires both power and the presence of an Adv. Comm. Center to charge: If your base is under powered, or the Adv. Comm. Center gets destroyed, it will stop. To fire, left click on the Air Strike icon in the sidebar once it has charged full.\nYou can determine the angle of approach to be used by the Air Strike by holding down the primary mouse button and dragging around while placing down the target. 
 		Order: 2
 		Category: Super Weapons
 	RenderSprites:
@@ -1077,7 +1090,7 @@ v19.info:
 hosp.info:
     Inherits: HOSP
 	Encyclopedia:
-		Description: The hospital is a medical facility providing treatment and aid to the victims of warzones.\nCapturing this structure with an Engineer will enable self-heal to all Infantry units under your command.
+		Description: The hospital is a medical facility providing treatment and aid to the victims of warzones.\nCapturing this structure with an Engineer will enable self-heal to all Infantry units under your command.\nThe hospital will also allow you to train Medic units when captured.
         Category: Tech Buildings
 		Order: 2
 	RenderSprites:
@@ -1164,3 +1177,16 @@ c130.info:
 	RenderSprites:
 		Image: c130
         Palette: civilian
+
+medi.info:
+    Inherits: MEDI
+    Buildable:
+        Queue: Nothing
+	Encyclopedia:
+        Description: The medic can be trained like any regular infantry, however training is only possible with a Hospital owned.\n\nAny wounded infantry near the Medic will be getting healed back to full health. The medic can slowly regenerate lost health by itself.\nMedics working in teams make excellent additions to any infantry force.
+        Category: Miscellaneous
+		Order: 3
+	RenderSprites:
+		Image: medi
+        Palette: civilian
+    -MapEditorData:

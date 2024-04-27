@@ -305,13 +305,13 @@ Player:
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
 		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, hand, afld, weap, fix, hpad, hq, eye, miss, tmpl, bio, gun, gtwr, atwr, obli, sam, mcv, harv
-        IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane, NoAutoTarget
 	SquadManagerBotModule@Air:
 		RequiresCondition: enable-ai-player
 		RushInterval: 375
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, boat, tran, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, boat, tran, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
@@ -324,7 +324,7 @@ Player:
 		RushInterval: 375
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, tran, orca, heli, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, tran, orca, heli, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
@@ -342,6 +342,7 @@ Player:
 			e4: 15
 			e5: 15
             e6: 1
+            e9: 5
             rmbo: 1
 			harv: 7
 			jeep: 5
@@ -349,12 +350,12 @@ Player:
 			bike: 20
             apc: 10
             maag: 20
-			ltnk: 30
+			ltnk: 40
 			mtnk: 20
 			ftnk: 10
 			htnk: 50
-			stnk: 40
-			arty: 60
+			stnk: 30
+			arty: 50
 			msam: 40
 			mlrs: 20
             mhq: 1
@@ -366,6 +367,7 @@ Player:
             e4: 5
             e5: 3
             e6: 2
+            e9: 3
             rmbo: 1
 			jeep: 4
 			bggy: 4
@@ -373,6 +375,8 @@ Player:
             ftnk: 4
             apc: 2
             maag: 4
+            arty: 7
+            msam: 7
             mlrs: 2
 			mhq: 1
 			harv: 8

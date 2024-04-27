@@ -79,6 +79,7 @@ HOSP:
 	SpawnActorOnDeath:
 		Actor: HOSP.Husk
         OwnerType: InternalName
+	ProvidesPrerequisite@buildingname:
 	WithBuildingBib:
 		HasMinibib: true
 	ProvidesPrerequisite@buildingname:

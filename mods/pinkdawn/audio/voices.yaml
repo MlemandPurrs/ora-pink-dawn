@@ -72,3 +72,12 @@ DinoVoice:
 		Burned: dinodie1
 		Zapped: dinodie1
 		Poisoned: dinodie1
+
+MedicVoice:
+	Voices:
+		Select: mrespon1,myessir1
+		Action: maffirm1,mmovout1
+		Die: nuyell1, nuyell3, nuyell4, nuyell5, nuyell6
+		Burned: yell1
+		Zapped: nuyell3
+		Poisoned: nuyell12
