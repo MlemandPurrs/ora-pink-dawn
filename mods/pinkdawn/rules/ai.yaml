@@ -5,6 +5,9 @@ Player:
 	GrantConditionOnBotOwner@aiplayer:
 		Condition: enable-ai-player
 		Bots: normalai
+    ProvidesPrerequisite@aiplayer:
+        Prerequisite: ai-player-preq
+        RequiresCondition: enable-ai-player
 	SupportPowerBotModule:
 		RequiresCondition: enable-ai-player
 		Decisions:
@@ -299,24 +302,24 @@ Player:
 		RushInterval: 375
 		SquadSize: 8
         SquadSizeRandomBonus: 8
-        ExcludeFromSquadsTypes: e6, tecn, harv, mcv, truk, a10, c17, c130, boat, lst, tran, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, gun, gtwr, atwr, obli, sam, orca, heli
+        ExcludeFromSquadsTypes: e6, tecn, harv, mcv, mcv.ai, truk, a10, c17, c130, boat, lst, tran, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera, gun, gtwr, atwr, obli, sam, orca, heli
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, hand, afld, weap, fix, hpad, hq, eye, miss, tmpl, bio, gun, gtwr, atwr, obli, sam, mcv, harv
-        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane, NoAutoTarget
+		ProtectionTypes: fact, nuke, nuk2, proc, proc.clone, silo, silo.clone, pyle, hand, afld, weap, fix, hpad, hq, eye, miss, tmpl, bio, gun, gtwr, atwr, obli, sam, mcv, mcv.ai, harv
+        IgnoredEnemyTargetTypes: Husk, Helicopter, Airplane, Ship, NoAutoTarget
 	SquadManagerBotModule@Air:
 		RequiresCondition: enable-ai-player
 		RushInterval: 375
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, boat, tran, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, medi, mcv, mcv.ai, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, boat, tran, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
         NavalProductionTypes: syrd
-		ProtectionTypes: fact, proc, proc.clone, mcv, harv
+		ProtectionTypes: fact, proc, proc.clone, mcv, mcv.ai, harv
         MinimumAttackForceDelay: 200
         IgnoredEnemyTargetTypes: Husk, Airplane, NoAutoTarget
 	SquadManagerBotModule@Sea:
@@ -324,7 +327,7 @@ Player:
 		RushInterval: 375
 		SquadSize: 1
         SquadSizeRandomBonus: 1
-        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, mcv, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, tran, orca, heli, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
+        ExcludeFromSquadsTypes: e1, e1r1, e2, e3, e3r1, e4, e5, e6, e9, rmbo, tecn, medi, mcv, mcv.ai, harv, truk, jeep, bggy, bike, apc, maag, ltnk, mtnk, htnk, ftnk, stnk, arty, msam, mlrs, mhq, lst, tran, orca, heli, c17, a10, c130, gun, gtwr, atwr, obli, sam, camera.scan, ioncannon.splode, camera.small, camera.small.timed, camera
 		ConstructionYardTypes: fact
 		AirUnitsTypes: heli, orca
         NavalUnitsTypes: boat
@@ -344,6 +347,7 @@ Player:
             e6: 1
             e9: 5
             rmbo: 1
+            medi: 3
 			harv: 7
 			jeep: 5
 			bggy: 5
@@ -369,6 +373,7 @@ Player:
             e6: 2
             e9: 3
             rmbo: 1
+            medi: 2
 			jeep: 4
 			bggy: 4
             bike: 6
@@ -385,7 +390,7 @@ Player:
             boat: 5
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
-		McvTypes: mcv
+		McvTypes: mcv,mcv.ai
 		ConstructionYardTypes: fact
 		McvFactoryTypes: weap,afld
     CaptureManagerBotModule:

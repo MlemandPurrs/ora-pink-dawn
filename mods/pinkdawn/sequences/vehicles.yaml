@@ -96,8 +96,9 @@ bike:
 
 apc:
     Inherits: emp-overlay
-	idle:
+    Defaults:
         Filename: apc.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
@@ -105,14 +106,11 @@ apc:
 		Length: 6
 		Facings: 8
     open:
-        Filename: apc.shp
         Frames: 34, 33, 32
 	close:
-        Filename: apc.shp
 		Start: 32
 		Length: 3
 	unload:
-        Filename: apc.shp
 		Start: 32
 	icon:
         Filename: apcicon.shp

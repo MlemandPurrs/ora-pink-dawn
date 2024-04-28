@@ -42,6 +42,8 @@ tran:
 	open:
 		Start: 32
 		Length: 4
+    close:
+        Frames: 34, 33, 32
 	unload:
 		Start: 35
 	icon:

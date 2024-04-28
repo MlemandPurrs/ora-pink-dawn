@@ -102,7 +102,7 @@
 	FixedColorPalette@RedTiberium:
 		Base: terrain
 		Name: redtiberium
-        Color: DE0000
+        Color: FC5454
 		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 	PaletteFromFile@player-static:
 		Name: player-static

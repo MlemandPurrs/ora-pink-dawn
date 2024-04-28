@@ -68,6 +68,34 @@ SPLITBLUE:
 	AppearsOnMapPreview:
 		Terrain: BlueTiberium
 
+SPLITRED:
+	Inherits: ^TibTree
+	RenderSprites:
+		Image: split4
+	SeedsResource:
+		ResourceType: RedTiberium
+		Interval: 525
+	SeedsResource@2:
+		ResourceType: RedTiberium
+		Interval: 525
+        RequiresCondition: double-growth
+	SeedsResource@3:
+		ResourceType: RedTiberium
+		Interval: 525
+        RequiresCondition: triple-growth
+	ExternalCondition@doublegrowth:
+		Condition: double-growth
+	ExternalCondition@triplegrowth:
+		Condition: triple-growth
+	WithIdleAnimation:
+		Interval: 525
+	Tooltip:
+		Name: Blossom Tree (red)
+	RadarColorFromTerrain:
+		Terrain: RedTiberium
+	AppearsOnMapPreview:
+		Terrain: RedTiberium
+
 ROCK1:
 	Inherits: ^Rock
 	Building:

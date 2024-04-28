@@ -41,7 +41,7 @@ MCV:
         BuildDuration: 3000
         BuildDurationModifier: 100
 		BuildPaletteOrder: 16
-        Prerequisites: anyhq, fix, ~techlevel.5
+        Prerequisites: anyhq, fix, ~techlevel.5, ~!ai-player-preq
 		Queue: Vehicle.GDI, Vehicle.Nod
 		Description: Deploys into another Construction Yard.\n\nUnarmed.
 	Selectable:
@@ -79,6 +79,19 @@ MCV:
 		Prerequisites: global-expensivemcv
     Passenger:
         -CargoCondition:
+
+# stop the artificial idiot queueing
+# a mcv on each vehicle production
+MCV.ai:
+    Inherits: MCV
+	Buildable:
+		BuildLimit: 1
+        Prerequisites: anyhq, fix, ~techlevel.5, ~ai-player-preq
+	RenderSprites:
+		Image: mcv
+		FactionImages:
+			nod: nodmcv
+    -MapEditorData:
 
 HARV:
 	Inherits: ^Vehicle

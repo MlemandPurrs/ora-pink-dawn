@@ -509,51 +509,83 @@ resources:
 	ti1:
 		Filename: rtib1.tem
 		TilesetFilenames:
+            JUNGLE: rtib1.jun
 			DESERT: rtib1.des
+			WINTER: rtib1.win
+            SNOW: rtib1.sno
 	ti2:
 		Filename: rtib2.tem
 		TilesetFilenames:
+            JUNGLE: rtib2.jun
 			DESERT: rtib2.des
+			WINTER: rtib2.win
+            SNOW: rtib2.sno
 	ti3:
 		Filename: rtib3.tem
-		TilesetFilenames:
+            JUNGLE: rtib3.jun
 			DESERT: rtib3.des
+			WINTER: rtib3.win
+            SNOW: rtib3.sno
 	ti4:
 		Filename: rtib4.tem
-		TilesetFilenames:
+            JUNGLE: rtib4.jun
 			DESERT: rtib4.des
+			WINTER: rtib4.win
+            SNOW: rtib4.sno
 	ti5:
 		Filename: rtib5.tem
-		TilesetFilenames:
+            JUNGLE: rtib5.jun
 			DESERT: rtib5.des
+			WINTER: rtib5.win
+            SNOW: rtib5.sno
 	ti6:
 		Filename: rtib6.tem
-		TilesetFilenames:
+            JUNGLE: rtib6.jun
 			DESERT: rtib6.des
+			WINTER: rtib6.win
+            SNOW: rtib6.sno
 	ti7:
 		Filename: rtib7.tem
 		TilesetFilenames:
+            JUNGLE: rtib7.jun
 			DESERT: rtib7.des
+			WINTER: rtib7.win
+            SNOW: rtib7.sno
 	ti8:
 		Filename: rtib8.tem
 		TilesetFilenames:
+            JUNGLE: rtib8.jun
 			DESERT: rtib8.des
+			WINTER: rtib8.win
+            SNOW: rtib8.sno
 	ti9:
 		Filename: rtib9.tem
 		TilesetFilenames:
+            JUNGLE: rtib9.jun
 			DESERT: rtib9.des
+			WINTER: rtib9.win
+            SNOW: rtib9.sno
 	ti10:
 		Filename: rtib10.tem
 		TilesetFilenames:
+            JUNGLE: rtib10.jun
 			DESERT: rtib10.des
+			WINTER: rtib10.win
+            SNOW: rtib10.sno
 	ti11:
 		Filename: rtib11.tem
 		TilesetFilenames:
+            JUNGLE: rtib11.jun
 			DESERT: rtib11.des
+			WINTER: rtib11.win
+            SNOW: rtib11.sno
 	ti12:
 		Filename: rtib12.tem
 		TilesetFilenames:
+            JUNGLE: rtib12.jun
 			DESERT: rtib12.des
+			WINTER: rtib12.win
+            SNOW: rtib12.sno
 
 shroud:
 	Defaults:

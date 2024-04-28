@@ -34,6 +34,25 @@ split3:
 	idle:
 		Start: 54
 
+split4:
+	Defaults:
+		TilesetFilenames:
+			DESERT: split4.des
+			WINTER: split4.win
+			SNOW: split4.sno
+			TEMPERAT: split4.tem
+			JUNGLE: split4.jun
+		Offset: 7, -13
+	make:
+        Start: 0
+		Length: 1
+	active:
+        Start: 0
+		Length: 22
+    idle:
+        Start: 0
+        Length: 1
+
 #   Trees
 
 t01:
