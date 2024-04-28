@@ -251,9 +251,9 @@ Cursors:
 			Start: 0
 			Length: 8
 			Tick: 120
-		airdrop-minimap:
-			Start: 8
-			Length: 2
+        airdrop-minimap:
+            Start: 8
+            Length: 8
     cursorharvest.shp: cursor
         harvest:
 			Start: 0
