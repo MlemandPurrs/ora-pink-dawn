@@ -1596,6 +1596,56 @@ Templates:
 			13: Rock
 			14: River
 			15: Rock
+	Template@149:
+		Id: 149
+		Images: rv16.tem
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: River
+	Template@150:
+		Id: 150
+		Images: rv17.tem
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: River
+	Template@151:
+		Id: 151
+		Images: rv18.tem
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: River
+	Template@152:
+		Id: 152
+		Images: rv19.tem
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: River
+	Template@153:
+		Id: 153
+		Images: rv20.tem
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: River
 	Template@161:
 		Id: 161
 		Images: ford1.tem
@@ -1630,7 +1680,7 @@ Templates:
 		Id: 163
 		Images: falls1.tem
 		Size: 3,3
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Rough
 			1: Cliff
@@ -1645,7 +1695,7 @@ Templates:
 		Id: 164
 		Images: falls2.tem
 		Size: 3,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: River
@@ -1747,6 +1797,150 @@ Templates:
 			19: Ramp
 			23: Road
 			24: Road
+	Template@173:
+		Id: 173
+		Images: bridgeh.tem
+		Size: 4,4
+		Categories: Bridge
+		Tiles:
+			0: Wall
+			1: Wall
+			2: Wall
+			3: Wall
+            4: Ramp
+            5: Bridge
+            6: Bridge
+            7: Ramp
+			8: Wall
+			9: Wall
+			10: Wall
+			11: Wall
+            12: Rough
+            13: River
+            14: River
+            15: Rough
+	Template@174:
+		Id: 174
+		Images: bridgehd.tem
+		Size: 4,4
+		Categories: Bridge
+		Tiles:
+			0: Wall
+			1: Wall
+			2: Wall
+			3: Wall
+            4: Ramp
+            5: Rock
+            6: Rock
+            7: Ramp
+			8: Wall
+			9: Wall
+			10: Wall
+			11: Wall
+            12: Rough
+            13: River
+            14: River
+            15: Rough
+	Template@175:
+		Id: 175
+		Images: bridgev.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Rough
+			1: Ramp
+			2: Rough
+			3: Wall
+            4: Bridge
+            5: Wall
+            6: Wall
+            7: Bridge
+			8: Wall
+			9: Rough
+			10: Ramp
+			11: Rough
+	Template@176:
+		Id: 176
+		Images: bridgevd.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Rough
+			1: Ramp
+			2: Rough
+			3: Wall
+            4: Rock
+            5: Wall
+            6: Wall
+            7: Rock
+			8: Wall
+			9: Rough
+			10: Ramp
+			11: Rough
+	Template@180:
+		Id: 180
+		Images: rc13.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@181:
+		Id: 181
+		Images: rc14.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@182:
+		Id: 182
+		Images: rc15.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@183:
+		Id: 183
+		Images: rc16.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@184:
+		Id: 184
+		Images: falls3.tem
+		Size: 3,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: River
+			2: River
+			3: Cliff
+			4: River
+			5: River
+    Template@185:
+		Id: 185
+		Images: falls4.tem
+		Size: 2,3
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: River
+			3: River
+			4: Cliff
+			5: Cliff
 	Template@186:
 		Id: 186
 		Images: sh34.tem
@@ -2062,7 +2256,7 @@ Templates:
 		Id: 231
 		Images: rc01.tem
 		Size: 2,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2072,7 +2266,7 @@ Templates:
 		Id: 232
 		Images: rc02.tem
 		Size: 2,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2082,7 +2276,7 @@ Templates:
 		Id: 233
 		Images: rc03.tem
 		Size: 2,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2092,7 +2286,87 @@ Templates:
 		Id: 234
 		Images: rc04.tem
 		Size: 2,2
-		Categories: River
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@235:
+		Id: 235
+		Images: rc05.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@236:
+		Id: 236
+		Images: rc06.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@237:
+		Id: 237
+		Images: rc07.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@238:
+		Id: 238
+		Images: rc08.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@239:
+		Id: 239
+		Images: rc09.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@240:
+		Id: 240
+		Images: rc10.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@241:
+		Id: 241
+		Images: rc11.tem
+		Size: 2,2
+		Categories: River, Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+	Template@242:
+		Id: 242
+		Images: rc12.tem
+		Size: 2,2
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2519,7 +2793,7 @@ Templates:
 		Id: 346
 		Images: falls1a.tem
 		Size: 3,3
-		Categories: Water Cliffs, River
+		Categories: River, Water Cliffs
 		Tiles:
 			0: Water
 			1: Cliff
@@ -2534,7 +2808,7 @@ Templates:
 		Id: 347
 		Images: falls2a.tem
 		Size: 3,2
-		Categories: Water Cliffs, River
+		Categories: River, Water Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2542,6 +2816,30 @@ Templates:
 			3: River
 			4: River
 			5: River
+	Template@348:
+		Id: 348
+		Images: falls3a.tem
+		Size: 3,2
+		Categories: River, Water Cliffs
+		Tiles:
+			0: Cliff
+			1: River
+			2: River
+			3: Cliff
+			4: River
+			5: River
+    Template@349:
+		Id: 349
+		Images: falls4a.tem
+		Size: 2,3
+		Categories: River, Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: River
+			3: River
+			4: Cliff
+			5: Cliff
 	Template@380:
 		Id: 380
 		Images: bridgew1.tem
@@ -2676,8 +2974,8 @@ Templates:
 			6: Clear
 			7: Beach
 			8: Water
-	Template@600:
-		Id: 600
+	Template@650:
+		Id: 650
 		Images: f01.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2691,8 +2989,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@601:
-		Id: 601
+	Template@651:
+		Id: 651
 		Images: f02.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2706,8 +3004,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@602:
-		Id: 602
+	Template@652:
+		Id: 652
 		Images: f03.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2721,8 +3019,8 @@ Templates:
 			6: Rough
 			7: Ramp
 			8: Rough
-	Template@603:
-		Id: 603
+	Template@653:
+		Id: 653
 		Images: f04.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2736,8 +3034,8 @@ Templates:
 			6: Rough
 			7: Beach
 			8: Shallow
-	Template@604:
-		Id: 604
+	Template@654:
+		Id: 654
 		Images: f05.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2751,8 +3049,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@605:
-		Id: 605
+	Template@655:
+		Id: 655
 		Images: f06.tem
 		Size: 3,3
 		Categories: Bridge
@@ -2798,3 +3096,1982 @@ Templates:
 			9: Rock
 			10: Rough
 			11: Clear
+    Template@500:
+        Id: 500
+        Images: scliff1.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@501:
+        Id: 501
+        Images: scliff2.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+	Template@502:
+		Id: 502
+		Images: scliff3.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@503:
+		Id: 503
+		Images: scliff4.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@504:
+		Id: 504
+		Images: scliff5.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@505:
+        Id: 505
+        Images: scliff6.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+    Template@506:
+        Id: 506
+        Images: scliff7.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@507:
+        Id: 507
+        Images: scliff8.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@508:
+        Id: 508
+        Images: scliff9.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+	Template@509:
+		Id: 509
+		Images: scliff10.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@510:
+		Id: 510
+		Images: scliff11.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@511:
+		Id: 511
+		Images: scliff12.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@512:
+        Id: 512
+        Images: scliff13.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@513:
+        Id: 513
+        Images: scliff14.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@514:
+        Id: 514
+        Images: scliff15.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@515:
+        Id: 515
+        Images: scliff16.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            3: Cliff
+	Template@516:
+		Id: 516
+		Images: scliff17.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@517:
+		Id: 517
+		Images: scliff18.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@518:
+		Id: 518
+		Images: scliff19.tem
+		Size: 2,1
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@519:
+        Id: 519
+        Images: scliff20.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+    Template@520:
+        Id: 520
+        Images: scliff21.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@521:
+        Id: 521
+        Images: scliff22.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@522:
+        Id: 522
+        Images: scliff23.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+	Template@523:
+		Id: 523
+		Images: scliff24.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@524:
+		Id: 524
+		Images: scliff25.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@525:
+		Id: 525
+		Images: scliff26.tem
+		Size: 1,2
+		Categories: Low Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@526:
+        Id: 526
+        Images: scliff27.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+    Template@527:
+        Id: 527
+        Images: scliff28.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@528:
+        Id: 528
+        Images: scliff29.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@529:
+        Id: 529
+        Images: scliff30.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@530:
+        Id: 530
+        Images: scliff31.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@531:
+        Id: 531
+        Images: scliff32.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@532:
+        Id: 532
+        Images: scliff33.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@533:
+        Id: 533
+        Images: scliff34.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@534:
+        Id: 534
+        Images: scliff35.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@535:
+        Id: 535
+        Images: scliff36.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@536:
+        Id: 536
+        Images: scliff37.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@537:
+        Id: 537
+        Images: scliff38.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+	Template@538:
+		Id: 538
+		Images: sfalls1.tem
+		Size: 2,1
+		Categories: River, Low Cliffs
+		Tiles:
+			0: River
+			1: River
+	Template@539:
+		Id: 539
+		Images: sfalls2.tem
+		Size: 1,2
+		Categories: River, Low Cliffs
+		Tiles:
+			0: River
+			1: River
+    Template@540:
+        Id: 540
+        Images: scliffsl1.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@541:
+        Id: 541
+        Images: scliffsl2.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@542:
+        Id: 542
+        Images: scliffsl3.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@543:
+        Id: 543
+        Images: scliffsl4.tem
+        Size: 1,1
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+    Template@544:
+        Id: 544
+        Images: scliffttl1.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@545:
+        Id: 545
+        Images: scliffttl2.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Rough
+            3: Cliff
+    Template@546:
+        Id: 546
+        Images: scliffttl3.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+    Template@547:
+        Id: 547
+        Images: scliffttl4.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+    Template@548:
+        Id: 548
+        Images: scliffttl5.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Rough
+    Template@549:
+        Id: 549
+        Images: scliffttl6.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Rough
+            2: Cliff
+            3: Cliff
+    Template@550:
+        Id: 550
+        Images: scliffttl7.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Rough
+            3: Cliff
+    Template@551:
+        Id: 551
+        Images: scliffttl8.tem
+        Size: 2,2
+        Categories: Low Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+    Template@556:
+        Id: 556
+        Images: swc1.tem
+        Size: 1,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Beach
+    Template@557:
+        Id: 557
+        Images: swc2.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+	Template@558:
+		Id: 558
+		Images: swc3.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@559:
+		Id: 559
+		Images: swc4.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@560:
+		Id: 560
+		Images: swc5.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@561:
+        Id: 561
+        Images: swc6.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            2: Water
+            3: Cliff
+    Template@562:
+        Id: 562
+        Images: swc7.tem
+        Size: 1,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Beach
+    Template@563:
+        Id: 563
+        Images: swc8.tem
+        Size: 2,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Beach
+            1: Cliff
+    Template@564:
+        Id: 564
+        Images: swc9.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Rough
+            2: Water
+            3: Cliff
+	Template@565:
+		Id: 565
+		Images: swc10.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@566:
+		Id: 566
+		Images: swc11.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@567:
+		Id: 567
+		Images: swc12.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@568:
+        Id: 568
+        Images: swc13.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@569:
+        Id: 569
+        Images: swc14.tem
+        Size: 2,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Beach
+            1: Cliff
+    Template@570:
+        Id: 570
+        Images: swc15.tem
+        Size: 1,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Beach
+            1: Cliff
+    Template@571:
+        Id: 571
+        Images: swc16.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            3: Cliff
+	Template@572:
+		Id: 572
+		Images: swc17.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@573:
+		Id: 573
+		Images: swc18.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@574:
+		Id: 574
+		Images: swc19.tem
+		Size: 2,1
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@575:
+        Id: 575
+        Images: swc20.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+    Template@576:
+        Id: 576
+        Images: swc21.tem
+        Size: 1,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Beach
+            1: Cliff
+    Template@577:
+        Id: 577
+        Images: swc22.tem
+        Size: 2,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Beach
+    Template@578:
+        Id: 578
+        Images: swc23.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Water
+	Template@579:
+		Id: 579
+		Images: swc24.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@580:
+		Id: 580
+		Images: swc25.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+	Template@581:
+		Id: 581
+		Images: swc26.tem
+		Size: 1,2
+		Categories: Low Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+    Template@582:
+        Id: 582
+        Images: swc27.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+    Template@583:
+        Id: 583
+        Images: swc28.tem
+        Size: 2,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Beach
+    Template@584:
+        Id: 584
+        Images: swc29.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@585:
+        Id: 585
+        Images: swc30.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@586:
+        Id: 586
+        Images: swc31.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@587:
+        Id: 587
+        Images: swc32.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@588:
+        Id: 588
+        Images: swc33.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@589:
+        Id: 589
+        Images: swc34.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@590:
+        Id: 591
+        Images: swc35.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@592:
+        Id: 592
+        Images: swc36.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@593:
+        Id: 593
+        Images: swc37.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@594:
+        Id: 594
+        Images: swc38.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+	Template@595:
+		Id: 595
+		Images: sfalls1a.tem
+		Size: 2,1
+		Categories: River, Low Water Cliffs
+		Tiles:
+			0: River
+			1: River
+	Template@596:
+		Id: 596
+		Images: sfalls2a.tem
+		Size: 1,2
+		Categories: River, Low Water Cliffs
+		Tiles:
+			0: River
+			1: River
+    Template@597:
+        Id: 597
+        Images: scliffsw1.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@598:
+        Id: 598
+        Images: scliffsw2.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@599:
+        Id: 599
+        Images: scliffsw3.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@600:
+        Id: 600
+        Images: scliffsw4.tem
+        Size: 1,1
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+    Template@601:
+        Id: 601
+        Images: scliffttw1.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Rock
+    Template@602:
+        Id: 602
+        Images: scliffttw2.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Water
+            3: Cliff
+    Template@603:
+        Id: 603
+        Images: scliffttw3.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Water
+            2: Cliff
+            3: Cliff
+    Template@604:
+        Id: 604
+        Images: scliffttw4.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            1: Water
+            2: Cliff
+            3: Cliff
+    Template@605:
+        Id: 605
+        Images: scliffttw5.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Rock
+            2: Cliff
+            3: Water
+    Template@606:
+        Id: 606
+        Images: scliffttw6.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Cliff
+            1: Water
+            2: Cliff
+            3: Rock
+    Template@607:
+        Id: 607
+        Images: scliffttw7.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Rock
+            1: Cliff
+            2: Water
+            3: Cliff
+    Template@608:
+        Id: 608
+        Images: scliffttw8.tem
+        Size: 2,2
+        Categories: Low Water Cliffs
+        Tiles:
+            0: Rock
+            1: Cliff
+            2: Rock
+            3: Cliff
+    Template@700:
+        Id: 700
+        Images: lcliff1.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@701:
+        Id: 701
+        Images: lcliff6.tem
+        Size: 2,4
+        Categories: High Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+    Template@702:
+        Id: 702
+        Images: lcliff3.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@703:
+        Id: 703
+        Images: lcliff4.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@704:
+        Id: 704
+        Images: lcliff5.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@705:
+        Id: 705
+        Images: lcliff2.tem
+        Size: 2,4
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Rough
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Rough
+            7: Cliff
+    Template@706:
+        Id: 706
+        Images: lcliff7.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Rough
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@707:
+        Id: 707
+        Images: lcliff8.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@708:
+        Id: 708
+        Images: lcliff9.tem
+        Size: 4,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Rough
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@709:
+        Id: 709
+        Images: lcliff10.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@710:
+        Id: 710
+        Images: lcliff11.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@711:
+        Id: 711
+        Images: lcliff12.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@712:
+        Id: 712
+        Images: lcliff13.tem
+        Size: 4,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@713:
+        Id: 713
+        Images: lcliff14.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Rough
+    Template@714:
+        Id: 714
+        Images: lcliff15.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Rough
+            5: Cliff
+    Template@715:
+        Id: 715
+        Images: lcliff16.tem
+        Size: 2,4
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            7: Cliff
+    Template@716:
+        Id: 716
+        Images: lcliff17.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@717:
+        Id: 717
+        Images: lcliff18.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@718:
+        Id: 718
+        Images: lcliff19.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@719:
+        Id: 719
+        Images: lcliff20.tem
+        Size: 2,4
+        Categories: High Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+    Template@720:
+        Id: 720
+        Images: lcliff21.tem
+        Size: 2,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Rough
+    Template@721:
+        Id: 721
+        Images: lcliff22.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@722:
+        Id: 722
+        Images: lcliff23.tem
+        Size: 4,2
+        Categories: High Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@723:
+        Id: 723
+        Images: lcliff24.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@724:
+        Id: 724
+        Images: lcliff25.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@725:
+        Id: 725
+        Images: lcliff26.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@726:
+        Id: 726
+        Images: lcliff27.tem
+        Size: 4,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Rough
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@727:
+        Id: 727
+        Images: lcliff28.tem
+        Size: 3,2
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Rough
+            4: Cliff
+            5: Cliff
+    Template@728:
+        Id: 728
+        Images: lcliff29.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@729:
+        Id: 729
+        Images: lcliff30.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@730:
+        Id: 730
+        Images: lcliff31.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@731:
+        Id: 731
+        Images: lcliff32.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Rough
+    Template@732:
+        Id: 732
+        Images: lcliff33.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            7: Cliff
+            8: Cliff
+    Template@733:
+        Id: 733
+        Images: lcliff34.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@734:
+        Id: 734
+        Images: lcliff35.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Rough
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@735:
+        Id: 735
+        Images: lcliff36.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@736:
+        Id: 736
+        Images: lcliff37.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@737:
+        Id: 737
+        Images: lcliff38.tem
+        Size: 3,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@740:
+        Id: 740
+        Images: lcliffsl1.tem
+        Size: 1,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@741:
+        Id: 741
+        Images: lcliffsl2.tem
+        Size: 1,3
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@742:
+        Id: 742
+        Images: lcliffsl3.tem
+        Size: 3,1
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@743:
+        Id: 743
+        Images: lcliffsl4.tem
+        Size: 3,1
+        Categories: High Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+    Template@750:
+        Id: 750
+        Images: dcliff1.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@751:
+        Id: 751
+        Images: dcliff2.tem
+        Size: 2,4
+        Categories: Double Cliffs
+        Tiles:
+            0: Rough
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Rough
+            7: Cliff
+    Template@752:
+        Id: 752
+        Images: dcliff3.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@753:
+        Id: 753
+        Images: dcliff4.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@754:
+        Id: 754
+        Images: dcliff5.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@755:
+        Id: 755
+        Images: dcliff6.tem
+        Size: 2,4
+        Categories: Double Cliffs
+        Tiles:
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+    Template@756:
+        Id: 756
+        Images: dcliff7.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@757:
+        Id: 757
+        Images: dcliff8.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Rough
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@758:
+        Id: 758
+        Images: dcliff9.tem
+        Size: 4,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Rough
+            4: Rough
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@759:
+        Id: 759
+        Images: dcliff10.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@760:
+        Id: 760
+        Images: dcliff11.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@761:
+        Id: 761
+        Images: dcliff12.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@762:
+        Id: 762
+        Images: dcliff13.tem
+        Size: 4,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Rough
+    Template@763:
+        Id: 763
+        Images: dcliff14.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@764:
+        Id: 764
+        Images: dcliff15.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@765:
+        Id: 765
+        Images: dcliff16.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@766:
+        Id: 766
+        Images: dcliff17.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@767:
+        Id: 767
+        Images: dcliff18.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Clear
+    Template@768:
+        Id: 768
+        Images: dcliff19.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@769:
+        Id: 769
+        Images: dcliff20.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@770:
+        Id: 770
+        Images: dcliff21.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@771:
+        Id: 771
+        Images: dcliff22.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@772:
+        Id: 772
+        Images: dcliff23.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@775:
+        Id: 775
+        Images: dcliffa1.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@776:
+        Id: 776
+        Images: dcliffa2.tem
+        Size: 2,4
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            7: Cliff
+    Template@777:
+        Id: 777
+        Images: dcliffa3.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@778:
+        Id: 778
+        Images: dcliffa4.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@779:
+        Id: 779
+        Images: dcliffa5.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@780:
+        Id: 780
+        Images: dcliffa6.tem
+        Size: 2,4
+        Categories: Double Cliffs
+        Tiles:
+            0: Rough
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Rough
+    Template@781:
+        Id: 781
+        Images: dcliffa7.tem
+        Size: 2,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+    Template@782:
+        Id: 782
+        Images: dcliffa8.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            1: Cliff
+            2: Rough
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@783:
+        Id: 783
+        Images: dcliffa9.tem
+        Size: 4,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Rough
+            5: Cliff
+            6: Cliff
+            7: Cliff
+    Template@784:
+        Id: 784
+        Images: dcliffa10.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@785:
+        Id: 785
+        Images: dcliffa11.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@786:
+        Id: 786
+        Images: dcliffa12.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+    Template@787:
+        Id: 787
+        Images: dcliffa13.tem
+        Size: 4,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Rough
+    Template@788:
+        Id: 788
+        Images: dcliffa14.tem
+        Size: 3,2
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            4: Cliff
+    Template@789:
+        Id: 789
+        Images: dcliffa15.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@790:
+        Id: 790
+        Images: dcliffa16.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@791:
+        Id: 791
+        Images: dcliffa17.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@792:
+        Id: 792
+        Images: dcliffa18.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Clear
+    Template@793:
+        Id: 793
+        Images: dcliffa19.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@794:
+        Id: 794
+        Images: dcliffa20.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@795:
+        Id: 795
+        Images: dcliffa21.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@796:
+        Id: 796
+        Images: dcliffa22.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@797:
+        Id: 797
+        Images: dcliffa23.tem
+        Size: 3,3
+        Categories: Double Cliffs
+        Tiles:
+            0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff

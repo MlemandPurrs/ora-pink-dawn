@@ -1678,7 +1678,7 @@ Templates:
 		Id: 163
 		Images: falls1.des
 		Size: 3,3
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Clear
 			1: Cliff
@@ -1693,7 +1693,7 @@ Templates:
 		Id: 164
 		Images: falls2.des
 		Size: 3,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: River
@@ -2379,7 +2379,7 @@ Templates:
 		Id: 231
 		Images: rc01.des
 		Size: 3,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2391,7 +2391,7 @@ Templates:
 		Id: 232
 		Images: rc02.des
 		Size: 2,3
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2403,7 +2403,7 @@ Templates:
 		Id: 233
 		Images: rc03.des
 		Size: 2,3
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2415,7 +2415,7 @@ Templates:
 		Id: 234
 		Images: rc04.des
 		Size: 3,2
-		Categories: River
+		Categories: River, Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2844,7 +2844,7 @@ Templates:
 		Id: 346
 		Images: falls1a.des
 		Size: 3,2
-		Categories: Water Cliffs
+		Categories: River, Water Cliffs
 		Tiles:
 			0: Cliff
 			1: River
@@ -2856,7 +2856,7 @@ Templates:
 		Id: 347
 		Images: falls2a.des
 		Size: 2,3
-		Categories: Water Cliffs
+		Categories: River, Water Cliffs
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3004,8 +3004,8 @@ Templates:
 			3: River
 			4: Rock
 			5: Beach
-	Template@600:
-		Id: 600
+	Template@650:
+		Id: 650
 		Images: f01.des
 		Size: 3,3
 		Categories: Bridge
@@ -3019,8 +3019,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@601:
-		Id: 601
+	Template@651:
+		Id: 651
 		Images: f02.des
 		Size: 3,3
 		Categories: Bridge
@@ -3034,8 +3034,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@602:
-		Id: 602
+	Template@652:
+		Id: 652
 		Images: f03.des
 		Size: 3,3
 		Categories: Bridge
@@ -3049,8 +3049,8 @@ Templates:
 			6: Rough
 			7: Ramp
 			8: Rough
-	Template@603:
-		Id: 603
+	Template@653:
+		Id: 653
 		Images: f04.des
 		Size: 3,3
 		Categories: Bridge
@@ -3064,8 +3064,8 @@ Templates:
 			6: Rough
 			7: Beach
 			8: Shallow
-	Template@604:
-		Id: 604
+	Template@654:
+		Id: 654
 		Images: f05.des
 		Size: 3,3
 		Categories: Bridge
@@ -3079,8 +3079,8 @@ Templates:
 			6: Shallow
 			7: Shallow
 			8: Shallow
-	Template@605:
-		Id: 605
+	Template@655:
+		Id: 655
 		Images: f06.des
 		Size: 3,3
 		Categories: Bridge

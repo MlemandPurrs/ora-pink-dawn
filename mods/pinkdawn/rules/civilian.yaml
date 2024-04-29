@@ -445,6 +445,15 @@ BRIDGEHUT2:
 		Dimensions: 2,2    
 		LocalCenterOffset: 0,1024,0
 
+BRIDGEHUTMINI:
+    Inherits: BRIDGEHUT
+	Building:
+		Footprint: _
+		Dimensions: 1,1    
+		LocalCenterOffset: 0,0,0
+	Interactable:
+		Bounds: 1024, 1024
+
 BRIDGEW1:
 	Inherits: ^Bridge
 	Bridge:
@@ -513,6 +522,40 @@ BRIDGEDW2:
 		SpawnOffset: 3,2
 	Interactable:
 		Bounds: 6144, 4096
+
+BRIDGEH:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 173
+		DestroyedTemplate: 174
+	Building:
+		Footprint: ____ ____ ____ ____
+		Dimensions: 4,4
+	FreeActor@west:
+		Actor: bridgehutmini
+		SpawnOffset: 0,0
+	FreeActor@east:
+		Actor: bridgehutmini
+		SpawnOffset: 3,2
+	Interactable:
+		Bounds: 4096, 4096
+
+BRIDGEV:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 175
+		DestroyedTemplate: 176
+	Building:
+		Footprint: ___ ___ ___ ___
+		Dimensions: 3,4
+	FreeActor@north:
+		Actor: bridgehutmini
+		SpawnOffset: 0,0
+	FreeActor@east:
+		Actor: bridgehutmini
+		SpawnOffset: 2,3
+	Interactable:
+		Bounds: 3072, 4096
 
 C1:
 	Inherits: ^ArmedCivilian

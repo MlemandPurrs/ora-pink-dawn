@@ -191,7 +191,7 @@ World:
 	ScreenShaker:
 	BuildingInfluence:
 	LegacyBridgeLayer:
-		Bridges: bridge1, bridge2, bridge3, bridge4, bridgew1, bridgew2, bridgedw1, bridgedw2
+		Bridges: bridge1, bridge2, bridge3, bridge4, bridgew1, bridgew2, bridgedw1, bridgedw2, bridgeh, bridgev
 	ProductionQueueFromSelection:
 		ProductionTabsWidget: PRODUCTION_TABS
 	SmudgeLayer@SCORCH:
