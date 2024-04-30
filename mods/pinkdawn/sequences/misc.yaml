@@ -435,11 +435,11 @@ pips:
 		Start: 1
 	pip-yellow:
 		Start: 2
-	pip-gray:
+	pip-blue:
 		Start: 3
 	pip-red:
 		Start: 4
-	pip-blue:
+	pip-orange:
 		Start: 5
 	pip-white:
 		Start: 6

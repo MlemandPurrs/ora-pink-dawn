@@ -18,6 +18,8 @@ E1:
 		Speed: 40
 	Health:
 		HP: 5000
+	Passenger:
+        CustomPipType: pip-green
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -71,6 +73,8 @@ E2:
 		Speed: 50
 	Health:
 		HP: 5000
+	Passenger:
+        CustomPipType: pip-green
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -122,6 +126,8 @@ E3:
 		Range: 3c512
 	Health:
 		HP: 2500
+	Passenger:
+        CustomPipType: pip-green
 	AutoTarget:
 		ScanRadius: 6
 	Armament:
@@ -179,6 +185,8 @@ E4:
 		PauseOnCondition: dont-move
 	Health:
 		HP: 7500
+	Passenger:
+        CustomPipType: pip-green
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -245,6 +253,8 @@ E5:
 		PauseOnCondition: dont-move
 	Health:
 		HP: 7500
+	Passenger:
+        CustomPipType: pip-red
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -269,8 +279,6 @@ E5:
 		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
-	Passenger:
-		CustomPipType: yellow
 	Explodes:
 		Weapon: ChemExplode
 		EmptyWeapon: ChemExplode
@@ -336,7 +344,7 @@ E6:
 	Health:
 		HP: 2500
 	Passenger:
-		CustomPipType: blue
+        CustomPipType: pip-yellow
 	InstantlyRepairs:
         Cursor: enter-yellow
         RepairBlockedCursor: enter-yellow-blocked
@@ -389,7 +397,7 @@ RMBO:
 	Health:
 		HP: 10000
 	Passenger:
-		CustomPipType: red
+        CustomPipType: pip-white
 	RevealsShroud:
 		Range: 6c0
 	AutoTarget:
@@ -437,7 +445,7 @@ TECN:
 		HP: 5000
 	Passenger:
 		Weight: 1
-		CustomPipType: pip-blue
+        CustomPipType: pip-blue
 	RenderSprites:
 		Image: TECN
 	Voiced:
@@ -573,6 +581,8 @@ E9:
 		Speed: 30
 	Health:
 		HP: 2500
+	Passenger:
+        CustomPipType: pip-orange
 	RevealsShroud:
 		Range: 3c512
 	AutoTarget:
@@ -655,6 +665,8 @@ MEDI:
 		Range: 3c512
 	Health:
 		HP: 7500
+	Passenger:
+        CustomPipType: pip-blue
 	Armament:
 		Weapon: Heal
 		Cursor: heal
@@ -670,8 +682,6 @@ MEDI:
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry
-	Passenger:
-		CustomPipType: pip-blue
 	ChangesHealth@SELFHEAL:
 		Step: 500
 		Delay: 100

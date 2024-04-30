@@ -257,7 +257,7 @@ ORCA:
         Name: primary
 		Armaments: primary, secondary
 		Ammo: 10
-		ReloadDelay: 100
+		ReloadDelay: 60
 		ReloadCount: 2
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:

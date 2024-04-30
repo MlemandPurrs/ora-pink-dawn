@@ -220,17 +220,17 @@
 		Margin: 4, 3
 		RequiresSelection: true
 		CustomPipSequences:
-			pip-gray: pip-gray
-			pip-yellow: pip-yellow
 			pip-green: pip-green
+			pip-yellow: pip-yellow
 			pip-blue: pip-blue
 			pip-red: pip-red
+			pip-orange: pip-orange
             pip-white: pip-white
-            gray: pip-gray
-			yellow: pip-yellow
 			green: pip-green
-            red: pip-red
+			yellow: pip-yellow
             blue: pip-blue
+            red: pip-red
+            orange: pip-orange
             white: pip-white
 
 ^StoresResources:

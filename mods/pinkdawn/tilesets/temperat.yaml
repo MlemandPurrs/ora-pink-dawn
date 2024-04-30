@@ -3096,6 +3096,162 @@ Templates:
 			9: Rock
 			10: Rough
 			11: Clear
+	Template@401:
+		Id: 401
+		Images: tunnel1.tem
+		Size: 3,3
+		Categories: Cliffs
+		Tiles:
+			0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Ramp
+            8: Cliff
+	Template@402:
+		Id: 402
+		Images: tunnel2.tem
+		Size: 3,3
+		Categories: Cliffs
+		Tiles:
+			0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Ramp
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+    Template@403:
+		Id: 403
+		Images: tunnel3.tem
+		Size: 3,3
+		Categories: Cliffs
+		Tiles:
+			0: Cliff
+            1: Ramp
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Cliff
+            6: Cliff
+            7: Cliff
+            8: Cliff
+	Template@404:
+		Id: 404
+		Images: tunnel4.tem
+		Size: 3,3
+		Categories: Cliffs
+		Tiles:
+			0: Cliff
+            1: Cliff
+            2: Cliff
+            3: Cliff
+            4: Cliff
+            5: Ramp
+            6: Cliff
+            7: Cliff
+            8: Cliff
+	Template@450:
+		Id: 450
+		Images: sccnr.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@451:
+		Id: 451
+		Images: sccnl.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@452:
+		Id: 452
+		Images: sccsr.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@453:
+		Id: 453
+		Images: sccsl.tem
+		Size: 2,3
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@454:
+		Id: 454
+		Images: sccln.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Beach
+			5: Cliff
+	Template@455:
+		Id: 455
+		Images: sccls.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Beach
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+	Template@456:
+		Id: 456
+		Images: sccrn.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Water
+			4: Beach
+			5: Cliff
+	Template@457:
+		Id: 457
+		Images: sccrs.tem
+		Size: 3,2
+		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Beach
+			2: Beach
+			3: Cliff
+			4: Cliff
+			5: Cliff
     Template@500:
         Id: 500
         Images: scliff1.tem
