@@ -28,7 +28,7 @@ Atomic:
 		Delay: 3
 	Warhead@5Smu_areanuke: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall
+		InvalidTargets: Vehicle, Structure, Wall, Bridge
 		Size: 3
 		Delay: 3
 	Warhead@6Eff_areanuke: CreateEffect
@@ -46,7 +46,7 @@ Atomic:
 		RandomClusterCount: 3
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
-        InvalidTargets: Vehicle, Structure, Wall
+        InvalidTargets: Vehicle, Structure, Wall, Bridge
 
 IonCannon:
 	ValidTargets: Ground, Water, Airplane, Helicopter, Tree
@@ -70,10 +70,10 @@ IonCannon:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep, Bridge
 	Warhead@3Smu_area: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep, Bridge
 		Size: 1
 		Delay: 3
 	Warhead@4Res_area2: DestroyResource
@@ -81,7 +81,7 @@ IonCannon:
 		Delay: 6
 	Warhead@5Smu_area2: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep, Bridge
 		Size: 2,1
 		Delay: 6
     Warhead@7Eff_impact: CreateEffect

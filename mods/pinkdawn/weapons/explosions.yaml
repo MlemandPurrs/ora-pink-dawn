@@ -19,7 +19,7 @@
 		ImpactActors: false
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Tree, Creep, Bridge
 	Warhead@4EffWater: CreateEffect
 		Explosions: big_splash
 		ImpactSounds: ssplash1.aud
@@ -143,7 +143,7 @@ FlamerExplode:
 		ImpactSounds: flamer2.aud
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall
+		InvalidTargets: Vehicle, Structure, Wall, Bridge
 
 FlametankExplode:
 	Inherits: ^DamagingExplosion
@@ -165,7 +165,7 @@ FlametankExplode:
 		ImpactSounds: flamer2.aud
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall
+		InvalidTargets: Vehicle, Structure, Wall, Bridge
 
 ChemExplode:
 	Inherits: ^DamagingExplosion
@@ -187,7 +187,7 @@ ChemExplode:
 		ImpactSounds: flamer2.aud
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall
+		InvalidTargets: Vehicle, Structure, Wall, Bridge
 
 #   scatter FX for flames on the ground
 BurnFX:
@@ -229,7 +229,7 @@ CrateNapalm:
 		ImpactSounds: flamer2.aud
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall
+		InvalidTargets: Vehicle, Structure, Wall, Bridge
 	Warhead@Flames: FireCluster
 		Weapon: BurnFx
 		RandomClusterCount: 3

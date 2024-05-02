@@ -1,7 +1,7 @@
 General:
 	Name: Jungle
 	Id: JUNGLE
-	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
+	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge, High Bridge
 	HeightDebugColors: AA0000
 
 Terrain:
@@ -2676,6 +2676,90 @@ Templates:
 			6: Clear
 			7: Beach
 			8: Water
+	Template@640:
+		Id: 640
+		Images: highbridge1.jun
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            4: Rock
+            5: Wall
+            6: Ramp
+            7: Ramp
+            8: Ramp
+            13: Wall
+            14: Bridge
+            15: Bridge
+            16: Wall
+            17: Rock
+            21: Wall
+            22: Bridge
+            23: Bridge
+            24: Wall
+            25: Rock
+            26: Water
+            29: Wall
+            30: Bridge
+            31: Bridge
+            32: Wall
+            33: Rock
+            37: Wall
+            38: Bridge
+            39: Bridge
+            40: Wall
+            41: Rock
+            45: Wall
+            46: Bridge
+            47: Bridge
+            48: Wall
+            49: Rock
+            54: Ramp
+            55: Ramp
+            56: Wall
+            57: Rock
+            58: Beach
+	Template@641:
+		Id: 641
+		Images: highbridge1d.jun
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            4: Rock
+            5: Wall
+            6: Ramp
+            7: Ramp
+            8: Ramp
+            13: Rock
+            14: Rock
+            15: Rock
+            16: Rock
+            17: Rock
+            21: Water
+            22: Water
+            23: Water
+            24: Rock
+            25: Rock
+            26: Water
+            29: Rock
+            30: Rock
+            31: Rock
+            32: Water
+            33: Water
+            37: Water
+            38: Water
+            39: Water
+            40: Water
+            41: Water
+            45: Wall
+            46: Rock
+            47: Rock
+            48: Rock
+            49: Rock
+            54: Ramp
+            55: Ramp
+            56: Wall
+            57: Rock
+            58: Beach
 	Template@650:
 		Id: 650
 		Images: f01.jun

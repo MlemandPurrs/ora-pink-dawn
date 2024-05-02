@@ -454,8 +454,27 @@ BRIDGEHUTMINI:
 	Interactable:
 		Bounds: 1024, 1024
 
+BRIDGEHUT3:
+    Inherits: BRIDGEHUT
+	Building:
+		Footprint: ___ ___
+		Dimensions: 3,2
+	Interactable:
+		Bounds: 3072, 2048
+
+BRIDGEHUT4:
+    Inherits: BRIDGEHUT
+	Building:
+		Footprint: ___ ___
+		Dimensions: 3,2
+		LocalCenterOffset: 1024,1024,0
+	Interactable:
+		Bounds: 3072, 2048
+
 BRIDGEW1:
 	Inherits: ^Bridge
+	Health:
+		HP: 80000
 	Bridge:
 		Template: 380
 		DestroyedTemplate: 381
@@ -473,6 +492,8 @@ BRIDGEW1:
 
 BRIDGEW2:
 	Inherits: ^Bridge
+	Health:
+		HP: 80000
 	Bridge:
 		Template: 382
 		DestroyedTemplate: 383
@@ -490,6 +511,8 @@ BRIDGEW2:
 
 BRIDGEDW1:
 	Inherits: ^Bridge
+	Health:
+		HP: 80000
 	Bridge:
 		Template: 384
 		DestroyedTemplate: 385
@@ -499,7 +522,6 @@ BRIDGEDW1:
 	FreeActor@north:
 		Actor: bridgehut2
 		SpawnOffset: 3,-1
-        #   SpawnOffset: 2,0
     FreeActor@south:
         Actor: bridgehut
 		SpawnOffset: 1,2
@@ -508,6 +530,8 @@ BRIDGEDW1:
 
 BRIDGEDW2:
 	Inherits: ^Bridge
+	Health:
+		HP: 80000
 	Bridge:
 		Template: 386
 		DestroyedTemplate: 387
@@ -556,6 +580,120 @@ BRIDGEV:
 		SpawnOffset: 2,3
 	Interactable:
 		Bounds: 3072, 4096
+
+HIGHBRIDGE1:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 640
+		DestroyedTemplate: 641
+	Building:
+		Footprint: _________ _________ _________ _________ _________ _________ _________
+		Dimensions: 9,7
+	FreeActor@north:
+		Actor: bridgehut3
+		SpawnOffset: 5,0
+	FreeActor@south:
+		Actor: bridgehut3
+		SpawnOffset: 0,5
+	Interactable:
+		Bounds: 9216, 7168
+
+HIGHBRIDGE2:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 642
+		DestroyedTemplate: 643
+	Building:
+		Footprint: _________ _________ _________ _________ _________ _________ _________
+		Dimensions: 9,7
+	FreeActor@north:
+		Actor: bridgehut4
+		SpawnOffset: 0,-1
+	FreeActor@south:
+		Actor: bridgehut3
+		SpawnOffset: 6,5
+	Interactable:
+		Bounds: 9216, 7168
+
+HIGHBRIDGEH:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 644
+		DestroyedTemplate: 645
+	Building:
+		Footprint: __________ __________ __________ __________
+		Dimensions: 10,4
+	FreeActor@west:
+		Actor: bridgehut
+		SpawnOffset: 0,1
+	FreeActor@east:
+		Actor: bridgehut
+		SpawnOffset: 8,1
+	Interactable:
+		Bounds: 10240, 4096
+
+HIGHBRIDGEV:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 646
+		DestroyedTemplate: 647
+	Building:
+		Footprint: ____ ____ ____ ____ ____ ____ ____ ____ ____ ____
+		Dimensions: 4,10
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 1,8
+	Interactable:
+		Bounds: 4096, 10240
+
+HIGHBRIDGED1:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 670
+		DestroyedTemplate: 671
+	Building:
+		Footprint: _________ _________ _________ _________ _________ _________ _________
+		Dimensions: 9,7
+	FreeActor@north:
+		Actor: bridgehut3
+		SpawnOffset: 5,0
+	FreeActor@south:
+		Actor: bridgehut3
+		SpawnOffset: 0,5
+	Interactable:
+		Bounds: 9216, 7168
+
+HIGHBRIDGED2:
+	Inherits: ^Bridge
+	Health:
+		HP: 120000
+	Bridge:
+		Template: 672
+		DestroyedTemplate: 673
+	Building:
+		Footprint: _________ _________ _________ _________ _________ _________ _________
+		Dimensions: 9,7
+	FreeActor@north:
+		Actor: bridgehut4
+		SpawnOffset: 0,-1
+	FreeActor@south:
+		Actor: bridgehut3
+		SpawnOffset: 6,5
+	Interactable:
+		Bounds: 9216, 7168
 
 C1:
 	Inherits: ^ArmedCivilian

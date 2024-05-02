@@ -33,6 +33,8 @@
 				PathingCost: 300
 			Beach: 80
 			Shallow: 80
+            Ramp: 100
+            Ruin: 80
     Locomotor@FOOT-IMMUNE:
 		Name: foot-immune
 		Crushes: crate
@@ -47,6 +49,8 @@
             RedTiberium: 80
 			Beach: 80
 			Shallow: 80
+            Ramp: 100
+            Ruin: 80
 	Locomotor@WHEELED-NON-CRUSHER:
 		Name: wheeled-non-crusher
 		Crushes: crate
@@ -191,7 +195,7 @@ World:
 	ScreenShaker:
 	BuildingInfluence:
 	LegacyBridgeLayer:
-		Bridges: bridge1, bridge2, bridge3, bridge4, bridgew1, bridgew2, bridgedw1, bridgedw2, bridgeh, bridgev
+		Bridges: bridge1, bridge2, bridge3, bridge4, bridgew1, bridgew2, bridgedw1, bridgedw2, bridgeh, bridgev, highbridge1, highbridge2, highbridgeh, highbridgev, highbridged1, highbridged2
 	ProductionQueueFromSelection:
 		ProductionTabsWidget: PRODUCTION_TABS
 	SmudgeLayer@SCORCH:

@@ -1,7 +1,7 @@
 General:
 	Name: Temperate
 	Id: TEMPERAT
-	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
+	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Low Cliffs, Low Water Cliffs, Beach, River, Bridge, High Bridge
 	HeightDebugColors: AA0000
 
 Terrain:
@@ -2974,6 +2974,358 @@ Templates:
 			6: Clear
 			7: Beach
 			8: Water
+	Template@640:
+		Id: 640
+		Images: highbridge1.tem
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            4: Rock
+            5: Wall
+            6: Ramp
+            7: Ramp
+            8: Ramp
+            13: Wall
+            14: Bridge
+            15: Bridge
+            16: Wall
+            17: Rock
+            21: Wall
+            22: Bridge
+            23: Bridge
+            24: Wall
+            25: Rock
+            26: Water
+            29: Wall
+            30: Bridge
+            31: Bridge
+            32: Wall
+            33: Rock
+            37: Wall
+            38: Bridge
+            39: Bridge
+            40: Wall
+            41: Rock
+            45: Wall
+            46: Bridge
+            47: Bridge
+            48: Wall
+            49: Rock
+            54: Ramp
+            55: Ramp
+            56: Wall
+            57: Rock
+            58: Beach
+	Template@641:
+		Id: 641
+		Images: highbridge1d.tem
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            4: Rock
+            5: Wall
+            6: Ramp
+            7: Ramp
+            8: Ramp
+            13: Rock
+            14: Rock
+            15: Rock
+            16: Rock
+            17: Rock
+            21: Water
+            22: Water
+            23: Water
+            24: Rock
+            25: Rock
+            26: Water
+            29: Rock
+            30: Rock
+            31: Rock
+            32: Water
+            33: Water
+            37: Water
+            38: Water
+            39: Water
+            40: Water
+            41: Water
+            45: Wall
+            46: Rock
+            47: Rock
+            48: Rock
+            49: Rock
+            54: Ramp
+            55: Ramp
+            56: Wall
+            57: Rock
+            58: Beach
+	Template@642:
+		Id: 642
+		Images: highbridge2.tem
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            0: Ramp
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Rock
+            9: Rock
+            10: Wall
+            11: Bridge
+            12: Bridge
+            13: Wall
+            18: Water
+            19: Rock
+            20: Wall
+            21: Bridge
+            22: Bridge
+            23: Wall
+            29: Rock
+            30: Wall
+            31: Bridge
+            32: Bridge
+            33: Wall
+            39: Rock
+            40: Wall
+            41: Bridge
+            42: Bridge
+            43: Wall
+            49: Rock
+            50: Wall
+            51: Bridge
+            52: Bridge
+            53: Wall
+            58: Beach
+            59: Rock
+            60: Wall
+            61: Ramp
+            62: Ramp
+	Template@643:
+		Id: 643
+		Images: highbridge2d.tem
+		Size: 9,7
+		Categories: High Bridge
+		Tiles:
+            0: Ramp
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Rock
+            9: Rock
+            10: Rock
+            11: Rock
+            12: Rock
+            13: Rock
+            18: Water
+            19: Rock
+            20: Rock
+            21: Water
+            22: Water
+            23: Water
+            29: Water
+            30: Water
+            31: Rock
+            32: Rock
+            33: Rock
+            39: Water
+            40: Water
+            41: Water
+            42: Water
+            43: Water
+            49: Rock
+            50: Rock
+            51: Rock
+            52: Rock
+            53: Wall
+            58: Beach
+            59: Rock
+            60: Wall
+            61: Ramp
+            62: Ramp
+	Template@644:
+		Id: 644
+		Images: highbridgeh.tem
+		Size: 10,4
+		Categories: High Bridge
+		Tiles:
+            0: Wall
+            1: Wall
+            2: Wall
+            3: Wall
+            4: Wall
+            5: Wall
+            6: Wall
+            7: Wall
+            8: Wall
+            9: Wall
+            10: Ramp
+            11: Bridge
+            12: Bridge
+            13: Bridge
+            14: Bridge
+            15: Bridge
+            16: Bridge
+            17: Bridge
+            18: Bridge
+            19: Ramp
+            20: Ramp
+            21: Bridge
+            22: Bridge
+            23: Bridge
+            24: Bridge
+            25: Bridge
+            26: Bridge
+            27: Bridge
+            28: Bridge
+            29: Ramp
+            30: Wall
+            31: Wall
+            32: Wall
+            33: Wall
+            34: Wall
+            35: Wall
+            36: Wall
+            37: Wall
+            38: Wall
+            39: Wall
+	Template@645:
+		Id: 645
+		Images: highbridgehd.tem
+		Size: 10,4
+		Categories: High Bridge
+		Tiles:
+            0: Wall
+            1: Wall
+            2: Water
+            3: Water
+            4: Rock
+            5: Rock
+            6: Water
+            7: Water
+            8: Wall
+            9: Wall
+            10: Ramp
+            11: Rock
+            12: Rock
+            13: Water
+            14: Rock
+            15: Rock
+            16: Water
+            17: Rock
+            18: Rock
+            19: Ramp
+            20: Ramp
+            21: Rock
+            22: Rock
+            23: Water
+            24: Rock
+            25: Rock
+            26: Water
+            27: Rock
+            28: Rock
+            29: Ramp
+            30: Wall
+            31: Wall
+            32: Rock
+            33: Water
+            34: Rock
+            35: Rock
+            36: Water
+            37: Rock
+            38: Wall
+            39: Wall
+	Template@646:
+		Id: 646
+		Images: highbridgev.tem
+		Size: 4,10
+		Categories: High Bridge
+		Tiles:
+            0: Wall
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Wall
+            5: Bridge
+            6: Bridge
+            7: Wall
+            8: Wall
+            9: Bridge
+            10: Bridge
+            11: Wall
+            12: Wall
+            13: Bridge
+            14: Bridge
+            15: Wall
+            16: Wall
+            17: Bridge
+            18: Bridge
+            19: Wall
+            20: Wall
+            21: Bridge
+            22: Bridge
+            23: Wall
+            24: Wall
+            25: Bridge
+            26: Bridge
+            27: Wall
+            28: Wall
+            29: Bridge
+            30: Bridge
+            31: Wall
+            32: Wall
+            33: Bridge
+            34: Bridge
+            35: Wall
+            36: Rock
+            37: Ramp
+            38: Ramp
+            39: Rock
+	Template@647:
+		Id: 647
+		Images: highbridgevd.tem
+		Size: 4,10
+		Categories: High Bridge
+		Tiles:
+            0: Wall
+            1: Ramp
+            2: Ramp
+            3: Wall
+            4: Wall
+            5: Rock
+            6: Rock
+            7: Wall
+            8: Rock
+            9: Rock
+            10: Rock
+            11: Rock
+            12: Water
+            13: Water
+            14: Water
+            15: Water
+            16: Rock
+            17: Rock
+            18: Rock
+            19: Rock
+            20: Rock
+            21: Rock
+            22: Rock
+            23: Rock
+            24: Water
+            25: Water
+            26: Water
+            27: Water
+            28: Rock
+            29: Rock
+            30: Rock
+            31: Rock
+            32: Wall
+            33: Rock
+            34: Rock
+            35: Wall
+            36: Rock
+            37: Ramp
+            38: Ramp
+            39: Rock
 	Template@650:
 		Id: 650
 		Images: f01.tem
